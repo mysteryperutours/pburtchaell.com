@@ -161,24 +161,23 @@ module.exports = function(grunt) {
 	 * plugins
 	 */
 	grunt.loadNpmTasks('assemble');
-	grunt.loadNpmTasks('assemble-less');
-	
-	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-spell');
+	//grunt.loadNpmTasks('assemble-less');
+	//grunt.loadNpmTasks('grunt-autoprefixer');
+	//grunt.loadNpmTasks('grunt-spell');
 	
 	
 	/* 
 	 * tasks
 	 */
 	grunt.registerTask('default', ['assemble']);	
-	grunt.registerTask('development', ['watch']);
-	grunt.registerTask('production', [
+	//grunt.registerTask('development', ['watch']);
+	/*grunt.registerTask('production', [
 		'spell',
 		'recess',
 		'less',
 		'uglify',
 		'assemble',
 		'htmlmin'
-	]);
+	]);*/
 	
 }
