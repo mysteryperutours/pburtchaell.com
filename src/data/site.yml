@@ -1,0 +1,30 @@
+###
+# Global site data 
+###
+destination	:	./dist
+source		:	./src
+plugins		:	./src/plugins
+templates	:	./tpl
+content		: 	./tpl/pages
+extension	: 	.html
+
+title		:	Patrick Burtchaell
+description	: 	I am a designer and videographer from New Orleans with a passion for good iced coffee, the outdoors and happiness. I enjoy a good laugh.
+keywords	:   Patrick Burtchaell, graphic design, web design, video production, audio production, New Orleans, designer, videographer, filmmaker
+
+author		:
+  name		:	
+     first	:	Patrick
+     last	: 	Burtchaell
+  avatar	:	assets/img/site/patrick.jpg
+  bio		:	I like to ask why and drink too much iced coffee. I make websites and work as an assistant camera operator. Currently available for for freelance work.
+  url		:	http://pburtchaell.com/
+  email		:	patrick@pburtchaell.com
+  
+  twitter	:	'@pburtchaell'
+  facebook	:	'http://facebook.com/pburtchaell'
+  dribbble	:	'http://dribbble.com/pburtchaell'
+  behance	:	'http://behance.net/pburtchaell'
+  linkedin	:	'http://linkedin.com/in/burtchaell'
+  medium	:	'http://medium.com/@pburtchaell'
+  github	:	'http://github.com/pburtchaell'

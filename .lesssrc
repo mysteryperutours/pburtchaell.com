@@ -1,0 +1,6 @@
+{
+  "compress": true,
+  "strictMath": true,
+  "strictUnits": true,
+  "paths": ["vendor/bootstrap/less"]
+}
