@@ -9,7 +9,7 @@ layout: default.hbs
 ---
 
 ##Terms and Conditions of Use
-Effective October 31, 2013
+> Effective October 31, 2013
 
 ###1. General Terms
 By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark law.
@@ -26,9 +26,9 @@ Permission is granted to temporarily download one copy of the materials (informa
 This license shall automatically terminate if you violate any of these restrictions and may be terminated by Patrick Burtchaell at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format. Termination of this license may be punishable by law.
 
 ###3. Patrick Burtchaell Lab License
-The MIT lincense is granted to download all software from the lab of Patrick Burtchaell (http://www.pburtchaell.com/lab/ or http://beaker.pburtchaell.com/):
+> The MIT license is granted to download all software from http://www.pburtchaell.com/lab/ or http://beaker.pburtchaell.com/.
 
-Copyright Patrick Burtchaell and other contributors, http://www.pburtchaell.com/legal/.
+Copyright (c) 2013 PBDVA, Ltd. and other contributors, http://www.pburtchaell.com/legal/.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -70,16 +70,16 @@ Patrick Burtchaell may revise these terms of use for his web site at any time wi
 Any claim relating to Patrick Burtchaell's web site shall be governed by the laws of the State of Louisiana without regard to its conflict of law provisions.
 
 ##Privacy Policy
-Effective October 31, 2013
+> Effective October 31, 2013
 
 Your privacy is very important to me. Accordingly, I have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines my privacy policy:
 
 - Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.
 - I will collect and use of personal information solely with the objective of fulfilling those purposes specified by myself and for other compatible purposes, unless I obtain the consent of the individual concerned or as required by law. 
-- I will only retain personal information as long as necessary for the fulfillment of those purposes.</li>
-- I will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned.</li>
-- Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date.</li>
-- I will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.</li>
-- I will make readily available to customers information about our policies and practices relating to the management of personal information.</li>
+- I will only retain personal information as long as necessary for the fulfillment of those purposes.
+- I will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned.
+- Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date.
+- I will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.
+- I will make readily available to customers information about our policies and practices relating to the management of personal information.
 
 I am committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.
