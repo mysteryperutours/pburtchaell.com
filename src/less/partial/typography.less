@@ -1,0 +1,127 @@
+/* ---------------------- 
+	Typography 
+---------------------- */	
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td { 
+	margin: 0; 
+	padding: 0; 
+	font-size: 16px; 
+	direction: ltr;
+    color: @dark-grey; 
+    font-weight: normal; 
+    font-style: normal; 
+    line-height: 1.0; 
+	text-rendering: optimizeLegibility; 
+	font-smoothing: subpixel-antialiased;
+	text-size-adjust: 100%;
+    font-family: 'dinpro', 'Helvetica', sans-serif;
+	cursor: default;
+}
+
+/* default typography styles */
+em, i {
+	font-style: italic;
+	line-height: inherit;
+}
+
+strong, b {
+	font-family: 'dinpro-bold';
+	font-weight: bold;
+}
+
+small {
+    font-size: @small-font-size;
+    line-height: inherit;
+}
+
+code {
+    font-family: @code-font-family;
+    font-weight: @code-font-weight;
+    color: @code-color;
+}
+
+/* default paragraph styles */
+p { 
+
+	& aside {
+		font-size: @paragraph-aside-font-size;
+		line-height: @paragraph-aside-line-height;
+		font-style: @paragraph-aside-font-style;
+	}
+    
+}
+
+/* default header styles */
+h1, h2, h3, h4, h5, h6 {
+
+    text-transform: uppercase;
+	margin: 25px 0 25px 0; 
+	font-family: 'dinpro-bold',  'dinpro', 'Helvetica', sans-serif;
+	
+	/* default subheader styles */
+	small {
+		font-size: @small-font-size;
+		color: @small-font-color;
+		line-height: 0;
+	}
+	
+}
+	
+h1 { font-size: 64px; }			
+h2 { font-size: 36px; } 
+h3 { font-size: 24px; } 
+h4 { font-size: 48px; }
+h5 { font-size: 36px; }
+h6 { font-size: 24px; }
+
+hr {
+	border: 1px solid @dark-grey;
+	border-width: @hr-border-width 0 0;
+	clear: both;
+	margin: @hr-margin 0 (@hr-margin - emCalc(1px));
+	height: 0;
+}
+
+/* default color styles */
+.red { color: @design; }
+.blue { color: #4EFFD6; }
+.green { color: #00DAFF;}
+.opacity { opacity: 0.5; }
+
+/* abbreviations */
+abbr,
+acronym {
+	text-transform: uppercase;
+	color: @type-color;
+	border-bottom: @type-underline;
+	cursor: help;
+}
+abbr {
+	text-transform: none;
+}
+
+/* blockquotes */
+blockquote {
+
+	margin: 0 0 @paragraph-margin-bottom;
+	padding: @blockquote-padding;
+	border: @blockquote-border;
+	color: @type-color;
+	
+	cite {
+  
+		display: block;
+		font-size: @type-size;
+		color: @type-color;
+		
+		&:before {
+			content: "\2014 \0020";
+		}
+
+		a,
+		a:visited {
+			color: @blockquote-cite-link-color;
+		}
+		
+	}
+	
+}

@@ -1,0 +1,23 @@
+{{> open-inc }}
+{{> header-inc }}
+<main role="main">
+	<article>
+		<header>
+			<h1>{{ page.title }}</h1>
+			<time datetime="">{{ page.date }}</time>
+			<h2>{{ page.description}}</h2>
+		</header>
+		<section>
+			{{> body}}
+		</section>
+		<footer>
+			<div class="author">
+				<img src="{{ page.author.avatar }}" height="75" width="75" alt="{{ page.author.name.first }}{{ page.author.name.last }}"/>
+				<em>{{ page.author.name.first }}{{ page.author.name.last }}</em>
+				<p>{{ page.author.bio }} Follow <a href="http://twitter.com/{{ page.author.twitter }}">{{ page.author.name.first }}</a> on Twitter.</p>
+			</div>
+		</footer>
+	</article>
+</main>
+{{> footer-inc }}
+{{> close-inc }}

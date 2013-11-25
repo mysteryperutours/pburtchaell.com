@@ -1,1 +1,157 @@
-//Testing
+/* Website of Patrick Burtchaell - User interface designer, videographer, & outdoorsman
+ * http://www.pburtchaell.com/ - http://twitter.com/pburtchaell
+ *
+ *
+ * Thanks to Grunt.js, Assemble.js, Node.js and LESS
+ *
+ *
+ * Copyright (c) 2013 PBDVA, Ltd.
+ * Licensed under the MIT license, pburtchaell.com/license 
+ */
+
+// base
+	
+    // colors and valuess
+    @white          :   rgb(248,248,248);
+    @black          :   rgb(10,10,11);
+    @dark-grey      :   rgb(70,72,74);
+    @light-grey     :   rgb(70,72,74); 
+    @design         :   #E65457;
+    
+    // paddings and margins
+    @base-padding	:	50px; 
+    @base-margin	: 	25px;
+
+    // borders and underlines
+    @base-border    :   1px solid @type-color;	
+    
+    // media queries 
+    @screen-very-large	: 	;
+    @screen-large		:	;
+    @screen-medium		:	;
+    @screen-small		:	;
+    @screen-very-small	: 	;
+
+
+// typography
+
+	// global - CHANGE ONLY THESE VALUES
+	@type-font-size					: 	12; // your base font-size in pixels
+	@type-color						:	@dark-grey;
+	@type-border					: 	@base-border;
+	@type-margin					: 	@base-margin;
+	@type-font-primary 				: 	'dinpro', 'Helvetica', sans-serif;
+	@type-font-secondary			:	'dinpro-bold', 'Helvetica', sans-serif;
+    @type-font-bold                 :   'dinpro-bold';
+	
+	// paragraphs
+	@paragraphy-font-family			:	@type-font-primary;
+	@paragraph-color				: 	@type-color;
+	@paragraph-margin-bottom		:	@type-margin;
+	@paragraph-font-size			:	14px;
+	@paragraph-line-height			:	1.8;
+	@paragraph-aside-font-size		:	14px;
+	@paragraph-aside-line-height	:	1.35;
+	@paragraph-aside-font-style		:	italic;
+	@paragraph-aside-margin			: 	@base-margin;
+	
+	// headings and subheadings
+	@heading-font-family			: 	@type-font-secondary;
+	@heading-color					: 	@type-color;
+	@heading-margin					: 	0 @type-margin 0 @type-margin;
+	@primary-h1-size				: 	72px;
+	@primary-h2-size				: 	64px;
+	@primary-h3-size				: 	36px; 
+	@primary-h4-size				:   24px;
+	@primary-h5-size				: 	21px;
+	@primary-h6-size				: 	18px;
+
+	// <code>
+	@code-color						:	darken(@paragraph-color, 15%);
+	@code-font-family				:   Consolas, 'Liberation Mono', Courier, monospace;
+	@code-font-weight				:   bold;
+
+	// <small>
+	@small-font-size				:	75%;
+	@small-font-color				:   lighten(@paragraph-color, 30%);
+	
+	// <hr> 
+	@hr-border-width				:	1px;
+	@hr-border-style				:	solid;
+	@hr-margin						:	25px;
+	
+	// blockquotes
+	@blockquote-font-color			:	lighten(@type-color, 30%);
+	@blockquote-padding				: 	9px 20px 0 19px;
+	@blockquote-border				:   none;
+	@blockquote-cite-font-size		:   16px;
+	@blockquote-cite-font-color		:   lighten(@type-color, 20%);
+	@blockquote-cite-link-color		:   @blockquote-cite-font-color;
+	
+	// acronym 
+	@acronym-underline				:	@type-border;
+
+	// abbr 
+	@abbr-padding					: 	1px;
+	@abbr-font-weight				:	bold;
+	@abbr-font-decoration			:	none;
+	
+
+// forms
+
+    // global
+    @form-spacing                   :   @base-margin;
+    
+    // labels
+    @label-pointer                  :   pointer;
+    @label-font-size                :   @type-font-size;
+    @label-font-weight              :   500;
+    @label-font-color               :   lighten(@type-color, 30%);
+    @label-bottom-margin            :   3px;
+    @input-font-family              :   inherit;
+    @input-font-color               :   rgba(0,0,0,0.75);
+    @input-font-size                :   14px;
+    @input-bg-color                 :   #fff;
+    @input-focus-bg-color           :   darken(#fff, 2%);
+    @input-border-color             :   darken(#fff, 20%);
+    @input-focus-border-color       :   darken(#fff, 40%);
+    @input-border-style             :   solid;
+    @input-border-width             :   @base-border;
+    @input-disabled-bg              :   @light-grey;
+    @input-box-shadow               :   inset 0 1px 2px rgba(0,0,0,0.1);
+    
+    // fieldset border
+    @fieldset-border-style          :   @base-border;
+    @fieldset-border-width          :   1px;
+    @fieldset-border-color          :   #ddd;
+    @fieldset-padding               :   0px;
+    @fieldset-margin                :   18px 0 ;
+    
+    // legend
+    @legend-bg                      :   @white;
+    @legend-font-weight             :   bold;
+    @legend-padding                 :   0 3px;
+    
+    // prefix and postfix
+    @input-prefix-bg                :   darken(#fff, 5%);
+    @input-prefix-border-color      :   darken(#fff, 20%);
+    @input-prefix-border-size       :   1px;
+    @input-prefix-border-type       :   solid;
+    @input-prefix-overflow          :   hidden;
+    @input-prefix-font-color        :   #333;
+    @input-prefix-font-color-alt    :   #fff;
+    
+    // error state
+    @input-error-padding            :   6px 4px;
+    @input-error-top                :   5px;
+    @input-error-f-size             :   12px;
+    @input-error-font-weight        :   bold;
+    @input-error-font-color         :   #fff;
+    @input-error-font-color-alt     :   #333;
+
+
+
+/* ----------------------  BEGIN STYLESHEET ---------------------- */
+
+// import partials 
+@import 	'partial/reset';

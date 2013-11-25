@@ -6,7 +6,7 @@
  *
  *
  * Copyright (c) 2013 PBDVA, Ltd.
- * Licensed under the MIT license, for more visit pburtchaell.com/license 
+ * Licensed under the MIT license, pburtchaell.com/license 
  */
 
 
@@ -22,22 +22,21 @@ module.exports = function(grunt) {
 		/*
 		 * compile LESS to CSS
 		 */
-		/*less: {
+		less: {
 			
 			options: {
 				//version: 'assets/src/js/vendor/less/',
-				banner: 'Primary stylesheet - http://pburtchaell.com/ - Copyright (c) 2013 PBDVA, Ltd.',
+				banner: '/*Primary stylesheet - http://pburtchaell.com/ - Copyright (c) 2013 PBDVA, Ltd.*/',
 				compress: true
 			},
 			
 			site: {
 				files: {
-					src: '<%= site.source %>/less/styles.less',
-					dest: '<%= site.destination %>/assets/css/styles.min.css'
+					'<%= site.destination %>/assets/css/styles.min.css' : '<%= site.source %>/less/styles.less'
 				}
 			}
 			
-		},*/
+		},
 		
 		/*
 		 * add vendor prefixes to CSS
@@ -56,15 +55,15 @@ module.exports = function(grunt) {
 		/*
 		 * spell check all published content on blog
 		 */
-		/*spell: {
+		spell: {
     		all: {
-				src: ['<%= site.content %>/blog/published'],
+				src: ['<%= site.content %>/blog/published/*.md'],
       			options: {
         			lang: 'en',
         			ignore: ['cliches', 'double negatives']
       			}
 			}
-  		},*/
+  		},
 		
 		/* 
 		 * assemble
@@ -101,12 +100,12 @@ module.exports = function(grunt) {
 				files: [ 
 					{
 						src: ['<%= site.content %>/*.hbs'],
-						dest: '<%= site.destination %>',
+						dest: '<%= site.destination %>/',
 						ext: '<%= site.extension %>'
 					},
 					{
 						src: ['<%= site.content %>/legal/*.md'],
-						dest: '<%= site.destination %>/legal',
+						dest: '<%= site.destination %>/legal/',
 						ext: '<%= site.extension %>'
 					}	
 				]
@@ -115,31 +114,24 @@ module.exports = function(grunt) {
 			// generate blog
 			blog: {
 				
-				options: { layout: 'post.hbs' },
-				
-				// finished posts
-				published: {
-					files: [ 
-						{
-							src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
-							dest: '<%= site.destination %>/blog',
-							ext: '<%= site.extension %>'
-						}
-					]
-				},
-				
-				// unfinished posts
-				draft: {
-					files: [ 
-						{
-							src: ['<%= site.content %>/blog/drafts/*.{hbs,md}'],
-							dest: '<%= site.destination %>/blog/drafts',
-							ext: '<%= site.extension %>'
-						}
-					]
-				}
+				files: [ 
+					
+					{
+						src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
+						dest: '<%= site.destination %>/blog/',
+						ext: '<%= site.extension %>'
+					},
+					
+					{
+						src: ['<%= site.content %>/blog/drafts/*.{hbs,md}'],
+						dest: '<%= site.destination %>/blog/drafts/',
+						ext: '<%= site.extension %>'
+					}
+					
+				]
 				
 			},
+				
 						 
 			// generate portfolio
 			portfolio: {
@@ -161,15 +153,15 @@ module.exports = function(grunt) {
 	 * plugins
 	 */
 	grunt.loadNpmTasks('assemble');
-	//grunt.loadNpmTasks('assemble-less');
+	grunt.loadNpmTasks('assemble-less');
 	//grunt.loadNpmTasks('grunt-autoprefixer');
-	//grunt.loadNpmTasks('grunt-spell');
+	grunt.loadNpmTasks('grunt-spell');
 	
 	
 	/* 
 	 * tasks
 	 */
-	grunt.registerTask('default', ['assemble']);	
+	grunt.registerTask('default', ['spell','less','assemble']);	
 	//grunt.registerTask('development', ['watch']);
 	/*grunt.registerTask('production', [
 		'spell',

@@ -1,0 +1,298 @@
+/* ---------------------- 
+	Forms
+---------------------- */	
+
+// form styles for rows inside of forms
+@mixin form-row-base {
+    
+    .row {
+        
+        margin: 0 -@form-spacing / 2;
+
+        .column,
+        .columns { 
+            padding: 0 @form-spacing / 2; 
+        }
+
+        // use this to collapse the margins of a form row
+        &.collapse { 
+                
+            margin: 0;
+        
+            .column,
+            .columns { padding: 0; }
+        
+        }
+        
+    }
+    
+    input.column,
+    input.columns { padding-left: $form-spacing / 2; }
+
+}
+
+
+// basic form elements style
+@mixin form-element {
+    
+    background-color: @input-bg-color;
+    font-family: @input-font-family;
+    border: @input-border-width $input-border-style $input-border-color;
+    -webkit-box-shadow: @input-box-shadow;
+    box-shadow: @input-box-shadow;
+    color: @input-font-color;
+    display: block;
+    font-size: @input-font-size;
+    margin: 0 0 $form-spacing 0;
+    height: @form-spacing / 2;
+    height: emCalc(13px) + ($form-spacing * 1.5);
+    width: 100%;
+    @include box-sizing(border-box);
+
+    &:focus {
+        background: @input-focus-bg-color;
+        border-color: @input-focus-border-color;
+        outline: none;
+    }
+
+    &[disabled] { background-color: @input-disabled-bg; }
+    
+}
+
+
+// form labels
+@mixin form-label($alignment:false, $base-style:true) {
+
+  // do base styles come through?
+  @if $base-style {
+    font-size: $label-font-size;
+    color: $label-font-color;
+    cursor: $label-pointer;
+    display: block;
+    font-weight: $label-font-weight;
+    margin-bottom: $label-bottom-margin;
+  }
+
+  // where do I align the forms?
+  @if @alignment == right {
+    float: none;
+    text-align: right;
+  }
+    
+  @else if @alignment == inline {
+    margin: 0 0 $form-spacing 0;
+    padding: $form-spacing / 2 + emCalc($input-border-width * 2) 0;
+  }
+    
+}
+
+
+//  postfix/prefix form Labels
+@mixin prefix-postfix-base {
+  display: block;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-style: $input-prefix-border-type;
+  border-width: $input-prefix-border-size;
+  overflow: $input-prefix-overflow;
+  font-size: $label-font-size;
+  height: ($label-font-size + ($form-spacing * 1.5) - emCalc(1px));
+  line-height: ($label-font-size + ($form-spacing * 1.5) - emCalc(1px));
+}
+
+// prefix label styles
+@mixin prefix($bg:$input-prefix-bg,$is-button:false) {
+
+  @if $bg {
+    $bg-lightness: lightness($bg);
+    background: $bg;
+    border-color: darken($bg, 10%);
+    border-right: none;
+
+    // Control the font color based on background brightness
+    @if $bg-lightness > 70% or $bg == yellow { color: $input-prefix-font-color; }
+    @else { color: $input-prefix-font-color-alt; }
+  }
+
+  @if $is-button {
+    padding-#{$default-float}: 0;
+    padding-#{$default-opposite}: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    line-height: emCalc(34px);
+  }
+
+}
+
+// postfix label styles
+@mixin postfix($bg:$input-prefix-bg, $is-button:false) {
+
+  @if $bg {
+    $bg-lightness: lightness($bg);
+    background: $bg;
+    border-color: darken($bg, 15%);
+    border-left: none;
+
+    // Control the font color based on background brightness
+    @if $bg-lightness > 70%  or $bg == yellow { color: $input-prefix-font-color; }
+    @else { color: $input-prefix-font-color-alt; }
+  }
+
+  @if $is-button {
+    padding-#{$default-float}: 0;
+    padding-#{$default-opposite}: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    line-height: emCalc(34px);
+  }
+
+}
+
+// fieldsets
+@mixin fieldset {
+  border: $fieldset-border-style $fieldset-border-width $fieldset-border-color;
+  padding: $fieldset-padding;
+  margin: $fieldset-margin;
+
+  // and legend styles
+  legend {
+    font-weight: $legend-font-weight;
+    background: $legend-bg;
+    padding: $legend-padding;
+    margin: 0;
+    margin-#{$default-float}: emCalc(-3px);
+  }
+}
+
+// We use this mixin to control border and background color of error inputs
+@mixin form-error-color($color:$alert-color) {
+  border-color: $color;
+  background-color: rgba($color, 0.1);
+
+  // Go back to normal on focus
+  &:focus {
+    background: $input-focus-bg-color;
+    border-color: $input-focus-border-color;
+  }
+}
+
+// We use this simple mixin to style labels for error inputs
+@mixin form-label-error-color($color:$alert-color) { color: $color; }
+
+// We use this mixin to create error message styles
+@mixin form-error-message($bg:$alert-color) {
+  display: block;
+  padding: $input-error-message-padding;
+  margin-top: $input-error-message-top;
+  margin-bottom: $form-spacing;
+  font-size: $input-error-message-font-size;
+  font-weight: $input-error-message-font-weight;
+
+  // We can control the text color based on the brightness of the background.
+  $bg-lightness: lightness($bg);
+  background: $bg;
+  @if $bg-lightness < 70% or $bg == yellow { color: $input-error-message-font-color; }
+  @else { color: $input-error-message-font-color-alt; }
+}
+
+// Only include these classes if the variable is true, otherwise they'll be left out.
+@if $include-html-form-classes {
+	/* Standard Forms */
+  form { margin: 0 0 $form-spacing; }
+  
+  /* Using forms within rows, we need to set some defaults */
+  form .row { @include form-row-base; }
+  form .row .row { margin: 0; }
+  
+  /* Label Styles */
+  label { @include form-label;
+    &.right { @include form-label(right,false); }
+    &.inline { @include form-label(inline,false); }
+  }
+  
+  /* Attach elements to the beginning or end of an input */
+  .prefix,
+  .postfix { @include prefix-postfix-base; }
+  
+  /* Adjust padding, alignment and radius if pre/post element is a button */
+  .postfix.button { @include button-size(false,false,false); @include postfix(false,true); }
+  .prefix.button { @include button-size(false,false,false); @include prefix(false,true); }
+  .prefix.button.radius { @include side-radius(left, $global-radius); }
+  .postfix.button.radius { @include side-radius(right, $global-radius); }
+  .prefix.button.round { @include side-radius(left, 1000px); }
+  .postfix.button.round { @include side-radius(right, 1000px); }
+  
+  /* Separate prefix and postfix styles when on span so buttons keep their own */
+  span.prefix { @include prefix();
+    &.radius { @include side-radius(left, $global-radius); }
+  }
+  span.postfix { @include postfix();
+    &.radius { @include side-radius(right, $global-radius); }
+  }
+  
+  /* Input groups will automatically style first and last elements of the group */
+  .input-group {
+    &.radius {
+      &>*:first-child,  &>*:first-child * {
+        @include side-radius(left, $global-radius);
+      }
+      &>*:last-child, &>*:last-child * {
+        @include side-radius(right, $global-radius);
+      }
+    }
+    &.round {
+      &>*:first-child,  &>*:first-child * {
+        @include side-radius(left, 1000px);
+      }
+      &>*:last-child, &>*:last-child * {
+        @include side-radius(right, 1000px);
+      }
+    }
+  }
+  
+  /* We use this to get basic styling on all basic form elements */
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="month"],
+  input[type="week"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea {
+    @include form-element;
+    @include single-transition(all, 0.15s, linear);
+  }
+  
+  /* We add basic fieldset styling */
+  fieldset {
+    @include fieldset;
+  }
+  
+  /* Error Handling */
+  .error input,
+  input.error,
+  .error textarea,
+  textarea.error {
+    @include form-error-color;
+  }
+  
+  .error label,
+  label.error { @include form-label-error-color; }
+  
+  .error small,
+  small.error {
+    @include form-error-message;
+  }
+}

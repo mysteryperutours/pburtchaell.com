@@ -1,0 +1,355 @@
+/* ---------------------- 
+	PROJECT GALLERY
+	- 1:1 for all projects 
+---------------------- */
+.grid {
+
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+
+}
+
+li.card  {
+
+	position: relative;
+	top: 0; left: 0; right: 0; bottom: 0;
+	float: left;
+	clear: right;
+	width: 25%;
+	z-index: 8;
+	padding: 0;	margin: 0;
+	padding-bottom: 25%;
+	background-size: cover;
+	
+	&:nth-child(1) { background: rgba(10, 11, 11,1) url(../../../content/index/9.movie-project-2/thumb.jpg) no-repeat center center;  }
+	&:nth-child(2) { background: rgba(10, 11, 11,1) url(../../../content/index/9.movie-project-2/thumb.jpg) no-repeat center center;  }
+	&:nth-child(3) { background: rgba(10, 11, 11,1) url(../../../content/index/9.movie-project-2/thumb.jpg) no-repeat center center;  }
+	&:nth-child(4) { background: rgba(10, 11, 11,1) url(../../../content/index/10.tulane-tech-day/thumb.jpg) no-repeat center center; }
+	&:nth-child(5) { background: rgba(10, 11, 11,1) url(../../../content/index/10.tulane-tech-day/thumb.jpg) no-repeat center center; }
+	&:nth-child(6) { background: rgba(10, 11, 11,1) url(../../../content/index/10.tulane-tech-day/thumb.jpg) no-repeat center center; }
+	&:nth-child(7) { background: rgba(10, 11, 11,1) url(../../../content/index/10.tulane-tech-day/thumb.jpg) no-repeat center center; }
+	&:nth-child(8) { background: rgba(10, 11, 11,1) url(../../../content/index/10.tulane-tech-day/thumb.jpg) no-repeat center center; }
+
+}
+	
+li.card.design:before,
+li.card.video:before,
+li.card.audio:before {
+	content: '';
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	padding-top: 30%;
+	padding-left: 20%;
+	padding-right: 20%;
+	font-size: 2.25vw;
+	text-align: center;
+	background: #E65457;
+	opacity: 0.35; border: 0px solid rgb(248, 248, 242); transition: all 100ms ease;
+}
+
+li.card.video:before { 
+	background: @video;
+}
+
+li.card.audio:before { 
+	background: @audio; 
+}
+	
+li.card:hover::before {
+	content: attr(data-title);
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+}
+
+li.card:after { 
+	content: '';
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 60%;
+	text-align: center;
+	font-size: 24px;
+	color: @white;
+	opacity: 0.0; 
+	border: 15px solid rgb(248, 248, 242); 
+	transition: 1s;
+}
+li.card:hover { 
+	cursor: pointer; 
+	transition: all 1s ease; 
+}
+li.card:hover::after { 	
+	content: attr(data-medium); 
+	opacity: 1; 
+	border: 15px solid rgb(248, 248, 242); 
+	transition: 1s; 
+}
+
+
+/*Grid Settings for Tablet*/
+@media only screen and (max-width: 1279px) { 
+
+	li.card { 
+		width: 50%; 
+		padding-bottom: 50%; 
+	} 
+	
+}
+
+
+/*Grid Settings for Mobile*/
+@media only screen and (max-width: 450px) { 
+
+	li.card { 
+		width: 100%; 
+		padding-bottom: 100%; 
+	} 
+	
+}
+
+
+
+/* ---------------------- 
+	PROJECT PAGE
+---------------------- */
+
+/*
+	* Project Header
+	* Contains title, medium, and date produced
+*/
+.project-intro {
+	background: @dark-grey;
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
+
+.project-intro.design { background: @design; } 
+.project-intro.video {  background: @video;  }
+.project-intro.audio {  background: @audio;  }
+
+.project {
+
+	.title {
+		color: @white; 
+		font-size: 24px;
+		margin-bottom: 3px;
+		text-align: center;
+	}
+	
+	.medium {
+		text-align: center;
+	}
+	
+	time {
+		position: relative;
+		width: 100px;
+		top: 25px; left: 50%;
+		padding: 5px; 
+		margin: auto; 
+		margin-left: -50px; 
+		color: @white
+		text-align: center;
+		border: 3px solid @white;
+	}
+}
+
+/*Project Navigation*/
+.arrow {
+	cursor: pointer;
+	position: relative;
+	width: 70px;
+	height: 50px;
+	top: -22.5px; left: 0;
+	padding-top: 50%;
+}
+.arrow.left { 
+	left: 22%; 
+	margin-left: -35px; 
+}
+.arrow.right { 
+	right: 78%; 
+	margin-left: -105px;  
+}
+.arrow polyline { 
+	transition: all 250ms ease-in-out;
+}
+
+.arrow.right:after, 
+.arrow.left:after { display: none; } 
+
+.arrow.left:hover, 
+.arrow.left:active { transform: translateX(10px); }
+
+.arrow.right:hover, 
+.arrow.right:active { transform: translateX(-10px); }
+
+.arrow.left:hover polyline, 
+.arrow.left:focus polyline,
+.arrow.right:hover polyline, 
+.arrow.right:focus polyline { 
+	stroke-width: 3; 
+}
+.arrow.left:active polyline,
+.arrow.right:active polyline { 
+	stroke-width: 5; 
+	transition: all 100ms ease-in-out; 
+}
+
+
+
+@media only screen and (max-width: 1279px) {
+	.arrow.left { left: 12%; }
+	.arrow.right { left: 88%; }
+	
+	.arrow.left:after, 
+	.arrow.right:after { 
+		display: block; 
+		content:'Previous Project'; 
+		color: rgb(248, 248, 242); 
+		font-size: 10px; 
+		text-transform: uppercase; 
+		position: absolute; 
+		top: 0; 
+		left: 0; 
+		right: 0; 
+		bottom: 0; 
+		height: 20px; 
+		width: 100px; 
+		padding-top: 58%; 
+	}
+	
+	.arrow.right:after { content:'Next Project'; }
+}
+@media only screen and (max-width: 400px) {
+	.arrow.left { left: 25%; top: 100px; }
+	.arrow.right { right: 25%; top: 100px;  }
+}
+
+
+
+/*
+	* Project Article
+	* Contains images and copy
+*/
+#project-article {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.project .description { margin-bottom: 25px; }
+
+
+/*Image Gallery*/
+.media {
+
+	.image {
+	
+		width: 100%;
+		height: auto;
+		margin-top: 50px;
+		margin-bottom: 100px;
+		
+		.image-shot {
+			position: relative;
+			width: 100%;
+			margin: auto;
+			padding: 3px;
+			opacity: 0;
+		}
+		
+		//Just in case JS isn't working for some reason...
+		.noscript-image-shot {
+			opacity: 1.0;
+		}
+		
+	}
+	
+}
+
+
+/*
+	* Kudos Widget
+	* Allows visitors to "like" a project page by hovering over the kudos icon
+*/
+.kudos {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+	background: @white;
+	
+	box-shadow: inset 0 0 0 0.25em @dark-grey,  
+				inset 0 0 0 2em @white,
+				inset 0 0 0 6em @dark-grey;
+				
+	line-height: 6em;
+	text-align: center;
+	border-radius: 50%;
+	transition: box-shadow 0.225s ease-out;
+	
+	&:after { 
+		position: absolute; 
+		content: attr(data-amount) " Kudos"; 
+		bottom: -2.25em; 
+		left: 0; 
+		width: 6em; 
+		text-align: center; 
+		line-height: 1em;  
+	}
+
+}
+
+.kudos.active { 
+	transition: box-shadow 1.5s linear; 
+	
+	&:after { 
+		content: 'Don\'t move!'; 
+	}
+	
+}
+
+.kudos.finish { 
+
+	transition: box-shadow 0.45s linear, 
+				transform 0.5625s ease-in-out; 
+	
+	&:before { 
+		position: absolute; 
+		content: 'Yes!'; 
+		background-image: url("../svg/thumbs-up.svg"); 
+		top: 0; left: 50%; 
+		margin-left: -12px; 
+	}
+
+}
+
+.kudos.design.active { 
+	box-shadow: inset 0 0 0 0.25em @dark-grey, 
+				inset 0 0 0 0 @white, 
+				inset 0 0 0 0.75em rgba(232,83,73,1), 
+				inset 0 0 0 6em rgba(232,83,73,1); 
+}
+.kudos.video.active { 
+	box-shadow: inset 0 0 0 0.25em @dark-grey, 
+				inset 0 0 0 0 @white, 
+				inset 0 0 0 0.75em rgba(82,182,124,1), 
+				inset 0 0 0 6em rgba(82,182,124,1); 
+}
+.kudos.audio.active { 
+	box-shadow: inset 0 0 0 0.25em @dark-grey, inset 0 0 0 0 @white, inset 0 0 0 0.75em rgba(94,188,225,1), inset 0 0 0 6em rgba(94,188,225,1); 
+}
+.kudos.design.finish { 
+	box-shadow: inset 0 0 0 0.25em rgba(232,83,73,1), inset 0 0 0 0.5em @white, inset 0 0 0 0.75em rgba(232,83,73,1), inset 0 0 0 1em rgb(248, 248, 242), inset 0 0 0 0 rgb(248, 248, 242), inset 0 0 0 6em rgba(232,83,73,1); 
+}
+.kudos.video.finish { 
+	box-shadow: inset 0 0 0 0.25em rgba(82,182,124,1), inset 0 0 0 0.5em @white, inset 0 0 0 0.75em rgba(82,182,124,1), inset 0 0 0 1em rgb(248, 248, 242), inset 0 0 0 0 @white, inset 0 0 0 6em rgba(82,182,124,1); 
+}
+.kudos.audio.finish { 
+	box-shadow: inset 0 0 0 0.25em rgba(94,188,225,1), inset 0 0 0 0.5em @white, inset 0 0 0 0.75em rgba(94,188,225,1),inset 0 0 0 1em rgb(248, 248, 242), inset 0 0 0 0 @white, inset 0 0 0 6em rgba(94,188,225,1); 
+}
