@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 				data: ['<%= site.source %>/data/*.{json,yml}', 'package.json'],
 				assets: '<%= site.destination %>/assets',
 				//helpers: ['<%= site.source %>/extensions/*.js', 'helper-prettify'],
-				partials: ['<%= site.templates %>/includes/**/*.{hbs,md}'],
+				partials: ['<%= site.templates %>/partials/**/*.{hbs,md}'],
 				//plugins: '<%= site.plugins %>',
 				
 				layoutdir: '<%= site.templates %>/layouts',
