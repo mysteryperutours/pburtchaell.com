@@ -9,7 +9,8 @@
  * Licensed under the MIT license, pburtchaell.com/license 
  */
 
-// base
+
+// base styles
 	
     // colors and valuess
     @white          :   rgb(248,248,248);
@@ -17,6 +18,8 @@
     @dark-grey      :   rgb(70,72,74);
     @light-grey     :   rgb(70,72,74); 
     @design         :   #E65457;
+	@video          :   #4EFFD6;
+	@audio          :   #E65457;
     
     // paddings and margins
     @base-padding	:	50px; 
@@ -40,10 +43,11 @@
 	@type-color						:	@dark-grey;
 	@type-border					: 	@base-border;
 	@type-margin					: 	@base-margin;
-	@type-font-primary 				: 	'dinpro', 'Helvetica', sans-serif;
+	@type-font-primary 				: 	'dinpro', 'Helvetica', serif;
 	@type-font-secondary			:	'dinpro-bold', 'Helvetica', sans-serif;
     @type-font-bold                 :   'dinpro-bold';
-	
+	@type-underline					: 	2px solid @type-color;
+
 	// paragraphs
 	@paragraphy-font-family			:	@type-font-primary;
 	@paragraph-color				: 	@type-color;
@@ -58,13 +62,13 @@
 	// headings and subheadings
 	@heading-font-family			: 	@type-font-secondary;
 	@heading-color					: 	@type-color;
-	@heading-margin					: 	0 @type-margin 0 @type-margin;
-	@primary-h1-size				: 	72px;
-	@primary-h2-size				: 	64px;
-	@primary-h3-size				: 	36px; 
-	@primary-h4-size				:   24px;
-	@primary-h5-size				: 	21px;
-	@primary-h6-size				: 	18px;
+	@heading-margin					: 	@type-margin 0 @type-margin 0;
+	@primary-h1-size				: 	36px;
+	@primary-h2-size				: 	28px;
+	@primary-h3-size				: 	21px; 
+	@primary-h4-size				:   18px;
+	@primary-h5-size				: 	16px;
+	@primary-h6-size				: 	14px;
 
 	// <code>
 	@code-color						:	darken(@paragraph-color, 15%);
@@ -155,3 +159,8 @@
 
 // import partials 
 @import 	'partial/reset';
+@import 	'partial/grid';
+@import 	'partial/typography';
+
+// import screens
+@import 	'screen/1-large';

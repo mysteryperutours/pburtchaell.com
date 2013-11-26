@@ -27,7 +27,8 @@ module.exports = function(grunt) {
 			options: {
 				//version: 'assets/src/js/vendor/less/',
 				banner: '/*Primary stylesheet - http://pburtchaell.com/ - Copyright (c) 2013 PBDVA, Ltd.*/',
-				compress: true
+				compress: true,
+				metadata: '<%= site.source %>/less/data/*.{json,yml}'
 			},
 			
 			site: {
@@ -107,7 +108,12 @@ module.exports = function(grunt) {
 						src: ['<%= site.content %>/legal/*.md'],
 						dest: '<%= site.destination %>/legal/',
 						ext: '<%= site.extension %>'
-					}	
+					},
+					{
+						src: ['<%= site.content %>/about/*.hbs'],
+						dest: '<%= site.destination %>/about/',
+						ext: '<%= site.extension %>'
+					}
 				]
 			},
 			
@@ -121,31 +127,77 @@ module.exports = function(grunt) {
 						dest: '<%= site.destination %>/blog/',
 						ext: '<%= site.extension %>'
 					},
-					
 					{
 						src: ['<%= site.content %>/blog/drafts/*.{hbs,md}'],
 						dest: '<%= site.destination %>/blog/drafts/',
 						ext: '<%= site.extension %>'
-					}
+					},
+					{
+						src: ['<%= site.content %>/blog/*.{hbs,md}'],
+						dest: '<%= site.destination %>/blog/',
+						ext: '<%= site.extension %>'
+					},
 					
 				]
 				
 			},
-				
 						 
 			// generate portfolio
 			portfolio: {
 				files: [
 					{
 						src: ['<%= site.content %>/portfolio/*.hbs'],
-						dest: '<%= site.destination %>/works',
+						dest: '<%= site.destination %>/work/',
 						ext: '<%= site.extension %>'
 					}	
 				]
 			}
 						
-		}	
+		},	
 		
+		
+		/*
+		 * watch files for changes
+		 */
+		watch: {
+			scripts: {
+				files: ['<%= site.source %>/**/*.{js,less}'],
+				tasks: [
+					'less'
+				],
+				options: {
+					spawn: false,
+					interrupt: true,
+					livereload: true,
+					dateFormat: function(time) {
+      					grunt.log.writeln('Congrat! The watch finished in ' + time + 'ms at' + (new Date()).toString());
+      					grunt.log.writeln('Waiting on you Patrick.');
+    				}
+				}
+			}
+		},
+		
+		
+		/*
+		 * start server
+		 */			 
+		connect: {
+    		server: {
+      			options: {
+        			port: 35729,
+        			base: 'dist'
+				}
+    		}
+  		},
+		
+		
+		/*
+		 * reload server
+		 */	
+		//reload: {
+			//port: '35729'
+    	//},
+					 
 	});
 	
 	
@@ -156,14 +208,22 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('assemble-less');
 	//grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-spell');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	
 	
 	/* 
 	 * tasks
 	 */
-	grunt.registerTask('default', ['spell','less','assemble']);	
-	//grunt.registerTask('development', ['watch']);
-	/*grunt.registerTask('production', [
+	grunt.registerTask('default', [
+		'assemble',
+		'watch'
+	]);	
+	grunt.registerTask('dev', [
+		'connect',
+		'watch'
+	]);
+	/*grunt.registerTask('build', [
 		'spell',
 		'recess',
 		'less',
