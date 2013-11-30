@@ -1,40 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<html lang=en>
 <head>  
 <title>{{ page.title }} - {{ site.title }}</title>
-<meta name="description" content="{{ site.desciption }}"/>
-<script src="{{assets}}/js/pre.min.js"></script>
-<link rel="stylesheet" href="{{assets}}/css/styles.min.css" type="text/css"> 
+<meta name=description content="{{ site.desciption }}">
+<meta charset=UTF-8>
+<meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
+<meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1">	
 <style>
-@font-face{ font-family: 'dinpro'; src: local('DINPRO LIGHT'), local('DINPRO-LIGHT'), url('{{ site.url }}/assets/fonts/dinpro/DINPRO-LIGHT.ttf') format('truetype'); } 	
-@font-face{ font-family: 'dinpro-bold'; src: local('DINPRO BOLD'), local('DINPRO-BOLD'), url('{{ site.url }}/assets/fonts/dinpro/DINPRO-BOLD.ttf') format('truetype');}
+@font-face{font-family:'dinpro';src:local('DINPRO LIGHT'),local('DINPRO-LIGHT'),url('{{assets}}/fonts/dinpro_light/DINPRO-LIGHT.ttf')format('truetype');} @font-face{font-family:'dinpro-bold';src:local('DINPRO BOLD'),local('DINPRO-BOLD'),url('{{assets}}/fonts/dinpro_bold/DINPRO-BOLD.ttf')format('truetype');} @font-face{font-family:'opensans-italic';src:url('{{assets}}/fonts/opensans_italic/OpenSans-Italic-webfont.eot');src:url('{{assets}}/fonts/opensans_italic/OpenSans-Italic-webfont.eot?#iefix')format('embedded-opentype'),url('{{assets}}/fonts/opensans_italic/OpenSans-Italic-webfont.woff')format('woff'),url('{{assets}}/fonts/opensans_italic/OpenSans-Italic-webfont.ttf')format('truetype'),url('{{assets}}/fonts/opensans_italic/OpenSans-Italic-webfont.svg#open_sansitalic')format('svg');} @font-face{font-family:'opensans-regular';src:url('{{assets}}/fonts/opensans_regular/OpenSans-Regular-webfont.eot');src:url('{{assets}}/fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),url('OpenSans-Regular-webfont.woff')format('woff'),url('{{assets}}/fonts/opensans_regular/OpenSans-Regular-webfont.ttf')format('truetype'),url('{{assets}}/fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular')format('svg');}
 </style>
-<meta name="keywords" content="{{ site.keywords }}"/>
-<meta name="author" content="{{ site.author.name.first }} {{ site.author.name.last }}"/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-<meta name="google-site-verification" content="7RrfJovl477GocUkq4QOPIybas99RN2zebN46jgN_Lo"/>
-<meta name="format-detection" content="telephone=yes">
-<meta name="apple-mobile-web-app-capable" content="no">
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="{{ page.title }}"/>
-<meta property="og:description" content="{{ site.desciption }}"/>
-<meta property="og:url" content="{{ site.url }}"/>
-<meta property="og:site_name" content="{{ site.title }}"/>
-<meta property="og:profile:first_name" content="{{ site.author.name.first }}"/>
-<meta property="og:profile:last_name" content="{{ site.author.name.last }}"/>
-<meta property="og:image" content="http://pburtchaell.com/assets/dist/img/global/og_image.gif/">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:url" content="{{ site.url }}"/>
-<meta name="twitter:domain" content="{{ site.url }}"/>
-<meta name="twitter:site" content="{{ site.author.twitter }}"/>
-<meta name="twitter:title" content="{{ page.title }}"/>
-<meta name="twitter:description" content="{{ page.desciption }}"/>
-<meta name="twitter:image:src" content="http://pburtchaell.com/assets/dist/img/global/og_image.gif/">
-<link rel="shortcut icon" type="image/png" href="http://pburtchaell.com/assets/dist/img/global/favicon.png">
-<link rel="apple-touch-icon" sizes="57x57" href="http://pburtchaell.com/assets/dist/img/global/ios-iphone.png"/>
-<link rel="apple-touch-icon" sizes="114x114" href="http://pburtchaell.com/_assets/dist/img/global/ios-iphone@2.png"/>
-<link rel="apple-touch-icon" sizes="72x72" href="http://pburtchaell.com/assets/dist/img/global/ios-ipad.png"/>
-<link rel="apple-touch-icon" sizes="144x144" href="http://pburtchaell.com/assets/dist/img/global/ios-ipad@2.png"/>
-<link rel="author" href="humans.txt"/>	
+<link rel=stylesheet href={{assets}}/css/styles.min.css> 		
+<script src={{assets}}/js/pre.min.js></script>
+<script src={{assets}}/js/GGS.min.js></script>		
+<!--[if IE 8]>
+<link rel="stylesheet" href="{{assets}}/css/ie8.min.css" media="screen, projection">
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" href="{{assets}}/css/ie9.min.css" media="screen, projection">
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<meta name=keywords content="{{ site.keywords }}">
+<meta name=author content="{{ site.author.name.first }} {{ site.author.name.last }}"><link rel=author href=humans.txt/>	
+<meta name=google-site-verification content=7RrfJovl477GocUkq4QOPIybas99RN2zebN46jgN_Lo>
+<meta name=format-detection content="telephone=yes">
+<meta name=apple-mobile-web-app-capable content=no>
+<meta property=og:type content=website>
+<meta property=og:title content="{{ page.title }} - {{ site.title }}">
+<meta property=og:description content="{{ page.description }}">
+<meta property=og:url content={{ site.url }}>
+<meta property=og:site_name content="{{ site.title }}">
+<meta property=og:profile:first_name content={{ site.author.name.first }}>
+<meta property=og:profile:last_name content={{ site.author.name.last }}>
+<meta property=og:image content=http://pburtchaell.com/assets/img/site/og_image.gif>
+<meta name=twitter:card content=summary/>
+<meta name=twitter:url content={{ site.url }}>
+<meta name=twitter:domain content={{ site.url }}>
+<meta name=twitter:site content={{ site.author.twitter }}>
+<meta name=twitter:title content="{{ page.title }}">
+<meta name=twitter:description content="{{ page.description }}">	
+<meta name=twitter:image:src content=http://pburtchaell.com/assets/img/site/og_image.gif>
+<link rel=apple-touch-icon sizes=57x57 href=http://pburtchaell.com/assets/img/site/ios-iphone.png>
+<link rel=apple-touch-icon sizes=114x114 href=http://pburtchaell.com/assets/img/site/ios-iphone@2.png>
+<link rel=apple-touch-icon sizes=72x72 href=http://pburtchaell.com/assets/img/site/ios-ipad.png>
+<link rel=apple-touch-icon sizes=144x144 href=http://pburtchaell.com/assets/img/site/ios-ipad@2.png>
+<link rel="shortcut icon" type=image/png href=http://pburtchaell.com/assets/img/site/favicon.png>
 </head>
+<body>
+<!--[if IE 8]>
+<div class="container">
+	<h1>Oh geez.</h1>
+	<p>I'm terribly sorry about this, but the code my website usues does not support your current browser. Please upgrade to <a href="" class="line white">Internet Explorer 11</a>.<p>
+	<em><a href-"http://jonikorpi.com/leaving-old-IE-behind/" class="line white">You'll be better off with a modern browser anyway.<a></em>
+</div>
+<![endif]-->

@@ -8,8 +8,10 @@ templates	:	./tpl
 content		: 	./tpl/pages
 extension	: 	.html
 
-title		:	Patrick Burtchaell
-description	: 	I am a designer and videographer from New Orleans with a passion for good iced coffee, the outdoors and happiness. I enjoy a good laugh.
+url			: 	http://localhost:35729
+
+title		:	Patrick Burtchaell - Design + Video + Audio
+description	: 	I am a freelance front-end developer, designer and videographer from New Orleans with a passion for objectifying content.
 keywords	:   Patrick Burtchaell, graphic design, web design, video production, audio production, New Orleans, designer, videographer, filmmaker
 
 author		:
@@ -17,7 +19,7 @@ author		:
      first	:	Patrick
      last	: 	Burtchaell
   avatar	:	assets/img/site/patrick.jpg
-  bio		:	I like to ask why and drink too much iced coffee. I make websites and work as an assistant camera operator. Currently available for for freelance work.
+  bio		:	I am a freelance front-end developer, designer and videographer from New Orleans with a passion for objectifying content.
   url		:	http://pburtchaell.com/
   email		:	patrick@pburtchaell.com
   

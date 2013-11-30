@@ -1,0 +1,109 @@
+// <header class=article-header></header>
+.article-header {
+	margin: @base-margin @column*1 @base-margin @column*1;
+}
+	
+// <section class=article-content></section>
+.article-content {
+	margin: 0 @column*1 0 @column*1;
+}
+
+// a few typography things 
+.article-title { // h1
+	margin: 0;
+}
+.article-subtitle { // h2
+	display: inline-block;
+	background: @design;
+	margin: @base-margin 0;
+	padding: @base-padding/pi() @base-padding;
+	color: @white;
+}
+
+
+// <footer class=article-footer></footer>
+.article-footer {
+	margin: @base-margin*4 @column*1 @base-margin*1 @column*1;
+}
+
+	// <div class=article-author></div>
+	.article-author {
+	
+		margin: 0 @column*2 0 0;
+		
+		span {
+			text-transform: uppercase;
+		}
+	
+	}
+
+		@media screen and (min-width: 45em) {
+			.article-author {
+				margin: 0 @column*13 0 0;
+			}
+		}
+
+		.article-author-bio {
+			margin: 0;
+		}
+
+	// <div class=article-details></div>
+	.article-details {
+	
+	}
+			
+		// <ul class=article-contributors>
+		.article-contributors {
+	
+		}
+
+// <aside class=article-aside></aside>
+.article-aside {
+	margin: 0 auto @base-margin*2 auto;
+	width: 100%;
+	max-width: 300px;	
+	text-align: center;
+}
+
+// <div class=article-share>
+.article-share { }
+	
+	.share-item { 
+		display: inline-block; 
+		margin: 0; 
+		padding: 0;
+		width: 33.33%;
+		max-width: 100px; 
+	}
+	
+	.share {
+		
+		display: inline-block;
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		line-height: 30px;
+		
+		&.twitter {
+			color:  @color-twitter;
+			border-bottom: 2px solid @color-twitter;
+		}
+	
+		&.facebook {
+			color: @color-facebook;
+			border-bottom: 2px solid @color-facebook;
+		}
+		
+		&.google {
+			color: @color-google;
+			border-bottom: 2px solid @color-google;
+		}
+		
+		&:hover {
+			-webkit-transform: scale(1.1);
+			opacity: 1.0;
+		}
+		
+	}
+	

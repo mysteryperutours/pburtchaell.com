@@ -1,0 +1,50 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+button, 
+input[type="button"],
+input[type="submit"] {
+
+    border-radius: 0; 
+	box-shadow: none;
+
+	position: relative;
+	display: block;
+	margin: auto; 
+	padding: 15px;
+	
+	height: 30px;
+	width: 100%;
+	
+	line-height: 1.0;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: none;
+	
+	border: 2px solid @dark-grey;
+    color: @white;
+   
+	-webkit-backface-visibility: hidden; 
+    transition: 0.25s;
+	
+	&:hover {
+		background: @dark-grey;
+		outline: none;
+	}
+	
+	&:active { 
+		
+	}
+	
+}
+	
+button.white { 
+
+	border: 2px solid @white; 
+	color: @white; 
+	
+	&:hover {  
+		color: @white; 
+	}
+	
+}

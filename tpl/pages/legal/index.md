@@ -5,7 +5,7 @@ title: Legal Stuff
 shortname: legal
 description:
 
-layout: default.hbs
+layout: markdown.hbs
 ---
 
 ##Terms and Conditions of Use
@@ -17,39 +17,20 @@ By accessing this web site, you are agreeing to be bound by these web site Terms
 ###2. General Use License 			
 Permission is granted to temporarily download one copy of the materials (information or software) on Patrick Burtchaell's web site for personal, non-commercial transitory viewing only, unless otherwise noted. This is the grant of a license, not a transfer of title, and under this license you may not:
 
-		- modify or copy the materials;
-		- use the materials for any commercial purpose, or for any public display (commercial or non-commercial);
-		- attempt to decompile or reverse engineer any software contained on Patrick Burtchaells's web site;
-		- remove any copyright or other proprietary notations from the materials; or
-		- transfer the materials to another person or "mirror" the materials on any other server.
+- modify or copy the materials;
+- use the materials for any commercial purpose, or for any public display (commercial or non-commercial);
+- attempt to decompile or reverse engineer any software contained on Patrick Burtchaells's web site;
+- remove any copyright or other proprietary notations from the materials; or
+- transfer the materials to another person or "mirror" the materials on any other server.
 
 This license shall automatically terminate if you violate any of these restrictions and may be terminated by Patrick Burtchaell at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format. Termination of this license may be punishable by law.
 
-###3. Patrick Burtchaell Lab License
+###3. Open Source Content License
 > The MIT license is granted to download all software from http://www.pburtchaell.com/lab/ or http://beaker.pburtchaell.com/.
 
-Copyright (c) 2013 PBDVA, Ltd. and other contributors, http://www.pburtchaell.com/legal/.
+Copyright (c) 2013 PBDVA, Ltd. and other contributors, http://www.pburtchaell.com/legal/
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-The above license does not apply to any of the personal works of Patrick Burtchaell not located at http://www.pburtchaell.com/lab/ or http://beaker.pburtchaell.com/. This lincense is subject to change per project, all ways check the lincese file included with each lab project. Patrick Burtchaell is not responsible for 
+The above license does not apply to any of the personal works of Patrick Burtchaell not located at http://www.pburtchaell.com/lab/ or http://beaker.pburtchaell.com/. This lincense is subject to change per project, all ways check the lincese file included with each lab project. 
 
 ###3. Disclaimer
 The materials on Patrick Burtchaell's web site are provided "as is". Patrick Burtchaell makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Patrick Burtchaell does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.
@@ -69,7 +50,7 @@ Patrick Burtchaell may revise these terms of use for his web site at any time wi
 ###8. Governing Law
 Any claim relating to Patrick Burtchaell's web site shall be governed by the laws of the State of Louisiana without regard to its conflict of law provisions.
 
-##Privacy Policy
+###9. Privacy Policy
 > Effective October 31, 2013
 
 Your privacy is very important to me. Accordingly, I have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines my privacy policy:

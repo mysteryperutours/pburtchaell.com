@@ -26,14 +26,16 @@ module.exports = function(grunt) {
 			
 			options: {
 				//version: 'assets/src/js/vendor/less/',
-				banner: '/*Primary stylesheet - http://pburtchaell.com/ - Copyright (c) 2013 PBDVA, Ltd.*/',
+				banner: '/*Patrick Burtchaell - http://pburtchaell.com/ - Copyright (c) 2013 PBDVA, Ltd.*/',
 				compress: true,
 				metadata: '<%= site.source %>/less/data/*.{json,yml}'
 			},
 			
 			site: {
 				files: {
-					'<%= site.destination %>/assets/css/styles.min.css' : '<%= site.source %>/less/styles.less'
+					'<%= site.destination %>/assets/css/styles.min.css' : '<%= site.source %>/less/styles.less',
+					'<%= site.destination %>/assets/css/ie8.min.css' : '<%= site.source %>/less/browsers/ie8.less', // IE8 Styles
+					'<%= site.destination %>/assets/css/ie9.min.css' : '<%= site.source %>/less/browsers/ie9.less'  // IE9 Styles		
 				}
 			}
 			
@@ -66,6 +68,19 @@ module.exports = function(grunt) {
 			}
   		},
 		
+		/*
+		 * minify JS
+		 */
+		uglify: {
+			site: {
+				files: {
+					'<%= site.destination %>/assets/js/post.min.js' : '<%= site.source %>/js/post.js',
+					'<%= site.destination %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
+					'<%= site.destination %>/assets/js/GGS.min.js' : '<%= site.source %>/js/vendor/GGS.js',
+				}
+			}
+		},
+		
 		/* 
 		 * assemble
 		 */	
@@ -81,7 +96,7 @@ module.exports = function(grunt) {
 				data: ['<%= site.source %>/data/*.{json,yml}', 'package.json'],
 				assets: '<%= site.destination %>/assets',
 				//helpers: ['<%= site.source %>/extensions/*.js', 'helper-prettify'],
-				partials: ['<%= site.templates %>/partials/**/*.{hbs,md}'],
+				partials: ['<%= site.templates %>/partials/**/*.{hbs,md}','<%= site.templates %>/snippets/**/*.{hbs,md}' ],
 				//plugins: '<%= site.plugins %>',
 				
 				layoutdir: '<%= site.templates %>/layouts',
@@ -100,18 +115,23 @@ module.exports = function(grunt) {
 			site: {
 				files: [ 
 					{
-						src: ['<%= site.content %>/*.hbs'],
+						src: ['<%= site.content %>/*.{hbs,md}'],
 						dest: '<%= site.destination %>/',
 						ext: '<%= site.extension %>'
 					},
 					{
-						src: ['<%= site.content %>/legal/*.md'],
+						src: ['<%= site.content %>/legal/*.{hbs,md}'],
 						dest: '<%= site.destination %>/legal/',
 						ext: '<%= site.extension %>'
 					},
 					{
-						src: ['<%= site.content %>/about/*.hbs'],
+						src: ['<%= site.content %>/about/*.{hbs,md}'],
 						dest: '<%= site.destination %>/about/',
+						ext: '<%= site.extension %>'
+					},
+					{
+						src: ['<%= site.content %>/styleguide.md'],
+						dest: '<%= site.destination %>/styleguide/index',
 						ext: '<%= site.extension %>'
 					}
 				]
@@ -124,7 +144,7 @@ module.exports = function(grunt) {
 					
 					{
 						src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
-						dest: '<%= site.destination %>/blog/',
+						dest: '<%= site.destination %>/blog/2013sss',
 						ext: '<%= site.extension %>'
 					},
 					{
@@ -161,9 +181,14 @@ module.exports = function(grunt) {
 		 */
 		watch: {
 			scripts: {
-				files: ['<%= site.source %>/**/*.{js,less}'],
+				files: [
+					 '<%= site.source %>/**/*.{js,less,hbs}',
+					 '<%= site.content %>/*.hbs'
+					 ],
 				tasks: [
-					'less'
+					'less',
+					 'uglify:site',
+					 'assemble:site'
 				],
 				options: {
 					spawn: false,
@@ -210,14 +235,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-spell');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	
 	
 	/* 
 	 * tasks
 	 */
 	grunt.registerTask('default', [
-		'assemble',
-		'watch'
+		'assemble'
 	]);	
 	grunt.registerTask('dev', [
 		'connect',

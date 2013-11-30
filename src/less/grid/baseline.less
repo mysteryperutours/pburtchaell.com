@@ -1,0 +1,409 @@
+/*------------------------------------*\
+    $BASELINE
+\*------------------------------------*/
+
+
+/*
+ * Browser specific styles
+ */
+::-moz-selection { 
+	background-color: @dark-grey; 
+	color: @white; 
+}
+::selection { 
+	background-color: @dark-grey; 
+	color: @white; 
+}
+::-webkit-scrollbar { 
+	position: absolute; 
+	width: 10px; 
+}
+::-webkit-scrollbar-track-piece  { 
+	background-color: @dark-grey;
+}
+::-webkit-scrollbar-thumb:vertical { 
+	height: 25%; 
+	background-color: @light-grey;
+	box-shadow: inset @base-box-shadow;
+}
+
+/*
+ * Site-wide, global header
+ */
+.page-header {
+	
+	// header container
+	position: relative;
+	height: 80px;
+	width: 100%;
+	background: @dark-grey;
+	border-top: 3px solid @design;
+	box-shadow: @base-box-shadow;
+	
+	// SVG branding
+	.branding {
+		display: block;
+		position: absolute;
+		z-index: 9;
+		width: 75px;
+		left: 50%;
+		margin: 0 auto 0 -39.5px;
+		padding: 10px 0 0 0;
+	}
+	
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 100px;
+		width: 100px;
+		left: 50%;
+		margin-left: -52px;
+		border-top-left-radius: 100%;
+		background: @dark-grey;
+		-webkit-transform: rotate(45deg);
+	}
+		
+}
+
+/*
+ * Page navigation
+ */
+@import 	'../partial/navigation';
+
+
+/* 
+ * Site-wide, global footer
+ */
+.page-footer {
+	
+	// footer container
+	padding: 70px 0 70px 0;
+	background: @dark-grey;	
+	color: @white;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 1px 1px rgba(10,10,11,0.15);
+	box-shadow: inset 1px 1px rgba(10,10,11,0.1);
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	     -moz-user-select: none;
+		  -ms-user-select: none;
+			  user-select: none;
+	
+	&:after {
+		content: '';
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 5px;
+		top: 70px;
+		background: @video;
+	}
+	
+	// heart 
+	.page-footer-heart {
+		fill: @design;	
+	}
+	
+	// links
+	.page-footer-link {
+		color: @white;
+		border-bottom: 2px solid @video !important;
+	}
+	
+	// grid trigger
+	#ggs-switch:after {
+		content: 'Click for the grid';
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		height: 24px;
+		width: 200px;
+		color: @white;
+		font-size: 10px;
+		text-shadow: 1px 1px rgba(10,10,11,0.1);
+		line-height: 22px;
+	}
+	
+}
+
+/* 
+ * <noscript> warning
+ */
+.noscript {
+	height: auto;
+	padding: 5px;
+	text-align: center;
+	color: @white;
+	background: @design;	
+}
+
+/*
+ * Homepage title <section>
+ */
+.index-title {
+	
+	padding: @base-padding*4 0 @base-padding*4 0;	
+	text-align: center;
+	background: darken(@dark-grey, 15%);
+	
+	h1 {
+		position: relative;
+		display: inline-block;
+		padding: 10px;
+		border: 3px solid fadeOut(@design, 50%);
+		text-transform: uppercase;
+		text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+		box-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+	}
+	
+	p {
+		color: @white;	
+	}
+	
+}
+.home-feed {
+	display: inline-block;
+	width: 100%;
+	padding: @base-padding*2 @column @base-padding*2 @column;
+}
+
+// <article class=featured-content>
+.featured-content {
+	
+	float: left;
+	clear: right;
+	width: @column*16;
+	margin: @column*1 0 @column*1 @column*1;
+	padding: 0;
+	
+	&:nth-child(1) { background: @video; }
+	
+	&:nth-child(2) { background: @design; }
+	
+	&:nth-child(3) { background: @audio; }
+	
+}
+	// <picture class=featured-content-image>
+	.featured-content-image {
+		width: 100%;
+	}
+
+		// small image 
+		.image-small {
+		
+		}
+		// large image
+		.image-large {
+	
+		}
+		// fallback image
+		.image-fallback {
+			display: block;
+			width: 100%;
+		}
+
+	// <header class=featured-content-header>
+	.featured-content-header {
+		padding: @base-padding/5;
+		color: @white;
+		text-transform: uppercase;
+		height: @base-padding*2;
+		overflow: hidden;
+		background: fadeout(@dark-grey, 30%);
+		text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+	}
+
+	// <section class=featured-content-section>
+	.featured-content-section {
+		height: 50px;
+		padding: @base-padding @base-padding/5 @base-padding @base-padding/5;
+		oveflow: hidden;	
+	}
+
+	// <footer class=featured-content-footer>
+	.featured-content-footer {
+		padding: @base-padding/5;
+		color: @white;
+		text-transform: uppercase;
+		background: fadeout(@dark-grey, 70%);
+	}
+		
+		// <time class=featured-content-date >
+		.featured-content-date  {
+			text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+			border-bottom: 1px solid @white;
+		}
+	
+	// large screen media has :hover effect for article preview
+	// small screen media does not
+	@media screen and (min-width: 40em) {
+		
+		.featured-content {
+			
+			width: @column*4;
+			
+			// on :hover, show article preview
+			// give content preview 50px height and a little padding
+			// "overflow: hidden;" will insure matching height (50px) for all previews
+			&:hover > .featured-content-section {
+				
+				transition: padding 0s, height 0.25s, color 0.40s ease-in-out;
+				
+				padding: @base-padding @base-padding/2 @base-padding/2 @base-padding/2;
+				color: @dark-grey;
+				height: 50px;
+				
+			}
+			
+		}
+		
+		// <section class=featured-content-section>
+		// give content preview no height and no padding
+		.featured-content-section {
+			height: 0;
+			padding: 0;
+			color: fadeout(@dark-grey, 100%);
+			oveflow: hidden;	
+			transition: padding 0.15s, height 0.35s, color 0.45s ease-in-out;	
+		}
+		
+	}	
+
+
+.index-about {
+	
+	.biography {
+		padding: 100px 0 100px;
+	}	
+	
+}
+
+/*
+ * About Me Page
+ */
+
+.about {
+
+	object svg {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		padding: 0 0 50px 0;
+		z-index: 99;
+	}	
+	
+	.biography {
+		
+		padding: 100px @column*2 100px @column*2;	
+		color: @white;
+		background: darken(@dark-grey, 15%);
+
+	}
+	
+	.service {
+		
+		position: relative;
+		padding: 100px 0 150px 0;
+		
+		p {
+			text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+		}
+		
+		h3 {
+			display: inline-block;
+			padding: 10px 20px 10px 20px;
+		}
+		
+		&.design {
+			
+			color: @red;
+			background: @dark-grey;
+		
+			&:before {
+				content: '';
+			}
+	
+			h3 {
+				border: 2px solid @red;	
+			}	
+			
+		}
+		
+		&.video {
+			
+			color: @video;
+			background: darken(@dark-grey, 5%);
+			
+			h3 {
+				border: 2px solid @video;	
+			}
+			
+		}
+		
+		&.audio {
+			
+			color: @audio;
+			background: darken(@dark-grey, 10%);
+			
+			h3 {
+				border: 2px solid @audio;	
+			}
+			
+		}
+		
+	}
+	
+	.resources {
+		padding: 100px 0 100px 0;
+	}
+	
+}
+
+/*
+ * Landing Page
+ */ 
+.landing {
+	color: @white;
+	text-align: center;
+	padding: 200px @column*2 300px @column*2;	
+	background: darken(@dark-grey, 15%);
+	background-size: cover;	
+	
+	h1 {
+		color: @design;
+		font-size: 72px;
+		margin-bottom: 25px;
+		text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+	}
+	
+	p {
+		opacity: 0.5;
+	}
+	
+}
+
+/* 
+ * Styles for page templates
+ */
+.page {
+	
+		// properties for all pages w/ container
+		.container {
+			padding: 50px 0 100px 0;
+		}
+		
+		// properties for the default page template
+		&.default {
+			padding: 0 0 100px 0;
+		}
+	
+	}
+
+	//  properties for the article post template
+	@import 	'../pages/article';
+
+	//  properties for the category page template
+	@import 	'../pages/category';

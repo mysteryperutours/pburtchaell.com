@@ -1,0 +1,108 @@
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+.nav-collapse ul {	
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: block;
+	list-style: none;
+}
+
+.nav-item {
+	float: none;
+	width: 100%;
+	padding: 15px 0 15px 0;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+	background: @light-grey;
+}
+
+.js .nav-collapse {
+	clip: rect(0 0 0 0);
+	max-height: 0;
+	position: fixed;
+	display: block;
+	overflow: hidden;
+	zoom: 1;
+	z-index: 9999;
+}
+
+.nav-collapse.opened {
+	max-height: 9999px;
+}
+
+.nav-toggle {
+	display: block;
+	height: 40px;
+	width: 40px;
+	background: @design;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+		 -moz-user-select: none;
+		  -ms-user-select: none;
+		   -o-user-select: none;
+			  user-select: none;
+}
+
+// desktop styles
+@media screen and (min-width: 40em) {
+	.js .nav-collapse {
+		position: relative;
+	}
+	.js .nav-collapse.closed {
+		max-height: none;
+	}
+	
+	.nav-toggle {
+		display: none;
+	}
+	
+	// navigation container <nav class=nav-collapse></nav>
+	.nav-collapse {
+		
+		height: auto;
+		top: 20px;
+		margin: 0 @column*3 0 @column*3; 
+		
+	}
+		
+		//navigation items <ul class=nav-items></ul>
+		.nav-items {
+	
+			float: left;
+		
+			&.left {
+				width: 33.33%;
+				margin: 0 33.33% 0 0;
+			}
+				
+			
+			&.right {
+			
+				width: 33.33%;
+			
+				.nav-item {
+					float: right;				
+				}
+			
+			}
+			
+		}
+			
+			// navigation item <li class=nav-item>
+			.nav-item {
+				float: left;
+				width: @column*6;
+				margin: 0 10px 0 10px;
+				background: none;
+				
+				a {
+					color: @white !important;
+				}
+		
+			}
+	
+}

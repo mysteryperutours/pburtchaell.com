@@ -1,45 +1,11 @@
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td { 
-	margin: 0; 
-	padding: 0; 
-	font-size: 16px; 
-	direction: ltr;
-    color: @dark-grey; 
-    font-weight: normal; 
-    font-style: normal; 
-    line-height: 1.4; 
-	text-rendering: optimizeLegibility; 
-	font-smoothing: subpixel-antialiased;
-	text-size-adjust: 100%;
-    font-family: 'dinpro', 'Helvetica', sans-serif;
-	cursor: default;
-}
-
-/* default typography styles */
-em, i {
-	font-style: italic;
-	line-height: inherit;
-}
-
-strong, b {
-	font-family: 'dinpro-bold';
-	font-weight: bold;
-}
-
-small {
-    font-size: @small-font-size;
-    line-height: inherit;
-}
-
-code {
-    font-family: @code-font-family;
-    font-weight: @code-font-weight;
-    color: @code-color;
-}
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
 
 /* default paragraph styles */
 p { 
 
-	margin: 20px 0 20px;
+	margin: @paragraph-margin;
 	
 	& aside {
 		font-size: @paragraph-aside-font-size;
@@ -49,98 +15,96 @@ p {
     
 }
 
+em, i { font-family: 'opensans-italic'; font-style: italic; line-height: inherit; }
+strong, b { font-family: 'dinpro-bold'; font-weight: bold; }
+small { font-size: @small-font-size; line-height: inherit; }
+code { font-family: @code-font-family; font-weight: @code-font-weight; color: @code-color; }
+
 /* default header styles */
 h1, h2, h3, h4, h5, h6 {
 
-    text-transform: uppercase;
-	margin: 25px 0 25px 0; 
-	font-family: 'dinpro-bold',  'dinpro', 'Helvetica', sans-serif;
+	font-family: @heading-font-family;
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	     -moz-user-select: none;
+		  -ms-user-select: none;
+			  user-select: none;
 	
 	/* default subheader styles */
 	small {
 		font-size: @small-font-size;
 		color: @small-font-color;
-		line-height: 0;
 	}
 	
 }
 	
-h1 { font-size: @primary-h1-size; }			
-h2 { font-size: @primary-h2-size; } 
-h3 { font-size: @primary-h3-size; } 
+h1 { font-size: @primary-h1-size; color: @design; margin: @base-margin 0 @base-margin*2 0; }			
+h2 { font: @primary-h2-size 'opensans-italic'; margin: @base-margin @column*5 @base-margin*2 0; } 
+h3 { font-size: @primary-h3-size; text-transform: uppercase; } 
 h4 { font-size: @primary-h4-size; }
 h5 { font-size: @primary-h5-size; }
 h6 { font-size: @primary-h6-size; }
 
 hr {
-	height: 1px;
-	background-color: rgb(10, 11, 11);
-    margin: 25px;
-    width: 50%;
-    border: 1px solid rgb(10, 11, 11);
+	height: 2px;
+	background: lighten(@dark-grey, 60%);
+	border: none;
+	left: 50%;
+    margin: 0 0 0 -22.5px;
+    width: 45px;
+	
+	&.small {
+		margin: 0;
+	}
+	
+	&.large {
+		width: @column*14;
+		margin: @base-margin*1 auto;
+	}
+	
 }
-hr.white {
-    background-color: rgb(248, 248, 242);
-    border: 1px solid rgb(248, 248, 242);
-}
-hr.small {
-	position: relative;
-	width: 100px;
-	top: 25px;
-	margin: 0 auto;
-} 
 
-// other
-em, i {
-	font-style: italic;
-	line-height: inherit;
-}
-strong, b {
-	font-weight: bold;
-	line-height: inherit;
-}
-small {
-  font-size: @small-font-size;
-  line-height: inherit;
-}
-code {
-  font-family: @code-font-family;
-  font-weight: @code-font-weight;
-  color: @code-color;
-}
+
 
 /* default link styles */
 a img { 
 
-    border: none;
 	transition: 0.25s; 
+	cursor: pointer;
 	
-		&:hover {
-			opacity: 0.85; 
-		}
+	&:hover {
+		opacity: 0.85; 
+	}
 
 }	 
 
 a, a:visited { 
 
-	color: @type-color;
-	opacity: 1.0;
-	line-height: inherit;
-	padding-bottom: 0;
+	// let's reset a few things
 	text-decoration: none; 
 	border: none;
-	 transition: 0.25s;
 	
-		&:hover, &:focus { 
-			opacity: 0.5;
-			transition: 0.25s; 
+	// now for the normal styles
+	color: darken(@dark-grey, 15%);
+	cursor: pointer;
+	transition: 0.25s;
+		
+	// links with a red line
+	&.line, 
+	&.line:visited {
+		
+		border-bottom: 2px solid @design;
+		
+		// on :hover fadeout the line and add padding
+		&:hover {
+			padding-bottom: 2px;
+			border-bottom: 2px solid fadeout(@design, 50%);
+			transition: 0.25s; 	
 		}
 		
-	&.line, &.line:visited {
-		border-bottom: 1px solid @type-color;
 	}
 	
-	&.opacity-off:hover { opacity: 1.0; }
+	&.white { color: @white; }
 	
 }
 
@@ -159,10 +123,11 @@ abbr {
 /* default blockquotes styles */
 blockquote {
 
-	margin: 0 0 @paragraph-margin-bottom;
+	font-family: @blockquote-font-family;
+	margin: @blockquote-margin;
 	padding: @blockquote-padding;
-	border: @blockquote-border;
-	color: @type-color;
+	border-left: @blockquote-border;
+	color: @blockquote-font-color;
 	
 	cite {
   
@@ -191,7 +156,6 @@ ul, ol {
 li {
     margin: 5px;
 	margin-left: 25px;
-	list-style: circle;
 	line-height: @paragraph-line-height;
 } 
 
@@ -201,5 +165,5 @@ form ul li {  margin: 0; list-style: none; }
 // default color styles 
 .red { color: @design; }
 .blue { color: @video; }
-.green { color: #00DAFF;}
+.green { color: @audio;}
 .opacity { opacity: 0.5; }

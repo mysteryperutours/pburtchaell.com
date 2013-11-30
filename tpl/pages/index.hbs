@@ -11,24 +11,73 @@ posts: ['src/posts/2013_05_*.md.hbs']
 
 {{> open-inc }}
 {{> header-inc }}
-
-<section class="index-title">
-	<div class="row">
-		<div class="large-12 small-12 columns">
-			<h1>{{ home.title }}</h1>
-			<h2>{{ home.subtitle }}</h2>
+<main role=main class="home page main">
+	<section class=index-title>
+		<div class=wrapper>
+			<h1>{{ author.name.first }} {{ author.name.last }}</h1>
+			<p>{{ home.subtitle }}</p>
 		</div>
-	</div>
-</section>
-
-<section class="index-about">
-	<div class="row">
-		\{{#markdown}}
-		I find passion in creating content. 
-		\{{/markdown}}
-	</div>
-</section>
-
+	</section><!-- /index-title -->
+	
+	<section class=home-feed>
+			
+			<article class=featured-content>
+				<a href={{ site.url }}/blog/2013sss.html><picture class=featured-content-image>
+					<src class=image-small href="{{ assets }}/img/2013"></src>
+					<src class=image-large href="{{ assets }}/img/2013"></src>
+					<img class=image-fallback src="{{ assets }}/img/blog/2013/12-01-13_small.jpg" height=auto width=100 alt="">
+				</picture>
+				<header class=featured-content-header>
+					<h3>Fucking awesome article title</h3>
+				</header></a>
+				<section class=featured-content-section>
+					<small>Content 2</small>
+				</section>
+				<footer class=featured-content-footer>
+					<small>Published <time class=featured-content-date datetime="" pubdate>November 30, 2013</time></small>
+				</footer>
+			</article><!-- /featured-content -->
+			
+			<article class=featured-content>
+				<picture class=featured-content-image>
+					<src class=image-small href="{{ assets }}/img/blog/2013/12-01-13_small.jpg"></src>
+					<src class=image-large href="{{ assets }}/img/blog/2013"></src>
+					<img class=image-fallback src="{{ assets }}/img/blog/2013/12-01-13_small.jpg" height=auto width=100 alt="">
+				</picture>
+				<header class=featured-content-header>
+					<h3>Damn straight this is good</h3>
+				</header>
+				<section class=featured-content-section>
+					<small>Content 2</small>
+				</section>
+				<footer class=featured-content-footer>
+					<small>Published <time class=featured-content-date datetime="" pubdate>December 1, 2013</time></small>
+				</footer>
+			</article><!-- /featured-content -->
+			
+			<article class=featured-content>
+				<picture class=featured-content-image>
+					<src class=image-small href="{{ assets }}/img/2013"></src>
+					<src class=image-large href="{{ assets }}/img/2013"></src>
+					<img class=image-fallback src="{{ assets }}/img/blog/2013/12-01-13_small.jpg" height=auto width=100 alt="">
+				</picture>
+				<header class=featured-content-header>
+					<h3>testing 1</h3>
+				</header>
+				<section class=featured-content-section>
+					<small>Content 2</small>
+				</section>
+				<footer class=featured-content-footer>
+					<small>Published <time class=featured-content-date datetime="" pubdate>December 4, 2013</time></small>
+				</footer>
+			</article><!-- /featured-content -->
+			
+	</section><!-- /index-feed -->
+	
+	<section class=index-about>
+		<div class=wrapper>
+		</div>
+	</section><!--- /index-about -->
+</main>
 {{> footer-inc }}
 {{> close-inc }}
-
