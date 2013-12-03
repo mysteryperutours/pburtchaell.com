@@ -1,1 +1,1 @@
-The name is Patrick. - http://twitter.com/pburtchaell, http://github.com/pburtchaell
+The name is Patrick Burtchaell - http://twitter.com/pburtchaell, http://github.com/pburtchaell
