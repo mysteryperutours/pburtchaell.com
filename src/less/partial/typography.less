@@ -16,8 +16,8 @@ p {
 }
 
 em, i { font-family: 'opensans-italic'; font-style: italic; line-height: inherit; }
-strong, b { font-family: 'dinpro-bold'; font-weight: bold; }
-small { font-size: @small-font-size; line-height: inherit; }
+strong, b { font-family: 'dinpro-bold'; }
+small { font-size: @small-font-size; }
 code { font-family: @code-font-family; font-weight: @code-font-weight; color: @code-color; }
 
 /* default header styles */
@@ -67,26 +67,13 @@ hr {
 
 
 /* default link styles */
-a img { 
-
-	transition: 0.25s; 
-	cursor: pointer;
-	
-	&:hover {
-		opacity: 0.85; 
-	}
-
-}	 
-
 a, a:visited { 
 
 	// let's reset a few things
 	text-decoration: none; 
-	border: none;
 	
 	// now for the normal styles
 	color: darken(@dark-grey, 15%);
-	cursor: pointer;
 	transition: 0.25s;
 		
 	// links with a red line

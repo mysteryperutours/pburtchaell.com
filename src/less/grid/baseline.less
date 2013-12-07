@@ -2,7 +2,6 @@
     $BASELINE
 \*------------------------------------*/
 
-
 /*
  * Browser specific styles
  */
@@ -23,7 +22,7 @@
 }
 ::-webkit-scrollbar-thumb:vertical { 
 	height: 25%; 
-	background-color: @light-grey;
+	background: @light-grey;
 	box-shadow: inset @base-box-shadow;
 }
 
@@ -42,9 +41,7 @@
 	
 	// SVG branding
 	.branding {
-		display: block;
 		position: absolute;
-		z-index: 9;
 		width: 75px;
 		left: 50%;
 		margin: 0 auto 0 -39.5px;
@@ -53,7 +50,6 @@
 	
 	&:before {
 		content: '';
-		display: block;
 		position: absolute;
 		height: 100px;
 		width: 100px;
@@ -78,37 +74,38 @@
 .page-footer {
 	
 	// footer container
-	padding: 70px 0 70px 0;
+	padding: @base-padding*3-5 0 @base-padding*3-5 0;
 	background: @dark-grey;	
 	color: @white;
 	text-align: center;
 	text-transform: uppercase;
 	text-shadow: 1px 1px rgba(10,10,11,0.15);
 	box-shadow: inset 1px 1px rgba(10,10,11,0.1);
-	-webkit-touch-callout: none;
-	  -webkit-user-select: none;
-	     -moz-user-select: none;
-		  -ms-user-select: none;
-			  user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
 	
-	&:after {
-		content: '';
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 5px;
-		top: 70px;
-		background: @video;
+		// green line at the bottom of the footer
+		&:after {
+			content: '';
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 5px;
+			top: 70px;
+			background: @video;
+		}
+	
 	}
-	
-	// heart 
+
+	// SVG heart 
 	.page-footer-heart {
 		fill: @design;	
 	}
 	
 	// links
 	.page-footer-link {
-		color: @white;
+		color: @white !important;
 		border-bottom: 2px solid @video !important;
 	}
 	
@@ -127,43 +124,43 @@
 		line-height: 22px;
 	}
 	
-}
+
 
 /* 
  * <noscript> warning
  */
 .noscript {
 	height: auto;
-	padding: 5px;
+	padding: @base-padding/5;
 	text-align: center;
 	color: @white;
 	background: @design;	
 }
 
 /*
- * Homepage title <section>
+ * $Homepage title
  */
-.index-title {
+.home-title {
 	
 	padding: @base-padding*4 0 @base-padding*4 0;	
 	text-align: center;
 	background: darken(@dark-grey, 15%);
 	
-	h1 {
-		position: relative;
+	}
+
+	.home-title-heading { // h1
 		display: inline-block;
-		padding: 10px;
+		padding: @base-padding/2-2.5;
 		border: 3px solid fadeOut(@design, 50%);
 		text-transform: uppercase;
 		text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
 		box-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
 	}
 	
-	p {
+	.home-title-subheading { // p
 		color: @white;	
 	}
 	
-}
 .home-feed {
 	display: inline-block;
 	width: 100%;
@@ -176,7 +173,7 @@
 	float: left;
 	clear: right;
 	width: @column*16;
-	margin: @column*1 0 @column*1 @column*1;
+	margin: @column*1 0 @column*1 0;
 	padding: 0;
 	
 	&:nth-child(1) { background: @video; }
@@ -244,60 +241,32 @@
 		.featured-content {
 			
 			width: @column*4;
+			margin: @column*1 0 @column*1 @column*1 ;
 			
-			// on :hover, show article preview
-			// give content preview 50px height and a little padding
-			// "overflow: hidden;" will insure matching height (50px) for all previews
-			&:hover > .featured-content-section {
-				
-				transition: padding 0s, height 0.25s, color 0.40s ease-in-out;
-				
-				padding: @base-padding @base-padding/2 @base-padding/2 @base-padding/2;
-				color: @dark-grey;
-				height: 50px;
-				
-			}
-			
-		}
-		
-		// <section class=featured-content-section>
-		// give content preview no height and no padding
-		.featured-content-section {
-			height: 0;
-			padding: 0;
-			color: fadeout(@dark-grey, 100%);
-			oveflow: hidden;	
-			transition: padding 0.15s, height 0.35s, color 0.45s ease-in-out;	
 		}
 		
 	}	
 
 
 .index-about {
-	
-	.biography {
-		padding: 100px 0 100px;
-	}	
-	
+	padding: @base-padding*4 0 @base-padding*4 0; 
+	text-align: center;
+	background: @video;
 }
 
+
 /*
- * About Me Page
+ * $About Me Page
  */
 
 .about {
-
-	object svg {
-		display: block;
-		position: relative;
-		margin: 0 auto;
-		padding: 0 0 50px 0;
-		z-index: 99;
-	}	
 	
+	}
+
+
 	.biography {
 		
-		padding: 100px @column*2 100px @column*2;	
+		padding: @base-padding*4 @column*2 @base-padding*4 @column*2;	
 		color: @white;
 		background: darken(@dark-grey, 15%);
 
@@ -307,16 +276,8 @@
 		
 		position: relative;
 		padding: 100px 0 150px 0;
-		
-		p {
-			text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
-		}
-		
-		h3 {
-			display: inline-block;
-			padding: 10px 20px 10px 20px;
-		}
-		
+		text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+
 		&.design {
 			
 			color: @red;
@@ -325,10 +286,6 @@
 			&:before {
 				content: '';
 			}
-	
-			h3 {
-				border: 2px solid @red;	
-			}	
 			
 		}
 		
@@ -337,10 +294,6 @@
 			color: @video;
 			background: darken(@dark-grey, 5%);
 			
-			h3 {
-				border: 2px solid @video;	
-			}
-			
 		}
 		
 		&.audio {
@@ -348,56 +301,48 @@
 			color: @audio;
 			background: darken(@dark-grey, 10%);
 			
-			h3 {
-				border: 2px solid @audio;	
-			}
-			
 		}
 		
 	}
 	
-	.resources {
-		padding: 100px 0 100px 0;
-	}
-	
-}
+
 
 /*
- * Landing Page
+ * $Landing Page
  */ 
 .landing {
+	
 	color: @white;
 	text-align: center;
-	padding: 200px @column*2 300px @column*2;	
+	padding: @base-padding*8 @column*2 @base-padding*12 @column*2;	
 	background: darken(@dark-grey, 15%);
-	background-size: cover;	
 	
-	h1 {
+	}
+	
+	.landing-title {
 		color: @design;
 		font-size: 72px;
-		margin-bottom: 25px;
+		margin-bottom: @base-margin;
 		text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
 	}
 	
-	p {
+	.landing-subtitle {
 		opacity: 0.5;
 	}
-	
-}
 
 /* 
- * Styles for page templates
+ * Styles for $page templates
  */
 .page {
 	
 		// properties for all pages w/ container
 		.container {
-			padding: 50px 0 100px 0;
+			padding: @base-padding*2 0 @base-padding*4 0;
 		}
 		
 		// properties for the default page template
 		&.default {
-			padding: 0 0 100px 0;
+			padding: 0 0 @base-padding*4 0;
 		}
 	
 	}

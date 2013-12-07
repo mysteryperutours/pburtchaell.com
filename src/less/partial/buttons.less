@@ -1,50 +1,53 @@
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-button, 
-input[type="button"],
-input[type="submit"] {
+button {
 
-    border-radius: 0; 
-	box-shadow: none;
-
-	position: relative;
-	display: block;
-	margin: auto; 
-	padding: 15px;
-	
-	height: 30px;
-	width: 100%;
-	
-	line-height: 1.0;
+    margin: @base-margin/2 auto @base-margin auto;
+	clear: left;
+    line-height: 35px;
     text-decoration: none;
-    text-transform: uppercase;
-    text-shadow: none;
+    border: 3px solid fadeOut(@dark-grey, 70%);
+	background: fadeOut(@dark-grey, 50%);
+	color: lighten(@video, 25%);
+	font-family: 'opensans-italic';
+	transition: 0.5s ease;
 	
-	border: 2px solid @dark-grey;
-    color: @white;
-   
-	-webkit-backface-visibility: hidden; 
-    transition: 0.25s;
+	max-width	: 	100%  	!important;
+	min-width	: 	0 		!important;
+	max-height	: 	40px 	!important;
+	min-height	: 	40px 	!important;
+	width		: 	100% 	!important;
+	height		: 	100% 	!important;
 	
-	&:hover {
-		background: @dark-grey;
-		outline: none;
-	}
-	
-	&:active { 
-		
-	}
-	
+    &:hover {
+        outline: 0;
+		border: 3px solid darken(@dark-grey, 5%);
+		background: fadeOut(@dark-grey, 10%);
+    }
+    
+    &:active {
+        transform: translateY(2px);
+    }
+    
+    // get rid of the inner focus border on Firefox...
+    ::-moz-focus-inner{
+        padding: 0;
+        border: 0;
+    }
+    
 }
-	
-button.white { 
 
-	border: 2px solid @white; 
-	color: @white; 
-	
-	&:hover {  
-		color: @white; 
+button[disabled] {
+
+	&:hover,
+	&:focus,
+	&:active {
+		border: none;
+		background: noness;
+		opacity: 0.40;
+		cursor: not-allowed;
+		box-shadow: none;
 	}
 	
 }

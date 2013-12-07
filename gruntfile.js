@@ -232,7 +232,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('assemble');
 	grunt.loadNpmTasks('assemble-less');
 	//grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-spell');
+	//grunt.loadNpmTasks('grunt-spell');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-uglify');

@@ -12,10 +12,11 @@ posts: ['src/posts/2013_05_*.md.hbs']
 {{> open-inc }}
 {{> header-inc }}
 <main role=main class="home page main">
-	<section class=index-title>
+	
+	<section class=home-title>
 		<div class=wrapper>
-			<h1>{{ author.name.first }} {{ author.name.last }}</h1>
-			<p>{{ home.subtitle }}</p>
+			<h1 class=home-title-heading>{{ author.name.first }} {{ author.name.last }}</h1>
+			<p class=home-title-subheading>{{ home.subtitle }}</p>
 		</div>
 	</section><!-- /index-title -->
 	
@@ -76,8 +77,16 @@ posts: ['src/posts/2013_05_*.md.hbs']
 	
 	<section class=index-about>
 		<div class=wrapper>
+			<h4>The goodletter</h4>
+			<p>a newletter on technology and design <br> sent once a month from yours truly</p>
+			<form>
+				<input type=email autocomplete=on>
+				<button>Sign up for the goodness</button>
+				<small>Don't worrry; I respect your infomation.</small>
+			</form>
 		</div>
 	</section><!--- /index-about -->
+	
 </main>
 {{> footer-inc }}
 {{> close-inc }}

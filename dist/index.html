@@ -10,10 +10,7 @@
 <meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
 <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1">	
 <style>
-@font-face{font-family:'dinpro';src:local('DINPRO LIGHT'),local('DINPRO-LIGHT'),url('assets/fonts/dinpro_light/DINPRO-LIGHT.ttf')format('truetype');} 	
-@font-face{font-family:'dinpro-bold';src:local('DINPRO BOLD'),local('DINPRO-BOLD'),url('assets/fonts/dinpro_bold/DINPRO-BOLD.ttf')format('truetype');}
-@font-face {font-family:'opensans-italic';src: url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.eot');src:url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.eot?#iefix')format('embedded-opentype'),url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.woff')format('woff'),url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.ttf')format('truetype'),url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.svg#open_sansitalic')format('svg');}
-@font-face {font-family:'opensans-regular';src:url('assets/fonts/opensans_regular/OpenSans-Regular-webfont.eot');src:url('assets/fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),url('OpenSans-Regular-webfont.woff')format('woff'),url('assets/fonts/opensans_regular/OpenSans-Regular-webfont.ttf')format('truetype'),url('assets/fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular')format('svg');}
+@font-face{font-family:'dinpro';src:local('DINPRO LIGHT'),local('DINPRO-LIGHT'),url('assets/fonts/dinpro_light/DINPRO-LIGHT.ttf')format('truetype');} @font-face{font-family:'dinpro-bold';src:local('DINPRO BOLD'),local('DINPRO-BOLD'),url('assets/fonts/dinpro_bold/DINPRO-BOLD.ttf')format('truetype');} @font-face{font-family:'opensans-italic';src:url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.eot');src:url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.eot?#iefix')format('embedded-opentype'),url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.woff')format('woff'),url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.ttf')format('truetype'),url('assets/fonts/opensans_italic/OpenSans-Italic-webfont.svg#open_sansitalic')format('svg');} @font-face{font-family:'opensans-regular';src:url('assets/fonts/opensans_regular/OpenSans-Regular-webfont.eot');src:url('assets/fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),url('OpenSans-Regular-webfont.woff')format('woff'),url('assets/fonts/opensans_regular/OpenSans-Regular-webfont.ttf')format('truetype'),url('assets/fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular')format('svg');}
 </style>
 <link rel=stylesheet href=assets/css/styles.min.css> 		
 <script src=assets/js/pre.min.js></script>
@@ -79,10 +76,11 @@
 
 
 <main role=main class="home page main">
-	<section class=index-title>
+	
+	<section class=home-title>
 		<div class=wrapper>
-			<h1>Patrick Burtchaell</h1>
-			<p>User Interface Designer, Videographer &amp; Outdoorsman</p>
+			<h1 class=home-title-heading>Patrick Burtchaell</h1>
+			<p class=home-title-subheading>Designer, Videographer &amp; Outdoorsman</p>
 		</div>
 	</section><!-- /index-title -->
 	
@@ -143,8 +141,16 @@
 	
 	<section class=index-about>
 		<div class=wrapper>
+			<h4>The goodletter</h4>
+			<p>a newletter on technology and design <br> sent once a month from yours truly</p>
+			<form>
+				<input type=email autocomplete=on>
+				<button>Sign up for the goodness</button>
+				<small>Don't worrry; I respect your infomation.</small>
+			</form>
 		</div>
 	</section><!--- /index-about -->
+	
 </main>
 <footer class=page-footer>
 <small><span class=red>Design</span><span class=opacity>+</span><span class=green>Video</span><span class=opacity>+</span><span class=blue>Audio</span><br>
