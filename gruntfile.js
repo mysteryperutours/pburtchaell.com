@@ -77,6 +77,7 @@ module.exports = function(grunt) {
 					'<%= site.destination %>/assets/js/post.min.js' : '<%= site.source %>/js/post.js',
 					'<%= site.destination %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
 					'<%= site.destination %>/assets/js/GGS.min.js' : '<%= site.source %>/js/vendor/GGS.js',
+					'<%= site.destination %>/assets/js/dribble.js' : '<%= site.source %>/js/vendor/dribbble.js',
 				}
 			}
 		},

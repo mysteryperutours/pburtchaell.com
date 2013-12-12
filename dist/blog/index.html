@@ -68,7 +68,11 @@
 			<li class=nav-item><a href=http://localhost:35729/work>Work</a>
 			<li class=nav-item><a href=http://localhost:35729/blog>Blog</a>
 		</ul>
-		<script>var navigation = responsiveNav(".nav-collapse");</script>
+		<script>
+			var myElement = document.querySelector("header");
+			var headroom  = new Headroom(myElement); headroom.init(); 
+			var navigation = responsiveNav(".nav-collapse");
+		</script>
 	</nav>
 </header>
 
@@ -82,7 +86,7 @@
 </section>
 </main>
 <footer class=page-footer>
-<small><span class=red>Design</span><span class=opacity>+</span><span class=green>Video</span><span class=opacity>+</span><span class=blue>Audio</span><br>
+<small><span class=red>Design</span><span class=opacity> + </span><span class=green>Video</span><span class=opacity> + </span><span class=blue>Audio</span><br>
 Made with <object class=page-footer-heart><svg x=0 y=0 width=10px height=10px viewBox="0 0 10 8.1396484"><g><path d="M9.1796875,0.6699219c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0L5,1.2753906L4.3398438,0.6699219 c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0c-1.0927734,1.0029297-1.0927734,2.6308594,0,3.6337891L5,8.1396484 l4.1796875-3.8359375C10.2734375,3.3007813,10.2734375,1.6728516,9.1796875,0.6699219z"/></g></svg></object> in New Orleans<br>
 &copy;2013 PBDVA, Ltd. | <a class=page-footer-link href=http://localhost:35729/legal rel=license>Privacy and Terms</a></small>
 <div id=ggs-switch><div class=ggs-switchBar></div><div class=ggs-switchBar></div><div class=ggs-switchBar></div></div>
