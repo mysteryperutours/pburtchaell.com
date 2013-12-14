@@ -1,24 +1,27 @@
 {
-	"name": "PatrickBurtchaellAssembleSite",
-	"description": "The website of Patrick Burtchaell built with Assemble.js, Grunt.js and Node.js. Deployed on Amazon S3.",
-	"homepage": "http://pburtchaell.com/",
-	"version": "0.6.5",
-	"author": {
-		"name": "Patrick Burtchaell",
-		"url": "http://pburtchaell.com/about"
-	},
-	"contributors": [
-		{
-			"name": "Patrick Burtchaell",
-			"url": "http://github.com/pburtchaell"
-		}
-	],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/pburtchaell/site-assemble.git"
-	},
-	"licenses": {
-		"type": "MIT",
-		"url": "http://pburtchaell.com/license"
-	}
+  "name": "PatrickBurtchaellAssembleSite",
+  "description": "The website of Patrick Burtchaell built with Assemble.js, Grunt.js and Node.js. Deployed on Amazon S3.",
+  "homepage": "http://pburtchaell.com/",
+  "version": "0.6.5",
+  "author": {
+    "name": "Patrick Burtchaell",
+    "url": "http://pburtchaell.com/about"
+  },
+  "contributors": [
+    {
+      "name": "Patrick Burtchaell",
+      "url": "http://github.com/pburtchaell"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pburtchaell/site-assemble.git"
+  },
+  "licenses": {
+    "type": "MIT",
+    "url": "http://pburtchaell.com/license"
+  },
+  "devDependencies": {
+    "grunt-devtools": "~0.2.1"
+  }
 }
