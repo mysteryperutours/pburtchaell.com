@@ -22,6 +22,8 @@
     "url": "http://pburtchaell.com/license"
   },
   "devDependencies": {
-    "grunt-devtools": "~0.2.1"
+    "grunt-devtools": "~0.2.1",
+    "assemble": "~0.4.32",
+    "assemble-contrib-permalinks": "~0.3.1"
   }
 }
