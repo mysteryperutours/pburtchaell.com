@@ -21,7 +21,7 @@
 	background-color: @dark-grey;
 }
 ::-webkit-scrollbar-thumb:vertical { 
-	height: 25%; 
+	height: 200px; 
 	background: @light-grey;
 	box-shadow: inset @base-box-shadow;
 }
@@ -38,7 +38,6 @@
 	top: 0;
 	z-index: 999999;
 	background: @dark-grey;
-	border-top: 3px solid @design;
 	box-shadow: @base-box-shadow;
 	transition: 0.5s ease;
 	
@@ -48,7 +47,7 @@
 		width: 75px;
 		left: 50%;
 		margin: 2.5px auto 0 -39.5px;
-		padding: 10px 0 0 0;
+		padding: 5px 0 0 0;
 	}
 	
 	// when scrolling down
@@ -62,8 +61,8 @@
 	&.pinned {
 	}
 	
-	// red bar at the top of the header
-	&:before {
+	// triangle on the center of the header
+	/*&:before {
 		content: '';
 		position: absolute;
 		height: 100px;
@@ -73,7 +72,7 @@
 		border-top-left-radius: 100%;
 		background: @dark-grey;
 		-webkit-transform: rotate(45deg);
-	}
+	}*/
 		
 }
 
@@ -94,14 +93,13 @@
 	color: @white;
 	text-align: center;
 	text-transform: uppercase;
-	text-shadow: 1px 1px rgba(10,10,11,0.15);
 	box-shadow: inset 1px 1px rgba(10,10,11,0.1);
 	-webkit-user-select: none;
 	   -moz-user-select: none;
 	    -ms-user-select: none;
 	
 		// green line at the bottom of the footer
-		&:after {
+		/*&:after {
 			content: '';
 			display: block;
 			position: relative;
@@ -109,7 +107,7 @@
 			height: 5px;
 			top: 70px;
 			background: @video;
-		}
+		}*/
 	
 	}
 
@@ -120,8 +118,14 @@
 	
 	// links
 	.page-footer-link {
+	
 		color: @white !important;
-		border-bottom: 2px solid @video !important;
+		border-bottom: 2px solid @white !important;
+		
+		&:hover {
+			opacity: 0.5;	
+		}
+	
 	}
 	
 /* 
@@ -262,7 +266,7 @@
 
 	.biography {
 		
-		padding: @base-padding*4 @column*2 @base-padding*4 @column*2;	
+		padding: @base-padding*8 @column*2 @base-padding*4 @column*2;	
 		color: @white;
 		background: darken(@dark-grey, 15%);
 
@@ -271,13 +275,12 @@
 	.service {
 		
 		position: relative;
-		padding: 100px 0 150px 0;
-		text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+		padding: 100px 0 150px 0;	
 
 		&.design {
 			
-			color: @red;
-			background: @dark-grey;
+			color: darken(@red, 40%);
+			background: @red;
 		
 			&:before {
 				content: '';
@@ -287,15 +290,15 @@
 		
 		&.video {
 			
-			color: @video;
-			background: darken(@dark-grey, 5%);
+			color: darken(@video, 70%);
+			background: @video;
 			
 		}
 		
 		&.audio {
 			
-			color: @audio;
-			background: darken(@dark-grey, 10%);
+			color: ;
+			background: @audio;
 			
 		}
 		
@@ -338,7 +341,7 @@
 		
 		// properties for the default page template
 		&.default {
-			padding: 0 0 @base-padding*4 0;
+			padding: @base-padding*2 0;
 		}
 	
 	}

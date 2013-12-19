@@ -1,21 +1,31 @@
-// <header class=article-header></header>
-.article-header {
-	margin: @base-margin @column*1;
+// the headers on the article pages are white
+.article .page-header {
+	
+	background: @white;
+
+	a {
+		color: @dark-grey !important;
+	}
+	
 }
 	
+.article-freatured-image {
+	margin: 50px 0 0 0;	
+}
+
 // <section class=article-content></section>
 .article-content {
-	margin: 0 @column*1 0 @column*1;
+	margin: @base-margin @column 0 0;
 }
 
 // a few typography things 
 .article-title { // h1
-	margin: 0;
+	margin: @base-margin 0 0 0;
 }
 .article-subtitle { // h2
 	display: inline-block;
-	background: @design;
-	margin: @base-margin 0;
+	background: fadeOut(@dark-grey, 65%);
+	margin: @base-margin/2 0;
 	padding: @base-padding/pi() @base-padding;
 	color: @white;
 }

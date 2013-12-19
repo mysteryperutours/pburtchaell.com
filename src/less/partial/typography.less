@@ -18,17 +18,11 @@ p {
 em, i { font-family: 'opensans-italic'; font-style: italic; line-height: inherit; }
 strong, b { font-family: 'dinpro-bold'; }
 small { font-size: @small-font-size; }
-code { font-family: @code-font-family; font-weight: @code-font-weight; color: @code-color; }
 
 /* default header styles */
 h1, h2, h3, h4, h5, h6 {
 
 	font-family: @heading-font-family;
-	-webkit-touch-callout: none;
-	  -webkit-user-select: none;
-	     -moz-user-select: none;
-		  -ms-user-select: none;
-			  user-select: none;
 	
 	/* default subheader styles */
 	small {
@@ -37,13 +31,23 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	
 }
-	
-h1 { font-size: @primary-h1-size; color: @design; margin: @base-margin 0 @base-margin*2 0; }			
-h2 { font: @primary-h2-size 'opensans-italic'; margin: @base-margin @column*5 @base-margin*2 0; } 
-h3 { font: @primary-h3-size 'opensans-italic'; } 
-h4 { font-size: @primary-h4-size; }
-h5 { font-size: @primary-h5-size; }
-h6 { font-size: @primary-h6-size; }
+
+/* Headings styles overview
+ * H1-H6: bold
+ * H1: uppercase, large top margin
+ * H2: large top margin 
+ * H3: small top margin 
+ * H4-H6: set in Open Sans Italic
+*/
+
+h1 { 
+	font-size: @primary-h1-size; 
+	text-transform: uppercase;
+}
+h2 { font-size: @primary-h2-size; margin: @base-margin*2 0 0 0; } 
+h3 { margin: @base-margin 0 0 0; } 
+h4, h5, h6 { font: @primary-h4-size 'opensans-italic'; }
+
 
 hr {
 	height: 2px;
@@ -80,18 +84,33 @@ a, a:visited {
 	&.line, 
 	&.line:visited {
 		
+		padding-bottom: 1px;
 		border-bottom: 2px solid @design;
 		
 		// on :hover fadeout the line and add padding
 		&:hover {
 			padding-bottom: 2px;
-			border-bottom: 2px solid fadeout(@design, 50%);
+			border-bottom: 3px solid fadeout(@design, 50%);
 			transition: 0.25s; 	
 		}
 		
 	}
 	
 	&.white { color: @white; }
+	
+	// automattically give any link with a title a border
+	&[title] {
+		
+		padding-bottom: 1px;
+		border-bottom: 2.5px solid @design;
+		
+		&:hover {
+			padding-bottom: 3px;
+			border-bottom: 2px solid fadeout(@design, 50%);
+			transition: 0.25s; 
+		}
+		
+	}
 	
 }
 
@@ -143,6 +162,7 @@ ul, ol {
 li {
     margin: 5px;
 	margin-left: 25px;
+	list-style: circle;
 	line-height: @paragraph-line-height;
 } 
 
