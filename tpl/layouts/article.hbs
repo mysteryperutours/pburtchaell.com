@@ -1,13 +1,17 @@
 {{> open-inc }}
-{{> header-inc }}
+<script src={{assets}}/js/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 <main role=main class="main article page">
+
+	{{> header-inc }}
 	
-	<span class=article-banner>Currently reading: <em>{{ page.title }}</em></span>
+	<!--<span class=article-banner>Currently reading: <em>{{ page.title }}</em></span>-->
 	
 	<picture class=article-freatured-image alt="{{ page.featuredimageAlt }}">
 		<source srcset="big.jpg 1x, big-2x.jpg 2x, big-3x.jpg" type=image/jpeg media=(min-width: 40em)>
 		<source srcset="med.jpg 1x, med-2x.jpg 2x, big-3x.jpg" type=image/jpeg>
-		<img src="{{ page.featuredimage }}" height=auto width=100% alt="{{ page.featuredimageAlt }}">
+		<img src="{{assets}}/{{ page.featuredImage }}" height=auto width=100% alt="{{ page.featuredImageAlt }}">
 	</picture>
 	
 	<div class=wrapper>
