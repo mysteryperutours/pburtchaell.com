@@ -78,6 +78,7 @@ module.exports = function(grunt) {
 					'<%= site.destination %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
 					'<%= site.destination %>/assets/js/GGS.min.js' : '<%= site.source %>/js/vendor/GGS.js',
 					'<%= site.destination %>/assets/js/dribble.js' : '<%= site.source %>/js/vendor/dribbble.js',
+					'<%= site.destination %>/assets/js/highlight.min.js' : '<%= site.source %>/js/vendor/highlight.pack.js',
 				}
 			}
 		},
@@ -98,7 +99,7 @@ module.exports = function(grunt) {
 				assets: '<%= site.destination %>/assets',
 				//helpers: ['<%= site.source %>/extensions/*.js', 'helper-prettify'],
 				partials: ['<%= site.templates %>/partials/**/*.{hbs,md}','<%= site.templates %>/snippets/**/*.{hbs,md}' ],
-				//plugins: '<%= site.plugins %>',
+				//plugins: ['<%= site.plugins %>',
 				
 				layoutdir: '<%= site.templates %>/layouts',
 				layout: 'default.hbs',
@@ -141,11 +142,23 @@ module.exports = function(grunt) {
 			// generate blog
 			blog: {
 				
+				// use assemble-contrib-permalinks for pretty URLs
+				options: {
+					plugins: [
+						'assemble-contrib-permalinks'
+					],
+						
+					permalinks: {
+						// all pages using prety URLS most have a "shortName" 
+						structure: ':year/:month/:shortName/index.html'
+					}
+				},
+				
 				files: [ 
 					
 					{
 						src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
-						dest: '<%= site.destination %>/blog/2013sss',
+						dest: '<%= site.destination %>/blog/',
 						ext: '<%= site.extension %>'
 					},
 					{
@@ -153,11 +166,11 @@ module.exports = function(grunt) {
 						dest: '<%= site.destination %>/blog/drafts/',
 						ext: '<%= site.extension %>'
 					},
-					{
+					/*{
 						src: ['<%= site.content %>/blog/*.{hbs,md}'],
 						dest: '<%= site.destination %>/blog/',
 						ext: '<%= site.extension %>'
-					},
+					},*/
 					
 				]
 				
