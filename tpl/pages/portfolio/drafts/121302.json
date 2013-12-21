@@ -1,0 +1,44 @@
+{
+ "shortName": "",
+    
+  "referenceNumber": "",
+  "description": "",
+  "medium": "",
+    
+  "url": [
+    {
+      "dribbble": "",
+      "behance": "",
+      "homepage": ""
+    } 
+  ],
+    
+  "date": [ 
+    {
+      "start": "",
+      "end": ""
+    }
+  ],
+    
+  "client": [
+    {
+      "name": "",
+      "url": "",
+      "twitter": ""
+    }
+  ]
+
+  "contributors": [
+    {
+      "name": "",
+      "url": ""
+    }
+  ],
+    
+  "content": [
+      {
+          "featuredImageURL": "",
+          "copy": ""
+      }
+  ]
+}

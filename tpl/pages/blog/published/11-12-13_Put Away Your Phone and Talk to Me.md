@@ -1,7 +1,7 @@
 ---
 published: true
 title: Put Away Your Phone and Talk to Me
-short-name: put-away-your-phone
+shortName: put-away-your-phone
 description: Is it just me, or is everyone on their phones these days?
 date: December 31, 2013
 
@@ -10,14 +10,11 @@ tags:
 - technology
 
 category: Opinions
-featuredimage: http://localhost/site/dist/assets/img/site/blog-cover.jpg
-featuredimageAlt: Cell phone lying on a desk
+featuredImage: img/site/blog-cover.jpg
+featuredImageAlt: Cell phone lying on a desk
 
 contributors:
-- Testing
-- Patrick 
-
-layout: article.hbs
+- Connor Moribito
 ---
 
 I love to talk and I am a person that thrives on conversation. I like to debate, to collaborate, to take peoples ideas and combine them with mine. All of this I do through conversation with others. Sometimes these conversations happen on Twitter (one of my favorite social networks, just because it is made for conversations), sometimes they happen over the phone, sometimes with a text, but in reality for me, the best conversations are held in person.   

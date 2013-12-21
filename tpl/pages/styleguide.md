@@ -2,10 +2,8 @@
 published: true
 title: Styleguide
 
-shortname: styleguide
+shortName: styleguide
 description: My HTML/CSS Code Styleguide
-
-layout: markdown.hbs
 ---
 
 # Code Styleguide

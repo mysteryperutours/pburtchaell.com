@@ -1,7 +1,7 @@
 {
   "name": "PatrickBurtchaellAssembleSite",
   "description": "The website of Patrick Burtchaell built with Assemble.js, Grunt.js and Node.js. Deployed on Amazon S3.",
-  "homepage": "http://pburtchaell.com/",
+  "url": "http://pburtchaell.com/",
   "version": "0.6.5",
   "author": {
     "name": "Patrick Burtchaell",
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git://github.com/pburtchaell/site-assemble.git"
   },
-  "licenses": {
+  "license": {
     "type": "MIT",
     "url": "http://pburtchaell.com/license"
   },

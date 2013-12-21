@@ -1,0 +1,81 @@
+{{> open-inc }}
+<script src={{assets}}/js/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<main role=main class="main blog page">
+
+	{{> header-inc }}
+	
+	<!--<span class=article-banner>Currently reading: <em>{{ page.title }}</em></span>-->
+	
+	<picture class=article-freatured-image alt="{{ page.featuredimageAlt }}">
+		<source srcset="big.jpg 1x, big-2x.jpg 2x, big-3x.jpg" type=image/jpeg media=(min-width: 40em)>
+		<source srcset="med.jpg 1x, med-2x.jpg 2x, big-3x.jpg" type=image/jpeg>
+		<img src="{{assets}}/{{ page.featuredImage }}" height=auto width=100% alt="{{ page.featuredImageAlt }}">
+	</picture>
+	
+	<div class=wrapper>
+		
+		<article>
+			
+			<header class=article-header>
+				<h1 class=article-title>{{ page.title }}</h1>
+				<h2 class=article-subtitle>{{ page.description}}</h2><br>
+				<small>
+					{{ author.name.first }} {{ author.name.last }} in 
+					<a href={{ site.url }}/blog/category/{{ page.category }} class=line>{{ page.category }}</a> &#8226; 
+					<time datetime="" pubdate>{{ page.date }}</time>
+				</small>
+			</header><!-- /article-header -->
+			
+			<section class=article-content>
+				{{#markdown}}
+				{{> body }}
+				{{/markdown}}
+			</section><!-- /article-content -->
+			
+			<footer class=article-footer>
+			
+				<hr class=large>
+				
+				<div class=article-author>
+					<small><span>Written By</span>
+					<h6>{{ author.name.first }} {{ author.name.last }}</h6>
+					<p class=article-author-bio>{{ author.bio }}<br> 
+					<em><a href=http://twitter.com/{{ author.twitter }} class=line>Follow me on Twitter</a></em></p><br></small>
+				</div><!-- /article-author -->
+				
+					<hr class=small>
+				
+				<div class=article-details>
+					<small><em>Published <time datetime="" pubdate>{{ page.date }}</time></em><br>
+					<!--<b>Thanks To:</b><br>
+					<ul class=article-contributors>
+						<li><em>{{ page.contributor }}</em>
+					</ul>--></small>
+				</div><!-- /article detials -->
+				
+				<hr class=large>
+				
+			</footer><!-- /article-footer -->
+			
+			<aside class=article-aside>
+				<small>Share <em>{{ page.title }}</em></small>
+				<ul class=article-share>
+					<li class=share-item><a class="twitter share"target=_blank href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url }}&via={{ author.twitter }}" class=button>Twitter</a>
+					<li class=share-item><a class="facebook share" target=_blank href="http://www.facebook.com/sharer/sharer.php?u={{ page.url }}" class=button>Facebook</a>
+					<li class=share-item><a class="google share" target=_blank href="https://plus.google.com/share?url={{ page.url }}" class=button>Google+</a>
+				</ul>
+			</aside><!-- /aside -->
+			
+			
+			<section class=article-comments>
+				<div class=disqus></div>
+			</section><!-- /article-comments -->
+			
+		</article>
+		
+	</div>
+</main>
+{{> footer-inc }}
+{{> close-inc }}
