@@ -1,5 +1,15 @@
 <script>
 function downloadJSAtOnload() { var element = document.createElement("script"); element.src ="{{assets}}/js/post.min.js"; document.body.appendChild(element); } if (window.addEventListener) window.addEventListener("load", downloadJSAtOnload, false); else if (window.attachEvent) window.attachEvent("onload", downloadJSAtOnload); else window.onload = downloadJSAtOnload;
+var body = document.body, timer; 
+window.addEventListener('scroll', function() {
+    clearTimeout(timer);
+    if(!body.classList.contains('disable-hover')){
+        body.classList.add('disable-hover')
+    }
+    timer = setTimeout(function() {
+        body.classList.remove('disable-hover')
+    }, 500);
+}, false);
 </script>
 </body>
 </html>

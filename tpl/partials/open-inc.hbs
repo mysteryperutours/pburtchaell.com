@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]><html class="ie"><![endif]-->
 <html lang=en>
 <head>  
 <title>{{ page.title }} - {{ site.title }}</title>
@@ -12,15 +11,13 @@
 </style>
 <link rel=stylesheet href={{assets}}/css/styles.min.css> 		
 <script src={{assets}}/js/pre.min.js></script>	
-<!--[if IE 8]>
-<link rel="stylesheet" href="{{assets}}/css/ie8.min.css" media="screen, projection">
-<![endif]-->
-<!--[if IE 9]>
-<link rel="stylesheet" href="{{assets}}/css/ie9.min.css" media="screen, projection">
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+{{#if page.hightlighting}}
+<script src={{assets}}/js/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad();</script>
+{{/if ~}}
 <meta name=keywords content="{{ site.keywords }}">
-<meta name=author content="{{ site.author.name.first }} {{ site.author.name.last }}"><link rel=author href=humans.txt/>	
+<meta name=author content="{{ site.author.name.first }} {{ site.author.name.last }}">
+<link rel=author href=humans.txt>	
 <meta name=google-site-verification content=7RrfJovl477GocUkq4QOPIybas99RN2zebN46jgN_Lo>
 <meta name=format-detection content="telephone=yes">
 <meta name=apple-mobile-web-app-capable content=no>
@@ -29,16 +26,33 @@
 <meta property=og:description content="{{ page.description }}">
 <meta property=og:url content={{ site.url }}>
 <meta property=og:site_name content="{{ site.title }}">
+{{#if page.author}}
+<meta property=og:profile:first_name content={{ page.author.name.first }}>
+<meta property=og:profile:last_name content={{ page.author.name.last }}>
+{{else ~}}
 <meta property=og:profile:first_name content={{ site.author.name.first }}>
 <meta property=og:profile:last_name content={{ site.author.name.last }}>
-<meta property=og:image content=http://pburtchaell.com/assets/img/site/og_image.gif>
-<meta name=twitter:card content=summary/>
-<meta name=twitter:url content={{ site.url }}>
-<meta name=twitter:domain content={{ site.url }}>
-<meta name=twitter:site content={{ site.author.twitter }}>
-<meta name=twitter:title content="{{ page.title }}">
-<meta name=twitter:description content="{{ page.description }}">	
-<meta name=twitter:image:src content=http://pburtchaell.com/assets/img/site/og_image.gif>
+{{/if ~}}
+{{#if page.featuredImage}}
+<meta property=og:image content={{ site.url }}/assets/{{ page.featuredImage }}>
+{{else ~}}
+<meta property=og:image content={{ site.url }}/assets/img/site/og_image.gif>
+{{/if ~}}  
+<meta name="twitter:card" content=summary_large_image>
+<meta name="twitter:site" content={{ site.author.twitter }}>
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+{{#if page.author.twitter}}
+<meta name="twitter:creator" content={{ page.author.twitter }}>
+{{else ~}}
+<meta name="twitter:creator" content={{ site.author.twitter }}>
+{{/if ~}}
+{{#if page.featuredImage}}
+<meta name="twitter:image:src" content={{ site.url }}/assets/{{ page.featuredImage }}>
+{{else ~}}
+<meta name="twitter:image:src" content={{ site.url }}/assets/img/site/og_image.gif>
+{{/if ~}}
+<meta name="twitter:domain" content={{ site.url }}>
 <link rel=apple-touch-icon sizes=57x57 href=http://pburtchaell.com/assets/img/site/ios-iphone.png>
 <link rel=apple-touch-icon sizes=114x114 href=http://pburtchaell.com/assets/img/site/ios-iphone@2.png>
 <link rel=apple-touch-icon sizes=72x72 href=http://pburtchaell.com/assets/img/site/ios-ipad.png>
