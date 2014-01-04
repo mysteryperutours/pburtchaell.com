@@ -1,55 +1,90 @@
 ---
 title: About
 shortName: about
-description: User interface designer and videographer from New Orleans. 
-
 layout: none
 ---
 
 {{> open-inc }}
 {{> header-inc }}
 <main role="main" class="about page">
-	<section class="biography">
-		<div class="wrapper">
-			<p>I am a freelance designer and videographer from New Orleans with a passion for iced coffee, good music, and pixel-perfection.</p>
-			<p>With a huge amount of motivation and experience, I push the creative and the technical to max. With every project, I believe that practical integration of the two, along with thoughtful content, will produce powerful products with the ability to inform and inspire its consumers. In the end, that is what I produce everything for: human interaction. It does not matter if it is video or audio or design, I always believe a project must perform well, look good, and be practical and easy for consumers to use or digest. </p>
-			<p>You can connect with me on 
-				<a href="{{ site.author.dribbble }}" class="line white">Dribbble</a>, 
-				<a href="{{ site.author.behance }}" class="line white">Behance</a>, 
-				<a href="{{ site.author.github }}" class="line white">Github</a>, and -of course- 
-				<a href="http://twitter.com/{{ site.author.twitter }}" class="line white">Twitter</a>.</p>
-		</div>
-	</section>
+    
+    <section class="about-image-container">
+        <h2 class="design title">Design</h2>
+        <div class="about-image"></div>
+    </section>
+    
 	<section class="service design">
-		<div class="wrapper">
-			<h3>No. 1 - Design</h3>
-			<p>Designing is my greatest passion. Over the past few years, I have developed a love for the objectified skill of graphic design. I apply this passion toward the web. I believe that the "old age" art of finely tuned grids and good typography can be used on the modern web.</p>
-		</div>
+        <div class=col>
+            <span class=icon></span>
+            <h3 class=design-subtitle>Experience</h3>
+            <p>
+                <small>
+                    Intern<br>
+                    <em>WELD Marketing, 2011-2013</em>
+                </small><br>
+                <small>
+                    Intern<br>
+                    <em>Eskew+Dumez+Ripple, 2013</em>
+                </small>
+            </p>
+        </div>
+        </div>
+        <div class=col>
+            <span class=icon></span>
+            <h3 class=design-subtitle>Education</h3>
+            <p>
+                <small>
+                    Home School<br>
+                    <em>2000-2014 (Expected)</em>
+                </small><br>
+                <small>
+                    New Orleans Center for Creative Arts<br>
+                    <em>2010-2014 (Expected)</em>
+                </small>
+            </p>
+        </div>
+        <div class=col>
+            <span class=icon></span>
+            <h3 class=design-subtitle>Work</h3>
+            <ul class=pretty-list>
+                <li><a href={{site.url}}/work>Portfolio</a>
+                <li><a href={{author.dribbble}}>Dribbble</a>
+                <li><a href={{author.behance}}>Behanc&eacute;</a>
+            </ul>
+        </div>
 	</section>
+    
+    <svg class="triangle design" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 102" preserveAspectRatio="none"><path d="M0 0 L50 100 L100 0 Z" /></svg>
+     
+    <section class="about-image-container">
+        <h2 class="video title">Video</h2>
+        <div class="about-image"></div>
+    </section>
+    
 	<section class="service video">
-		<div class="wrapper">
-			<h3>No. 2 -Video</h3>
-			<p>At the the New Orleans Center for Creative Arts (NOCCA) I studied Media Arts for four years, from 2010 to 2014. I will graduate as the old level four student. As a media arts student I recieved industry standard training in film production, inlcuding: screenwriting, cinematography/camera operation, color grading, editing, and  all other aspecs of film. As a NOCCA student I have shot eight personal films, worked as a production assistant on local shoots, a camera operator for local TV, and recently the TEDx conference video crew.</p>
+		<div class=wrapper data-top="opacity: 0.0;" data-center-center="opacity: 1.0;">
+
 		</div>
 	</section>
+    
+    <svg class="triangle video" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 102" preserveAspectRatio="none"><path d="M0 0 L50 100 L100 0 Z" /></svg>
+    
+    <section class="about-image-container">
+        <h2 class="audio title">Audio</h2>
+        <div class="about-image"></div>
+    </section>
+    
 	<section class="service audio">
-		<div class="wrapper">
-			<h3>No. 3 -Audio</h3>
-			<p>In addition to studing video production at NOCCA, I also study audio engineering: including enginnering and mixing and mastering. In 2012 I reccorded three hours of studio and two hours of live audio. In 2013, I have reccorded nearly two hours of live and one hour of studio.</p>
+		<div class=wrapper data-top="opacity: 0.0;" data-center-center="opacity: 1.0;">
+			
 		</div>
 	</section>
-		<!--<section class="resources">
-		<div class="wrapper">
-			<h3>Resources</h3>
-			<p>I have published several resources, some are on my site, others are on Github:</p>
-			<ul class="circle">
-				<li><a href="{{ site.url }}/styleguide" class="line">Styleguide</a> - My personal styleguide and code specifcations</li>
-				<li><a href="{{ site.url }}/colophony" class="line">Colophony</a> - Everything about my site</li>
-				<li><a href="{{ site.url }}/blog/2013/building-my-site" class="line">Building My Site</a> - How I built my site </li>
-				<li><a href="{{ site.author.github }}/html-reset" class="line">HTML5 Reset</a> - My personal HTML5 reset, based off Normalize.css</li>
-			</ul>
-		</div>
-	</section>-->
+    
+    <svg class="triangle audio" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 102" preserveAspectRatio="none"><path d="M0 0 L50 100 L100 0 Z" /></svg>
+    
 </main>
-{{> footer-inc }}
+<footer class="about page-footer">
+<small>Made with <object class=page-footer-heart><svg x=0 y=0 width=10px height=10px viewBox="0 0 10 8.1396484"><g><path d="M9.1796875,0.6699219c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0L5,1.2753906L4.3398438,0.6699219 c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0c-1.0927734,1.0029297-1.0927734,2.6308594,0,3.6337891L5,8.1396484 l4.1796875-3.8359375C10.2734375,3.3007813,10.2734375,1.6728516,9.1796875,0.6699219z"/></g></svg></object> in New Orleans<br>
+&copy;{{site.copyright}} | <a class=page-footer-link href={{site.url}}/legal rel=license role=document>Privacy and Terms</a></small>
+</footer>
 {{> close-inc }}

@@ -2,13 +2,27 @@
 published: true
 title: The Blog
 
-shortname: blog
-description: A collection of thoughts, research, and design curated --and mostly written-- by Patrick Burtchaell.  
+shortName: blog
+description: A collection of thoughts, research, and design by Patrick Burtchaell.  
 
 layout: layout-custom.hbs
 ---
-<section class=landing>
-	<h1 class=landing-title>soon.</h1>
-	<p class=landing-subtitle>I am in the progress of migrating my content to its new home.<br> 
-	   In the meantime, you could read some of my posts on <a href="{{ site.author.medium }}" class="line white">Medium</a> if you'd like.</p>
+<section class=article-feed>
+    <div class=wrapper>
+        {{#compose 'published/*.hbs'}}
+        <a href={{site.url}}/blog/{{year}}/{{month}}/{{shortName}}/ rel=prefetch role=link>
+            <article class=article-item>
+                <header class=article-item-header>
+                    <h1>{{title}}</h1>
+                </header>
+                <section class=article-item-section>
+                    <p>{{truncate description 20}}</p>
+                </section>
+                <footer class=article-item-footer>
+                    <time datetime="" pubdate="">{{date}}</time>
+                </footer>
+            </article>
+        </a>
+        {{/compose ~}}
+    </div>
 </section>
