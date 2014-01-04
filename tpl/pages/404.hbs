@@ -1,0 +1,45 @@
+---
+title: 404 Error
+shortName: error
+description: Well...
+
+layout: none
+---
+{{> open-inc }}
+ <a href={{site.url}}><header class=error-header>
+   <small><h1 class=error-title>Patrick Burtchaell</h1></small>
+</header></a>
+<main role="main" class="{{page.shortName}} page">
+    <section class=error-intro >
+        <div class=wrapper>
+            <svg class="svg-source" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="database">
+                    <g>
+                        <path d="M30,2.582C27.273,1.043,22.029,0,16,0C9.973,0,4.729,1.043,2,2.582C0.73,3.297,0,4.121,0,5v22
+                        c0,0.879,0.73,1.703,2,2.418C4.729,30.957,9.973,32,16,32c6.029,0,11.273-1.043,14-2.582c1.273-0.715,2-1.539,2-2.418V5
+                        C32,4.121,31.273,3.297,30,2.582z M16,2c8.494,0,13.217,2.047,13.947,3C29.217,5.953,24.494,8,16,8C7.508,8,2.785,5.953,2.055,5
+                        C2.785,4.047,7.508,2,16,2z M16,10c6.029,0,11.273-1.043,14-2.582V12h-0.053c-0.73,0.953-5.453,3-13.947,3
+                        c-8.492,0-13.215-2.047-13.945-3H2V7.418C4.729,8.957,9.973,10,16,10z M30,27h-0.053c-0.73,0.953-5.453,3-13.947,3
+                        c-8.492,0-13.215-2.047-13.945-3H2v-5.582C4.729,22.957,9.973,24,16,24c6.029,0,11.273-1.043,14-2.582V27z M30,19h-0.053
+                        c-0.73,0.953-5.453,3-13.947,3c-8.492,0-13.215-2.047-13.945-3H2v-4.582C4.729,15.957,9.973,17,16,17 
+                        c6.029,0,11.273-1.043,14-2.582V19z"></path>
+                    </g>
+                </g>
+            </svg>
+            <h1>404 Error</h1>
+            <br>
+            <em>That page was not found, but you can <a href=#search class="white line">search</a> for what you were looking for, or <a href={{site.url}} class="white line">go home</a>.</em>
+        </div>
+    </section><!-- /.error-intro -->
+    <svg id="bigTriangleColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 102" preserveAspectRatio="none"><path d="M0 0 L50 100 L100 0 Z" /></svg>
+    <section class=error-search id=search>
+        <div class=wrapper>
+            <form>
+                <input type=email autocomplete=on placeholder="What are you looking for?">
+                <button>Search</button>
+            </form>
+        </div>
+    </section><!-- /.error-search -->
+</main>
+{{> footer-inc }}
+{{> close-inc }}

@@ -1,5 +1,6 @@
 ---
 published: true
+hightlighting: true
 title: Styleguide
 
 shortName: styleguide
