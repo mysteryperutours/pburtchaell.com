@@ -24,6 +24,8 @@
 	height: 200px; 
 	background: @light-grey;
 	box-shadow: inset @base-box-shadow;
+    width: 5px;
+    margin: 1px;
 }
 
 /*
@@ -37,8 +39,8 @@
 	width: 100%;
 	top: 0;
 	z-index: 999999;
-	background: @dark-grey;
-	box-shadow: @base-box-shadow;
+    background: @white;
+    border-bottom: 1px solid fadeOut(@dark-grey, 90%);
 	transition: 0.5s ease;
 	
 	// SVG branding
@@ -52,7 +54,7 @@
 	
 	// when scrolling down
 	&.unpinned {
-		-webkit-transform: rotateX(-90deg) translateY(-30px);
+		-webkit-transform: translateY(-100px);
 		-webkit-transform-origin: top;
 		transition: 0.5s ease;
 	}
@@ -60,20 +62,7 @@
 	// when scrolling up
 	&.pinned {
 	}
-	
-	// triangle on the center of the header
-	/*&:before {
-		content: '';
-		position: absolute;
-		height: 100px;
-		width: 100px;
-		left: 50%;
-		margin-left: -52px;
-		border-top-left-radius: 100%;
-		background: @dark-grey;
-		-webkit-transform: rotate(45deg);
-	}*/
-		
+			
 }
 
 /*
@@ -88,27 +77,18 @@
 .page-footer {
 	
 	// footer container
+    margin: 0;
 	padding: @base-padding*3-5 0 @base-padding*3-5 0;
-	background: @dark-grey;	
+	background: darken(@dark-grey, 15%);	
 	color: @white;
 	text-align: center;
+    letter-spacing: 1px;
 	text-transform: uppercase;
-	box-shadow: inset 1px 1px rgba(10,10,11,0.1);
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	
-		// green line at the bottom of the footer
-		/*&:after {
-			content: '';
-			display: block;
-			position: relative;
-			width: 100%;
-			height: 5px;
-			top: 70px;
-			background: @video;
-		}*/
-	
+
+        &.about {
+            padding-top: @base-padding*5;
+        }
+    
 	}
 
 	// SVG heart 
@@ -127,7 +107,17 @@
 		}
 	
 	}
-	
+
+.newsletter {
+    display: block;
+    postion: absolute;
+    box-shadow: inset 1px 3px 3px rgba(10,10,11,0.2);
+    background: @audio;
+    margin-top: 0;
+    z-index: 9;
+    transition: 1s;
+}
+
 /* 
  * <noscript> warning
  */
@@ -146,7 +136,6 @@
 	
 	padding: @base-padding*6 0 @base-padding*4 0;	
 	text-align: center;
-	background: darken(@dark-grey, 15%);
 	
 	}
 
@@ -155,8 +144,8 @@
 		padding: @base-padding/2-2.5;
 		border: 3px solid fadeOut(@design, 50%);
 		text-transform: uppercase;
-		text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
-		box-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+		//text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+		//box-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
 	}
 	
 	.home-title-subheading { // p
@@ -164,19 +153,19 @@
 	}
 	
 .home-feed {
+    margin: 0;
+    width: 100%;
 	display: inline-block;
-	width: 100%;
-	padding: 0 @column @column @column;
+    padding-top: 60px;
 }
 
 // <article class=featured-content>
 .featured-content {
 	
-	float: left;
-	clear: right;
-	width: @column*16;
-	margin: @column 0 0 0;
+	width: 100%;
+    margin: 0;
 	padding: 0;
+    float: left;
 	color: @white;
 	background: @dark-grey;
 	text-align: center;
@@ -199,37 +188,16 @@
 		.image-fallback {
 			display: block;
 			width: 100%;
-			opacity: 0.9 !important;
 		}
 
 	// <header class=featured-content-header>
 	.featured-content-header {
-		padding: @base-padding;
-		overflow: hidden;
-		height: 25px;
-		background: fadeout(@design, 30%);
-		box-shadow: inset 1px 5px 15px rgba(10,10,11,0.1);
 	}
 
 	// <section class=featured-content-section>
 	.featured-content-section {
-		padding: @base-padding;
-		line-height: 1.0;
-		box-shadow: 1px 5px 15px rgba(10,10,11,0.1);	
-	
+        display: none;
 	}
-
-	// <footer class=featured-content-footer>
-	.featured-content-footer {
-		padding: @base-padding/5;
-		font-family: 'open sans italic';
-		color: @dark-grey;
-		background: @white;
-	}
-		
-		// <time class=featured-content-date >
-		.featured-content-date  {
-		}
 
 	// large screen media has :hover effect for article preview
 	// small screen media does not
@@ -237,8 +205,7 @@
 		
 		.featured-content {
 			
-			width: @column*6;
-			margin: @column @column*5 0 @column*5;
+			width: 25%;
 		
 		}
 		
@@ -264,24 +231,21 @@
 	}
 
 
-	.biography {
-		
+	.about-intro {
 		padding: @base-padding*8 @column*2 @base-padding*4 @column*2;	
 		color: @white;
-		background: darken(@dark-grey, 15%);
-
+        background: darken(@dark-grey, 15%);
 	}
 	
 	.service {
-		
-		position: relative;
-		padding: 100px 0 150px 0;	
+    
+        color: @white;
+		padding: 100px 0 300px 0;	
 
 		&.design {
 			
-			color: darken(@red, 40%);
 			background: @red;
-		
+        
 			&:before {
 				content: '';
 			}
@@ -290,20 +254,111 @@
 		
 		&.video {
 			
-			color: darken(@video, 70%);
 			background: @video;
-			
+        
+			.title { color: @video; } 
+            
 		}
 		
+        .icon {
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            margin: 0 auto;
+            background: @dark-grey;
+            pointer-events: none;
+        }
+    
+        .col {
+            
+            text-align: center;
+            width: 100%;
+        }
+    
+        @media screen and (min-width: 40em) {
+            
+            .col {
+                float: left;
+                width: 25%;
+                margin: 0 25%/6;
+            }
+            
+        }
+
+    
 		&.audio {
 			
-			color: ;
 			background: @audio;
-			
+        
+			.title { color: @audio; }
+        
 		}
 		
 	}
-	
+
+        .title {
+            font-size: 36px;
+            width: 150px;
+            position: absolute;
+            text-align: center;
+            display: block;
+            text-transform: uppercase;
+            left: 50%;
+            padding: 10px;
+            background: darken(@dark-grey, 15%);
+            margin: 200px 0 0 -90px;
+            z-index: 1;
+            
+            &.design { color: @red; }
+            &.video { color: @green; }
+            &.audio { color: @blue; }
+            
+        }
+
+    .about-image-container {
+        height: 400px;
+        background: darken(@dark-grey, 35%);
+    }
+
+    .about-image {
+        height: 100%;
+        background: url('../img/site/blog-cover.jpg');
+        background-size: cover;
+        opacity: 0.8;
+    }
+
+    .triangle {
+        
+        position: absolute;
+        pointer-events: none;
+        z-index: 9;
+    
+        path {
+            stroke-width: 2;
+        }
+        
+        &.design path {
+            fill: @red;
+            stroke: @red;
+        }
+        &.video path {
+            fill: @video;
+            stroke: @video;
+        }   
+        &.audio path {
+            fill: @audio;
+            stroke: @audio;
+        }
+    
+    }
+
+    // design section
+    .design-subtitle {
+        text-transform: uppercase;
+    }
+
+
 
 
 /*
@@ -314,19 +369,30 @@
 	color: @white;
 	text-align: center;
 	padding: @base-padding*8 @column*2 @base-padding*12 @column*2;	
-	background: darken(@dark-grey, 15%);
-	
+	//background: darken(@dark-grey, 15%);
+	background: @design;
+    
+        &.blue {
+            
+            background: @audio;
+            
+            .landing-title {
+                color: lighten(@audio, 35%);
+            }
+            
+        }
+    
 	}
 	
 	.landing-title {
-		color: @design;
+		color: lighten(@design, 25%);
 		font-size: 72px;
 		margin-bottom: @base-margin;
-		text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+		//text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
 	}
 	
 	.landing-subtitle {
-		opacity: 0.5;
+		opacity: 0.9;
 	}
 
 /* 
@@ -351,3 +417,62 @@
 
 	//  properties for the category page template
 	@import 	'../pages/category';
+
+
+/*
+ * 404 Error Page
+ */
+.error-intro {
+    padding: 200px 0;
+    color: @white;
+    text-align: center;
+    background: @design;  
+}
+.svg-source {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    fill: @white;
+}
+/* Big Triangle */
+svg#bigTriangleColor {
+	pointer-events: none;
+    position: absolute;
+}
+
+#bigTriangleColor path {
+	fill: @design;
+	stroke: @design;
+	stroke-width: 2;
+}
+.error-search {
+    padding: 200px 0 75px 0;
+    color: @white;
+    text-align: center;
+    background: darken(@dark-grey, 15%);  
+    
+    input {
+        color: @red;
+    }
+}
+
+.error-header {
+    position: fixed;
+    margin: 10px;
+}
+.error-title {
+    font-size: 12px;
+    margin: 0;
+    background: @white;
+    padding: 10px;
+}
+
+/*
+ * $ARTICLE-FEED
+ */
+.article-feed {
+    text-align: center;
+    margin: @base-padding*6 @column @base-padding*4 @column;
+       
+}

@@ -37,7 +37,7 @@
 	display: block;
 	height: 40px;
 	width: 40px;
-	background: @design;
+	background: @light-grey;
 	font-size: 0;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-touch-callout: none;
@@ -99,11 +99,11 @@
 				width: @column*6;
 				margin: 0 10px 0 10px;
 				background: none;
-				
-				a {
-					color: @white !important;
-				}
-		
+                list-style: none; 
 			}
+            
+            .nav-item-active {
+                border-bottom: 3px solid @dark-grey;
+            }
 	
 }

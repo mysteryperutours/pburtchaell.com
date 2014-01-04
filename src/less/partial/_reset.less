@@ -33,7 +33,7 @@ ol, ul { list-style: none; }
 
 // properties for <body> and <html>
 html {
-	-ms-overflow-style: scrollbar; // prevent the IE11 scrollbar from fading out	
+	-ms-overflow-style: scrollbar; // prevent the IE11 scrollbar from fading out
 } 
 
 body { 
@@ -61,6 +61,15 @@ body {
 	 -ms-text-size-adjust: 80%;
 		-text-size-adjust: 80%;
 	
+}
+
+/*
+ * always 60FPS have scroll
+ * add the class '.disable-hover' to <body> using JS
+ */
+.disable-hover,
+.disable-hover * {
+    pointer-events: none !important;
 }
 
 
