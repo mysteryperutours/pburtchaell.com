@@ -1,13 +1,8 @@
 # Tasklist for the Project
 
-1) Install Pretty, add code to gruntfil.js:
+3) menu icon for mobile  
+a) add icon to button
 
-`npm install pretty`, then add the following config to apply formatting to any generated HTML:
+4) add DINPro webfonts
 
-```js
-options: {
-  postprocess: require('pretty')
-}
-```
-
-2)
+5) fix z-index of the profile image on all article pages; the "currently reading" header doesn't scroll over it. 

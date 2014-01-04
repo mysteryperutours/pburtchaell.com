@@ -24,6 +24,10 @@
   "devDependencies": {
     "grunt-devtools": "~0.2.1",
     "assemble": "~0.4.32",
-    "assemble-contrib-permalinks": "~0.3.1"
+    "assemble-contrib-permalinks": "~0.3.1",
+    "helper-compose": "~0.1.1",
+    "handlebars-helper-moment": "~0.1.3",
+    "grunt-aws-s3": "~0.7.2",
+    "grunt-s3": "~0.2.0-alpha.3"
   }
 }

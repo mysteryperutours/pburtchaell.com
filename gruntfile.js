@@ -2,9 +2,6 @@
  * http://www.pburtchaell.com/ - http://twitter.com/pburtchaell
  *
  *
- * Thanks to Grunt.js, Assemble.js and Node.js 
- *
- *
  * Copyright (c) 2013 PBDVA, LLC.
  * Licensed under the MIT license, pburtchaell.com/license 
  */
@@ -17,15 +14,17 @@ module.exports = function(grunt) {
 	grunt.initConfig({ 
  
 		pkg		: 	grunt.file.readJSON('package.json'),
+        aws     :   grunt.file.readJSON('aws.json'),
 		site	: 	grunt.file.readYAML('src/data/site.yml'),
+        
 		
         /*
          * clean <% site.build %> & <% site.release %>
          * this will remove all old files before creating the new files
          */
         clean: {
-            //build: ['<%= site.build %>/**/*.html','<%= site.build %>/**'],
-            release: ['<%= site.release %>/**/*.html','<%= site.release %>/**']
+            //build: ['<%= site.development %>/**/*.html','<%= site.development %>/**'],
+            release: ['<%= site.production %>/**/*.html','<%= site.production %>/**']
         },
         
 		/*
@@ -42,9 +41,9 @@ module.exports = function(grunt) {
 			
 			site: {
 				files: {
-					'<%= site.build %>/assets/css/styles.min.css' : '<%= site.source %>/less/styles.less',
-					'<%= site.build %>/assets/css/ie8.min.css' : '<%= site.source %>/less/browsers/ie8.less', // IE8 Styles
-					'<%= site.build %>/assets/css/ie9.min.css' : '<%= site.source %>/less/browsers/ie9.less'  // IE9 Styles		
+					'<%= site.development %>/assets/css/styles.min.css' : '<%= site.source %>/less/styles.less',
+					'<%= site.development %>/assets/css/ie8.min.css' : '<%= site.source %>/less/browsers/ie8.less', // IE8 Styles
+					'<%= site.development %>/assets/css/ie9.min.css' : '<%= site.source %>/less/browsers/ie9.less'  // IE9 Styles		
 				}
 			}
 			
@@ -69,7 +68,7 @@ module.exports = function(grunt) {
 		 */
 		spell: {
     		blog: {
-				src: ['<%= site.content %>/blog/published/*.{md}'],
+				src: ['<%= site.content %>/blog/published/*.{md,hbs}'],
       			options: {
         			lang: 'en',
         			ignore: ['cliches', 'double negatives']
@@ -83,11 +82,12 @@ module.exports = function(grunt) {
 		uglify: {
 			site: {
 				files: {
-					'<%= site.build %>/assets/js/post.min.js' : '<%= site.source %>/js/post.js',
-					'<%= site.build %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
-					'<%= site.build %>/assets/js/GGS.min.js' : '<%= site.source %>/js/vendor/GGS.js',
-					'<%= site.build %>/assets/js/dribble.js' : '<%= site.source %>/js/vendor/dribbble.js',
-					'<%= site.build %>/assets/js/highlight.min.js' : '<%= site.source %>/js/vendor/highlight.pack.js',
+					'<%= site.development %>/assets/js/post.min.js' : '<%= site.source %>/js/post.js',
+					'<%= site.development %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
+					'<%= site.development %>/assets/js/GGS.min.js' : '<%= site.source %>/js/vendor/GGS.js',
+					'<%= site.development %>/assets/js/dribble.js' : '<%= site.source %>/js/vendor/dribbble.js',
+					'<%= site.development %>/assets/js/highlight.min.js' : '<%= site.source %>/js/vendor/highlight.pack.js',
+                    '<%= site.development %>/assets/js/about.min.js' : '<%= site.source %>/js/about.js',
 				}
 			}
 		},
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
                     collapseBooleanAttributes: true, 
                 },
                 files: {                              
-                    '<%= site.build %>/**/*.html': '<%= site.build %>/**/*.html',
+                    '<%= site.development %>/**/*.html': '<%= site.development %>/**/*.html',
                 }
             }
         },
@@ -121,9 +121,9 @@ module.exports = function(grunt) {
                     pretty: true,
                 },
                 expand: true,
-                cwd: '<%= site.build %>/assets/',
+                cwd: '<%= site.development %>/assets/',
                 src: ['**/*'],
-                dest: '<%= site.release %>/assets/'
+                dest: '<%= site.production %>/assets/'
             }
         },
         
@@ -144,23 +144,26 @@ module.exports = function(grunt) {
 				
 				flatten: true,
 				data: ['<%= site.source %>/data/*.{json,yml}', 'package.json'],
-				assets: '<%= site.build %>/assets',
-				helpers: ['<%= site.source %>/helpers/*.js'],
+				assets: '<%= site.development %>/assets',
+				helpers: [
+                    'helper-compose',
+                    'handlebars-helper-moment',
+                    '<%= site.source %>/helpers/*.js'
+                ],
 				partials: [
                     '<%= site.templates %>/partials/**/*.{hbs,md}', // partials are always used on every page (i.e. header, footer, navigation, etc.)
                     '<%= site.templates %>/snippets/**/*.{hbs,md}'  // snippets are only used occasionally (i.e. branding, social media links, etc.)
                 ],
-				plugins: 'assemble-contrib-permalinks',
+				plugins: [
+                    'assemble-contrib-permalinks',
+                ],
 				layoutdir: '<%= site.templates %>/layouts',
 				layout: 'default.hbs',
-				ext: '<%= site.extension %>' // *.html by default
-                
-				// postprocess: require('pretty')
-				/*prettify: {
-					indent: 2;	
-					condense: true,
+				ext: '<%= site.extension %>', // *.html by default
+				postprocess: require('pretty'), //
+				prettify: {
 					padcomments: true
-				}*/
+				}
 				
 			},
 			
@@ -177,7 +180,7 @@ module.exports = function(grunt) {
 				files: [ 
 					{
 						src: ['<%= site.content %>/*.{hbs,md}'],
-						dest: '<%= site.build %>/'
+						dest: '<%= site.development %>/'
 					}
 				]
 			},
@@ -190,25 +193,29 @@ module.exports = function(grunt) {
 					permalinks: {
 						structure: ':year/:month/:shortName/index.html'
 					},
-                    layout: 'layout-blog.hbs' 
+                    layout: 'layout-blog.hbs',
+                    compose: {
+                        cwd: '<%= site.content %>/blog/',
+                        sep: '<!-- /article -->'
+                    },
 				},
 				
 				files: [ 
 					{
                         // assemble the blog posts
 						src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
-						dest: '<%= site.build %>/blog/'
+						dest: '<%= site.development %>/blog/'
 					},
 					{
                         // assemble the blog post drafts
 						src: ['<%= site.content %>/blog/drafts/*.{hbs,md}'],
-						dest: '<%= site.build %>/blog/drafts/',
+						dest: '<%= site.development %>/blog/drafts/',
 						
 					},
                     {
                         // assemble the blog index page
 						src: ['<%= site.content %>/blog/index.hbs'],
-						dest: '<%= site.build %>/blog/index.html'
+						dest: '<%= site.development %>/blog/index.html'
 					}
 				]
 				
@@ -229,12 +236,12 @@ module.exports = function(grunt) {
                     {
                         // assemble the portfolio content pages
 						src: ['<%= site.content %>/portfolio/published/*.json'],
-						dest: '<%= site.build %>/work/'
+						dest: '<%= site.development %>/work/'
 					},
                     {
                         // assemble the portfolio index page
 						src: ['<%= site.content %>/portfolio/index.hbs'],
-						dest: '<%= site.build %>/work/index.html',
+						dest: '<%= site.development %>/work/index.html',
 					}
 				]
                 
@@ -249,7 +256,7 @@ module.exports = function(grunt) {
 		watch: {
 			dev: {
 				files: [
-					 '<%= site.source %>/**/*.{js,less}',
+					 '<%= site.source %>/**/*.{js,less,hbs}',
 					 '<%= site.content %>/**/*.{hbs,md,json,yml}'
 					 ],
 				tasks: [
@@ -271,22 +278,83 @@ module.exports = function(grunt) {
 		
 		
 		/*
-		 * start server
+		 * start local server
 		 */			 
 		connect: {
     		dev: {
       			options: {
         			port: 35729,
-        			base: '<%= site.build %>'
+        			base: '<%= site.development %>'
 				}
     		},
             production: {
       			options: {
         			port: 35729,
-        			base: '<%= site.release %>'
+        			base: '<%= site.production %>'
 				}
     		}
   		},
+        
+        /*
+		 * deploy to AWS S3
+		 */
+        s3: {
+            
+            options: {
+                key: '<%= aws.auth.key %>',
+                secret: '<%= aws.auth.secret %>',
+                access: 'public-read',
+                headers: {
+                    // two Year cache policy (1000 * 60 * 60 * 24 * 730)
+                    "Cache-Control": "max-age=630720000, public",
+                    "Expires": new Date(Date.now() + 63072000000).toUTCString()
+                }
+            },
+            
+            staging: { // dev.pburtchaell.com bucket 
+                
+                options: {
+                    encodePaths: true,
+                    bucket: '<%= aws.bucket.staging %>'
+                },
+                
+                // upload all files from the tmp directory
+                upload: [{
+                    src: '<%= site.development %>/**/*',
+                    dest: './'
+                }]
+                
+            },
+            
+            production: { // pburtchaell.com bucket 
+                
+                options: {
+                    bucket: '<%= aws.bucket.production %>'
+                },
+                
+                // upload all files from the dist directory
+                upload: [{
+                    src: '<%= site.production %>/**/*',
+                    dest: './'
+                }]
+                
+            },
+            
+            content: { // content.pburtchaell.com bucket 
+                
+                options: {
+                    bucket: '<%= aws.bucket.content %>'
+                },
+                
+                // upload all files from the dist directory
+                upload: [{
+                    src: '<%= site.production %>/assets/**/*',
+                    dest: './'
+                }]
+                
+            }
+        
+        },
 		
 		
 		/*
@@ -300,7 +368,7 @@ module.exports = function(grunt) {
 	
 	
 	/*
-	 * such wow plugins
+	 * plugins, such wow
 	 */
 	grunt.loadNpmTasks('assemble');
 	grunt.loadNpmTasks('assemble-less');
@@ -312,12 +380,16 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-spell');
+    grunt.loadNpmTasks('grunt-s3');
     //grunt.loadNpmTasks('grunt-autoprefixer');
 	
 	/* 
-	 * so doge tasks
+	 * tasks
 	 */
-
+    
+    grunt.registerTask('deploy -staging', ['s3:staging']); // deploy the site to the dev.pburtchaell.com bucket
+    grunt.registerTask('deploy -production', ['s3:production']); // deploy the site to the pburtchaell.com bucket
+    
 	grunt.registerTask('default', [
 		'assemble',
         'connect:production'
@@ -334,9 +406,7 @@ module.exports = function(grunt) {
 		'assemble',      // 3. assemble the site to the <% site.build %> directory
         'less',          // 4. create the stylesheets
         'uglify',        // 5. minify the javascripts
-        'compress',      // 6. compress all the things!
-        //'copy'         // 7. move static assets (fonts, images) to <% site.release %>
-                         // 8. such wow
+        'compress',      // 6. compress all the things
 	]);
-	
+    
 }
