@@ -1,36 +1,17 @@
-###
-# Global site data 
-###
+# GENERAL SITE DATA
 
-release	    :	./dist
-build       :   ./tmp
+# SITE DIRECTORIES 
+production  :	./dist
+development :   ./tmp
 source		:	./src
-
 plugins		:	./src/plugins
 templates	:	./tpl
 content		: 	./tpl/pages
 extension	: 	.html
-
 url			: 	http://localhost:35729
 
+# SITE INFOMATION
 title		:	Patrick Burtchaell - Design + Video + Audio
 description	: 	I am a freelance front-end developer, designer and videographer from New Orleans with a passion for objectifying content.
 keywords	:   Patrick Burtchaell, graphic design, web design, video production, audio production, New Orleans, designer, videographer, filmmaker
-copyright   :   (c) 2013 PBDVA, LLC.
-
-author		:
-  name		:	
-     first	:	Patrick
-     last	: 	Burtchaell
-  avatar	:	assets/img/site/patrick.jpg
-  bio		:	I am a freelance front-end developer, designer and videographer from New Orleans with a passion for objectifying content.
-  url		:	http://pburtchaell.com/
-  email		:	patrick@pburtchaell.com
-  
-  twitter	:	'@pburtchaell'
-  facebook	:	'http://facebook.com/pburtchaell'
-  dribbble	:	'http://dribbble.com/pburtchaell'
-  behance	:	'http://behance.net/pburtchaell'
-  linkedin	:	'http://linkedin.com/in/burtchaell'
-  medium	:	'http://medium.com/@pburtchaell'
-  github	:	'http://github.com/pburtchaell'
+copyright   :   2014 Patrick Burtchaell

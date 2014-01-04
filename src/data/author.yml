@@ -1,19 +1,23 @@
-name	:	
- first	:	Patrick
- last	: 	Burtchaell
-avatar	:	assets/img/site/patrick.jpg
-bio		:	I am a freelance front-end developer, designer and videographer from New Orleans with a passion for objectifying content.
-url		:	http://pburtchaell.com/
-email	:	patrick@pburtchaell.com
+# SITE AUTHOR INFOMATION
+nameFirst : Patrick
+nameLast  : Burtchaell 
 
-twitter		:	
-  username	: 	'pburtchaell'
-  url		: 	'http://twitter.com/pburtchaell'
-facebook	:	'http://facebook.com/pburtchaell'
-dribbble	:	'http://dribbble.com/pburtchaell'
-behance		:	'http://behance.net/burtchaell'
-instagram	:	'http://instagram.com/pburtchaell'
-linkedin	:	'http://linkedin.com/in/burtchaell'
-medium		:	'http://medium.com/@pburtchaell'
-github		:	'http://github.com/pburtchaell'
-codewall	: 	'http://codewall.com/pb'
+# GENERAL BIOGRAPHY
+bio    : I am a user interface designer and videographer from New Orleans with a passion for creating content that speaks for itself.
+image  : img/site/patrick.jpg
+url    : http://pburtchaell.com/
+email  : patrick@pburtchaell.com
+  
+# SOCIAL MEDIA/WEBSITE LINKS
+twitter  : http://twitter.com/pburtchaell
+instagram: http://instagram.com/pburtchaell
+facebook : http://facebook.com/pburtchaell
+dribbble : http://dribbble.com/pburtchaell
+behance  : http://Wbehance.net/pburtchaell
+linkedin : http://linkedin.com/in/burtchaell
+medium   : http://medium.com/@pburtchaell
+github   : http://github.com/pburtchaell
+codewall : http://codewall.com/pb
+codepen  : http://codepen.io/pburtchaell
+exposure : http://exposure.io/psb
+vsco     : http://vsco.co/pburtchaell
