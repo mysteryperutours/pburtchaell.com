@@ -19,3 +19,7 @@ Built with love in New Orleans | Version: **1.0.0**
 
 [Source files licensed under MIT](http://pb.mit-license.org/).
 [All content copyright (c) 2014 Patrick Burtchaell](http://pburtchaell.com/legal/)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pburtchaell/site-assemble/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
