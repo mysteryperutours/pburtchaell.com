@@ -88,6 +88,7 @@ module.exports = function(grunt) {
 					'<%= site.development %>/assets/js/dribble.js' : '<%= site.source %>/js/vendor/dribbble.js',
 					'<%= site.development %>/assets/js/highlight.min.js' : '<%= site.source %>/js/vendor/highlight.pack.js',
                     '<%= site.development %>/assets/js/about.min.js' : '<%= site.source %>/js/about.js',
+                    '<%= site.development %>/assets/js/hyphenator.min.js' : '<%= site.source %>/js/vendor/hyphenator.js',
 				}
 			}
 		},
@@ -159,11 +160,11 @@ module.exports = function(grunt) {
                 ],
 				layoutdir: '<%= site.templates %>/layouts',
 				layout: 'default.hbs',
-				ext: '<%= site.extension %>', // *.html by default
-				postprocess: require('pretty'), //
-				prettify: {
+				ext: '<%= site.extension %>',
+				//postprocess: require('pretty'),
+				/*prettify: {
 					padcomments: true
-				}
+				}*/
 				
 			},
 			

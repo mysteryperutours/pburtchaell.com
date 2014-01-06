@@ -1,25 +1,30 @@
 {{> open-inc ~}}
+<style>
+
+</style>
 {{> header-inc ~}}
 <main role=main class="main blog page">
 
-	<span class=article-banner>Currently reading {{ page.title }}</span>
+	<span class=article-banner>Currently reading <strong>{{page.title}}</strong></span>
     
 	<picture class=article-freatured-image alt="{{ page.featuredimageAlt }}">
 		<source srcset="big.jpg 1x, big-2x.jpg 2x, big-3x.jpg" type=image/jpeg media=(min-width: 40em)>
 		<source srcset="med.jpg 1x, med-2x.jpg 2x, big-3x.jpg" type=image/jpeg>
-		<img src="{{assets}}/{{ page.featuredImage }}" alt="{{ page.featuredImageAlt }}">
+		<img height=100% width=100% src="{{assets}}/{{ page.featuredImage }}" alt="{{ page.featuredImageAlt }}">
 	</picture>
 	
 	<div class=wrapper>
 		
 		<article>
-			
+            
 			<header class=article-header>
 				<h1 class=article-title>{{ page.title }}</h1>
-                {{#if page.description}}<h2 class=article-subtitle>{{ description }}</h2><br>{{/if ~}}
+                {{#if page.description}}
+                <h2 class=article-subtitle>{{ description }}</h2>
+                {{/if ~}}
 			</header><!-- /article-header -->
 			
-			<section class=article-content>
+			<section class="hyphenate article-content">
 				{{#markdown}}
 				{{> body }}
 				{{/markdown}}
@@ -49,7 +54,7 @@
                 
 				<div class=article-author>
 					<small><span>Written By</span>
-					<h6>{{ author.name.first }} {{ author.name.last }}</h6>
+					<h6>{{ author.nameFirst }} {{ author.nameLast }}</h6>
 					<p class=article-author-bio>{{ author.bio }}<br> 
 					<em><a href=http://twitter.com/{{ author.twitter }} class=line>Follow me on Twitter</a></em></p><br></small>
 				</div><!-- /article-author -->

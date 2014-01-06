@@ -14,18 +14,14 @@ I have a very particular style to the way I write code that is very different fr
 I try to write my HTML as stucturally as possible. I usually code all the HTML for a page before I begin my stylesheets. 
 
 ### Case
-Most elements in HTML are case-insensitive. I use all lowercase, the only thing I capitalize is the `<DOCTYPE! html>` declaration. When using Handlebars templates, I will capitalize the second word in a bracket so I can easy read each word --for example: 
-
-```handlebars
-<h1>{{firstName}}</h1><!-- Not {{firstname}} -->
-```
+Most elements in HTML are case-insensitive. I use all lowercase, the only thing I capitalize is the `<DOCTYPE! html>` declaration. When using Handlebars templates, I will capitalize the second word in a bracket so I can easy read each word.
 
 ### Closing Tags
 With HTML5 we don't have to close certian elements, so I don't use them. For example, list elements:
 
 ```html
 <nav>
-	<ul><!-- We don't need a closing </li>, so don't use it -->
+	<ul>
 		<li><a></a>
 		<li><a></a>
 	</ul>
@@ -57,7 +53,7 @@ If I am working on a project that uses both classes and IDs I will use closing t
 ```
 
 ### Attributes
-With HTML5 you [no longer have to wrap attributes in commas](). For example `<div class="content"><a href="localhost"></a></div>` can be written as `<div class=content><a href=localhost></a></div>`. Of course, you do not have to write attributes like this and the spec does not call for you to, but I like the appearance of it. Remember, however, that you can not have a space; thus, `<div class=content page>` would be invalid. You have to use `<div class="content page">`.
+With HTML5 you [no longer]() have to wrap attributes in commas. For example `<div class="content">` can be written as `<div class=content>`. Of course, you do not have to write attributes like this and the spec does not call for you to, but I like the appearance of it. Remember, however, that you can not have a space; thus, `<div class=content page>` would be invalid. You have to use `<div class="content page">`.
 
 ### HTML5 Elements
 HTML5 has several new elements, I follow the [WS3 standards]() when using those elements. The WS3 does not specify _how_ we should use some of the new elements, so I will briefly cover how I use some of the most useful elements.  

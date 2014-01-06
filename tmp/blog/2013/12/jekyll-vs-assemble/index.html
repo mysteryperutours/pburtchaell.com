@@ -1,248 +1,183 @@
 <!DOCTYPE html>
 <html lang=en>
-  <head>
-    <title>Jekyll vs Assemble - Patrick Burtchaell - Design + Video + Audio</title>
-    <meta name=description content="">
-    <meta charset=UTF-8>
-    <meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
-    <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1">
-    <style>
-      @font-face {
-        font-family: 'dinpro';
-        src: local('DINPRO LIGHT'), local('DINPRO-LIGHT'), url('../../../../assets/fonts/dinpro_light/DINPRO-LIGHT.ttf')format('truetype');
-      }
-      @font-face {
-        font-family: 'dinpro-bold';
-        src: local('DINPRO BOLD'), local('DINPRO-BOLD'), url('../../../../assets/fonts/dinpro_bold/DINPRO-BOLD.ttf')format('truetype');
-      }
-      @font-face {
-        font-family: 'opensans-italic';
-        src: url('../../../../assets/fonts/opensans_italic/OpenSans-Italic-webfont.eot');
-        src: url('../../../../assets/fonts/opensans_italic/OpenSans-Italic-webfont.eot?#iefix')format('embedded-opentype'), url('../../../../assets/fonts/opensans_italic/OpenSans-Italic-webfont.woff')format('woff'), url('../../../../assets/fonts/opensans_italic/OpenSans-Italic-webfont.ttf')format('truetype'), url('../../../../assets/fonts/opensans_italic/OpenSans-Italic-webfont.svg#open_sansitalic')format('svg');
-      }
-      @font-face {
-        font-family: 'opensans-regular';
-        src: url('../../../../assets/fonts/opensans_regular/OpenSans-Regular-webfont.eot');
-        src: url('../../../../assets/fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('OpenSans-Regular-webfont.woff')format('woff'), url('../../../../assets/fonts/opensans_regular/OpenSans-Regular-webfont.ttf')format('truetype'), url('../../../../assets/fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular')format('svg');
-      }
-    </style>
-    <link rel=stylesheet href=../../../../assets/css/styles.min.css>
-    <script src=../../../../assets/js/pre.min.js></script>
-    <meta name=keywords content="Patrick Burtchaell, graphic design, web design, video production, audio production, New Orleans, designer, videographer, filmmaker">
-    <meta name=author content=" ">
-    <link rel=author href=humans.txt>
-    <meta name=google-site-verification content=7RrfJovl477GocUkq4QOPIybas99RN2zebN46jgN_Lo>
-    <meta name=format-detection content="telephone=yes">
-    <meta name=apple-mobile-web-app-capable content=no>
-    <meta property=og:type content=website>
-    <meta property=og:title content="Jekyll vs Assemble - Patrick Burtchaell - Design + Video + Audio">
-    <meta property=og:description content="The nuts and bolts of two great static site generators.">
-    <meta property=og:url content=http://localhost:35729>
-    <meta property=og:site_name content="Patrick Burtchaell - Design + Video + Audio">
-    <meta property=og:profile:first_name content=>
-    <meta property=og:profile:last_name content=>
-    <meta property=og:image content=http://localhost:35729/assets/img/site/blog-cover.jpg>
-    <meta name="twitter:card" content=summary_large_image>
-    <meta name="twitter:site" content=>
-    <meta name="twitter:title" content="Jekyll vs Assemble">
-    <meta name="twitter:description" content="The nuts and bolts of two great static site generators.">
-    <meta name="twitter:creator" content=>
-    <meta name="twitter:image:src" content=http://localhost:35729/assets/img/site/blog-cover.jpg>
-    <meta name="twitter:domain" content=http://localhost:35729>
-    <link rel=apple-touch-icon sizes=57x57 href=http://pburtchaell.com/assets/img/site/ios-iphone.png>
-    <link rel=apple-touch-icon sizes=114x114 href=http://pburtchaell.com/assets/img/site/ios-iphone@2.png>
-    <link rel=apple-touch-icon sizes=72x72 href=http://pburtchaell.com/assets/img/site/ios-ipad.png>
-    <link rel=apple-touch-icon sizes=144x144 href=http://pburtchaell.com/assets/img/site/ios-ipad@2.png>
-    <link rel="shortcut icon" type=image/png href=http://pburtchaell.com/assets/img/site/favicon.png>
-  </head>
-  <body>
+<head>  
+<title>Jekyll vs Assemble - Patrick Burtchaell - Design + Video + Audio</title>
+<meta name=description content="">
+<meta charset=UTF-8>
+<meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
+<meta name=viewport content="width=device-width,user-scalable=yes,initial-scale=1">	
+<link rel=stylesheet href=../../../../assets/css/styles.min.css> 		
+<script src=../../../../assets/js/pre.min.js></script>	
+<meta name=keywords content="Patrick Burtchaell, graphic design, web design, video production, audio production, New Orleans, designer, videographer, filmmaker">
+<meta name=author content="Patrick ">
+<meta name=google-site-verification content=7RrfJovl477GocUkq4QOPIybas99RN2zebN46jgN_Lo>
+<meta name=format-detection content="telephone=yes">
+<meta property=og:type content=website>
+<meta property=og:title content="Jekyll vs Assemble - Patrick Burtchaell - Design + Video + Audio">
+<meta property=og:description content="The nuts and bolts of two great static site generators.">
+<meta property=og:url content=http://localhost:35729>
+<meta property=og:site_name content="Patrick Burtchaell - Design + Video + Audio">
+<meta property=og:profile:first_name content=>
+<meta property=og:profile:last_name content=>
 
-    <!--[if IE 8]>
+<meta property=og:image content=http://localhost:35729/assets/img/site/blog-cover.jpg>
+<meta name="twitter:card" content=summary_large_image>
+<meta name="twitter:site" content=>
+<meta name="twitter:title" content="Jekyll vs Assemble">
+<meta name="twitter:description" content="The nuts and bolts of two great static site generators.">
+<meta name="twitter:creator" content=>
+
+<meta name="twitter:image:src" content=http://localhost:35729/assets/img/site/blog-cover.jpg>
+<meta name="twitter:domain" content=http://localhost:35729>
+<link rel="shortcut icon" type=image/png href=http://pburtchaell.com/assets/img/site/favicon.png><style>
+
+</style>
+</head>
+<body>
+<!--[if IE 8]>
 <div class="container">
 	<h1>Oh geez.</h1>
 	<p>I'm terribly sorry about this, but the code my website usues does not support your current browser. Please upgrade to <a href="" class="line white">Internet Explorer 11</a>.<p>
 	<em><a href-"http://jonikorpi.com/leaving-old-IE-behind/" class="line white">You'll be better off with a modern browser anyway.<a></em>
 </div>
 <![endif]-->
-    <noscript>
-      <div class=noscript>In order to have the best experience of my site, please enable JavaScript. <em>If you don't</em>, comments, navigation, and search will not operate. *sadface*</div>
-    </noscript>
-    <header class=page-header>
-      <a href=http://localhost:35729>
-        <object class=branding>
-          <svg x=0p y=0 width=75px height=54.744px viewBox="0 0 75 54.744">
-            <g>
-              <g>
-                <path fill=rgb(0,218,255) d="M56.144,31.954l4.565,4.564l-4.565,4.565l-4.565-4.565L56.144,31.954 M56.144,18.665 L38.29,36.519l17.854,17.854l17.854-17.854L56.144,18.665L56.144,18.665z" />
-                <path fill=rgb(179,255,198) d="M37.509,13.66l4.565,4.565l-4.565,4.565l-4.565-4.565L37.509,13.66 M37.509,0.372 L19.655,18.226l17.854,17.854l17.853-17.854L37.509,0.372L37.509,0.372z" />
-                <path fill=rgb(230,84,87) d="M18.856,31.954l4.565,4.564l-4.565,4.565l-4.565-4.565L18.856,31.954 M18.856,18.665 L1.003,36.519l17.854,17.854L36.71,36.519L18.856,18.665L18.856,18.665z" />
-              </g>
-            </g>
-          </svg>
-        </object>
-      </a>
-      <nav class=nav-collapse>
-        <ul class="nav-items left">
-          <li class="nav-item special">
-            <a href=http://localhost:35729>Work</a>
-            <li class=nav-item>
-              <a href=http://localhost:35729/about>About</a>
-        </ul>
-        <ul class="nav-items right">
-          <li class=nav-item>
-            <a href=http://localhost:35729/connect>Connect</a>
-            <li class=nav-item>
-              <a href=http://localhost:35729/blog class=blog>Blog</a>
-        </ul>
-        <script>
-          var header = document.querySelector("header");
-          var headroom = new Headroom(header);
-          headroom.init();
-          var navigation = responsiveNav(".nav-collapse");
+<noscript>
+<div class=noscript>In order to have the best experience of my site, please enable JavaScript. <em>If you don't</em>, comments, navigation, and search will not operate. *sadface*</div>
+</noscript>
+<header class=page-header>
+	<a href=http://localhost:35729><object class=branding><svg x=0p y=0 width=75px height=54.744px viewBox="0 0 75 54.744"><g><g><path fill=rgb(0,218,255) d="M56.144,31.954l4.565,4.564l-4.565,4.565l-4.565-4.565L56.144,31.954 M56.144,18.665 L38.29,36.519l17.854,17.854l17.854-17.854L56.144,18.665L56.144,18.665z"/><path fill=rgb(179,255,198) d="M37.509,13.66l4.565,4.565l-4.565,4.565l-4.565-4.565L37.509,13.66 M37.509,0.372 L19.655,18.226l17.854,17.854l17.853-17.854L37.509,0.372L37.509,0.372z"/><path fill=rgb(230,84,87) d="M18.856,31.954l4.565,4.564l-4.565,4.565l-4.565-4.565L18.856,31.954 M18.856,18.665 L1.003,36.519l17.854,17.854L36.71,36.519L18.856,18.665L18.856,18.665z"/></g></g></svg></object></a>
+	<nav class=nav-collapse>
+		<ul class="nav-items left">
+            <li class="nav-item special"><a href=http://localhost:35729>Work</a>
+            <li class=nav-item><a href=http://localhost:35729/about>About</a>
+		</ul>
+		<ul class="nav-items right">
+            <li class=nav-item><a href=http://localhost:35729/connect>Connect</a>
+            <li class=nav-item><a href=http://localhost:35729/blog class=blog>Blog</a>
+		</ul>
+		<script>
+            var header = document.querySelector("header");  var headroom = new Headroom(header); headroom.init();  
+            var navigation = responsiveNav(".nav-collapse");
         </script>
-      </nav>
-    </header>
-    <main role=main class="main blog page">
-      <span class=article-banner>Currently reading Jekyll vs Assemble</span>
-      <picture class=article-freatured-image alt="">
-        <source srcset="big.jpg 1x, big-2x.jpg 2x, big-3x.jpg" type=image/jpeg media=(min-width: 40em)>
-          <source srcset="med.jpg 1x, med-2x.jpg 2x, big-3x.jpg" type=image/jpeg>
-            <img src="../../../../assets/img/site/blog-cover.jpg" alt="Cell phone lying on a desk">
-      </picture>
-      <div class=wrapper>
-        <article>
-          <header class=article-header>
-            <h1 class=article-title>Jekyll vs Assemble</h1>
-            <h2 class=article-subtitle>The nuts and bolts of two great static site generators.</h2>
-            <br>
-          </header><!-- /article-header -->
-          <section class=article-content>
-            <blockquote>
-              <p>Disclaimer: This is an article on the differences between Jekyll and Assemble. Read
-                <a href="">this article</a>if you are interested in why I use a static site generator and Assemble.</p>
-            </blockquote>
-            <p>In case you don’t know, Jekyll and Assemble are static site generators. What this means is that rather than using a dynamic content management system, like
-              <a href="http://wordpress.org">Wordpress</a>or
-              <a href="http://ghostcms.org">Ghost</a>, every page on your website is generated from a content file. Content files can be either Markdown or data.</p>
-            <p>By know you have probably heard of the new and impressive static site genitor on the block, Assemble. It is written to challenge Jekyll and in my opinion, successfully does. Jekyll and Assemble seem very similar, but they have some important
-              differences you should know.</p>
-            <h2 id="jekyll">Jekyll</h2>
-            <blockquote>
-              <p>Jekyll is blog-aware</p>
-            </blockquote>
-            <p>Those are the words from the homepage of the Jekyll project. What this means is that if you are designing a website that is just a blog –nothing else, Jekyll will be great for you. If you run <code>$sudo Jekyll</code> a boilerplate site structure
-              will be setup for you and all you have to do is write a style sheet, setup your templates, and create content. It is easy.</p>
-            <h3 id="project-structure">Project Structure</h3>
-            <p>The default structure of a Jekyll site is very self-explanatory: within the top directory, there is a folder for plugins, templates, and partials. The content folder containing your blog posts, along with everything else, will be compiled
-              to a folder titled <code>_site</code> upon running <code>$sudo Jekyll build</code>.</p>
-            <h3 id="templates-partials">Templates &amp; Partials</h3>
-            <p>The Jekyll template engine uses liquid templates. It is very easy to create a loop on your category/home pages to display the most recent posts. Partials are very simple in Jekyll. Simply add an HTML file to the partials folder and you can
-              include it in any page or template within the project.</p>
-            <h3 id="assets-management">Assets Management</h3>
-            <p>Here is where I start to get disappointed with Jekyll. I use
-              <a href="">Grunt</a>on every project; therefore I have plugins for many different processes, from compiling LESS and minifying JS, to Live-Reload and Watch. Getting these plugins to work well with Jekyll is a pain. I won’t go through all the details,
-              but just keep in mind that two aren’t compatible at all. If you use Grunt in your workflow, you will be much happier with Assemble.</p>
-            <h2 id="assemble">Assemble</h2>
-            <blockquote>
-              <p>Assemble is content-aware</p>
-            </blockquote>
-            <p>Assemble calls itself <em>content-aware</em> for a reason; it doesn’t care what you throw at it: HTML, JSON, Markdown, Yaml, it can handle it all. For this reason, Assemble is the better option if you have a website that is not only a blog.</p>
-            <p>For example, with my site, I write my articles in Markdown. This makes it very easy for me to post them on different mediums —even Tumblr supports Markdown. However, I also have several other pages on my site that would not make sense to write
-              in markdown. I write those in pure HTML.</p>
-            <p>In addition, since all of my portfolio items are very similar, I write those in JSON data. This makes sense because each post to my portfolio requires the same set of data. I just add a new data file to a directory and Assemble turns it into
-              an HTML page with all the content.</p>
-            <h2 id="grunt">Grunt</h2>
-            <p>Before moving on it is important to remember that Assemble is a plugin for Grunt, which I mentioned previously. If you aren’t familiar with Grunt and how it works, I suggest you read through the
-              <a href="">documentation</a>on their website.</p>
-            <p>Co-written by one of the members of the core team for LESS, Assemble works seamlessly with the Grunt plugin for LESS. In addition, the possibilities of tying other plugins in with it are endless. Assemble also has a set of “assemble-contrib-”
-              plugins maintained specially for the project.</p>
-            <h2 id="project-structure">Project Structure</h2>
-            <p>The project structure of Assemble is configured within your project’s gruntfile. Because the gruntfile is written in JavaScript, you can use arrays and globing to add the locations files and folders to the plugin; therefore, the size of your
-              project and the methods you use to organize files is endless.</p>
-            <p>Generally each Assemble project will have a layouts, pages, partials, snippets, data, and assets folder. I usually keep any template related files in a <code>tpl</code> folder, any development source files (data, LESS, CoffeScript) in an <code>src</code> folder.
-              The final production site, along with assets, is exported to a <code>dist</code> folder.</p>
-            <h3 id="templates-partials-and-snippets">Templates, Partials, and &amp; Snippets</h3>
-            <p>Assemble templates and pages are written in
-              <a href="">Handlebars</a>. Handlebars is a template language that makes sense to me and is very common. There are tons of documentation, templates, and articles for/on Handlebars on the web and many useful Handlebars plugins for Grunt. In addition,
-              many code editors recognize the Handlebars extension (*.hbs) thus supporting syntax highlighting. Partials are very easy to implement into an assemble project. Like I said earlier, you can use globing when configuring the project.</p>
-            <h3 id="data">Data</h3>
-            <p>One of the primary differences between Assemble and Jekyll is the support of different data formats. While Jekyll does allow you to use data, this usage is very limited. With Assemble, the usage of data has no bounds. Theoretically, your entire
-              site could be built from the content of JSON files.</p>
-            <h3 id="helpers">Helpers</h3>
-            <p>Assemble has many helpers. While I won’t explain the functionality of each helper here, you can
-              <a href="">read the documentation here</a>.</p>
-            <h2 id="in-conclusion">In conclusion</h2>
-            <p>If you are building a simple blog and do not use Grunt, chose
-              <a href="">Jeykll</a>. If are you building a site with more than just a blog, such as a portfolio and content pages, and also use Grunt for everything, chose
-              <a href="http://assemble.io/">Assemble</a>.</p>
-            <ul>
-              <li>Boilerplate Jekyll project on
-                <a href="http://github.com/pburtchaell/site-jekyll">Github</a>
-              </li>
-              <li>Boilerplate Assemble project on
-                <a href="http://github.com/pburtchaell/init-assemble">Github</a>
-              </li>
-              <li>The
-                <a href="http://github.com/pburtchaell/site-assemble">source code for this site</a>, an Assemble Project</li>
-              <li>The
-                <a href="">source code of Daniel Edan’s site</a>, a Jekyll Project</li>
-              <li>The
-                <a href="">the source code of CSSWizardy’s site</a>, a Jekyll Project</li>
-            </ul>
-          </section><!-- /article-content -->
-          <footer class=article-footer>
-            <hr class=large>
-            <div class=article-author-image>
-              <img src=../../../../assets/img/site/patrick.jpg>
-            </div>
-            <div class=article-author>
-              <small><span>Written By</span>
-                <h6></h6>
-                <p class=article-author-bio>I am a user interface designer and videographer from New Orleans with a passion for creating content that speaks for itself.
-                  <br>
-                  <em><a href=http://twitter.com/http://twitter.com/pburtchaell class=line>Follow me on Twitter</a></em>
-                </p>
-                <br>
-              </small>
-            </div><!-- /article-author -->
-            <hr class=small>
-            <div class=article-details>
-              <small><em>Published <time datetime="" pubdate>December 13, 2013</time></em>
-                <br>
-              </small>
-            </div><!-- /article detials -->
-            <hr class=large>
-          </footer><!-- /article-footer -->
-          <aside class=article-aside>
-            <small>Share <em>Jekyll vs Assemble</em>
-            </small>
-            <ul class=article-share>
-              <li class=share-item>
-                <a class="twitter share" target=_blank href="https://twitter.com/intent/tweet?text=Jekyll vs Assemble&url=&via=http://twitter.com/pburtchaell" class=button>Twitter</a>
-                <li class=share-item>
-                  <a class="facebook share" target=_blank href="http://www.facebook.com/sharer/sharer.php?u=" class=button>Facebook</a>
-                  <li class=share-item>
-                    <a class="google share" target=_blank href="https://plus.google.com/share?url=" class=button>Google+</a>
-            </ul>
-          </aside><!-- /aside -->
-          <section class=article-comments>
-            <div id=disqus_thread></div>
-            <script>
-              var disqus_shortname = 'pburtchaell';
-              (function() {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-            </script>
-          </section><!-- /article-comments -->
-        </article>
-      </div>
-    </main>
+	</nav>
+</header>
 
-    <!--<div class=newsletter id=newsletter>
+<main role=main class="main blog page">
+
+	<span class=article-banner>Currently reading <strong>Jekyll vs Assemble</strong></span>
+    
+	<picture class=article-freatured-image alt="">
+		<source srcset="big.jpg 1x, big-2x.jpg 2x, big-3x.jpg" type=image/jpeg media=(min-width: 40em)>
+		<source srcset="med.jpg 1x, med-2x.jpg 2x, big-3x.jpg" type=image/jpeg>
+		<img height=100% width=100% src="../../../../assets/img/site/blog-cover.jpg" alt="Cell phone lying on a desk">
+	</picture>
+	
+	<div class=wrapper>
+		
+		<article>
+            
+			<header class=article-header>
+				<h1 class=article-title>Jekyll vs Assemble</h1>
+                
+                <h2 class=article-subtitle>The nuts and bolts of two great static site generators.</h2>
+                </header><!-- /article-header -->
+			
+			<section class="hyphenate article-content">
+				<p><em>Disclaimer: This is an article on the differences between Jekyll and Assemble. Read <a href="">this article</a> if you are interested in why I use a static site generator and Assemble.</em></p>
+<p>Jekyll and Assemble are static site generators. Using a static site generator simply means you don&#39;t use a content management system. Rather than having a database with content, a program generates of the pages of your site into HTML files. From there you upload the pages of your site to the server along with any assets. This works well for blogs. As a perk hosting static sites is very cost effective: you can host for free on Github and for next to nothing on AWS S3! </p>
+<p>There are many different static site generators out there and by know you have probably heard of a new and impressive kid on the block, Assemble. Assemble is written to challenge Jekyll and in my opinion, successfully does. Jekyll and Assemble seem very similar and in many ways they are. In the end, the both do the same thing. However, they both have very different processes for getting there.</p>
+<h2 id="jekyll">Jekyll</h2>
+<blockquote>
+<p>Jekyll is blog aware </p>
+</blockquote>
+<p>If you are designing a website that is just a blog and nothing else, Jekyll will be great for you. If you run <code>$sudo Jekyll</code> a boilerplate site structure will be setup for you and all you have to do is write a style sheet, setup your templates, and create content. It is easy and quick to setup for someone who has not used Grunt before.</p>
+<h3 id="project-structure">Project Structure</h3>
+<p>The default structure of a Jekyll site is very self-explanatory: within the top directory, there is a folder for plugins, templates, and partials. The content folder containing your blog posts, along with everything else, will be compiled to a folder titled <code>_site</code> upon running <code>$sudo Jekyll build</code>.</p>
+<h3 id="templates-amp-partials">Templates &amp; Partials</h3>
+<p>The Jekyll template engine uses liquid templates. It is very easy to create a loop on your category/home pages to display the most recent posts. Partials are very simple in Jekyll. Simply add an HTML file to the partials folder and you can include it in any page or template within the project. </p>
+<h3 id="assets-management">Assets Management</h3>
+<p>Here is where I start to get disappointed with Jekyll. I use <a href="http://">Grunt</a> on every project; therefore I have plugins for many different processes from compiling LESS and minifying JS, to Live-Reload and Watch. Getting these plugins to work well with Jekyll is a pain. I won’t go through all the details, but just keep in mind that two aren’t compatible at all. If you use Grunt in your workflow, you will be much happier with Assemble. </p>
+<h2 id="assemble">Assemble</h2>
+<blockquote>
+<p>Assemble is content aware </p>
+</blockquote>
+<p>Assemble calls itself content-aware for a reason: it doesn’t care what you throw at it. HTML, JSON, Markdown and YAML are all acceptable. For this reason, Assemble is the better option if you have a website that is not only a blog. For example, with my site, I write my articles in Markdown. This makes it very easy for me to post them on different mediums —even Tumblr supports Markdown. However, I also have several other pages on my site that would not make sense to write in markdown. I write those in pure HTML. Since all of my portfolio items are very similar, I write those in JSON data. This makes sense because each post to my portfolio requires the same set of data. I just add a new data file to a directory and Assemble turns it into an HTML page with all the content. </p>
+<h2 id="grunt">Grunt</h2>
+<p>Before moving on it is important to remember that Assemble is a plugin for <a href="http://gruntjs.org/">Grunt</a>, which I mentioned previously. If you aren’t familiar with Grunt and how it works, I suggest you read through the <a href="">documentation</a> on their website. Co-written by one of the members of the core team for LESS, Assemble works seamlessly with the Grunt plugin for LESS. In addition, the possibilities of tying other plugins in with it are endless. Assemble also has a set of “assemble-contrib-” plugins maintained specially for the project.</p>
+<p>If you are already using Grunt on your project, have no fear! Assemble is very easy to get running along side your previously configured tasks.</p>
+<h2 id="project-structure">Project Structure</h2>
+<p>The project structure of Assemble is configured within your project’s gruntfile. Because the gruntfile is written in JavaScript, you can use arrays and globing to add the locations files and folders to the plugin; therefore, the size of your project and the methods you use to organize files is endless. </p>
+<p>Generally each Assemble project will have a layouts, pages, partials, snippets, data, and assets folder. I usually keep any template related files in a <code>tpl</code> folder, any development source files (data, LESS, CoffeScript) in an <code>src</code> folder. The final production site, along with assets, is exported to a <code>dist</code> folder. I use a plugin to deloy my site to AWS.</p>
+<h3 id="templates-partials-and-amp-snippets">Templates, Partials, and &amp; Snippets</h3>
+<p>Assemble templates and pages are written in <a href="http://">Handlebars</a>. Handlebars is a template language that makes sense to me and is very common. There are tons of documentation, templates, and articles for/on Handlebars on the web and many useful Handlebars plugins for Grunt. In addition, many code editors recognize the Handlebars extension (*.hbs) thus supporting syntax highlighting. Partials are very easy to implement into an assemble project. Like I said earlier, you can use globing when configuring the project. </p>
+<h3 id="data">Data</h3>
+<p>One of the primary differences between Assemble and Jekyll is the support of different data formats. While Jekyll does allow you to use data, this usage is very limited. With Assemble, the usage of data has no bounds. Theoretically, your entire site could be built from the content of JSON files. </p>
+<h3 id="helpers">Helpers</h3>
+<p>Assemble has many helpers. By default, it ships with a Markdown helper, but you can add many others and write your own. While I won’t explain the functionality of each helper here, you can <a href="http://">read the documentation here</a>.  </p>
+<h2 id="in-conclusion">In conclusion</h2>
+<p>If you are building a simple blog and do not use Grunt, chose <a href="http://">Jeykll</a>.  If are you building a site with more than just a blog, such as a portfolio and content pages, and also use Grunt for everything, chose <a href="http://assemble.io/">Assemble</a>. </p>
+<ul>
+<li>Boilerplate Jekyll project on <a href="http://github.com/pburtchaell/site-jekyll">Github</a> </li>
+<li>Boilerplate Assemble project on <a href="http://github.com/pburtchaell/init-assemble">Github</a> </li>
+<li>The <a href="http://github.com/pburtchaell/site-assemble">source code</a> of my site, an Assemble Project</li>
+<li>The <a href="http://">source code</a> of Daniel Eden’s site, a Jekyll Project</li>
+<li>The <a href="http://">source code</a> of CSSWizardy’s site, a Jekyll Project</li>
+</ul>
+
+                </section><!-- /article-content -->
+			
+			<footer class=article-footer>
+			
+				<hr class=large>
+				
+                <div class=article-author-image>
+                    <img src=../../../../assets/img/site/patrick.jpg>
+                </div>
+                
+				<div class=article-author>
+					<small><span>Written By</span>
+					<h6>Patrick Burtchaell</h6>
+					<p class=article-author-bio>I am a user interface designer and videographer from New Orleans with a passion for creating content that speaks for itself.<br> 
+					<em><a href=http://twitter.com/http://twitter.com/pburtchaell class=line>Follow me on Twitter</a></em></p><br></small>
+				</div><!-- /article-author -->
+				
+					<hr class=small>
+				
+				<div class=article-details>
+					<small><em>Published <time datetime="" pubdate>December 13, 2013</time></em><br>
+                    </small>
+				</div><!-- /article detials -->
+				
+				<hr class=large>
+				
+			</footer><!-- /article-footer -->
+			
+			<aside class=article-aside>
+				<small>Share <em>Jekyll vs Assemble</em></small>
+				<ul class=article-share>
+					<li class=share-item><a class="twitter share"target=_blank href="https://twitter.com/intent/tweet?text=Jekyll vs Assemble&url=&via=http://twitter.com/pburtchaell" class=button>Twitter</a>
+					<li class=share-item><a class="facebook share" target=_blank href="http://www.facebook.com/sharer/sharer.php?u=" class=button>Facebook</a>
+					<li class=share-item><a class="google share" target=_blank href="https://plus.google.com/share?url=" class=button>Google+</a>
+				</ul>
+			</aside><!-- /aside -->
+			
+			<section class=article-comments>
+				 <div id=disqus_thread></div>
+                    <script>
+                        var disqus_shortname = 'pburtchaell';
+                        (function() {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+			</section><!-- /article-comments -->
+			
+		</article>
+		
+	</div>
+</main>
+<!--<div class=newsletter id=newsletter>
     <div class=wrapper>
         <form>
             <input type=email autocomplete=on placeholder="Type in your email and press enter">
@@ -251,43 +186,24 @@
     <script>
         
     </script>
-</div>
-<!--- /newsletter -->
-    <footer class=page-footer>
-      <small><span class=red>Design</span><span class=opacity> + </span><span class=green>Video</span><span class=opacity> + </span><span class=blue>Audio</span>
-        <br>Made with
-        <object class=page-footer-heart>
-          <svg x=0 y=0 width=10px height=10px viewBox="0 0 10 8.1396484">
-            <g>
-              <path d="M9.1796875,0.6699219c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0L5,1.2753906L4.3398438,0.6699219 c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0c-1.0927734,1.0029297-1.0927734,2.6308594,0,3.6337891L5,8.1396484 l4.1796875-3.8359375C10.2734375,3.3007813,10.2734375,1.6728516,9.1796875,0.6699219z"
-              />
-            </g>
-          </svg>
-        </object>in New Orleans
-        <br>&copy;2014 Patrick Burtchaell |
-        <a class=page-footer-link href=http://localhost:35729/legal rel=license role=document>
-      </small>
-    </footer>
-    <script>
-      function downloadJSAtOnload() {
-        var element = document.createElement("script");
-        element.src = "../../../../assets/js/post.min.js";
-        document.body.appendChild(element);
-      }
-      if (window.addEventListener) window.addEventListener("load", downloadJSAtOnload, false);
-      else if (window.attachEvent) window.attachEvent("onload", downloadJSAtOnload);
-      else window.onload = downloadJSAtOnload;
-      var body = document.body,
-        timer;
-      window.addEventListener('scroll', function() {
-        clearTimeout(timer);
-        if (!body.classList.contains('disable-hover')) {
-          body.classList.add('disable-hover')
-        }
-        timer = setTimeout(function() {
-          body.classList.remove('disable-hover')
-        }, 500);
-      }, false);
-    </script>
-  </body>
+</div><!--- /newsletter -->     
+<footer class=page-footer>
+<small><span class=red>Design</span><span class=opacity> + </span><span class=green>Video</span><span class=opacity> + </span><span class=blue>Audio</span><br>
+Made with <object class=page-footer-heart><svg x=0 y=0 width=10px height=10px viewBox="0 0 10 8.1396484"><g><path d="M9.1796875,0.6699219c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0L5,1.2753906L4.3398438,0.6699219 c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0c-1.0927734,1.0029297-1.0927734,2.6308594,0,3.6337891L5,8.1396484 l4.1796875-3.8359375C10.2734375,3.3007813,10.2734375,1.6728516,9.1796875,0.6699219z"/></g></svg></object> in New Orleans<br>&copy;2014 Patrick Burtchaell<br><a class="white line" href=http://localhost:35729/legal rel=license role=document>Terms &amp; Conditions</a></small>
+</footer>
+  
+<script>
+function downloadJSAtOnload() { var element = document.createElement("script"); element.src ="../../../../assets/js/post.min.js"; document.body.appendChild(element); } if (window.addEventListener) window.addEventListener("load", downloadJSAtOnload, false); else if (window.attachEvent) window.attachEvent("onload", downloadJSAtOnload); else window.onload = downloadJSAtOnload;
+var body = document.body, timer; 
+window.addEventListener('scroll', function() {
+    clearTimeout(timer);
+    if(!body.classList.contains('disable-hover')){
+        body.classList.add('disable-hover')
+    }
+    timer = setTimeout(function() {
+        body.classList.remove('disable-hover')
+    }, 500);
+}, false);
+</script>
+</body>
 </html>

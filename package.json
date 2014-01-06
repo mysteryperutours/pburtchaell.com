@@ -1,5 +1,5 @@
 {
-  "name": "PatrickBurtchaellAssembleSite",
+  "name": "Patrick-Burtchaell-Assemble-Site",
   "description": "The website of Patrick Burtchaell built with Assemble.js, Grunt.js and Node.js. Deployed on Amazon S3.",
   "url": "http://pburtchaell.com/",
   "version": "0.6.5",

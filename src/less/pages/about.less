@@ -1,0 +1,135 @@
+/*
+ * $About Me Page
+ */
+
+.about {
+	
+	}
+
+
+	.about-intro {
+		padding: @base-padding*8 @column*2 @base-padding*4 @column*2;	
+		color: @white;
+        background: darken(@dark-grey, 15%);
+	}
+	
+	.service {
+    
+        color: @white;
+		padding: 100px 0 300px 0;	
+
+		&.design {
+			
+			background: @red;
+        
+			&:before {
+				content: '';
+			}
+			
+		}
+		
+		&.video {
+			
+			background: @video;
+        
+			.service-title { color: @video; } 
+            
+		}
+		
+        .icon {
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            margin: 0 auto;
+            background: @dark-grey;
+            pointer-events: none;
+        }
+    
+        .col {
+            
+            text-align: center;
+            width: 100%;
+        }
+    
+        @media screen and (min-width: 40em) {
+            
+            .col {
+                float: left;
+                width: 25%;
+                margin: 0 25%/6;
+            }
+            
+        }
+
+    
+		&.audio {
+			
+			background: @audio;
+        
+			.service-title { color: @audio; }
+        
+		}
+		
+	}
+
+        .service-title {
+            font-size: 36px;
+            width: 150px;
+            position: absolute;
+            text-align: center;
+            display: block;
+            text-transform: uppercase;
+            left: 50%;
+            padding: 10px;
+            background: darken(@dark-grey, 15%);
+            margin: 200px 0 0 -90px;
+            z-index: 1;
+            
+            &.design { color: @red; }
+            &.video { color: @green; }
+            &.audio { color: @blue; }
+            
+        }
+
+    .about-image-container {
+        height: 400px;
+        background: darken(@dark-grey, 35%);
+    }
+
+    .about-image {
+        height: 100%;
+        background: url('../img/site/blog-cover.jpg');
+        background-size: cover;
+        opacity: 0.8;
+    }
+
+    .triangle {
+        
+        position: absolute;
+        pointer-events: none;
+        z-index: 9;
+    
+        path {
+            stroke-width: 2;
+        }
+        
+        &.design path {
+            fill: @red;
+            stroke: @red;
+        }
+        &.video path {
+            fill: @video;
+            stroke: @video;
+        }   
+        &.audio path {
+            fill: @audio;
+            stroke: @audio;
+        }
+    
+    }
+
+    // design section
+    .design-subtitle {
+        text-transform: uppercase;
+    }

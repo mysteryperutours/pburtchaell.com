@@ -2,6 +2,36 @@
     $BASELINE
 \*------------------------------------*/
 
+@font-face{
+    font-family:'dinpro';
+    src: local('DINPRO LIGHT'),
+         local('DINPRO-LIGHT'),
+         url('../fonts/dinpro_light/DINPRO-LIGHT.ttf')format('truetype');
+} 
+@font-face{
+    font-family:'dinpro-bold';
+    src: local('DINPRO BOLD'),
+         local('DINPRO-BOLD'),
+         url('../fonts/dinpro_bold/DINPRO-BOLD.ttf')format('truetype');
+} 
+
+@font-face{
+    font-family:'opensans-italic';
+    src: url('../fonts/opensans_italic/OpenSans-Italic-webfont.eot');
+    src: url('../fonts/opensans_italic/OpenSans-Italic-webfont.eot?#iefix')format('embedded-opentype'),
+         url('../fonts/opensans_italic/OpenSans-Italic-webfont.woff')format('woff'),
+         url('../fonts/opensans_italic/OpenSans-Italic-webfont.ttf')format('truetype'),
+         url('../fonts/opensans_italic/OpenSans-Italic-webfont.svg#open_sansitalic')format('svg');
+} 
+@font-face{
+    font-family:'opensans-regular';
+    src: url('../fonts/opensans_regular/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans_regular/OpenSans-Regular-webfont.woff')format('woff'),
+         url('../fonts/opensans_regular/OpenSans-Regular-webfont.ttf')format('truetype'),
+         url('../fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular')format('svg');
+}
+
 /*
  * Browser specific styles
  */
@@ -93,7 +123,8 @@
 
 	// SVG heart 
 	.page-footer-heart {
-		fill: @design;	
+		fill: @design;
+        top: -1px;
 	}
 	
 	// links
@@ -211,268 +242,29 @@
 		
 	}
 
-.home-dribbble {
-	display: inline-block;	
-}
-
-.index-about {
-	padding: @base-padding*1 0 @base-padding*8 0; 
-	text-align: center;
-	background: @video;
-}
-
-
-/*
- * $About Me Page
- */
-
-.about {
-	
-	}
-
-
-	.about-intro {
-		padding: @base-padding*8 @column*2 @base-padding*4 @column*2;	
-		color: @white;
-        background: darken(@dark-grey, 15%);
-	}
-	
-	.service {
-    
-        color: @white;
-		padding: 100px 0 300px 0;	
-
-		&.design {
-			
-			background: @red;
-        
-			&:before {
-				content: '';
-			}
-			
-		}
-		
-		&.video {
-			
-			background: @video;
-        
-			.title { color: @video; } 
-            
-		}
-		
-        .icon {
-            display: block;
-            width: 100px;
-            height: 100px;
-            border-radius: 100%;
-            margin: 0 auto;
-            background: @dark-grey;
-            pointer-events: none;
-        }
-    
-        .col {
-            
-            text-align: center;
-            width: 100%;
-        }
-    
-        @media screen and (min-width: 40em) {
-            
-            .col {
-                float: left;
-                width: 25%;
-                margin: 0 25%/6;
-            }
-            
-        }
-
-    
-		&.audio {
-			
-			background: @audio;
-        
-			.title { color: @audio; }
-        
-		}
-		
-	}
-
-        .title {
-            font-size: 36px;
-            width: 150px;
-            position: absolute;
-            text-align: center;
-            display: block;
-            text-transform: uppercase;
-            left: 50%;
-            padding: 10px;
-            background: darken(@dark-grey, 15%);
-            margin: 200px 0 0 -90px;
-            z-index: 1;
-            
-            &.design { color: @red; }
-            &.video { color: @green; }
-            &.audio { color: @blue; }
-            
-        }
-
-    .about-image-container {
-        height: 400px;
-        background: darken(@dark-grey, 35%);
-    }
-
-    .about-image {
-        height: 100%;
-        background: url('../img/site/blog-cover.jpg');
-        background-size: cover;
-        opacity: 0.8;
-    }
-
-    .triangle {
-        
-        position: absolute;
-        pointer-events: none;
-        z-index: 9;
-    
-        path {
-            stroke-width: 2;
-        }
-        
-        &.design path {
-            fill: @red;
-            stroke: @red;
-        }
-        &.video path {
-            fill: @video;
-            stroke: @video;
-        }   
-        &.audio path {
-            fill: @audio;
-            stroke: @audio;
-        }
-    
-    }
-
-    // design section
-    .design-subtitle {
-        text-transform: uppercase;
-    }
-
-
-
-
-/*
- * $Landing Page
- */ 
-.landing {
-	
-	color: @white;
-	text-align: center;
-	padding: @base-padding*8 @column*2 @base-padding*12 @column*2;	
-	//background: darken(@dark-grey, 15%);
-	background: @design;
-    
-        &.blue {
-            
-            background: @audio;
-            
-            .landing-title {
-                color: lighten(@audio, 35%);
-            }
-            
-        }
-    
-	}
-	
-	.landing-title {
-		color: lighten(@design, 25%);
-		font-size: 72px;
-		margin-bottom: @base-margin;
-		//text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
-	}
-	
-	.landing-subtitle {
-		opacity: 0.9;
-	}
-
 /* 
  * Styles for $page templates
  */
 .page {
 	
-		// properties for all pages w/ container
-		.container {
-			padding: @base-padding*2 0 @base-padding*4 0;
-		}
-		
-		// properties for the default page template
-		&.default {
-			padding: @base-padding*2 0;
-		}
-	
-	}
-
-	//  properties for the article post template
-	@import 	'../pages/article';
-
-	//  properties for the category page template
-	@import 	'../pages/category';
-
-
-/*
- * 404 Error Page
- */
-.error-intro {
-    padding: 200px 0;
-    color: @white;
-    text-align: center;
-    background: @design;  
-}
-.svg-source {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 0 auto;
-    fill: @white;
-}
-/* Big Triangle */
-svg#bigTriangleColor {
-	pointer-events: none;
-    position: absolute;
-}
-
-#bigTriangleColor path {
-	fill: @design;
-	stroke: @design;
-	stroke-width: 2;
-}
-.error-search {
-    padding: 200px 0 75px 0;
-    color: @white;
-    text-align: center;
-    background: darken(@dark-grey, 15%);  
-    
-    input {
-        color: @red;
+    // properties for all pages w/ container
+    .container {
+        padding: @base-padding*2 0 @base-padding*4 0;
     }
+    
+    // properties for the default page template
+    &.default {
+        padding: @base-padding*2 0;
+        margin: 0 @column;
+    }
+
 }
 
-.error-header {
-    position: fixed;
-    margin: 10px;
-}
-.error-title {
-    font-size: 12px;
-    margin: 0;
-    background: @white;
-    padding: 10px;
-}
+    // article page styles
+    @import '../pages/article.less';
+    
+    //category page styles
+    @import '../pages/category.less';
 
-/*
- * $ARTICLE-FEED
- */
-.article-feed {
-    text-align: center;
-    margin: @base-padding*6 @column @base-padding*4 @column;
-       
-}
+    //category page styles
+    @import '../pages/error.less';

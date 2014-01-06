@@ -1,0 +1,33 @@
+/*
+ * $Landing Page
+ */ 
+.landing {
+	
+	color: @white;
+	text-align: center;
+	padding: @base-padding*8 @column*2 @base-padding*12 @column*2;	
+	//background: darken(@dark-grey, 15%);
+	background: @design;
+    
+        &.blue {
+            
+            background: @audio;
+            
+            .landing-title {
+                color: lighten(@audio, 35%);
+            }
+            
+        }
+    
+	}
+	
+	.landing-title {
+		color: lighten(@design, 25%);
+		font-size: 72px;
+		margin-bottom: @base-margin;
+		//text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
+	}
+	
+	.landing-subtitle {
+		opacity: 0.9;
+	}

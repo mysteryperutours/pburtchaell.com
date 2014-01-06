@@ -1,0 +1,40 @@
+---
+published: true
+title: Things That I Hope Change in 2014
+shortName: things-I-hope-change
+description: 2013 was a good year for the web design industry and I hope 2014 is better.
+date: January 5, 2014
+year: 2014
+month: 01
+
+featuredImage: img/site/blog-cover.jpg
+featuredImageAlt: 
+---
+
+I hope things really change in 2014; it is time for us to take resposive design by the reigns and push it foward. We can't stop here. There is too much left to do.
+
+## 1. The Responsive Image Solution
+There are so many solutions for responsive images, but no spec yet. We need to come together as an industry and figure out how we are going to build a sustianable future for images. I think most people miss the point of repsonive images and to often confuse it with images. Many of the "responsive images" solutions out there are really "retina image" solutions. 
+
+We need to figure out what we are concerned about here. Do we deliver sharp images or do we deliver properly cropped images - which is the point of resposive image? 
+
+In my opionion we should be worried about the responive side of things and once bandwidth speeds increase, worry about retina. After all, most retina devices are mobile device that are downloading images over a 3G or 4G connection. There only a few desktop/laptop screens and your average user will not own one. The percentage of users that use retina screens is probably very close to the size of users that use IE7. We don't like supporting those users, so why support the retina users? As for the users with retina mobile devices (I myself am one), I think we would all perfer the webpage load three seconds less than have a retina image.
+
+## 2. Improvements to typography control
+
+> The control which designers know in the print medium, and often desire in the web medium, is simply a function of the limitation of the printed page. We should embrace the fact that the web doesn’t have the same constraints, and design for this flexibility. But first, we must 'accept the ebb and flow of things.' <cite>John Allsopp: <a href=http://>A Dao of Web Design</a></cite>
+
+I don't know if I agree with what John says here. If we really look at it, typography is a pain to control on the web. Besides alignment, size, color, spacing and a few other properties, we have nothing to work with. Font size and line height is always absued on webpages. We bicker about using em over px. Honestly, does any of that matter? We should be concerned about other things. Since 1997, all text has had on the web is left alignment and ugly justified alignment. We can walk the moon and take pictures of Mars' surface, but we still can't properly hyphenate or justify text on the web? Seriously?
+
+In addition, I think we need to be more careful about the number of webfonts we use on a website. It does not make sense to load web fonts if we only use them once or twice. That is a lot of bandwidth for one use! I think we need to be more care 
+
+##3. The decline of jQuery and the rise Vanilla JS
+jQuery is awesome, but I think we over use it. Most people talk about it as if it is its own language. I have seen a number of sites where jQuery is the largest asset (not inlcuding images) loading on the site, which is just crazy in my mind. I think that we need more Vanilla javaScript in 2014. Pages need to get smaller and there is only so much one can cut out before the 120Kb that is jQuery 2.0.2 needs to be cut out as well. However, this is very hard to do with the number of awesome plugins that depend on jQuery. Hopefully we will also see an decrease in plugins that depend on jQuery. I would reccommend looking into [Zepto]() as an excellent alternative for the selector that everyone loves. 
+
+##4. An end to Photoshop 
+In 2014, I think we will see more working mockups rather than flat image mockups. It is becoming easier than ever to make a mockup in HTML and CSS versus making it in Photoshop. If I can design a functioning button in CSS in the same amount of time I can design the same button in Photoshop, why not design the real-life, interactive one in CSS? After all, we are designing experiences with web design; it isn't the same thing as designing for print. Photoshop has had its days in the web industry and it is time for us to take an unnecessary step out of the process.
+
+Moreover, I think we will see less PNG/GIF graphics (but not for memes; what would we do without memes?) on websites and more vector graphics (canvas/SVG). SVGS are incredibly easy to create in Illustrator and more and more icon packages are including SVG versions of the icons as well. Hopefully if you still use PNG graphics on your site, you use sprites.
+
+##5. A more watchful eye on bandwidth
+I think most people (unless you are some lucky developer living in the UK with your amazing 3G speeds) will begin to be more careful about the size of assets on their websites. There will be less HTTP requests; less fonts; use of only one stylesheet; and less JavaScript files. I would like to see more defered JS: social media scripts and analytics [should be defered](http://) until after page load. We put a prortity on content above the fold, but do we put a priority to _loading_ the content above the fold? [Feed the bot](http://) goes through some incredibly useful page load best practices. And for goodness sakes, use a CDN.
