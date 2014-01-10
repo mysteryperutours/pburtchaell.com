@@ -17,6 +17,7 @@ On my site I have two styleguides: one on my [code style](http://pburtchaell.com
 - [Responsive-nav]()
 
 Built with love in New Orleans | Version: **1.0.0**
+
 [Source files licensed under MIT](http://pb.mit-license.org/).
 [All content copyright (c) 2014 Patrick Burtchaell](http://pburtchaell.com/legal/)
 
