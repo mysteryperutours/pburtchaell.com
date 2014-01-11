@@ -1,7 +1,13 @@
 node_modules
 
+# PRODUCTION FOLDERS 
 dist/
 dist/**/*
 tmp/
 tmp/**/*
+
+# AWS KEY
 aws.json
+
+# PROJECT MANEGMENT 
+tasklist.md

@@ -1,33 +1,25 @@
 {
-  "name": "Patrick-Burtchaell-Assemble-Site",
-  "description": "The website of Patrick Burtchaell built with Assemble.js, Grunt.js and Node.js. Deployed on Amazon S3.",
+  "name": "site-assemble",
+  "description": "The website of Patrick Burtchaell, built with Assemble",
   "url": "http://pburtchaell.com/",
-  "version": "0.6.5",
+  "version": "1.0.0",
   "author": {
     "name": "Patrick Burtchaell",
     "url": "http://pburtchaell.com/about"
   },
-  "contributors": [
-    {
-      "name": "Patrick Burtchaell",
-      "url": "http://github.com/pburtchaell"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/pburtchaell/site-assemble.git"
   },
   "license": {
     "type": "MIT",
-    "url": "http://pburtchaell.com/license"
+    "url": "http://pb.mit-license.org/"
   },
   "devDependencies": {
-    "grunt-devtools": "~0.2.1",
     "assemble": "~0.4.32",
     "assemble-contrib-permalinks": "~0.3.1",
     "helper-compose": "~0.1.1",
     "handlebars-helper-moment": "~0.1.3",
-    "grunt-aws-s3": "~0.7.2",
     "grunt-s3": "~0.2.0-alpha.3"
   }
 }
