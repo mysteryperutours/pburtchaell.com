@@ -1,21 +1,20 @@
-/* Website of Patrick Burtchaell - User interface designer, videographer, & outdoorsman
+/* Patrick Burtchaell - User interface designer, videographer, & outdoorsman
  * http://www.pburtchaell.com/ - http://twitter.com/pburtchaell
  *
  *
- * Copyright (c) 2013 PBDVA, LLC.
- * Licensed under the MIT license, pburtchaell.com/license 
+ * Copyright (c) 2014 Patrick Burtchaell, http://pburtchaell.com/legal
+ * Licensed under the MIT license, http://pb.mit-license.org/
  */
-
-
-'use strict';
 
 module.exports = function(grunt) {
 
+  'use strict';
+  
 	grunt.initConfig({ 
  
-		pkg		: 	grunt.file.readJSON('package.json'),
-        aws     :   grunt.file.readJSON('aws.json'),
-		site	: 	grunt.file.readYAML('src/data/site.yml'),
+		pkg:grunt.file.readJSON('package.json'),
+    aws:grunt.file.readJSON('aws.json'),
+		site:grunt.file.readYAML('src/data/site.yml'),
         
 		
         /*
@@ -33,7 +32,6 @@ module.exports = function(grunt) {
 		less: {
 			
 			options: {
-				//version: 'assets/src/js/vendor/less/',
 				banner: '/*<%= pkg.name %> - <%= pkg.url %> - <%= pkg.license %>*/',
 				compress: true,
 				metadata: '<%= site.source %>/less/data/*.{json,yml}'
@@ -48,20 +46,6 @@ module.exports = function(grunt) {
 			}
 			
 		},
-		
-		/*
-		 * add vendor prefixes to CSS
-		 */
-		/*autoprefixer: {
-			
-			options: {
-			},
-			
-			assets: {
-				
-			},
-			
-		},*/
 			
 		/*
 		 * spell check all published content on blog
@@ -127,55 +111,34 @@ module.exports = function(grunt) {
                 dest: '<%= site.production %>/assets/'
             }
         },
-        
-        /* 
-         * copy images and fonts to <% site.build %> and <% site.release %>
-         */
-        copy: {
-            // Copy likes to be a bitch; thus, I am not using it.
-        },
 		
 		/* 
-		 * now let's assemble this bad boy
+		 * assemble the site
 		 */	
 		assemble: {
-			
-			//  assemble options
+		
 			options: {
-				
 				flatten: true,
 				data: ['<%= site.source %>/data/*.{json,yml}', 'package.json'],
 				assets: '<%= site.development %>/assets',
-				helpers: [
-                    'helper-compose',
-                    'handlebars-helper-moment',
-                    '<%= site.source %>/helpers/*.js'
-                ],
+				helpers: ['helper-compose','handlebars-helper-moment','<%= site.source %>/helpers/*.js'],
 				partials: [
-                    '<%= site.templates %>/partials/**/*.{hbs,md}', // partials are always used on every page (i.e. header, footer, navigation, etc.)
-                    '<%= site.templates %>/snippets/**/*.{hbs,md}'  // snippets are only used occasionally (i.e. branding, social media links, etc.)
-                ],
-				plugins: [
-                    'assemble-contrib-permalinks',
-                ],
+          '<%= site.templates %>/partials/**/*.{hbs,md}', // partials are always used on every page (i.e. header, footer, navigation, etc.)
+          '<%= site.templates %>/snippets/**/*.{hbs,md}'  // snippets are only used occasionally (i.e. branding, social media links, etc.)
+        ],
+				plugins: ['assemble-contrib-permalinks',],
 				layoutdir: '<%= site.templates %>/layouts',
 				layout: 'default.hbs',
-				ext: '<%= site.extension %>',
-				//postprocess: require('pretty'),
-				/*prettify: {
-					padcomments: true
-				}*/
-				
+				ext: '<%= site.extension %>',		
 			},
 			
 			// assemble general pages
 			site: {
-                
-                options: {	
-                    plugins: ['assemble-contrib-permalinks'],
-					permalinks: {
-						structure: ':shortName/index.html'
-					}
+        options: {	
+          plugins: ['assemble-contrib-permalinks'],
+          permalinks: {
+            structure: ':shortName/index.html'
+          }
 				},
                 
 				files: [ 
@@ -188,66 +151,46 @@ module.exports = function(grunt) {
 			
 			// assemble blog
 			blog: {
-				
 				options: {	
-                    plugins: ['assemble-contrib-permalinks'],
-					permalinks: {
-						structure: ':year/:month/:shortName/index.html'
-					},
-                    layout: 'layout-blog.hbs',
-                    compose: {
-                        cwd: '<%= site.content %>/blog/',
-                        sep: '<!-- /article -->'
-                    },
-				},
-				
+          plugins: ['assemble-contrib-permalinks'],
+          permalinks: { structure: ':year/:month/:shortName/index.html' },
+          layout: 'layout-blog.hbs',
+          compose: { cwd: '<%= site.content %>/blog/', sep: '<!-- /article -->' },
+        },
 				files: [ 
 					{
-                        // assemble the blog posts
-						src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
-						dest: '<%= site.development %>/blog/'
+          src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
+				  dest: '<%= site.development %>/blog/'
 					},
 					{
-                        // assemble the blog post drafts
-						src: ['<%= site.content %>/blog/drafts/*.{hbs,md}'],
-						dest: '<%= site.development %>/blog/drafts/',
-						
+				  src: ['<%= site.content %>/blog/drafts/*.{hbs,md}'],
+				  dest: '<%= site.development %>/blog/drafts/',
 					},
-                    {
-                        // assemble the blog index page
-						src: ['<%= site.content %>/blog/index.hbs'],
-						dest: '<%= site.development %>/blog/index.html'
+          {
+				  src: ['<%= site.content %>/blog/index.hbs'],
+				  dest: '<%= site.development %>/blog/index.html'
 					}
 				]
-				
 			},
-						 
+      
 			// assemble portfolio
-			portfolio: {
-                
-				options: {
-                    plugins: ['assemble-contrib-permalinks'],
-					permalinks: {
-						structure: ':year/:shortName/index.html'
-					},
-                    layout: 'layout-portfolio.hbs'
-				},
-                
+			portfolio: {   
+        options: {
+          plugins: ['assemble-contrib-permalinks'],
+          permalinks: { structure: ':year/:shortName/index.html'},
+          layout: 'layout-portfolio.hbs'
+        },     
 				files: [
-                    {
-                        // assemble the portfolio content pages
-						src: ['<%= site.content %>/portfolio/published/*.json'],
-						dest: '<%= site.development %>/work/'
+          {
+				  src: ['<%= site.content %>/portfolio/published/*.json'],
+				  dest: '<%= site.development %>/work/'
 					},
-                    {
-                        // assemble the portfolio index page
-						src: ['<%= site.content %>/portfolio/index.hbs'],
-						dest: '<%= site.development %>/work/index.html',
+          {
+				  src: ['<%= site.content %>/portfolio/index.hbs'],
+				  dest: '<%= site.development %>/work/index.html',
 					}
-				]
-                
-			}
-						
+				]        
+			}		
 		},	
 		
 		
@@ -278,136 +221,103 @@ module.exports = function(grunt) {
 		},
 		
 		
-		/*
-		 * start local server
-		 */			 
-		connect: {
-    		dev: {
-      			options: {
-        			port: 35729,
-        			base: '<%= site.development %>'
-				}
-    		},
-            production: {
-      			options: {
-        			port: 35729,
-        			base: '<%= site.production %>'
-				}
-    		}
-  		},
+    /*
+     * start local server
+     */			 
+    connect: {
+      dev: {
+        options: {
+          port: 35729,
+          base: '<%= site.development %>'
+        }
+      },
+      production: {
+        options: {
+          port: 35729,
+          base: '<%= site.production %>'
+        }
+        }
+      },
         
-        /*
-		 * deploy to AWS S3
-		 */
-        s3: {
-            
-            options: {
-                key: '<%= aws.auth.key %>',
-                secret: '<%= aws.auth.secret %>',
-                access: 'public-read',
-                headers: {
-                    // two Year cache policy (1000 * 60 * 60 * 24 * 730)
-                    "Cache-Control": "max-age=630720000, public",
-                    "Expires": new Date(Date.now() + 63072000000).toUTCString()
-                }
-            },
-            
-            staging: { // dev.pburtchaell.com bucket 
-                
-                options: {
-                    encodePaths: true,
-                    bucket: '<%= aws.bucket.staging %>'
-                },
-                
-                // upload all files from the tmp directory
-                upload: [{
-                    src: '<%= site.development %>/**/*',
-                    dest: './'
-                }]
-                
-            },
-            
-            production: { // pburtchaell.com bucket 
-                
-                options: {
-                    bucket: '<%= aws.bucket.production %>'
-                },
-                
-                // upload all files from the dist directory
-                upload: [{
-                    src: '<%= site.production %>/**/*',
-                    dest: './'
-                }]
-                
-            },
-            
-            content: { // content.pburtchaell.com bucket 
-                
-                options: {
-                    bucket: '<%= aws.bucket.content %>'
-                },
-                
-                // upload all files from the dist directory
-                upload: [{
-                    src: '<%= site.production %>/assets/**/*',
-                    dest: './'
-                }]
-                
-            }
-        
+    /*
+     * deploy to AWS S3
+     */
+    s3: {
+    
+      options: {
+        key: '<%= aws.auth.key %>',
+        secret: '<%= aws.auth.secret %>',
+        access: 'public-read',
+        headers: {
+          // two Year cache policy (1000 * 60 * 60 * 24 * 730)
+          "Cache-Control": "max-age=630720000, public",
+          "Expires": new Date(Date.now() + 63072000000).toUTCString()
+        }
+      },
+      
+      // dev.pburtchaell.com bucket 
+      staging: {
+        options: {
+          encodePaths: true,
+          bucket: '<%= aws.bucket.staging %>'
         },
-		
-		
-		/*
-		 * reload server
-		 */	
-		//reload: {
-			//port: '35729'
-    	//},
-					 
+        upload: [{
+        src: '<%= site.development %>/**/*',
+        dest: './'
+        }]
+      },
+      
+      // pburtchaell.com bucket 
+      production: {
+        options: {
+          bucket: '<%= aws.bucket.production %>'
+        },
+        upload: [
+          {
+          src: '<%= site.production %>/**/*',
+          dest: './'
+          },
+          {
+          src: '<%= site.production %>/assets/**/',
+          dest: './assets/**/'
+          }
+        ]
+      }
+      
+    }
+    
 	});
 	
 	
-	/*
-	 * plugins, such wow
-	 */
-	grunt.loadNpmTasks('assemble');
-	grunt.loadNpmTasks('assemble-less');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-compress');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-htmlmin');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-spell');
-    grunt.loadNpmTasks('grunt-s3');
-    //grunt.loadNpmTasks('grunt-autoprefixer');
+  /*
+   * plugins, such wow
+   */
+  grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('assemble-less');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-spell');
+  grunt.loadNpmTasks('grunt-s3');
 	
 	/* 
 	 * tasks
 	 */
-    
-    grunt.registerTask('deploy -staging', ['s3:staging']); // deploy the site to the dev.pburtchaell.com bucket
-    grunt.registerTask('deploy -production', ['s3:production']); // deploy the site to the pburtchaell.com bucket
-    
-	grunt.registerTask('default', [
-		'assemble',
-        'connect:production'
-	]);	
-
-	grunt.registerTask('dev', [
-		'connect:dev',
-		'watch:dev'
-	]);
-
+  grunt.registerTask('deploy-staging', ['s3:staging']); // deploy the site to the dev.pburtchaell.com bucket
+  grunt.registerTask('deploy-production', ['s3:production']); // deploy the site to the pburtchaell.com bucket
+  grunt.registerTask('default', ['assemble','connect:production']);	
+  grunt.registerTask('dev', ['connect:dev','watch:dev']);
 	grunt.registerTask('build', [
-        'clean:release', // 1. remove old files from the <% site.release %> directory
-        'spell',         // 2. spellcheck the blog content so I don't sound dumb 
-		'assemble',      // 3. assemble the site to the <% site.build %> directory
-        'less',          // 4. create the stylesheets
-        'uglify',        // 5. minify the javascripts
-        'compress',      // 6. compress all the things
+    'clean:release', // 1. remove old files from the <% site.release %> directory
+    'spell',         // 2. spellcheck the blog content so I don't sound dumb 
+    'assemble',      // 3. assemble the site to the <% site.build %> directory
+    'less',          // 4. create the stylesheets
+    'uglify',        // 5. minify the javascripts
+    'compress',      // 6. compress all the things
 	]);
     
 }
