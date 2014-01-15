@@ -1,8 +1,8 @@
 ---
 published: true
-title: Things That I Hope Change in 2014
-shortName: things-I-hope-change
-description: 2013 was a good year for the web design industry and I hope 2014 is better.
+title: 2014 Topics of Interest
+shortName: topics-of-interest
+description: As 2014 begins, I thought I would talk about a few topics that are of interest to me this year.
 date: January 5, 2014
 year: 2014
 month: 01
@@ -10,26 +10,36 @@ month: 01
 featuredImage: img/site/blog-cover.jpg
 featuredImageAlt: 
 ---
+## 1. Responsive and Retina Images
+There are many solutions for responsive images, but I none of them quite seem like the proper solution. In 2014, we need to come together as an industry and figure out how we are going to build a sustianable future for responsive images. I think roadblock for solving this issue is most people miss the point of repsonive images and to often confuse it with retina images. Many of the "responsive image" solutions out there are really more of a "retina image" solution. 
 
-I hope things really change in 2014; it is time for us to take resposive design by the reigns and push it foward. We can't stop here. There is too much left to do.
+We need to figure out what we are concerned about here. Do we deliver sharp images or do we deliver properly sized images - which is the point of resposive image? 
 
-## 1. The Responsive Image Solution
-There are so many solutions for responsive images, but no spec yet. We need to come together as an industry and figure out how we are going to build a sustianable future for images. I think most people miss the point of repsonive images and to often confuse it with images. Many of the "responsive images" solutions out there are really "retina image" solutions. 
+In my opionion we should be worried about the responive side of images and once network speeds increase, focus on retina images. Most retina devices are mobile devices that are downloading images over a 3G/4G connection. Besides the retina iMac and Macbook screens, there are very few large screens with retina support. The percentage of users that use retina screens is probably very close to the size of users that use IE8. We do not like supporting those users, so why support the retina users? 
 
-We need to figure out what we are concerned about here. Do we deliver sharp images or do we deliver properly cropped images - which is the point of resposive image? 
+That being said, I myself own a retina device and I know how beuatiful retina images look! However, I _do not like_ how long it takes for the image to load on a 3G connection. In my opinion, I would rather get to the content first. Perhaps lazy loading retina images is a better solution for those slower connections. When I am on a broadband connection (or better yet, Google Fiber), downloading retina images is no problem. The image loads at a quick speed and looks great. 
 
-In my opionion we should be worried about the responive side of things and once bandwidth speeds increase, worry about retina. After all, most retina devices are mobile device that are downloading images over a 3G or 4G connection. There only a few desktop/laptop screens and your average user will not own one. The percentage of users that use retina screens is probably very close to the size of users that use IE7. We don't like supporting those users, so why support the retina users? As for the users with retina mobile devices (I myself am one), I think we would all perfer the webpage load three seconds less than have a retina image.
+In conclusion, I do not think retina images are necessary at this point. Responsive images are very necessary however. We need to make a proper solution that focuses on responsive images, but can be extended in the future to work well with retina images. 
 
-## 2. Improvements to typography control
-
+## 2. Typography control
 > The control which designers know in the print medium, and often desire in the web medium, is simply a function of the limitation of the printed page. We should embrace the fact that the web doesn’t have the same constraints, and design for this flexibility. But first, we must 'accept the ebb and flow of things.' <cite>John Allsopp: <a href=http://>A Dao of Web Design</a></cite>
 
-I don't know if I agree with what John says here. If we really look at it, typography is a pain to control on the web. Besides alignment, size, color, spacing and a few other properties, we have nothing to work with. Font size and line height is always absued on webpages. We bicker about using em over px. Honestly, does any of that matter? We should be concerned about other things. Since 1997, all text has had on the web is left alignment and ugly justified alignment. We can walk the moon and take pictures of Mars' surface, but we still can't properly hyphenate or justify text on the web? Seriously?
+I don't know if I completely agree with that statement If we really look at it, typography is horrible to control on the web. Besides alignment, size, color, spacing and a few other properties, we have nothing to work with. Since 1997, all text has had on the web is left alignment and ugly justified alignment. We can walk the moon and take pictures of Mars' surface, but we still can't properly hyphenate or justify text on the web? Seriously?
+
+I know libraries of the many different libraries that exist for typography control. And yes, many of them are very useful. However, they are often very tedious to control and do not work perfectly. I am not expecting a solution for better typography control to surface in 2014, but I am expecting more designers to become concerned about it.
 
 In addition, I think we need to be more careful about the number of webfonts we use on a website. It does not make sense to load web fonts if we only use them once or twice. That is a lot of bandwidth for one use! I think we need to be more care 
 
 ##3. The decline of jQuery and the rise Vanilla JS
-jQuery is awesome, but I think we over use it. Most people talk about it as if it is its own language. I have seen a number of sites where jQuery is the largest asset (not inlcuding images) loading on the site, which is just crazy in my mind. I think that we need more Vanilla javaScript in 2014. Pages need to get smaller and there is only so much one can cut out before the 120Kb that is jQuery 2.0.2 needs to be cut out as well. However, this is very hard to do with the number of awesome plugins that depend on jQuery. Hopefully we will also see an decrease in plugins that depend on jQuery. I would reccommend looking into [Zepto]() as an excellent alternative for the selector that everyone loves. 
+jQuery is awesome, but I think the industry over uses it. I have seen a number of small sites where jQuery is the largest asset (not inlcuding images) loading on the site, which is just crazy. I am not saying the worlds needs to stop using jQuery, I am saying wee need less of it. In my opinion, we need more vanilla JS in 2014. If a page needs to get smaller, there is only so much one can cut out before the ~32KB (when gzipped) that is jQuery 2.0.2 needs to be cut out as well. However, this is very hard to do with the number of useful plugins that depend on jQuery. For that reason, hopefully we will begin to see more dependency free plugins in 2014.
+
+However, there are exceptions to my argument. If you are making a 3D city or a game with huge shading libraries that are megabytes in size, then jQuery will probably go unnoticed and will not effect your loading time. If you are building a web app and jQuery makes your workflow more effective, use it! If jQuery has been a part of your process for years, continue to use it by all means!
+
+For me, most of the sites I build are small CMS sites with a small amount of JavaScript. I can easily find alternative solutions to the scripts I write/use that do not depend on jQuery. In the process, I save my clients one additional HTTP request and ~32kB. That may not sound like a lot, but I believe there is no excuse for small sites like the ones I build to not load in under 2 seconds. For that reason, most of the stylesheets and scripts that I write are ~25kB. With that in mind, jQuery is a _very_ large asset in my workflow. In addition, remember that files will not cache on mobile browsers (especially mobile Safari) unless they are ~25KB. Thus, jQuery will not cache.
+
+Throughout 2013, I have noticed more and more designers/developers take this approach of using lightweight assets (CSS/JS) on the sites they build, especially on personal blogs and other small websites. It works well for me and it works well for them. For that reason, I think the industry will begin to slowly lean towards using smaller libraries and developing dependency free plugins/tools. 
+
+If you want to give not using jQuery a try, I would reccommend looking into [Zepto]() as an excellent alternative for the jQuery class/ID selector. Another "library" one can look into as an alternative is [min.js]() —which not only has the class/ID selector, but a few useful events. Both of these libraries are less than 5kB which is definitely small enough to forget about. Above all though, use the libraries that make sense to you and make your workflow more efficient. If what I am saying will end up costing you time instead of saving it, then keep on doing what you are doing.
 
 ##4. An end to Photoshop 
 In 2014, I think we will see more working mockups rather than flat image mockups. It is becoming easier than ever to make a mockup in HTML and CSS versus making it in Photoshop. If I can design a functioning button in CSS in the same amount of time I can design the same button in Photoshop, why not design the real-life, interactive one in CSS? After all, we are designing experiences with web design; it isn't the same thing as designing for print. Photoshop has had its days in the web industry and it is time for us to take an unnecessary step out of the process.
@@ -37,4 +47,6 @@ In 2014, I think we will see more working mockups rather than flat image mockups
 Moreover, I think we will see less PNG/GIF graphics (but not for memes; what would we do without memes?) on websites and more vector graphics (canvas/SVG). SVGS are incredibly easy to create in Illustrator and more and more icon packages are including SVG versions of the icons as well. Hopefully if you still use PNG graphics on your site, you use sprites.
 
 ##5. A more watchful eye on bandwidth
-I think most people (unless you are some lucky developer living in the UK with your amazing 3G speeds) will begin to be more careful about the size of assets on their websites. There will be less HTTP requests; less fonts; use of only one stylesheet; and less JavaScript files. I would like to see more defered JS: social media scripts and analytics [should be defered](http://) until after page load. We put a prortity on content above the fold, but do we put a priority to _loading_ the content above the fold? [Feed the bot](http://) goes through some incredibly useful page load best practices. And for goodness sakes, use a CDN.
+I think most people will begin to be more careful about the size of their websites. Not everyone has an amazing 4G connection or Google fiber. Over the past year, I think that we have begun to go crazy with the sizes of websites. The Oakley [glasses](http://) takes 85MB of data and 800 HTTP requests before you can see the website! The [BLANK](http://) makes 400 HTTP requests and is around 45MB in data. Sure, I think your site is awesome and has some very cool effects, but quite frankly, I just want to see your product and how much it costs. 
+
+Of course, the sites I mention above are extreme cases, but if you take a look around you will not see that it is uncommon to find a many websites with pages ~1.5MB in size. In my opinion, this is huge for most sites! The bulk of that data is usually images and JavaScript, so I think this topic reflects on my retina image and jQuery aurguments. However, we can not blame everything on images and scripts, there is a long list of things one can do to speed up their sites. Think less HTTP requests overall; less fonts; use of only one stylesheet; use of a CDN for static assets; and less JavaScript files. Use defered JS: social media scripts and analytics [should be defered](http://) until after page load. Lazy load your images and use SVG graphcis and sprites. If you need more help on this topic, [Feed the bot](http://) goes through some incredibly useful page load best practices. 

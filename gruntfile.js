@@ -153,7 +153,7 @@ module.exports = function(grunt) {
 			blog: {
 				options: {	
           plugins: ['assemble-contrib-permalinks'],
-          permalinks: { structure: ':year/:month/:shortName/index.html' },
+          permalinks: { structure: ':year/:shortName/index.html' },
           layout: 'layout-blog.hbs',
           compose: { cwd: '<%= site.content %>/blog/', sep: '<!-- /article -->' },
         },

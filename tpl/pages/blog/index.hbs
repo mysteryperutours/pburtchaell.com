@@ -1,28 +1,25 @@
 ---
-published: true
 title: The Blog
-
 shortName: blog
 description: A collection of thoughts, research, and design by Patrick Burtchaell.  
-
 layout: layout-custom.hbs
 ---
 <section class=article-feed>
     <div class=wrapper>
-        {{#compose 'published/*.hbs'}}
-        <a href={{site.url}}/blog/{{year}}/{{month}}/{{shortName}}/ rel=prefetch role=link>
-            <article class=article-item>
-                <header class=article-item-header>
-                    <h1>{{title}}</h1>
-                </header>
-                <section class=article-item-section>
-                    <em>{{description}}</em>
-                </section>
-                <footer class=article-item-footer>
-                    <small><time datetime="" pubdate="">{{date}}</time></small>
-                </footer>
-            </article>
-        </a>
-        {{/compose ~}}
+      {{#compose 'published/*.hbs'}}
+        <article class=article-item>
+            <header class=article-item-header>
+              <a href={{site.url}}/blog/{{year}}/{{shortName}}/ rel=prefetch role=link class=line>
+                  <h1 class=article-item-title>{{title}}</h1>
+              </a>
+            </header>
+            <section class=article-item-section>
+                <em>{{description}}</em>
+            </section>
+            <footer class=article-item-footer>
+                <small><time datetime="" pubdate="">{{date}}</time></small>
+            </footer>
+        </article>
+       {{/compose ~}}
     </div>
 </section>

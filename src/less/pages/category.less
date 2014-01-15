@@ -2,9 +2,33 @@
  * Category/article Feed
  */
 .article-feed {
-    text-align: center;
-    margin: @base-padding*6 @column @base-padding*4 @column;
+  width: @column*8;
+  margin: @base-padding*6 auto @base-padding*4 auto;
 }
 .article-item {
     margin: @base-padding*2 0 0 0;
+}
+.article-item-title {
+  font-size: 27px;
+  margin: 0 @column*4 0 0;
+}
+.article-item-footer {
+  display: inline-block;
+  line-height: 0.9;
+  padding: 4px;
+  color: @white;
+  background: fadeOut(@dark-grey, 20%);
+}
+
+@media screen and (max-width: 480px) {
+  .article-feed {
+    width: @column*16;
+    margin: @base-padding*6 @column @base-padding*4 @column;
+  }
+  .article-item-title {
+    margin: 0 0 1px 0;
+  }
+  .article-item-footer { 
+    margin: 3px 0 0 0;
+  }
 }

@@ -17,7 +17,7 @@ I try to write my HTML as stucturally as possible. I usually code all the HTML f
 Most elements in HTML are case-insensitive. I use all lowercase, the only thing I capitalize is the `<DOCTYPE! html>` declaration. When using Handlebars templates, I will capitalize the second word in a bracket so I can easy read each word.
 
 ### Closing Tags
-With HTML5 we don't have to close certian elements, so I don't use them. For example, list elements:
+With HTML5 we don't have to close certian elements, so I don't use them. For example, list item elements:
 
 ```html
 <nav>

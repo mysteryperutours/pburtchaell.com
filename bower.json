@@ -4,4 +4,6 @@
   "dependencies": {
     
   }
+  "private": true,
+  "directory": "./src/packages/"
 }

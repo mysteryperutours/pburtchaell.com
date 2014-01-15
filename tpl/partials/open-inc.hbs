@@ -25,11 +25,11 @@
 <meta property=og:profile:first_name content={{ site.author.name.first }}>
 <meta property=og:profile:last_name content={{ site.author.name.last }}>
 {{/if ~}}
-{{#if page.featuredImage}}
+{{#if featuredImage}}
 <meta property=og:image content={{ site.url }}/assets/{{ page.featuredImage }}>
 {{else ~}}
 <meta property=og:image content={{ site.url }}/assets/img/site/og_image.gif>
-{{/if ~}}  
+{{/if ~}}
 <meta name="twitter:card" content=summary_large_image>
 <meta name="twitter:site" content={{ site.author.twitter }}>
 <meta name="twitter:title" content="{{ page.title }}">

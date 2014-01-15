@@ -3,25 +3,31 @@
 \*------------------------------------*/
 
 @font-face{
-    font-family:'dinpro';
-    src: local('DINPRO LIGHT'),
-         local('DINPRO-LIGHT'),
-         url('../fonts/dinpro_light/DINPRO-LIGHT.ttf')format('truetype');
+  font-family:'dinpro';
+  src: local('DINPRO LIGHT'),
+       local('DINPRO-LIGHT'),
+       url('../fonts/dinpro_light/DINPRO-LIGHT.ttf')format('truetype');
+  font-weight: 400;
+  font-style: normal;
 } 
 @font-face{
-    font-family:'dinpro-bold';
-    src: local('DINPRO BOLD'),
-         local('DINPRO-BOLD'),
-         url('../fonts/dinpro_bold/DINPRO-BOLD.ttf')format('truetype');
+  font-family:'dinpro-bold';
+  src: local('DINPRO BOLD'),
+       local('DINPRO-BOLD'),
+       url('../fonts/dinpro_bold/DINPRO-BOLD.ttf')format('truetype');
+  font-weight: 400;
+  font-style: normal;
 } 
 
 @font-face{
-    font-family:'opensans-italic';
-    src: url('../fonts/opensans_italic/OpenSans-Italic-webfont.eot');
-    src: url('../fonts/opensans_italic/OpenSans-Italic-webfont.eot?#iefix')format('embedded-opentype'),
-         url('../fonts/opensans_italic/OpenSans-Italic-webfont.woff')format('woff'),
-         url('../fonts/opensans_italic/OpenSans-Italic-webfont.ttf')format('truetype'),
-         url('../fonts/opensans_italic/OpenSans-Italic-webfont.svg#open_sansitalic')format('svg');
+  font-family:'opensans-italic';
+  src: url('../fonts/opensans_italic/OpenSans-Italic-webfont.eot');
+  src: url('../fonts/opensans_italic/OpenSans-Italic-webfont.eot?#iefix')format('embedded-opentype'),
+       url('../fonts/opensans_italic/OpenSans-Italic-webfont.woff')format('woff'),
+       url('../fonts/opensans_italic/OpenSans-Italic-webfont.ttf')format('truetype'),
+       url('../fonts/opensans_italic/OpenSans-Italic-webfont.svg#open_sansitalic')format('svg');
+  font-weight: 400;
+  font-style: normal;
 } 
 @font-face{
     font-family:'opensans-regular';
@@ -30,6 +36,8 @@
          url('../fonts/opensans_regular/OpenSans-Regular-webfont.woff')format('woff'),
          url('../fonts/opensans_regular/OpenSans-Regular-webfont.ttf')format('truetype'),
          url('../fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular')format('svg');
+  font-weight: 400;
+  font-style: normal;
 }
 
 /*
@@ -63,15 +71,15 @@
  */
 .page-header {
 	
-	// header container
-	position: fixed;
-	height: 75px;
-	width: 100%;
-	top: 0;
-	z-index: 999999;
-    background: @white;
-    border-bottom: 1px solid fadeOut(@dark-grey, 90%);
-	transition: 0.5s ease;
+  // header container
+  position: fixed;
+  height: 75px;
+  width: 100%;
+  top: 0;
+  z-index: 999999;
+  background: @white;
+  border-bottom: 1px solid fadeOut(@dark-grey, 90%);
+  transition: 0.5s ease;
 	
 	// SVG branding
 	.branding {
@@ -85,8 +93,17 @@
 	// when scrolling down
 	&.unpinned {
 		-webkit-transform: translateY(-100px);
+       -moz-transform: translateY(-100px);
+         -o-transform: translateY(-100px);
+            transform: translateY(-100px);
 		-webkit-transform-origin: top;
-		transition: 0.5s ease;
+       -moz-transform-origin: top;
+         -o-transform-origin: top;
+            transform-origin: top;
+    -webkit-transition: 0.5s ease;
+       -moz-transition: 0.5s ease;
+         -o-transition: 0.5s ease;
+		        transition: 0.5s ease;
 	}
 	
 	// when scrolling up
@@ -107,76 +124,78 @@
 .page-footer {
 	
 	// footer container
-    margin: 0;
-	padding: @base-padding*3-5 0 @base-padding*3-5 0;
-	background: darken(@dark-grey, 15%);	
-	color: @white;
-	text-align: center;
-    letter-spacing: 1px;
-	text-transform: uppercase;
-
-        &.about {
-            padding-top: @base-padding*5;
-        }
+  padding: @base-padding @column*7;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  
+    &.about {
+        padding-top: @base-padding*5;
+    }
     
-	}
+    .page-footer-span {
+      display: inline-block;
+      margin: 0 auto;
+      text-transform: uppercase;
+      background: @dark-grey;
+      color: @white;
+      padding: 5px;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+           -o-user-select: none;
+              user-select: none;
+    }
+  
+  }
+  
+  @media screen and (max-width: 767px) { 
+    .page-footer {
+      line-height: 1.4;
+      padding: @base-padding @column;
+    }
+  } 
 
 	// SVG heart 
 	.page-footer-heart {
 		fill: @design;
-        top: -1px;
-	}
-	
-	// links
-	.page-footer-link {
-	
-		color: @white !important;
-		border-bottom: 2px solid @white !important;
-		
-		&:hover {
-			opacity: 0.5;	
-		}
-	
+    top: -1px;
 	}
 
 .newsletter {
-    display: block;
-    postion: absolute;
-    box-shadow: inset 1px 3px 3px rgba(10,10,11,0.2);
-    background: @audio;
-    margin-top: 0;
-    z-index: 9;
-    transition: 1s;
+  display: block;
+  postion: absolute;
+  box-shadow: inset 1px 3px 3px rgba(10,10,11,0.2);
+  background: @audio;
+  margin-top: 0;
+  z-index: 9;
+  transition: 1s;
 }
 
 /* 
  * <noscript> warning
  */
 .noscript {
-	height: auto;
-	padding: @base-padding/5;
-	text-align: center;
-	color: @white;
-	background: @design;	
+  height: auto;
+  padding: @base-padding/5;
+  text-align: center;
+  color: @white;
+  background: @design;	
 }
 
 /*
  * $Homepage title
  */
 .home-title {
-	
 	padding: @base-padding*6 0 @base-padding*4 0;	
 	text-align: center;
-	
-	}
+}
 
 	.home-title-heading { // h1
 		display: inline-block;
 		padding: @base-padding/2-2.5;
 		border: 3px solid fadeOut(@design, 50%);
 		text-transform: uppercase;
-		//text-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
-		//box-shadow: 1px 1px rgba(10,10,11,0.1), 2px 2px rgba(10,10,11,0.1);	
 	}
 	
 	.home-title-subheading { // p
@@ -184,28 +203,26 @@
 	}
 	
 .home-feed {
-    margin: 0;
-    width: 100%;
+  margin: 0;
+  width: 100%;
 	display: inline-block;
-    padding-top: 60px;
+  padding-top: 60px;
 }
 
 // <article class=featured-content>
 .featured-content {
-	
 	width: 100%;
-    margin: 0;
+  margin: 0;
 	padding: 0;
-    float: left;
+  float: left;
 	color: @white;
 	background: @dark-grey;
 	text-align: center;
-	
 }
-	// <picture class=featured-content-image>
-	.featured-content-image {
-		width: 100%;
-	}
+  // <picture class=featured-content-image>
+  .featured-content-image {
+    width: 100%;
+  }
 
 		// small image 
 		.image-small {
@@ -227,44 +244,43 @@
 
 	// <section class=featured-content-section>
 	.featured-content-section {
-        display: none;
+    display: none;
 	}
 
 	// large screen media has :hover effect for article preview
 	// small screen media does not
 	@media screen and (min-width: 40em) {
-		
 		.featured-content {
-			
 			width: 25%;
-		
 		}
-		
 	}
 
 /* 
  * Styles for $page templates
  */
 .page {
-	
-    // properties for all pages w/ container
-    .container {
-        padding: @base-padding*2 0 @base-padding*4 0;
-    }
-    
-    // properties for the default page template
-    &.default {
-        padding: @base-padding*2 0;
-        margin: 0 @column;
-    }
+  
+  // properties for all pages w/ container
+  .container {
+      padding: @base-padding*2 0 @base-padding*4 0;
+  }
+  
+  // properties for the default page template
+  &.default {
+      padding: @base-padding*2 0;
+      margin: 0 @column;
+  }
 
 }
 
-    // article page styles
-    @import '../pages/article.less';
-    
-    //category page styles
-    @import '../pages/category.less';
+  // article page styles
+  @import '../pages/article.less';
+  
+  // category page styles
+  @import '../pages/category.less';
+  
+  // error page styles
+  @import '../pages/error.less';
 
-    //category page styles
-    @import '../pages/error.less';
+  // landing page styles
+  @import '../pages/landing.less';

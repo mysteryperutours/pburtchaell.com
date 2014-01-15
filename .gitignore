@@ -2,12 +2,14 @@ node_modules
 
 # PRODUCTION FOLDERS 
 dist/
-dist/**/*
 tmp/
-tmp/**/*
+
+# DRAFTS
+tpl/pages/blog/drafts
 
 # AWS KEY
 aws.json
 
 # PROJECT MANEGMENT 
 tasklist.md
+backlog.md

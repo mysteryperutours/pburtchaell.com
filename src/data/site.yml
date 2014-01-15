@@ -2,16 +2,16 @@
 
 # SITE DIRECTORIES 
 production  :	./dist
-development :   ./tmp
-source		:	./src
-plugins		:	./src/plugins
-templates	:	./tpl
-content		: 	./tpl/pages
-extension	: 	.html
-url			: 	http://localhost:35729
+development : ./tmp
+source		  :	./src
+plugins		  : ./src/plugins
+templates	  : ./tpl
+content		  : ./tpl/pages
+extension	  : .html
+url			    : http://localhost:35729
 
 # SITE INFOMATION
-title		:	Patrick Burtchaell - Design + Video + Audio
-description	: 	I am a freelance front-end developer, designer and videographer from New Orleans with a passion for objectifying content.
-keywords	:   Patrick Burtchaell, graphic design, web design, video production, audio production, New Orleans, designer, videographer, filmmaker
-copyright   :   2014 Patrick Burtchaell
+title		    :	Patrick Burtchaell - Creative Design + Video + Audio from New Orleans
+description	: I am a freelance designer and videographer from New Orleans with a passion for objectifying content.
+keywords	  : New Orleans, web design, video, audio, production, designer, videographer, graphics, nola, Patrick, Burtchaell
+copyright   : 2014 Patrick Burtchaell
