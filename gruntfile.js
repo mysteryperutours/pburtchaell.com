@@ -70,9 +70,7 @@ module.exports = function(grunt) {
 					'<%= site.development %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
 					'<%= site.development %>/assets/js/GGS.min.js' : '<%= site.source %>/js/vendor/GGS.js',
 					'<%= site.development %>/assets/js/dribble.js' : '<%= site.source %>/js/vendor/dribbble.js',
-					'<%= site.development %>/assets/js/highlight.min.js' : '<%= site.source %>/js/vendor/highlight.pack.js',
-                    '<%= site.development %>/assets/js/about.min.js' : '<%= site.source %>/js/about.js',
-                    '<%= site.development %>/assets/js/hyphenator.min.js' : '<%= site.source %>/js/vendor/hyphenator.js',
+					'<%= site.development %>/assets/js/highlight.min.js' : '<%= site.source %>/js/vendor/highlight.pack.js'
 				}
 			}
 		},
@@ -153,7 +151,7 @@ module.exports = function(grunt) {
 			blog: {
 				options: {	
           plugins: ['assemble-contrib-permalinks'],
-          permalinks: { structure: ':year/:shortName/index.html' },
+          permalinks: { structure: ':pubYear/:shortName/index.html' },
           layout: 'layout-blog.hbs',
           compose: { cwd: '<%= site.content %>/blog/', sep: '<!-- /article -->' },
         },
@@ -174,7 +172,7 @@ module.exports = function(grunt) {
 			},
       
 			// assemble portfolio
-			portfolio: {   
+			/*portfolio: {   
         options: {
           plugins: ['assemble-contrib-permalinks'],
           permalinks: { structure: ':year/:shortName/index.html'},
@@ -190,7 +188,7 @@ module.exports = function(grunt) {
 				  dest: '<%= site.development %>/work/index.html',
 					}
 				]        
-			}		
+			}*/	
 		},	
 		
 		

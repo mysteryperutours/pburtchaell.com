@@ -35,24 +35,23 @@
 	  @base-box-shadow: 	0px 0px 1px 1px rgba(10,10,11,0.2);
 
 	// grid
-	@line			: 	20;
-	@column			: 	100% / 18;
-	@font-size		: 	@type-font-size;
-	@em				:	@font-size*1em;
+	@line			   : 	20;
+	@column			 : 	100% / 18;
+	@font-size	 : 	@type-font-size;
+	@em				   :	@font-size*1em;
 
 
 // typography
 
 	// global
-	@type-font-size					: 	14; // your base font-size in pixels
-	@type-line-height				: 	100%;
-	@type-color						:	@dark-grey;
+	@type-font-size				: 	16; // your base font-size in pixels
+	@type-line-height		  : 	100%;
+	@type-color						:	  @dark-grey;
 	@type-border					: 	@base-border;
 	@type-margin					: 	@base-margin;
-	@type-font-primary 				: 	'dinpro', 'Helvetica', serif;
-	@type-font-secondary			:	'dinpro-bold', 'Helvetica', sans-serif;
-    @type-font-bold                 :   'dinpro-bold';
-	@type-underline					: 	2px solid @type-color;
+	@type-font-primary 		: 	'opensans-regular', 'Helvetica', serif;
+	@type-font-secondary	:	  'dinpro-bold', 'Helvetica', sans-serif;
+  @type-font-bold       :   'dinpro-bold';
 
 	// paragraphs
 	@paragraphy-font-family			:	@type-font-primary;
@@ -71,39 +70,32 @@
 	@heading-margin					: 	@type-margin 0 @type-margin 0;
 	@primary-h1-size				: 	36px;
 	@primary-h2-size				: 	20px;
-	@primary-h3-size				: 	16px; 
+	@primary-h3-size				: 	17px; 
 	@primary-h4-size				:   16px;
 	@primary-h5-size				: 	16px;
-	@primary-h6-size				: 	14px;
+	@primary-h6-size				: 	16px;
 
 	// <code>
-	@code-font-family				:   Courier New, monospace;
-        // in addition to these reset styles, <code> is hightlighted with highlight.js. 
-        // hightlight styles can be found in 'partial/code.less'
+	@code-font-family				: Courier, monospace;
+  // in addition to these reset styles, <code> is hightlighted with highlight.js. 
+  // hightlight styles can be found in 'partial/code.less'
 
 	// <small>
 	@small-font-size				:	75%;
-	@small-font-color				:   lighten(@paragraph-color, 30%);
+	@small-font-color				: lighten(@paragraph-color, 30%);
 	
 	// <hr> 
 	@hr-border-width				:	1px;
 	@hr-border-style				:	solid;
-	@hr-margin						:	25px;
-	
-	// blockquotes
-	@blockquote-font-family			:	@type-font-secondary;
-	@blockquote-font-color			:	fadeout(@dark-grey, 40%);
-	@blockquote-margin				: 	@base-margin 0 @base-margin 0;
-	@blockquote-padding				: 	0 0 0 15px;
-	@blockquote-border				:   4px solid fadeout(@dark-grey, 70%);
+	@hr-margin						  : 25px;
 	
 	// acronym 
 	@acronym-underline				:	@type-border;
 
 	// abbr 
-	@abbr-padding					: 	1px;
-	@abbr-font-weight				:	bold;
-	@abbr-font-decoration			:	none;
+	@abbr-padding					: 1px;
+	@abbr-font-weight		  : bold;
+	@abbr-font-decoration : none;
 	
 
 // forms

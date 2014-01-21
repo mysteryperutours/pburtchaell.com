@@ -36,8 +36,17 @@
 
 // <section class=article-content></section>
 .article-content {
+  
   text-align: justify;
-	margin: @base-margin @column*4 @base-margin*2 @column*4;    
+	margin: @base-margin @column*5 @base-margin*3 @column*5;    
+  
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: @base-margin auto;
+  }
+  
 }
 
 
@@ -72,7 +81,9 @@
 	// <div class=article-author></div>
 	.article-author {
 		margin: 0 @column*2 0 @column*2;
+    line-height: 1.8;
 		.tag { text-transform: uppercase;}
+    h6 { margin: 0 0 5px 0; }
 	}
 
   .article-author-bio { margin: 0; }
@@ -108,13 +119,16 @@
 	.article-details {
     margin: 0 0 0 @column*2;
   }
+
+  .article-updateDate { opacity: 0.5; }
+  .article-pubDate { }
 			
   // <ul class=article-contributors>
   .article-contributors {}
 
 // <aside class=article-aside></aside>
 .article-aside {
-	margin: 0 @column @base-margin*2 @column;
+	margin: 0 @column @base-margin*3 @column;
 	text-align: center;
 }
 
