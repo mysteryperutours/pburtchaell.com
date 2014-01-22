@@ -64,6 +64,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 { 
 	font-size: @primary-h1-size; 
 	text-transform: uppercase;
+  text-align: center;
   line-height: 1.1;
 }
 h2 { 
@@ -74,7 +75,10 @@ h3 {
   font-size: @primary-h3-size; 
   margin: @base-margin 0 0 0;
 } 
-h4, h5, h6 { font: @primary-h4-size 'opensans-italic'; }
+h4, h5, h6 { 
+  font: @primary-h4-size 'opensans-italic'; 
+  margin: @base-margin 0 0 0;
+}
 
 
 hr {
@@ -156,6 +160,7 @@ blockquote {
 	@blockquote-padding				: 	0 0 0 15px;
 	@blockquote-border				:   4px solid fadeOut(@dark-grey, 80%);
   
+  font-family: 'opensans-italic';
 	padding: @blockquote-padding;
 	border-left: @blockquote-border;
 	color: fadeOut(@dark-grey, 20%);
@@ -181,8 +186,7 @@ ul, ol {
 }
 li {
     
-  margin: 5px;
-	margin-left: @base-margin*2;
+  margin: 5px @base-margin*2;
 	list-style: disc;
 	line-height: 1.3;
     

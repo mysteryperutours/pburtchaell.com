@@ -15,7 +15,7 @@
     
     img {
         min-height: 300px;    
-        min-width: 720px;
+        min-width: 200;
         left: -50%;
     }
     
@@ -23,28 +23,30 @@
 
 // a few typography things 
 .article-header {
+  
   text-align: center;
   margin: @base-padding*5 @column 0 @column;
+  
+  time {
+    text-transform: uppercase;
+  }
+  
 }
 .article-title {
-  margin: @base-margin 0 0 0;
+  margin: @base-margin 0 @base-margin/5 0;
 }
 .article-subtitle { // h2
     font: 16px 'opensans-italic';
-    margin: @base-margin 0;
+    margin: @base-margin/5 0 @base-margin*2 0;
 }
 
 // <section class=article-content></section>
 .article-content {
-  
   text-align: justify;
 	margin: @base-margin @column*5 @base-margin*3 @column*5;    
   
   img {
     max-width: 100%;
-    width: 100%;
-    height: auto;
-    margin: @base-margin auto;
   }
   
 }
@@ -72,6 +74,7 @@
   
     img {
       display: block;
+      max-width: 100px;
       height: 100px;
       border-radius: 100%;
     }

@@ -11,7 +11,6 @@
          url('../fonts/dinpro_light/dinpro-light.ttf')format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
 @font-face {
     font-family: 'dinpro-bold';
@@ -160,11 +159,21 @@
       background: @dark-grey;
       color: @white;
       padding: 5px;
+      opacity: 1;
       -webkit-user-select: none;
          -moz-user-select: none;
           -ms-user-select: none;
            -o-user-select: none;
               user-select: none;
+      -webkit-transition: 0.5s ease;
+         -moz-transition: 0.5s ease;
+           -o-transition: 0.5s ease;
+              transition: 0.5s ease;
+      
+      &:hover {
+        opacity: 0.5;
+      }
+    
     }
   
   }
@@ -181,16 +190,6 @@
 		fill: @design;
     top: -1px;
 	}
-
-.newsletter {
-  display: block;
-  postion: absolute;
-  box-shadow: inset 1px 3px 3px rgba(10,10,11,0.2);
-  background: @audio;
-  margin-top: 0;
-  z-index: 9;
-  transition: 1s;
-}
 
 /* 
  * <noscript> warning
@@ -229,52 +228,6 @@
   padding-top: 60px;
 }
 
-// <article class=featured-content>
-.featured-content {
-	width: 100%;
-  margin: 0;
-	padding: 0;
-  float: left;
-	color: @white;
-	background: @dark-grey;
-	text-align: center;
-}
-  // <picture class=featured-content-image>
-  .featured-content-image {
-    width: 100%;
-  }
-
-		// small image 
-		.image-small {
-		
-		}
-		// large image
-		.image-large {
-	
-		}
-		// fallback image
-		.image-fallback {
-			display: block;
-			width: 100%;
-		}
-
-	// <header class=featured-content-header>
-	.featured-content-header {
-	}
-
-	// <section class=featured-content-section>
-	.featured-content-section {
-    display: none;
-	}
-
-	// large screen media has :hover effect for article preview
-	// small screen media does not
-	@media screen and (min-width: 40em) {
-		.featured-content {
-			width: 25%;
-		}
-	}
-
 /* 
  * Styles for $page templates
  */
@@ -289,6 +242,14 @@
   &.default {
       padding: @base-padding*2 0;
       margin: 0 @column;
+  }
+  
+  img {
+    float: left;
+    clear: both;
+    height: auto;
+    max-width: 40%;
+    margin: 0 @base-margin @base-margin 0;
   }
 
 }

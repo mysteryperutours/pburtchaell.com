@@ -1,11 +1,16 @@
 body { 
 	background: white;
 	color: black !important; 
-	font-size: 12px;
+	font-size: 12px;  
 }
 
 pre code {
+  margin: 5px;
+  padding: 0;
 	background: none !important;
+}
+code { 
+  background: none !important;
 }
 
 .page-header, 
@@ -15,26 +20,32 @@ pre code {
 
 main {
 	
+  margin: 0;
+  
 	&:after {
 		display: block;
 		width: 100%;
 		text-align: center;
 		// add a little message to the bottom of the document
-		content: "Written by Patrick Burtchaell: pburtchaell.com, @pburtchaell";
+		content: "Licensed under Creative Commons. Copyright Patrick Burtchaell.";
 	}
 	
 }
+.article-header { margin: 0; }
+.article-content { margin: 0 @column; }
+.article-aside { display: none; }
 
 a:link {
-
-	color: @design; 
-
 	&:after { 
 		// after links, include the URL
-		content: "( "attr(href)" )"; 
+		//content: "( "attr(href)" )"; 
 	}
 }
 
 p { 
-	color: black !important; 
+	color: black !important;
+  text-align: left;
+  margin: 5px;
 }
+
+h1, h2, h3, h4, h5, h6 { color: black !important; }
