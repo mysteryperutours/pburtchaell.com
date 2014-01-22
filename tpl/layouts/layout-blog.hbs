@@ -2,21 +2,16 @@
 {{> header-inc ~}}
 <main role=main class="main article page">
   <article itemscope itemtype=http://data-vocabulary.org/Article>
-    
-      <!--<picture class=article-freatured-image alt="{{featuredimageAlt}}">
-        <source srcset="big.jpg 1x, big-2x.jpg 2x, big-3x.jpg" type=image/jpeg media=(min-width: 40em)>
-        <source srcset="med.jpg 1x, med-2x.jpg 2x, big-3x.jpg" type=image/jpeg>
-        <img height=100% width=100% src="{{assets}}/img/blog/{{month}}-{{day}}-{{year}}_large.jpg" alt="{{featuredImageAlt}}">
-      </picture>-->
-	
+        
 			<header class=article-header>
-				<h1 class=article-title itemprop=name>{{ page.title }}</h1>
+				<h1 class=article-title itemprop=name>{{page.title}}</h1>
+        <small><time>{{pubDate}}</time></small>
         {{#if page.description}}
-        <h2 class=article-subtitle itemprop=description>{{ description }}</h2>
+        <h2 class=article-subtitle itemprop=description>{{description}}</h2>
         {{/if ~}}
 			</header><!-- /article-header -->
 			
-			<section class="hyphenate article-content">
+			<section class="article-content">
 				{{#markdown}}
 				{{> body }}
 				{{/markdown}}
@@ -39,24 +34,25 @@
 			<footer class=article-footer>
         <hr class=large>
         <div class=article-author-image>
-            <img src={{assets}}/{{ author.image }}>
+            <img src={{assets}}/{{ author.image }} height=auto width=auto>
         </div>
               
 				<div class=article-author itemscope itemtype=http://data-vocabulary.org/Person itemprop=author>
 					<small><span class=tag>Written By</span>
-					<h6 intemprop=name>{{ author.nameFirst }} {{ author.nameLast }}</h6>
+					<h6 intemprop=name>{{author.nameFirst}} {{author.nameLast}}</h6>
 					<p class=article-author-bio>
             <span itemprop=affiliation>Freelance </span><span itemprop=title>designer and videographer </span>
             <span itemscope itemprop=address itemtype=http://data-vocabulary.org/Address>
               from <span itemprop=locality>New Orleans</span>
-            </span> with a passion for objectifying content. 
-            I am currently available for work &mdash;<a href=mailto:patrickburtchaell@me.com class=line itemprop=email>contact me with inquiries</a>.<br> 
-					<em><a href={{ author.twitter }} class=line itemprop=url>Follow me on Twitter</a></em></p><br></small>
+            </span> with a passion for objectifying content.<br> 
+					<em><a href={{author.twitter}} class=line itemprop=url>Follow me on Twitter</a></em></p><br></small>
 				</div><!-- /article-author -->
 				
 				<div class=article-details>
           <hr class=small>
-					<small><em>Published <time datetime="" pubdate="" itemprop=datePublished>{{ page.date }}</time></em><br>
+					<small>
+            <em class=article-pubDate>Published <time datetime="" pubdate="" itemprop=datePublished>{{pubDate}}</time></em><br>
+            {{#if updateDate}}<em class=article-updateDate>Updated <time datetime="">{{updateDate}}</time></em><br>{{/if ~}}
           {{#if page.contributor}}
 					<b>Thanks To:</b><br>
 					<ul class=article-contributors>
@@ -71,7 +67,7 @@
 			</footer><!-- /article-footer -->
       
 			<aside class=article-aside>
-				<small>Share <em>{{ page.title }}</em> on
+				<small>Share on
           <a class="share twitter" target=_blank href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url }}&via=pburtchaell">Twitter</a>
           <a class="share facebook" target=_blank href="http://www.facebook.com/sharer/sharer.php?u={{site.url}}/blog/{{year}}/{{shortName}}"n>Facebook</a> 
           <a class="share google" target=_blank href="https://plus.google.com/share?url={{site.url}}/blog/{{year}}/{{shortName}}">Google+</a>
@@ -92,5 +88,6 @@
 			
 		</article>
 </main>
-{{> footer-inc }}
-{{> close-inc }}
+{{> footer-inc ~}}
+<script>Echo.init();</script>
+{{> close-inc ~}}

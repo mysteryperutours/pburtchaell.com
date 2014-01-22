@@ -1,14 +1,8 @@
 ---
-published: true
+published: false
 title: Hello World
 shortName: fixing-facebook
 description: This just so happens to be my first post.
-
-tags:
-- blog update
-
-categories:
-- state of the blog
 ---
 
 Early this year I became fully aware of the fact that no longer found it important to scroll through my news feed on Facebook. I was perfectly content with Twitter and Instagram being my primary sources of social media. Looking around at others, I realized I was not the only person my age avoiding their Facebook news feed. I began asking questions. Why do we avoid looking at and interacting with our Facebook news feeds? What is it that it lacks? What can Facebook do to fix it? 

@@ -1,23 +1,21 @@
 ---
 published: true
-hightlighting: true
+highlighting: true
 title: Styleguide
-
 shortName: styleguide
-description: My HTML/CSS Code Styleguide
+description: The code styleguide I use both my personal web site and on all my projects.
 ---
 
 # Code Styleguide
-I have a very particular style to the way I write code that is very different from anyone else; this document explains that style and my reasoning behind it. I am in no way saying this is the best way to write code. Rather, this is just the way that makes the most sense to me. Also, this is the code styleguide, not my personal [design styleguide](http://pburtchaell.com/design-styleguide/ "design styleguide").
+I have a very particular style to the way I write code that is very different from anyone else; this document explains that style and my reasoning behind it. I am in no way saying this is the best way to write code. Rather, this is just the way that makes the most sense to me. Also, this is the code styleguide, not my [design styleguide](http://pburtchaell.com/design-styleguide/ "design styleguide").
  
 ## HTML 
-I try to write my HTML as stucturally as possible. I usually code all the HTML for a page before I begin my stylesheets. 
 
 ### Case
-Most elements in HTML are case-insensitive. I use all lowercase, the only thing I capitalize is the `<DOCTYPE! html>` declaration. When using Handlebars templates, I will capitalize the second word in a bracket so I can easy read each word.
+Most elements in HTML5 are case-insensitive. I use all lowercase, the only thing I capitalize is the `<DOCTYPE! html>` declaration. When using Handlebars templates, I will capitalize the second word in a bracket so I can easy read each word.
 
 ### Closing Tags
-With HTML5 we don't have to close certian elements, so I don't use them. For example, list item elements:
+With HTML5 we don't have to close certian elements, so I don't use closing brackets for them. For example, list item elements:
 
 ```html
 <nav>
@@ -32,7 +30,7 @@ With HTML5 we don't have to close certian elements, so I don't use them. For exa
 Usually, I do not use white space in HTML. However, if a page is complex and whitespace will help a someone navigate the code easier, I will use whitespace to seperate major blocks of code. 
 
 ### Closing Tag Comments
-For smaller projects I usually do not place a comment by a closing tag. However on larger sites, where I might have multiple closing tags of the same element (like five `</div>`'s right after another), I will add a comment.
+For smaller HTML I usually do not place a comment by a closing tag. However on larger sites, where I might have multiple closing tags of the same element (like five `</div>`'s right after another), I will add a comment in order to keep the HTML organized and to avoid mistakes in the future.
 
 ```html
 <div class=container>
@@ -53,10 +51,10 @@ If I am working on a project that uses both classes and IDs I will use closing t
 ```
 
 ### Attributes
-With HTML5 you [no longer]() have to wrap attributes in commas. For example `<div class="content">` can be written as `<div class=content>`. Of course, you do not have to write attributes like this and the spec does not call for you to, but I like the appearance of it. Remember, however, that you can not have a space; thus, `<div class=content page>` would be invalid. You have to use `<div class="content page">`.
+With HTML5 you no longer have to wrap attributes in quoation marks. For example `<div class="content">` can be written as `<div class=content>`. Of course, you do not have to write attributes like this and the spec does not call for you to, but I like the appearance of it. Remember, however, that you can not have a space; thus, `<div class=content page>` would be invalid. You have to use `<div class="content page">`.
 
 ### HTML5 Elements
-HTML5 has several new elements, I follow the [WS3 standards]() when using those elements. The WS3 does not specify _how_ we should use some of the new elements, so I will briefly cover how I use some of the most useful elements.  
+HTML5 has several new elements, I follow the [WS3 standards]() when using those elements. The WS3 does not specify _exactly how_ we should use some of the new elements, so I will briefly cover how I do.
 
 #### Article Element
 For any page with a body of content that is a written article, use the `<article>` tag. Wrap the title, subtitle, description of the article in a `<header>`. Include the content of the article in a `<section>` and place the author bio and name in a `<footer>`. In the case that a date/time is provideded use the time element like so: 
@@ -109,24 +107,79 @@ While I do not always put the time element in the same place, I always make sure
 #### Main Element
 Wrap all content of all pages in `<main role=main class=main>`. I always include the class `.main` with this element because it is an easy way to style all page content. 
 
-## CSS & SCSS
-I write all my stylesheets in [LESS]() and use [Grunt]() to compile these stylesheets into CSS. I choose LESS (over Sass or Stylus) simply because the static site generator I use works well with LESS.
+## CSS &amp; SCSS
+I write all my stylesheets in SCSS. I do not perfer LESS over Sass and vice-versa; I simply use which ever language makes sense for the project.
 
 ### Variables
-I orgainize my variables so that the colons and values for each property line up:
+Allowing me to see the name and value of each variable very easily, I orgainize my variables so that the colons and values for each property line up:
 
 ```scss
-@padding    :  20px;
-@margin     :  20px;
-@height     :  20px;
-@width      :  20px;	
+@padding  :  20px;
+@margin   :  20px;
+@height   :  20px;
+@width    :  20px;	
 ```
 
-This allows me to see the name and value of each variable very easily. 
+### Properties and values
+One of my faults is that I tend to not write properties in CSS in any particular order. I do have an order that I perfer them to be in, but when I am in the zone and code is flowing from my keyboard my properties never end up this way and I have to go through my stylesheet later to clean everything up. Nevertheless, here is an example:
 
-### Class selectors versus ID selectors
-I always use class selectors in my stylesheets. ID selectors [have been proven to be slower], so I avoid them. 
+```css
+.someclass {
 
-### OOCSS versus MCSS
-[Object Oriented CSS]() and [Modular CSS]() are two buzz worlds in the web design/development industry. I don't really perfer one over the other. Rather, I write CSS the way I have always written it. I break my project into partials (or modules..) and then from there write everything using object oriented classes. Typically I try to limit myself to only using one to three classes per element.
+  /* Start from the inside, the "core" properties */
+  display: block;
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: 25px 0 25px 0; // always use shorthand
+  padding: 25px;
+  
+  /* Typographic properties in the middle */
+  font: 14px Arial;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.0;
+  color: white;
+  
+  /* Next, any "appearance" properties*/
+  background: black;
+  border-radius: 100%;
+  border: 1px solid white;
+  
+  /* Finally, any properties with browser prefixes */
+  -webkit-transform: translate(20px);
+     -moz-transform: translate(20px);
+      -ms-transform: translate(20px);
+       -o-transform: translate(20px);
+          transform: translate(20px);
+  transition: all 1s ease-out;
+  
+}
+```
 
+### Selectors
+There are many types of selectors in CSS, each with their own pros and cons.
+
+#### Class selectors & ID selectors
+> `.someClass & #someID`
+
+I use mostly class selectors in my stylesheets. Since ID selectors [are proven]() to be slower than class selectors, I avoid them. I avoid polluting my HTML with classes and for that reason, class electors are not the only selectors I use.  
+
+#### Universal selector
+> `*` 
+
+I never use the universal selector, no matter what the situation is. It is slow and clunky and defeats the purpose of cascading styles.
+
+#### Element selectors
+> `a li`
+
+I avoid using element selectors because browsers read stylesheets from right to left. 
+
+If you are using this selector:
+
+```css
+div.nav li a {
+  color: red;
+}
+```
+You would read "style unordered list element containing a list item containing a link red". The browser will read: "style links within the list-item, within the unordered list element red". This may not seem bad, but it is becuase the browser has to find EVERY link element on the page, then it says "which of this link elements are in list-items". Next the browser finds all the links within list-items. Finally the browser finds all the links within list items in the div with the class "nav". As you can see, you are making the browser search the DOM three times more than it needs to. If you use a class such as `.nav-item` the browser only has to search the DOM once.
