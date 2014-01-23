@@ -1,9 +1,15 @@
 {
   "name": "site-assemble",
   "version": "1.0.0",
-  "dependencies": {
-    
-  }
+  "homepage": "https://github.com/pburtchaell/site-assemble",
+  "authors": [
+    "Patrick Burtchaell <patrick@pburtchaell.com>"
+  ],
+  "description": "The website of Patrick Burtchaell, built with Assemble",
+  "license": "MIT",
   "private": true,
-  "directory": "./src/packages/"
+  "dependencies": {
+    "headroom.js": "~0.4.0",
+    "responsive-nav": "~1.0.25"
+  }
 }
