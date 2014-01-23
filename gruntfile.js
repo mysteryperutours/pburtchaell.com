@@ -17,54 +17,72 @@ module.exports = function(grunt) {
 		site:grunt.file.readYAML('src/data/site.yml'),
         
 		
-        /*
-         * clean <% site.build %> & <% site.release %>
-         * this will remove all old files before creating the new files
-         */
-        clean: {
-            //build: ['<%= site.production %>/**/*.html','<%= site.production %>/**'],
-            release: ['<%= site.production %>/**/*.html','<%= site.production %>/**']
-        },
+    /*
+     * clean <% site.build %> & <% site.release %>
+     * this will remove all old files before creating the new files
+     */
+    clean: {
+      site: ['<%= site.production %>/**/*.html','<%= site.production %>/**']
+    },
+    
+    /*
+     * copy 
+     */
+    copy: {
+      assets: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= site.source %>/less/',
+            src: ['fonts/**'], 
+            dest: '<%= site.production %>/assets/css/', 
+          },
+          {
+            expand: true,
+            cwd: '<%= site.source %>/',
+            src: ['img/**'], 
+            dest: '<%= site.production %>/assets/'
+          }
+        ]
+      }
+    },
         
 		/*
 		 * compile SCSS (LESS) to CSS
 		 */
 		less: {
-			
 			options: {
 				banner: '/*<%= pkg.name %> - <%= pkg.url %> - <%= pkg.license %>*/',
 				compress: true,
 				metadata: '<%= site.source %>/less/data/*.{json,yml}'
 			},
-			
-			site: {
+			assets: {
 				files: {
 					'<%= site.production %>/assets/css/styles.min.css' : '<%= site.source %>/less/styles.less',
 					'<%= site.production %>/assets/css/ie8.min.css' : '<%= site.source %>/less/browsers/ie8.less', // IE8 Styles
 					'<%= site.production %>/assets/css/ie9.min.css' : '<%= site.source %>/less/browsers/ie9.less'  // IE9 Styles		
 				}
 			}
-			
 		},
 			
 		/*
 		 * spell check all published content on blog
 		 */
 		spell: {
-    		blog: {
-				src: ['<%= site.content %>/blog/published/*.{md,hbs}'],
-      			options: {
-        			lang: 'en',
-        			ignore: ['cliches', 'double negatives']
-      			}
+      blog: {
+		    src: ['<%= site.content %>/blog/published/*.{md,hbs}'],
+        options: {
+          lang: 'en',
+          ignore: ['cliches', 'double negatives']
+        }
 			}
-  		},
+    },
 		
 		/*
 		 * minify JS
 		 */
 		uglify: {
-			site: {
+			assets: {
 				files: {
 					'<%= site.production %>/assets/js/post.min.js' : '<%= site.source %>/js/post.js',
 					'<%= site.production %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
@@ -73,40 +91,21 @@ module.exports = function(grunt) {
 			}
 		},
         
-        /*
-         * minify HTML
-         */
-        htmlmin: {
-            site: { 
-                options: {                            
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    removeRedundantAttributes: true,
-                    removeOptionalTags: true,
-                    removeAttributeQuotes: true,
-                    collapseBooleanAttributes: true, 
-                },
-                files: {                              
-                    '<%= site.production %>/**/*.html': '<%= site.production %>/**/*.html',
-                }
-            }
+    /*
+     * compress files
+     */
+    compress: {
+      assets: {
+        options: {
+          mode: 'gzip',
+          pretty: true,
         },
-        
-        /*
-         * compress files
-         */
-        compress: {
-            site: {
-                options: {
-                    mode: 'gzip',
-                    pretty: true,
-                },
-                expand: true,
-                cwd: '<%= site.production %>/assets/',
-                src: ['**/*'],
-                dest: '<%= site.production %>/assets/'
-            }
-        },
+        expand: true,
+        cwd: '<%= site.production %>/assets/',
+        src: ['**/*'],
+        dest: '<%= site.production %>/assets/'
+      }
+    },
 		
 		/* 
 		 * assemble the site
@@ -294,7 +293,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-spell');
@@ -308,12 +306,12 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['assemble','connect:production']);	
   grunt.registerTask('dev', ['connect:dev','watch:dev']);
 	grunt.registerTask('build', [
-    'clean:release', // 1. remove old files from the <% site.release %> directory
-    'spell',         // 2. spellcheck the blog content so I don't sound dumb 
-    'assemble',      // 3. assemble the site to the <% site.build %> directory
-    'less',          // 4. create the stylesheets
-    'uglify',        // 5. minify the javascripts
-    'compress',      // 6. compress all the things
+    'clean:site',
+    'assemble',
+    'less:assets',
+    'uglify:assets',
+    'copy:assets',
+    'compress:assets',
 	]);
     
 }
