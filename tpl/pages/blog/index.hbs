@@ -9,15 +9,12 @@ layout: layout-custom.hbs
       {{#compose 'published/*.hbs'}}
         <article class=article-item>
             <header class=article-item-header>
-              <a href={{site.url}}/blog/{{year}}/{{shortName}}/ rel=prefetch role=link class=line>
+              <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
                   <h1 class=article-item-title>{{title}}</h1>
               </a>
             </header>
-            <section class=article-item-section>
-                <em>{{description}}</em>
-            </section>
             <footer class=article-item-footer>
-                <small><time datetime="" pubdate="">{{date}}</time></small>
+                <small><em><time datetime="" pubdate="">{{pubDate}}</time></em></small>
             </footer>
         </article>
        {{/compose ~}}
