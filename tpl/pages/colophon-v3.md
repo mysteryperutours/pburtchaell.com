@@ -8,12 +8,20 @@ description: Notes on the design and development of the third version of my pers
 # Colophon - v3
 
 ## Author's Statement
+<<<<<<< HEAD
 When I began redesigning my site in October of 2013, I decided I would take a lightweight approach to my site. I want to focus on content, not designing features. For that reason, my sit appears very simple, yet it is really elegant and complex.
+=======
+When I began redesigning my site in October of 2013, I decided I would take a lightweight approach to my blog and most of the pages on my site. I wanted to focus on content during 2014 and not designing features for my site. For that reason, my sit appears very simple, yet it is elegant and complex.
+>>>>>>> df3c2a799158e0594f443032fc91884c4f8a0936
 
 ## Design Notes
 
 ### Typography
+<<<<<<< HEAD
 I want the typography to feel natural. For that reason, I went with a slightly off-white background and a light grey value for headings and body text. Links are set in a light blue that flows with the "faded" shades of my color pallete. Only occasionaly do I style type in other colors than grey. 
+=======
+I want the typography to feel natural when you a reading an article on my site. For that reason, I went with a slightly off-white background and a light grey value for typography. Links are set in a light blue that flows with the "faded" shades of my color pallete. Only occasionaly do I style type in other colors than grey. 
+>>>>>>> df3c2a799158e0594f443032fc91884c4f8a0936
 
 !["FF DIN"]({{site.url}}/assets/img/site/styleguide/FFDIN.png "FF DIN")
 

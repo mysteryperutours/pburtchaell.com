@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>  
+<title>Styleguide - Patrick Burtchaell - Creative Design + Video + Audio from New Orleans</title>
+<meta name=description content="">
+<meta charset=UTF-8>
+<meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
+<meta name=viewport content="width=device-width,user-scalable=yes,initial-scale=1">	
+<link rel=stylesheet href=../assets/css/styles.min.css> 	
+<script src=../assets/js/pre.min.js></script>	
+<script src=../assets/js/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><meta name=keywords content="New Orleans, web design, video, audio, production, designer, videographer, graphics, nola, Patrick, Burtchaell, front, end, HTMl, CSS, JavaScript, JS">
+<meta name=author content="Patrick ">
+<meta name=google-site-verification content=7RrfJovl477GocUkq4QOPIybas99RN2zebN46jgN_Lo>
+<meta name=format-detection content="telephone=yes">
+<meta property=og:type content=website>
+<meta property=og:title content="Styleguide - Patrick Burtchaell - Creative Design + Video + Audio from New Orleans">
+<meta property=og:description content="The code styleguide I use both my personal web site and on all my projects.">
+<meta property=og:url content=http://localhost:35729>
+<meta property=og:site_name content="Patrick Burtchaell - Creative Design + Video + Audio from New Orleans">
+<meta property=og:profile:first_name content=>
+<meta property=og:profile:last_name content=>
+<meta property=og:image content=http://localhost:35729/assets/img/site/og_image.gif>
+<meta name="twitter:card" content=summary_large_image>
+<meta name="twitter:site" content=>
+<meta name="twitter:title" content="Styleguide">
+<meta name="twitter:description" content="The code styleguide I use both my personal web site and on all my projects.">
+<meta name="twitter:creator" content=>
+<meta name="twitter:image:src" content=http://localhost:35729/assets/img/site/og_image.gif>
+<meta name="twitter:domain" content=http://localhost:35729>
+<link rel="shortcut icon" type=image/png href=http://pburtchaell.com/assets/img/site/favicon.png></head>
+<body>
+<noscript>
+<div class=noscript>In order to have the best experience of my site, please enable JavaScript. <em>If you don't</em>, comments, navigation, and search will not operate. *sadface*</div>
+</noscript>
+<header class=page-header>
+	<a href=http://localhost:35729><object class=branding><svg x=0 y=0 width=75px height=54.744px viewBox="0 0 75 54.744"><g><g><path fill=rgb(0,218,255) d="M56.144,31.954l4.565,4.564l-4.565,4.565l-4.565-4.565L56.144,31.954 M56.144,18.665 L38.29,36.519l17.854,17.854l17.854-17.854L56.144,18.665L56.144,18.665z"/><path fill=rgb(179,255,198) d="M37.509,13.66l4.565,4.565l-4.565,4.565l-4.565-4.565L37.509,13.66 M37.509,0.372 L19.655,18.226l17.854,17.854l17.853-17.854L37.509,0.372L37.509,0.372z"/><path fill=rgb(230,84,87) d="M18.856,31.954l4.565,4.564l-4.565,4.565l-4.565-4.565L18.856,31.954 M18.856,18.665 L1.003,36.519l17.854,17.854L36.71,36.519L18.856,18.665L18.856,18.665z"/></g></g></svg></object></a>
+	<nav class=nav-collapse role=navigation>
+		<ul class="nav-items left">
+      <li class=nav-item><a href=http://localhost:35729>Work</a>
+      <li class=nav-item><a href=http://localhost:35729/about>About</a>
+		</ul>
+		<ul class="nav-items right">
+      <li class=nav-item><a href=http://localhost:35729/connect>Connect</a>
+      <li class=nav-item><a href=http://localhost:35729/blog class=blog>Blog</a>
+		</ul>
+		<script>
+      var header = document.querySelector("header");  
+      var headroom = new Headroom(header); headroom.init();  
+      var navigation = responsiveNav(".nav-collapse");
+    </script>
+	</nav>
+</header>
+
+<main role=main class="main default page">
+	<div class=container>
+		<section class=wrapper>
+			<h1 id="code-styleguide">Code Styleguide</h1>
+<p>I have a very particular style to the way I write code that is very different from anyone else; this document explains that style and my reasoning behind it. I am in no way saying this is the best way to write code. Rather, this is just the way that makes the most sense to me. Also, this is the code styleguide, not my <a href="http://pburtchaell.com/design-styleguide/" title="design styleguide">design styleguide</a>.</p>
+<h2 id="html">HTML</h2>
+<h3 id="case">Case</h3>
+<p>Most elements in HTML5 are case-insensitive. I use all lowercase, the only thing I capitalize is the <code>&lt;DOCTYPE! html&gt;</code> declaration. When using Handlebars templates, I will capitalize the second word in a bracket so I can easy read each word.</p>
+<h3 id="closing-tags">Closing Tags</h3>
+<p>With HTML5 we don&#39;t have to close certian elements, so I don&#39;t use closing brackets for them. For example, list item elements:</p>
+<pre><code class="language-html">&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a&gt;&lt;/a&gt;
+        &lt;li&gt;&lt;a&gt;&lt;/a&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+<h3 id="whitespace">Whitespace</h3>
+<p>Usually, I do not use white space in HTML. However, if a page is complex and whitespace will help a someone navigate the code easier, I will use whitespace to seperate major blocks of code. </p>
+<h3 id="closing-tag-comments">Closing Tag Comments</h3>
+<p>For smaller HTML I usually do not place a comment by a closing tag. However on larger sites, where I might have multiple closing tags of the same element (like five <code>&lt;/div&gt;</code>&#39;s right after another), I will add a comment in order to keep the HTML organized and to avoid mistakes in the future.</p>
+<pre><code class="language-html">&lt;div class=container&gt;
+    &lt;div class=content&gt;
+        &lt;div class=box&gt;
+        &lt;/div&gt;&lt;!-- /box --&gt;
+    &lt;/div&gt;&lt;!-- /content --&gt;
+&lt;/div&gt;&lt;!-- /container --&gt;</code></pre>
+<p>If I am working on a project that uses both classes and IDs I will use closing tag comments like so: </p>
+<pre><code class="language-html">&lt;div id=someID&gt;
+    &lt;div class=content&gt;
+    &lt;/div&gt;&lt;!-- /.content --&gt;
+&lt;/div&gt;&lt;!-- /#someID --&gt;</code></pre>
+<h3 id="attributes">Attributes</h3>
+<p>With HTML5 you no longer have to wrap attributes in quoation marks. For example <code>&lt;div class=&quot;content&quot;&gt;</code> can be written as <code>&lt;div class=content&gt;</code>. Of course, you do not have to write attributes like this and the spec does not call for you to, but I like the appearance of it. Remember, however, that you can not have a space; thus, <code>&lt;div class=content page&gt;</code> would be invalid. You have to use <code>&lt;div class=&quot;content page&quot;&gt;</code>.</p>
+<h3 id="html5-elements">HTML5 Elements</h3>
+<p>HTML5 has several new elements, I follow the <a href="">WS3 standards</a> when using those elements. The WS3 does not specify <em>exactly how</em> we should use some of the new elements, so I will briefly cover how I do.</p>
+<h4 id="article-element">Article Element</h4>
+<p>For any page with a body of content that is a written article, use the <code>&lt;article&gt;</code> tag. Wrap the title, subtitle, description of the article in a <code>&lt;header&gt;</code>. Include the content of the article in a <code>&lt;section&gt;</code> and place the author bio and name in a <code>&lt;footer&gt;</code>. In the case that a date/time is provideded use the time element like so: </p>
+<h4 id="article-element">Article Element</h4>
+<p>The article element is very self explainatory, but I feel it is important to note how I use the other new HTML5 elements. For example, here is a rough example of how I have my blog posts structured.  </p>
+<pre><code class="language-html">&lt;article&gt;
+
+    &lt;header class=article-header&gt;
+        &lt;!-- Title, author name, etc. --&gt;
+    &lt;/header&gt;
+
+    &lt;section class=article-content&gt;
+        &lt;!-- Lorem ipsum or something like that --&gt;
+    &lt;/section&gt;
+
+    &lt;footer class=article-footer&gt;
+        &lt;!-- Author bio, social media, etc. --&gt;
+    &lt;/footer&gt;
+
+    &lt;aside class=article-aside&gt; 
+        &lt;!-- Comments Thread --&gt;
+    &lt;/aside&gt;
+
+&lt;/article&gt;</code></pre>
+<h4 id="header-element">Header Element</h4>
+<p>When using the header element for a page (think branding, navigation, etc.) I always include the class <code>.page-header</code>. Otherwise, the header will be used for article elements. When used with article elements, usually the header will include the article title; author name and/or profile picture; publish date &amp; time; and other infomation that would be helpful to know before reading the article itself. </p>
+<h4 id="section-element">Section Element</h4>
+<p>I always wrap the content of the article in a section tag, otherwise I follow the <a href="http://" title="WS3">WS3</a> specs.</p>
+<h4 id="footer-element">Footer Element</h4>
+<p>When using the footer element for a page (think copyright, links, etc.) I always include the class <code>.page-footer</code>. When used with an article, the footer will contain infomation that does not relate directly to the article. Things like social media buttons, author biography and links.  </p>
+<h4 id="aside-element">Aside Element</h4>
+<p>Outside of what the <a href="http://" title="WS3">WS3</a> calls you to use the aside element for, I always wrap the comments of an article element (if applicable) in an aside element.  </p>
+<h4 id="time-element">Time Element</h4>
+<p>While I do not always put the time element in the same place, I always make sure an article element has one. Looking at the source code of websites, I notice the <code>datetime</code> and <code>pubdate</code> attribites are not always used by developers; since not using these attributes is like not using an <code>href</code> on a link, I always have atleast one, if not both, on the element:</p>
+<pre><code class="language-html">&lt;time datetime=20131212 pubdate&gt;December 12th, 2013&lt;/time&gt;
+&lt;!-- Note that datetime must be formatted as YYYYMMDD --&gt;</code></pre>
+<h4 id="main-element">Main Element</h4>
+<p>Wrap all content of all pages in <code>&lt;main role=main class=main&gt;</code>. I always include the class <code>.main</code> with this element because it is an easy way to style all page content. </p>
+<h2 id="css-amp-scss">CSS &amp; SCSS</h2>
+<p>I write all my stylesheets in SCSS. I do not perfer LESS over Sass and vice-versa; I simply use which ever language makes sense for the project.</p>
+<h3 id="variables">Variables</h3>
+<p>Allowing me to see the name and value of each variable very easily, I orgainize my variables so that the colons and values for each property line up:</p>
+<pre><code class="language-scss"><span class="at_rule">@padding  : <span class="preprocessor"> 20px</span>;</span>
+<span class="at_rule">@margin   : <span class="preprocessor"> 20px</span>;</span>
+<span class="at_rule">@height   : <span class="preprocessor"> 20px</span>;</span>
+<span class="at_rule">@width    : <span class="preprocessor"> 20px</span>;</span></code></pre>
+<h3 id="properties-and-values">Properties and values</h3>
+<p>One of my faults is that I tend to not write properties in CSS in any particular order. I do have an order that I perfer them to be in, but when I am in the zone and code is flowing from my keyboard my properties never end up this way and I have to go through my stylesheet later to clean everything up. Nevertheless, here is an example:</p>
+<pre><code class="language-css">.someclass {
+
+  /* Start from the inside, the &quot;core&quot; properties */
+  display: block;
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: 25px 0 25px 0; // always use shorthand
+  padding: 25px;
+
+  /* Typographic properties in the middle */
+  font: 14px Arial;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.0;
+  color: white;
+
+  /* Next, any &quot;appearance&quot; properties*/
+  background: black;
+  border-radius: 100%;
+  border: 1px solid white;
+
+  /* Finally, any properties with browser prefixes */
+  -webkit-transform: translate(20px);
+     -moz-transform: translate(20px);
+      -ms-transform: translate(20px);
+       -o-transform: translate(20px);
+          transform: translate(20px);
+  transition: all 1s ease-out;
+
+}</code></pre>
+<h3 id="selectors">Selectors</h3>
+<p>There are many types of selectors in CSS, each with their own pros and cons.</p>
+<h4 id="class-selectors-id-selectors">Class selectors &amp; ID selectors</h4>
+<blockquote>
+<p><code>.someClass &amp; #someID</code></p>
+</blockquote>
+<p>I use mostly class selectors in my stylesheets. Since ID selectors <a href="">are proven</a> to be slower than class selectors, I avoid them. I avoid polluting my HTML with classes and for that reason, class electors are not the only selectors I use.  </p>
+<h4 id="universal-selector">Universal selector</h4>
+<blockquote>
+<p><code>*</code> </p>
+</blockquote>
+<p>I never use the universal selector, no matter what the situation is. It is slow and clunky and defeats the purpose of cascading styles.</p>
+<h4 id="element-selectors">Element selectors</h4>
+<blockquote>
+<p><code>a li</code></p>
+</blockquote>
+<p>I avoid using element selectors because browsers read stylesheets from right to left. </p>
+<p>If you are using this selector:</p>
+<pre><code class="language-css"><span class="tag">div</span><span class="class">.nav</span> <span class="tag">li</span> <span class="tag">a</span> <span class="rules">{
+  <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;
+<span class="rule">}</span></span></code></pre>
+<p>You would read &quot;style unordered list element containing a list item containing a link red&quot;. The browser will read: &quot;style links within the list-item, within the unordered list element red&quot;. This may not seem bad, but it is becuase the browser has to find EVERY link element on the page, then it says &quot;which of this link elements are in list-items&quot;. Next the browser finds all the links within list-items. Finally the browser finds all the links within list items in the div with the class &quot;nav&quot;. As you can see, you are making the browser search the DOM three times more than it needs to. If you use a class such as <code>.nav-item</code> the browser only has to search the DOM once.</p>
+
+		</section>	
+	</div>
+</main>
+<footer class=page-footer>
+  <small>
+    Unless otherwise stated, all content licensed <a href=http://creativecommons.org/licenses/by-nc-sa/4.0/ rel=license class=line>CC</a>.<br>
+    <a href=http://github.com/pburtchaell/site-assemble rel=external class=line>Source code</a> licensed <a href=http://pb.mit-license.org/ rel=external class=line>MIT</a>. 
+      &copy;2014 Patrick Burtchaell</em><br><br>
+    <a href=http://localhost:35729/colophon>
+      <span class=page-footer-span>Made with <object class=page-footer-heart alt=love>
+        <svg x=0 y=0 width=10px height=10px viewBox="0 0 10 8.1396484">
+          <g><path d="M9.1796875, 0.6699219c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0L5, 
+                      1.2753906L4.3398438,0.6699219 c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0c-1.0927734,
+                      1.0029297-1.0927734,2.6308594,0,3.6337891L5,8.1396484 l4.1796875-3.8359375C10.2734375,
+                      3.3007813,10.2734375,1.6728516,9.1796875,0.6699219z"/>
+          </g></svg></object> in New Orleans<br>
+      </span><br>
+    </a>
+  </small>
+</footer>
+<script>
+function downloadJSAtOnload() { var element = document.createElement("script"); element.src ="../assets/js/post.min.js"; document.body.appendChild(element); } if (window.addEventListener) window.addEventListener("load", downloadJSAtOnload, false); else if (window.attachEvent) window.attachEvent("onload", downloadJSAtOnload); else window.onload = downloadJSAtOnload;
+var body = document.body, timer; 
+window.addEventListener('scroll', function() {
+    clearTimeout(timer);
+    if(!body.classList.contains('disable-hover')){
+        body.classList.add('disable-hover')
+    }
+    timer = setTimeout(function() {
+        body.classList.remove('disable-hover')
+    }, 500);
+}, false);
+</script>
+</body>
+</html>
