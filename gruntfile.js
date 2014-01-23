@@ -22,7 +22,7 @@ module.exports = function(grunt) {
          * this will remove all old files before creating the new files
          */
         clean: {
-            //build: ['<%= site.development %>/**/*.html','<%= site.development %>/**'],
+            //build: ['<%= site.production %>/**/*.html','<%= site.production %>/**'],
             release: ['<%= site.production %>/**/*.html','<%= site.production %>/**']
         },
         
@@ -39,9 +39,9 @@ module.exports = function(grunt) {
 			
 			site: {
 				files: {
-					'<%= site.development %>/assets/css/styles.min.css' : '<%= site.source %>/less/styles.less',
-					'<%= site.development %>/assets/css/ie8.min.css' : '<%= site.source %>/less/browsers/ie8.less', // IE8 Styles
-					'<%= site.development %>/assets/css/ie9.min.css' : '<%= site.source %>/less/browsers/ie9.less'  // IE9 Styles		
+					'<%= site.production %>/assets/css/styles.min.css' : '<%= site.source %>/less/styles.less',
+					'<%= site.production %>/assets/css/ie8.min.css' : '<%= site.source %>/less/browsers/ie8.less', // IE8 Styles
+					'<%= site.production %>/assets/css/ie9.min.css' : '<%= site.source %>/less/browsers/ie9.less'  // IE9 Styles		
 				}
 			}
 			
@@ -66,11 +66,9 @@ module.exports = function(grunt) {
 		uglify: {
 			site: {
 				files: {
-					'<%= site.development %>/assets/js/post.min.js' : '<%= site.source %>/js/post.js',
-					'<%= site.development %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
-					'<%= site.development %>/assets/js/GGS.min.js' : '<%= site.source %>/js/vendor/GGS.js',
-					'<%= site.development %>/assets/js/dribble.js' : '<%= site.source %>/js/vendor/dribbble.js',
-					'<%= site.development %>/assets/js/highlight.min.js' : '<%= site.source %>/js/vendor/highlight.pack.js'
+					'<%= site.production %>/assets/js/post.min.js' : '<%= site.source %>/js/post.js',
+					'<%= site.production %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
+					'<%= site.production %>/assets/js/highlight.min.js' : '<%= site.source %>/js/vendor/highlight.pack.js'
 				}
 			}
 		},
@@ -89,7 +87,7 @@ module.exports = function(grunt) {
                     collapseBooleanAttributes: true, 
                 },
                 files: {                              
-                    '<%= site.development %>/**/*.html': '<%= site.development %>/**/*.html',
+                    '<%= site.production %>/**/*.html': '<%= site.production %>/**/*.html',
                 }
             }
         },
@@ -104,7 +102,7 @@ module.exports = function(grunt) {
                     pretty: true,
                 },
                 expand: true,
-                cwd: '<%= site.development %>/assets/',
+                cwd: '<%= site.production %>/assets/',
                 src: ['**/*'],
                 dest: '<%= site.production %>/assets/'
             }
@@ -118,7 +116,7 @@ module.exports = function(grunt) {
 			options: {
 				flatten: true,
 				data: ['<%= site.source %>/data/*.{json,yml}', 'package.json'],
-				assets: '<%= site.development %>/assets',
+				assets: '<%= site.production %>/assets',
 				helpers: ['helper-compose','handlebars-helper-moment','<%= site.source %>/helpers/*.js'],
 				partials: [
           '<%= site.templates %>/partials/**/*.{hbs,md}', // partials are always used on every page (i.e. header, footer, navigation, etc.)
@@ -142,7 +140,7 @@ module.exports = function(grunt) {
 				files: [ 
 					{
 						src: ['<%= site.content %>/*.{hbs,md}'],
-						dest: '<%= site.development %>/'
+						dest: '<%= site.production %>/'
 					}
 				]
 			},
@@ -158,15 +156,15 @@ module.exports = function(grunt) {
 				files: [ 
 					{
           src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
-				  dest: '<%= site.development %>/blog/'
+				  dest: '<%= site.production %>/blog/'
 					},
 					{
 				  src: ['<%= site.content %>/blog/drafts/*.{hbs,md}'],
-				  dest: '<%= site.development %>/blog/drafts/',
+				  dest: '<%= site.production %>/blog/drafts/',
 					},
           {
 				  src: ['<%= site.content %>/blog/index.hbs'],
-				  dest: '<%= site.development %>/blog/index.html'
+				  dest: '<%= site.production %>/blog/index.html'
 					}
 				]
 			},
@@ -181,11 +179,11 @@ module.exports = function(grunt) {
 				files: [
           {
 				  src: ['<%= site.content %>/portfolio/published/*.json'],
-				  dest: '<%= site.development %>/work/'
+				  dest: '<%= site.production %>/work/'
 					},
           {
 				  src: ['<%= site.content %>/portfolio/index.hbs'],
-				  dest: '<%= site.development %>/work/index.html',
+				  dest: '<%= site.production %>/work/index.html',
 					}
 				]        
 			}*/	
@@ -226,7 +224,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           port: 35729,
-          base: '<%= site.development %>'
+          base: '<%= site.production %>'
         }
       },
       production: {
@@ -260,7 +258,7 @@ module.exports = function(grunt) {
           bucket: '<%= aws.bucket.staging %>'
         },
         upload: [{
-        src: '<%= site.development %>/**/*',
+        src: '<%= site.production %>/**/*',
         dest: './'
         }]
       },
