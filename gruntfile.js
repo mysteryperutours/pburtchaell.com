@@ -52,13 +52,13 @@ module.exports = function(grunt) {
 		 */
 		less: {
 			options: {
-				banner: '/*<%= pkg.name %> - <%= pkg.url %> - <%= pkg.license %>*/',
+				banner: '/*<%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
 				compress: true,
 				metadata: '<%= site.source %>/less/data/*.{json,yml}'
 			},
 			assets: {
 				files: {
-					'<%= site.production %>/assets/css/styles.min.css' : '<%= site.source %>/less/styles.less',
+					'<%= site.production %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less',
 					'<%= site.production %>/assets/css/ie8.min.css' : '<%= site.source %>/less/browsers/ie8.less', // IE8 Styles
 					'<%= site.production %>/assets/css/ie9.min.css' : '<%= site.source %>/less/browsers/ie9.less'  // IE9 Styles		
 				}
@@ -82,11 +82,13 @@ module.exports = function(grunt) {
 		 * minify JS
 		 */
 		uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
+      },
 			assets: {
 				files: {
-					'<%= site.production %>/assets/js/post.min.js' : '<%= site.source %>/js/post.js',
-					'<%= site.production %>/assets/js/pre.min.js' : '<%= site.source %>/js/pre.js',
-					'<%= site.production %>/assets/js/highlight.min.js' : '<%= site.source %>/js/vendor/highlight.pack.js'
+					'<%= site.production %>/assets/js/components.js' : ['bower_components/responsive-nav/client/dist/responsive-nav.js','bower_components/headroom.js/dist/headroom.js'],
+					'<%= site.production %>/assets/js/highlight.min.js' : 'bower_components/vendor/highlight.pack.js'
 				}
 			}
 		},
@@ -297,6 +299,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-spell');
   grunt.loadNpmTasks('grunt-s3');
+  
+  grunt.registerTask('congrats', 'Log some stuff', function() {
+    grunt.log.write('Congrats your site has been assembled.').ok();
+  });
 	
 	/* 
 	 * tasks
@@ -312,6 +318,7 @@ module.exports = function(grunt) {
     'uglify:assets',
     'copy:assets',
     'compress:assets',
+    'congrats'
 	]);
     
 }
