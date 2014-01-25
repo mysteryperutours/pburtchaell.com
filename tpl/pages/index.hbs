@@ -1,14 +1,24 @@
 ---
 title: Design + Video + Audio from New Orleans
-shortName: home
+shortName: blog
+description: A collection of thoughts, research, and design by Patrick Burtchaell.  
 layout: layout-custom.hbs
 ---
-<main role=main class=main>
-  <section class="landing blue">
+<section class=article-feed>
     <div class=wrapper>
-      <h1 class=landing-title>soon</h1>
-      <p class=landing-subtitle>I truly am sorry, but I don't have any of my work on the site yet.<br>In the meantime, you could check out my work on <a href={{ author.dribbble }} class="line">Dribbble</a> and <a href={{ author.behance }} class="line white">B&eacute;hance</a>. You may also want to <a href={{site.url}}/blog class=line>visit</a> my blog.</p>
-      <p class=landing-subtitle>Maybe you'll even follow me.<em>*chuckles*</em></p>
+      {{#compose 'published/*.hbs'}}
+        <article class=article-item>
+            <header class=article-item-header>
+              <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
+                  <h1 class=article-item-title>{{title}}</h1>
+              </a>
+            </header>
+            <footer class=article-item-footer>
+              <small>
+                <em><time datetime="" pubdate="">{{pubDate}}</time></em>
+              </small>
+            </footer>
+        </article>
+       {{/compose ~}}
     </div>
-  </section>  
-</main>
+</section>

@@ -123,10 +123,10 @@ module.exports = function(grunt) {
           '<%= site.templates %>/partials/**/*.{hbs,md}', // partials are always used on every page (i.e. header, footer, navigation, etc.)
           '<%= site.templates %>/snippets/**/*.{hbs,md}'  // snippets are only used occasionally (i.e. branding, social media links, etc.)
         ],
-				plugins: ['assemble-contrib-permalinks',],
+				plugins: ['assemble-contrib-permalinks','assemble-contrib-sitemap','assemble-related-pages'],
 				layoutdir: '<%= site.templates %>/layouts',
 				layout: 'default.hbs',
-				ext: '<%= site.extension %>',		
+				ext: '<%= site.extension %>',
 			},
 			
 			// assemble general pages
@@ -135,7 +135,14 @@ module.exports = function(grunt) {
           plugins: ['assemble-contrib-permalinks'],
           permalinks: {
             structure: ':shortName/index.html'
-          }
+          },
+          sitemap: {
+            homepage: '<%= site.url %>',
+            changefreq: 'weekly',
+            priority: '0.8',
+            robot: true
+          },
+          compose: { cwd: '<%= site.content %>/blog/', sep: '<!-- /article -->' },
 				},
                 
 				files: [ 
@@ -171,23 +178,23 @@ module.exports = function(grunt) {
 			},
       
 			// assemble portfolio
-			/*portfolio: {   
+			portfolio: {   
         options: {
-          plugins: ['assemble-contrib-permalinks'],
-          permalinks: { structure: ':year/:shortName/index.html'},
+          //plugins: ['assemble-contrib-permalinks'],
+          //permalinks: { structure: ':year/:shortName/index.html' },
           layout: 'layout-portfolio.hbs'
         },     
 				files: [
-          {
-				  src: ['<%= site.content %>/portfolio/published/*.json'],
-				  dest: '<%= site.production %>/work/'
-					},
+          //{
+				  //src: ['<%= site.content %>/portfolio/published/*.json'],
+				  //dest: '<%= site.production %>/work/'
+					//},
           {
 				  src: ['<%= site.content %>/portfolio/index.hbs'],
-				  dest: '<%= site.production %>/work/index.html',
+				  dest: '<%= site.production %>/work/',
 					}
 				]        
-			}*/	
+			}
 		},	
 		
 		
@@ -195,10 +202,10 @@ module.exports = function(grunt) {
 		 * watch files for changes
 		 */
 		watch: {
-			dev: {
+		  dev: {
 				files: [
 					 '<%= site.source %>/**/*.{js,less,hbs}',
-					 '<%= site.content %>/**/*.{hbs,md,json,yml}'
+					 '<%= site.content %>/**/*.{html,hbs,md,json,yml}'
 					 ],
 				tasks: [
 					'less',
@@ -209,10 +216,6 @@ module.exports = function(grunt) {
 					spawn: false,
 					interrupt: true,
 					livereload: true,
-					dateFormat: function(time) {
-      					grunt.log.writeln('Congrats! The watch finished in ' + time + 'ms at' + (new Date()).toString());
-      					grunt.log.writeln('Waiting on you <% pkg.author.name %>.');
-    				}
 				}
 			}
 		},
