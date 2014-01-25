@@ -9,14 +9,6 @@
  * Licensed under the MIT license, pburtchaell.com/license 
  */
 
-
-// reset viewport width
-@-webkit-viewport { width: device-width; }
-@-moz-viewport { width: device-width; }
-@-ms-viewport { width: device-width; }
-@-o-viewport { width: device-width; }
-@viewport { width: device-width; }
-
 // normalize/reset elements
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { 
 	margin: 0; 
@@ -34,32 +26,36 @@ ol, ul { list-style: none; }
 // properties for <body> and <html>
 html {
 	-ms-overflow-style: scrollbar; // prevent the IE11 scrollbar from fading out
+  margin: 0;
+  padding: 0;
 } 
 
 body { 
 	
-	min-height	 : 	100%; 
-	height		   : 	100%;
-	font-size	   : 	100%; 
-	direction	   : 	ltr;
-	font-family	 : 	@type-font-primary;
-	line-height	 : 	@type-line-height;
-	color		     : 	@type-color; 
-	background	 : 	@base-background; 
-	overflow-x	 : 	hidden; 
-	cursor		   :	default;
+	min-height	 : 100%; 
+	height		   : 100%;
+	font-size	   : 100%; 
+	direction	   : ltr;
+	font-family	 : @type-font-primary;
+	line-height	 : @type-line-height;
+	color		     : @type-color; 
+	background	 : @base-background; 
+	overflow-x	 : hidden; 
+	cursor		   : default;
+  margin       : 0;
+  padding      : 0;
 	
 	text-rendering: optimizeLegibility; 
 	-webkit-font-smoothing: subpixel-antialiased;
 	
 	// reset default browser styles
 	-webkit-appearance: none;
-	-moz-appearance: none; 
+	   -moz-appearance: none; 
 	
 	// mobile device text size
 	-moz-text-size-adjust: 80%;
 	 -ms-text-size-adjust: 80%;
-		-text-size-adjust: 80%;
+		  -text-size-adjust: 80%;
 	
 }
 

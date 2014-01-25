@@ -28,6 +28,7 @@
   margin: @base-padding*5 @column 0 @column;
   
   time {
+    font-family: 'dinpro';
     text-transform: uppercase;
   }
   
@@ -36,14 +37,16 @@
   margin: @base-margin 0 @base-margin/5 0;
 }
 .article-subtitle { // h2
-    font: 16px 'opensans-italic';
-    margin: @base-margin/5 0 @base-margin*2 0;
+  font: 16px 'opensans-italic';
+  text-transform: none;
+  margin: @base-margin/5 0 @base-margin 0;
 }
 
 // <section class=article-content></section>
 .article-content {
+  
   text-align: justify;
-	margin: @base-margin @column*5 @base-margin*3 @column*5;    
+	margin: @base-margin/5 @column*5 @base-margin*3 @column*5;    
   
   img {
     max-width: 100%;
@@ -85,7 +88,7 @@
 	.article-author {
 		margin: 0 @column*2 0 @column*2;
     line-height: 1.8;
-		.tag { text-transform: uppercase;}
+		.tag { text-transform: uppercase; font-family: 'dinpro'; }
     h6 { margin: 0 0 5px 0; }
 	}
 
@@ -94,6 +97,7 @@
   // screens smaller than 768px
   @media screen and (max-width: 768px) {
     .article-content { 
+      text-align: left;
       margin: 0 @column;
     }
     .article-footer {
