@@ -1,48 +1,31 @@
 <!DOCTYPE html>
 <html lang=en>
 <head>  
-<title>{{ page.title }} - {{ site.title }}</title>
-<meta name=description content="{{ site.desciption }}">
+<title>{{page.title}} - {{site.title}}</title>
+<meta name=description content="{{#if page.description}}{{page.description}}{{else ~}}{{site.description}}{{/if ~}}">
 <meta charset=UTF-8>
 <meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
 <meta name=viewport content="width=device-width,user-scalable=yes,initial-scale=1">	
 <link rel=stylesheet href={{assets}}/css/styles.css> 	
 <script src={{assets}}/js/components.js></script>	
 {{#if highlighting}}<script src={{assets}}/js/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script>{{/if ~}}
-<meta name=keywords content="{{ site.keywords }}">
-<meta name=author content="{{ author.nameFirst }} {{ author.namelast }}">
+<meta name=keywords content="{{site.keywords}}">
+<meta name=author content="{{author.nameFirst}} {{author.nameLast}}">
 <meta name=google-site-verification content=7RrfJovl477GocUkq4QOPIybas99RN2zebN46jgN_Lo>
 <meta name=format-detection content="telephone=yes">
 <meta property=og:type content=website>
-<meta property=og:title content="{{ page.title }} - {{ site.title }}">
-<meta property=og:description content="{{ page.description }}">
-<meta property=og:url content={{ site.url }}>
-<meta property=og:site_name content="{{ site.title }}">
-{{#if page.author}}
-<meta property=og:profile:first_name content={{ page.author.name.first }}>
-<meta property=og:profile:last_name content={{ page.author.name.last }}>
-{{else ~}}
-<meta property=og:profile:first_name content={{ site.author.name.first }}>
-<meta property=og:profile:last_name content={{ site.author.name.last }}>
-{{/if ~}}
-{{#if featuredImage}}
-<meta property=og:image content={{ site.url }}/assets/{{ page.featuredImage }}>
-{{else ~}}
-<meta property=og:image content={{ site.url }}/assets/img/site/og_image.gif>
-{{/if ~}}
+<meta property=og:title content="{{page.title}} - {{site.title}}">
+<meta property=og:description content="{{#if page.description}}{{page.description}}{{else ~}}{{site.description}}{{/if ~}}">
+<meta property=og:url content={{site.url}}>
+<meta property=og:site_name content="{{site.title}}">
+<meta property=og:profile:first_name content={{author.nameFirst}}>
+<meta property=og:profile:last_name content={{author.nameLast}}>
+<meta property=og:image content={{#if featuredImage}}"{{site.url}}/assets/{{ page.featuredImage }}"{{else ~}}"{{site.url}}/assets/img/site/og_image.gif>"{{/if ~}}>
 <meta name="twitter:card" content=summary_large_image>
-<meta name="twitter:site" content={{ site.author.twitter }}>
-<meta name="twitter:title" content="{{ page.title }}">
-<meta name="twitter:description" content="{{ page.description }}">
-{{#if page.author.twitter}}
-<meta name="twitter:creator" content={{ page.author.twitter }}>
-{{else ~}}
-<meta name="twitter:creator" content={{ site.author.twitter }}>
-{{/if ~}}
-{{#if page.featuredImage}}
-<meta name="twitter:image:src" content={{ site.url }}/assets/{{ page.featuredImage }}>
-{{else ~}}
-<meta name="twitter:image:src" content={{ site.url }}/assets/img/site/og_image.gif>
-{{/if ~}}
-<meta name="twitter:domain" content={{ site.url }}>
-<link rel="shortcut icon" type=image/png href=http://pburtchaell.com/assets/img/site/favicon.png>
+<meta name="twitter:site" content=pburtchaell>
+<meta name="twitter:title" content="{{page.title}}">
+<meta name="twitter:description" content="{{#if page.description}}{{page.description}}{{else ~}}{{site.description}}{{/if ~}}">
+<meta name="twitter:creator" content=pburtchaell>
+<meta name="twitter:image:src" content={{#if featuredImage}}"{{site.url}}/assets/{{ page.featuredImage }}"{{else ~}}"{{site.url}}/assets/img/site/og_image.gif>"{{/if ~}}>
+<meta name="twitter:domain" content="the Web">
+<link rel="shortcut icon" type=image/png href={{site.url}}/assets/img/site/favicon.png>
