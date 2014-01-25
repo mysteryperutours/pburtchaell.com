@@ -10,6 +10,7 @@
   "private": true,
   "dependencies": {
     "headroom.js": "~0.4.0",
-    "responsive-nav": "~1.0.25"
+    "responsive-nav": "~1.0.25",
+    "lunr.js": "~0.4.3"
   }
 }
