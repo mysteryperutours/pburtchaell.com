@@ -87,7 +87,8 @@ module.exports = function(grunt) {
       },
 			assets: {
 				files: {
-					'<%= site.production %>/assets/js/components.js' : ['bower_components/responsive-nav/client/dist/responsive-nav.js','bower_components/headroom.js/dist/headroom.js'],
+					'<%= site.production %>/assets/js/components.js' : ['bower_components/responsive-nav/client/dist/responsive-nav.js','bower_components/headroom.js/dist/headroom.js','bower_components/vendor/echo.js'],
+          '<%= site.production %>/assets/js/post.js' : [],
 					'<%= site.production %>/assets/js/highlight.min.js' : 'bower_components/vendor/highlight.pack.js'
 				}
 			}
