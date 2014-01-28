@@ -5,8 +5,6 @@ title: Colophon - v3
 shortName: colophon
 description: Notes on the design and development of the third version of my personal site and blog
 ---
-# Colophon - v3
-
 ## Author's Statement
 When I began redesigning my site in October of 2013, I decided I would take a lightweight approach to my site. I want to focus on content, not designing features. For that reason, my sit appears very simple, yet it is really elegant and complex.
 

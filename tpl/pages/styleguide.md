@@ -1,12 +1,10 @@
 ---
 published: true
 highlighting: true
-title: Styleguide
+title: Code Styleguide
 shortName: styleguide
 description: The code styleguide I use both my personal web site and on all my projects.
 ---
-
-# Code Styleguide
 I have a very particular style to the way I write code that is very different from anyone else; this document explains that style and my reasoning behind it. I am in no way saying this is the best way to write code. Rather, this is just the way that makes the most sense to me. Also, this is the code styleguide, not my [design styleguide](http://pburtchaell.com/design-styleguide/ "design styleguide").
  
 ## HTML 

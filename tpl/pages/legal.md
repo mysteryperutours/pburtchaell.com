@@ -1,10 +1,9 @@
 ---
-title: Legal
+title: Terms and Conditions of Use
 shortName: legal
 description: Terms and Conditions of Use for my web site.
 ---
 
-# Terms and Conditions of Use
 > Effective October 31, 2013
 
 ## I. General Terms
@@ -12,12 +11,14 @@ By accessing this web site, you are agreeing to be bound by these web site Terms
 
 ## II. General Use Licenses 
 	
-### A. Unless otherwise noted, permission is granted to download and distribute the contents under the Creative Commons license. his is the grant of a license, not a transfer of title, and under this license you may not:
+### A) Creative Commons
+Unless otherwise noted, permission is granted to download and distribute the contents under the Creative Commons license. his is the grant of a license, not a transfer of title, and under this license you may not:
 
 - remove any copyright or other proprietary notations from the materials; or
 - transfer the materials to another person under a new license.
 
-### B. Unless otherwise noted, permission is granted to download, use, and distribute copies of the code materials on Patrick Burtchaell's website under the [MIT License](http://pb.mit-license.org). This is the grant of a license, not a transfer of title, and under this license you may not:
+### B) MIT 
+Unless otherwise noted, permission is granted to download, use, and distribute copies of the code materials on Patrick Burtchaell's website under the [MIT License](http://pb.mit-license.org). This is the grant of a license, not a transfer of title, and under this license you may not:
 
 - use the materials for any commercial purpose, or for any public display (commercial or non-commercial);
 - remove any copyright or other proprietary notations from the materials; or
