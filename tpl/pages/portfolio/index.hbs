@@ -2,14 +2,40 @@
 published: true
 title: Work
 shortName: work
-layout: layout-custom.hbs
+layout: none
 ---
+{{> open-inc }}
+<style>
+.landing {
+	color:rgb(248,248,248);
+	text-align: center;
+	padding: 200px 0 300px 0;	
+  background:rgb(40,40,41);
+}
+.landing-title {
+  color: rgb(248,248,248);
+  font-size: 64px;
+  margin-bottom: 25px;
+  opacity: 0.5;
+}
+.landing-subtitle {
+  max-width: 450px;
+  margin: 0 auto;
+}
+</style>
+{{> header-inc }}
 <main role=main class=main>
   <section class=landing>
     <div class=wrapper>
       <h1 class=landing-title>soon</h1>
-      <p class=landing-subtitle>I truly am sorry, but I don't have any of my work on the site yet.<br>In the meantime, you could check out my work on <a href={{ author.dribbble }} class="line">Dribbble</a> and <a href={{ author.behance }} class="line white">B&eacute;hance</a>. You may also want to <a href={{site.url}}/blog class=line>visit</a> my blog.</p>
+      <p class=landing-subtitle>I don't have any of my work here yet.<br>
+        In the meantime, you could check out my work on 
+        <a href={{author.dribbble}} class=line>Dribbble</a> and 
+        <a href={{author.behance}} class=line>B&eacute;hance</a>. 
+        You may also want to <a href={{site.url}}/blog class=line>visit my blog</a>.</p>
       <p class=landing-subtitle>Maybe you'll even follow me.<em>*chuckles*</em></p>
     </div>
   </section>  
 </main>
+{{> footer-inc }}
+{{> close-inc }}
