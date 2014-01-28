@@ -2,16 +2,42 @@
  * Category/article Feed
  */
 .article-feed {
-  text-align: left;
-  margin: @base-padding*6 auto @base-padding*4 auto;
+  margin: @base-margin*5 0 @base-margin*4 0;
 }
-.article-item {
-  margin: @base-padding*2 0 0 0;
-}
-.article-item-title {
-  font-size: 27px;
-  margin: 0;
-  text-align: left;
-}
-.article-item-footer {
+  .article-item {
+  
+    padding: @base-padding/2;
+  
+    // the light-grey items
+    &:nth-of-type(odd) {
+      background: fadeOut(@dark-grey, 99%);
+    } 
+  
+  }
+    .article-item-header {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+      .article-item-title {
+        float: left;   
+        margin: 0 3px 0 0;
+      }
+      .article-item-time { 
+        &:before {
+          content: "\2014 \0020";
+        }
+      }
+
+@media screen and (max-width: 768px) {
+  .article-item-title {
+    display: block;
+    width: 100%;
+  }
+  .article-item-time { 
+    font-size: 90%;
+    &:before {
+      clear: both;
+      content: "Published ";
+    }
+  }
 }

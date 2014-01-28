@@ -5,20 +5,14 @@ description: A collection of thoughts, research, and design by Patrick Burtchael
 layout: layout-custom.hbs
 ---
 <section class=article-feed>
-    <div class=wrapper>
-      {{#compose 'published/*.hbs'}}
-        <article class=article-item>
-            <header class=article-item-header>
-              <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
-                  <h1 class=article-item-title>{{title}}</h1>
-              </a>
-            </header>
-            <footer class=article-item-footer>
-              <small>
-                <em><time datetime="" pubdate="">{{pubDate}}</time></em>
-              </small>
-            </footer>
-        </article>
-       {{/compose ~}}
-    </div>
+  {{#compose 'published/*.hbs'}}
+    <article class=article-item>
+      <header class=article-item-header>
+        <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
+          <em><span class=article-item-title>{{title}}</span>
+        </a>
+        <time>{{pubDate}}</time></em>
+      </header>
+    </article>
+  {{/compose ~}}
 </section>

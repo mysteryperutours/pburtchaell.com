@@ -9,35 +9,35 @@
  * Article Footer
  */
 
-.article-freatured-image {
-    
-	margin: 50px 0 50px 0;	
-    
-    img {
-      min-height: 300px;    
-      min-width: 200;
-      left: -50%;
-    }
-    
-}
-
 // a few typography things 
 .article-header {
   
   text-align: center;
-  margin: @base-padding*5 @column 0 @column;
+  padding: (@base-padding*2)+75px @column @base-padding*2 @column;
+  margin: 0 0 @base-margin*2 0;
+  background: @light-grey;
   
   time {
-    font-family: 'dinpro';
+    font-family: 'dinpro', sans-serif;
     text-transform: uppercase;
+    background: @white;
+    color: @dark-grey;
+    padding: 3px;
   }
   
 }
-.article-title {
-  margin: @base-margin 0 @base-margin/5 0;
+
+.article-title, 
+.article-subtitle {
+  background: @white;
+  display: inline-block;
+  padding: 3px;
 }
-.article-subtitle { // h2
-  font: 16px 'opensans-italic';
+.article-title {
+  margin: @base-margin auto @base-margin/5 auto;
+}
+.article-subtitle {
+  font: 16px 'opensans-italic', sans-serif;
   text-transform: none;
   margin: @base-margin/5 0 @base-margin 0;
 }
@@ -47,7 +47,7 @@
   
 	margin: 0 auto;    
   max-width: 600px;
-  
+   
   img {
     max-width: 100%;
     display: block;
@@ -90,13 +90,24 @@
 
 	// <div class=article-author></div>
 	.article-author {
+  
 		margin: 0 @column*2;
     line-height: 1.8;
-		.tag { text-transform: uppercase; font-family: 'dinpro'; }
-    h6 { margin: 0 0 5px 0; }
+  
+		.tag { 
+      text-transform: uppercase; 
+      font-family: 'dinpro', sans-serif;
+    }
+  
+    h6 { 
+      margin: 0 0 5px 0; 
+    }
+  
 	}
 
-  .article-author-bio { margin: 0; }
+  .article-author-bio { 
+    margin: 0; 
+  }
 
   // screens smaller than 768px
   @media screen and (max-width: 768px) {
@@ -107,6 +118,18 @@
     .article-footer {
       width: @column*12;
     }
+    .article-pubDate {
+      float: left;
+      clear: both;
+    }
+    .article-updateDate {  
+      float: left;
+      clear: both;
+      margin: 0 0 @base-margin/2 0;
+      &:before {
+        display: none;
+      }
+    }
   }
 
   // screens smaller than 568px
@@ -116,7 +139,7 @@
     }
     .article-author-image {
       width: 100%;
-      margin: 0 @column*2 @base-padding @column*2;
+      margin: 0 @column*2;
     }
     .article-details {
       margin: @column;
@@ -130,8 +153,12 @@
 	.article-details {
     margin: 0 0 0 @column*2;
   }
-
-  .article-updateDate { opacity: 0.5; }
+  .article-updateDate {  
+    &:before {
+      content: "\0026";
+      padding: 0 4px 0 2px;
+    }
+  }
 
 // <aside class=article-aside></aside>
 .article-aside {
@@ -159,8 +186,10 @@
       background: @color-google;
     }
   
-    &:hover {
-        opacity: 1.0;
+    &:hover,
+    &:active {
+      color: @white;
+      opacity: 1.0;
     }
       
   }

@@ -94,7 +94,7 @@ font-style: normal;
   top: 0;
   z-index: 999999;
   background: @white;
-  border-bottom: 1px solid fadeOut(@dark-grey, 90%);
+  border-bottom: 1px solid @light-grey;
   -webkit-transition: 0.5s ease;
      -moz-transition: 0.5s ease;
        -o-transition: 0.5s ease;
@@ -143,7 +143,7 @@ font-style: normal;
   text-align: center;
   line-height: 1.2;
   letter-spacing: 1px;
-  background: fadeOut(@dark-grey, 97%);
+  background: fadeOut(@light-grey, 75%);
   
     &.about {
       padding-top: @base-padding*5;
@@ -157,7 +157,7 @@ font-style: normal;
       color: @white;
       padding: 5px;
       opacity: 1;
-      font-family: 'dinpro';
+      font-family: 'dinpro', sans-serif;
       -webkit-user-select: none;
          -moz-user-select: none;
           -ms-user-select: none;
@@ -179,7 +179,8 @@ font-style: normal;
   @media screen and (max-width: 767px) { 
     .page-footer {
       line-height: 1.4;
-      padding: @base-padding @column 0 @column;
+      font-size: 80%;
+      padding: @base-padding @column;
     }
   } 
 
@@ -208,10 +209,21 @@ font-style: normal;
  */
 .page {
   
-  // properties for the default page template
-  &.default {
-    padding: @base-padding*2 0;
-  }
+    .default-header {
+      text-align: center;
+      padding: (@base-padding)+75px @column @base-padding @column;
+      background: @light-grey;
+    }
+
+      .default-title {
+        background: @white;
+        display: inline-block;
+        padding: 3px;
+      }
+  
+    .default-content {
+      margin: @base-margin*3 0;
+    }
   
   img {
     float: left;
@@ -223,14 +235,11 @@ font-style: normal;
 
 }
 
-  // article page styles
-  @import '../pages/article';
-  
-  // category page styles
-  @import '../pages/category';
-  
-  // error page styles
-  @import '../pages/error';
+// article page styles
+@import '../pages/article';
 
-  // landing page styles
-  @import '../pages/landing';
+// category page styles
+@import '../pages/category';
+
+// error page styles
+@import '../pages/error';

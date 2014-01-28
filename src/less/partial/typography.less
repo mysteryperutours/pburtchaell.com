@@ -27,10 +27,11 @@ p {
 
 h2 ~ p,
 h3 ~ p { margin-top: 0; } 
+p ~ p { text-indent: 15px; }
 
-em, i { font-family: 'opensans-italic'; font-style: normal; line-height: inherit; }
-strong, b { font-family: 'dinpro-bold'; font-style: normal; line-height: inherit; }
-strikethrough { color: @design; }
+em, i { font-family: 'opensans-italic', sans-serif; font-style: normal; line-height: inherit; }
+strong, b { font-family: 'dinpro-bold', sans-serif; font-style: normal; line-height: inherit; }
+strikethrough { }
 small { font-size: @small-font-size; }
 @media screen and (max-width: 714px) { small { font-size: @small-font-size*1.2; } } // just to make sure <small> doesn't get too small, reset it at 714px...
 
@@ -59,9 +60,8 @@ h1, h2, h3, h4, h5, h6 {
 */
 
 h1 { 
-	font-size: @primary-h1-size; 
-  margin: @base-margin*2 0; 
-  text-align: center;
+  font: @primary-h1-size 'dinpro', sans-serif;
+  margin: @base-margin*2 0;
 }
 h2 { 
   font-size: @primary-h2-size; 
@@ -72,7 +72,7 @@ h3 {
   margin: @base-margin*2 0 10px 0;
 } 
 h4, h5, h6 { 
-  font: @primary-h4-size 'opensans-italic'; 
+  font: @primary-h4-size 'opensans-italic', sans-serif; 
   text-transform: none;
   margin: @base-margin 0 0 0;
 }
@@ -99,40 +99,41 @@ hr {
 
 
 /* default link styles */
-a, a:visited { 
+a { 
 
-	// let's reset a few things
-	text-decoration: none; 
-	
-	// now for the normal styles
-	color: @dark-grey;
-	-webkit-transition: 0.25s;
+  // let's reset a few things
+  text-decoration: none; 
+  
+  // now for the normal styles
+  color: @dark-grey;
+  -webkit-transition: 0.25s;
      -moz-transition: 0.25s;
       -ms-transition: 0.25s;
        -o-transition: 0.25s;
           transition: 0.25s;
     
-    &.white { color: @white; }
-			
+  &.white { color: @white; }
+      
 }
 
 /* special link styles */
 .article-content a,
-.article-content a:visited,
+.article-content a:active,
 .default.page a,
-.default.page a:visited,
+.default.page a:active,
 a.line, 
 a.line:visited {
-    
-    // links with a blue line and color
-    color: rgb(0, 169, 198);
-    border-bottom: 1px dashed rgba(0, 169, 198, 0.2);
-    
-    // on :hover fadeout the line and add padding
-    &:hover {
-      padding-bottom: 2px;
-      border-bottom: 1px dashed rgba(0, 169, 198, 1);
-    }
+  
+  // links with a blue line and color
+  color: rgb(0, 169, 198);
+  border-bottom: 1px dashed rgba(0, 169, 198, 0.2);
+  
+  // on :hover fadeout the line and add padding
+  &:hover,
+  &:active {
+    padding-bottom: 2px;
+    border-bottom: 1px dashed rgba(0, 169, 198, 1);
+  }
 		     
 }
 
@@ -157,7 +158,7 @@ blockquote {
 	@blockquote-padding				: 	0 0 0 15px;
 	@blockquote-border				:   4px solid fadeOut(@dark-grey, 80%);
   
-  font-family: 'opensans-italic';
+  font-family: 'opensans-italic', sans-serif;
 	padding: @blockquote-padding;
 	border-left: @blockquote-border;
 	color: fadeOut(@dark-grey, 20%);
@@ -166,7 +167,7 @@ blockquote {
     margin: 5px 0 0 0;
 		display: block;
     text-align: right;
-		font: 14px 'opensans-italic';
+		font: 14px 'opensans-italic', sans-serif;
 		
 		&:before {
 			content: "\2014 \0020";
@@ -181,6 +182,9 @@ blockquote {
 ul, ol {
 	margin: 12.5px;
 }
+ol {
+  list-style: decimal;
+}
 li {
     
   margin: 5px @base-margin*2;
@@ -194,7 +198,8 @@ li {
     color: rgb(0, 169, 198);
     border: none !important;
     
-    &:hover {
+    &:hover, 
+    &:active {
       color: fadeOut(rgb(0, 169, 198), 50%);
       border: none !important;
     }
@@ -216,4 +221,4 @@ form ul li {  margin: 0; list-style: none; }
 // default color styles 
 .red { color: @design; }
 .blue { color: @audio; }
-.green { color: @video;}
+.green { color: @video; }
