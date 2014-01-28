@@ -95,7 +95,10 @@ font-style: normal;
   z-index: 999999;
   background: @white;
   border-bottom: 1px solid fadeOut(@dark-grey, 90%);
-  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+     -moz-transition: 0.5s ease;
+       -o-transition: 0.5s ease;
+          transition: 0.5s ease;
 	
 	// SVG branding
 	.branding {
@@ -107,8 +110,7 @@ font-style: normal;
 	}
 	
 	// when scrolling down
-	&.unpinned {
-    opacity: 0.0;
+	&.headroom--unpinned {
 		-webkit-transform: translateY(-100px);
        -moz-transform: translateY(-100px);
          -o-transform: translateY(-100px);
@@ -123,11 +125,6 @@ font-style: normal;
 		        transition: 0.5s ease;
 	}
 	
-	// when scrolling up
-	&.pinned {
-    opacity: 1.0;
-	}
-			
 }
 
 /*
@@ -142,14 +139,14 @@ font-style: normal;
 .page-footer {
 	
 	// footer container
-  padding: @base-padding @column*6;
+  padding: @base-padding @column*6 @base-padding/2 @column*6;
   text-align: center;
   line-height: 1.2;
   letter-spacing: 1px;
   background: fadeOut(@dark-grey, 97%);
   
     &.about {
-        padding-top: @base-padding*5;
+      padding-top: @base-padding*5;
     }
     
     .page-footer-span {
@@ -182,7 +179,7 @@ font-style: normal;
   @media screen and (max-width: 767px) { 
     .page-footer {
       line-height: 1.4;
-      padding: @base-padding @column;
+      padding: @base-padding @column 0 @column;
     }
   } 
 
@@ -210,11 +207,6 @@ font-style: normal;
  * Styles for $page templates
  */
 .page {
-  
-  // properties for all pages w/ container
-  .container {
-    padding: @base-padding*2 0 @base-padding*4 0;
-  }
   
   // properties for the default page template
   &.default {
