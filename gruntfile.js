@@ -229,16 +229,11 @@ module.exports = function(grunt) {
       dev: {
         options: {
           port: 35729,
+          open: true,
           base: '<%= site.production %>'
         }
-      },
-      production: {
-        options: {
-          port: 35729,
-          base: '<%= site.production %>'
-        }
-        }
-      },
+      }
+    },
         
     /*
      * deploy to AWS S3
