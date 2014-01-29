@@ -167,10 +167,6 @@ module.exports = function(grunt) {
           src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
 				  dest: '<%= site.production %>/blog/'
 					},
-					{
-				  src: ['<%= site.content %>/blog/drafts/*.{hbs,md}'],
-				  dest: '<%= site.production %>/blog/drafts/',
-					},
           {
 				  src: ['<%= site.content %>/blog/index.hbs'],
 				  dest: '<%= site.production %>/blog/index.html'
