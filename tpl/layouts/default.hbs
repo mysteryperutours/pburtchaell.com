@@ -1,16 +1,19 @@
 {{> open-inc ~}}
-{{> header-inc ~}}
-<main role=main class="main default page">
-  <header class=default-header>
-    <h1 class=default-title>{{title}}</h1>
-  </header>
-  <section class=default-content>
-    <div class=wrapper>
+{{> header-inc}}
+<main role=main id=main>
+  <section class="default page">
+
+    <header class=default-header>
+      <h1 class=default-title>{{title}}</h1>
+    </header><!-- /default-header -->
+
+    <section class=default-content>
       {{#markdown}}
-      {{> body }}
-      {{/markdown}}
-    </div>
-  </section>	
+        {{> body }}
+      {{/markdown ~}}
+    </section><!-- /default-content -->
+
+  </section><!-- /.default.page -->
 </main>
-{{> footer-inc }}
+{{> footer-inc}}
 {{> close-inc }}
