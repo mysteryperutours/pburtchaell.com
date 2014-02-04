@@ -1,93 +1,68 @@
 {{> open-inc ~}}
-{{> header-inc ~}}
-<main role=main class="main article page">
-  <article itemscope itemtype=http://data-vocabulary.org/Article>
-        
-			<header class=article-header>
-				<h1 class=article-title itemprop=name>{{page.title}}</h1>
-        <time>{{pubDate}}</time>
-        {{#if page.description}}
-        <h2 class=article-subtitle itemprop=description>{{description}}</h2>
-        {{/if ~}}
-			</header><!-- /article-header -->
+{{> header-inc}}
+<main role=main id=main>
+  <article itemscope itemtype=http://data-vocabulary.org/Article class="article page">  
+      
+    <header class=article-header>
+      <h1 class=article-title itemprop=name>{{page.title}}</h1>
+      <time>{{pubDate}}</time>
+      {{#if page.description}}
+      <em class=article-subtitle itemprop=description>{{description}}</em>
+      {{/if ~}}
+    </header><!-- /article-header -->
+		
+    <section class=article-content>
+      {{#markdown}}
+        {{> body }}
+      {{/markdown ~}}
+      <script>Echo.init();</script>
+    </section><!-- /article-content -->
 			
-			<section class="article-content">
-				{{#markdown}}
-				{{> body }}
-				{{/markdown}}
-        {{#if furtherReading}}
-        <section class=article-futherReading>
-        {{#if furtherReadingDescription}}
-        {{#markdown}}
-        {{furtherReadingDescription}}
-        {{/markdown}}
-        {{/if ~}}
-        <ul>
-          {{#for each furtherReading}}
-          <li>{{#markdown}}{{ furtherReading }}{{/markdown}}
-          {{/for ~}}
-        </ul>
-        </section>
-        {{/if ~}}
-			</section><!-- /article-content -->
-			
-			<footer class=article-footer>
-        <hr class=large>
-        <div class=article-author-image>
-            <img src={{assets}}/{{ author.image }} height=auto width=auto>
-        </div>
-              
-				<div class=article-author itemscope itemtype=http://data-vocabulary.org/Person itemprop=author>
-					<small><span class=tag>Written By</span>
-					<h6 intemprop=name>{{author.nameFirst}} {{author.nameLast}}</h6>
-					<p class=article-author-bio>
+    <footer class=article-footer>
+      <hr class=large>
+      <div class=article-author-image>
+        <img src={{assets}}/{{ author.image }} height=100px width=100px>
+      </div>
+      <div class=article-author itemscope itemtype=http://data-vocabulary.org/Person itemprop=author>
+        <small>
+          <span class=tag>Written By</span>
+          <h6 intemprop=name>{{author.nameFirst}} {{author.nameLast}}</h6>
+          <p class=article-author-bio>
             <span itemprop=affiliation>Freelance </span><span itemprop=title>designer and videographer </span>
             <span itemscope itemprop=address itemtype=http://data-vocabulary.org/Address>
               from <span itemprop=locality>New Orleans</span>
             </span> with a passion for objectifying content.<br> 
-					<em><a href={{author.twitter}} class=line itemprop=url>Follow me on Twitter</a></em></p><br></small>
-				</div><!-- /article-author -->
-				
-				<div class=article-details>
-          <hr class=small>
-					<small>
-            <em class=article-pubDate>Published <time datetime="" pubdate="" itemprop=datePublished>{{pubDate}}</time></em>
-            {{#if updateDate}}<em class=article-updateDate>Updated <time datetime="">{{updateDate}}</time></em><br>{{/if ~}}
-          {{#if page.contributor}}
-					<b>Thanks To:</b><br>
-					<ul class=article-contributors>
-            {{#for each page.contributor}}
-            <li><em>{{ page.contributor }}</em>
-            {{/for ~}}
-					</ul>
-          {{/if ~}}
-          </small>
-				</div><!-- /article detials -->
-				<hr class=large>			
-			</footer><!-- /article-footer -->
-      
-			<aside class=article-aside>
-				<small>Share on
-          <a class="share twitter" target=_blank href="https://twitter.com/intent/tweet?text={{page.title}}&url={{site.url}}/blog/{{year}}/{{shortName}}&via=pburtchaell">Twitter</a>
-          <a class="share facebook" target=_blank href="http://www.facebook.com/sharer/sharer.php?u={{site.url}}/blog/{{year}}/{{shortName}}"n>Facebook</a> 
-          <a class="share google" target=_blank href="https://plus.google.com/share?url={{site.url}}/blog/{{year}}/{{shortName}}">Google+</a>
+          <em><a href={{author.twitter}} class=line itemprop=url>Follow me on Twitter</a></em>
+          </p><br>
         </small>
-			</aside><!-- /article-aside -->
+      </div><!-- /article-author -->
+      <div class=article-details>
+        <hr class=small>
+        <small>
+          <span class=article-pubDate>Published {{pubDate}}</time></span>
+          {{#if updateDate}}<span class=article-updateDate>Updated {{updateDate}}</span><br>{{/if ~}}
+        </small>
+      </div><!-- /article detials -->
+      <hr class=large>			
+    </footer><!-- /article-footer -->
+
+    <aside class=article-aside>
+      <small>Share on
+        <a class="share twitter" target=_blank href="https://twitter.com/intent/tweet?text={{page.title}}&url={{site.url}}/blog/{{pubYear}}/{{shortName}}&via=pburtchaell">Twitter</a>
+        <a class="share facebook" target=_blank href="http://www.facebook.com/sharer/sharer.php?u={{site.url}}/blog/{{pubYear}}/{{shortName}}"n>Facebook</a> 
+        <a class="share google" target=_blank href="https://plus.google.com/share?url={{site.url}}/blog/{{pubYear}}/{{shortName}}">Google+</a>
+      </small>
+    </aside><!-- /article-aside -->
 			
-			<section class=article-comments>
-				 <div id=disqus_thread></div>
-          <script>
-              var disqus_shortname = 'pburtchaell';
-              (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-          </script>
-			</section><!-- /article-comments -->
-			
-		</article>
-</main>
-{{> footer-inc ~}}
-<script>Echo.init();</script>
+    <section class=article-comments>
+      <div id=disqus_thread></div>
+      <script>
+        var disqus_shortname = 'pburtchaell';(function() {var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })();
+      </script>
+    </section><!-- /article-comments -->
+		
+  </article><!-- /.article.page -->
+</main><!-- /#main -->
+{{> footer-inc}}
 {{> close-inc ~}}
