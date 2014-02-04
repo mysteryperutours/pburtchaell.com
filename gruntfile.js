@@ -26,8 +26,8 @@ module.exports = function(grunt) {
     },
     
     /*
-     * copy 
-     */
+    * copy 
+    */
     copy: {
       assets: {
         files: [
@@ -50,20 +50,18 @@ module.exports = function(grunt) {
 		/*
 		 * compile SCSS (LESS) to CSS
 		 */
-		less: {
-			options: {
-				banner: '/*<%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
-				compress: true,
-				metadata: '<%= site.source %>/less/data/*.{json,yml}'
-			},
-			assets: {
-				files: {
-					'<%= site.production %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less',
-					'<%= site.production %>/assets/css/ie8.min.css' : '<%= site.source %>/less/browsers/ie8.less', // IE8 Styles
-					'<%= site.production %>/assets/css/ie9.min.css' : '<%= site.source %>/less/browsers/ie9.less'  // IE9 Styles		
-				}
-			}
-		},
+    less: {
+      options: {
+        banner: '/*<%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
+        compress: true,
+        metadata: '<%= site.source %>/less/data/*.{json,yml}'
+      },
+      assets: {
+        files: {
+          '<%= site.production %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less',
+        }
+      }
+    },
 			
 		/*
 		 * spell check all published content on blog
@@ -81,33 +79,45 @@ module.exports = function(grunt) {
 		/*
 		 * minify JS
 		 */
-		uglify: {
+    uglify: {
       options: {
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
       },
-			assets: {
-				files: {
-					'<%= site.production %>/assets/js/components.js' : ['bower_components/responsive-nav/client/dist/responsive-nav.js','bower_components/headroom.js/dist/headroom.js','bower_components/vendor/echo.js'],
-          '<%= site.production %>/assets/js/post.js' : [],
-					'<%= site.production %>/assets/js/highlight.min.js' : 'bower_components/vendor/highlight.pack.js'
-				}
-			}
-		},
+      assets: {
+        files: {
+          '<%= site.production %>/assets/js/components.js' : 
+          [
+          '<%= site.components %>/responsive-nav/client/dist/responsive-nav.js',
+          '<%= site.components %>/headroom.js/dist/headroom.js',
+          '<%= site.components %>/vendor/echo.js'
+          ],
+          '<%= site.production %>/assets/js/highlight.js' : 'bower_components/vendor/highlight.pack.js'
+        }
+      }
+    },
         
     /*
      * compress files
      */
     compress: {
-      assets: {
-        options: {
-          mode: 'gzip',
-          pretty: true,
-        },
+      options: {
+        mode: 'gzip',
+        level: 9
+      },
+      stylesheets: {
         expand: true,
         cwd: '<%= site.production %>/assets/',
-        src: ['**/*'],
-        dest: '<%= site.production %>/assets/'
-      }
+        dest: '<%= site.production %>/assets/',
+        src: ['**/*.css'],
+        ext: '.gz.css',
+      },
+      javascripts: {
+        expand: true,
+        cwd: '<%= site.production %>/assets/',
+        dest: '<%= site.production %>/assets/',
+        src: ['**/*.js'],
+        ext: '.gz.js',
+      },
     },
 		
 		/* 
@@ -164,7 +174,7 @@ module.exports = function(grunt) {
         },
 				files: [ 
 					{
-          src: ['<%= site.content %>/blog/published/*.{hbs,md}'],
+          src: ['<%= site.content %>/blog/published/**/*.{hbs,md}'],
 				  dest: '<%= site.production %>/blog/'
 					},
           {
@@ -174,53 +184,53 @@ module.exports = function(grunt) {
 				]
 			},
       
-			// assemble portfolio
-			portfolio: {   
+      // assemble portfolio
+      /*portfolio: {   
         options: {
-          //plugins: ['assemble-contrib-permalinks'],
-          //permalinks: { structure: ':year/:shortName/index.html' },
+          plugins: ['assemble-contrib-permalinks'],
+          permalinks: { structure: ':year/:shortName/index.html' },
           layout: 'layout-portfolio.hbs'
         },     
-				files: [
-          //{
-				  //src: ['<%= site.content %>/portfolio/published/*.json'],
-				  //dest: '<%= site.production %>/work/'
-					//},
+        files: [
           {
-				  src: ['<%= site.content %>/portfolio/index.hbs'],
-				  dest: '<%= site.production %>/work/',
-					}
-				]        
-			}
-		},	
+          src: ['<%= site.content %>/portfolio/published/*.json'],
+          dest: '<%= site.production %>/work/'
+          },
+          {
+           src: ['<%= site.content %>/portfolio/index.hbs'],
+          dest: '<%= site.production %>/work/',
+          }
+        ]        
+      }*/
+    },	
+
 		
-		
-		/*
-		 * watch files for changes
-		 */
-		watch: {
-		  dev: {
-				files: [
-					 '<%= site.source %>/**/*.{js,less,hbs}',
-					 '<%= site.content %>/**/*.{html,hbs,md,json,yml}'
-					 ],
-				tasks: [
-					'less',
-					 'uglify',
-					 'assemble'
-				],
-				options: {
-					spawn: false,
-					interrupt: true,
-					livereload: true,
-				}
-			}
-		},
+    /*
+    * watch files for changes
+    */
+    watch: {
+      dev: {
+        files: [
+          '<%= site.source %>/**/*.{js,less,hbs}',
+          '<%= site.content %>/**/*.{html,hbs,md,json,yml}'
+        ],
+        tasks: [
+          'less',
+          'uglify',
+          'assemble'
+        ],
+        options: {
+          spawn: false,
+          interrupt: true,
+          livereload: true,
+        }
+      }
+    },
 		
 		
     /*
-     * start local server
-     */			 
+    * start local server
+    */			 
     connect: {
       dev: {
         options: {
@@ -312,7 +322,7 @@ module.exports = function(grunt) {
     'less:assets',
     'uglify:assets',
     'copy:assets',
-    'compress:assets',
+    'compress',
     'congrats'
 	]);
     
