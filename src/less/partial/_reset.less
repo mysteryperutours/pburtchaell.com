@@ -22,41 +22,18 @@ table { border-collapse: collapse; border-spacing: 0; }
 blockquote, q { quotes: none; }	
 ol, ul { list-style: none; }	
 
-
-// properties for <body> and <html>
-html {
-	-ms-overflow-style: scrollbar; // prevent the IE11 scrollbar from fading out
-  margin: 0;
-  padding: 0;
-} 
-
 body { 
-	
-	min-height	 : 100%; 
 	height		   : 100%;
-	font-size	   : 100%; 
 	direction	   : ltr;
-	font-family	 : @type-font-primary;
-	line-height	 : @type-line-height;
-	color		     : @type-color; 
-	background	 : @base-background; 
+	font-family	 : @type-primary;
+	color		     : @dark-grey; 
+	background	 : @white;
 	overflow-x	 : hidden; 
 	cursor		   : default;
-  margin       : 0;
-  padding      : 0;
-	
 	text-rendering: optimizeLegibility; 
 	-webkit-font-smoothing: subpixel-antialiased;
-	
-	// reset default browser styles
 	-webkit-appearance: none;
-	   -moz-appearance: none; 
-	
-	// mobile device text size
-	-moz-text-size-adjust: 80%;
-	 -ms-text-size-adjust: 80%;
-		  -text-size-adjust: 80%;
-	
+  -moz-appearance: none; 	
 }
 
 /*
@@ -87,47 +64,50 @@ pre {
 	white-space: pre-wrap; 
 	word-wrap: break-word;
 }
-b, strong {
-	font-weight: bold;
-}
-abbr[title] {
-	border-bottom: 1px dotted;
-}
-input, textarea, button, select {
-	margin: 0;
-	font-size: 100%;
-	line-height: normal;
-	vertical-align: baseline;
-}
-button,
-html input[type="button"], 
-input[type="reset"], 
-input[type="submit"] {
-    cursor: pointer;
-    -webkit-appearance: button;
-}
-input[type="checkbox"],
-input[type="radio"] {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-		 -o-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-			box-sizing: border-box;
-}
-textarea {
-	overflow: auto;
-}
-
-
-// fluid media
-figure {
-	position: relative;
-}
-figure img, figure object, figure embed, figure video {
-	max-width: 100%; 
-	display: block;
-}
 img {
 	border: 0;
 	max-width: 100%;
+}
+
+@font-face {
+  font-family: 'dinpro';
+  src: local('DINPRO LIGHT'),
+       local('DINPRO-LIGHT');
+  src: url('fonts/dinpro_light/dinpro-light.eot');
+  src: url('fonts/dinpro_light/dinpro-light.eot?#iefix')format('embedded-opentype'),
+       url('fonts/dinpro_light/dinpro-light.woff')format('woff'),
+       url('fonts/dinpro_light/dinpro-light.ttf')format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'dinpro-bold';
+  src: local('DINPRO BOLD'),
+       local('DINPRO-BOLD');
+  src: url('fonts/dinpro_bold/dinpro-bold.eot');
+  src: url('fonts/dinpro_bold/dinpro-bold.eot?#iefix')format('embedded-opentype'),
+       url('fonts/dinpro_bold/dinpro-bold.woff')format('woff'),
+       url('fonts/dinpro_bold/dinpro-bold.ttf')format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family:'opensans-italic';
+  src: url('fonts/opensans_italic/OpenSans-Italic-webfont.eot');
+  src: url('fonts/opensans_italic/OpenSans-Italic-webfont.eot?#iefix')format('embedded-opentype'),
+       url('fonts/opensans_italic/OpenSans-Italic-webfont.woff')format('woff'),
+       url('fonts/opensans_italic/OpenSans-Italic-webfont.ttf')format('truetype'),
+       url('fonts/opensans_italic/OpenSans-Italic-webfont.svg#open_sansitalic')format('svg');
+  font-weight: 200;
+  font-style: normal;
+} 
+@font-face{
+  font-family:'opensans-regular';
+  src: url('fonts/opensans_regular/OpenSans-Regular-webfont.eot');
+  src: url('fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix')format('embedded-opentype'),
+       url('fonts/opensans_regular/OpenSans-Regular-webfont.woff')format('woff'),
+       url('fonts/opensans_regular/OpenSans-Regular-webfont.ttf')format('truetype'),
+       url('fonts/opensans_regular/OpenSans-Regular-webfont.svg#open_sansregular')format('svg');
+font-weight: 400;
+font-style: normal;
 }

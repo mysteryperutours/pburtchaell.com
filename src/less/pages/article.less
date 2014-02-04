@@ -13,47 +13,38 @@
 .article-header {
   
   text-align: center;
-  padding: (@base-padding*2)+75px @column @base-padding*2 @column;
-  margin: 0 0 @base-margin*2 0;
-  background: @light-grey;
+  margin: 0 @column;
+  padding: (@base*2)+75px round(@column*2, 2) @base round(@column*2, 2);
   
   time {
-    font-family: 'dinpro', sans-serif;
     text-transform: uppercase;
-    background: @white;
-    color: @dark-grey;
-    padding: 3px;
+    letter-spacing: 0.125rem;
+    display: inline-block;
+    width: 100%;
   }
   
 }
-
 .article-title, 
 .article-subtitle {
-  background: @white;
+  margin: @base/2 0;
   display: inline-block;
-  padding: 3px;
 }
-.article-title {
-  margin: @base-margin auto @base-margin/5 auto;
-}
-.article-subtitle {
-  font: 16px 'opensans-italic', sans-serif;
-  text-transform: none;
-  margin: @base-margin/5 0 @base-margin 0;
-}
+
 
 // <section class=article-content></section>
 .article-content {
   
-	margin: 0 auto;    
-  max-width: 600px;
-   
+  max-width: 550px; /* At this size, 16px will be about 66-70 characters per line. */
+  padding: @base 0.125rem;
+  margin: 0 auto @base auto;
+  border-top: 1px dashed @light-grey;
+
   img {
     max-width: 100%;
     display: block;
     float: none;
     clear: none;
-    margin: @base-margin auto;
+    margin: @base auto;
   }
   
 }
@@ -61,8 +52,8 @@
 
 // <footer class=article-footer></footer>
 .article-footer {
-  width: @column*8;
-  margin: @base-margin*3 auto 0 auto;
+  max-width: 550px;
+  margin: 0 auto;
 }
   
   // author profile picture
@@ -73,11 +64,6 @@
     height: 100%;
     opacity: 0.9;
     margin: @base-margin;
-    -webkit-user-select: none;
-		   -moz-user-select: none;
-		    -ms-user-select: none;
-		     -o-user-select: none;
-			      user-select: none;
   
     img {
       display: block;
@@ -91,32 +77,39 @@
 	// <div class=article-author></div>
 	.article-author {
   
-		margin: 0 @column*2;
-    line-height: 1.8;
+		margin: 0 round(@column*2);
   
 		.tag { 
       text-transform: uppercase; 
-      font-family: 'dinpro', sans-serif;
+      font-family: @type-secondary;
     }
   
     h6 { 
-      margin: 0 0 5px 0; 
+      font-size: 1rem;
+      text-transform: none;
+      margin: 0; 
     }
   
 	}
 
   .article-author-bio { 
     margin: 0; 
+    text-align: left;
   }
 
   // screens smaller than 768px
   @media screen and (max-width: 768px) {
+    .article-header {
+      text-align: left;
+      margin: 0;
+      background: @light-grey;
+    }
     .article-content { 
       text-align: left;
-      margin: 0 @column;
+      margin: @base round(@column);
     }
     .article-footer {
-      width: @column*12;
+      width: round(@column*12);
     }
     .article-pubDate {
       float: left;
@@ -125,7 +118,7 @@
     .article-updateDate {  
       float: left;
       clear: both;
-      margin: 0 0 @base-margin/2 0;
+      margin: 0 0 @base/2 0;
       &:before {
         display: none;
       }
@@ -139,19 +132,19 @@
     }
     .article-author-image {
       width: 100%;
-      margin: 0 @column*2;
-    }
+      margin: 0 round(@column*2, 2);
+    } 
     .article-details {
       margin: @column;
     }
     .article-author {
-		  margin: 0 @column*1 0 @column*2;
+		  margin: 0 round(@column*1, 2) 0 round(@column*2, 2);
 		}
   }
 
 	// <div class=article-details></div> - contains <time> and the list of contributors
 	.article-details {
-    margin: 0 0 0 @column*2;
+    margin: 0 0 0 round(@column*2, 2);
   }
   .article-updateDate {  
     &:before {
@@ -162,38 +155,29 @@
 
 // <aside class=article-aside></aside>
 .article-aside {
-	margin: 0 @column @base-margin*3 @column;
+	margin: 0 round(@column, 2) @base*3 round(@column, 2);
 	text-align: center;
 }
 
-  .share {
-      
-    display: inline-block;
-    line-height: 1.0;
-    color: @white;
-    padding: 3px;
-    opacity: 0.5;
-      
-    &.twitter {
-      background:  @color-twitter;
-    }
-  
-    &.facebook {
-      background: @color-facebook;
-    }
+// the share buttons on the bottom of the article
+.share {
     
-    &.google {
-      background: @color-google;
-    }
-  
-    &:hover,
-    &:active {
-      color: @white;
-      opacity: 1.0;
-    }
-      
-  }
+  display: inline-block;
+  line-height: 1.0;
+  color: @white;
+  padding: 3px;
+  opacity: 0.5;
+    
+  &.twitter { background: @color-twitter; }
+  &.facebook { background: @color-facebook; }
+  &.google { background: @color-google; }
 
-.article-comments {
-    margin: 0 @column*2;
+  &:hover,
+  &:active {
+    color: @white;
+    opacity: 1.0;
+  }
+    
 }
+
+.article-comments { margin: 0 round(@column*2, 2); }

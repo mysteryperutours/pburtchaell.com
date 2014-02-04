@@ -3,9 +3,10 @@
 \*------------------------------------*/
 
 code { 
-	font-family: @code-font-family; 
+  font-size: 1rem;
+	font-family: Courier, monospace; 
   line-height: 1.6;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 li code { 
@@ -16,9 +17,11 @@ li code {
 
 pre code {
   display: block; 
-	padding: @base-padding/2;
-	margin: 0 0 20px 0;
+	padding: 0.5rem;
+	margin: 1.25rem 0;
+  font-size: 1rem;
   color: fadeOut(@dark-grey, 20%);
+  border-left: 3px solid @light-grey;
 	background: fadeOut(@dark-grey, 97%);
 }
 

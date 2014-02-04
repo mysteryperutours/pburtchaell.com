@@ -1,12 +1,16 @@
 /*
  * Category/article Feed
  */
+
+section.search {
+  margin: @base*5 0 @base/2 0;
+}
 .article-feed {
-  margin: @base-margin*5 0 @base-margin*4 0;
+  margin: @base/2 0 round(@base*1.5) 0;
 }
   .article-item {
   
-    padding: @base-padding/2;
+    padding: @base/2;
   
     // the light-grey items
     &:nth-of-type(odd) {
@@ -34,7 +38,6 @@
     width: 100%;
   }
   .article-item-time { 
-    font-size: 90%;
     &:before {
       clear: both;
       content: "Published ";

@@ -2,97 +2,100 @@
     $TYPOGRAPHY
 \*------------------------------------*/
 
-/* default paragraph styles */
+html { 
+  font-size: 17px; /* root = 14px */
+}
+
 p { 
-    
-	margin: @paragraph-margin;
+  
+  font-size: 1em; /* => 17px */
+  line-height: 1.8; /* don't use REM here, unit-less line-height: http:// */
+  margin: 0.25rem 0 0.75rem 0;
+  text-align: justify;
   -webkit-hyphens: auto;
      -moz-hyphens: auto;
       -ms-hyphens: auto;
+       -o-hyphens: auto;
           hyphens: auto;
 
-	aside {
-		font-size: @paragraph-aside-font-size;
-		line-height: @paragraph-aside-line-height;
-		font-style: @paragraph-aside-font-style;
+  
+  aside {
+		margin: 1em;
 	}
   
   code {
     background: fadeOut(@dark-grey, 95%);
-    padding: 2px;
-    border-radius: 5px;
+    display: inline-block;
+    line-height: 1.0;
+    padding: 0.12rem;
   }
-    
+  
 }
 
-h2 ~ p,
-h3 ~ p { margin-top: 0; } 
-p ~ p { text-indent: 15px; }
-
-em, i { font-family: 'opensans-italic', sans-serif; font-style: normal; line-height: inherit; }
-strong, b { font-family: 'dinpro-bold', sans-serif; font-style: normal; line-height: inherit; }
-strikethrough { }
-small { font-size: @small-font-size; }
-@media screen and (max-width: 714px) { small { font-size: @small-font-size*1.2; } } // just to make sure <small> doesn't get too small, reset it at 714px...
-
-/* default header styles */
-h1, h2, h3, h4, h5, h6 {
-  
-  color: fadeOut(@dark-grey, 20%);
-	font-family: @heading-font-family;
-	line-height: 1.1;
-  text-transform: uppercase;
-  
-	/* default subheader styles */
-	small {
-		font-size: @small-font-size;
-		color: @small-font-color;
-	}
-	
+small {
+  /* for <small> elements, decrease the fonts-size, but increase the line-height */
+  font-size: 0.785rem; /* 1 - 0.215 = 0.785rem */
+  line-height: 1.701;  /* 1.4 * 1.215 = 1.701 */
 }
 
-/* Headings styles overview
- * H1-H6: bold
- * H1: uppercase, large top margin
- * H2: large top margin 
- * H3: small top margin 
- * H4-H6: set in Open Sans Italic
-*/
-
+/* Headings */
 h1 { 
-  font: @primary-h1-size 'dinpro', sans-serif;
-  margin: @base-margin*2 0;
+  font-size: 2rem; /* 2rem: root*2 */
+  font-family: @type-secondary;
+  margin: 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
 }
-h2 { 
-  font-size: @primary-h2-size; 
-  margin: @base-margin*2 0 10px 0; 
-} 
-h3 { 
-  font-size: @primary-h3-size; 
-  margin: @base-margin*2 0 10px 0;
-} 
-h4, h5, h6 { 
-  font: @primary-h4-size 'opensans-italic', sans-serif; 
-  text-transform: none;
-  margin: @base-margin 0 0 0;
+h2, h3, h4, h5, h6 {
+  font-family: @type-bold; 
+  margin: 2.5rem 0 0.125rem 0;
+  line-height: 1.4;  
+}
+h2 { font-size: 1.50rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.20rem; font-family: @type-secondary; text-transform: uppercase; letter-spacing: 0.075rem; }
+h5 { font-size: 1.15rem; }
+h6 { font-size: 1.10rem; font-family: @type-secondary; text-transform: uppercase; }
+
+em, i { 
+  font-family: @type-italic !important;
+  font-style: normal; 
 }
 
+strong, b { 
+  font-family: @type-bold;
+  font-style: normal; 
+}
 
+strikethrough { 
+
+}
+
+.centered {
+  text-align: center;
+}
+
+time {
+  font-family: @type-secondary;
+}
+
+/* deafult horizontal rule styles */
 hr {
-	height: 2px;
-	background: lighten(@dark-grey, 60%);
+  
+	height: 0.125rem;
+	background: @light-grey;
 	border: none;
 	left: 50%;
-    margin: 0 0 0 -22.5px;
-    width: 45px;
+  margin: 0 0 0 -@base/2;
+  width: @base;
 	
 	&.small {
 		margin: 0;
 	}
 	
 	&.large {
-		width: @column*14;
-		margin: @base-margin*1 auto;
+		width: round(@column*14, 2);
+		margin: @base auto;
 	}
 	
 }
@@ -100,20 +103,13 @@ hr {
 
 /* default link styles */
 a { 
-
-  // let's reset a few things
   text-decoration: none; 
-  
-  // now for the normal styles
   color: @dark-grey;
   -webkit-transition: 0.25s;
      -moz-transition: 0.25s;
       -ms-transition: 0.25s;
        -o-transition: 0.25s;
-          transition: 0.25s;
-    
-  &.white { color: @white; }
-      
+          transition: 0.25s;     
 }
 
 /* special link styles */
@@ -125,49 +121,46 @@ a.line,
 a.line:visited {
   
   // links with a blue line and color
-  color: rgb(0, 169, 198);
-  border-bottom: 1px dashed rgba(0, 169, 198, 0.2);
+  color: rgb(0,169,198);
+  border-bottom: 1px dashed rgba(0,169,198,0.2);
   
   // on :hover fadeout the line and add padding
   &:hover,
   &:active {
-    padding-bottom: 2px;
-    border-bottom: 1px dashed rgba(0, 169, 198, 1);
+    padding-bottom: 0.1rem;
+    border-bottom: 1px dashed rgba(0,169,198,1);
   }
 		     
 }
+
 
 /* default abbreviations styles */
 abbr,
 acronym {
 	text-transform: uppercase;
-	color: @type-color;
-	border-bottom: @type-border;
+	border-bottom: 1px dashed @dark-grey;
 	cursor: help;
 }
 abbr {
 	text-transform: none;
 }
 
+
 /* default blockquotes styles */
 blockquote {
   
-	// blockquotes
-	@blockquote-font-family		:	  @type-font-secondary;
-	@blockquote-margin				: 	@base-margin/2 0 @base-margin/2 0;
-	@blockquote-padding				: 	0 0 0 15px;
-	@blockquote-border				:   4px solid fadeOut(@dark-grey, 80%);
-  
   font-family: 'opensans-italic', sans-serif;
-	padding: @blockquote-padding;
-	border-left: @blockquote-border;
-	color: fadeOut(@dark-grey, 20%);
+	padding: 0 0 0 1rem;
+  margin: 2rem 0;
+	border-left: 0.125rem solid @light-grey;
+  color: fadeOut(@dark-grey, 25%);
   
 	cite {
-    margin: 5px 0 0 0;
+    
+    margin: 0.25rem 0 0 0;
 		display: block;
     text-align: right;
-		font: 14px 'opensans-italic', sans-serif;
+		font-family: 'opensans-italic', sans-serif;
 		
 		&:before {
 			content: "\2014 \0020";
@@ -178,47 +171,52 @@ blockquote {
 }
 
 
-// lists
+/* default list styles */
 ul, ol {
-	margin: 12.5px;
+	margin: 1rem;
 }
+
 ol {
   list-style: decimal;
 }
+
 li {
-    
-  margin: 5px @base-margin*2;
+
+  margin: 0.5rem @base*2;
 	list-style: disc;
   text-align: left;
-	line-height: 1.3;
-    
-  // having a line on links in lists looks clustered, remove them
-  a {
-  
-    color: rgb(0, 169, 198);
-    border: none !important;
-    
-    &:hover, 
-    &:active {
-      color: fadeOut(rgb(0, 169, 198), 50%);
-      border: none !important;
-    }
-      
-  }
     
 }
-@media screen and (max-width: 768px) {
-  ul, ol {
-    margin: 5px 0;
-  }
-  li {
-    margin: 10px 0 10px @base-padding;
-  }
-}
-// rest lists for forms
-form ul li {  margin: 0; list-style: none; }
 
-// default color styles 
-.red { color: @design; }
-.blue { color: @audio; }
-.green { color: @video; }
+
+/* small screen properties and values */
+@media screen and (max-width: 768px) {
+  
+  html {
+    font-size: 17px;
+  }
+  
+  p {
+    text-align: left;
+  }
+  
+  h1 { font-size: calc(2.00rem / 1.55); text-align: left; }
+  h2 { font-size: calc(1.50rem / 1.5); } 
+  h3 { font-size: calc(1.25rem / 1.4); } 
+  h4 { font-size: calc(1.20rem / 1.3); } 
+  h5 { font-size: calc(1.15rem / 1.2); }
+  h6 { font-size: calc(1.10rem / 1.1); } 
+
+  code {
+    font-size: 0.95rem;
+  }
+  
+  ul, ol {
+    margin: @base/5 0;
+  }
+  
+  li {
+    margin: (@base/5)*2 0 (@base/5)*2 @base;
+  }
+  
+}
