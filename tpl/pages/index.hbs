@@ -2,19 +2,41 @@
 title: Design + Video + Audio from New Orleans
 shortName: blog
 description: A collection of thoughts, research, and design by Patrick Burtchaell.  
-layout: layout-custom.hbs
+layout: none
 ---
-<section class=article-feed>
-  {{#compose 'published/*.hbs'}}
-    <article class=article-item>
-      <header class=article-item-header>
-        <em>
-          <span class=article-item-title>
-            <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>{{title}}</a>
-          </span>
-          <time class=article-item-time>{{pubDate}}</time>
-        </em>
-      </header>
-    </article>
-  {{/compose ~}}
-</section>
+{{> open-inc ~}}
+{{> header-inc}}
+<main role=main id=main>
+  <section class=article-feed>
+    <ul class=list>
+    <h4 class=centered>2014</h4>
+      {{#compose 'published/2014/*.hbs'}}
+      <li>
+        <article class=article-item>
+          <header class=article-item-header>
+            <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
+              <em><span class=article-item-title>{{title}}</span></em>
+            </a>
+            <time class=article-item-time>{{pubDate}}</time>
+          </header>
+        </article>
+      </li>
+      {{/compose ~}}
+      <h4 class=centered>2013</h4>
+      {{#compose 'published/2013/*.hbs'}}
+      <li>
+        <article class=article-item>
+          <header class=article-item-header>
+            <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
+              <em><span class=article-item-title>{{title}}</span></em>
+            </a>
+            <time class=article-item-time>{{pubDate}}</time>
+          </header>
+        </article>
+      </li>
+      {{/compose ~}}
+    </ul>
+  </section><!-- /article-feed -->
+</main>
+{{> footer-inc}}
+{{> close-inc ~}}
