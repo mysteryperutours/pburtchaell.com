@@ -5,10 +5,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-47392700-1', 'pburtchaell.com');
 ga('send', 'pageview');  
-function downloadJSAtOnload() { 
-var element = document.createElement("script"); element.src ="{{site.url}}/{{assets}}/js/post.js"; document.body.appendChild(element); } 
-if (window.addEventListener) window.addEventListener("load", downloadJSAtOnload, false); 
-else if (window.attachEvent) window.attachEvent("onload", downloadJSAtOnload); else window.onload = downloadJSAtOnload;
 var body = document.body, timer; 
 window.addEventListener('scroll', function() {
 clearTimeout(timer); if(!body.classList.contains('disable-hover')){ body.classList.add('disable-hover') }
