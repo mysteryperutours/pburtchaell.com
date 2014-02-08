@@ -8,10 +8,8 @@ layout: none
 {{> header-inc}}
 <main role=main id=main>
   <section class=article-feed>
-    <ul class=list>
     <h4 class=centered>2014</h4>
       {{#compose 'published/2014/*.hbs'}}
-      <li>
         <article class=article-item>
           <header class=article-item-header>
             <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
@@ -20,11 +18,9 @@ layout: none
             <time class=article-item-time>{{pubDate}}</time>
           </header>
         </article>
-      </li>
       {{/compose ~}}
       <h4 class=centered>2013</h4>
       {{#compose 'published/2013/*.hbs'}}
-      <li>
         <article class=article-item>
           <header class=article-item-header>
             <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
@@ -33,9 +29,7 @@ layout: none
             <time class=article-item-time>{{pubDate}}</time>
           </header>
         </article>
-      </li>
       {{/compose ~}}
-    </ul>
   </section><!-- /article-feed -->
 </main>
 {{> footer-inc}}
