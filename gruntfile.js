@@ -107,16 +107,23 @@ module.exports = function(grunt) {
       stylesheets: {
         expand: true,
         cwd: '<%= site.production %>/assets/',
-        dest: '<%= site.production %>/assets/',
+        dest: '<%= site.production %>/assets/compressed',
         src: ['**/*.css'],
-        ext: '.gz.css',
+        ext: '.css',
       },
       javascripts: {
         expand: true,
         cwd: '<%= site.production %>/assets/',
-        dest: '<%= site.production %>/assets/',
+        dest: '<%= site.production %>/assets/compressed/',
         src: ['**/*.js'],
-        ext: '.gz.js',
+        ext: '.js',
+      },
+      html: {
+        expand: true,
+        cwd: '<%= site.production %>',
+        dest: '<%= site.production %>/compressed',
+        src: ['**/*.html'],
+        ext: '.html'
       },
     },
 		
@@ -244,15 +251,51 @@ module.exports = function(grunt) {
     /*
      * deploy to AWS S3
      */
+    /*aws_s3: {
+      options: {
+        accessKeyId: '<%= aws.auth.key %>',
+        secretAccessKey: '<%= aws.auth.secret %>',
+        uploadConcurrency: 5, 
+        downloadConcurrency: 5
+      }, 
+      production: {
+        options: {
+          bucket: '<%= aws.bucket.production %>',
+          params: {
+            ContentEncoding: 'gzip'
+          }
+        },
+        files: [
+          { 
+            expand: true, 
+            cwd: '<%= site.production %>', 
+            src: ['**'], 
+            dest: 'test/' 
+          },
+          { 
+            expand: true, 
+            cwd: '<%= site.production %>/assets', 
+            src: ['**'], 
+            dest: 'test/assets/', 
+            params: { 
+              CacheControl: '2000' 
+            } 
+          },
+        ]
+      }    
+    },
+          
     s3: {
-    
       options: {
         key: '<%= aws.auth.key %>',
         secret: '<%= aws.auth.secret %>',
         access: 'public-read',
+        gzip: true, 
+        gzipExclude: ['.jpg', '.png', '.gif'],
         headers: {
-          // two Year cache policy (1000 * 60 * 60 * 24 * 730)
-          "Cache-Control": "max-age=630720000, public",
+          // two week cache policy (1000 * 60 * 60 * 48)
+          "Cache-Control": "max-age=172800000, public",
+          "Content-Encoding": "gzip",
           "Expires": new Date(Date.now() + 63072000000).toUTCString()
         }
       },
@@ -263,10 +306,9 @@ module.exports = function(grunt) {
           encodePaths: true,
           bucket: '<%= aws.bucket.staging %>'
         },
-        upload: [{
-        src: '<%= site.production %>/**/*',
-        dest: './'
-        }]
+        upload: [
+          { src: '<%= site.production %>/', dest: './' }
+        ]
       },
       
       // pburtchaell.com bucket 
@@ -275,18 +317,11 @@ module.exports = function(grunt) {
           bucket: '<%= aws.bucket.production %>'
         },
         upload: [
-          {
-          src: '<%= site.production %>/**/*',
-          dest: './'
-          },
-          {
-          src: '<%= site.production %>/assets/**/',
-          dest: './assets/**/'
-          }
+          { src: '<%= site.production %>/*.html', dest: 'aws-test/*.html'}
         ]
       }
       
-    }
+    }*/
     
 	});
 	
@@ -303,7 +338,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-spell');
-  grunt.loadNpmTasks('grunt-s3');
+  //grunt.loadNpmTasks('grunt-s3');
+  //grunt.loadNpmTasks('grunt-aws-s3');
   
   grunt.registerTask('congrats', 'Log some stuff', function() {
     grunt.log.write('Congrats your site has been assembled.').ok();
