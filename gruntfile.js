@@ -192,23 +192,23 @@ module.exports = function(grunt) {
 			},
       
       // assemble portfolio
-      /*portfolio: {   
+      portfolio: {   
         options: {
           plugins: ['assemble-contrib-permalinks'],
           permalinks: { structure: ':year/:shortName/index.html' },
-          layout: 'layout-portfolio.hbs'
+          //layout: 'layout-portfolio.hbs'
         },     
         files: [
-          {
+          /*{
           src: ['<%= site.content %>/portfolio/published/*.json'],
           dest: '<%= site.production %>/work/'
-          },
+          },*/
           {
            src: ['<%= site.content %>/portfolio/index.hbs'],
           dest: '<%= site.production %>/work/',
           }
         ]        
-      }*/
+      }
     },	
 
 		
