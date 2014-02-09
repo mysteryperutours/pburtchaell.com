@@ -16,13 +16,14 @@ module.exports = function(grunt) {
     aws:grunt.file.readJSON('aws.json'),
 		site:grunt.file.readYAML('src/data/site.yml'),
         
-		
     /*
      * clean <% site.build %> & <% site.release %>
      * this will remove all old files before creating the new files
      */
     clean: {
-      site: ['<%= site.production %>/**/*.html','<%= site.production %>/**']
+      build: ['./dist'],
+      development: ['<%= site.development %>'],
+      production: ['<%= site.production %>']
     },
     
     /*
@@ -35,7 +36,13 @@ module.exports = function(grunt) {
             expand: true,
             cwd: '<%= site.source %>/less/',
             src: ['fonts/**'], 
-            dest: '<%= site.production %>/assets/css/', 
+            dest: '<%= site.development %>/assets/css/', 
+          },
+          {
+            expand: true,
+            cwd: '<%= site.source %>/',
+            src: ['img/**'], 
+            dest: '<%= site.development %>/assets/'
           },
           {
             expand: true,
@@ -58,7 +65,7 @@ module.exports = function(grunt) {
       },
       assets: {
         files: {
-          '<%= site.production %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less',
+          '<%= site.development %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less',
         }
       }
     },
@@ -85,13 +92,13 @@ module.exports = function(grunt) {
       },
       assets: {
         files: {
-          '<%= site.production %>/assets/js/components.js' : 
+          '<%= site.development %>/assets/js/components.js' : 
           [
           '<%= site.components %>/responsive-nav/client/dist/responsive-nav.js',
           '<%= site.components %>/headroom.js/dist/headroom.js',
           '<%= site.components %>/vendor/echo.js'
           ],
-          '<%= site.production %>/assets/js/highlight.js' : 'bower_components/vendor/highlight.pack.js'
+          '<%= site.development %>/assets/js/highlight.js' : 'bower_components/vendor/highlight.pack.js'
         }
       }
     },
@@ -106,25 +113,31 @@ module.exports = function(grunt) {
       },
       stylesheets: {
         expand: true,
-        cwd: '<%= site.production %>/assets/',
-        dest: '<%= site.production %>/assets/compressed',
+        cwd: '<%= site.development %>/assets/',
+        dest: '<%= site.production %>/assets/',
         src: ['**/*.css'],
         ext: '.css',
       },
       javascripts: {
         expand: true,
-        cwd: '<%= site.production %>/assets/',
-        dest: '<%= site.production %>/assets/compressed/',
+        cwd: '<%= site.development %>/assets/',
+        dest: '<%= site.production %>/assets/',
         src: ['**/*.js'],
         ext: '.js',
       },
-      html: {
+      content: {
         expand: true,
-        cwd: '<%= site.production %>',
-        dest: '<%= site.production %>/compressed',
+        cwd: '<%= site.development %>/',
+        dest: '<%= site.production %>/',
         src: ['**/*.html'],
         ext: '.html'
       },
+      fonts: {
+        expand: true,
+        cwd: '<%= site.development %>/',
+        src: ['assets/css/fonts/**/*'],
+        dest: '<%= site.production %>/assets/css/fonts/'
+      }
     },
 		
 		/* 
@@ -135,7 +148,7 @@ module.exports = function(grunt) {
 			options: {
 				flatten: true,
 				data: ['<%= site.source %>/data/*.{json,yml}', 'package.json'],
-				assets: '<%= site.production %>/assets',
+				assets: '<%= site.development %>/assets',
 				helpers: ['helper-compose','handlebars-helper-moment','<%= site.source %>/helpers/*.js'],
 				partials: [
           '<%= site.templates %>/partials/**/*.{hbs,md}', // partials are always used on every page (i.e. header, footer, navigation, etc.)
@@ -166,7 +179,7 @@ module.exports = function(grunt) {
 				files: [ 
 					{
 						src: ['<%= site.content %>/*.{hbs,md}'],
-						dest: '<%= site.production %>/'
+						dest: '<%= site.development %>/'
 					}
 				]
 			},
@@ -182,11 +195,11 @@ module.exports = function(grunt) {
 				files: [ 
 					{
           src: ['<%= site.content %>/blog/published/**/*.{hbs,md}'],
-				  dest: '<%= site.production %>/blog/'
+				  dest: '<%= site.development %>/blog/'
 					},
           {
 				  src: ['<%= site.content %>/blog/index.hbs'],
-				  dest: '<%= site.production %>/blog/index.html'
+				  dest: '<%= site.development %>/blog/index.html'
 					}
 				]
 			},
@@ -201,11 +214,11 @@ module.exports = function(grunt) {
         files: [
           /*{
           src: ['<%= site.content %>/portfolio/published/*.json'],
-          dest: '<%= site.production %>/work/'
+          dest: '<%= site.development %>/work/'
           },*/
           {
            src: ['<%= site.content %>/portfolio/index.hbs'],
-          dest: '<%= site.production %>/work/',
+           dest: '<%= site.development %>/work/',
           }
         ]        
       }
@@ -243,7 +256,7 @@ module.exports = function(grunt) {
         options: {
           port: 35729,
           open: true,
-          base: '<%= site.production %>'
+          base: '<%= site.development %>/'
         }
       }
     },
@@ -268,13 +281,13 @@ module.exports = function(grunt) {
         files: [
           { 
             expand: true, 
-            cwd: '<%= site.production %>', 
+            cwd: '<%= site.development %>', 
             src: ['**'], 
             dest: 'test/' 
           },
           { 
             expand: true, 
-            cwd: '<%= site.production %>/assets', 
+            cwd: '<%= site.development %>/assets', 
             src: ['**'], 
             dest: 'test/assets/', 
             params: { 
@@ -307,7 +320,7 @@ module.exports = function(grunt) {
           bucket: '<%= aws.bucket.staging %>'
         },
         upload: [
-          { src: '<%= site.production %>/', dest: './' }
+          { src: '<%= site.development %>/', dest: './' }
         ]
       },
       
@@ -317,7 +330,7 @@ module.exports = function(grunt) {
           bucket: '<%= aws.bucket.production %>'
         },
         upload: [
-          { src: '<%= site.production %>/*.html', dest: 'aws-test/*.html'}
+          { src: '<%= site.development %>/*.html', dest: 'aws-test/*.html'}
         ]
       }
       
@@ -353,12 +366,30 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['assemble','connect:production']);	
   grunt.registerTask('dev', ['connect:dev','watch:dev']);
 	grunt.registerTask('build', [
-    'clean:site',
+    /*
+     * BUILD TASKS:
+     * 
+     * 1. Clean ./dist directory
+     * 2. Assemble HTML files to ./dist/development
+     * 3. Compile minified stylesheets to .dist/development/assets/css
+     * 4. Compile uglified scripts to ./dist/development/assets/js
+     * 5. Copy font files to ./dist/development/assets/css/fonts
+     * 6. Compress (using gzip) all files in assets/ and move to ./dist/production/assets
+     * 7. Compress (using gzip) all HTML and move to ./dist/production
+     * 
+     * Files within the production folder will be compressed and ready to upload to the server.
+     * Files witiin the development folder will not be compressed.
+     * 
+     */
+    'clean:build',
     'assemble',
     'less:assets',
     'uglify:assets',
     'copy:assets',
-    'compress',
+    'compress:stylesheets',
+    'compress:javascripts',
+    'compress:content',
+    'compress:fonts',
     'congrats'
 	]);
     
