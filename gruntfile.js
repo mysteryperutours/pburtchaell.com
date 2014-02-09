@@ -378,7 +378,7 @@ module.exports = function(grunt) {
      * 7. Compress (using gzip) all HTML and move to ./dist/production
      * 
      * Files within the production folder will be compressed and ready to upload to the server.
-     * Files witiin the development folder will not be compressed.
+     * Files within the development folder will not be compressed.
      * 
      */
     'clean:build',
@@ -388,8 +388,8 @@ module.exports = function(grunt) {
     'copy:assets',
     'compress:stylesheets',
     'compress:javascripts',
-    'compress:content',
     'compress:fonts',
+    'compress:content',
     'congrats'
 	]);
     
