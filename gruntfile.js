@@ -10,6 +10,8 @@ module.exports = function(grunt) {
 
   'use strict';
   
+  var main_banner = '/*<%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */';
+  
 	grunt.initConfig({ 
  
 		pkg:grunt.file.readJSON('package.json'),
@@ -59,7 +61,7 @@ module.exports = function(grunt) {
 		 */
     less: {
       options: {
-        banner: '/*<%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
+        banner: main_banner,
         compress: true,
         metadata: '<%= site.source %>/less/data/*.{json,yml}'
       },
@@ -88,7 +90,7 @@ module.exports = function(grunt) {
 		 */
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
+        banner: main_banner
       },
       assets: {
         files: {
