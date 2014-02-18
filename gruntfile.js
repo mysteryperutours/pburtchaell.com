@@ -11,6 +11,7 @@ module.exports = function(grunt) {
   'use strict';
   
   var main_banner = '/*<%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */';
+  var option_expand = true;
   
 	grunt.initConfig({ 
  
@@ -31,23 +32,23 @@ module.exports = function(grunt) {
     /*
     * copy 
     */
-    copy: {
+    copy: {      
       assets: {
         files: [
           {
-            expand: true,
+            expand: option_expand,
             cwd: '<%= site.source %>/less/',
             src: ['fonts/**'], 
             dest: '<%= site.development %>/assets/css/', 
           },
           {
-            expand: true,
+            expand: option_expand,
             cwd: '<%= site.source %>/',
             src: ['img/**'], 
             dest: '<%= site.development %>/assets/'
           },
           {
-            expand: true,
+            expand: option_expand,
             cwd: '<%= site.source %>/',
             src: ['img/**'], 
             dest: '<%= site.production %>/assets/'
@@ -153,8 +154,8 @@ module.exports = function(grunt) {
 				assets: '<%= site.development %>/assets',
 				helpers: ['helper-compose','handlebars-helper-moment','<%= site.source %>/helpers/*.js'],
 				partials: [
-          '<%= site.templates %>/partials/**/*.{hbs,md}', // partials are always used on every page (i.e. header, footer, navigation, etc.)
-          '<%= site.templates %>/snippets/**/*.{hbs,md}'  // snippets are only used occasionally (i.e. branding, social media links, etc.)
+          '<%= site.templates %>/partials/**/*.{hbs,md}',
+          '<%= site.templates %>/snippets/**/*.{hbs,md}'  
         ],
 				plugins: ['assemble-contrib-permalinks','assemble-contrib-sitemap','assemble-related-pages'],
 				layoutdir: '<%= site.templates %>/layouts',
