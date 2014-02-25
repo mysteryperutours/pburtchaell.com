@@ -254,7 +254,7 @@ module.exports = function(grunt) {
     connect: {
       dev: {
         options: {
-          port: 35729,
+          port: 8000,
           open: true,
           base: '<%= site.development %>/'
         }
