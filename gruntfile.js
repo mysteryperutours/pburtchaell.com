@@ -228,11 +228,54 @@ module.exports = function(grunt) {
     },
     
     /*
-     * assemble sitemap
+     * assemble sitemap, humans.txt, and robots.txt
      */
     sitemap: {
       production: {
         siteRoot: 'dist/production/'
+      }
+    },
+    humans_txt: {
+      options: {
+        commentStyle: 'u',
+        content: {
+          'team': [ 
+            { 'Web developer & designer': '<%= pkg.author.name %>', 'site': '<%= pkg.author.url %>', 'twitter': '<%= pkg.author.twitter %>' },
+          ],
+          'thanks': [
+            { 'name': 'Assemble Core Team', 'website': 'http://assemble.io', 'twitter': '@assemblejs' },
+            { 'name': 'Grunt.js Core Team', 'website': 'http://gruntjs.com', 'twitter': '@gruntjs' },
+            { 'name': 'Bower Core Team', 'website': 'http://bower.io', 'twitter': '@bower' }
+          ],
+          'site': [{
+            'version': '<%= pkg.version %>',
+            'homepage': '<%= pkg.homepage %>',
+            'repository': '<%= pkg.repository.url %>',
+            'keywords': '<%= site.keywords %>',
+            'language': 'English',
+            'technology': 'AWS S3'
+          }],
+          'documentation': [{
+            'colophon': '<%= pkg.homepage %>/colophon',
+            'code styleguide': '<%= pkg.homepage %>/styleguide',
+            'backlog': '<%= pkg.homepage %>/backlog',
+            'changelog': '<%= pkg.homepage %>/changelog'
+          }]
+        }
+      },
+      production: {
+        dest: './dist/production/humans.txt'
+      }
+    },
+    robotstxt: {
+      production: {
+        dest: 'dist/production/',
+        policy: [
+          { ua: 'googlebot', disallow: '/assets/' },
+          { sitemap: ['<%= site.url %>/sitemap.xml'] },
+          { crawldelay: 100 },
+          { host: '<%= site.url %>' }
+        ]
       }
     },
 
@@ -363,6 +406,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-spell');
   grunt.loadNpmTasks('grunt-sitemap');
+  grunt.loadNpmTasks('grunt-humans-txt');
+  grunt.loadNpmTasks('grunt-robots-txt');
   //grunt.loadNpmTasks('grunt-s3');
   //grunt.loadNpmTasks('grunt-aws-s3');
   
@@ -388,6 +433,7 @@ module.exports = function(grunt) {
      * 5. Copy font files to ./dist/development/assets/css/fonts
      * 6. Compress (using gzip) all files in assets/ and move to ./dist/production/assets
      * 7. Compress (using gzip) all HTML and move to ./dist/production
+     * 8. Build sitemap, humans.txt, and robots.txt
      * 
      * Files within the production folder will be compressed and ready to upload to the server.
      * Files within the development folder will not be compressed.
@@ -403,6 +449,8 @@ module.exports = function(grunt) {
     'compress:fonts',
     'compress:content',
     'sitemap',
+    'humans_txt',
+    'robotstxt',
     'congrats'
 	]);
     
