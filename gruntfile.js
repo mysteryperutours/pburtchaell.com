@@ -225,9 +225,17 @@ module.exports = function(grunt) {
           }
         ]        
       }
-    },	
+    },
+    
+    /*
+     * assemble sitemap
+     */
+    sitemap: {
+      production: {
+        siteRoot: 'dist/production/'
+      }
+    },
 
-		
     /*
     * watch files for changes
     */
@@ -354,6 +362,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-spell');
+  grunt.loadNpmTasks('grunt-sitemap');
   //grunt.loadNpmTasks('grunt-s3');
   //grunt.loadNpmTasks('grunt-aws-s3');
   
@@ -393,6 +402,7 @@ module.exports = function(grunt) {
     'compress:javascripts',
     'compress:fonts',
     'compress:content',
+    'sitemap',
     'congrats'
 	]);
     
