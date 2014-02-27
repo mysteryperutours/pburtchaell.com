@@ -95,12 +95,12 @@ module.exports = function(grunt) {
       },
       assets: {
         files: {
-          '<%= site.development %>/assets/js/components.js' : 
-          [
-          '<%= site.components %>/responsive-nav/client/dist/responsive-nav.js',
-          '<%= site.components %>/headroom.js/dist/headroom.js',
-          '<%= site.components %>/vendor/echo.js'
+          '<%= site.development %>/assets/js/components.js' : [
+            '<%= site.components %>/responsive-nav/client/dist/responsive-nav.js',
+            '<%= site.components %>/headroom.js/dist/headroom.js',
+            '<%= site.components %>/vendor/echo.js'
           ],
+          '<%= site.development %>/assets/js/html5shiv.js' : '<%= site.components %>/html5shiv/dist/html5shiv.js',
           '<%= site.development %>/assets/js/highlight.js' : 'bower_components/vendor/highlight.pack.js'
         }
       }
