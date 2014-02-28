@@ -10,8 +10,12 @@
   "private": true,
   "dependencies": {
     "headroom.js": "~0.4.0",
-    "responsive-nav": "~1.0.25",
+    "responsive-nav": "latest",
     "lunr.js": "~0.4.3",
-    "list.js": "~1.1.0"
+    "list.js": "~1.1.0",
+    "html5shiv": "latest",
+    "respond": "~1.4.2",
+    "WOW": "~0.1.4",
+    "REM-unit-polyfill": "~1.1.0"
   }
 }
