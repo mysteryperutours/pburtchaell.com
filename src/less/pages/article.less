@@ -167,17 +167,27 @@
   color: @white;
   padding: 3px;
   opacity: 0.5;
-    
-  &.twitter { background: @color-twitter; }
-  &.facebook { background: @color-facebook; }
-  &.google { background: @color-google; }
+  border: 1px solid;  
+
+  &.twitter { color: @color-twitter; }
+  &.facebook { color: @color-facebook; }
+  &.google { color: @color-google; }
 
   &:hover,
   &:active {
-    color: @white;
     opacity: 1.0;
+    -webkit-transform: scale(1.025);
+       -moz-transform: scale(1.025);
+        -ms-transform: scale(1.025);
+         -o-transform: scale(1.025);
+            transform: scale(1.025);
   }
     
+}
+
+.share-label {
+  padding: 3px;
+  background: @light-grey;
 }
 
 .article-comments { 
