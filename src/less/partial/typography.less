@@ -34,8 +34,8 @@ p {
 
 small {
   /* for <small> elements, decrease the fonts-size, but increase the line-height */
-  font-size: 0.785rem; /* 1 - 0.215 = 0.785rem */
-  line-height: 1.701;  /* 1.4 * 1.215 = 1.701 */
+  font-size: 0.685rem; /* 1 - 0.315 = 0.685rem */
+  line-height: 1.841;  /* 1.4 * 1.315 = 1.841 */
 }
 
 /* Headings */
@@ -49,13 +49,43 @@ h1 {
 h2, h3, h4, h5, h6 {
   font-family: @type-bold; 
   margin: 2.5rem 0 0.125rem 0;
-  line-height: 1.4;  
+  line-height: 1.4; ;
 }
-h2 { font-size: 1.50rem; }
+h2 { 
+  
+  font-size: 1.50rem; 
+  text-align: center;
+  margin: 3.5rem 0 1rem 0;
+  font-family: @type-secondary;
+  
+  &:before,
+  &:after{
+    content: '';
+    display: inline-block;
+    height: 5px;
+    border-top: 1px solid fadeOut(@dark-grey,75%);
+    border-bottom: 1px solid fadeOut(@dark-grey,75%);
+    -webkit-transform: translateY(-0.3rem);
+       -moz-transform: translateY(-0.3rem);
+         -o-transform: translateY(-0.3rem);
+            transform: translateY(-0.3rem);
+    left: 0;
+    right: 0;
+    width: 10%;
+    margin: 0 10px;
+  }
+ 
+}
 h3 { font-size: 1.25rem; }
-h4 { font-size: 1.20rem; font-family: @type-secondary; text-transform: uppercase; letter-spacing: 0.075rem; }
+h4 { font-size: 1.20rem; font-family: @type-secondary; text-transform: uppercase; letter-spacing: 0.075rem; text-align: center; }
 h5 { font-size: 1.15rem; }
 h6 { font-size: 1.10rem; font-family: @type-secondary; text-transform: uppercase; }
+small {
+  h2, h3, h4, h5, h6 {
+    font-size: 85%;
+    margin: 0 0 1.25rem 0;
+  }
+}
 
 em, i { 
   font-family: @type-italic !important;
@@ -67,9 +97,7 @@ strong, b {
   font-style: normal; 
 }
 
-strikethrough { 
-
-}
+s { }
 
 .centered {
   text-align: center;
