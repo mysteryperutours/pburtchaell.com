@@ -99,9 +99,15 @@ module.exports = function(grunt) {
             '<%= site.components %>/responsive-nav/client/dist/responsive-nav.js',
             '<%= site.components %>/headroom.js/dist/headroom.js',
             '<%= site.components %>/vendor/echo.js'
+            //'<%= site.source %>/js/hyphenation.js'
           ],
-          '<%= site.development %>/assets/js/html5shiv.js' : '<%= site.components %>/html5shiv/dist/html5shiv.js',
-          '<%= site.development %>/assets/js/highlight.js' : 'bower_components/vendor/highlight.pack.js'
+          '<%= site.development %>/assets/js/ie.js' : [
+            '<%= site.components %>/html5shiv/dist/html5shiv.js',
+            '<%= site.components %>/REM-unit-polyfill/js/rem.js',
+            '<%= site.components %>/respond/src/respond.js'
+          ],
+          '<%= site.development %>/assets/js/highlight.js' : 'bower_components/vendor/highlight.pack.js',
+          '<%= site.development %>/assets/js/hyphenation.js' : '<%= site.source %>/js/hyphenation.js'
         }
       }
     },
