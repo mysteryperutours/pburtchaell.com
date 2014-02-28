@@ -8,13 +8,7 @@ This is the home of the source files of my website: built using [Grunt]() & [Ass
 
 _[-Patrick](http://twitter.com/pburtchaell)_
 
-Built with <object class=page-footer-heart>
-        <svg x=0 y=0 width=10px height=10px viewBox="0 0 10 8.1396484">
-          <g><path d="M9.1796875, 0.6699219c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0L5, 
-                      1.2753906L4.3398438,0.6699219 c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0c-1.0927734,
-                      1.0029297-1.0927734,2.6308594,0,3.6337891L5,8.1396484 l4.1796875-3.8359375C10.2734375,
-                      3.3007813,10.2734375,1.6728516,9.1796875,0.6699219z"/>
-          </g></svg></object> in New Orleans
+Built with love in New Orleans
 
 [Source files licensed under MIT](http://pb.mit-license.org/).
 [All content copyright (c) 2014 Patrick Burtchaell](http://pburtchaell.com/legal/)
