@@ -37,7 +37,7 @@
   height: 75px;
   width: 100%;
   top: 0;
-  z-index: 1;
+  z-index: 4;
   background: @white;
   border-bottom: 1px solid @light-grey;
   -webkit-transition: 0.5s ease;
@@ -52,6 +52,7 @@
 		left: 50%;
 		margin: 2.5px auto 0 -39.5px;
 		padding: 5px 0 0 0;
+    z-index: 3;
 	}
 	
 	// when scrolling down
@@ -178,9 +179,13 @@
     clear: both;
     height: auto;
     max-width: 40%;
-    margin: 0 @base @base 0;
+    margin: @base @base @base 0;
   }
-  
+  @media screen and (max-width: 350px) { 
+    img {
+      max-width: 100%; 
+    }
+  }
 }
   
 // article page styles
