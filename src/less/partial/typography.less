@@ -202,7 +202,14 @@ blockquote {
 
 /* default list styles */
 ul, ol {
+  
 	margin: 1rem;
+  
+  &.reset li { 
+    list-style: none; 
+    margin: 0;
+  }  
+  
 }
 
 ol {
@@ -210,11 +217,9 @@ ol {
 }
 
 li {
-
   margin: 0.5rem @base*2;
 	list-style: disc;
-  text-align: left;
-    
+  text-align: left; 
 }
 
 
