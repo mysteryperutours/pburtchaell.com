@@ -69,6 +69,7 @@ module.exports = function(grunt) {
       assets: {
         files: {
           '<%= site.development %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less',
+          '<%= site.development %>/assets/css/portfolio.css' : '<%= site.source %>/less/portfolio.less',
         }
       }
     },
@@ -99,6 +100,7 @@ module.exports = function(grunt) {
             '<%= site.components %>/responsive-nav/client/dist/responsive-nav.js',
             '<%= site.components %>/headroom.js/dist/headroom.js',
             '<%= site.components %>/vendor/echo.js'
+            //'<%= site.components %>/WOW/dist/wow.js'
             //'<%= site.source %>/js/hyphenation.js'
           ],
           '<%= site.development %>/assets/js/ie.js' : [
@@ -106,8 +108,9 @@ module.exports = function(grunt) {
             '<%= site.components %>/REM-unit-polyfill/js/rem.js',
             '<%= site.components %>/respond/src/respond.js'
           ],
-          '<%= site.development %>/assets/js/highlight.js' : 'bower_components/vendor/highlight.pack.js',
-          '<%= site.development %>/assets/js/hyphenation.js' : '<%= site.source %>/js/hyphenation.js'
+          '<%= site.development %>/assets/js/highlight.js' : '<%= site.components %>/vendor/highlight.pack.js',
+          '<%= site.development %>/assets/js/hyphenate.js' : '<%= site.source %>/js/hyphenation.js',
+          '<%= site.development %>/assets/js/search.js' : '<%= site.components %>/list.js/dist/list.js'
         }
       }
     },
