@@ -37,6 +37,8 @@
     "grunt-s3": "latest",
     "grunt-sitemap": "latest",
     "grunt-humans-txt": "latest",
-    "grunt-robots-txt": "latest"
+    "grunt-robots-txt": "latest",
+    "grunt-autoprefixer": "~0.7.2",
+    "grunt-recess": "~0.6.0"
   }
 }
