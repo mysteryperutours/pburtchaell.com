@@ -62,8 +62,8 @@ h2 {
     content: '';
     display: inline-block;
     height: 5px;
-    border-top: 1px solid darken(@light-grey, 5%);
-    border-bottom: 1px solid darken(@light-grey, 5%);
+    border-top: 1px solid;
+    border-bottom: 1px solid;
     -webkit-transform: translateY(-0.3rem);
        -moz-transform: translateY(-0.3rem);
         -ms-transform: translateY(-0.3rem);
@@ -73,6 +73,7 @@ h2 {
     right: 0;
     width: 10%;
     margin: 0 10px;
+    opacity: 0.25;
   }
  
 }
@@ -181,8 +182,8 @@ blockquote {
   font-family: @type-italic;
 	padding: 0 0 0 1rem;
   margin: 2rem 0;
-	border-left: 0.125rem solid @light-grey;
-  color: fadeOut(@dark-grey, 25%);
+	border-left: 0.125rem solid;
+  opacity: 0.65;
   strong {
     font-family: 'opensans-italic-bold', sans-serif;
   }
