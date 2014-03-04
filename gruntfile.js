@@ -453,5 +453,26 @@ module.exports = function(grunt) {
     'robotstxt',
     'congrats'
 	]);
+  
+  grunt.task.registerTask('build2', function(env) {
+    var site = grunt.config('site'), 
+    env = env || 'development';
+    site.url = (env === 'development') ? 'localhost:8000' : 'http://pburtchaell.com';
+    grunt.task.run(
+    'clean:build',
+    'assemble',
+    'less:assets',
+    'uglify:assets',
+    'copy:assets',
+    'compress:stylesheets',
+    'compress:javascripts',
+    'compress:fonts',
+    'compress:content',
+    'sitemap',
+    'humans_txt',
+    'robotstxt',
+    'congrats'
+    );
+  });
     
 }

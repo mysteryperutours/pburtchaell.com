@@ -10,9 +10,8 @@ content      : ./tpl/pages
 extension    : .html
 components   : ./bower_components
 
-# SITE URL - Use localhost for development
-#url          : http://pburtchaell.com
-url          : http://localhost:8000
+# SITE URL
+url: http://pburtchaell.com
 
 # GENERAL SITE DATA
 title        : Patrick Burtchaell - Creative Design + Video + Audio from New Orleans
