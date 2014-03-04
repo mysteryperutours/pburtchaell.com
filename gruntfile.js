@@ -403,22 +403,13 @@ module.exports = function(grunt) {
 	
 	
   /*
-   * plugins, such wow
+   * plugins, such wow: https://www.npmjs.org/package/load-grunt-tasks
    */
-  grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('assemble-less');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-compress');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-spell');
-  grunt.loadNpmTasks('grunt-sitemap');
-  grunt.loadNpmTasks('grunt-humans-txt');
-  grunt.loadNpmTasks('grunt-robots-txt');
-  //grunt.loadNpmTasks('grunt-s3');
-  //grunt.loadNpmTasks('grunt-aws-s3');
+   require('load-grunt-tasks')(grunt, {
+      pattern: '*',
+      config: 'package.json',
+      scope: 'devDependencies'
+   });
   
   grunt.registerTask('congrats', 'Log some stuff', function() {
     grunt.log.write('Congrats your site has been assembled.').ok();
