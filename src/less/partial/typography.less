@@ -27,7 +27,6 @@ p {
     background: fadeOut(@dark-grey, 95%);
     display: inline-block;
     line-height: 1.0;
-    padding: 0.12rem;
   }
   
 }
@@ -77,7 +76,7 @@ h2 {
   }
  
 }
-h3 { font-size: 1.25rem; }
+h3 { font-size: 1.25rem; margin: 4rem 0 0.125rem 0; text-align: center; text-transform: uppercase; }
 h4 { font-size: 1.20rem; font-family: @type-secondary; text-transform: uppercase; letter-spacing: 0.075rem; text-align: center; }
 h5 { font-size: 1.15rem; }
 h6 { font-size: 1.10rem; font-family: @type-secondary; text-transform: uppercase; }
@@ -89,8 +88,10 @@ small {
 }
 
 em, i { 
-  font-family: @type-italic !important;
-  font-style: normal; 
+  font-family: @type-italic;
+  strong { 
+    font: normal 1rem 'opensans-italic-bold', sans-serif; 
+  }
 }
 
 strong, b { 
@@ -177,26 +178,27 @@ abbr {
 
 /* default blockquotes styles */
 blockquote {
-  
-  font-family: 'opensans-italic', sans-serif;
+  font-family: @type-italic;
 	padding: 0 0 0 1rem;
   margin: 2rem 0;
 	border-left: 0.125rem solid @light-grey;
   color: fadeOut(@dark-grey, 25%);
+  strong {
+    font-family: 'opensans-italic-bold', sans-serif;
+  }
+}
+
+cite {
   
-	cite {
-    
-    margin: 0.25rem 0 0 0;
-		display: block;
-    text-align: right;
-		font-family: 'opensans-italic', sans-serif;
-		
-		&:before {
-			content: "\2014 \0020";
-		}
-	
-	}
-    
+  margin: 0.25rem 0 0 0;
+  display: block;
+  text-align: right;
+  font-family: 'opensans-italic', sans-serif;
+  
+  &:before {
+    content: "\2014 \0020";
+  }
+
 }
 
 
@@ -212,14 +214,40 @@ ul, ol {
   
 }
 
-ol {
+ol li {
+  margin: 0.5rem @base*2;
   list-style: decimal;
+  li { 
+    margin: 0.5rem @base/2; 
+    list-style: lower-alpha; 
+  }
 }
 
-li {
+ul li {
   margin: 0.5rem @base*2;
 	list-style: disc;
   text-align: left; 
+  li { margin: 0.5rem @base/2; }
+}
+
+.table-of-contents {
+  
+  background: fadeOut(@light-grey,75%);
+  padding: @base/2 0 @base/2 @base/2;
+  border: 1px solid @light-grey;
+  
+  li {
+    list-style: upper-roman;
+    li {
+      list-style: upper-alpha;
+      li {
+        list-style: lower-roman;
+        margin: 0.125rem 0;
+      }
+    } 
+    a { border: none !important; }
+  }
+  
 }
 
 
