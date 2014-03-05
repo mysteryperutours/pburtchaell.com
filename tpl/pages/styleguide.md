@@ -401,7 +401,7 @@ All other infomation taken from an external source has been cited with a title a
 ## Contribute
 <p class=centered>
   Want to improve this document? 
-  <em>Make a pull-request<a href=http://github.com/pburtchaell/site-assemble> on Github</a></em>.
+  <em>Make a pull-request<a href=https://github.com/pburtchaell/site-assemble/blob/master/tpl/pages/styleguide.md> on Github</a></em>.
 </p>
 
 {{> support}}
