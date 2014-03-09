@@ -1,13 +1,15 @@
 ---
-title: Design + Video + Audio from New Orleans
-shortName: blog
-description: A collection of thoughts, research, and design by Patrick Burtchaell.  
+title: Home
+shortName: home
+description: An online repository for essays, article, documents, and work from New Orleans designer and videographer, Patrick Burtchaell.
 layout: none
 ---
 {{> open-inc ~}}
 {{> header-inc}}
 <main role=main id=main>
   <section class=article-feed>
+    <h1 class=title>Patrick Burtchaell</h1>
+    <h6 class=subtitle>Designer + Videographer</h6>
     <h4 class=centered>2014</h4>
       {{#compose 'published/2014/*.hbs'}}
         <article class=article-item>
@@ -15,7 +17,7 @@ layout: none
             <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
               <em><span class=article-item-title>{{title}}</span></em>
             </a>
-            <time class=article-item-time>{{pubDate}}</time>
+            <small><time class=article-item-time>{{pubDate}}</time></small>
           </header>
         </article>
       {{/compose ~}}
@@ -26,7 +28,7 @@ layout: none
             <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
               <em><span class=article-item-title>{{title}}</span></em>
             </a>
-            <time class=article-item-time>{{pubDate}}</time>
+            <small><time class=article-item-time>{{pubDate}}</time></small>
           </header>
         </article>
       {{/compose ~}}
