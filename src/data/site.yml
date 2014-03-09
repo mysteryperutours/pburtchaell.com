@@ -11,10 +11,11 @@ extension    : .html
 components   : ./bower_components
 
 # SITE URL
-url: http://pburtchaell.com
+#url: http://pburtchaell.com
+url: http://localhost:8000
 
 # GENERAL SITE DATA
-title        : Patrick Burtchaell - Creative Design + Video + Audio from New Orleans
+title        : Patrick Burtchaell
 tagline      : Creative Design + Video + Audio from New Orleans
 description  : I am a freelance designer and videographer from New Orleans with a passion for objectifying content.
 keywords     : New Orleans, web design, video, audio, production, designer, videographer, graphics, nola, Patrick, Burtchaell, front, end, HTMl, CSS, JavaScript, JS
