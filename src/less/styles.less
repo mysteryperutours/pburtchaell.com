@@ -44,6 +44,13 @@
   @type-italic: 'opensans-italic', sans-serif;
   @type-bold: 'dinpro-bold', sans-serif;
 
+  // mixins (are magical)
+  .transition (@time: 0.5s) {
+    -webkit-transition: @time ease;
+       -moz-transition: @time ease;
+         -o-transition: @time ease;
+            transition: @time ease;
+  }
 
 /* ----------------------  BEGIN STYLESHEET ---------------------- */
 
