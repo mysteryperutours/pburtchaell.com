@@ -25,20 +25,16 @@
           <span class=tag>Written By</span>
           <h6 intemprop=name>{{author.nameFirst}} {{author.nameLast}}</h6>
           <p class=article-author-bio>
-            <span itemprop=affiliation>Freelance </span><span itemprop=title>designer and videographer </span>
+            <span itemprop=affiliation>I am </span><span itemprop=title>designer</span>
             <span itemscope itemprop=address itemtype=http://data-vocabulary.org/Address>
               from <span itemprop=locality>New Orleans</span>
-            </span> with a passion for objectifying content.<br> 
-          <em><a href={{author.twitter}} class=line itemprop=url>Follow me on Twitter</a></em>
+            </span> with a passion for creating content that tells a story.<br> 
           </p><br>
         </small>
       </div><!-- /article-author -->
       <div class=article-details>
         <hr class=small>
-        <small>
-          <span class=article-pubDate>Published {{pubDate}}</time></span>
-          {{#if updateDate}}<span class=article-updateDate>Updated {{updateDate}}</span><br>{{/if ~}}
-        </small>
+        <small><em><a href={{author.twitter}} class=line itemprop=url>Twitter</a></em> and <a href={{author.dribbble}} class="line dribbble" itemprop=url>Dribbble</a></small>
       </div><!-- /article detials -->
       <hr class=large>			
     </footer><!-- /article-footer -->
