@@ -57,7 +57,12 @@
          -o-transform: @value;
             transform: @value;
   }
-
+  .animation(@name, @duration, @iteration-count) {
+    -webkit-animation: @arguments;
+       -moz-animation: @arguments;
+         -o-animation: @arguments;
+            animation: @arguments;
+  }
 
 /* ----------------------  BEGIN STYLESHEET ---------------------- */
 
