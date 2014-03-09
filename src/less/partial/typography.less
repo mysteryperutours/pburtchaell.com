@@ -56,15 +56,16 @@ h1 {
 }
 h2, h3, h4, h5, h6 {
   font-family: @type-bold; 
+  text-transform: uppercase;
   margin: 2.5rem 0 0.125rem 0;
-  line-height: 1.4; ;
+  line-height: 1.4;
 }
 h2 { 
   
-  font-size: 1.50rem; 
+  font: 1.50rem @type-secondary; 
   text-align: center;
-  margin: 3.5rem 0 1rem 0;
-  font-family: @type-secondary;
+  text-transform: none;
+  margin: 4.5rem 0 1rem 0; 
   
   &:before,
   &:after{
@@ -81,15 +82,15 @@ h2 {
     left: 0;
     right: 0;
     width: 10%;
-    margin: 0 10px;
-    opacity: 0.25;
+    margin: 0 @base/2;
+    opacity: 0.15;
   }
  
 }
-h3 { font-size: 1.25rem; margin: 4rem 0 0.125rem 0; text-align: center; text-transform: uppercase; }
-h4 { font-size: 1.20rem; font-family: @type-secondary; text-transform: uppercase; letter-spacing: 0.075rem; text-align: center; }
-h5 { font-size: 1.15rem; }
-h6 { font-size: 1.10rem; font-family: @type-secondary; text-transform: uppercase; }
+h3 { font-size: 1.25rem; margin: 2.5rem auto 0.125rem auto; letter-spacing: 0.125rem; text-align: center; max-width: 60%; }
+h4 { font: 1.20rem @type-secondary; letter-spacing: 0.075rem; text-align: center; }
+h5 { font-size: 1.15rem; text-transform: none;}
+h6 { font: 1.10rem @type-secondary;  }
 small {
   h2, h3, h4, h5, h6 {
     font-size: 85%;
@@ -271,12 +272,11 @@ ul li {
     text-align: left;
   }
   
-  h1 { font-size: calc(2.00rem / 1.55); text-align: left; }
-  h2 { font-size: calc(1.50rem / 1.5); } 
-  h3 { font-size: calc(1.25rem / 1.4); } 
-  h4 { font-size: calc(1.20rem / 1.3); } 
-  h5 { font-size: calc(1.15rem / 1.2); }
-  h6 { font-size: calc(1.10rem / 1.1); } 
+  h1 { font-size: calc(2.00rem/ 1.4);}
+  h2 { font-size: calc(1.50rem/ 1.25); } 
+  h3 { font-size: calc(1.25rem/ 1.2); } 
+  h4 { font-size: calc(1.20rem/ 1.2); } 
+  h5 { font-size: calc(1.15rem/ 1.2); }
 
   code {
     font-size: 0.95rem;
