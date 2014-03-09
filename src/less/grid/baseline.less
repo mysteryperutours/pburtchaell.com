@@ -34,22 +34,35 @@
   background: @white;
   border-bottom: 1px solid @light-grey;
   .transition();
-	
-	// SVG branding
-	.branding {
-		position: absolute;
-		width: 75px;
-		left: 50%;
-		margin: 2.5px auto 0 -39.5px;
-		padding: 5px 0 0 0;
-    z-index: 3;
-	}
-	
+
 	// when scrolling down
 	&.headroom--unpinned {
     .transform(translateY(-100px));
 	}
 	
+}
+
+// SVG branding
+.branding {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  left: 50%;
+  margin: 0 auto 0 -39.5px;
+  z-index: 3;
+  stroke-width: 1px;
+}
+#branding-design {
+  fill: fadeOut(@design, 90%);
+  stroke: @design;
+}
+#branding-audio {
+  fill: fadeOut(@audio, 90%);
+  stroke: @audio;
+}
+#branding-video {
+  fill: fadeOut(@video, 90%);
+  stroke: darken(@video, 15%);
 }
 
 /*
@@ -94,7 +107,7 @@
   &:hover {
     background: @red;
     color: @white;
-    border: none;
+    border-color: fadeOut(@white,100%);
     svg {
       fill: darken(@design, 25%);
     }
@@ -154,30 +167,32 @@
           flex: 1;
 }
 
-.page {
-  
-  // flex-children
-  .default-header {
-    padding: (@base*2)+75px round(@column, 2) @base round(@column, 2);
-  }
-  
-  .default-content {
-    margin: @base auto;
-    padding: 0 round(@column*1) round(@base-padding*1.5, 2) round(@column*1);
+// flex-children
+.default-header {
+  padding: (@base*2)+75px round(@column, 2) @base round(@column, 2);
+}
+
+.default-content {
+  padding: 0 0 round(@base-padding*1.5, 2) 0;
+  p, ul, ol, code {
     max-width: 600px;
+    margin: @base auto;
   }
-  
+  p { 
+    padding: 0 round(@column*1);
+  }
+}
+
+img {
+  float: left;
+  clear: both;
+  height: auto;
+  max-width: 40%;
+  margin: @base @base @base 0;
+}
+@media screen and (max-width: 350px) { 
   img {
-    float: left;
-    clear: both;
-    height: auto;
-    max-width: 40%;
-    margin: @base @base @base 0;
-  }
-  @media screen and (max-width: 350px) { 
-    img {
-      max-width: 100%; 
-    }
+    max-width: 100%; 
   }
 }
   
@@ -187,8 +202,14 @@
 @import '../pages/category';
 
 /*
- *
+ * Crypto-support section
  */
+.support {
+  background: @dark-grey;
+  padding: @base/2 @base @base*2 @base;
+  margin-top: @base*2;
+  color: @white;  
+}
 .coin {
   
   // colors
@@ -201,16 +222,24 @@
   overflow-x: scroll;
   transition: 1s;
   max-width: 200px;
-  opacity: 0.5;
   
-  &.bit { background: @color-bitcoin; color: darken(@color-bitcoin, 15%); }
-  &.doge { margin: @base/2 auto; background: @color-dogecoin; color: darken(@color-dogecoin, 15%); }
+  &.bit { 
+    border: 2px solid;
+    background: fadeOut(@color-bitcoin,75%); 
+    color: @color-bitcoin; 
+  }
+  &.doge { 
+    margin: @base/2 auto; 
+    border: 2px solid; 
+    background: fadeOut(@color-dogecoin,75%); 
+    color: @color-dogecoin; 
+  }
   
   &:hover {
-    max-width: 100%;
-    opacity: 0.95;
+    max-width: 500px;
   }
-   &::-webkit-scrollbar { display: none; }
+  &::-webkit-scrollbar { display: none; }
+  
 }
 @media screen and (max-width: 767px) { 
   .coin {
@@ -220,4 +249,14 @@
     &::-webkit-scrollbar-track-piece  { border: none; }
     &::-webkit-scrollbar-thumb:horizontal { background: fadeOut(@dark-grey, 85%);}
   }
+}
+
+.portrait {
+  border-radius: 100%;
+  float: none; 
+  clear: none;
+  max-width: 100%;
+  margin: 0 auto @base*2 auto;
+  display: block;
+  border: 2px solid @light-grey;
 }

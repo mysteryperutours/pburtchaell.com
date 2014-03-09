@@ -9,16 +9,19 @@
 }
   .article-item {
     padding: @base/2;
+    text-align: center;
   }
     .article-item-header {
       max-width: 600px;
       margin: 0 auto;
     }
-      .article-item-title {
-        float: left;   
+      .article-item-title {  
         margin: 0 3px 0 0;
       }
-      .article-item-time { 
+      .article-item-time {
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+        opacity: 0.6;
         &:before {
           content: "\2014 \0020";
         }
