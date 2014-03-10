@@ -4,7 +4,6 @@
 
 /*
  * Browser specific styles:
- * 1
  */
 ::-moz-selection { 
   background-color: @dark-grey; 
@@ -14,7 +13,10 @@
   background-color: @dark-grey; 
   color: @white; 
 }
-::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar { 
+  width: 12px;
+  background: @white;
+}
 ::-webkit-scrollbar-track-piece  { border-left: 1px solid @light-grey; }
 ::-webkit-scrollbar-thumb:vertical { 
   background: darken(@light-grey,5%); 
@@ -37,7 +39,7 @@
 
 	// when scrolling down
 	&.headroom--unpinned {
-    .transform(translateY(-75px));
+    .transform(translateY(-85px));
 	}
 	
 }
@@ -87,7 +89,7 @@
 }
 @media screen and (max-width: 767px) { 
   .page-footer {
-    padding: @base round(@column);
+    padding: @base round(@column*2);
   }
 } 
 
@@ -260,5 +262,4 @@ img {
   max-width: 100%;
   margin: 0 auto @base*2 auto;
   display: block;
-  border: 2px solid @light-grey;
 }
