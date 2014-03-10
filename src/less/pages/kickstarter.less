@@ -1,14 +1,18 @@
 .headroom--unpinned {
   .kickstarter {
     -webkit-transform-origin: top;
-    transition-delay: 2s !important;
+       -moz-transform-origin: top;
+        -ms-transform-origin: top;
+         -o-transform-origin: top;
+            transform-origin: top;
+    transition-delay: 0.3s !important;
     .transform(rotateX(90deg) translateY(-10px));
-    .transition(0.35s);
+    .transition(0.2s);
   }
 }
 .headroom--pinned {
   .kickstarter {
-    display: none;
+    .transition();
   }
 }
 .kickstarter {
@@ -46,11 +50,10 @@
     .small {
       display: inline-block;
     }
-    text-align: left;
     text-transform: uppercase;
     font-family: @type-secondary;
   }
   .kickstarter-branding {
-    padding-right: @base/2;
+    position: absolute;
   }
 }
