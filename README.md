@@ -1,5 +1,4 @@
-#Patrick Burtchaell
- > User interface designer, videographer, and outdoorsman
+# Patrick Burtchaell Site
  
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
