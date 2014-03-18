@@ -13,5 +13,5 @@ _[-Patrick](http://twitter.com/pburtchaell)_
 
 Built with love in New Orleans
 
-[Source files licensed under MIT](http://pb.mit-license.org/).
-[All content copyright (c) 2014 Patrick Burtchaell](http://pburtchaell.com/legal/)
+[Source files licensed MIT](http://pb.mit-license.org/).
+All content [copyright 2014 Patrick Burtchaell](http://pburtchaell.com/legal/)
