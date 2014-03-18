@@ -6,78 +6,74 @@
  * Licensed under the MIT license, http://pb.mit-license.org/
  */
 
+// colors and values
+@white          :   rgb(248,248,248);
+@dark-grey      :   rgb(70,72,74);
+@light-grey     :   rgb(232,235,237); 
+@design         :   rgb(230,84,87);
+@video-old      :   rgb(78,255,214);
+@video          :   rgb(179,255,198);
+@audio          :   rgb(0,218,255);
+@red            :   @design;
+@green          :	@video;
+@blue           :	@audio;
+@color-twitter  :   rgb(0,172,237);
+@color-facebook :	rgb(59,89,152);
+@color-google   :	rgb(221, 75, 57);
 
-// base styles
+// paddings and margins
+@base-padding   :   25px; 
+@base-margin    :   25px;
+@base           :   25px;
 
-  // colors and valuess
-  @white          :   rgb(248,248,248);
-  @dark-grey      :   rgb(70,72,74);
-  @light-grey     :   rgb(232,235,237); 
-  @design         :   rgb(230,84,87);
-  @video-old      :   rgb(78,255,214);
-  @video			    : 	rgb(179,255,198);
-  @audio          :   rgb(0,218,255);
+// borders and underlines
+@base-border    :   1px solid;	
+@base-box-shadow:   0px 0px 1px 1px rgba(10,10,11,0.2);
 
-  @red			      : 	@design;
-  @green			    :	  @video;
-  @blue			      :	  @audio;
+// grid
+@column         :   100% / 18;
 
-  @color-twitter	:	  rgb(0,172,237);
-  @color-facebook	:	  rgb(59,89,152);
-  @color-google	  :	  rgb(221, 75, 57);
-  
-  // paddings and margins
-  @base-padding	:	25px; 
-  @base-margin	: 25px;
-  @base: 25px;
+// type
+@type-primary   :   'opensans-regular', @font-stack;
+@type-secondary :   'dinpro', @font-stack;
+@type-italic    :   'opensans-italic', @font-stack;
+@type-bold      :   'dinpro-bold', @font-stack;
+@font-stack     :   'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
-  // borders and underlines
-  @base-border    :   1px solid @dark-grey;	
-  @base-box-shadow: 	0px 0px 1px 1px rgba(10,10,11,0.2);
+// mixins (are magical)
+.transition (@time: 0.5s) {
+  -webkit-transition: @time ease;
+     -moz-transition: @time ease;
+       -o-transition: @time ease;
+          transition: @time ease;
+}
+.transform (@value) {
+  -webkit-transform: @value;
+     -moz-transform: @value;
+       -o-transform: @value;
+          transform: @value;
+}
+.animation(@name, @duration, @iteration-count) {
+  -webkit-animation: @arguments;
+     -moz-animation: @arguments;
+       -o-animation: @arguments;
+          animation: @arguments;
+}
+.user-select(@value: none) {
+  -webkit-user-select: @value;
+     -moz-user-select: @value;
+      -ms-user-select: @value;
+       -o-user-select: @value;
+          user-select: @value;
+}
 
-  // grid
-  @column			 : 	100% / 18;
-
-  // type
-	@type-primary: 'opensans-regular', sans-serif;
-  @type-secondary: 'dinpro', sans-serif;
-  @type-italic: 'opensans-italic', sans-serif;
-  @type-bold: 'dinpro-bold', sans-serif;
-
-  // mixins (are magical)
-  .transition (@time: 0.5s) {
-    -webkit-transition: @time ease;
-       -moz-transition: @time ease;
-         -o-transition: @time ease;
-            transition: @time ease;
-  }
-  .transform (@value) {
-    -webkit-transform: @value;
-       -moz-transform: @value;
-         -o-transform: @value;
-            transform: @value;
-  }
-  .animation(@name, @duration, @iteration-count) {
-    -webkit-animation: @arguments;
-       -moz-animation: @arguments;
-         -o-animation: @arguments;
-            animation: @arguments;
-  }
-
-/* ----------------------  BEGIN STYLESHEET ---------------------- */
-
-// import partials 
 @import 	'partial/_reset';
 @import 	'partial/typography';
 @import 	'partial/code';
 //@import 	'partial/forms';
 //@import 	'partial/buttons';
-
-// import grid
 @import 	'grid/baseline';
 @import 	'grid/04-col';
 @import 	'grid/08-col';
 @import 	'grid/16-col';
-
-// import print styles
 @import 	'partial/print' print;
