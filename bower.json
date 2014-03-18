@@ -1,7 +1,7 @@
 {
-  "name": "site-assemble",
+  "name": "site",
   "version": "1.0.0",
-  "homepage": "https://github.com/pburtchaell/site-assemble",
+  "homepage": "https://github.com/pburtchaell/site",
   "authors": [
     "Patrick Burtchaell <patrick@pburtchaell.com>"
   ],

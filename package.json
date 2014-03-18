@@ -1,5 +1,5 @@
 {
-  "name": "site-assemble",
+  "name": "site",
   "description": "The website of Patrick Burtchaell, built with Assemble",
   "url": "http://pburtchaell.com/",
   "homepage": "http://pburtchaell.com/",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/pburtchaell/site-assemble.git"
+    "url": "git://github.com/pburtchaell/site.git"
   },
   "license": {
     "type": "MIT",
