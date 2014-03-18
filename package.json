@@ -32,6 +32,8 @@
     "assemble-contrib-sitemap": "latest",
     "assemble-related-pages": "latest",
     "assemble-markdown-data": "latest",
+    "assemble-contrib-toc": "latest",
+    "assemble-contrib-wordcount": "latest",
     "helper-compose": "latest",
     "handlebars-helper-moment": "latest",
     "grunt-s3": "latest",
