@@ -1,0 +1,43 @@
+language: node_js
+node_js:
+  - "0.11"
+  
+# Install Grunt and Bower CLI.
+before_install:
+  - npm install -g grunt-cli bower
+  
+# Install Bower packages.
+install: 
+  - bower install
+
+# Build everything.
+script: 
+  - grunt build
+
+# Deploy from the master branch or any other branch that 
+# is prefixed with deploy-.
+branches:
+  only:
+    - master
+    - /^deploy-.*$/
+
+# S3 Deployment tasks
+# 1. Deploy to staging bucket from staging branch
+# 2. Deply to production bucket from production branch
+deploy:
+  - provider: s3
+    access_key_id: ""
+    secret_access_key: ""
+    on:
+      branch: deploy-staging
+      tags: true
+    local-dir: dist/production
+    bucket: "staging.pburtchaell.com"
+  - provider: s3
+    access_key_id: ""
+    secret_access_key: ""
+    on:
+      branch: deploy-production
+      tags: true
+    local-dir: dist/production
+    bucket: "pburtchaell.com"
