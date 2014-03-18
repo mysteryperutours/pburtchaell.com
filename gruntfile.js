@@ -15,9 +15,9 @@ module.exports = function(grunt) {
   
 	grunt.initConfig({ 
  
-		pkg:grunt.file.readJSON('package.json'),
+    pkg:grunt.file.readJSON('package.json'),
     aws:grunt.file.readJSON('aws.json'),
-		site:grunt.file.readYAML('src/data/site.yml'),
+    site:grunt.file.readYAML('src/data/site.yml'),
         
     /*
      * clean <% site.build %> & <% site.release %>
@@ -57,9 +57,9 @@ module.exports = function(grunt) {
       }
     },
         
-		/*
-		 * compile SCSS (LESS) to CSS
-		 */
+    /*
+     * compile SCSS (LESS) to CSS
+     */
     less: {
       options: {
         banner: main_banner,
@@ -74,22 +74,22 @@ module.exports = function(grunt) {
       }
     },
 			
-		/*
-		 * spell check all published content on blog
-		 */
-		spell: {
+    /*
+    * spell check all published content on blog
+    */
+    spell: {
       blog: {
-		    src: ['<%= site.content %>/blog/published/*.{md,hbs}'],
+        src: ['<%= site.content %>/blog/published/*.{md,hbs}'],
         options: {
           lang: 'en',
           ignore: ['cliches', 'double negatives']
         }
-			}
+      }
     },
 		
-		/*
-		 * minify JS
-		 */
+    /*
+     * minify JS
+     */
     uglify: {
       options: {
         banner: main_banner
@@ -172,13 +172,11 @@ module.exports = function(grunt) {
 				ext: '<%= site.extension %>',
 			},
 			
-			// assemble general pages
-			site: {
+      // assemble general pages
+      site: {
         options: {	
           plugins: ['assemble-contrib-permalinks'],
-          permalinks: {
-            structure: ':shortName/index.html'
-          },
+          permalinks: { structure: ':shortName/index.html' },
           sitemap: {
             homepage: '<%= site.url %>',
             changefreq: 'weekly',
@@ -186,35 +184,35 @@ module.exports = function(grunt) {
             robot: true
           },
           compose: { cwd: '<%= site.content %>/blog/', sep: '<!-- /article -->' },
-				},
-                
-				files: [ 
-					{
-						src: ['<%= site.content %>/*.{hbs,md}'],
-						dest: '<%= site.development %>/'
-					}
-				]
-			},
-			
-			// assemble blog
-			blog: {
-				options: {	
-          plugins: ['assemble-contrib-permalinks'],
-          permalinks: { structure: ':pubYear/:shortName/index.html' },
-          layout: 'layout-blog.hbs',
-          compose: { cwd: '<%= site.content %>/blog/', sep: '<!-- /article -->' },
         },
-				files: [ 
-					{
-          src: ['<%= site.content %>/blog/published/**/*.{hbs,md}'],
-				  dest: '<%= site.development %>/blog/'
-					},
+        files: [ 
           {
-				  src: ['<%= site.content %>/blog/index.hbs'],
-				  dest: '<%= site.development %>/blog/index.html'
-					}
-				]
-			},
+          src: ['<%= site.content %>/*.{hbs,md}'],
+          dest: '<%= site.development %>/'
+          }
+        ]
+      },
+			
+      // assemble blog
+      blog: {
+        options: {	
+          plugins: ['assemble-contrib-permalinks','assemble-contrib-wordcount'],
+          layout: 'layout-blog.hbs',
+          permalinks: { structure: ':pubYear/:shortName/index.html' },
+          compose: { cwd: '<%= site.content %>/blog/', sep: '<!-- /article -->' },
+          wordcount: { selector: '.article-content' },
+        },
+        files: [ 
+          {
+          src: ['<%= site.content %>/blog/published/**/*.{hbs,md}'],
+          dest: '<%= site.development %>/blog/'
+          },
+          {
+          src: ['<%= site.content %>/blog/index.hbs'],
+          dest: '<%= site.development %>/blog/index.html'
+          }
+        ]
+      },
       
       // assemble portfolio
       portfolio: {   
@@ -248,7 +246,7 @@ module.exports = function(grunt) {
       options: {
         commentStyle: 'u',
         content: {
-          'team': [ 
+          'author': [ 
             { 'Web developer & designer': '<%= pkg.author.name %>', 'site': '<%= pkg.author.url %>', 'twitter': '<%= pkg.author.twitter %>' },
           ],
           'thanks': [
@@ -455,9 +453,9 @@ module.exports = function(grunt) {
 	]);
   
   grunt.task.registerTask('build2', function(env) {
-    var site = grunt.config('site'), 
-    env = env || 'development';
-    site.url = (env === 'development') ? 'localhost:8000' : 'http://pburtchaell.com';
+    //var site = grunt.config('site'), 
+    //env = env || 'development';
+    grunt.config.set('site.url', (env === 'development') ? 'localhost:8000' : 'http://pburtchaell.com');
     grunt.task.run(
     'clean:build',
     'assemble',
