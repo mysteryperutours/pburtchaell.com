@@ -67,12 +67,12 @@
   stroke: darken(@video, 15%);
 }
 
-@import   '../pages/kickstarter';
+@import '../pages/kickstarter';
 
 /*
  * Page navigation
  */
-@import 	'../partial/navigation';
+@import '../partial/navigation';
 
 
 /* 
@@ -102,18 +102,14 @@
   line-height: 1.0;
   padding: 5px;
   font-family: @type-secondary;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-       -o-user-select: none;
-          user-select: none;
+  .user-select();
   .transition(1s);
   &:hover {
     background: @red;
     color: @white;
     border-color: fadeOut(@white,100%);
     svg {
-      fill: darken(@design, 25%);
+      fill: @white;
     }
   }
 }
@@ -122,6 +118,7 @@
   top: -1px;
   svg {
    .animation(pulse, 3s, infinite);
+    .transition();
   }
 }
 .page-footer-legal {

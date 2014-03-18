@@ -2,23 +2,22 @@
 {{> header-inc}}
 <main role=main id=main>
   <article itemscope itemtype=http://data-vocabulary.org/Article class="article page">  
-      
     <header class=article-header>
       <h1 class=article-title itemprop=name>{{page.title}}</h1>
       <time>{{pubDate}}</time>
       <div class=article-reading-time>
-        <span class=label-wordcount> words</span>
-        <span class=label-reading-time></span>
+        <small>
+          <span class=label-wordcount> words</span>
+          <span class=label-reading-time> read</span>
+        </small>
       </div>
     </header><!-- /article-header -->
-		
     <section class="article-content hyphenate">
       {{#markdown}}
         {{> body }}
       {{/markdown ~}}
       <script>Echo.init();</script>
     </section><!-- /article-content -->
-			
     <footer class=article-footer>
       <hr class=large>
       <div class=article-author-image>
@@ -29,29 +28,15 @@
           <span class=tag>Written By</span>
           <h6 intemprop=name>{{author.nameFirst}} {{author.nameLast}}</h6>
           <p class=article-author-bio><br>
-            <span itemprop=affiliation>Freelance</span><span itemprop=title>designer</span>
+            <span itemprop=affiliation>Freelance</span> <span itemprop=title>designer</span>
             <span itemscope itemprop=address itemtype=http://data-vocabulary.org/Address>
               from <span itemprop=locality>New Orleans</span> with a passion for creating beautiful means of communication in a digital world.
             </span> 
           </p><br>
         </small>
       </div><!-- /article-author -->
-      <div class=article-details>
-        <hr class=small>
-        <small><em><a href={{author.twitter}} class=line itemprop=url>Twitter</a> and <a href={{author.dribbble}} class="line dribbble" itemprop=url>Dribbble</a></em></small>
-      </div><!-- /article detials -->
       <hr class=large>			
     </footer><!-- /article-footer -->
-
-    <aside class=article-aside>
-      <small>
-        <span class=share-label>Share this article</span>
-        <a class="share twitter" target=_blank href="https://twitter.com/intent/tweet?text={{page.title}}&url={{site.url}}/blog/{{pubYear}}/{{shortName}}&via=pburtchaell">Twitter</a>
-        <a class="share facebook" target=_blank href="http://www.facebook.com/sharer/sharer.php?u={{site.url}}/blog/{{pubYear}}/{{shortName}}"n>Facebook</a> 
-        <a class="share google" target=_blank href="https://plus.google.com/share?url={{site.url}}/blog/{{pubYear}}/{{shortName}}">Google+</a>
-      </small>
-    </aside><!-- /article-aside -->
-		
   </article><!-- /.article.page -->
 </main><!-- /#main -->
 {{> footer-inc}}
