@@ -1,6 +1,6 @@
 # Patrick Burtchaell Site
  
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Build Status](https://travis-ci.org/pburtchaell/site.png?branch=master)](https://travis-ci.org/pburtchaell/site)
 
 Behold, source files of my static website, generated using [Grunt][1] and [Assemble][2], and hosted on Amazon S3 storage + Cloudfront CDN. My website is open-source so one can observe and learn about the processes I use. You can find more detialed documentation in the [colophon][3] and my [code styleguide][4].
 
@@ -12,6 +12,8 @@ Behold, source files of my static website, generated using [Grunt][1] and [Assem
 _[-Patrick](http://twitter.com/pburtchaell)_
 
 Built with love in New Orleans
+
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 [Source files licensed MIT](http://pb.mit-license.org/).
 All content [copyright 2014 Patrick Burtchaell](http://pburtchaell.com/legal/)
