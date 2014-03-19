@@ -16,7 +16,6 @@ module.exports = function(grunt) {
 	grunt.initConfig({ 
  
     pkg:grunt.file.readJSON('package.json'),
-    aws:grunt.file.readJSON('aws.json'),
     site:grunt.file.readYAML('src/data/site.yml'),
         
     /*
