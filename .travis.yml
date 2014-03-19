@@ -8,6 +8,7 @@ before_install:
   
 # Install Bower packages.
 install: 
+  - npm install
   - bower install
 
 # Build everything.
