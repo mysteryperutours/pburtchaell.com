@@ -151,30 +151,31 @@ module.exports = function(grunt) {
       }
     },
 		
-		/* 
-		 * assemble the site
-		 */	
-		assemble: {
+    /* 
+     * assemble the site
+     */	
+    assemble: {
 		
-			options: {
-				flatten: true,
-				data: ['<%= site.source %>/data/*.{json,yml}', 'package.json'],
-				assets: '<%= site.development %>/assets',
-				helpers: ['helper-compose','handlebars-helper-moment','<%= site.source %>/helpers/*.js'],
-				partials: [
+      options: {
+        flatten: true,
+        data: ['<%= site.source %>/data/*.{json,yml}', 'package.json'],
+        assets: '<%= site.development %>/assets',
+        helpers: ['handlebars-helper-compose','handlebars-helper-moment','<%= site.source %>/helpers/*.js'],
+        partials: [
           '<%= site.templates %>/partials/**/*.{hbs,md}',
           '<%= site.templates %>/snippets/**/*.{hbs,md}'  
         ],
-				plugins: ['assemble-contrib-permalinks','assemble-contrib-sitemap','assemble-related-pages'],
-				layoutdir: '<%= site.templates %>/layouts',
-				layout: 'default.hbs',
-				ext: '<%= site.extension %>',
-			},
+        plugins: ['assemble-contrib-permalinks','assemble-contrib-sitemap','assemble-related-pages'],
+        layoutdir: '<%= site.templates %>/layouts',
+        layout: 'default.hbs',
+        ext: '<%= site.extension %>',
+      },
 			
       // assemble general pages
       site: {
         options: {	
           plugins: ['assemble-contrib-permalinks'],
+          helpers: ['handlebars-helper-compose'],
           permalinks: { structure: ':shortName/index.html' },
           sitemap: {
             homepage: '<%= site.url %>',
@@ -182,7 +183,10 @@ module.exports = function(grunt) {
             priority: '0.8',
             robot: true
           },
-          compose: { cwd: '<%= site.content %>/blog/', sep: '<!-- /article -->' },
+          compose: { 
+            cwd: '<%= site.content %>/blog/', 
+            sep: '<!-- /article -->' 
+          },
         },
         files: [ 
           {
@@ -198,7 +202,10 @@ module.exports = function(grunt) {
           plugins: ['assemble-contrib-permalinks','assemble-contrib-wordcount'],
           layout: 'layout-blog.hbs',
           permalinks: { structure: ':pubYear/:shortName/index.html' },
-          compose: { cwd: '<%= site.content %>/blog/', sep: '<!-- /article -->' },
+          compose: { 
+            cwd: '<%= site.content %>/blog/', 
+            sep: '<!-- /article -->' 
+          },
           wordcount: { selector: '.article-content' },
         },
         files: [ 
@@ -465,7 +472,7 @@ module.exports = function(grunt) {
     'compress:javascripts',
     'compress:fonts',
     'compress:content',
-    'sitemap',
+    //'sitemap',
     'humans_txt',
     'robotstxt',
     'congrats'

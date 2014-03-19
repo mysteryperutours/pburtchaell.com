@@ -9,7 +9,7 @@ layout: none
 <main role=main id=main>
   <section class=article-feed>
     <h4 class=centered>2014</h4>
-      {{#compose 'published/2014/*.hbs'}}
+      {{#compose  cwd='./tpl/pages/blog/' src='published/2014/*.hbs'}}
         <article class=article-item>
           <header class=article-item-header>
             <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
@@ -20,7 +20,7 @@ layout: none
         </article>
       {{/compose ~}}
       <h4 class=centered>2013</h4>
-      {{#compose 'published/2013/*.hbs'}}
+      {{#compose cwd='./tpl/pages/blog/' src='published/2013/*.hbs'}}
         <article class=article-item>
           <header class=article-item-header>
             <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
