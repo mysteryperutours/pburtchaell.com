@@ -43,6 +43,7 @@
     "grunt-autoprefixer": "latest",
     "grunt-recess": "latest",
     "load-grunt-tasks": "latest",
-    "grunt-concurrent": "latest"
+    "grunt-concurrent": "latest",
+    "handlebars-helper-compose": "latest"
   }
 }
