@@ -17,11 +17,8 @@ p {
       -ms-hyphens: auto;
        -o-hyphens: auto;
           hyphens: auto;
-
   
-  aside {
-		margin: 1em;
-	}
+  aside { margin: 1em; }
   
   code {
     background: fadeOut(@dark-grey, 95%);
@@ -111,21 +108,21 @@ time {
 /* deafult horizontal rule styles */
 hr {
   
-	height: 0.125rem;
-	background: @light-grey;
-	border: none;
-	left: 50%;
+  height: 0.125rem;
+  background: @light-grey;
+  border: none;
+  left: 50%;
   margin: 0 0 0 -@base/2;
   width: @base;
 	
-	&.small {
-		margin: 0;
-	}
-	
-	&.large {
-		width: round(@column*14, 2);
-		margin: @base auto;
-	}
+  &.small {
+    margin: 0;
+  }
+
+  &.large {
+    width: round(@column*14, 2);
+    margin: @base auto;
+  }
 	
 }
 
@@ -161,12 +158,12 @@ a.line:visited {
 /* default abbreviations styles */
 abbr,
 acronym {
-	text-transform: uppercase;
-	border-bottom: 1px dashed;
-	cursor: help;
+  text-transform: uppercase;
+  border-bottom: 1px dashed;
+  cursor: help;
 }
 abbr {
-	text-transform: none;
+text-transform: none;
 }
 
 
@@ -175,7 +172,7 @@ blockquote {
   font-family: @type-italic;
   margin: 2rem auto;
   padding: 0 0 0 1rem;
-	border-left: 0.25rem solid;
+  border-left: 0.25rem solid;
   opacity: 0.65;
   max-width: 650px;
   strong {
@@ -189,7 +186,7 @@ cite {
   display: block;
   text-align: right;
   font-family: 'opensans-italic', sans-serif;
-  
+
   &:before {
     content: "\2014 \0020";
   }
@@ -200,7 +197,7 @@ cite {
 /* default list styles */
 ul, ol {
   
-	margin: 1rem;
+  margin: 1rem;
   
   &.reset li { 
     list-style: none; 
