@@ -44,8 +44,8 @@ Limited to these three colors (in RGB) from my brand, I use color sparingly:
 
 I use the following values for typography:
 - Dark Grey: `rgb(70,72,74)`
-- <span style="color:rgb(232,235,237);background:rgba(70,72,74,0.6);border-radius:2px;padding:1px;">Light Grey</span>: `rgb(232,235,237)`
-- <span style="color:rgb(0,169,198);">Links</span>: `rgb(0,169,198)` (a slightly darker blue)
+- <span style="color:rgb(232,235,237);background:rgba(70,72,74,0.6);padding:3px;">Light Grey</span>: `rgb(232,235,237)`
+- <span style="color:rgb(0,169,198);">Links</span>: `rgb(0,169,198)`
 
 The white background of my site is `rgb(248,248,248)`.
 
