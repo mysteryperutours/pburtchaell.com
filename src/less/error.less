@@ -8,15 +8,26 @@
   position:  absolute;
   color: @white;
   text-align: center;
-  background: @design;
   display: flex;
+  background: @design url(../img/site/404.gif) center center no-repeat;
+  background-size: cover;
   a {
-    color: fadeOut(@white,50%) !important;
+    color: @design !important;
+    border-bottom: 2px solid @design  !important;
+    &:hover { padding-bottom: 4px; }
+  }
+  span {
+   font-family: @type-bold; 
   }
 }
 
 .error-intro {
   align-self: center;
   flex: 1;
+  color: @design;
   text-align: center !important;
+}
+
+.error-credits {
+  
 }
