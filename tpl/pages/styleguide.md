@@ -63,7 +63,7 @@ When using HTML5 elements, always follow the [W3 Specifications][W3-HTML-Spec]. 
 ### General HTML Syntax
 - In order to guarantee that code renders the same in any environment, use soft tabs with two spaces.
 - Nested elements should be indented once (two spaces) for each level.
-- Never use quotes on attributes that do not have multiple values, e.g. `<a class=main-link href=http://example.com/ rel=external></a>`. Remember, however, that you cannot have a space, e.g.,`<div class=content page>` would be invalid; only `<div class="content page">` would be correct.
+- Never use quotes on attributes that do not have multiple values, e.g. `<a href=http://apple.com/ rel=external>`. Remember, however, that you cannot have a space, e.g.,`<div class=content page>` would be invalid; only `<div class="content page">` would be correct.
 - When an attribute requires it, use double quotes and never single quotes.
 - Use lowercase and dashes (not underscore or camelCase).
 - Do not include trailing slash in self-closing elements.
