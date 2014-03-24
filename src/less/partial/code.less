@@ -8,20 +8,22 @@ code {
   font-weight: 400;
 }
 
-li code { 
+li code,
+p code { 
   padding: 2px;
+  margin: 0 !important;
   color: fadeOut(@dark-grey, 20%);
   background: fadeOut(@dark-grey, 97%);
 }
 
 pre code {
   display: block; 
-	padding: 0.5rem;
-	margin: 1.25rem 0;
+  padding: 0.5rem;
+  margin: 1.25rem 0;
   font-size: 1rem;
   color: fadeOut(@dark-grey, 20%);
   border-left: 3px solid @light-grey;
-	background: fadeOut(@dark-grey, 97%);
+  background: fadeOut(@dark-grey, 97%);
 }
 
 pre .comment,
