@@ -2,28 +2,26 @@
     $NAVIGATION
 \*------------------------------------*/
 .nav-collapse ul {	
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
   background: @white;
 }
 
 .nav-item,
 .name {
-	padding: 0 @base*2 @base/6 0;
+  padding: 0 @base*2 @base/6 0;
   font-family: @type-bold;
   margin: 0 !important;
   list-style: none;
-	text-transform: uppercase;
+  text-transform: uppercase;
   text-align: right;
   opacity: 0.9;
 }
 
-.nav-item {
-  &:nth-of-type(5) {
-    padding-bottom: @base/3;  
-  }
+.nav-item { 
+  &:nth-of-type(5) { padding-bottom: @base/3; } 
 }
 
 .name { 
@@ -37,32 +35,31 @@
 }
 
 .js .nav-collapse {
-	clip: rect(0 0 0 0);
-	max-height: 0;
-	position: fixed;
-	display: block;
-	overflow: hidden;
-	zoom: 1;
-	z-index: 999;
-  border-bottom: 1px solid @light-grey;
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: fixed;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+  z-index: 999;
+  
 }
 
 .nav-collapse.opened {
-	max-height: 9999px;
+  max-height: 9999px;
 }
 
 .nav-toggle {
-	display: block;
+  display: block;
   position: relative;
   top: 0;
   left: 100%;
   z-index: 999;
   margin-left: -@base*3;
   background: @white;
-	height: @base*3;
-	width: @base*3;
+  height: @base*3;
+  width: @base*3;
   font-size: 0;
-
   &:before {
     content: "";
     position: absolute;
@@ -79,59 +76,48 @@
 
 // desktop styles
 @media screen and (min-width: 40em) {
-	
+
   .js { 
     .nav-collapse {
-		  position: relative;
+      position: relative;
       border-bottom: none;
       &.closed { max-height: none; }
     }
   }
-	.nav-toggle { display: none; }
-  .name { display: none; }
   
-	// navigation container <nav class=nav-collapse></nav>
-	.nav-collapse {
-		height: auto;
-		top: 20px;
-		max-width: 720px;
-		margin: 0 auto;
+  .nav-toggle { display: none; }
+  .name { display: none; }
+  // navigation container <nav class=nav-collapse></nav>
+  .nav-collapse {
+    height: auto;
+    top: 20px;
+    max-width: 720px;
+    margin: 0 auto;
     padding: 0 round(@column);
-	}
-		
-		//navigation items <ul class=nav-items></ul>
-		.nav-items {
-    
-      margin-top: 5px !important;
-			float: left;
-		
-			&.left {
-				width: 33.33%;
-				margin: 0 33.33% 0 0;
-        padding: 0 0 5px 0;
-			}
-				
-			
-			&.right {
-			
-				width: 33.33%;
-			
-				.nav-item {
-					float: right;		
-          padding: 5px 0 0 0;
-				}
-			
-			}
-			
-		}
-			
-    // navigation item <li class=nav-item>
-    .nav-item {
-      float: left;
-      width: round(@column*6);
-      margin: 0 !important;
-      background: none;
-      list-style: none;
+  }
+  //navigation items <ul class=nav-items></ul>
+  .nav-items {
+    margin-top: 5px !important;
+    float: left;
+    &.left {
+      width: 33.33%;
+      margin: 0 33.33% 0 0;
+      padding: 0 0 5px 0;
     }
-
+    &.right {
+      width: 33.33%;
+      .nav-item {
+        float: right;		
+        padding: 5px 0 0 0;
+      }
+    }
+  }			
+  // navigation item <li class=nav-item>
+  .nav-item {
+    float: left;
+    width: round(@column*6);
+    margin: 0 !important;
+    background: none;
+    list-style: none;
+  }
 }
