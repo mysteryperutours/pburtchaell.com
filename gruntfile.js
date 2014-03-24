@@ -69,6 +69,7 @@ module.exports = function(grunt) {
         files: {
           '<%= site.development %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less',
           '<%= site.development %>/assets/css/portfolio.css' : '<%= site.source %>/less/portfolio.less',
+          '<%= site.development %>/assets/css/error.css' : '<%= site.source %>/less/error.less',
         }
       }
     },
