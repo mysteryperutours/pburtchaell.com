@@ -1,6 +1,8 @@
 node_modules
 bower_components
 
+.DS_Store
+
 # PRODUCTION FOLDERS 
 dist/
 tmp/
