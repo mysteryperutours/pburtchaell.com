@@ -17,13 +17,18 @@ button,
   
   &:hover { outline: 0; opacity: 0.5; }
   &:active { .transform(translateY(5px)); }
+  &.no-hover {
+    cursor: auto;
+    &:hover { opacity: 1; }
+    &:active { .transform(none); }
+  }
   
   /* Use .btn-* for different appearances */
   &.btn-green { 
     background: @green; 
   }
   &.btn-red { 
-    background: @red; 
+    background: fadeOut(@red,25%);
   }
   &.btn-blue { 
     background: @blue; 
