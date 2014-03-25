@@ -1,0 +1,13 @@
+.wrapper {
+  margin: 0 auto;
+  padding: @column;
+  &:before,
+  &:after {
+    content: ''; 
+    display: table; 
+  }
+  &:after { clear: both; }  
+}
+
+@media screen and (min-width: 117em) { .wrapper { max-width: 900px; } }
+@media screen and (min-width: 720px) { .wrapper { max-width: 800px; } }
