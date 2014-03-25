@@ -211,23 +211,24 @@ img {
  * Crypto-support section
  */
 .support {
-  background: @dark-grey;
+  //background: @dark-grey;
   padding: @base/2 @base @base*2 @base;
-  margin-top: @base*2;
-  color: @white;  
+  margin: @base*2 0;
+  //color: @white;  
 }
 .coin {
   
   // colors
   @color-dogecoin: rgb(239, 211, 0);
   @color-bitcoin: @blue;
-
+  max-width: 200px;
+  
+  overflow-x: scroll;
   padding: @base/5;
   margin: 0 auto;
   text-align: center;
-  overflow-x: scroll;
-  transition: 1s;
-  max-width: 200px;
+  
+  .transition();
   
   &.bit { 
     border: 2px solid;

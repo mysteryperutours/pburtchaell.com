@@ -1,53 +1,31 @@
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-button {
-
-    margin: @base-margin/2 auto @base-margin auto;
-	clear: left;
-    line-height: 35px;
-    text-decoration: none;
-    border: 3px solid fadeOut(@dark-grey, 70%);
-	background: fadeOut(@dark-grey, 50%);
-	color: lighten(@video, 25%);
-	font-family: 'opensans-italic';
-	transition: 0.5s ease;
-	
-	max-width	: 	100%  	!important;
-	min-width	: 	0 		!important;
-	max-height	: 	40px 	!important;
-	min-height	: 	40px 	!important;
-	width		: 	100% 	!important;
-	height		: 	100% 	!important;
-	
-    &:hover {
-        outline: 0;
-		border: 3px solid darken(@dark-grey, 5%);
-		background: fadeOut(@dark-grey, 10%);
-    }
-    
-    &:active {
-        transform: translateY(2px);
-    }
-    
-    // get rid of the inner focus border on Firefox...
-    ::-moz-focus-inner{
-        padding: 0;
-        border: 0;
-    }
-    
-}
-
-button[disabled] {
-
-	&:hover,
-	&:focus,
-	&:active {
-		border: none;
-		background: noness;
-		opacity: 0.40;
-		cursor: not-allowed;
-		box-shadow: none;
-	}
-	
+button,
+.btn {
+  
+  /* Get rid of the annoying border in Firefox */
+  ::-moz-focus-inner{ padding: 0; border: 0; }
+  
+  display: block;
+  max-width: 500px;
+  margin: @base/2 auto @base auto;
+  padding: @base/2;
+  text-align: center;
+  background: fadeOut(@dark-grey, 50%);
+  
+  &:hover { outline: 0; opacity: 0.5; }
+  &:active { .transform(translateY(5px)); }
+  
+  /* Use .btn-* for different appearances */
+  &.btn-green { 
+    background: @green; 
+  }
+  &.btn-red { 
+    background: @red; 
+  }
+  &.btn-blue { 
+    background: @blue; 
+  }
+  
 }
