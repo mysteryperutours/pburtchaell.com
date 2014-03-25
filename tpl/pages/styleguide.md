@@ -96,17 +96,17 @@ If an HTML document has complex markup and spacing will help a developer navigat
 [LESS][LESS] and [Sass][Sass] are two CSS preprocessors that add variables, nesting, functions, and mixins to your stylesheets. Both are equally as powerful as the other. Always write Sass with only on the first "S" capitalized.
 
 #### Variables
-Write SCSS variables just as you would a CSS declaration. 
+Write variables just as you would a CSS declaration. 
 ```scss
 @base-padding: 20px;
 @base-margin: 20px;
 ```
 
 #### Functions
-<span class=warning>Coming soon.</span>
+<span class="btn btn-red no-hover">Documentation in progress</span>
 
 #### Mixins
-<span class=warning>Coming soon.</span>
+<span class="btn btn-red no-hover">Documentation in progress</span>
 
 #### Nesting
 Avoid nesting in LESS and Sass for the sake of it. 
