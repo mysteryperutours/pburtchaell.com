@@ -91,7 +91,6 @@ If an HTML document has complex markup and spacing will help a developer navigat
 </main>
 ```
 
-
 ## LESS and Sass
 [LESS][LESS] and [Sass][Sass] are two CSS preprocessors that add variables, nesting, functions, and mixins to your stylesheets. Both are equally as powerful as the other. Always write Sass with only on the first "S" capitalized.
 
@@ -403,8 +402,6 @@ All other infomation taken from an external source has been cited with a title a
   Want to improve this document? 
   <em>Make a pull-request<a href=https://github.com/pburtchaell/site-assemble/blob/master/tpl/pages/styleguide.md> on Github</a></em>.
 </p>
-
-{{> support}}
 
 [MDO]: http://mdo.github.com/code-guide
 [CSSWizardy]: https://github.com/csswizardry/CSS-Guidelines
