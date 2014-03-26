@@ -2,6 +2,20 @@
     $CODE - github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 \*------------------------------------*/
 
+pre {
+  white-space: pre;
+  word-wrap: normal;
+  overflow: auto;
+  margin: 2rem 0;
+  padding: 0 0 0 1rem;
+  color: fadeOut(@dark-grey, 20%);
+  border-left: 3px solid @light-grey;
+  background: fadeOut(@dark-grey, 97%);
+  &::-webkit-scrollbar { height: 0.5rem;}
+  &::-webkit-scrollbar-track-piece  { border: none; }
+  &::-webkit-scrollbar-thumb:horizontal { background: darken(@light-grey,10%);}
+}
+
 code { 
   font: 1rem Courier, monospace; 
   line-height: 1.6;
@@ -21,9 +35,6 @@ pre code {
   padding: 0.5rem;
   margin: 1.25rem 0;
   font-size: 1rem;
-  color: fadeOut(@dark-grey, 20%);
-  border-left: 3px solid @light-grey;
-  background: fadeOut(@dark-grey, 97%);
 }
 
 pre .comment,
