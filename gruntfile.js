@@ -11,7 +11,9 @@ module.exports = function(grunt) {
   'use strict';
   
   var main_banner = '/*<%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */';
-  var option_expand = true;
+  var option_expand = true,
+      option_devport = 8000,
+      option_devhost = 'localhost';
   
 	grunt.initConfig({ 
  
@@ -67,9 +69,20 @@ module.exports = function(grunt) {
       },
       assets: {
         files: {
-          '<%= site.development %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less',
           '<%= site.development %>/assets/css/portfolio.css' : '<%= site.source %>/less/portfolio.less',
           '<%= site.development %>/assets/css/error.css' : '<%= site.source %>/less/error.less',
+        }
+      },
+      styles: {
+        options: {
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapFilename: '<%= site.development %>/assets/css/styles.css.map',
+          sourceMapURL: 'http://localhost:8000/dist/development/assets/css/styles.css.map',
+          sourceMapRootpath: 'http://localhost:8000'
+        },
+        files: {
+          '<%= site.development %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less' 
         }
       }
     },
@@ -110,7 +123,8 @@ module.exports = function(grunt) {
           ],
           '<%= site.development %>/assets/js/highlight.js' : '<%= site.components %>/vendor/highlight.pack.js',
           '<%= site.development %>/assets/js/hyphenate.js' : '<%= site.source %>/js/hyphenation.js',
-          '<%= site.development %>/assets/js/search.js' : '<%= site.components %>/list.js/dist/list.js'
+          '<%= site.development %>/assets/js/search.js' : '<%= site.components %>/list.js/dist/list.js',
+          '<%= site.development %>/assets/js/work.js' : '<%= site.source %>/js/work.js'
         }
       }
     },
@@ -235,7 +249,7 @@ module.exports = function(grunt) {
           },*/
           {
            src: ['<%= site.content %>/portfolio/index.hbs'],
-           dest: '<%= site.development %>/work/',
+           dest: '<%= site.development %>/portfolio/',
           }
         ]        
       }
@@ -318,13 +332,17 @@ module.exports = function(grunt) {
 		
     /*
     * start local server
-    */			 
+    */		
     connect: {
       dev: {
         options: {
-          port: 8000,
-          open: true,
-          base: '<%= site.development %>/'
+          livereload: option_devport,
+          hostname: option_devhost,
+          port: option_devport,
+          open: {
+            target: 'http://' + option_devhost + ':' + option_devport + '/dist/development'
+          },
+          base: './'
         }
       }
     },
@@ -420,9 +438,9 @@ module.exports = function(grunt) {
     grunt.log.write('Congrats your site has been assembled.').ok();
   });
 	
-	/* 
-	 * tasks
-	 */
+  /* 
+   * tasks
+   */
   grunt.registerTask('deploy-staging', ['s3:staging']); // deploy the site to the dev.pburtchaell.com bucket
   grunt.registerTask('deploy-production', ['s3:production']); // deploy the site to the pburtchaell.com bucket
   grunt.registerTask('default', ['assemble','connect:production']);	
