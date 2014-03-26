@@ -38,6 +38,10 @@
     justify-content: center;
   }
   
+  &.work {
+    background: @green;
+  }
+  
 }
 
 .header-subtitle {
@@ -64,8 +68,7 @@
       box-shadow: 0px 0px 10px 1px rgba(10,10,11,0.2);
     }
     padding: 10px;
-    -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
+    .transform(translateY(10px));
     border: 2px double  @white;
 
   }
@@ -105,12 +108,12 @@
     text-align: center;
     margin: 0.rem 0 1rem 0;
   }
-  a { 
+  /*a { 
     color: @red; 
     background: fadeOut(@red,70%); 
     padding: 2px; 
     &:hover { opacity: 0.75; } 
-  }
+  }*/
 }
 
 section[data=design] { 
@@ -148,4 +151,86 @@ section[data=audio] { background: @audio !important; color: darken(@audio, 25%) 
   background: @dark-grey;
   color: @white;
   .page-footer-legal a { color: @red; border: none; }
+}
+
+.work-full-img {
+  display: flex;
+  height: 45vh;
+  width: 100vw;
+  padding: round(@column);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: @white;
+  .box-sizing();
+  .flex { 
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+.work-availability {
+  width: 100%;
+}
+
+.available-months {
+  margin: 0 auto 2rem auto;
+  padding: 0;
+  width: 12rem + 0.125*24rem;
+  height: 20px;
+  position: relative;
+} 
+
+.month {
+  
+  display: block;
+  list-style: none;
+  font-size: 0;
+  height: 1rem;
+  width: 1rem;
+  line-height: 0;
+  background: @green;
+  float: left;
+  clear: right;
+  margin: 0 0.125rem !important;
+  padding: 0 !important;
+  
+  &[data-available='true'] { 
+    background: @green; 
+    //&:after { color: darken(@green,20%); }
+  }
+  &[data-available='false'] { background: @red; }
+  &[data-available='null'] { background: #edc584; }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    .transition();
+  }
+  
+  &:before {
+    top: 0; left: 0;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 0.125rem;
+    background: none;
+  }
+  
+  &:after {
+    content: attr(data-month);
+    top: 1.25rem;
+    font: 0.75rem @type-secondary;
+    text-transform: uppercase;
+    opacity: 0;
+  }
+  
+  .active,
+  &:hover {
+    cursor: pointer;
+    &:before { background: fadeOut(@dark-grey, 80%); }
+    &:after { opacity: 1; }
+  }
+  
 }
