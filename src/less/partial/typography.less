@@ -80,12 +80,12 @@ small {
 em, i { 
   font-family: @type-italic;
   font-style: normal;
-  strong { 
+  strong,b { 
     font: normal 1rem 'opensans-italic-bold', sans-serif; 
   }
 }
 
-strong, b { 
+strong, b {
   font-family: @type-bold;
   font-style: normal; 
   font-weight: 400;
@@ -104,20 +104,19 @@ time {
 /* deafult horizontal rule styles */
 hr {
   
-  height: 0.125rem;
-  background: @light-grey;
-  border: none;
+  border: 0.125rem solid;
   left: 50%;
   margin: 0 0 0 -@base/2;
   width: @base;
 	
-  &.small {
-    margin: 0;
-  }
+  &.small { margin: 0 }
+  &.ctr { margin: 1rem auto }
+  &.rst { color: @light-grey }
+  &.spc { border-style: dashed }
 
   &.large {
     width: round(@column*14, 2);
-    margin: @base auto;
+    margin: 2rem auto;
   }
 	
 }
