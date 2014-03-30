@@ -28,6 +28,7 @@ This document formally describes methods and standards for developing robust, ea
     1. [General Syntax](#general-html-syntax)
     2. [Doctype Declaration](#doctype-declaration)
     3. [Space](#space)
+    4. [URLs](#urls)
   2. [LESS and Sass](#less-and-sass)
     1. [Variables](#variables)
     2. [Functions](#functions)
@@ -91,14 +92,61 @@ If an HTML document has complex markup and spacing will help a developer navigat
 </main>
 ```
 
+#### URLS
+Use relative URLs and the HTML `<base>` element whenever possible; this will prevent problems if the base URL ever changes during a project's lifespan.
+```html
+<head>
+<base href="http://example.com/"><!-- The base URL -->
+</head>
+
+<body>
+  <a href=about>About</a>
+  <a href=contact>Contact</a>
+</body>
+```
+
 ## LESS and Sass
-[LESS][LESS] and [Sass][Sass] are two CSS preprocessors that add variables, nesting, functions, and mixins to your stylesheets. Both are equally as powerful as the other. Always write Sass with only on the first "S" capitalized.
+[LESS][LESS] and [Sass][Sass] are two CSS preprocessors that add variables, nesting, functions, and mixins to your stylesheets and both are equally as powerful as the other. This document uses LESS syntax for examples, but Sass is very similiar; follow the same styleguide rules for both.
+
+Notes: 
+ - Always write Sass with only on the first "S" capitalized.
+ - LESS is written in uppercase.
 
 #### Variables
-Write variables just as you would a CSS declaration. 
+Write local variables just as you would a CSS declaration, but always include them first. 
 ```scss
-@base-padding: 20px;
-@base-margin: 20px;
+.example {
+  @base: 20px;
+  height: @base;
+  width: @base;
+  margin: @base/2;
+}
+```
+
+Write global variables just as you would a CSS declaration, but optionally include one line break between related variables. It is also helpful to prefix related variables with a common name. 
+
+Remember that variables can also be called before they are declared, e.g., you could use the variable `@color` on line 1 even though it is not declared until line 10.
+
+```scss
+@font-color: #000;
+@font-size: 1rem;
+@font-style: normal;
+
+@font-bold: 'Open Sans Bold', @font-stack;
+@font-italic: 'Open Sans Italic', @font-stack;
+@font-stack: 'Helvetica', 'Arial', sans-serif;
+
+@base-margin: 2rem;
+@base-padding: 1rem;
+@base-border: 0.25rem solid;
+@base-border-radius: 0.125rem;
+```
+
+Lastly, it is a best practice to include all variables in a seperate stylesheet titled `ui-variables.less` and import that stylesheet. 
+
+Do not include the `.less` file extension.
+```scss
+@import 'partials/ui-variables';
 ```
 
 #### Functions
@@ -114,10 +162,21 @@ Avoid nesting in LESS and Sass for the sake of it.
 .container {
   ul {
     li {
-      ...
+      a {
+        &:hover {
+        }
+      }
     }
   }
 }
+```
+
+While it might make sense within the LESS document to write selectors this way, it will result in inefficient CSS.
+```css
+.container { ... }
+.container ul { ... }
+.container ul li { ... }
+.container ul li a:hover { ... }
 ```
 
 ## CSS
@@ -229,7 +288,13 @@ For a complete list of properties and their order, use [Recess][resource-recess]
 In the case where a rule includes on one declaration, remove line breaks for readability and faster editing. Include one space after the opening bracket and one before the closing bracket.
 ```css
 .class-1 { opacity: 1; }
-.class-2 { opacity: 1; }
+.class-2 { opacity: 0; }
+```
+
+Optionally, you could drop the semicolon, but this can be error-prone and is not suggested.
+```css
+.class-1 { opacity: 1 }
+.class-2 { opacity: 0 }
 ```
 
 #### Color Properties and Values
