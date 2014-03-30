@@ -6,10 +6,10 @@
 <meta charset=UTF-8>
 <meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
 <meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">	
-<link rel=stylesheet href="{{#if work}}{{assets}}/css/portfolio.css{{else ~}}{{assets}}/css/styles.css{{/if ~}}">
+<link rel=stylesheet href="{{#if work}}{{site.url}}/assets/css/portfolio.css{{else ~}}{{site.url}}/assets/css/styles.css{{/if ~}}">
 <!--[if lte IE 8]><script src="{{assets}}/js/ie.js"></script><![endif]-->
-<script src={{assets}}/js/components.js></script>	
-{{#if highlighting}}<script src={{assets}}/js/highlight.js></script><script>hljs.initHighlightingOnLoad();</script>{{/if}}
+<script src=assets/js/components.js></script>	
+{{#if highlighting}}<script src={{site.url}}/assets/js/highlight.js></script><script>hljs.initHighlightingOnLoad();</script>{{/if}}
 <meta name=keywords content="{{#if page.keywords}}{{page.keywords}},Patrick Burtchaell,web design,graphic design,css,html{{else~}}{{site.keywords}}{{/if ~}}">
 <meta name=author content="{{author.nameFirst}} {{author.nameLast}}">
 <meta name=google-site-verification content=7RrfJovl477GocUkq4QOPIybas99RN2zebN46jgN_Lo>
