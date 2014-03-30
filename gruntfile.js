@@ -109,22 +109,36 @@ module.exports = function(grunt) {
       },
       assets: {
         files: {
+          
           '<%= site.development %>/assets/js/components.js' : [
             '<%= site.components %>/responsive-nav/client/dist/responsive-nav.js',
             '<%= site.components %>/headroom.js/dist/headroom.js',
-            '<%= site.components %>/vendor/echo.js'
-            //'<%= site.components %>/WOW/dist/wow.js'
-            //'<%= site.source %>/js/hyphenation.js'
+            '<%= site.source %>/vendor/echo.js' // not on Bower
           ],
+          
           '<%= site.development %>/assets/js/ie.js' : [
             '<%= site.components %>/html5shiv/dist/html5shiv.js',
             '<%= site.components %>/REM-unit-polyfill/js/rem.js',
             '<%= site.components %>/respond/src/respond.js'
           ],
-          '<%= site.development %>/assets/js/highlight.js' : '<%= site.components %>/vendor/highlight.pack.js',
-          '<%= site.development %>/assets/js/hyphenate.js' : '<%= site.source %>/js/hyphenation.js',
-          '<%= site.development %>/assets/js/search.js' : '<%= site.components %>/list.js/dist/list.js',
-          '<%= site.development %>/assets/js/work.js' : '<%= site.source %>/js/work.js'
+          
+          '<%= site.development %>/assets/js/highlight.js' : '<%= site.source  %>/js/vendor/highlight.js',
+          '<%= site.development %>/assets/js/hyphenate.js' : '<%= site.source %>/js/vendor/hyphenate.js', 
+          
+          /* 
+           * work page JS
+           */
+          //'<%= site.development %>/assets/js/min.js' : '<%= site.source %>/js/work/min.js', BOWER-todo
+          '<%= site.development %>/assets/js/work.js' : [
+            //'<%= site.source %>/js/work/fit.js', BOWER-todo
+            '<%= site.source %>/js/work/main.js',
+            //'<%= site.source %>/js/work/pace.js', BOWER-todo
+          ],
+          '<%= site.development %>/assets/js/skrollr.js' : [
+            //'<%= site.source %>/js/work/skrollr.min.js', BOWER-todo
+            //'<%= site.source %>/js/work/skrollr.menu.min.js' BOWER-todo
+          ]  
+          
         }
       }
     },
@@ -336,7 +350,7 @@ module.exports = function(grunt) {
     connect: {
       dev: {
         options: {
-          livereload: option_devport,
+          //livereload: option_devport,
           hostname: option_devhost,
           port: option_devport,
           open: {
