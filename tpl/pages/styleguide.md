@@ -102,10 +102,10 @@ Write variables just as you would a CSS declaration.
 ```
 
 #### Functions
-<span class="btn btn-red no-hover">Documentation in progress</span>
+<span class="btn btn-red btn-border no-hover">Documentation in progress</span>
 
 #### Mixins
-<span class="btn btn-red no-hover">Documentation in progress</span>
+<span class="btn btn-red btn-border no-hover">Documentation in progress</span>
 
 #### Nesting
 Avoid nesting in LESS and Sass for the sake of it. 
