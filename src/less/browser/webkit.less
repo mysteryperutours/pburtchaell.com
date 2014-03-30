@@ -1,0 +1,13 @@
+::selection { 
+  background-color: @dark-grey; 
+  color: @white; 
+}
+::-webkit-scrollbar { 
+  width: 12px;
+  background: @white;
+}
+::-webkit-scrollbar-track-piece  { border-left: 1px solid @light-grey; }
+::-webkit-scrollbar-thumb:vertical { 
+  background: darken(@light-grey,5%); 
+  &:hover { background: @dark-grey; } 
+}
