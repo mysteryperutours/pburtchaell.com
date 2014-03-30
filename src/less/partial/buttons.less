@@ -4,34 +4,38 @@
 button,
 .btn {
   
-  /* Get rid of the annoying border in Firefox */
-  ::-moz-focus-inner{ padding: 0; border: 0; }
-  
   display: block;
+  width: 100%;
   max-width: 500px;
-  margin: @base/2 auto @base auto;
-  padding: @base/2;
+  margin: 1rem auto;
+  padding: 0.75rem;
   text-align: center;
-  background: fadeOut(@dark-grey, 50%);
+  background: @light-grey;
   cursor: pointer;
+  .box-sizing();
+  .transition(0.25s);
   
-  &:hover { outline: 0; opacity: 0.5; }
-  &:active { .transform(translateY(5px)); }
+  &:hover { 
+    outline: 0; 
+    opacity: 0.75; 
+  }
   &.no-hover {
     cursor: auto;
     &:hover { opacity: 1; }
-    &:active { .transform(none); }
   }
   
-  /* Use .btn-* for different appearances */
-  &.btn-green { 
-    background: @green; 
-  }
-  &.btn-red { 
-    background: fadeOut(@red,25%);
-  }
-  &.btn-blue { 
-    background: fadeOut(@blue,50%); 
-  }
-  
+}
+
+/* Use .btn-* for different appearances */
+&.btn-green { background: @green; }
+&.btn-red { background: @red; }
+&.btn-blue { background: @blue; }
+&.btn-white { background: @white; }
+&.btn-border {
+  background: none;
+  border: 0.2rem solid;
+  &.btn-green { color: @green; }
+  &.btn-red { color: @red; }
+  &.btn-blue { color: @blue; }
+  &.btn-white { color: @white; }
 }
