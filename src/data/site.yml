@@ -12,12 +12,12 @@ components   : ./bower_components
 
 # SITE URL
 #url: http://pburtchaell.com
-#url: http://localhost:8000
+url: http://localhost:8000/dist/development
 #url: http://staging.pburtchaell.com.s3-website-us-east-1.amazonaws.com/
 
 # GENERAL SITE DATA
 title        : Patrick Burtchaell
-tagline      : Creative Design + Video + Audio from New Orleans
-description  : I am a freelance designer and videographer from New Orleans with a passion for objectifying content.
-keywords     : New Orleans, web design, video, audio, production, designer, videographer, graphics, nola, Patrick, Burtchaell, front, end, HTMl, CSS, JavaScript, JS
+tagline      : Web and print design from New Orleans
+description  : Web and print designer, CSS developer, and front-end expert from New Orleans currently available for work on projects of all size.
+keywords     : New Orleans,Patrick Burtchaell,web design,print design,graphic design,front end,HTML,CSS
 copyright    : 2014 Patrick Burtchaell
