@@ -189,7 +189,7 @@ module.exports = function(grunt) {
         flatten: true,
         data: ['<%= site.source %>/data/*.{json,yml}', 'package.json'],
         assets: '<%= site.development %>/assets',
-        helpers: ['handlebars-helper-compose','handlebars-helper-moment','<%= site.source %>/helpers/*.js'],
+        helpers: ['handlebars-helper-compose','handlebars-helper-moment','<%= site.source %>/js/helpers/*.js'],
         partials: [
           '<%= site.templates %>/partials/**/*.{hbs,md}',
           '<%= site.templates %>/snippets/**/*.{hbs,md}'  
@@ -198,6 +198,11 @@ module.exports = function(grunt) {
         layoutdir: '<%= site.templates %>/layouts',
         layout: 'default.hbs',
         ext: '<%= site.extension %>',
+        collections: [{
+          name: 'post',
+          sortby: 'posted',
+          sortorder: 'descending'
+        }],
       },
 			
       // assemble general pages
@@ -221,16 +226,20 @@ module.exports = function(grunt) {
           {
           src: ['<%= site.content %>/*.{hbs,md}'],
           dest: '<%= site.development %>/'
-          }
+          },
+          {
+          src: ['<%= site.content %>/blog/published/**/*.{hbs,md}'],
+          dest: '<%= site.development %>/blog/'
+          },
         ]
       },
 			
       // assemble blog
       blog: {
-        options: {	
+        options: {
           plugins: ['assemble-contrib-permalinks','assemble-contrib-wordcount'],
           layout: 'layout-blog.hbs',
-          permalinks: { structure: ':pubYear/:shortName/index.html' },
+          permalinks: { structure: '2014/:shortName/index.html' },
           compose: { 
             cwd: '<%= site.content %>/blog/', 
             sep: '<!-- /article -->' 

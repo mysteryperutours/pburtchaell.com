@@ -1,37 +1,41 @@
 ---
-title: Home
+title: Writings
 shortName: blog
-description: An online repository for essays, article, documents, and work from New Orleans designer and videographer, Patrick Burtchaell.
 layout: none
 ---
 {{> open-inc ~}}
 {{> header-inc}}
 <main role=main id=main>
   <section class=article-feed>
-    <h1 class=title>Patrick Burtchaell</h1>
-    <h6 class=subtitle>Designer + Videographer</h6>
-    <h4 class=centered>2014</h4>
-      {{#compose cwd='./tpl/pages/blog/' src='published/2014/*.hbs'}}
+    
+      <h4 class=centered>2014</h4>
+    
+      {{#withSort post 'data.posted'}}
+        {{#each this.pages }}
         <article class=article-item>
           <header class=article-item-header>
-            <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
-              <em><span class=article-item-title>{{title}}</span></em>
+            <a href="{{site.url}}/blog/2013/{{this.data.shortName}}" rel=prefetch role=link class=line>
+              <em><span class=article-item-title>{{this.data.title}}</span></em>
             </a>
-            <small><time class=article-item-time>{{pubDate}}</time></small>
+            <small><time class=article-item-time>{{this.data.pubDate}}</time></small>
           </header>
         </article>
-      {{/compose ~}}
+        {{/each ~}}
+      {{/withSort ~}}
+    
       <h4 class=centered>2013</h4>
+    
       {{#compose cwd='./tpl/pages/blog/' src='published/2013/*.hbs'}}
         <article class=article-item>
           <header class=article-item-header>
-            <a href={{site.url}}/blog/{{pubYear}}/{{shortName}}/ rel=prefetch role=link class=line>
+            <a href="{{site.url}}/blog/2013/{{shortName}}" rel=prefetch role=link class=line>
               <em><span class=article-item-title>{{title}}</span></em>
             </a>
             <small><time class=article-item-time>{{pubDate}}</time></small>
           </header>
         </article>
       {{/compose ~}}
+    
   </section><!-- /article-feed -->
 </main>
 {{> footer-inc}}
