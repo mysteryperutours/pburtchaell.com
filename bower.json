@@ -16,6 +16,10 @@
     "html5shiv": "latest",
     "respond": "~1.4.2",
     "WOW": "~0.1.4",
-    "REM-unit-polyfill": "~1.1.0"
+    "REM-unit-polyfill": "~1.1.0",
+    "skrollr": "~0.6.21",
+    "skrollr-menu": "~0.1.11",
+    "min.js": "~0.1.0",
+    "fit.js": "*"
   }
 }
