@@ -1,4 +1,4 @@
-# pburtchaell/site [![Build Status](https://travis-ci.org/pburtchaell/site.png?branch=master)](https://travis-ci.org/pburtchaell/site)
+# pburtchaell/site [![Build Status](https://travis-ci.org/pburtchaell/site.svg?branch=master)](https://travis-ci.org/pburtchaell/site)
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
