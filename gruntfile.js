@@ -63,7 +63,7 @@ module.exports = function(grunt) {
     },
         
     /*
-     * compile SCSS (LESS) to CSS
+     * compile LESS and lint using RECESS
      */
     less: {
       options: {
@@ -89,6 +89,9 @@ module.exports = function(grunt) {
           '<%= site.development %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less' 
         }
       }
+    },
+    recess: {
+      assets: { src: '<%= site.source %>/less/styles.less' }
     },
 			
     /*
@@ -444,10 +447,6 @@ module.exports = function(grunt) {
       config: 'package.json',
       scope: 'devDependencies'
    });
-  
-  grunt.registerTask('congrats', 'Log some stuff', function() {
-    grunt.log.write('Congrats your site has been assembled.').ok();
-  });
 	
   /* 
    * tasks
@@ -455,39 +454,39 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy-staging', ['s3:staging']); // deploy the site to the dev.pburtchaell.com bucket
   grunt.registerTask('deploy-production', ['s3:production']); // deploy the site to the pburtchaell.com bucket
   grunt.registerTask('default', ['assemble','connect:production']);	
+  grunt.registerTask('test', ['recess']);
   grunt.registerTask('dev', ['connect:dev','watch:dev']);
-	grunt.registerTask('build', [
-    /*
-     * BUILD TASKS:
-     * 
-     * 1. Clean ./dist directory
-     * 2. Assemble HTML files to ./dist/development
-     * 3. Compile minified stylesheets to .dist/development/assets/css
-     * 4. Compile uglified scripts to ./dist/development/assets/js
-     * 5. Copy font files to ./dist/development/assets/css/fonts
-     * 6. Compress (using gzip) all files in assets/ and move to ./dist/production/assets
-     * 7. Compress (using gzip) all HTML and move to ./dist/production
-     * 8. Build sitemap, humans.txt, and robots.txt
-     * 
-     * Files within the production folder will be compressed and ready to upload to the server.
-     * Files within the development folder will not be compressed.
-     * 
-     */
-    'clean:build',
-    'assemble',
-    'less:assets',
-    'uglify:assets',
-    'copy:assets',
-    'compress:stylesheets',
-    'compress:javascripts',
-    'compress:fonts',
-    'compress:content',
-    'sitemap',
-    'humans_txt',
-    'robotstxt',
-    'congrats'
-	]);
-  
+  grunt.registerTask('build', [
+  /*
+   * BUILD TASKS:
+   * 
+   * 1. Clean ./dist directory
+   * 2. Assemble HTML files to ./dist/development
+   * 3. Compile minified stylesheets to .dist/development/assets/css
+   * 4. Compile uglified scripts to ./dist/development/assets/js
+   * 5. Copy font files to ./dist/development/assets/css/fonts
+   * 6. Compress (using gzip) all files in assets/ and move to ./dist/production/assets
+   * 7. Compress (using gzip) all HTML and move to ./dist/production
+   * 8. Build sitemap, humans.txt, and robots.txt
+   * 
+   * Files within the production folder will be compressed and ready to upload to the server.
+   * Files within the development folder will not be compressed.
+   * 
+   */
+  'clean:build',
+  'assemble',
+  'less:assets',
+  'uglify:assets',
+  'copy:assets',
+  'compress:stylesheets',
+  'compress:javascripts',
+  'compress:fonts',
+  'compress:content',
+  'sitemap',
+  'humans_txt',
+  'robotstxt',
+  'congrats'
+  ]);
   grunt.task.registerTask('build2', function(env) {
     //var site = grunt.config('site'), 
     //env = env || 'development';
