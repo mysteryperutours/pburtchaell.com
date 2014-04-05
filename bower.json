@@ -3,23 +3,20 @@
   "version": "1.1.2",
   "homepage": "https://github.com/pburtchaell/site",
   "authors": [
-    "Patrick Burtchaell <patrick@pburtchaell.com>"
+    "Patrick Burtchaell <patrick@pburtchaell.com> (http://pburtchaell.com)"
   ],
-  "description": "The website of Patrick Burtchaell, built with Assemble",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "headroom.js": "~0.4.0",
-    "responsive-nav": "latest",
-    "lunr.js": "~0.4.3",
-    "list.js": "~1.1.0",
-    "html5shiv": "latest",
-    "respond": "~1.4.2",
-    "WOW": "~0.1.4",
-    "REM-unit-polyfill": "~1.1.0",
-    "skrollr": "~0.6.21",
-    "skrollr-menu": "~0.1.11",
-    "min.js": "~0.1.0",
+    "headroom.js": "*",
+    "lunr.js": "*",
+    "responsive-nav": "*",
+    "html5shiv": "*",
+    "respond": "*",
+    "REM-unit-polyfill": "*",
+    "skrollr": "*",
+    "skrollr-menu": "*",
+    "min.js": "*",
     "fit.js": "*"
   }
 }
