@@ -10,10 +10,22 @@ module.exports = function(grunt) {
 
   'use strict';
   
-  var main_banner = '/*<%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */';
+  var banner = function(alt) {
+    var grunt = '<%= grunt.template.today("yyyy-mm-dd") %>', // get the current date
+        version = ' - v<%= pkg.version %> - ', // get the version number from package.json
+        name = '/*<%= pkg.name %>'; // get the name from package.json
+    if (alt) { 
+      return name + ' - ' + alt + version + grunt + '*/'
+    } else {
+      return name + version + grunt + '*/'
+    }
+  };
+  
   var option_expand = true,
       option_devport = 8000,
       option_devhost = 'localhost';
+
+  var devURL = 'http://' + option_devhost + ':' + option_devport;
   
 	grunt.initConfig({ 
  
@@ -63,7 +75,7 @@ module.exports = function(grunt) {
      */
     less: {
       options: {
-        banner: main_banner,
+        banner: banner(),
         compress: true,
         metadata: '<%= site.source %>/less/data/*.{json,yml}'
       },
@@ -78,8 +90,8 @@ module.exports = function(grunt) {
           sourceMap: true,
           outputSourceFiles: true,
           sourceMapFilename: '<%= site.development %>/assets/css/styles.css.map',
-          sourceMapURL: 'http://localhost:8000/dist/development/assets/css/styles.css.map',
-          sourceMapRootpath: 'http://localhost:8000'
+          sourceMapURL: devURL + '/assets/css/styles.css.map',
+          sourceMapRootpath: devURL
         },
         files: {
           '<%= site.development %>/assets/css/styles.css' : '<%= site.source %>/less/styles.less' 
@@ -104,41 +116,26 @@ module.exports = function(grunt) {
      * minify JS
      */
     uglify: {
-      options: {
-        banner: main_banner
-      },
+      options: { banner: banner("Primary JS components") },
       assets: {
         files: {
-          
-          '<%= site.development %>/assets/js/components.js' : [
-            '<%= site.components %>/responsive-nav/client/dist/responsive-nav.js',
-            '<%= site.components %>/headroom.js/dist/headroom.js',
-            '<%= site.source %>/vendor/echo.js' // not on Bower
-          ],
-          
-          '<%= site.development %>/assets/js/ie.js' : [
-            '<%= site.components %>/html5shiv/dist/html5shiv.js',
-            '<%= site.components %>/REM-unit-polyfill/js/rem.js',
-            '<%= site.components %>/respond/src/respond.js'
-          ],
-          
-          '<%= site.development %>/assets/js/highlight.js' : '<%= site.source  %>/js/vendor/highlight.js',
-          '<%= site.development %>/assets/js/hyphenate.js' : '<%= site.source %>/js/vendor/hyphenate.js', 
-          
-          /* 
-           * work page JS
-           */
-          //'<%= site.development %>/assets/js/min.js' : '<%= site.source %>/js/work/min.js', BOWER-todo
-          '<%= site.development %>/assets/js/work.js' : [
-            //'<%= site.source %>/js/work/fit.js', BOWER-todo
-            '<%= site.source %>/js/work/main.js',
-            //'<%= site.source %>/js/work/pace.js', BOWER-todo
-          ],
-          '<%= site.development %>/assets/js/skrollr.js' : [
-            //'<%= site.source %>/js/work/skrollr.min.js', BOWER-todo
-            //'<%= site.source %>/js/work/skrollr.menu.min.js' BOWER-todo
-          ]  
-          
+          '<%= site.development %>/assets/js/components.js': ['<%= site.components %>/responsive-nav/client/dist/responsive-nav.js','<%= site.components %>/headroom.js/dist/headroom.js','<%= site.source %>/vendor/echo.js'],
+          '<%= site.development %>/assets/js/highlight.js':'<%= site.source  %>/js/vendor/highlight.js',
+          '<%= site.development %>/assets/js/hyphenate.js':'<%= site.source %>/js/vendor/hyphenate.js', 
+        }
+      },
+      work: {
+        options: { banner: banner("Work page JS components") },
+        files:{
+          '<%= site.development %>/assets/js/min.js':'<%= site.components %>/min.js/src/$.js',
+          '<%= site.development %>/assets/js/work.js': ['<%= site.components %>/fit.js/fit.js','<%= site.source %>/js/work/main.js',/*'<%= site.source %>/js/work/pace.js', BOWER-todo */],
+          '<%= site.development %>/assets/js/skrollr.js': ['<%= site.components %>/skrollr/src/skrollr.js','<%= site.components %>/skrollr-menu/src/skrollr.menu.js',]  
+        }
+      },
+      ie: {
+        options: { banner: banner() },
+        files: {
+          '<%= site.development %>/assets/js/ie.js': ['<%= site.components %>/html5shiv/dist/html5shiv.js','<%= site.components %>/REM-unit-polyfill/js/rem.js','<%= site.components %>/respond/src/respond.js'],
         }
       }
     },
@@ -359,13 +356,12 @@ module.exports = function(grunt) {
     connect: {
       dev: {
         options: {
-          //livereload: option_devport,
           hostname: option_devhost,
           port: option_devport,
           open: {
-            target: 'http://' + option_devhost + ':' + option_devport + '/dist/development'
+            target: devURL
           },
-          base: './'
+          base: '<%= site.development %>'
         }
       }
     },
@@ -445,7 +441,7 @@ module.exports = function(grunt) {
       
     }*/
     
-	});
+  });
 	
 	
   /*

@@ -12,8 +12,8 @@ components   : ./bower_components
 
 # SITE URL
 #url: http://pburtchaell.com
-url: http://localhost:8000/dist/development
-#url: http://staging.pburtchaell.com.s3-website-us-east-1.amazonaws.com/
+url: http://localhost:8000
+#url: http://staging.pburtchaell.com.s3-website-us-east-1.amazonaws.com
 
 # GENERAL SITE DATA
 title        : Patrick Burtchaell
