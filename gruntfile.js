@@ -1,11 +1,3 @@
-/* Patrick Burtchaell - User interface designer, videographer, & outdoorsman
- * http://www.pburtchaell.com/ - http://twitter.com/pburtchaell
- *
- *
- * Copyright (c) 2014 Patrick Burtchaell, http://pburtchaell.com/legal
- * Licensed under the MIT license, http://pb.mit-license.org/
- */
-
 module.exports = function(grunt) {
 
   'use strict';
