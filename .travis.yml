@@ -1,44 +1,34 @@
 language: node_js
 node_js:
-  - "0.11"
-  
-# Install Grunt and Bower CLI.
-before_install:
-  - npm install -g grunt-cli bower
-  
-# Install Bower packages.
-install: 
-  - npm install
-  - bower install
-
-# Build everything.
-script: 
-  - grunt build
-
-# Deploy from the master branch or any other branch that 
-# is prefixed with deploy-.
+- '0.11'
 branches:
   only:
-    - master
-    - /^deploy-.*$/
-
-# S3 Deployment tasks
-# 1. Deploy to staging bucket from staging branch
-# 2. Deply to production bucket from production branch
+  - master
+  - dev
+  - /^deploy-.*$/
+before_install:
+- npm install -g grunt-cli bower
+install:
+- npm install
+- bower install
+before_script:
+- echo -e "Host bitbucket.org\n\tStrictKeyCheckingno\n" >> ~/.ssh/config
+- git config --global user.email "patrick@pburtchaell.com"
+- git config --global user.name "Patrick Burtchaell"
+script: grunt build
+after_script:
+- echo -e "All done for now\n"
+notifications:
+  email:
+    recepients:
+    - patrick@pburtchaell.com
 deploy:
-  - provider: s3
-    access_key_id: ""
-    secret_access_key: ""
-    on:
-      branch: deploy-staging
-      tags: true
-    local-dir: dist/production
-    bucket: "staging.pburtchaell.com"
-  - provider: s3
-    access_key_id: ""
-    secret_access_key: ""
-    on:
-      branch: deploy-production
-      tags: true
-    local-dir: dist/production
-    bucket: "pburtchaell.com"
+  provider: s3
+  access_key_id: AKIAJ6ZPHMZZUCUYCF6A
+  secret_access_key:
+    secure: BLA/KG6MdHRudCf7PRtpxeWh9n5ryVVKGenHEhrWJUCSCvfMMNWyjptZpeOeaNYa4/hJwJ/zpJkla/swHoMAOtEbel4NkJ173kRK/w1LoPoRsQNnjH/LkZqVPXDLFMNkn1137spHEI6zVd2KEcnFSoy4YcTGaSKdhIxYKcQs8I4=
+  bucket: staging.pburtchaell.com
+  local-dir: dist/
+  on:
+    repo: pburtchaell/site
+    branch: dev
