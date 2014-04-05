@@ -45,6 +45,8 @@
     "karma-ie-launcher": "~0.1.4",
     "karma-safari-launcher": "~0.1.1",
     "karma-browserstack-launcher": "0.0.8"
+    "handlebars-helper-compose": "latest",
+    "highlight.js": "latest"
   },
   "dependencies": {
     "highlight.js": "~8.0.0",
