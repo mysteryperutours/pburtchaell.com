@@ -11,6 +11,6 @@ Behold, the source files of my static website, generated using [Grunt][1] and [A
 
 _-[Patrick](http://twitter.com/pburtchaell)_
 
-Built with love in New Orleans | [Source licensed MIT](http://pb.mit-license.org/).
+Built with love in New Orleans | [Source licensed MIT](LICENSE).
 
-All content: [Copyright 2014 Patrick Burtchaell](http://pburtchaell.com/legal/)
+All content: [Copyright 2014 Patrick Burtchaell](LICENSE)
