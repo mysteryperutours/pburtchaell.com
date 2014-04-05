@@ -1,1 +1,0 @@
-The name is Patrick Burtchaell - [twitter/pburtchaell](http://twitter.com/pburtchaell) & [github/pburtchaell](http://github.com/pburtchaell)
