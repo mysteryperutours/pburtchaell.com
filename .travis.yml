@@ -28,7 +28,7 @@ deploy:
   secret_access_key:
     secure: BLA/KG6MdHRudCf7PRtpxeWh9n5ryVVKGenHEhrWJUCSCvfMMNWyjptZpeOeaNYa4/hJwJ/zpJkla/swHoMAOtEbel4NkJ173kRK/w1LoPoRsQNnjH/LkZqVPXDLFMNkn1137spHEI6zVd2KEcnFSoy4YcTGaSKdhIxYKcQs8I4=
   bucket: staging.pburtchaell.com
-  local-dir: dist/
+  local-dir: dist/development
   on:
     repo: pburtchaell/site
     branch: dev

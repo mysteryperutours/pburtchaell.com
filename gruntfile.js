@@ -465,8 +465,8 @@ module.exports = function(grunt) {
    * 3. Compile minified stylesheets to .dist/development/assets/css
    * 4. Compile uglified scripts to ./dist/development/assets/js
    * 5. Copy font files to ./dist/development/assets/css/fonts
-   * 6. Compress (using gzip) all files in assets/ and move to ./dist/production/assets
-   * 7. Compress (using gzip) all HTML and move to ./dist/production
+   * 6. Compress all files in assets/ and move to ./dist/production/assets
+   * 7. Compress all HTML and move to ./dist/production
    * 8. Build sitemap, humans.txt, and robots.txt
    * 
    * Files within the production folder will be compressed and ready to upload to the server.
@@ -482,30 +482,15 @@ module.exports = function(grunt) {
   'compress:javascripts',
   'compress:fonts',
   'compress:content',
-  'sitemap',
   'humans_txt',
-  'robotstxt',
-  'congrats'
+  'robotstxt'
   ]);
-  grunt.task.registerTask('build2', function(env) {
+  /*grunt.task.registerTask('build2', function(env) {
     //var site = grunt.config('site'), 
     //env = env || 'development';
     grunt.config.set('site.url', (env === 'development') ? 'localhost:8000' : 'http://pburtchaell.com');
     grunt.task.run(
-    'clean:build',
-    'assemble',
-    'less:assets',
-    'uglify:assets',
-    'copy:assets',
-    'compress:stylesheets',
-    'compress:javascripts',
-    'compress:fonts',
-    'compress:content',
-    //'sitemap',
-    'humans_txt',
-    'robotstxt',
-    'congrats'
     );
-  });
+  });*/
     
 }
