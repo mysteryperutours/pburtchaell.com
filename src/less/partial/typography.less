@@ -135,13 +135,13 @@ a {
 a.line, 
 a.line:visited {
   
-  // links with a blue line and color
-  color: rgb(0,169,198);
-  border-bottom: 2px solid rgba(0,0,0,0);
+  @color: rgb(0,169,198);
+  color: @color;
+  border-bottom: 2px solid transparent;
   
   // on :hover fadeout the line and add padding
   &:hover,
-  &:active { border-bottom: 2px solid; }
+  &:active { border-bottom-color: @color; }
 
   &.btn { color: @dark-grey; border: none; }
   
