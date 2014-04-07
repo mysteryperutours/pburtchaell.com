@@ -189,49 +189,41 @@ cite {
 
 /* default list styles */
 ul, ol {
-  
+
   margin: 1rem;
   
-  &.reset li { 
+  &.rst li { 
     list-style: none; 
     margin: 0;
-  }  
+  } 
+  
+  ul, ol {
+    margin: 0.25rem 0 1rem 0 @important; 
+    list-style: lower-alpha; 
+    font-size: 0.95rem;
+  }
   
 }
 
 ol li {
-  margin: 0.5rem @base*2 !important;
+  margin: 0.25rem 2rem;
   list-style: decimal;
-  li { 
-    margin: 0.5rem @base/2; 
-    list-style: lower-alpha; 
-  }
 }
-
 ul li {
   margin: 0.5rem @base*2 !important;
-	list-style: disc;
+  list-style: disc;
   text-align: left; 
-  li { margin: 0.5rem @base/2; }
 }
 
 .table-of-contents {
-  
-  background: fadeOut(@light-grey,75%);
   padding: 1rem;
-  
-  li {
-    list-style: upper-roman;
-    li {
-      list-style: upper-alpha;
-      li {
-        list-style: lower-roman;
-        margin: 0.125rem @base !important;
-      }
+  background: fadeOut(@light-grey,75%);
+  li { list-style: upper-roman;
+    li { list-style: upper-alpha;
+      li { list-style: lower-roman; 
+      } 
     } 
-    a { border: none !important; }
   }
-  
 }
 
 /* small screen properties and values */
@@ -255,12 +247,13 @@ ul li {
     font-size: 0.95rem;
   }
   
-  ul, ol {
-    margin: @base/5 0;
+  ul, ol { 
+    margin-top: 0 @important; 
+    li { 
+      margin-top: 0 @important; 
+      margin-right: 0 @important; 
+    }
   }
-  
-  li {
-    margin: (@base/5)*2 0 (@base/5)*2 @base;
-  }
+
   
 }
