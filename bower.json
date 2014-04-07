@@ -17,6 +17,8 @@
     "skrollr": "*",
     "skrollr-menu": "*",
     "min.js": "*",
-    "fit.js": "*"
+    "fit.js": "*",
+    "fastclick": "~1.0.1",
+    "pace": "~0.5.1"
   }
 }
