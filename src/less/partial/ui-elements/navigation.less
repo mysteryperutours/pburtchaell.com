@@ -6,7 +6,7 @@
   padding: 0;
   width: 100%;
   display: block;
-  //background: @white;
+  background: @white;
 }
 
 .nav-item,
@@ -42,7 +42,7 @@
   overflow: hidden;
   zoom: 1;
   z-index: 999;
-  
+  border-bottom: 1px solid @light-grey;
 }
 
 .nav-collapse.opened {
@@ -99,16 +99,17 @@
   .nav-items {
     margin-top: 15px !important;
     float: left;
+    background: none @important;
     &.left {
       width: 33.33%;
       margin: 0 33.33% 0 0;
-      padding: 0 0 5px 0;
+      padding: 0;
     }
     &.right {
       width: 33.33%;
       .nav-item {
         float: right;		
-        padding: 5px 0 0 0;
+        padding: 0;
       }
     }
   }			
@@ -119,5 +120,6 @@
     margin: 0 !important;
     background: none;
     list-style: none;
+    min-height: 50px;
   }
 }
