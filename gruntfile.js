@@ -99,10 +99,10 @@ module.exports = function(grunt) {
     */
     spell: {
       blog: {
-        src: ['<%= site.content %>/blog/published/*.{md,hbs}'],
+        src: ['<%= site.content %>'],
         options: {
           lang: 'en',
-          ignore: ['cliches', 'double negatives']
+          ignore: ['cliches']
         }
       }
     },
@@ -114,7 +114,12 @@ module.exports = function(grunt) {
       options: { banner: banner("Primary JS components") },
       assets: {
         files: {
-          '<%= site.development %>/assets/js/components.js': ['<%= site.components %>/responsive-nav/client/dist/responsive-nav.js','<%= site.components %>/headroom.js/dist/headroom.js','<%= site.source %>/vendor/echo.js'],
+          '<%= site.development %>/assets/js/components.js': [
+            '<%= site.components %>/responsive-nav/client/dist/responsive-nav.js',
+            '<%= site.components %>/headroom.js/dist/headroom.js',
+            '<%= site.source %>/js/vendor/echo.js',
+            '<%= site.source %>/fastclick/lib/fastclick.js'
+          ],
           '<%= site.development %>/assets/js/highlight.js':'<%= site.source  %>/js/vendor/highlight.js',
           '<%= site.development %>/assets/js/hyphenate.js':'<%= site.source %>/js/vendor/hyphenate.js', 
         }
@@ -122,8 +127,7 @@ module.exports = function(grunt) {
       work: {
         options: { banner: banner("Work page JS components") },
         files:{
-          '<%= site.development %>/assets/js/min.js':'<%= site.components %>/min.js/src/$.js',
-          '<%= site.development %>/assets/js/work.js': ['<%= site.components %>/fit.js/fit.js','<%= site.source %>/js/work/main.js',/*'<%= site.source %>/js/work/pace.js', BOWER-todo */],
+          '<%= site.development %>/assets/js/work.js': ['<%= site.components %>/fit.js/fit.js','<%= site.components %>/pace/pace.js','<%= site.source %>/js/work/main.js',],
           '<%= site.development %>/assets/js/skrollr.js': ['<%= site.components %>/skrollr/src/skrollr.js','<%= site.components %>/skrollr-menu/src/skrollr.menu.js',]  
         }
       },
@@ -475,8 +479,8 @@ module.exports = function(grunt) {
    */
   'clean:build',
   'assemble',
-  'less:assets',
-  'uglify:assets',
+  'less',
+  'uglify',
   'copy:assets',
   'compress:stylesheets',
   'compress:javascripts',
