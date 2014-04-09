@@ -11,7 +11,7 @@
    */
   @z-index: 2;
   z-index: @z-index; 
-  
+
   .header-content {
     height: 100vh;
     width: 100vw;
@@ -19,7 +19,6 @@
     z-index: @z-index; 
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     -webkit-animation: 2s fadeInUp;
     -webkit-animation: 2s fadeInUp;
@@ -38,7 +37,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -54,19 +52,31 @@
   }
 }
 
+.portfolio-item--cover {
+  height: 100vh;
+  min-height: 300px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    max-width: 100%;
+    box-shadow: inset 0 2px 4px -1px rgba(10,10,11,0.2);
+    position: absolute;
+    top: 0;
+    margin: 0;
+    .transform(translateY(40%));
+  }
+}
+
 /* 
  * .down-arrow
  * The arrow on the top of the /work page
  * and all portfolio entries.
  */
-
 .down-arrow {
-  
   @size: 50px; 
   @margin-left: @size;
   @padding: @size/5;
   @color: @white;
-  
   position: absolute;  
   height: @size;
   width: @size;
@@ -75,68 +85,83 @@
   left: 50%;
   border: 0.125rem solid @color;
   border-radius: 100%;
-  
   path { fill: @color; }
-  
   &:hover {
     border-color: transparent;
     .transform(translateY(10px));
   }
 }
 
-.portfolio-item--cover {
-  height: 100vh;
-  min-height: 300px;
-  overflow: hidden;
-  //-webkit-filter: grayscale(50%);
-  //opacity: 0.75;
-  img {
-    width: 100%;
-    max-width: 100%;
-    box-shadow: inset 0 2px 4px -1px rgba(10,10,11,0.2);
-  }
-}
-
-/* 
- *
+/* ----------------------------------------
+ * .p-item__content 
+ * Primary container for the content of the portfolio
+ * item. Can be combined with the data-color attribute 
+ * to change the style of the content.
+ * [data-color= "dark || green || red || blue"] 
  */
-.portfolio-item--content {
-  > section {
-    background: @dark-grey;
-    color: @red;
-    padding: @base*2 round(@column) @base*4 round(@column);
-    &:nth-of-type(2) { background: darken(@dark-grey, 5%); }
-    &:nth-of-type(3) { background: darken(@dark-grey, 5%+7.5%); }
-    &:nth-of-type(4) { }
-    &:nth-of-type(5) { background: @light-grey; color: @red; }
-  } 
-  h4 { margin: 2rem auto 0.5rem auto; }
+.p-item--content {
+
+  &[data-color=dark] {
+    > section {
+      background: @dark-grey;
+      color: @red;
+      padding: @base*2 round(@column) @base*4 round(@column);
+      &:nth-of-type(2) { background: darken(@dark-grey, 5%); }
+      &:nth-of-type(3) { background: darken(@dark-grey, 5%+7.5%); }
+      &:nth-of-type(4) { }
+      &:nth-of-type(5) { background: @light-grey; color: @red; }
+    } 
+  }
+    
+  /*h4 { margin: 2rem auto 0.5rem auto; }
   h5 {
     text-transform: uppercase;
     text-align: center;
     margin: 0.rem 0 1rem 0;
-  }
+    }*/
+    
 }
+
 
 .portfolio-icon { 
   fill: @design; 
   margin: 0.5rem auto 0.75rem auto; 
   display: block; 
 }
+
 .page-header.portfolio {
   background: none;
   border: none;
   position: absolute;
-  .nav-toggle { background: none; }
+  .nav-collapse {
+    border:none; 
+  }
+  ul { 
+    background: none;
+  }
+  .nav-toggle { 
+    border-color: @white;
+    background: none; 
+  }
   .nav-item { 
     a { 
-      color: @white; 
+      color: @white @important;
+      &.active {
+        border: 3px solid; 
+        padding: 0.25rem;
+        &:hover {
+          background: @light-grey;
+          color: @dark-grey @important;
+        }
+      }
     } 
   }
+  .name { color: @white; }
   &.headroom--unpinned {
     .transform(translateY(0));
   }
 }
+
 .page-footer.portfolio {
   background: @dark-grey;
   color: @white;

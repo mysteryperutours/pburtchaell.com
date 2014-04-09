@@ -4,8 +4,11 @@
  * of the section/div.
  */
 [data-color] {
-  a {
-    &:not(.btn) { color: @white; } 
+  a, a.line {
+    &:not(.btn) { 
+      color: @white
+    } 
+    // Don't change the color if it is link with the btn class, it will mess with the styles.
   }
 }
 [data-color=red] { 
@@ -30,6 +33,12 @@
  * .wrk-* classes
  * All rulesets related to the /work page.
  */
+.portfolio-item--cover {
+  &.work { 
+    background: url(../img/site/work/2.jpg) center center no-repeat;
+    background-size: cover;
+  }
+}
 
 /* 
  * .wrk-sct
@@ -38,7 +47,7 @@
  */
 .wrk-sct {
   padding: 100px 0;
-  //min-height: 100vh;
+  z-index: 9;
   &.rst {
     padding: 0 0 1.5rem 0;
     height: auto;
@@ -60,12 +69,12 @@
   box-shadow: 0 0 4px 1px rgba(10,10,11,0.1), 0 0 4px -2px rgba(10,10,11,0.1);
   .box-sizing();
   &:nth-of-type(1) { 
-    background: @light-grey url(../img/site/work/map.jpg) center center no-repeat; 
+    background: @light-grey url(../img/site/work/divider-1.png) center center no-repeat;
     background-size: cover; 
   }
   &:nth-of-type(2) { 
-    background: @light-grey url(../img/site/work/divider-2.jpg) center bottom no-repeat; 
-    background-size: cover;
+    background: @light-grey url(../img/site/work/divider-2.png) center bottom no-repeat; 
+    background-size: cover; 
   }
   .wrapper {
     align-self: center;
@@ -221,7 +230,7 @@
     padding: 0.125rem;
   }
   &:after {
-    content: attr(data-month);
+    content: attr(data-month); // Pull the month name in from the attribute
     top: 1rem; 
     left: 0;
   }
@@ -254,6 +263,7 @@
     &:after { color: @dark-grey; opacity: 1; }
     &:before { font-family: @type-bold; top: 0; padding: 0; }
     &:after { top: 0; text-transform: none; }
+    &:hover { .transform(none); }
   }
 }
 
@@ -261,7 +271,7 @@
  * #work-modal-collection
  * Container for all work modals.
  * Uses flexbox to center modal items.
- */
+
 #wrk-modal-collection {
   position: fixed;
   top: 0; left: 0;
@@ -269,13 +279,13 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-}
+}*/
 
 /* 
  * .wrk-modal
  * Container for the content of each modal.
  * `display: none` untill the class .active is added.
- */
+
 .wrk-modal {
   display: none; 
   height: 50vh;
@@ -289,15 +299,15 @@
   box-shadow: 1px 1px 2px 2px rgba(10,10,11,0.1);  
   // add class .active to show modal
   &.active { display: flex; }
-}
+} */
 
 /* 
  * .active-modal
  * Used to fade out the <main>, <header>, and <footer> containers 
  * for all content when a modal is opened.
  * Do not use on <body> as that will fade out all content.
- */
+
 .active-modal {
   opacity: 0.1 !important;
   overflow-y: hidden !important;
-}
+} */

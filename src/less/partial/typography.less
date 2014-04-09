@@ -35,6 +35,8 @@ p {
     line-height: 1.0;
   }
   
+  &.rst { line-height: 1.4 }
+  
 }
 
 small {
@@ -148,7 +150,9 @@ a.line:visited {
   
   // on :hover fadeout the line and add padding
   &:hover,
-  &:active { border-bottom-color: @color; }
+  &:active { 
+    border-bottom: 2px solid; 
+  }
 
   &.btn { color: @dark-grey; border: none; }
   

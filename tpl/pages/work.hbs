@@ -1,5 +1,5 @@
 ---
-title: Hire Me 
+title: Work With Me
 shortName: work
 layout: none
 work: true
@@ -7,10 +7,10 @@ work: true
 {{> open-inc }}
 <!--
   Checking out the source code, eh? Well, that's awesome!
-  You are just the kind of person I'd enjoy to working with; drop me a line: patrick@pburtchaell.com. 
+  You are just the kind of person I'd enjoy to working with.
   PS: This site is open-sourced at http://github.com/pburtchaell/site. Enjoy it; code your heart out.
 -->
-<script src={{site.url}}/assets/js/min.js></script>
+<!--<script src={{site.url}}/assets/js/min.js></script>-->
 <script src={{site.url}}/assets/js/work.js></script>
 {{> header-inc }}
 <main role=main class="page page-work">
@@ -18,8 +18,8 @@ work: true
   <header class="portfolio-item--header">
     <div class=header-content>
       <h1 class=rst><b>Work With Me</b></h1>
-      <h4 class=rst>Design + Development from <br> <b>New Orleans, Louisiana</b></h4>
-      <a class=down-arrow href=#introduction rel=next>
+      <h4 class=rst>Design + Development from<br><b>New Orleans, Louisiana</b></h4>
+      <a class=down-arrow href=#introduction rel=next data-menu-top=100p>
         <svg version=1.1 x=0 y=0 width=50px height=50px viewBox="0 0 50 50" enable-background="new 0 0 50 50">
           <path d="M25,50c13.807,0,25-11.193,25-25S38.807,0,25,0C11.193,0,0,11.193,0,25C0,38.807,11.193,50,25,50z
 	           M10.18,16.883c0.39-0.391,0.902-0.586,1.414-0.586s1.024,0.195,1.414,0.586L25,28.874l11.992-11.991
@@ -28,12 +28,12 @@ work: true
         </svg>
       </a>
     </div>
-    <div class=portfolio-item--cover>
+    <div class="portfolio-item--cover work">
       <ul class="clouds rst">
         <li class="cloud rst">
         <li class="cloud rst">
       </ul>
-      <img src={{site.url}}/assets/img/site/loader.svg data-echo="{{site.url}}/assets/img/site/work/2.jpg" >
+      {{!-- <img src={{site.url}}/assets/img/site/loader/green.svg data-src="{{site.url}}/assets/img/site/work/2.jpg" >--}}
     </div>
   </header>
 
@@ -43,10 +43,12 @@ work: true
         <img src={{site.url}}/assets/img/site/patrick.jpg height=100px width=100px class=img-portrait>
       </div>
       <div class="l-12 s-12 col">
-      <p>I'm Patrick Burtchaell, a freelance designer from New Orleans. I build and design products for the web and for print. From code, to layout, to video, I have experience in all forms of media content. Want to learn more about me? 
+      <p>I'm Patrick Burtchaell, a freelance designer from New Orleans. I build and design products for the web and for print. From code, to layout, to video, I have experience in all forms of media content. Learn more 
+        <a href=/about class=line>about me</a>. 
+        {{!--Want to learn more about me? 
         <b>Check out <a href=/about class=line> my about page</a>, 
         <a href=/resume.pdf class=line>resum&eacute;</a>, and 
-        <a href={{author.github}}/ccv class=line rel=external>CCV</a>.</b></p>
+        <a href={{author.github}}/ccv class=line rel=external>CCV</a>.</b>--}}</p>
       <p>Open to working with all and everything, my venture is about designing great products, working with others, meeting new people and teams, and gaining new experiences. Regardless of budget, time or location, get in touch and we shall see what we can do.</p>
       </div>
     </div>
@@ -73,8 +75,9 @@ work: true
       <div class="l-6 s-12 col">
         <h4>Start a development project</h4>
         <hr class="small ctr">
-        <a href=mailto:patrick@pburtchaell.com class="btn btn-white">Contact me</a>
-        <a href=# class="btn btn-white btn-border">Read more</a>
+        <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#112;&#97;&#116;&#x72;&#x69;&#99;&#107;&#x40;&#112;&#98;&#117;&#x72;&#116;&#99;&#104;&#97;&#x65;&#x6c;&#x6c;&#x2e;&#x63;&#111;&#109;"
+           class="btn btn-white">Contact me</a>
+        {{!--<a href=# class="btn btn-white btn-border">Read more</a>--}}
         <hr class="small ctr">
         <i><b>Developers</b>: Interested in how the code I write actually looks? Check out my 
         <a href=/styleguide class=line>code styleguide</a> and 
@@ -94,12 +97,12 @@ work: true
     <div class=wrapper>
       
       <div class="l-12 s-12 col">
-        <p>Wether you need something small like business cards or an entire branding set and a website designed, I can provide those services to you.</p>
+        <p>Wether you need something small or an entire branding set and a website designed, I can provide those services to you.</p>
       </div>
       
       <div class="l-6 s-12 col">
         <h4>Print</h4>
-        <p>Wether you need a complete branding set or just the business card, a brochure, or a magazine, let me know and I can design it for you. I am open to all print design projects, large and small. Contact me and we can talk about prices.</p>
+        <p>Wether you need a complete branding set or just a business card, a brochure, or a magazine, I can design it for you; I am open to all design projects, both large and small. Contact me and we can talk.</p>
       </div>
 
       <div class="l-6 s-12 col">
@@ -107,27 +110,28 @@ work: true
         <h1>~<b>$25</b> USD/hr</h1>
         <h4 class=rst><small>Starting price</small></h4>
         <hr class="small ctr">
-        <a href=#modal-print-design class="btn btn-border">Read more</a>
+        {{!--<a href=#modal-print-design class="btn btn-border">Read more</a>--}}
       </div>
 
       <div class="l-12 s-12 col">
         <h4>Web</h4>
-        <p>It is important that a professional designer and developer makes you a product that will appear great and perform well. Contact me with your idea, I will discuss the price and send a contract; and within a few weeks, I can have a completely launched site for you.</p>
+        <p>It is important that a professional designer and developer makes you a product that will appear great and perform well. Contact me with your idea, I will discuss the price and send a contract; within a few weeks, I can have a completely launched site for you.</p>
       </div>
 
       <div class="l-6 s-12 col">
-        <h1><b>$300</b> USD</h1>
+        <h1><b>$325</b> USD</h1>
         <h4 class=rst><small>Starting price</small></h4>
         <hr class="small ctr">
       </div>
       
       <div class="l-6 s-12 col">
-        <a href=#modal-print-design class="btn btn-border">Read more</a>
-        <a href=mailto:patrick@pburtchaell.com class="btn btn-white">Start a web project</a>
+         {{!--<a href=#modal-print-design class="btn btn-border">Read more</a>--}}
+        <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#112;&#97;&#116;&#x72;&#x69;&#99;&#107;&#x40;&#112;&#98;&#117;&#x72;&#116;&#99;&#104;&#97;&#x65;&#x6c;&#x6c;&#x2e;&#x63;&#111;&#109;" 
+           class="btn btn-white">Start a web project</a>
       </div>
-    
+      
     </div>
-  </section><!-- /#wdesign -->
+  </section><!-- /#design -->
   
   <section class="wrk-sct rst" id=availability data-color=dark>
     <div class=wrapper>
@@ -138,7 +142,7 @@ work: true
           <li class=month data-avail=false data-month=January>
           <li class=month data-avail=false data-month=February>
           <li class=month data-avail=false data-month=March>
-          <li class=month data-avail=true data-month=April>
+          <li class=month data-avail=false data-month=April>
           <li class=month data-avail=true data-month=May>
           <li class=month data-avail=null data-month=June>
           <li class=month data-avail=null data-month=July>
@@ -186,8 +190,9 @@ work: true
       <div class="l-4 s-12 col">
         <h4>Stay in touch</h4><hr class="small ctr">
         <small><h4><b>Because I like to talk</b></h4></small>
-          <p>Drop me a line via 
-          <a href=mailto:patrick@pburtchaell.com rel=author class=line>email</a> or.
+          <p class=rst>Drop me a line via
+          <a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#112;&#97;&#116;&#x72;&#x69;&#99;&#107;&#x40;&#112;&#98;&#117;&#x72;&#116;&#99;&#104;&#97;&#x65;&#x6c;&#x6c;&#x2e;&#x63;&#111;&#109;"
+             rel=author class=line>email</a> or.
           <a href={{author.twitter}} rel=external class=line>mention me on Twitter</a>. 
           If neither method works, try smoke flares.</p>
       </div>
@@ -197,7 +202,5 @@ work: true
   
 </main>
 {{> footer-inc }}
-<script src="{{site.url}}/assets/js/skrollr.js"></script>
-<script src={{site.url}}/assets/js/echo.js></script>
-<script>Echo.init({ offset: 100, throttle: 250 });</script>
+<script src={{site.url}}/assets/js/skrollr.js></script>
 {{> close-inc }}
