@@ -1,4 +1,4 @@
-/*! Echo v1.5.0 | (c) 2014 @toddmotto | MIT license | github.com/toddmotto/echo */
+/* Echo v1.5.0 | (c) 2014 @toddmotto | MIT license | github.com/toddmotto/echo */
 window.Echo = (function (global, document, undefined) {
 
   'use strict';
@@ -42,7 +42,7 @@ window.Echo = (function (global, document, undefined) {
       for (var i = 0; i < length; i++) {
         var self = store[i];
         if (self && _inView(self)) {
-          self.src = self.getAttribute('data-echo');
+          self.src = self.getAttribute('data-src');
           callback(self);
           store.splice(i, 1);
           length = store.length;
@@ -77,7 +77,7 @@ window.Echo = (function (global, document, undefined) {
    */
   var init = function (obj) {
 
-    var nodes = document.querySelectorAll('[data-echo]');
+    var nodes = document.querySelectorAll('[data-src]');
     var opts = obj || {};
     offset = parseInt(opts.offset || 0);
     throttle = parseInt(opts.throttle || 250);
