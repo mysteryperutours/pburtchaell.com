@@ -3,36 +3,33 @@
  */
 
 .article-feed {
-  
-  margin: @base*7 0 round(@base*1.5) 0;
-
-}
-  .article-item {
-    padding: @base/2;
+  margin: @base*5 0 round(@base*1.5) 0;
+  article {
+    //max-width: 600px;
+    padding: 1rem;
+    //margin: 0 auto;
     text-align: center;
   }
-    .article-item-header {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-      .article-item-title {  
-        margin: 0 3px 0 0;
-      }
-      .article-item-time {
-        letter-spacing: 0.125rem;
-        text-transform: uppercase;
-        opacity: 0.6;
-        &:before {
-          content: "\2014 \0020";
-        }
-      }
+}
+.article-feed-title {  
+  margin: 0 3px 0 0;
+}
+.article-feed-time {
+  position: relative;
+  bottom: 1px;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  &:before {
+    content: "\2014 \0020";
+  }
+}
 
-@media screen and (max-width: 768px) {
-  .article-item-title {
+@media screen and (max-width: 568px) {
+  .article-feed-title {
     display: block;
     width: 100%;
   }
-  .article-item-time { 
+  .article-feed-time { 
     &:before {
       clear: both;
       content: "Published ";
