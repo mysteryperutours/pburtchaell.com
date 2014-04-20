@@ -1,15 +1,3 @@
-/* ------------------------------
- * TABLE OF CONTENTS
- * ------------------------------
- * Featured Image 
- * Article Header:
-    - Article Title
-    - Article Subtitle
- * Article Content
- * Article Footer
- */
-
-// a few typography things 
 .article-header {
   
   text-align: center;
@@ -22,15 +10,15 @@
     display: inline-block;
     width: 100%;
   }
-  
+
 }
-.article-title, 
+.article-title,
 .article-subtitle {
-  margin: @base/2 0;
+  margin: 1rem 0;
   display: inline-block;
 }
 .article-reading-time {
-  margin: @base auto 0 auto;
+  margin: 1rem auto 0 auto;
   max-width: 525px;
   font-family: @type-secondary;
   display: flex;
@@ -45,19 +33,15 @@
   flex: 1;
 }
 .label-wordcount {
-  margin-left: -@base/2;
+  margin-left: -1rem;
 }
-
-
 
 // <section class=article-content></section>
 .article-content {
-  
   max-width: 575px; /* At this size, 16px will be about 66-70 characters per line. */
   padding: @base 0.125rem;
   margin: 0 auto @base auto;
   border-top: 2px solid @light-grey;
-
   img {
     max-width: 100%;
     display: block;
@@ -65,148 +49,46 @@
     clear: none;
     margin: @base auto;
   }
-  
 }
-
 
 // <footer class=article-footer></footer>
 .article-footer {
+  display: flex;
   max-width: 550px;
   margin: 0 auto;
+  padding: 1rem;
 }
-  
-  // author profile picture
-  .article-author-image {
-  
-    display: block;
-    float: left;
-    height: 100%;
-    opacity: 0.9;
-    margin: @base;
-  
-    img {
-      display: block;
-      max-width: 100px;
-      height: 100px;
-      border-radius: 100%;
-      margin: -@base/2 0 @base/2 0;
-    }
-  
+
+// author profile picture <img> element
+.article-author-img {
+  min-width: 100px;
+  height: 100px;
+  margin: 0 1rem 0 0;
+  border-radius: 100%;
+}
+
+// <div class=article-author></div>
+.article-author-info {
+  padding: 0.75rem 1rem;
+}
+
+// screens smaller than 768px
+@media screen and (max-width: 768px) {
+  .article-header {
+    margin: 0;
+    padding-left: round(@column/2);
+    padding-right: round(@column/2);
   }
-
-	// <div class=article-author></div>
-	.article-author {
-      margin: 0 round(@column*2);
-      .tag { 
-        text-transform: uppercase; 
-        font-family: @type-secondary;
-      }
-      h6 { 
-        font-size: 1rem;
-        text-transform: none;
-        margin: 0; 
-      }
-	}
-
-  .article-author-bio { 
-    margin: 0; 
+  .article-reading-time { margin: @base*2 auto 0 @base*1.5; }
+  .article-content {
     text-align: left;
+    margin: 0 round(@column) @base round(@column);
   }
-
-  // <div class=article-details></div> - contains <time> and the list of contributors
-  .article-details {
-    margin: 0 0 0 round(@column*2, 2);
-  }
-
-  // screens smaller than 768px
-  @media screen and (max-width: 768px) {
-    .article-header {
-      margin: 0;
-      padding-left: @column/2;
-      padding-right: @column/2;
-    }
-    .article-reading-time {
-      margin: @base*2 auto 0 @base*1.5;
-    }
-    .article-content { 
-      text-align: left;
-      margin: 0 round(@column) @base round(@column);
-    }
-    .article-footer {
-      width: round(@column*12);
-    }
-    /*.article-pubDate {
-      float: left;
-      clear: both;
-    }
-    .article-updateDate {  
-      float: left;
-      clear: both;
-      margin: 0 0 @base/2 0;
-      &:before {
-        display: none;
-      }
-    }*/
-  }
-
-  // screens smaller than 568px
-  @media screen and (max-width: 568px) {
-    .article-footer {
-      width: 100%;
-    }
-    .article-author-image {
-      width: 100%;
-      margin: 0 round(@column*2, 2);
-    } 
-    .article-details {
-      margin: @column;
-    }
-    .article-author {
-      margin: 0 round(@column*1, 2) 0 round(@column*2, 2);
-    }
-  }
-  /*.article-updateDate {  
-    &:before {
-      content: "\0026";
-      padding: 0 4px 0 2px;
-    }
-  }*/
-
-// <aside class=article-aside></aside> (Currently not being used)
-/*.article-aside {
-	margin: 0 round(@column, 2) @base*3 round(@column, 2);
-	text-align: center;
 }
 
-// the share buttons on the bottom of the article
-.share {
-    
-  display: inline-block;
-  line-height: 1.0;
-  color: @white;
-  padding: 3px;
-  opacity: 0.5;
-  border: 1px solid;  
-
-  &.twitter { color: @color-twitter; }
-  &.facebook { color: @color-facebook; }
-  &.google { color: @color-google; }
-
-  &:hover,
-  &:active {
-    opacity: 1.0;
-    .transform(scale(1.025));
-  }
-    
+// screens smaller than 568px
+@media screen and (max-width: 568px) {
+  .article-footer { flex-direction: column; }
+  .article-author-img { margin: 0 auto 1rem auto; }
+  .article-author-info { h6 { text-align: center; } }
 }
-.share-label {
-  padding: 3px;
-  background: @light-grey;
-}*/
-
-// Comments powered by Disqus
-/*.article-comments { 
-  margin: 0 auto 50px auto;
-  padding: 0 round(@column);
-  max-width: 550px; 
-}*/
