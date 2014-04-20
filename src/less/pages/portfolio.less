@@ -140,8 +140,9 @@
     background: none;
   }
   .nav-toggle { 
-    border-color: @white;
     background: none; 
+    margin-top: 0.25rem;
+    &:before { border-color: @white; }
   }
   .nav-item { 
     a { 
@@ -149,10 +150,6 @@
       &.active {
         border: 3px solid; 
         padding: 0.25rem;
-        &:hover {
-          background: @light-grey;
-          color: @dark-grey @important;
-        }
       }
     } 
   }
