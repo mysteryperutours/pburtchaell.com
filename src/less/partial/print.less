@@ -1,50 +1,69 @@
 body { 
-	background: white !important;
-	color: black !important; 
-	font-size: 12px;  
+  background: white;
+  color: black; 
+  font-size: 12px;  
 }
 
-pre code {
+code {
   margin: 5px;
-  padding: 0;
-	background: none !important;
-}
-code { 
-  background: none !important;
-}
 
-.page-header, 
-.page-footer { 
-    display: none; 
+  background: none;
+}
+p code, li code { 
+  background: none;
+  color: black;
+  font-size: 0.9rem;
+}
+pre {
+  background: none; 
+  border-left: 1px dashed black;
+  font-size: 12px;
+  overflow: visible;
+  color: black;
 }
 
 main {
 	
-  margin: 0;
+  margin: 1rem;
   
-	&:after {
-		display: block;
-		width: 100%;
-		text-align: center;
-		// add a little message to the bottom of the document
-		content: "Licensed under Creative Commons. Copyright Patrick Burtchaell.";
-	}
+  &:after {
+    display: block;
+    width: 100%;
+    text-align: center;
+    // add a little message to the bottom of the document
+    content: "Copyright 2014 Patrick Burtchaell <patrick@pburtchaell.com> (http://pburtchaell.com)";
+  }
 	
 }
-.article-header { margin: 0; }
-.article-content { margin: 0 round(@column); }
-.article-aside { display: none; }
+.default-header { margin: 0; padding: 0; }
+.article.page > hr {
+  display: none; 
+}
+.article-header { 
+  margin: 0 auto;
+  padding: 0;
+}
+.article-content { margin: 0 auto }
+.article-footer {
+  display: none; 
+}
+.page-header, 
+.page-footer { display: none; }
 
 a:link {
-	&:after { 
-		// after links, include the URL
-		content: "( "attr(href)" )"; 
-	}
+  &:after { 
+    // after links, include the URL
+    content: "( "attr(href)" )"; 
+  }
 }
 
 p { 
   text-align: left;
-  margin: 5px;
+  font-size: 0.75rem !important;
 }
 
-h1, h2, h3, h4, h5, h6 { color: black !important; }
+.btn { display: none; }
+
+h2, h3, h4, h5, h6 {
+  margin: 0.25rem auto;
+}
