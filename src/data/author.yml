@@ -1,13 +1,14 @@
 # SITE AUTHOR INFOMATION
-nameFirst : Patrick
-nameLast  : Burtchaell 
+name:
+  first : Patrick
+  last  : Burtchaell
 
 # GENERAL BIOGRAPHY
 bio    : I am a freelance designer and videographer from New Orleans with a passion for objectifying content.
 image  : img/site/patrick.jpg
 url    : http://pburtchaell.com/
 email  : pburtchaell@me.com
-  
+
 # SOCIAL MEDIA/WEBSITE LINKS
 behance  : http://behance.net/burtchaell
 codepen  : http://codepen.io/pburtchaell
@@ -26,7 +27,7 @@ vimeo    : http://vimeo.com/burtchaell
 vsco     : http://vsco.co/pburtchaell
 
 dogecoin:
-  primary: DU9RCKNryurWQDWhFCV1AeathFuotPpQdp 
-  
+  primary: DU9RCKNryurWQDWhFCV1AeathFuotPpQdp
+
 bitcoin:
   primary: 1AvGddyNEb1xsAaWRSSjqr9mUYHnkGnMco
