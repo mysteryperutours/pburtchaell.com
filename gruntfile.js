@@ -84,7 +84,8 @@ module.exports = function(grunt) {
       assets: {
         files: {
           '<%=site.development%>/assets/css/portfolio.css' : opt.src + '/less/portfolio.less',
-          '<%=site.development%>/assets/css/error.css' : opt.src + '/less/error.less'
+          '<%=site.development%>/assets/css/error.css' : opt.src + '/less/error.less',
+          '<%=site.development%>/assets/css/soundcloud.css' : opt.src + '/less/pages/soundcloud.less'
         }
       },
       styles: {
@@ -155,6 +156,26 @@ module.exports = function(grunt) {
             opt.vendor + '/html5shiv/dist/html5shiv.js',
             opt.vendor + '/REM-unit-polyfill/js/rem.js',
             opt.vendor + '/respond/src/respond.js'
+          ]
+        }
+      },
+      soundcloudApp: {
+        options: {
+          mangle: false
+        },
+        files: {
+          '<%=site.development%>/assets/js/soundcloud/app.js': [
+            opt.src + '/js/soundcloud/app.js'
+          ],
+           '<%=site.development%>/assets/js/soundcloud/components.js': [
+            //opt.src + '/js/soundcloud/jquery-2.0.2.min',
+            opt.src + '/js/soundcloud/api.js',
+            opt.src + '/js/soundcloud/player.js'
+          ],
+          '<%=site.development%>/assets/js/soundcloud/angular.js': [
+            opt.src + '/js/soundcloud/angular.js',
+            opt.src + '/js/soundcloud/angular-route.js',
+            opt.src + '/js/soundcloud/angular-animate.js'
           ]
         }
       }
@@ -282,6 +303,13 @@ module.exports = function(grunt) {
             dest: opt.dev + '/index.html'
           }
         ]
+      },
+
+      soundcloudApp: {
+        files: [{
+          src: opt.src + '/js/soundcloud/*.hbs',
+          dest: opt.dev + '/soundcloud/'
+        }]
       }
 
     },
