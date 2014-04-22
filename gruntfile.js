@@ -173,9 +173,10 @@ module.exports = function(grunt) {
             opt.src + '/js/soundcloud/player.js'
           ],
           '<%=site.development%>/assets/js/soundcloud/angular.js': [
-            opt.src + '/js/soundcloud/angular.js',
-            opt.src + '/js/soundcloud/angular-route.js',
-            opt.src + '/js/soundcloud/angular-animate.js'
+            opt.vendor + '/angular/angular.js',
+            opt.vendor + '/angular-route/angular-route.js',
+            opt.vendor + '/angular-animate/angular-animate.js'
+            //opt.vendor + '/angular-loading-bar/src/loading-bar.js'
           ]
         }
       }
