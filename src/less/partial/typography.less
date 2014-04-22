@@ -5,18 +5,19 @@
 @import 'fonts';
 
 [data-rst=true],
-.rst { 
+.rst {
   margin: 0;
   padding: 0;
   list-style: none;
-} 
-
-html { 
-  font-size: 16px; /* root = 14px */
 }
 
-p { 
-  
+html {
+  font-size: 16px; /* root = 14px */
+  line-height: 1.8;
+}
+
+p {
+
   font-size: 1rem; /* => 17px */
   line-height: 1.8; /* don't use REM here, unit-less line-height: http:// */
   margin: 0.25rem 0 0.75rem 0;
@@ -26,17 +27,17 @@ p {
       -ms-hyphens: auto;
        -o-hyphens: auto;
           hyphens: auto;
-  
+
   aside { margin: 1rem; }
-  
+
   code {
     background: fadeOut(@dark-grey, 95%);
     display: inline-block;
     line-height: 1.0;
   }
-  
+
   &.rst { line-height: 1.4 }
-  
+
 }
 
 small {
@@ -47,30 +48,30 @@ small {
 }
 
 .title { margin-bottom: 0; }
-.subtitle { 
+.subtitle {
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 0.275rem; 
+  letter-spacing: 0.275rem;
   margin: 0;
   opacity: 0.9;
 }
 
 /* Headings */
-h1 { 
+h1 {
   font: 2rem @type-secondary; /* 2rem: root*2 */
   margin: 1rem 0;
   text-align: center;
   text-transform: uppercase;
 }
 h2, h3, h4, h5, h6 {
-  font-family: @type-bold; 
+  font-family: @type-bold;
   text-transform: uppercase;
   margin: 2.5rem 0 0.125rem 0;
   line-height: 1.4;
   &.rst { margin: 0; }
 }
-h2 { 
-  font: 1.50rem @type-secondary; 
+h2 {
+  font: 1.50rem @type-secondary;
   text-align: center;
   text-transform: none;
   margin: 3.5rem 0 1rem 0;
@@ -86,21 +87,21 @@ small {
   }
 }
 
-em, i { 
+em, i {
   font-family: @type-italic;
   font-style: normal;
-  strong,b { 
-    font: normal 1rem 'opensans-italic-bold', sans-serif; 
+  strong,b {
+    font: normal 1rem 'opensans-italic-bold', sans-serif;
   }
 }
 
 strong, b {
   font-family: @type-bold;
-  font-style: normal; 
+  font-style: normal;
   font-weight: 400;
 }
 
-strike { 
+strike {
   opacity: 0.5;
 }
 
@@ -114,14 +115,14 @@ time {
 
 /* deafult horizontal rule styles */
 hr {
-  
+
   border: 0.125rem solid;
   left: 50%;
   margin: 0 0 0 -@base/2;
   width: @base;
-	
+
   &.small { margin: 0 }
-  &.ctr { margin: 1rem auto }
+  &.ctr { margin: 1.1rem auto }
   &.rst { color: @light-grey @important }
 
   &.large {
@@ -129,12 +130,12 @@ hr {
     margin: 2rem auto;
     padding: 0 1rem;
   }
-	
+
 }
 
 /* default link styles */
-a { 
-  text-decoration: none; 
+a {
+  text-decoration: none;
   color: @dark-grey;
   .transition();
 }
@@ -144,21 +145,21 @@ a {
 .article-content a:active,
 .default.page a,
 .default.page a:active,
-a.line, 
+a.line,
 a.line:visited {
-  
+
   @color: rgb(0,169,198);
   color: @color;
   border-bottom: 2px solid transparent;
-  
+
   // on :hover fadeout the line and add padding
   &:hover,
-  &:active { 
-    border-bottom: 2px solid; 
+  &:active {
+    border-bottom: 2px solid;
   }
 
   &.btn { color: @dark-grey; border: none; }
-  
+
 }
 
 /* default abbreviations styles */
@@ -186,7 +187,7 @@ blockquote {
 }
 
 cite {
-  
+
   margin: 0.25rem 0 0 0;
   display: block;
   text-align: right;
@@ -194,7 +195,7 @@ cite {
   font-family: 'opensans-italic', sans-serif;
 
   &.rst { text-align: left; }
-  
+
   &:before {
     content: "\2014 \0020";
   }
@@ -206,8 +207,8 @@ ul, ol {
   margin: 1rem;
   line-height: 1.8;
   ul, ol {
-    margin: 0.25rem 0 1rem 0 @important; 
-    list-style: lower-alpha; 
+    margin: 0.25rem 0 1rem 0 @important;
+    list-style: lower-alpha;
     font-size: 0.95rem;
   }
   li { margin: 0.5rem 0 0.5rem 2rem }
@@ -221,9 +222,9 @@ ul li { list-style: disc; }
   background: fadeOut(@light-grey,75%);
   li { list-style: upper-roman;
     li { list-style: upper-alpha;
-      li { list-style: lower-roman; 
-      } 
-    } 
+      li { list-style: lower-roman;
+      }
+    }
   }
 }
 
@@ -232,9 +233,9 @@ ul li { list-style: disc; }
   html { font-size: 17px; }
   p { text-align: left; }
   h1 { font-size: calc(2.00rem/ 1.4); }
-  h2 { font-size: calc(1.50rem/ 1.25);} 
-  h3 { font-size: calc(1.25rem/ 1.2); } 
-  h4 { font-size: calc(1.20rem/ 1.2); } 
+  h2 { font-size: calc(1.50rem/ 1.25);}
+  h3 { font-size: calc(1.25rem/ 1.2); }
+  h4 { font-size: calc(1.20rem/ 1.2); }
   h5 { font-size: calc(1.15rem/ 1.2); }
   code { font-size: 0.95rem; }
 }

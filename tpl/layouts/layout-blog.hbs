@@ -2,7 +2,7 @@
 {{> header-inc}}
 <main role=main id=main>
   <article itemscope itemtype=http://data-vocabulary.org/Article class="article page">
-    
+
     <header class=article-header>
       <h1 class=article-title itemprop=name>{{page.title}}</h1>
       <time>{{prettyDate this.page.data.date}}</time>
@@ -13,25 +13,26 @@
         </small>
       </div>
     </header><!-- /article-header -->
-    
+
     <section class=article-content>
       {{#markdown}}
         {{> body }}
       {{/markdown ~}}
       <script>Echo.init();</script>
     </section><!-- /article-content -->
-    
+
     <hr class="large rst">
-    
+
     <footer class=article-footer>
       <img class=article-author-img src={{site.url}}/assets/img/site/patrick.jpg height=100px width=100px>
       <div class=article-author-info itemscope itemtype=http://data-vocabulary.org/Person itemprop=author>
         <h6 class=rst>Written By<br>
         <strong intemprop=name class=rst>{{author.name.first}} {{author.name.last}}</strong></h6>
         <p class=article-author-bio><small>
-          I am Patrick Burtchaell a <span>freelance</span> <span itemprop=title>designer</span>
+          I am Patrick Burtchaell, a <span>freelance</span> <span itemprop=title>designer</span>
           <span itemscope itemprop=address itemtype=http://data-vocabulary.org/Address>
-            from <span itemprop=locality>New Orleans</span>.
+            from <span itemprop=locality>New Orleans</span>.<br>
+            <a href={{author.twitter}} class="line rst">@pburtchaell</a> on Twitter
           </span></small>
         </p>
       </div><!-- /article-author -->
