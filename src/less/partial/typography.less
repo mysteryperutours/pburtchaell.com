@@ -37,10 +37,13 @@ p {
 
 }
 
-small {
+.small() {
   font-size: 0.775rem;
   line-height: 2.205;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+small {
+  .small();
 }
 
 .title { margin-bottom: 0; }
@@ -251,7 +254,6 @@ ul li { list-style: disc; }
 
 /* small screen properties and values */
 @media screen and (max-width: 768px) {
-  html { font-size: 17px; }
   p { text-align: left; }
   h1 { font-size: calc(2.00rem/ 1.4); }
   h2 { font-size: calc(1.50rem/ 1.25);}
