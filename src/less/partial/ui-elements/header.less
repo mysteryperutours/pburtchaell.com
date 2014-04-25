@@ -1,19 +1,18 @@
 .page-header {
-	
+
   position: fixed;
   height: 75px;
   width: 100%;
   top: 0;
   z-index: 4;
   background: @white;
-  //border-bottom: 1px solid @light-grey;
   .transition();
 
   // when scrolling down
   &.headroom--unpinned {
-  .transform(translateY(-85px));
+    .transform(translateY(-85px));
   }
-	
+
 }
 
 .branding {
@@ -22,25 +21,27 @@
   height: 75px;
   left: 50%;
   margin: 0 auto 0 -36.5px;
-  z-index: 3;
-  stroke-width: 1px;
+  z-index: 5;
+  path {
+    stroke-width: 1px;
+    stroke-miterlimit: 10;
+    padding: 1px;
+    fill: none;
+  }
 }
 #branding-design {
-  fill: fadeOut(@design, 90%);
   stroke: @design;
 }
 #branding-audio {
-  fill: fadeOut(@audio, 90%);
   stroke: @audio;
 }
 #branding-video {
-  fill: fadeOut(@video, 90%);
   stroke: darken(@video, 15%);
 }
 
 @import 'navigation';
 
-/* 
+/*
  * <noscript> element
  */
 .noscript {
@@ -51,5 +52,5 @@
   z-index: 2;
   text-align: center;
   color: @white;
-  background: @design;	
+  background: @design;
 }
