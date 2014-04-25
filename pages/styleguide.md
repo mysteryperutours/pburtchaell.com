@@ -2,8 +2,8 @@
 published: true
 highlighting: true
 title: Code Styleguide
-shortName: styleguide
 description: A formal styleguide containing methods and standards for developing robust, easily maintained, and high-performance HTML, LESS, Sass and CSS.
+hire: true
 ---
 
 [LESS]: http://lesscss.org/
@@ -19,7 +19,7 @@ description: A formal styleguide containing methods and standards for developing
 [resource-thesassway]: http://thesassway.com
 
 This document formally describes methods and standards for developing robust, easily maintained and high-performance HTML, LESS, Sass and CSS code.
- 
+
 ##Table of Contents
 
 <div class=table-of-contents>
@@ -59,7 +59,7 @@ This document formally describes methods and standards for developing robust, ea
 </div>
 
 ## HTML5
-When using HTML5 elements, always follow the [W3 Specifications][W3-HTML-Spec]. If you need to check browser support of a specification, [caniuse.com][resource-caniuse-html] is an invaulable resource. 
+When using HTML5 elements, always follow the [W3 Specifications][W3-HTML-Spec]. If you need to check browser support of a specification, [caniuse.com][resource-caniuse-html] is an invaulable resource.
 
 ### General HTML Syntax
 - In order to guarantee that code renders the same in any environment, use soft tabs with two spaces.
@@ -68,7 +68,7 @@ When using HTML5 elements, always follow the [W3 Specifications][W3-HTML-Spec]. 
 - When an attribute requires it, use double quotes and never single quotes.
 - Use lowercase and dashes (not underscore or camelCase).
 - Do not include trailing slash in self-closing elements.
-- Closing tags are not required on certain elements in HTML5, e.g., `<li>` instead of `<li></li>` 
+- Closing tags are not required on certain elements in HTML5, e.g., `<li>` instead of `<li></li>`
 
 #### Doctype Declaration
 Enforce standards mode and more consistent rendering in every browser by declaring the HTML5 doctype at the beginning of every HTML page.
@@ -76,15 +76,15 @@ Enforce standards mode and more consistent rendering in every browser by declari
 <!DOCTYPE html>
 ```
 
-#### Space 
-If an HTML document has complex markup and spacing will help a developer navigate the code easier, use one line-break to separate major blocks of code from one another. 
+#### Space
+If an HTML document has complex markup and spacing will help a developer navigate the code easier, use one line-break to separate major blocks of code from one another.
 ```html
 <main>
 
   <section>
     ...
   </section>
-  
+
   <section>
     ...
   </section>
@@ -108,12 +108,12 @@ Use relative URLs and the HTML `<base>` element whenever possible; this will pre
 ## LESS and Sass
 [LESS][LESS] and [Sass][Sass] are two CSS preprocessors that add variables, nesting, functions, and mixins to your stylesheets and both are equally as powerful as the other. This document uses LESS syntax for examples, but Sass is very similiar; follow the same styleguide rules for both.
 
-Notes: 
+Notes:
  - Always write Sass with only on the first "S" capitalized.
  - LESS is written in uppercase.
 
 #### Variables
-Write local variables just as you would a CSS declaration, but always include them first. 
+Write local variables just as you would a CSS declaration, but always include them first.
 ```scss
 .example {
   @base: 20px;
@@ -123,7 +123,7 @@ Write local variables just as you would a CSS declaration, but always include th
 }
 ```
 
-Write global variables just as you would a CSS declaration, but optionally include one line break between related variables. It is also helpful to prefix related variables with a common name. 
+Write global variables just as you would a CSS declaration, but optionally include one line break between related variables. It is also helpful to prefix related variables with a common name.
 
 Remember that variables can also be called before they are declared, e.g., you could use the variable `@color` on line 1 even though it is not declared until line 10.
 
@@ -142,7 +142,7 @@ Remember that variables can also be called before they are declared, e.g., you c
 @base-border-radius: 0.125rem;
 ```
 
-Lastly, it is a best practice to include all variables in a seperate stylesheet titled `ui-variables.less` and import that stylesheet. 
+Lastly, it is a best practice to include all variables in a seperate stylesheet titled `ui-variables.less` and import that stylesheet.
 
 Do not include the `.less` file extension.
 ```scss
@@ -156,8 +156,8 @@ Do not include the `.less` file extension.
 <span class="btn btn-red btn-border no-hover">Documentation in progress</span>
 
 #### Nesting
-Avoid nesting in LESS and Sass for the sake of it. 
-```scss 
+Avoid nesting in LESS and Sass for the sake of it.
+```scss
 /* Bad */
 .container {
   ul {
@@ -180,7 +180,7 @@ While it might make sense within the LESS document to write selectors this way, 
 ```
 
 ## CSS
-Always follow the [W3 Specifications][W3-CSS-Spec] for CSS properties and values. If you need to check browser support of a specification, [caniuse.com][resource-caniuse-css] is an invaluable resource. 
+Always follow the [W3 Specifications][W3-CSS-Spec] for CSS properties and values. If you need to check browser support of a specification, [caniuse.com][resource-caniuse-css] is an invaluable resource.
 
 #### Glossary of Terms Used
 > The **property** is an identifier with a human readable name, that defines which feature is considered by the engine.
@@ -251,36 +251,36 @@ For a complete list of properties and their order, use [Recess][resource-recess]
 .declaration-order {
 
   content: '';
-  
+
   /* Positioning */
   position: relative;
-  top: 0; 
-  right: 0; 
-  bottom: 0; 
+  top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
   z-index: 1;
-  
+
   /* Box Model */
   display: block;
   float: left;
   width: 100px;
   height: 100px;
-  
+
   /* Typography */
   font: 13px "Arial";
   color: #000;
-  
+
   /* Visual */
   background: #fff;
   border: 1px solid;
-  
+
   /* Functional */
   transition: 1s ease;
-  
+
   /* Misc. LESS or Sass */
   &:hover { opacity: 0.5; }
   &:nth-of-type(2) { color: #555; }
-  
+
 }
 ```
 
@@ -305,7 +305,7 @@ color: rgb(72,74,76);
 ```
 When writing hex values, use all lowercase values, e.g., `#fff`, and shorthand whenever possible, e.g., `#fff` instead of `#ffffff`. If using LESS and Sass, always define variables for commonly used colors and write functions with no spaces, e.g., `fadeOut(@red,25%);`.
 ```css
-@primary-grey: #555; 
+@primary-grey: #555;
 @primary-white: #fff;
 
 color: @primary-white;
@@ -360,7 +360,7 @@ a:after {
 When combining pseudo-classes, use two colons for the second class, e.g., `a:visited::hover`.
 
 #### Link and Dynamic Pseudo-classes
-Always declare rules for the selectors `:hover`, `:active`, `:focus`, `:visited`, respectively. The selector `:link` is optional, as the `a` type selector is equally as effective; only use `:link` and `:visited` on links. 
+Always declare rules for the selectors `:hover`, `:active`, `:focus`, `:visited`, respectively. The selector `:link` is optional, as the `a` type selector is equally as effective; only use `:link` and `:visited` on links.
 
 ## Notes on Code Robustness
 An important part of both HTML and CSS code is how specific and robust it is. Some call this writing code as a "human-readable medium", but in the end, all text code is readable by humans. Everyone can *read* code, but only few can fully understand it.
@@ -368,7 +368,7 @@ An important part of both HTML and CSS code is how specific and robust it is. So
 > ...a representation of data or information that can be naturally read by humans
 > <cite>Wikipedia: <a href=http://wikipedia.org/wiki/Human-readable_medium>Human-readable Medium</a></cite>
 
-Rather than making code readable, focus on writing code in which a developer can understand its functions. 
+Rather than making code readable, focus on writing code in which a developer can understand its functions.
 
 In order to write understandable code, it must be robust and set in a strong foundation. From that strong foundation, you can add a level of specification through class names and comments. This process is known as self-documenting code: source code that is that follows loosely defined conventions for naming and structure. These conventions allow for developers to effectively use the source code without previous knowledge of its specification, design, or behavior.
 
@@ -397,11 +397,11 @@ Good, extensive documentation is key to robust code. More often than not, extens
 In an HTML document with few lines of code, do not place comments by closing tags. In larger HTML documents, where there may be multiple closing tags of the same element include a comment containing a backslash and the class/ID name; this will help prevent human error in when making changes in development. If a description is necessary, include a colon and a short summary of element after the class/ID name. Generally, however, you should include descriptions in the stylesheet; long descriptions can diminish readability of HTML documents.
 ```html
 <div class=header>
-	<div class=example-div-1>
-		<div class=example-div-2>
+  <div class=example-div-1>
+    <div class=example-div-2>
       ...
-		</div><!-- /example-div-2 -->
-	</div><!-- /example-div-1 -->
+    </div><!-- /example-div-2 -->
+  </div><!-- /example-div-1 -->
 </div><!-- /header: Primary header for all pages-->
 ```
 
@@ -457,14 +457,14 @@ This document is inspired by my personal code style; [Code Guide][MDO], by @MDO;
 - *Code Guide*, Mark Otto, [mdo.github.com/code-guide](http://mdo.github.com/code-guide)
 - *CSS Guidelines*, Harry Roberts, [github.com/csswizardry/CSS-Guidelines](https://github.com/csswizardry/CSS-Guidelines)
 
-All other infomation taken from an external source has been cited with a title and link to the original source document. 
+All other infomation taken from an external source has been cited with a title and link to the original source document.
 
 ### Suggested Reading
 - Jef Raskin: [Comments Are More Important Than Code](http://queue.acm.org/detial.cfm?id=1053354)
 
 ## Contribute
 <p class=centered>
-  Want to improve this document? 
+  Want to improve this document?
   <em>Make a pull-request<a href=https://github.com/pburtchaell/site-assemble/blob/master/tpl/pages/styleguide.md> on Github</a></em>.
 </p>
 
