@@ -1,23 +1,16 @@
-/* 
+/*
  * Styles for $page templates
  */
 .flex-layout {
   min-height: 100vh;
-  display: -wekit-flex;
-  display:   -moz-flex;
-  display:    -ms-flex;
-  display:        flex;
-  -webkit-flex-direction: column;
-     -moz-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
 }
 
 #main {
-  -webkit-flex: 1;
-     -moz-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 // flex-children
@@ -26,12 +19,12 @@
 }
 
 .default-content {
-  padding: 0 0 round(@base-padding*1.5, 2) 0;
+  padding: 0 1rem round(@base-padding*1.5, 2) 1rem;
   p, ul, ol, code {
     max-width: 600px;
     margin: @base auto;
   }
-  p { 
+  p {
     padding: 0 round(@column*1);
   }
 }

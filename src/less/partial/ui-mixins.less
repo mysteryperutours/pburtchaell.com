@@ -16,9 +16,35 @@
       -ms-user-select: @value;
           user-select: @value;
 }
-
 .box-sizing(@value: border-box) {
   -webkit-box-sizing: @value;
      -moz-box-sizing: @value;
           box-sizing: @value;
+}
+
+/**
+ * Note on flexbox support:
+ * Most browsers support the spec w/o vendor prefixes at this point
+ * but the immediate past versions do not. Include the prefixes needed
+ * to provide support to those browsers.
+ *
+ * Since flexbox is a relatively new area for web designers/developers
+ * there is not a ton of documentation for flexbox support.
+ *
+ * I found the followingresources helpful:
+ * -
+ * -
+ * -
+ *
+ * 2014-04-25
+ */
+.flexbox() {
+  display: -webkit-box; //
+  display: -ms-flexbox; // IE 10
+  display: -webkit-flex; // Safari 6.1
+  display: flex; // Chrome 29+, Firefox 20+, IE 11, Opera 12
+}
+.flex(@value: 1) {
+  -ms-flex: @value; // IE 10
+      flex: @value; // Chrome 29+, Firefox 20+, IE 11, Opera 12
 }
