@@ -36,12 +36,9 @@ p {
     line-height: 1.0;
   }
 
-  &.rst { line-height: 1.4 }
-
 }
 
 small {
-  /* for <small> elements, decrease the font-size, but increase the line-height */
   font-size: 0.775rem;
   line-height: 2.205;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -64,7 +61,7 @@ h1 {
   text-transform: uppercase;
 }
 h2, h3, h4, h5, h6 {
-  font-family: @type-bold;
+  font-family: @type-secondary-bold;
   text-transform: uppercase;
   margin: 2.5rem 0 0.125rem 0;
   line-height: 1.4;
@@ -76,21 +73,46 @@ h2 {
   text-transform: none;
   margin: 3.5rem 0 1rem 0;
 }
-h3 { font-size: 1.25rem; margin: 2.5rem auto 0.125rem auto; letter-spacing: 0.125rem; text-align: center; max-width: @base*12; }
-h4 { font: 1.20rem @type-secondary; letter-spacing: 0.075rem; text-align: center; }
-h5 { font-size: 1.15rem; text-transform: none;}
-h6 { font: 1rem @type-secondary;  }
+h3 {
+  font-size: 1.25rem;
+  margin: 2.5rem auto 0.125rem auto;
+  letter-spacing: 0.125rem;
+  text-align: center;
+  max-width: @base*12;
+}
+h4 {
+  font: 1.20rem @type-secondary;
+  letter-spacing: 0.075rem;
+  text-align: center;
+}
+h5 {
+  font-size: 1.15rem;
+  text-transform: none;
+}
+h6 {
+  font: 1rem @type-secondary;
+}
 small {
   h2, h3, h4, h5, h6 {
     font-size: 85%;
     margin: 0 0 1.25rem 0;
   }
 }
+strong, b {
+  h1,h2,h3,h4,h5,h6 {
+    font-family: @type-secondary-bold;
+  }
+}
+h1,h2,h3,h4,h5,h6 {
+  strong, b {
+    font-family: @type-secondary-bold;
+  }
+}
 
 em, i {
   font-family: @type-italic;
   font-style: normal;
-  strong,b {
+  strong, b {
     font: normal 1rem 'opensans-italic-bold', sans-serif;
   }
 }

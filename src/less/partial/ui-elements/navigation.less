@@ -1,7 +1,7 @@
 /*------------------------------------*\
     $NAVIGATION
 \*------------------------------------*/
-.nav-collapse ul {	
+.nav-collapse ul {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -12,7 +12,7 @@
 .nav-item,
 .name {
   padding: 0 @base*2 @base/6 0;
-  font-family: @type-bold;
+  font-family: @type-secondary-bold;
   margin: 0 !important;
   list-style: none;
   text-transform: uppercase;
@@ -20,11 +20,11 @@
   opacity: 0.9;
 }
 
-.nav-item { 
-  &:nth-of-type(5) { padding-bottom: @base/3; } 
+.nav-item {
+  &:nth-of-type(5) { padding-bottom: @base/3; }
 }
 
-.name { 
+.name {
   padding-top: @base/5;
   padding-bottom: 0;
   &:nth-of-type(2) {
@@ -77,14 +77,14 @@
 // desktop styles
 @media screen and (min-width: 40em) {
 
-  .js { 
+  .js {
     .nav-collapse {
       position: relative;
       border-bottom: none;
       &.closed { max-height: none; }
     }
   }
-  
+
   .nav-toggle { display: none; }
   .name { display: none; }
   // navigation container <nav class=nav-collapse></nav>
@@ -108,11 +108,11 @@
     &.right {
       width: 33.33%;
       .nav-item {
-        float: right;		
+        float: right;
         padding: 0;
       }
     }
-  }			
+  }
   // navigation item <li class=nav-item>
   .nav-item {
     float: left;
