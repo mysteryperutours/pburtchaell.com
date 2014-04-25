@@ -4,9 +4,9 @@
 
 Behold, the source files of my static website, generated using [Grunt][1] and [Assemble][2], and hosted on Amazon S3  + Cloudfront CDN. My website is open-source so one can observe and learn about the processes I use. You can find more detialed documentation in the [colophon][3] and my [code styleguide][4].
 
-[1]: http://gruntjs.com 
+[1]: http://gruntjs.com
 [2]: http://assemble.io "Assemble Static Site Generator"
-[3]: http://pburtchaell.com/colophon "@pburtchaell's styleguide"
+[3]: http://pburtchaell.com/colophon "@pburtchaell's colophon"
 [4]: http://pburtchaell.com/styleguide "@pburtchaell's styleguide"
 
 _-[Patrick](http://twitter.com/pburtchaell)_
