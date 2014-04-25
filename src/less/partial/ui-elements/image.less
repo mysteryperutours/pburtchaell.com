@@ -1,9 +1,9 @@
-/* 
+/*
  * Image styles
  */
 .img-portrait,
 .img-fill {
-  float: none; 
+  float: none;
   clear: none;
   max-width: 100%;
   margin: -@base auto @base auto;
@@ -18,8 +18,28 @@ img {
   max-width: 40%;
   margin: @base @base @base 0;
 }
-@media screen and (max-width: 350px) { 
+
+/*figure {
+  .small();
+  line-height: 1.7;
   img {
-    max-width: 100%; 
+
+  }
+  figcaption {
+    padding: 0.5rem;
+    text-transform: uppercase;
+    dt {
+      font-family: @type-secondary-bold;
+    }
+    dd {
+      font-family: @type-secondary;
+    }
+  }
+}*/
+
+
+@media screen and (max-width: 350px) {
+  img {
+    max-width: 100%;
   }
 }
