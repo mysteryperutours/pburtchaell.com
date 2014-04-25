@@ -12,7 +12,6 @@ install:
 - npm install
 - bower install
 before_script:
-- echo -e "Host bitbucket.org\n\tStrictKeyCheckingno\n" >> ~/.ssh/config
 - git config --global user.email "patrick@pburtchaell.com"
 - git config --global user.name "Patrick Burtchaell"
 script: grunt build
@@ -22,13 +21,3 @@ notifications:
   email:
     recepients:
     - patrick@pburtchaell.com
-deploy:
-  provider: s3
-  access_key_id: AKIAJ6ZPHMZZUCUYCF6A
-  secret_access_key:
-    secure: BLA/KG6MdHRudCf7PRtpxeWh9n5ryVVKGenHEhrWJUCSCvfMMNWyjptZpeOeaNYa4/hJwJ/zpJkla/swHoMAOtEbel4NkJ173kRK/w1LoPoRsQNnjH/LkZqVPXDLFMNkn1137spHEI6zVd2KEcnFSoy4YcTGaSKdhIxYKcQs8I4=
-  bucket: staging.pburtchaell.com
-  local-dir: dist/development
-  on:
-    repo: pburtchaell/site
-    branch: dev
