@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             expand: opt.expand,
             cwd: opt.src + '/less/',
             src: ['fonts/**'],
-            dest: opt.dev + '/assets/css/'
+            dest: opt.dev + '/assets/css'
           },
           {
             expand: opt.expand,
@@ -215,7 +215,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: '<%=site.development%>/',
         src: ['assets/css/fonts/**/*'],
-        dest: '<%=site.production%>/assets/css/fonts/'
+        dest: '<%=site.production%>/'
       }
     },
 
