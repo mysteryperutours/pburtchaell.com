@@ -24,6 +24,7 @@ module.exports = function(grunt) {
     tpl: './tpl',
     pages: './pages',
     posts:  './posts',
+    projects: './projects',
     vendor: './bower_components',
     expand: true,
     devPort: 8000,
@@ -306,6 +307,18 @@ module.exports = function(grunt) {
         ]
       },
 
+      projects: {
+        permalinks: {
+          structure: ':year/:basename/index.html'
+        },
+        files: [
+          {
+            src: opt.projects + '/*.{hbs,md}',
+            dest: opt.dev + '/'
+          }
+        ]
+      },
+
       soundcloudApp: {
         files: [{
           src: opt.src + '/js/soundcloud/*.hbs',
@@ -354,7 +367,8 @@ module.exports = function(grunt) {
           opt.src + '/**/*.{less,js,json,yml}',
           opt.tpl + '/**/*.{html,hbs,md}',
           opt.posts + '/**/*.{hbs,md}',
-          opt.pages + '/**/*.{hbs,md}'
+          opt.pages + '/**/*.{hbs,md}',
+          opt.projects + '/**/*.{hbs,md}'
         ],
         tasks: ['less','uglify','assemble'],
         options: {
