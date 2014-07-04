@@ -38,6 +38,7 @@
     "handlebars-helper-compose": "latest",
     "handlebars-helper-inarray": "^0.1.0",
     "handlebars-helper-moment": "latest",
+    "handlebars-helpers": "^0.5.5",
     "highlight.js": "latest"
   }
 }
