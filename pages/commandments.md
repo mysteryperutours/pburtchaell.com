@@ -1,5 +1,6 @@
 ---
 title: The 20 Commandments of Professionalism
+basename: commandments
 date: 2012-10-29
 ---
 

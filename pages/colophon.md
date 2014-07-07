@@ -1,9 +1,10 @@
 ---
 published: true
-highlighting: true
 title: Colophon - v3
-description: The colophon contains the detailed and formal notes on the design and development of the third version of my personal website, blog, and portfolio.
-hire: true
+description: Detailed and formal notes on the design and development of the third version of my personal website, blog, and portfolio.
+features:
+- hire
+- highlighting
 ---
 ## Author's Statement
 When I began work on the third version of site in October of 2013, I decided I would take a lightweight and fastidious approach to the design and development. In the past, my website has been more of a storefront for my services, but it failed to tell my story. I think a website should not just be your portfolio, but rather storage of intellectual property: your ideas, your writing, your thoughts, and your memories. The internet is young compared to other methods of recording information, like books, but it will be around in some form for the rest of our lives. This website will serve the means &mdash;in a combination of ways&mdash; for me to achieve the end of recording information.

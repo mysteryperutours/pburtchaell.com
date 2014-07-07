@@ -3,12 +3,16 @@
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-47392700-1', 'pburtchaell.com');
-ga('send', 'pageview');  
-var body = document.body, timer; 
-window.addEventListener('scroll', function() {
-clearTimeout(timer); if(!body.classList.contains('disable-hover')){ body.classList.add('disable-hover') }
-timer = setTimeout(function() { body.classList.remove('disable-hover') }, 500); }, false);
+ga('create', 'UA-47392700-1', 'pburtchaell.com'); ga('send', 'pageview');  
+window.addEventListener('scroll', function () {
+  var body = document.body, timer;
+  var classN = 'disable-hover';
+  clearTimeout(timer); 
+  if(!body.classList.contains(classN)) body.classList.add(classN);
+  timer = setTimeout(function () { 
+    body.classList.remove(classN) 
+  }, 500); 
+}, false);
 </script>
 </body>
 </html>

@@ -1,8 +1,14 @@
 ---
 published: true
-highlighting: true
+
 title: Code Styleguide
 description: A formal styleguide containing methods and standards for developing robust, easily maintained, and high-performance HTML, LESS, Sass and CSS.
+
+features: 
+- hire
+- highlighting
+
+highlighting: true
 hire: true
 ---
 
@@ -135,14 +141,14 @@ Remember that variables can also be called before they are declared, e.g., you c
 @base-border-radius: 0.125rem;
 ```
 
-Lastly, it is a best practice to include all variables in a seperate stylesheet titled `ui-variables.less` and import that stylesheet.
+Lastly, it is a best practice to include all variables in a seperate stylesheet titled `variables.less` and import that stylesheet.
 
 Do not include the `.less` file extension.
 ```scss
-@import 'partials/ui-variables';
+@import `utils/variables';
 ```
 
-#### Functions
+#### Functions & Loops
 <span class="btn btn-red btn-border no-hover">Documentation in progress</span>
 
 #### Mixins
@@ -227,10 +233,10 @@ Although it is very common to do so, avoid using the style attribute on HTML ele
 ```
 
 #### Declaration Order
-Start from the "outside" and work "back in". Group related properties in the following order:
+Start from the "outside and work back in". Group related properties in the following order:
 
 1. Positioning
-2. Box model
+2. Box model, including flexbox related properties
 3. Typographic
 4. Visual
 5. Functional
@@ -254,7 +260,10 @@ For a complete list of properties and their order, use [Recess][resource-recess]
   z-index: 1;
 
   /* Box Model */
-  display: block;
+  display: flex;
+  flex: 1 auto;
+  flex-direction: row;
+  align-items: center;
   float: left;
   width: 100px;
   height: 100px;
@@ -311,7 +320,6 @@ Use `-webkit-`, `-moz-`, `-ms-`, and `-o-`, in that order. Always also include a
 -webkit-transform: ... ;
    -moz-transform: ... ;
     -ms-transform: ... ;
-     -o-transform: ... ;
         transform: ... ;
 ```
 To determine which properties require prefixes, refer to [caniuse][resource-caniuse-css]. If you use a taskrunner, [autoprefixer][resource-autoprefixer] is very useful, as is Lea Verou's pollyfill, [prefix-free][resource-prefixfree].
