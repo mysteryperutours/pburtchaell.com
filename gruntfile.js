@@ -356,6 +356,11 @@ module.exports = function(grunt) {
     * Watch files for changes
     */
     watch: {
+      options: {
+        spawn: false,
+        interrupt: true,
+        livereload: true
+      },
       all: {
         files: [
           opt.src + '/**/*.{less,js,json,yml}',
@@ -364,12 +369,7 @@ module.exports = function(grunt) {
           opt.pages + '/**/*.{hbs,md}',
           opt.projects + '/**/*.{hbs,md}'
         ],
-        tasks: ['styles','scripts','assemble'],
-        options: {
-          spawn: false,
-          interrupt: true,
-          livereload: true
-        }
+        tasks: ['styles','scripts','assemble']
       },
       styles: {
         files: [
@@ -379,11 +379,13 @@ module.exports = function(grunt) {
           opt.pages + '/**/*.{hbs,md}',
           opt.projects + '/**/*.{hbs,md}'
         ],
-        tasks: ['styles'],
-        options: {
-          spawn: false,
-          interrupt: true
-        }
+        tasks: ['styles']
+      },
+      content: {
+         files: [
+           './pages/**/*.{hbs,md}'
+        ],
+        tasks: ['assemble']
       }
     },
 
