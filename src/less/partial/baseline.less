@@ -8,6 +8,37 @@
   flex-direction: column;
 }
 
+.theme-dark {
+  background: @dark-grey;
+  color: @light-grey;
+  p {
+    opacity: .9; 
+  }
+  .nav-item {
+    a { 
+      color: @white !important; 
+    }
+  }
+  pre {
+    color: @light-grey;
+    background: darken(@dark-grey,5%);
+    &::-webkit-scrollbar-thumb:horizontal { background: darken(@dark-grey,10%);}
+  }
+  p code,
+  li code {
+   color: @light-grey;
+   background: darken(@dark-grey,5%); 
+  } 
+  .article-footer {
+    background: none; 
+  }
+  .page-footer-span {
+    background: none;
+    border: none;
+    color: @light-grey;
+  }
+}
+
 #main {
   -ms-flex: 1;
   flex: 1;

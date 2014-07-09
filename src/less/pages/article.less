@@ -1,7 +1,6 @@
 .article-header {
 
   text-align: center;
-  margin: 0 @column;
   padding: calc(82px + 16px*2) 1rem 0 1rem;
 
   time {
@@ -10,6 +9,20 @@
     letter-spacing: 0.125rem;
     display: inline-block;
     width: 100%;
+  }
+  
+  &.cover-image {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    background: center center / cover fixed;
+    hrgroup {
+      flex: 1 auto;
+    }
+    .article-title,
+    time {
+      color: @light-grey;
+    }
   }
 
 }
@@ -59,7 +72,7 @@
 
 // <section class=article-content></section>
 .article-content {
-  margin: 0 auto;
+  margin: 4rem auto 0 auto;
   img {
     max-width: 100%;
     display: block;
@@ -85,7 +98,6 @@
   max-width: 550px;
   margin: 4rem auto;
   padding: 1rem 1rem 0.5rem 1rem;
-  background: @light-grey;
   p {
     margin: 0;
   }
@@ -93,6 +105,7 @@
 
 // author profile picture <img> element
 .article-author-img {
+  align-self: center;
   min-width: 100px;
   height: 100px;
   margin: 0 1rem 0 0;
@@ -103,6 +116,7 @@
 // <div class=article-author></div>
 .article-author-info {
   padding: 0.5rem 1rem;
+  p, small { line-height: 1.6 }
 }
 
 // screens smaller than 768px

@@ -13,9 +13,6 @@
   p { margin: 0; }
   &.article {
     padding-top: 3rem;
-    .page-footer-legal {
-      display: block;
-    }
   }
 }
 @media screen and (max-width: 767px) {
@@ -31,9 +28,7 @@
   width: 225px;
   height: auto;
   text-transform: uppercase;
-  border: 1px solid @light-grey;
-  background: @white;
-  line-height: 1.0;
+  line-height: 1;
   padding: 5px;
   font-family: @type-secondary;
   .user-select();
@@ -48,10 +43,11 @@
 }
 .page-footer-legal {
   max-width: 350px;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto .5rem auto;
+  font-family: @type-secondary;
+  text-transform: uppercase;
   opacity: 0.3;
   .transition();
-  display: none;
 }
 
 // pulsing animation for hearts
