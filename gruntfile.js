@@ -39,11 +39,6 @@ module.exports = function(grunt) {
     vendor: grunt.file.readJSON('bower.json'),
 
     /*
-     * Remove all old files before creating the new files.
-     */
-    clean: { build: ['./dist'] },
-
-    /*
     * Copy images and fonts to the build directories.
     */
     copy: {
@@ -100,75 +95,11 @@ module.exports = function(grunt) {
         }
       }
     },
-    recess: {
-      assets: { src: opt.src + '/*.less' }
-    },
-    autoprefixer: {
-      options: {
-        browsers: ['last 2 version', 'ie 8', 'ie 9']
-      },
-      styles: {
-        expand: true,
-        flatten: true,
-        src: '<%=site.development%>/assets/css/*.css',
-        dest: '<%=site.development%>/assets/css/'
-      },
-    },
 
     /*
      * minify JS
      */
     uglify: {
-      options: { banner: banner('Primary JS components') },
-      assets: {
-        files: {
-          '<%=site.development%>/assets/js/components.js': [
-            opt.src + '/js/lib/modules/currentLinkModule.js',
-            opt.vendor + '/headroom.js/dist/headroom.js',
-            opt.src + '/js/vendor/echo.js',
-            opt.vendor + '/fastclick/lib/fastclick.js'
-          ]
-        }
-      },
-      work: {
-        options: { banner: banner('Work page JS components') },
-        files: {
-          '<%=site.development%>/assets/js/work.js': [
-            opt.vendor + '/fit.js/fit.js',
-            opt.vendor + '/pace/pace.js',
-            opt.src + '/js/work/main.js'
-          ],
-          '<%=site.development%>/assets/js/skrollr.js': [
-            opt.vendor + '/skrollr/src/skrollr.js',
-            opt.vendor + '/skrollr-menu/src/skrollr.menu.js'
-          ]
-        }
-      },
-      ie: {
-        options: { banner: banner('Provides IE 8 support') },
-        files: {
-          '<%=site.development%>/assets/js/ie.js': [
-            opt.vendor + '/html5shiv/dist/html5shiv.js',
-            opt.vendor + '/REM-unit-polyfill/js/rem.js',
-            opt.vendor + '/respond/src/respond.js'
-          ]
-        }
-      },
-      soundcloudApp: {
-        options: {
-          mangle: false
-        },
-        files: {
-          '<%=site.development%>/assets/js/soundcloud/app.js': [
-            opt.src + '/js/soundcloud/app.js'
-          ],
-          '<%=site.development%>/assets/js/soundcloud/angular.js': [
-            opt.vendor + '/angular/angular.js',
-            opt.vendor + '/angular-route/angular-route.js',
-            opt.vendor + '/angular-animate/angular-animate.js'
-          ]
-        }
-      },
       staticShortFilm: {
         files: {
           '<%=site.development%>/assets/js/static/components.js': [
@@ -231,7 +162,8 @@ module.exports = function(grunt) {
         helpers: [
           'handlebars-helper-compose',
           'handlebars-helper-moment',
-          './src/js/helpers/*.js' // Custom helpers
+          'handlebars-helper-inarray',
+          './tpl/helpers/*.js' // Custom helpers
         ],
         assets: '<%=site.development%>/assets',
         partials: [opt.tpl + '/partials/**/*.{hbs,md}', opt.tpl + '/snippets/**/*.{hbs,md}'],
@@ -416,16 +348,12 @@ module.exports = function(grunt) {
    */ 
   grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('assemble-less');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-humans-txt');
-  grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-robots-txt');
   grunt.loadNpmTasks('grunt-sitemap');
   

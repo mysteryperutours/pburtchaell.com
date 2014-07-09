@@ -22,23 +22,21 @@
     "assemble-contrib-toc": "latest",
     "assemble-contrib-wordcount": "latest",
     "assemble-less": "latest",
+    "browserify": "^4.2.0",
     "grunt": "latest",
-    "grunt-autoprefixer": "latest",
-    "grunt-contrib-clean": "latest",
     "grunt-contrib-compress": "latest",
     "grunt-contrib-connect": "latest",
     "grunt-contrib-copy": "latest",
-    "grunt-contrib-less": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-humans-txt": "latest",
-    "grunt-recess": "latest",
     "grunt-robots-txt": "latest",
     "grunt-sitemap": "latest",
     "handlebars-helper-compose": "latest",
     "handlebars-helper-inarray": "^0.1.0",
     "handlebars-helper-moment": "latest",
     "handlebars-helpers": "^0.5.5",
-    "highlight.js": "latest"
+    "highlight.js": "latest",
+    "vinyl-source-stream": "^0.1.1"
   }
 }
