@@ -84,7 +84,7 @@ module.exports = function(grunt) {
         files: {
           '<%=site.development%>/assets/css/projects.css' : opt.src + '/less/projects.less',
           '<%=site.development%>/assets/css/error.css' : opt.src + '/less/error.less',
-          '<%=site.development%>/assets/css/soundcloud.css' : opt.src + '/less/pages/soundcloud.less'
+          '<%=site.development%>/assets/css/downbeat.css' : opt.src + '/less/pages/downbeat.less'
         }
       },
       styles: {
@@ -313,11 +313,13 @@ module.exports = function(grunt) {
         ]
       },
 
-      soundcloudApp: {
-        files: [{
-          src: opt.src + '/js/soundcloud/*.hbs',
-          dest: opt.dev + '/soundcloud/'
-        }]
+      downbeat: {
+        files: [
+          {
+            src: opt.src + '/js/modules/downbeat/views/*.hbs',
+            dest: opt.dev + '/downbeat/'
+          }
+        ]
       }
 
     },
