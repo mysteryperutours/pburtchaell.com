@@ -12,9 +12,8 @@ module.exports.register = function(Handlebars, options) {
   Handlebars.registerHelper('findURL', function(a,b,replacement) {
     
     var options = {
-      'debug': true
+      debug: true
     };
-    
     
     if (a && b) {
       var url = a.replace(b,replacement);

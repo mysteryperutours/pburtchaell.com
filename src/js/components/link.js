@@ -1,8 +1,4 @@
-/*
- * Find out what the current URL is and add an .active class.
- * @module currentLinkModule
- */
-var currentLinkModule = {
+var currentLink = {
 
   options: {
     className: 'active',
@@ -40,7 +36,7 @@ var currentLinkModule = {
       link = document.querySelector('.nav-item#about');
       addClass(link);
     } else if (URL === '/') {
-      console.log('Welcome home. No active URL.');
+      return;
     } else {
       link = document.querySelector('.nav-item#writing');
       addClass(link);
