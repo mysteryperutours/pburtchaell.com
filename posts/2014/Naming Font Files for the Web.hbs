@@ -1,13 +1,13 @@
 ---
 post: true
-title: A Better Way to Use @font-face
-description: My @font-face declarations can be messy, so I would like propose a method for the URL format of font-files and other best-practices.
+title: Naming font-files for the web
+description: A method for the URL format of font-files.
 date: 2014-03-24
 keywords:
 - font-face declarations
 - web fonts
 ---
-My font-face declarations can be messy. In the past, I've used a `url()` for all font formats, `.woff`, `.eot`, `.ttf`, and even SVG, just because I wanted to be safe; I figured that was probably unnecessary, so I did a bit of research to figure out which ones I really needed.
+In the past, I've used a `url()` for all font formats, `.woff`, `.eot`, `.ttf`, and even SVG, just because I wanted to be safe; I figured that was probably unnecessary, so I did a bit of research to figure out which ones I really needed.
 
 Turns out woff files are supported by all major modern browsers *except* (slow clap) Internet Explorer. Since I need to support IE all the way back to IE8, I will be using the EOT format. The funny thing is **no** other browser except IE supports EOT, so I will be loading it for IE and IE only (slow clap again). Lastly, Android Browser on 2.3 does not support woff files; I just switched from an Android phone running 2.3 last year so I want to support that browser. I will be loading the ttf format as well.
 
@@ -40,11 +40,3 @@ src: url('fonts/opensans/800i.woff'); // Bold Italic
 ```
 
 Now you can easily read and quickly understand the code with the benefit of not using a ton of characters in the process. Moreover, rewriting the `@font-face` rules to follow this method removed ~1Kb off each of my stylesheets; that, of course, is not at all a large amount, but this is just another process to look at when you do need to take *another kilobyte* off your stylesheet.
-
-Lastly, just a few extra rules to consider:
-
-1. Don't use camelCase, snake_case, or hyphens for the `font-family` property, e.g., `Helvetica Neue` instead of `helvetica-neue` or, God forbid, `helNeue`.
-
-2. Always include a `font-weight: 400;` declaration with `@font-face` rules; this will ensure that a browser does not make a bold font even more bold.
-
-3. Always include a `font-style: normal;` declaration with `@font-face` rules; this will reset the font when it is used with certain HTML elements that might change the style of the font, such as `<i>` or `<b>`.
