@@ -12,7 +12,6 @@
     "html5shiv": "*",
     "respond": "*",
     "REM-unit-polyfill": "*",
-    "skrollr": "*",
     "min.js": "*",
     "fit.js": "*",
     "fastclick": "~1.0.1",
