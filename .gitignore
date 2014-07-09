@@ -1,20 +1,9 @@
 node_modules
 bower_components
-
-.DS_Store
 npm-debug.log
 
-# PRODUCTION FOLDERS 
-dist/
-tmp/
+.DS_Store
 
-# DRAFTS
-tpl/pages/blog/drafts
-
-# AWS KEY
-aws.json
-
-# PROJECT MANAGEMENT 
-tasklist.md
-backlog.md
-sitemap.xml
+# Build Folder
+dist
+tmp
