@@ -378,7 +378,7 @@ module.exports = function(grunt) {
    */
   grunt.registerTask('default', ['build']);
   grunt.registerTask('test', ['recess']); 
-  grunt.registerTask('styles', ['less','autoprefixer']); 
+  grunt.registerTask('styles', ['less']); 
   grunt.registerTask('scripts', ['uglify']);
   grunt.registerTask('content', ['assemble','humans_txt','robotstxt']);
   grunt.registerTask('assets', ['copy']);
