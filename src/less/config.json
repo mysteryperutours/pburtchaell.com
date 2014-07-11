@@ -1,0 +1,17 @@
+[
+  { 
+    "source": "styles.less", 
+    "filename": "styles.css",
+    "description": "Primary stylesheet"
+  },
+  { 
+    "source": "error.less",
+    "filename": "error.css",
+    "description": "Error page stylesheet"
+  },
+  { 
+    "source": "projects.less",
+    "filename": "projects.css",
+    "description": "Work and project pages stylesheet"
+  }
+]

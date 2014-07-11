@@ -23,6 +23,7 @@
     "assemble-contrib-wordcount": "latest",
     "assemble-less": "latest",
     "browserify": "^4.2.0",
+    "chalk": "^0.5.1",
     "grunt": "latest",
     "grunt-contrib-compress": "latest",
     "grunt-contrib-connect": "latest",

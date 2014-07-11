@@ -61,32 +61,26 @@ gulp.task('clean', 'Delete all contents of the app/public directory.', function 
 });
 
 gulp.task('styles', 'Generate CSS stylesheets from LESS source code.', function () {
-  dest = dest + '/assets/css';
-  src = src + '/less/styles.less';
-  gulp.src(src)
-    .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ] 
-    }))
-    .pipe(prefix('last 2 version','safari 5','ie 8','ie 9','opera 12.1'))
-    .pipe(minify())
-    .pipe(header(createHeader('Primary stylesheet'),{pkg:pkg}))
-    .pipe(gulp.dest(dest));
-});
-
-/*gulp.task('styles:all', 'Generate CSS stylesheets from LESS source code.', function () {
   
+  var chalk = require('chalk');
   var stylesheets = require('./src/less/config.json');
   
   var compile = function (stylesheet) {
-    src = src + '/less/' + stylesheet.source;
-    dest = dest + '/assets/css';
-        
-    gulp.src(src)
+    var lessSrc = src + '/less/' + stylesheet.source;
+    var cssDest = dest + '/assets/css';
+    
+    console.log( 
+      'Compiling ' + 
+      chalk.green(src + '/' + stylesheet.source) + ' to ' + 
+      chalk.blue(dest)
+    );
+    
+    gulp.src(lessSrc)
       .pipe(less({paths: [ path.join(__dirname, 'less', 'includes') ] }))
       .pipe(prefix('last 2 version','safari 5','opera 12.1'))
       .pipe(minify())
       .pipe(header(createHeader(stylesheet.description),{pkg:pkg}))
-      .pipe(gulp.dest(dest));
+      .pipe(gulp.dest(cssDest));    
   };
         
   for (var i in stylesheets) {
@@ -94,7 +88,7 @@ gulp.task('styles', 'Generate CSS stylesheets from LESS source code.', function 
     compile(stylesheet);
   };
   
-});*/
+});
 
 gulp.task('scripts', 'Concatenate and uglify script source code.', function () {
   dest = dest + '/assets/js';
