@@ -61,20 +61,26 @@ gulp.task('clean', 'Delete all contents of the app/public directory.', function 
 });
 
 gulp.task('styles', 'Generate CSS stylesheets from LESS source code.', function () {
-  
-  var chalk = require('chalk');
   var stylesheets = require('./src/less/config.json');
   
+  /**
+   * compile();
+   * @desc Compiles a LESS source file to CSS using gulp
+   * @param {string} 'stylesheet'
+   */
   var compile = function (stylesheet) {
     var lessSrc = src + '/less/' + stylesheet.source;
     var cssDest = dest + '/assets/css';
     
+    // Print the I/O to terminal.
+    var chalk = require('chalk');
     console.log( 
       'Compiling ' + 
       chalk.green(src + '/' + stylesheet.source) + ' to ' + 
-      chalk.blue(dest)
+      chalk.blue(dest + '/' + stylesheet.filename)
     );
-    
+  
+    // Use gulp to compile.
     gulp.src(lessSrc)
       .pipe(less({paths: [ path.join(__dirname, 'less', 'includes') ] }))
       .pipe(prefix('last 2 version','safari 5','opera 12.1'))
@@ -87,7 +93,6 @@ gulp.task('styles', 'Generate CSS stylesheets from LESS source code.', function 
     var stylesheet = stylesheets[i];
     compile(stylesheet);
   };
-  
 });
 
 gulp.task('scripts', 'Concatenate and uglify script source code.', function () {
