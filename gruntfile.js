@@ -210,16 +210,21 @@ module.exports = function(grunt) {
 
       posts: {
         options: {
+          plugins: [
+            'assemble-contrib-permalinks',
+            'assemble-middleware-rss'
+          ],
           layout: 'layout-blog.hbs',
           permalinks: {
             structure: ':year/:basename/index.html'
           },
+          wordcount: { selector: '.article-content' },
           feed: {
-            debug: true,
-            prettify: true,
-            dest: 'rss.xml'
+            format: true,
+            author: 'Patrick Burtchaell',
+            dest: 'feed.xml',
+            url: 'http://pburtchaell.com',
           },
-          wordcount: { selector: '.article-content' }
         },
         files: [
           {
