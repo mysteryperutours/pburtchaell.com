@@ -1,41 +1,45 @@
 var gulp = require('gulp');
+var path = require('path');
 var less = require('gulp-less');
 var prefix = require('gulp-autoprefixer');
 var recess = require('gulp-recess');
 var minify = require('gulp-minify-css');
+var opt = require('../options.json');
 
-gulp.task('styles', 'Generate CSS stylesheets from LESS source code.', function () {
-  dest = dest + '/assets/css';
-  src = src + '/less/styles.less';
-  gulp.src(src)
-    .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ] 
-    }))
-    .pipe(prefix('last 2 version','safari 5','ie 8','ie 9','opera 12.1'))
-    .pipe(minify())
-    .pipe(header(createHeader('Primary stylesheet'),{pkg:pkg}))
-    .pipe(gulp.dest(dest));
-});
+module.exports = function () {
+  return function () {
+    'use strict';
+    
+    var stylesheets = require(path.join(__dirname,'../../src/less/config.json'));
 
-/*gulp.task('styles:all', 'Generate CSS stylesheets from LESS source code.', function () {
-  
-  var stylesheets = require('./src/less/config.json');
-  
-  var compile = function (stylesheet) {
-    src = src + '/less/' + stylesheet.source;
-    dest = dest + '/assets/css';
-        
-    gulp.src(src)
-      .pipe(less({paths: [ path.join(__dirname, 'less', 'includes') ] }))
-      .pipe(prefix('last 2 version','safari 5','opera 12.1'))
-      .pipe(minify())
-      .pipe(header(createHeader(stylesheet.description),{pkg:pkg}))
-      .pipe(gulp.dest(dest));
-  };
-        
-  for (var i in stylesheets) {
-    var stylesheet = stylesheets[i];
-    compile(stylesheet);
-  };
-  
-});*/
+    /**
+     * compile();
+     * @desc Compiles a LESS source file to CSS using gulp
+     * @param {string} 'stylesheet'
+     */
+    var compile = function (stylesheet) {
+      var lessSrc = opt.src + '/less/' + stylesheet.source;
+      var cssDest = opt.dest + '/assets/css';
+
+      // Print the I/O to terminal.
+      var chalk = require('chalk');
+      console.log( 
+        'Compiling ' + 
+        chalk.green(opt.src + '/' + stylesheet.source) + ' to ' + 
+        chalk.blue(opt.dest + '/css/assets/' + stylesheet.filename)
+      );
+
+      // Use gulp to compile.
+      gulp.src(lessSrc)
+        .pipe(less({paths: [ path.join(__dirname, 'less', 'includes') ] }))
+        .pipe(prefix('last 2 version','safari 5','opera 12.1'))
+        .pipe(minify())
+        .pipe(gulp.dest(cssDest));    
+    };
+
+    for (var i in stylesheets) {
+      var stylesheet = stylesheets[i];
+      compile(stylesheet);
+    };  
+  }
+};
