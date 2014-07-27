@@ -1,13 +1,14 @@
 ---
 published: true
-title: Colophon - v3
+title: Colophon - v1.1.7
 description: Detailed and formal notes on the design and development of the third version of my personal website, blog, and portfolio.
 features:
 - hire
 - highlighting
 ---
+
 ## Author's Statement
-When I began work on the third version of site in October of 2013, I decided I would take a lightweight and fastidious approach to the design and development. In the past, my website has been more of a storefront for my services, but it failed to tell my story. I think a website should not just be your portfolio, but rather storage of intellectual property: your ideas, your writing, your thoughts, and your memories. The internet is young compared to other methods of recording information, like books, but it will be around in some form for the rest of our lives. This website will serve the means &mdash;in a combination of ways&mdash; for me to achieve the end of recording information.
+When I began work on the static version of site in October of 2013, I decided I would take a lightweight and fastidious approach to the design and development. In the past, my website has been more of a storefront for my services, but it failed to tell my story. I think a website should not just be your portfolio, but rather storage of intellectual property: your ideas, your writing, your thoughts, and your memories. The internet is young compared to other methods of recording information, like books, but it will be around in some form for the rest of our lives. This website will serve the means &mdash;in a combination of ways&mdash; for me to achieve the end of recording information.
 
 ## Design Notes
 Because my site has a very clear focus on intellectual content, I wanted the design to be simple. Every property in the stylesheet and every pixel on the screen is planned out and exectuted in the most proficient manner. This design may not have the charisma of some websites, but that is the intent. My design does not have character, but rather it is transparent; the content has character. I am not trying to tell a story though pixels. I plan to do that through words.
@@ -56,30 +57,17 @@ Aesthetics without functionality is art. Combine both qualities and the result i
 This idea is far more important for websites; a website with poorly written code is unacceptable. Therefore, the web adds a third quality to design: engineering &mdash;or development. Making development and design of a website are the same, these three qualities are forever tied together in a symbiotic relationship. I cannot make one decision in design without it effecting development and likewise. You could think of web design as the holy trinity. Just as the father, son and holy-spirit &mdash;they are three parts in one, aesthetics, functionality, and engineering are also three in one.
 
 ### Static Site Generator
-My site is static and generated using [Assemble](http://assemble.io/) a plugin for [Grunt](http://gruntjs.com/). I write content in either Handlebars (.hbs) or Markdown (.md). I publish my code on Github as an open-source, but contrary to many static sites, my site is not hosted with Github pages. Instead, I host my site on Amazon Web Services. With smart use of the Cloudfront CDN and S3, am easily able to load about seventy-five percent of the pages on my site in less than a second. I monitor the status of my website using [Pingdom](http://tools.pingdom.com/fpt/#!/duUCz3/pburtchaell.com).
+My site is static and generated using [Assemble](http://assemble.io/) a plugin for [Grunt](http://gruntjs.com/). I write content in either Handlebars (.hbs) or Markdown (.md). I publish my code on Github as an open-source, but contrary to many static sites, my site is not hosted with Github pages. Instead, I host my site on Amazon Web Services. With smart use of the Cloudfront CDN and S3, am easily able to load about seventy-five percent of the pages on my site in way less than a second. I monitor the status of my website using [Pingdom](http://tools.pingdom.com/fpt/#!/duUCz3/pburtchaell.com).
 
 ### JavaScript, Stylesheets, Images &amp; Other Assets
 A complete list of client-side JavaScript plugins:
 - [Echo.js]() &mdash;on the article pages, images are lazy-loaded
 - [Headroom.js]() &mdash;hides the header when scrolling down
-- [Responsive-Nav]() &mdash;responsive, off-canvas navigation
-- <s>[Highlighter.js]() &mdash;syntax highlighting</s> Syntax highlighting is handled during the build of the site.
-
-When gzipped at the highest compression level, file sizes are:
-- styles.css: ~4.3kb
-- components.js: ~3.6kb
-- average HTML page: ~5.0kb
-- average font: ~20kb (*4 total requests = ~80kb)
-
-By utilizing compression, caching, and a content delivery network, my average response times (as of February 2014) are:
-- New York, New York: 880ms
-- Amsterdam, Netherlands: 1.64s
-- Dallas, Texas: 681ms
-
-As images and other binary files are lazy-loaded, I do not use small resolutions or bitrates (video only); most images are uploaded at full-size (200-300kb).
 
 ### Front-End Tools
-I use Grunt as a taskrunner for my website and [Bower](http://bower.io/) for package management. To cover each plugin I use for Grunt would far beyond the scope of this document. You can find the gruntfile and a complete list of Grunt plugins in my [repository](http://github.com/pburtchaell/site-assemble/).
+I use a mxiture of both gulp and Grunt for my website, as well as [Bower](http://bower.io/) for package management. To cover each plugin I use for Grunt and gulp would far beyond the scope of this document. You can find the gruntfile and a complete list of Grunt plugins in my [repository](http://github.com/pburtchaell/site-assemble/).
+
+The main idea is to generate/compile everything with gulp except the website's HTML itself. Since the HTML is generated from Markdown and Handlebars templates using Assemble &mdash;which has only a plugin for Grunt at the time of writing this&mdash; I have to use Grunt.
 
 ## Build Status
 [Travis CI](https://travis-ci.org/pburtchaell/site) is used to test each commit on the master and dev (development) branches.
