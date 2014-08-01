@@ -12,8 +12,6 @@
     "html5shiv": "*",
     "respond": "*",
     "REM-unit-polyfill": "*",
-    "min.js": "*",
-    "fit.js": "*",
     "fastclick": "~1.0.1",
     "pace": "~0.5.1",
     "angular": "~1.2.16",

@@ -7,10 +7,10 @@ var opt = require('../options.json');
 module.exports = function () {
   return function () {
     'use strict';
-    
+
     var dest = opt.dest + '/assets/js/';
     var src;
-    
+
     /**
      * components.js
      */
@@ -24,6 +24,16 @@ module.exports = function () {
       .pipe(uglify())
       .pipe(header('Primary JavaScript'))
       .pipe(gulp.dest(dest));
+
+    src = [
+      './bower_components/jquery/dist/jquery.js',
+      './bower_components//ajaxchimp/jquery.ajaxchimp.js'
+    ];
+    gulp.src(src)
+      .pipe(concat('components.js'))
+      .pipe(uglify())
+      .pipe(header('Primary JavaScript'))
+      .pipe(gulp.dest(dest + '/static/'));
 
     /**
      * ie.js
