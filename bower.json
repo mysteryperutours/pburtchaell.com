@@ -1,11 +1,5 @@
 {
   "name": "site",
-  "version": "1.1.7",
-  "homepage": "https://github.com/pburtchaell/site",
-  "authors": [
-    "Patrick Burtchaell <patrick@pburtchaell.com> (http://pburtchaell.com)"
-  ],
-  "license": "MIT",
   "private": true,
   "dependencies": {
     "headroom.js": "*",
