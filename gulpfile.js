@@ -7,6 +7,7 @@ var tasks = {
   browserify: require('./gulp/tasks/browserify.js'),
   utils: require('./gulp/utils/index.js')
 }
+  server: require('./gulp/tasks/server')
 
 // Asset pipeline
 gulp.task('styles', tasks.styles());
@@ -18,4 +19,15 @@ gulp.task('clean', tasks.utils.clean());
 gulp.task('copy', tasks.utils.copy());
 gulp.task('watch', tasks.utils.watch());
 
+// Launch a web server
+gulp.task('serve', function () {
+  var server = task.server;
+  server.init({
+    port: 8000,
+    root: opt.dest
+  }, server.listen);
+  gulp.watch('*.html', server.refresh);
+});
+
+// Default task
 gulp.task('default', ['styles', 'scripts', 'browserify', 'copy']);
