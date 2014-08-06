@@ -1,23 +1,27 @@
 var gulp = require('gulp');
 var opt = require('./gulp/options.json');
 
-var tasks = {
-  styles: require('./gulp/tasks/styles.js'),
-  scripts: require('./gulp/tasks/scripts.js'),
-  browserify: require('./gulp/tasks/browserify.js'),
-  utils: require('./gulp/utils/index.js')
-}
+/**
+ * @object task
+ * @desc Contains the modules for each task.
+ */
+var task = {
+  styles: require('./gulp/tasks/styles'),
+  scripts: require('./gulp/tasks/scripts'),
+  browserify: require('./gulp/tasks/browserify'),
+  utils: require('./gulp/utils'),
   server: require('./gulp/tasks/server')
+};
 
 // Asset pipeline
-gulp.task('styles', tasks.styles());
-gulp.task('scripts', tasks.scripts());
-gulp.task('browserify', tasks.browserify());
+gulp.task('styles', task.styles);
+gulp.task('scripts', task.scripts);
+gulp.task('browserify', task.browserify);
 
 // Utility scripts
-gulp.task('clean', tasks.utils.clean());
-gulp.task('copy', tasks.utils.copy());
-gulp.task('watch', tasks.utils.watch());
+gulp.task('clean', task.utils.clean);
+gulp.task('copy', task.utils.copy);
+gulp.task('watch', task.utils.watch);
 
 // Launch a web server
 gulp.task('serve', function () {
@@ -31,3 +35,7 @@ gulp.task('serve', function () {
 
 // Default task
 gulp.task('default', ['styles', 'scripts', 'browserify', 'copy']);
+
+// Development task
+gulp.task('development', ['default', 'serve', 'watch']);
+
