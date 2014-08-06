@@ -17,3 +17,5 @@ gulp.task('browserify', tasks.browserify());
 gulp.task('clean', tasks.utils.clean());
 gulp.task('copy', tasks.utils.copy());
 gulp.task('watch', tasks.utils.watch());
+
+gulp.task('default', ['styles', 'scripts', 'browserify', 'copy']);
