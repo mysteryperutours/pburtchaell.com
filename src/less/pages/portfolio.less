@@ -4,19 +4,10 @@
   min-height: 300px;
   background: @light-grey;
   color: @white;
-  /* .clouds are at `z-index: 1;`
-   * In order for the header to function,
-   * it must be positioned above the .clouds
-   * hence, `z-index: 2;`.
-   */
-  @z-index: 2;
-  z-index: @z-index;
-
   .header-content {
     height: 100vh;
     width: 100vw;
     position: absolute;
-    z-index: @z-index;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,6 +38,28 @@
     margin: 0;
     .transform(translateY(40%));
   }
+}
+
+.portfolio-wrapper {
+display: flex;
+flex: 1 auto;
+/* height: 100px; */
+}
+
+.portfolio-item.ng-scope {
+width: 33.33%;
+display: flex;
+flex: 1 auto;
+align-self: center;
+align-content: center;
+/* display: block; */
+position: relative;
+height: 100px;
+}
+
+a.portfolio-item--link {
+  opacity: 1;
+  color: black !important;
 }
 
 /*
@@ -92,14 +105,6 @@
       &:nth-of-type(5) { background: @light-grey; color: @red; }
     }
   }
-
-  /*h4 { margin: 2rem auto 0.5rem auto; }
-  h5 {
-    text-transform: uppercase;
-    text-align: center;
-    margin: 0.rem 0 1rem 0;
-    }*/
-
 }
 
 .portfolio-icon {
@@ -111,7 +116,7 @@
 .page-header.portfolio {
   background: none;
   border: none;
-
+  
   ul { background: none }
   .nav-item a { color: @white }
 }

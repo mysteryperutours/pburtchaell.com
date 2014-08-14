@@ -1,14 +1,14 @@
-/* ----------------------------------------
- * [data-color=" red || blue || green"]
- * Use this data-* attribute to specify the color
- * of the section/div.
+/**
+ * [data-color=" red || blue || green || dark"]
+ * 
+ * @desc Use this data-* attribute to specify the color
+ *       of the section/div.
  */
 [data-color] {
   a, a.line {
-    &:not(.btn) {
+    &:not(.btn) { 
       color: @white
     }
-    // Don't change the color if it is link with the btn class, it will mess with the styles.
   }
 }
 [data-color=red] {
@@ -28,21 +28,16 @@
   color: @light-grey;
 }
 
-
-/* ----------------------------------------
- * .wrk-* classes
- * All rulesets related to the /work page.
- */
 .portfolio-item--cover {
   &.work {
     background: url(../img/site/work/cover.jpg) center center / cover no-repeat fixed;
   }
 }
 
-/*
+/**
  * .wrk-sct
- * Each "section" of content on the work page
- * uses this class.
+ *
+ * @desc Each "section" of content on the work page.
  */
 .wrk-sct {
   padding: 100px 0;
@@ -54,10 +49,11 @@
   }
 }
 
-/*
+/**
  * .wrk-sct-divider
- * Between some .wrk-sct's there is a divider
- * containing an image; use this class.
+ *
+ * @desc Between some .wrk-sct's there is a divider
+ *       containing an image; use this class.
  */
 .wrk-sct-divider {
   display: flex;
@@ -67,21 +63,22 @@
   color: @white;
   box-shadow: 0 0 4px 1px rgba(10,10,11,0.1), 0 0 4px -2px rgba(10,10,11,0.1);
   .box-sizing();
+
   &:nth-of-type(1) {
     background: @light-grey url(../img/site/work/divider-1.png) center center / cover no-repeat fixed;
-    //background-attachment: fixed;
   }
   &:nth-of-type(2) {
     background: @light-grey url(../img/site/work/divider-2.png) center bottom / cover no-repeat fixed;
-    //background-attachment: fixed;
   }
   .wrapper {
     align-self: center;
   }
 }
+
 .divider-title {
   font-size: 4rem;
 }
+
 .divider-subtitle {
   font: 2rem @type-secondary;
   padding: 0.15rem 0.5rem;
@@ -90,6 +87,7 @@
   text-transform: uppercase;
   box-shadow: 1px 1px 1px rgba(10,10,11,0.1), -1px -1px 1px rgba(10,10,11,0.1);
 }
+
 @media screen and (max-width: 767px) {
   .divider-title {
     font-size: 2rem;
@@ -99,74 +97,13 @@
     font-size: 1.25rem;
   }
 }
-/*
- * .clouds
- * Unordered list element containing all the
- * lovely animate clouds on the intro cover.
-.clouds {
-  height: 100vh;
-  width: 100vw;
-  z-index: 1;
-}
-.cloud {
-  @cloud-animation: 250s cloud-flow-right infinite;
-  @cloud-size: 200px;
-  @cloud-url: '../img/site/work/clouds-01.png';
-  position: absolute;
-  height: @cloud-size;
-  width: @cloud-size;
-  z-index: 1;
-  list-style: none;
-  background: url(@cloud-url) center center no-repeat;
-  background-size: cover;
-  -webkit-animation: @cloud-animation;
-  animation: @cloud-animation;
-  &:nth-of-type(1) {
-    height: round(@cloud-size*2.1);
-    width: round(@cloud-size*2.1);
-    top: 50%; left: 50%;
-  }
-  &:nth-of-type(2) {
-    height: round(@cloud-size*1.5);
-    width: round(@cloud-size*1.5);
-    top: 25%; right: 25%;
-    -webkit-animation: 300s cloud-flow-left infinite;
-    animation: 300s cloud-flow-left infinite;
-  }
-}*/
 
-/*
- * Keyframes for the cloud movement animation.
-@keyframes cloud-flow-right {
-  0% { opacity: 0; transform: translateX(-20vw); }
-  1% { opacity: 1; }
-  99% { opacity: 1; transform: translateX(100vw); }
-  100% { opacity: 0; }
-}
-@-webkit-keyframes cloud-flow-right {
-  0% { opacity: 0; -webkit-transform: translateX(-20vw); }
-  1% { opacity: 1; }
-  99% { opacity: 1; -webkit-transform: translateX(100vw); }
-  100% { opacity: 0;}
-}
-@keyframes cloud-flow-left {
-  0% { opacity: 0; transform: translateX(20vw); }
-  1% { opacity: 1; }
-  99% { opacity: 1; transform: translateX(-100vw); }
-  100% { opacity: 0; }
-}
-@-webkit-keyframes cloud-flow-left {
-  0% { opacity: 0; -webkit-transform: translateX(20vw); }
-  1% { opacity: 1; }
-  99% { opacity: 1; -webkit-transform: translateX(-100vw); }
-  100% { opacity: 0;}
-}*/
-
-/*
+/**
  * #availability
- * A feature that shows what months I am available
- * on hover. Turns into a table-like design on
- * mobile.
+ *
+ * @desc A feature that shows what months I am available
+ *       on hover. Turns into a table-like design on
+ *       mobile.
  */
 .available-months {
   margin: 0 auto 2rem auto;
@@ -177,7 +114,6 @@
 }
 
 .month {
-
   display: block;
   list-style: none;
   height: 1rem;
@@ -263,48 +199,3 @@
     &:hover { .transform(none); }
   }
 }
-
-/*
- * #work-modal-collection
- * Container for all work modals.
- * Uses flexbox to center modal items.
-
-#wrk-modal-collection {
-  position: fixed;
-  top: 0; left: 0;
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-}*/
-
-/*
- * .wrk-modal
- * Container for the content of each modal.
- * `display: none` untill the class .active is added.
-
-.wrk-modal {
-  display: none;
-  height: 50vh;
-  width: 50vw;
-  overflow-y: scroll;
-  margin: 0 auto;
-  padding: 1rem;
-  z-index: 99;
-  background: fadeOut(@blue,5%);
-  color: @white;
-  box-shadow: 1px 1px 2px 2px rgba(10,10,11,0.1);
-  // add class .active to show modal
-  &.active { display: flex; }
-} */
-
-/*
- * .active-modal
- * Used to fade out the <main>, <header>, and <footer> containers
- * for all content when a modal is opened.
- * Do not use on <body> as that will fade out all content.
-
-.active-modal {
-  opacity: 0.1 !important;
-  overflow-y: hidden !important;
-} */
