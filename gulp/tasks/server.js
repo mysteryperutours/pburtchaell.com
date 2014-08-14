@@ -3,6 +3,8 @@
 var express = require('express');
 var compression = require('compression');
 var error = require('express-err');
+var gutil = require('gulp-util');
+var chalk = require('chalk');
 var lr = require('tiny-lr')();
 
 /**
@@ -14,16 +16,18 @@ exports.init = function (config, callback) {
   var app = express();
   
   function startup (callback) {
+    gutil.log('Starting the connect webserver...')
     app.use(require('connect-livereload')());
     app.use(compression());
     app.use(express.static(config.root + '/'));
     app.listen(config.port);
     app.use(error.httpError(404));
+    
     callback();
   };
 
   startup(function() {
-    console.log('Server successfully started. Listening at http://localhost:' + config.port);
+    gutil.log('Listening at ' + chalk.magenta('http://localhost:' + config.port));
   });
   
   callback();
@@ -33,7 +37,6 @@ exports.init = function (config, callback) {
  * @desc Listen to the server for changes.
  */
 exports.listen = function () {
-  console.log('listening');
   lr.listen(35729);
 };
 

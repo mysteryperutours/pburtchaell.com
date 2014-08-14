@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var del = require('del');
 
@@ -16,5 +18,6 @@ exports.clean = function (cb) {
 
 exports.watch = function () {
   gulp.watch(opt.src + '/less/**/*.less', ['styles']);
-  gulp.watch(opt.src + '/js/**/*.js', ['browserify'])
+  gulp.watch(opt.src + '/js/**/*.js', ['scripts']);
+  gulp.watch('./pages/*.hbs', ['assemble']);
 };

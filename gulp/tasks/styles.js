@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 var path = require('path');
 var less = require('gulp-less');
+var gutil = require('gulp-util');
 var prefix = require('gulp-autoprefixer');
-var recess = require('gulp-recess');
 var minify = require('gulp-minify-css');
 var opt = require('../options.json');
 var header = require('../utils/header');
@@ -23,10 +23,10 @@ module.exports = function () {
 
     // Print the I/O to terminal.
     var chalk = require('chalk');
-    console.log( 
+    gutil.log( 
       'Compiling ' + 
-      chalk.green(opt.src + '/' + stylesheet.source) + ' to ' + 
-      chalk.blue(opt.dest + '/css/assets/' + stylesheet.filename)
+      chalk.cyan(opt.src + '/' + stylesheet.source) + ' to ' + 
+      chalk.magenta(opt.dest + '/css/assets/' + stylesheet.filename) + '.'
     );
 
     // Use gulp to compile.

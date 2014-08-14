@@ -70,6 +70,8 @@ module.exports = function () {
     './bower_components/angular/angular.js',
     './bower_components/angular-animate/angular-animate.js',
     './bower_components/angular-route/angular-route.js'
+    //'./bower_components/firebase/firebase.js',
+    //'./bower_components/angularfire/dist/angularfire.js'
   ];
   gulp.src(src)
     .pipe(concat('angular.js'))
@@ -80,6 +82,13 @@ module.exports = function () {
   src = [ './src/js/modules/downbeat/app.js'];
   gulp.src(src)
     .pipe(concat('downbeat-app.js'))
+    .pipe(uglify({ mangle: false }))
+    .pipe(header('Primary JavaScript'))
+    .pipe(gulp.dest(dest));
+
+  src = [ './src/js/modules/work/app.js'];
+  gulp.src(src)
+    .pipe(concat('work-app.js'))
     .pipe(uglify({ mangle: false }))
     .pipe(header('Primary JavaScript'))
     .pipe(gulp.dest(dest));

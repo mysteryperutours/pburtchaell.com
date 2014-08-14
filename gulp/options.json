@@ -1,4 +1,4 @@
 {
   "src": "./src",
-  "dest": "./dist"
+  "dest": "./dest"
 }

@@ -15,8 +15,12 @@ work: true
   You are just the kind of person I'd enjoy to working with.
   PS: This site is open-sourced at http://github.com/pburtchaell/site. Enjoy it; code your heart out.
 -->
+<script src="/assets/js/angular.js"></script>
+<script src="/assets/js/work-app.js"></script>
 {{> header-inc }}
-<main role=main class="page page-work">
+<main role=main class="page page-work" data-ng-app=work>
+
+  <section data-ng-view></section>
 
   <header class="portfolio-item--header">
     <div class=header-content>
@@ -124,6 +128,22 @@ work: true
 
     </div>
   </section><!-- /#design -->
+
+  <section class="wrk-sct rst" id=availability data-color data-ng-controller="PortfolioController as portfolio">
+    <div class=portfolio-wrapper onresize="setHeight()">
+
+      <div class=portfolio-item ng-repeat="item in portfolio.items">
+        <a class=portfolio-item--link href="#/project/\{{item.id}}">
+          <div class=portfolio-item--wrapper>
+            <span>\{{item.title}}</span>
+            <span>\{{item.description | truncate}}</span>
+            <date>\{{item.date}}</date>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
 
   <section class="wrk-sct rst" id=availability data-color=dark>
     <div class=wrapper>
