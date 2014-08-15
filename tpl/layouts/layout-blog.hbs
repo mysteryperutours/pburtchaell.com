@@ -1,9 +1,8 @@
 ---
 hire: true
 ---
-
-{{> open-inc ~}}
-{{> header-inc}}
+{{> head ~}}
+{{> header }}
 <main role=main id=main>
   <article itemscope itemtype=http://data-vocabulary.org/Article class="article page">
     {{#if cover ~}}
@@ -45,5 +44,5 @@ hire: true
   </article><!-- /.article.page -->
   {{> hire }}
 </main><!-- /#main -->
-{{> footer-inc}}
-{{> close-inc ~}}
+{{> footer }}
+{{> script ~}}
