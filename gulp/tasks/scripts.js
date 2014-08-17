@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var header = require('../utils/header.js');
+var plumber = require('gulp-plumber');
 var opt = require('../options.json');
 
 module.exports = function () {
@@ -16,6 +17,7 @@ module.exports = function () {
   src = [
     './bower_components/fastclick/lib/fastclick.js',
     './bower_components/headroom.js/dist/headroom.js',
+    './bower_components/debjs/lib/deb.js',
     './src/js/vendor/echo.js'
   ];
   gulp.src(src)
@@ -88,6 +90,7 @@ module.exports = function () {
 
   src = [ './src/js/modules/work/app.js'];
   gulp.src(src)
+    .pipe(plumber())
     .pipe(concat('work-app.js'))
     .pipe(uglify({ mangle: false }))
     .pipe(header('Primary JavaScript'))

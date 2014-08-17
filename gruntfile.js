@@ -5,30 +5,26 @@ module.exports = function (grunt) {
   var hljs = require('highlight.js');
 
   var options = {
-    prod: './dist/production',
-    dev: './dist/development',
     src: './src',
+    dest: './dist/development',
     plugins: './src/plugins',
     tpl: './tpl',
     pages: './pages',
     posts:  './posts',
     projects: './projects',
     vendor: './bower_components',
-    expand: true,
-    devPort: 8000,
-    devHostname: 'localhost'
+    expand: true
   },
   opt = options;
 
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
-    site: grunt.file.readYAML('src/data/site.yml'),
 
     assemble: {
       options: {
         flatten: true,
-        data: ['<%=site.source%>/data/*.{json,yml}', 'package.json'],
+        data: ['<%= opt.src %>/data/*.{json,yml}', 'package.json'],
         plugins: [
           'assemble-contrib-permalinks'
           //'assemble-contrib-anchors',
@@ -40,7 +36,7 @@ module.exports = function (grunt) {
           'handlebars-helper-inarray',
           './tpl/helpers/*.js' // Custom helpers
         ],
-        assets: '<%=site.development%>/assets',
+        assets: '<%= opt.dest %>/assets',
         partials: [opt.tpl + '/partials/**/*.{hbs,md}', opt.tpl + '/snippets/**/*.{hbs,md}'],
         layoutdir: opt.tpl + '/layouts',
         layout: 'default.hbs',
@@ -61,7 +57,7 @@ module.exports = function (grunt) {
           }
         },
         sitemap: {
-          homepage: '<%=site.url%>',
+          homepage: '<%= pkg.url %>',
           changefreq: 'daily',
           priority: '0.8',
           robot: true
@@ -70,15 +66,15 @@ module.exports = function (grunt) {
           structure: ':basename/index.html'
         },
         compose: {
-          cwd: opt.posts
+          cwd: '<%= opt.posts %>'
         }
       },
 
       pages: {
         files: [
           {
-            src: opt.pages + '/*.{hbs,md}',
-            dest: opt.dev + '/'
+            src: '<%= opt.pages %>/*.{hbs,md}',
+            dest: '<%= opt.dest %>/'
           }
         ]
       },
@@ -102,12 +98,12 @@ module.exports = function (grunt) {
         },
         files: [
           {
-            src: opt.posts + '/**/*.{hbs,md}',
-            dest: opt.dev + '/'
+            src: '<%= opt.posts %>/**/*.{hbs,md}',
+            dest: '<%= opt.dest %>/'
           },
           {
-            src: opt.pages + '/index.hbs',
-            dest: opt.dev + '/index.html'
+            src: '<%= opt.posts %>/index.hbs',
+            dest: '<%= opt.dest %>/index.html'
           }
         ]
       },
@@ -138,6 +134,6 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('assemble');
-  grunt.registerTask('default', ['build']);
+  grunt.registerTask('default', ['assemble']);
 
 }

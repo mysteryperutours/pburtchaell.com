@@ -9,3 +9,10 @@ module.exports = function () {
   .pipe(source('components.js'))
   .pipe(gulp.dest(opt.dest + '/assets/js/'));
 };
+
+module.exports = function () {
+  browserify(opt.src + '/js/modules/work/app.js')
+  .bundle()
+  .pipe(source('app.js'))
+  .pipe(gulp.dest(opt.dest + '/assets/js/apps/work/'));
+};

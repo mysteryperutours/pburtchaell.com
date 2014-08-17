@@ -18,6 +18,6 @@ exports.clean = function (cb) {
 
 exports.watch = function () {
   gulp.watch(opt.src + '/less/**/*.less', ['styles']);
-  gulp.watch(opt.src + '/js/**/*.js', ['scripts']);
-  gulp.watch('./pages/*.hbs', ['assemble']);
+  gulp.watch(opt.src + '/js/**/*.js', ['scripts', 'browserify']);
+  gulp.watch('./**/*.hbs', ['assemble']);
 };
