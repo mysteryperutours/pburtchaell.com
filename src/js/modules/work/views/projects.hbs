@@ -1,0 +1,20 @@
+---
+layout: none
+---
+<section class="projects-page" data-ng-controller="ProjectsController as projects">
+  <div class=portfolio-wrapper>
+
+     <div class=portfolio-item data-type=\{{item.type}} 
+      data-ng-repeat="item in items"
+      data-ng-style="{ 'background-image': 'url(/assets/img/work/projects/\{{item.id}}.jpg)' }">
+      <div class=portfolio-item--wrapper>
+        <a class=portfolio-item--link href="#/project/\{{item.id}}">
+          <span class=portfolio-item--title>\{{item.title}}</span>
+          <span class=portfolio-item--desciption>\{{item.description}}</span>
+          <date>\{{item.date}}</date>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /portfolio-wrapper -->
+</section>
