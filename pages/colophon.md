@@ -1,6 +1,5 @@
 ---
-published: true
-title: Colophon - v1.1.7
+title: 'Colophon - v1.1.7'
 description: Detailed and formal notes on the design and development of the third version of my personal website, blog, and portfolio.
 features:
 - hire
@@ -59,11 +58,6 @@ This idea is far more important for websites; a website with poorly written code
 ### Static Site Generator
 My site is static and generated using [Assemble](http://assemble.io/) a plugin for [Grunt](http://gruntjs.com/). I write content in either Handlebars (.hbs) or Markdown (.md). I publish my code on Github as an open-source, but contrary to many static sites, my site is not hosted with Github pages. Instead, I host my site on Amazon Web Services. With smart use of the Cloudfront CDN and S3, am easily able to load about seventy-five percent of the pages on my site in way less than a second. I monitor the status of my website using [Pingdom](http://tools.pingdom.com/fpt/#!/duUCz3/pburtchaell.com).
 
-### JavaScript, Stylesheets, Images &amp; Other Assets
-A complete list of client-side JavaScript plugins:
-- [Echo.js]() &mdash;on the article pages, images are lazy-loaded
-- [Headroom.js]() &mdash;hides the header when scrolling down
-
 ### Front-End Tools
 I use a mxiture of both gulp and Grunt for my website, as well as [Bower](http://bower.io/) for package management. To cover each plugin I use for Grunt and gulp would far beyond the scope of this document. You can find the gruntfile and a complete list of Grunt plugins in my [repository](http://github.com/pburtchaell/site-assemble/).
 
@@ -71,11 +65,4 @@ The main idea is to generate/compile everything with gulp except the website's H
 
 ## Build Status
 [Travis CI](https://travis-ci.org/pburtchaell/site) is used to test each commit on the master and dev (development) branches.
-
-{{!-- TODO:
-
-*Current Master Build Status*: [!["Travis CI Build"](http://img.shields.io/travis/pburtchaell/site/master.svg?style=flat)]()
-
-*Current Developer Build Status*: [!["Travis CI Build"](http://img.shields.io/travis/pburtchaell/site/dev.svg?style=flat)]()
-
-Thanks to [shields.io](http://shields.io/) for the flat badges.--}}
+x

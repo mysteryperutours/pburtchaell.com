@@ -2,28 +2,15 @@
 title: Downbeat Student Music Awards
 description: Enjoy my submissions to the 2014 Downbeat Student Music Awards for studio and live engineering.
 layout: none
-work: true
+feature:
+  angular: downbeat
+  work: true
+theme: downbeat
 ---
-{{> open-inc }}
-<link rel=stylesheet href=/assets/css/downbeat.css>
-<script src=/assets/js/angular.js></script>
-<script src=/assets/js/downbeat-app.js></script>
-{{> header-inc }}
-<main data-ng-app=downbeat>
-  <section data-ng-view class="page \{{pageClass}} default-page"></section>
+{{> head ~}}
+{{> header }}
+<main data-ng-view class="page \{{pageClass}} default-page" data-ng-app=downbeat>
+  <!-- AngularJS <3 -->
 </main>
-<footer class=page-footer>
-  <p><small>
-    <a href=/colophon rel=source>
-      <span class=page-footer-span>Made with<object class=page-footer-heart>
-        <svg x=0 y=0 width=10px height=10px viewBox="0 0 10 8.1396484">
-          <path d="M9.1796875, 0.6699219c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0L5,
-                      1.2753906L4.3398438,0.6699219 c-0.9726563-0.8925781-2.5478516-0.8925781-3.5205078,0c-1.0927734,
-                      1.0029297-1.0927734,2.6308594,0,3.6337891L5,8.1396484 l4.1796875-3.8359375C10.2734375,
-                      3.3007813,10.2734375,1.6728516,9.1796875,0.6699219z"/>
-          </svg></object>&nbsp;in New Orleans<br>
-      </span><br>
-    </a>
-  </small></p>
-</footer><!-- /page-footer -->
-{{> close-inc }}
+{{> footer }}
+{{> script ~}}

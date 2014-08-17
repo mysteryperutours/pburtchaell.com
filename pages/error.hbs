@@ -1,12 +1,12 @@
 ---
 title: 404 Error
+description: 'This, kids, is called a 404.'
 basename: error
 layout: none
-description: This, kids, is called a 404.
+theme: error
 ---
-{{> header-inc ~}}
-{{> open-inc }}
-<link rel=stylesheet href=/assets/css/error.css>
+{{> head ~}}
+{{> header }}
 <body>
 <main role=main class=error-page>
   <section class=error-intro>
@@ -17,4 +17,4 @@ description: This, kids, is called a 404.
     </div>
   </section><!-- /.error-intro -->
 </main>
-{{> close-inc }}
+{{> script }}
