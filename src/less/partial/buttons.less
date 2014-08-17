@@ -12,6 +12,9 @@ button,
   text-align: center;
   background: @light-grey;
   cursor: pointer;
+  border: none;
+  font: normal 1rem @type-primary;
+
   .box-sizing();
   .transition(0.25s);
   
@@ -28,12 +31,16 @@ button,
   
 }
 
+.btn--inline {
+
+}
+
 /* Use .btn-* for different appearances */
-&.btn-green { background: @green; color: darken(@green,40%); }
-&.btn-red { background: @red; }
-&.btn-blue { background: @blue; }
-&.btn-white { background: @white; }
-&.btn-border {
+.btn-green { background: @green; color: darken(@green,40%); }
+.btn-red { background: @red; }
+.btn-blue { background: @blue; }
+.btn-white { background: @white; }
+.btn-border {
   background: none;
   border: 0.2rem solid;
   &.btn-green { color: @green; }
