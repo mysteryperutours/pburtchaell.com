@@ -23,6 +23,7 @@ gulp.task('browserify', task.browserify);
 gulp.task('clean', task.utils.clean);
 gulp.task('copy', task.utils.copy);
 gulp.task('watch', task.utils.watch);
+gulp.task('test', task.utils.test)
 
 // Build the site
 gulp.task('assemble', task.assemble);

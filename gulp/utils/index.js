@@ -21,3 +21,5 @@ exports.watch = function () {
   gulp.watch(opt.src + '/js/**/*.js', ['scripts', 'browserify']);
   gulp.watch('./**/*.hbs', ['assemble']);
 };
+
+exports.test = require('./test');
