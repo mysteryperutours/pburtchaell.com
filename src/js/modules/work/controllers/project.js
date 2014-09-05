@@ -2,23 +2,20 @@
  * 
  */
 
-/** 
- * Root
- * @description A root reference to the Firebase database.
- */
-var utils = require('../utils');
 
-module.exports = function ($scope, $routeParams, $http, $location) {
+module.exports = function ($scope, $stateParams, $http) {
  
-  var root = utils.root;
+  var root = 'https://pburtchaell-work.firebaseio.com/';
 
-  $scope.id = $routeParams.id;
+  $scope.id = $stateParams.id;
   
   $http.get(root + 'items/' + $scope.id +'.json').success(function (data) {
     $scope.project = data;
   });
 
-  function next () {
+  $scope.next = 2;
+
+  /*function next () {
     $scope.next = (parseInt($scope.id) + 1);
 
     function test () {
@@ -39,7 +36,7 @@ module.exports = function ($scope, $routeParams, $http, $location) {
     /**
      * @object cls
      * @desc Classes used for the current and next project items.
-     */
+     *
     var cls = {
       current: 'portfolio-page--current',
       next: 'portfolio-page--next'
@@ -48,7 +45,7 @@ module.exports = function ($scope, $routeParams, $http, $location) {
     /**
      * @object el
      * @desc Selectors for the two projects.
-     */
+     *
     var el = {
       current: document.querySelectorAll('.' + cls.current)[0],
       next: document.querySelectorAll('.' + cls.next)[0]
@@ -67,11 +64,11 @@ module.exports = function ($scope, $routeParams, $http, $location) {
       $location.path('/project/' + $scope.next);
     }).deb();
  
-  };
+  };*/
 
   /**
    * Having some fun with the ShadowDOM and web components.
-   */
+   *
   var projectTitlePrototype = Object.create(HTMLElement.prototype);
 
   window.MyElement = document.registerElement('project-title', {
@@ -83,5 +80,6 @@ module.exports = function ($scope, $routeParams, $http, $location) {
   template.querySelector('.project-page--title').textContent = $scope.project.title;
   template.querySelector('.portfolio-page--description').textContent = $scope.project.description;
   document.body.appendChild(template);
+  */
 
 };

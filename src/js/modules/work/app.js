@@ -1,56 +1,46 @@
-'use strict';
+/* jshint strict: false */
 
-// http://toddmotto.com/ultimate-guide-to-learning-angular-js-in-one-day/
-// http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
+'use strict';
 
 /**
  * Application
  * @description Initialize the application and the required modules.
  */
 require('angular');
-require('angular-route');
+require('skrollr');
+require('angular-ui-router');
 require('angular-animate');
+require('angular-modal');
 
 angular
 
   .module('work', [
-    'ngRoute',
-    'ngAnimate'
+    'ui.router',
+    'ngAnimate',
+    'btford.modal'
   ])
 
   /**!
    * Application Routes
    */
-  .config(['$routeProvider', require('./routes')])
+  .config(require('./routes'))
 
   /**!
    * Application Controllers
+   * 
+   * See each controller's file for a description of the file.
    */
-  .controller('MainController', [
-    '$scope', 
-    require('./controllers/about')
-  ])
-
-  .controller('AboutController', [
-    '$scope', 
-    require('./controllers/main')
-  ])
-
-  .controller('ProjectController', [
-    '$scope',
-    '$routeParams', 
-    '$http', 
-    '$location', 
-    require('./controllers/project')
-  ])
-
-  .controller('ProjectsController', [
-    '$scope',
-    '$http', 
-    require('./controllers/projects')
-  ])
+  .controller('MainController',require('./controllers/about'))
+  .controller('AboutContnoller', require('./controllers/main'))
+  .controller('ProjectController', require('./controllers/project'))
+  .controller('ProjectsController', require('./controllers/projects'))
+  .controller('ModalController', require('./controllers/modal'))
 
   /**! 
    * Application Factories
    */
-   .factory('database', require('./factories/database'));
+   .factory('database', require('./factories/database'))
+   .factory('modal', require('./factories/modal'))
+
+   .run();
+

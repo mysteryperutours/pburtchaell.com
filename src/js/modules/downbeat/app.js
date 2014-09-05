@@ -7,7 +7,7 @@ angular
     'ngAnimate'
   ])
 
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'main/index.html',

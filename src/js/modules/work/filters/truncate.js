@@ -2,7 +2,7 @@
  * @ngFilter Truncate
  * @desc Truncate string length and append '...'
  */
-app.filter('truncate', function () {
+module.exports = function () {
   return function (text, length, end) {
     if (isNaN(length)) {
       length = 10;
@@ -14,4 +14,4 @@ app.filter('truncate', function () {
       return String(text).substring(0, length-end.length) + end;
     }
   };
-});
+};

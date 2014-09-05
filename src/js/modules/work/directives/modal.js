@@ -4,7 +4,7 @@
  * 
  * A directive (checkout my post on Directives from existing scripts/plugins) in it's simplest form is a small piece of templated HTML, preferably used multiple times throughout an application where needed.
  */
-app.directive('modalDialog', function() {
+module.exports = function () {
   return {
     /*
      * restrict: This goes back to usage, how do we restrict the element's usage? If you're using a project that needs legacy IE support, you'll probably need attribute/class declarations. Restricting as 'A' means you restrict it as an Attribute. 'E' for Element, 'C' for Class and 'M' for Comment. These have a default as 
@@ -27,4 +27,4 @@ app.directive('modalDialog', function() {
     },
     template: '...' // See below
   };
-});
+};

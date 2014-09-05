@@ -1,59 +1,52 @@
-'use strict';
+module.exports = function ($stateProvider, $urlRouterProvider) {
+  'use strict';
+  
+  $urlRouterProvider.otherwise('/');
 
-module.exports = function($routeProvider) {
-  $routeProvider
+  $stateProvider
   
   /**
    * '/'
    * @description The Main page
    */
-  .when('/', {
+  .state('main', {
+    url: '^/',
     templateUrl: '../assets/js/work/views/main.html',
     controller: 'MainController',
     controllerAs: 'main'
   })
 
-  /**
-   * '/about'
-   * @description
-   */
-  .when('/about', {
-    templateUrl: '../assets/js/work/views/about.html',
-    controller: 'AboutController',
-    controllerAs: 'about'
-  })
+     /**
+     * '/projects'
+     * @description A grid layout of all projects.
+     */
+    .state('main.projects', {
+      url: '^/projects',
+      templateUrl: '../assets/js/work/views/projects.html',
+      controller: 'ProjectsController',
+      controllerAs: 'projects'
+    })
 
-  /**
-   * '/projects'
-   * @description A grid layout of all projects.
-   */
-  .when('/projects', {
-    templateUrl: '../assets/js/work/views/projects.html',
-    controller: 'ProjectsController',
-    controllerAs: 'projects'
-  })
+    /**
+     * '/project/:id'
+     * @description A page for each project is available based of the project ID.
+     */
+    .state('id', {
+      url: '^/projects/id/:id',
+      templateUrl: '../assets/js/work/views/project.html',
+      controller: 'ProjectController',
+      controllerAs: 'project'
+    })
 
-  /**
-   * '/project/:id'
-   * @description A page for each project is available based of the project ID.
-   */
-  .when('/project/:id', {
-    templateUrl: '../assets/js/work/views/project.html',
-    controller: 'ProjectController',
-    controllerAs: 'project'
-  })
-  .when('/projects/:id', { 
-    redirectTo: '/project/:id' 
-  })
-  .when('/project', { 
-    redirectTo: '/projects' 
-  })
+    /**
+     * '/about'
+     * @description
+     */
+    .state('main.about', {
+      url: '^/about',
+      templateUrl: '../assets/js/work/views/about.html',
+      controller: 'AboutController',
+      controllerAs: 'about'
+    });
 
-  /**
-   * otherwise
-   * @description When a route is not found, redirect to the main page.
-   */
-  .otherwise({
-    redirectTo: '/'
-  });
-}
+};
