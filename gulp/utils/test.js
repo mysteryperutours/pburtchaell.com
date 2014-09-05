@@ -11,8 +11,16 @@ module.exports = function () {
   var dest = { }; //
 
   gulp.src(src)
-    .pipe(jshint())
+    .pipe(jshint( {
+      undef: true,
+      unused: true,
+      node: true,
+      browser: true,
+      predef: [
+        "angular"
+      ]
+    }))
     .pipe(jshint.reporter('default'))
-    .pipe(gulp.dest(dest));
+    .pipe(gulp.dest());
 
 };
