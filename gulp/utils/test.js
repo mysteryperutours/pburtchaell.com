@@ -8,7 +8,6 @@ var opt = require('../options.json');
 
 module.exports = function () {
   var src = opt.src + '/**/*.js';
-  var dest = { }; //
 
   gulp.src(src)
     .pipe(jshint( {

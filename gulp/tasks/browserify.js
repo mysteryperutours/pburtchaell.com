@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var plumber = require('gulp-plumber');
+var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var opt = require('../options.json');
 
