@@ -86,28 +86,43 @@
 .branding {
   display: block;
   position: fixed;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   left: 1rem;
-  padding: 1rem;
+  padding: .5rem;
   top: 0;
   z-index: 99999;
-  background: @light-grey;
+  background: none;
   path {
     height: 10px;
-    stroke-width: 1px;
+    stroke-width: .5px;
     stroke-miterlimit: 10;
-    padding: 1px;
-    fill: none;
+    stroke: @white;
+    .transition(transform .5s)
   }
   &:hover {
     .transform(translateY(10px));
+    #branding-design path { 
+      stroke: @design; 
+      transform: none;
+    }
+    #branding-audio path { 
+      transform: none;
+      stroke: @audio; }
+    #branding-video path { 
+      stroke: darken(@video, 15%); 
+      
+    }
   }
 }
 
-#branding-design { stroke: @design; }
-#branding-audio { stroke: @audio; }
-#branding-video { stroke: darken(@video, 15%); }
+#branding-design path { 
+  transform: rotate(90deg);
+}
+#branding-audio  path { 
+  transform: rotate(-90deg);
+}
+
 
 @import 'navigation';
 

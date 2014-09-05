@@ -8,19 +8,32 @@ button,
   width: 100%;
   max-width: 500px;
   margin: 1rem auto;
-  padding: 0.75rem;
+  //padding: .75rem;
   text-align: center;
+  
+  -webkit-appearance: none;
+  width: 100%;
+  max-width: 500px;
+  border: none;
+  height: 2rem;
+  //padding: 0.75rem;
+
+
+  font: normal 0.75rem @type-secondary;
+  text-transform: uppercase;
+
   background: @light-grey;
   cursor: pointer;
   border: none;
-  font: normal 1rem @type-primary;
+
+  //font: normal 1rem @type-primary;
 
   .box-sizing();
-  .transition(0.25s);
+  //.transition(0.25s);
   
-  &:hover { 
+  &:hover,
+  &:active { 
     outline: 0; 
-    opacity: 0.75; 
   }
   &.no-hover {
     &:hover { 
@@ -31,20 +44,54 @@ button,
   
 }
 
-.btn--inline {
+a.btn {
+  line-height: 2rem;
+}
 
+.btn--inline {
+  display: inline-block;
+  float: left;
 }
 
 /* Use .btn-* for different appearances */
 .btn-green { background: @green; color: darken(@green,40%); }
 .btn-red { background: @red; }
 .btn-blue { background: @blue; }
-.btn-white { background: @white; }
+
+.btn-white {
+  border: .125rem solid @white;
+  background: @white; 
+  &:hover {
+    color: @white;
+    background: transparent;
+  }
+}
+
 .btn-border {
   background: none;
-  border: 0.2rem solid;
+  border: 0.125rem solid;
+
   &.btn-green { color: @green; }
   &.btn-red { color: @red; }
-  &.btn-blue { color: @blue; }
-  &.btn-white { color: @white; }
+
+  &.btn-blue { 
+    color: @blue; 
+  }
+
+  &.btn-black {
+    color: @black;
+    &:hover {
+      background: @black;
+      color: @white;
+    }
+  }
+
+  &.btn-white { 
+    color: @white; 
+    &:hover {
+      background: @white;
+      color: @black;
+    }
+  }
+
 }

@@ -7,7 +7,11 @@
 [data-color] {
   a, a.line {
     &:not(.btn) { 
-      color: @white
+      color: @white;
+      border-color: fadeOut(@white,75%);
+      &:hover {
+        border-color: @white;
+      }
     }
   }
 }
@@ -24,14 +28,110 @@
   color: darken(@audio,25%);
 }
 [data-color=dark] {
-  background: @dark-grey;
+  background: @black;
   color: @light-grey;
 }
 
 .portfolio-item--cover {
   &.work {
+   
+  }
+}
+
+#s1 {
+  h4 {
+    text-align: left;
+    line-height: 1.7;
+  }
+  span {
+    background: @grey;
+    //color: @white;
+    pading: 2px;
+  }
+  p {
+    margin-left: 25%;
+    border-left: .25rem solid;
+    padding: 1rem;
+  }
+}
+
+.work-header {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.work-header-content {
+  flex: 1 auto;
+  align-self: center;
+  width: 75vw;
+  padding: 25vw;
+  z-index: 2;
+  button {
+    font-family: @type-secondary;
+    text-transform: uppercase;
+    text-align: left;
+    padding-left: 1rem;
+    margin: 0;
+  }
+}
+
+.work-header-overlays {
+  height: 100vh;
+  width: 100vw;
+  background: @dark-grey;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  
+  .overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    //display: flex;
+    //flex-direction: row;
+  }
+  .o1 {
     background: url(../img/site/work/cover.jpg) center center / cover no-repeat fixed;
   }
+  .o2 {
+    width: 100vw;
+    height: 100vh;
+    background: @black;
+    z-index: 2;
+    opacity: .75;
+  }
+
+}
+
+.work-title,
+.work-subtitle {
+  margin: 0;
+  color: @white;
+  text-align: left;
+
+}
+
+.work-title {
+  font-size: 5rem;
+}
+
+.work-subtitle {
+  background: @white;
+  color: @dark-grey;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.portfolio-item--wrapper {
+  padding: 1rem;
+}
+
+.portfolio-item--title {
+  color: @white;
+  text-transform: uppercase;
+  text-align: left !important;
 }
 
 /**
@@ -159,7 +259,7 @@
   &:before {
     top: 1.25rem;
     left: 0;
-    color: @dark-grey;
+    color: @black;
     padding: 0.125rem;
   }
   &:after {

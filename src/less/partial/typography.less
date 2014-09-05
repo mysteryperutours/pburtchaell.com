@@ -162,7 +162,6 @@ hr {
 a {
   text-decoration: none;
   color: @dark-grey;
-  .transition();
 }
 
 /* special link styles */
@@ -173,9 +172,9 @@ a {
 a.line,
 a.line:visited {
 
-  @color: rgb(0,169,198);
+  @color: rgb(0,169,198,.5);
   color: @color;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid fadeOut(@color,75%);
 
   // on :hover fadeout the line and add padding
   &:hover,
