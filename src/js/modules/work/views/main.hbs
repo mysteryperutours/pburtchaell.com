@@ -1,22 +1,37 @@
 ---
 layout: none
 ---
-<section class="portfolio-item--header">
-  <div class=header-content>
-    <h1 class=rst><b>Work With Me</b></h1>
-    <h4 class=rst>Design + Development from<br><b>New Orleans, Louisiana</b></h4>
+<section class="work-header">
+  
+  <hrgroup class=work-header-content>
 
-    <div class=actions>
-      <button class="btn--inline [  btn-white ]" id=trigger-information 
-        onclick="window.location.href='#/about'">
-        About me
-      </button>
-      <button class="btn--inline [  btn-white ]" id=trigger-work
-        onclick="window.location.href='#/projects'">
-        My projects
-      </button>
-    </div>
+    <h1 class=work-title>
+      <b>Work With Me</b>
+    </h1>
+    <h2 class=work-subtitle>
+      Design &amp; Front-end development from New Orleans
+    </h2>
 
-  </div>
-  <div class="portfolio-item--cover work"></div>
+    <button class="btn--inline [  btn-white ]" id=trigger-work
+      onclick="window.location.href='#/projects'">
+      My projects
+    </button>
+
+    <button class="btn--inline [  btn-white ]" id=trigger-about
+      onclick="window.location.href='#/about';"
+      ng-click="scroll()">
+      About me
+    </button>
+
+  </hrgroup>
+
+  <span class=work-header-overlays>
+    <span class="overlay o2"></span>
+    <span class="overlay o1"></span>
+  </span>
+
+</section>
+
+<section class=work-projects data-ui-view>
+
 </section>

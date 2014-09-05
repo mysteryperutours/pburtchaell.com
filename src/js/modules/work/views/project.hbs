@@ -2,9 +2,7 @@
 layout: none
 ---
 
-<section class="portfolio-page portfolio-page--current" data-type=\{{project.type}}
-  data-ng-animate-children=true
-  data-ng-animate="{ enter: 'test-animation' }">
+<section class="portfolio-page portfolio-page--current" ng-animate-children>
 
   	<template id=project-title>
   		<style>
@@ -13,7 +11,7 @@ layout: none
   			}
   		</style>
   		<hrgroup class=project-page--hrgroup>
-		    <h1 class=project-page--title>\{{project.title}}</h1>
+		    <h1 class=project-page--title data-ng-animate data-ng-if="on">\{{project.title}}</h1>
         <h2 class=portfolio-page--description>
 		  </hrgroup>
   	</template>
@@ -32,25 +30,25 @@ layout: none
 	</section> 
 
 	<aside>
-		<div class=wrapper>
+		<!--<div class=wrapper>
 			<ul>
 				<li>Type: \{{project.type}}
 				<li>
 				<li>
 			</ul>  
-		</div>
+		</div>-->
 	</aside> 
 
 	<footer class=portfolio-page--footer>
 
 	</footer>
 
-</section>
+  <section class="portfolio-page portfolio-page--next" data-ng-click="load()">
+    <header>
+      <h1>More</h1>
+      <hr class=ctr>
+      <a href="#/projects/id/\{{next}}">See</span>
+    </header>
+  </section>
 
-<section class="portfolio-page portfolio-page--next" data-ng-click="load()">
-  <header>
-    <i>Up next</i><br>
-    <span>\{{project.next.title}}</span>
-    <span>\{{project.next.desciption}}</span>
-  </header>
 </section>
