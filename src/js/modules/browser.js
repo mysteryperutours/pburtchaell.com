@@ -1,4 +1,4 @@
-module.exports = browser = {
+module.exports = {
   
   getElementsByClassName: function(search) {
     var d = document, elements, pattern, i, results = [];

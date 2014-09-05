@@ -1,4 +1,4 @@
-module.exports = theme = {    
+module.exports = {    
 
   save: function (param,value) {
     localStorage.setItem(param,value);
@@ -24,7 +24,7 @@ module.exports = theme = {
       this.toggle(); 
     } else {
       el.classList.toggle('theme-light');
-    };
+    }
   }
   
 };
