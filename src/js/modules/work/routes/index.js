@@ -42,11 +42,11 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
      * '/about'
      * @description
      */
-    .state('main.about', {
-      url: '^/about',
-      templateUrl: '../assets/js/work/views/about.html',
-      controller: 'AboutController',
-      controllerAs: 'about'
+    .state('main.profile', {
+      url: '^/profile',
+      templateUrl: '../assets/js/work/views/profile.html',
+      controller: 'ProfileController',
+      controllerAs: 'profile'
     });
 
 };
