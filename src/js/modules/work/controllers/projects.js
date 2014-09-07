@@ -1,41 +1,41 @@
 /**
- * 
+ * @description
  */
 
-module.exports = function ($scope, $http, database) {
+module.exports = function ($scope, $http, $rootScope, $database, $handle) {
 
-  //var root = utils.root;
-  
   /**
    * @object items
    * @description Project items for the portfolio.
    */
-  $scope.items = {};
+  $scope.items = { };
 
-  //console.log('ProjectsController');
+  // Clear data store in localStorage if true.
+  $scope.reset = true;
 
-  // Make sure localStorage is supported.
-  //if (!window.localStorage) {
+  // localStorage key to use -> localStorage[key].
+  var key = 'projects';
 
-    // Get the items from localStorage.
-    //$scope.items = localStorage['projects'];
+  // The data to be retrieved form localStorage.
+  var data = localStorage[key];
 
-    /**
-     * If there is nothing in localStorage, then
-     * get the items from the database.
-     */
-    //if ($scope.items = undefined) {
-
-  
-  console.log(
-    database.get('items',{
+  /** 
+   * Get the items from localStorage, if they exist; if they do
+   * not exist, grab the data from the database.
+   */
+  if (data === undefined) {
+    $database.get('items', {
       save: true
-    })
-  );
-
-  $scope.items = database.get('items', {
-    save: true
-  });
+    }, function () {
+      $scope.items = JSON.parse(data);
+    });
+  } else {
+    if ($rootScope.reset) {
+      delete data;
+      console.log('test pass');
+    }
+    $scope.items = JSON.parse(data);
+  }
 
   $scope.orderProp = 'date';
 };

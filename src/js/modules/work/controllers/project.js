@@ -2,84 +2,80 @@
  * 
  */
 
-
-module.exports = function ($scope, $stateParams, $http) {
- 
-  var root = 'https://pburtchaell-work.firebaseio.com/';
+module.exports = function ($scope, $rootScope, $location, $stateParams, $http) {
+  $rootScope.$on("$routeChangeStart", function (args){
+    console.clear();
+  });
 
   $scope.id = $stateParams.id;
+  $scope.title = 'Projects';
   
-  $http.get(root + 'items/' + $scope.id +'.json').success(function (data) {
-    $scope.project = data;
-  });
+  /**
+   * @object projects
+   * @description The project data for the portfolio entry.
+   */
+  $scope.project = { };
 
-  $scope.next = 2;
+  // Clear data store in localStorage if true.
+  $scope.reset = true;
 
-  /*function next () {
-    $scope.next = (parseInt($scope.id) + 1);
+  // localStorage key to use -> localStorage[key].
+  var key = 'projects';
 
-    function test () {
-      $http.get(root + 'items/' + $scope.next + '/title.json' );
+  // The data to be retrieved form localStorage.
+  var data = localStorage[key];
+
+  /** 
+   * @funcion getProject
+   * Get the items from localStorage, if they exist; if they do
+   * not exist, grab the data from the database.
+   */
+  $scope.getProject = function (id, callback) {
+    if (data === undefined) {
+      $database.get('item/' + parseInt(id), {
+        save: true
+      }, function () {
+        $scope.projects = JSON.parse(data);
+        $scope.project = $scope.projects[id];
+      });
+
+    } else {
+      if ($rootScope.reset) {
+        delete data;
+      }
+      $scope.projects = JSON.parse(data);
+      $scope.project = $scope.projects[id];
     }
 
-    test();
-
-    $http.get(root + 'items/' + $scope.next + '.json').success(function (data) {
-      $scope.project.next = data;
-    });
+    callback();
   }
 
-  next();
-
-  $scope.load = function () {
+  $scope.getProject($scope.id, function () {
 
     /**
-     * @object cls
-     * @desc Classes used for the current and next project items.
-     *
-    var cls = {
-      current: 'portfolio-page--current',
-      next: 'portfolio-page--next'
+     * @function getNextProject
+     * @param {number} id number value for the current page
+     */
+    $scope.getNextProjectId = function (id, callback) {
+
+      //if ($scope.project != undefined) console.group($scope.project.title);
+
+      // The inital value of $scope.next is the $scope.id.
+      $scope.next = parseInt(id);
+
+      console.log('Current page id: ' + $scope.next);
+      
+      if ($scope.next >= $scope.projects.length) {
+        $scope.next = 0;
+      } else {
+        $scope.next++;
+      }
+
+      console.log('Next page id: ' + $scope.next);
+      console.log('Total number of pages: ' + $scope.projects.length);
+      if ($scope.project.title != undefined) console.groupEnd();
     };
 
-    /**
-     * @object el
-     * @desc Selectors for the two projects.
-     *
-    var el = {
-      current: document.querySelectorAll('.' + cls.current)[0],
-      next: document.querySelectorAll('.' + cls.next)[0]
-    };
-
-    function init (params, cb) {
-      el.next.classList.remove(cls.next);
-      el.next.classList.add(cls.current);
-      el.current.classList.remove(cls.current);
-      el.current.classList.add(cls.next);
-      cb();
-    }
-
-    init(['',''], function () {
-      $scope.project = $scope.project.next;
-      $location.path('/project/' + $scope.next);
-    }).deb();
- 
-  };*/
-
-  /**
-   * Having some fun with the ShadowDOM and web components.
-   *
-  var projectTitlePrototype = Object.create(HTMLElement.prototype);
-
-  window.MyElement = document.registerElement('project-title', {
-    prototype: projectTitlePrototype
-    // other props
-  });
-
-  var template = document.querySelector('#project-title');
-  template.querySelector('.project-page--title').textContent = $scope.project.title;
-  template.querySelector('.portfolio-page--description').textContent = $scope.project.description;
-  document.body.appendChild(template);
-  */
-
+    //$scope.getNextProjectId($scope.id);
+  })
 };

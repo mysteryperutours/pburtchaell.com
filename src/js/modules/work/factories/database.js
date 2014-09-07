@@ -1,7 +1,7 @@
 /** 
  * 
  */
-module.exports = function ($rootScope, $http) {
+module.exports = function ($rootScope, $http, $handle) {
   return {
 
     /**
@@ -21,38 +21,45 @@ module.exports = function ($rootScope, $http) {
      */
     get: function (url, options, callback) {
 
-      // Create a base options object.
-      var options = {
-        root: options.root || 'https://pburtchaell-work.firebaseio.com/',
-        ext: options.ext || '.json',
-        save: options.save || false,
-        path: url || handle.InternalError('You must define a url for the database.')
-      };
-      
-      // The constructed url to be used in the request.
-      var url = options.root + options.path + options.ext;
-       
-      return $http({
-        method: 'GET', 
-        url: url 
-      })
-      .success(function (data, status) {
+      $rootScope.reset = true;
 
-        /**
-         * If specified as true in the request's options,
-         * save the data to localStorage for future usage.
-         */
-        if (options.save != false) {
-          localStorage['projects'] = data;
-        }
+      /** 
+       * Make sure localStorage is supported. If it isn't, warn the user.
+       */
+      if (window.localStorage) {
+        // Create a base options object.
+        options = {
+          root: options.root || 'https://pburtchaell-work.firebaseio.com/',
+          ext: options.ext || '.json',
+          save: options.save || true,
+          path: url || $handle.InternalError('You must define a url for the database.')
+        };
+        
+        // The constructed url to be used in the request.
+        var url = options.root + options.path + options.ext;
+        
+        return $http({
+          method: 'GET', 
+          url: url 
+        })
+        .success(function (data, status) {
 
-        // Return the data object/array for use.
-        return data;
-      })
-      .error(function (data, status) {  
-        return;
-      }); 
-
+          /**
+           * If specified as true in the request's options,
+           * save the data to localStorage for future usage.
+           */
+          if (options.save !== false) {
+            localStorage['projects'] = JSON.stringify(data);
+          }
+          
+          callback();
+        })
+        .error(function (data, status) {  
+          return;
+        });  
+      } else {
+        browser.warn('localStorage');
+      }
     },
 
     /**
