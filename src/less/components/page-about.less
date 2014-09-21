@@ -1,11 +1,15 @@
 .about-title {
-    text-align: left !important; 
-    font-size: 4.5rem; 
+  text-align: left; 
+  font-size: 4.5rem;
 }
 
 .about-subtitle {
   text-align: left;
   color: fadeout(@dark-grey, 50%);
+}
+
+.about-page-link { 
+  color: fadeout(@blue, 50%) !important; 
 }
 
 .about-page {
@@ -14,10 +18,52 @@
 
 .about-page-image {
   color: fadeout(@dark-grey, 90%);
-  a {
-    color: fadeout(@blue, 50%) !important;
-  }
   background: url('../img/site/about.jpg') center center / cover no-repeat fixed;
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+@media screen and (max-width: 800px) {
+  .about-title,
+  .about-page-link {
+    font-size: 4rem;
+    margin-top: 10vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about-title,
+  .about-page-link {
+    font-size: 3.75rem;
+    line-height: 1.0;
+    border: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-title, 
+  .about-page-link {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-title,
+  .about-page-link {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .about-title, 
+  .about-page-link {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .about-title, 
+  .about-page-link {
+    font-size: 2.25rem;
+  }
 }
