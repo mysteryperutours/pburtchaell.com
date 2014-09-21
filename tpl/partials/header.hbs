@@ -1,5 +1,5 @@
 <aside class=page-support-status></aside>
-<header class="page-header {{#if work}}portfolio{{/if}}{{#if cover}}cover-image{{/if}}">
+<header class="page-header {{#if cover}}cover-image{{/if}}">
   <noscript>
     <div class=noscript>
       <small>
@@ -7,16 +7,6 @@
       </small>
     </div>
   </noscript>
-  {{!-- The plugin required for this is not working 
-  {{#if date}}
-   <div class=article-reading-time>
-      <small>
-        <span class=label-wordcount> words</span>
-        <span class=label-reading-time> read</span>
-      </small>
-    </div>
-  {{else}}
-  {{/if}} --}}
   <a href="/">
     <object class=branding>
       <svg x="0px" y="0px" viewBox="12.5 12.5 50 50">
@@ -34,9 +24,9 @@
   </a>
   <nav class=page-nav role=navigation>
     <ul class=nav-items>
-      <li class=nav-item id=about><a href=/about>About</a>
-      <li class=nav-item id=work><a href=/work>Work</a>
-      <li class=nav-item id=writing><a href="/">Writing</a>
+      <li class=nav-item id=about><a class=nav-item--title href=/about>About</a>
+      <li class=nav-item id=work><a class=nav-item--title href=/work>Work</a>
+      <li class=nav-item id=writing><a class=nav-item--title href="/">Writing</a>
     </ul>
   </nav>
 </header>
