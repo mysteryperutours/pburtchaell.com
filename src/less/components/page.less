@@ -1,0 +1,41 @@
+/**
+ * @element main
+ * @description The main container for all page content 
+ * outside the page-heaer and page-footer. Contains the 
+ * default-header and default-content.
+ */
+main {
+  flex: 1;
+}
+
+/**
+ * @class default-header
+ * @description Default container for page titles.
+ */
+.default-header {
+  padding: (@base)+75px round(@column, 2) @base round(@column, 2);
+}
+
+/**
+ * @class default-content
+ * @description Default container for page text content.
+ */
+.default-content {
+  padding: 0 0 2rem 0;
+
+  p, 
+  ul, 
+  ol, 
+  code, 
+  figure {
+    max-width: 600px;
+    margin: @base auto;
+  }
+
+  p {
+    padding: 0 round(@column*1);
+  }
+}
+
+@import '../components/browser/webkit';
+@import '../components/browser/moz';
