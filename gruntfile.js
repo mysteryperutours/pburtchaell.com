@@ -14,17 +14,18 @@ module.exports = function (grunt) {
     projects: './projects',
     vendor: './bower_components',
     expand: true
-  },
-  opt = options;
+  };
+
+  var opt = options;
 
   grunt.initConfig({
-
     pkg: grunt.file.readJSON('package.json'),
+    opt: options,
 
     assemble: {
       options: {
         flatten: true,
-        data: ['<%= opt.src %>/data/*.{json,yml}', 'package.json'],
+        data: ['./src/data/*.{json,yml}', 'package.json'],
         plugins: [
           'assemble-contrib-permalinks'
           //'assemble-contrib-anchors',
@@ -34,18 +35,18 @@ module.exports = function (grunt) {
           'handlebars-helper-compose',
           'handlebars-helper-moment',
           'handlebars-helper-inarray',
-          './tpl/helpers/*.js' // Custom helpers
+          './tpl/helpers/*.js'
         ],
-        assets: '<%= opt.dest %>/assets',
-        partials: [opt.tpl + '/partials/**/*.{hbs,md}', opt.tpl + '/snippets/**/*.{hbs,md}'],
-        layoutdir: opt.tpl + '/layouts',
+        assets: './dest/assets',
+        partials: ['./tpl/partials/**/*.{hbs,md}', './tpl/snippets/**/*.{hbs,md}'],
+        layoutdir: './tpl/layouts',
         layout: 'default.hbs',
         collections: [
           {
             name: 'post',
             sortby: 'date',
             sortorder: 'descending',
-            pages: [opt.posts]
+            pages: [ './posts' ]
           }
         ],
         marked: {
@@ -73,8 +74,8 @@ module.exports = function (grunt) {
       pages: {
         files: [
           {
-            src: '<%= opt.pages %>/*.{hbs,md}',
-            dest: '<%= opt.dest %>/'
+            src: './pages/*.{hbs,md}',
+            dest: './dest/'
           }
         ]
       },
@@ -82,8 +83,8 @@ module.exports = function (grunt) {
       posts: {
         options: {
           plugins: [
-            'assemble-contrib-permalinks',
-            'assemble-middleware-rss'
+            'assemble-contrib-permalinks'
+            //'assemble-middleware-rss'
           ],
           layout: 'layout-blog.hbs',
           permalinks: {
@@ -98,31 +99,31 @@ module.exports = function (grunt) {
         },
         files: [
           {
-            src: '<%= opt.posts %>/**/*.{hbs,md}',
-            dest: '<%= opt.dest %>/'
+            src: './posts/**/*.{hbs,md}',
+            dest: './dest/'
           },
           {
-            src: '<%= opt.posts %>/index.hbs',
-            dest: '<%= opt.dest %>/index.html'
-          }
-        ]
-      },
-
-
-      downbeat: {
-        files: [
-          {
-            src: opt.src + '/js/modules/downbeat/views/*.hbs',
-            dest: opt.dev + '/downbeat/'
+            src: './pages/index.hbs',
+            dest: './dest/index.html'
           }
         ]
       }
+    },
 
+    watch: {
+      assemble: {
+        files: ['./pages/**/*', './posts/**/*', './tpl/**/*'],
+        tasks: ['assemble'],
+        options: {
+          spawn: false
+        }
+      }
     }
-
   });
 
   grunt.loadNpmTasks('assemble');
-  grunt.registerTask('default', ['assemble']);
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('default', ['assemble', 'watch']);
 
 }
