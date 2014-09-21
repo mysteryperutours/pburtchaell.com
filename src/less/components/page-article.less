@@ -1,0 +1,211 @@
+/**
+ * @class article-feed
+ * @description A standard layout feed of articles.
+ */
+.article-feed {
+  margin: @base*5 0 round(@base*1.5) 0;
+}
+
+/**
+ * @class article-feed-item
+ * @description
+ */ 
+.article-feed-item {
+  padding: 1rem;
+  text-align: center;
+}
+
+/**
+ * @class article-feed-title
+ * @description The title for each article in the feed.
+ */
+.article-feed-title {  
+  margin: 0 3px 0 0;
+}
+
+/**
+ * @class article-feed-time
+ * @description The date each item in the article in the feed
+ * was published on the website.
+ */
+.article-feed-time {
+  position: relative;
+  bottom: 1px;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  &:before {
+    content: "\2014 \0020";
+  }
+}
+
+/**
+ * @media all screen < 568 
+ */
+@media screen and (max-width: 568px) {
+  .article-feed-title {
+    display: block;
+    width: 100%;
+  }
+  .article-feed-time { 
+    &:before {
+      clear: both;
+      content: "Published ";
+    }
+  }
+}
+
+/**
+ * @class article-header
+ * @description Container for the article title, article subtitle,
+ * and the date the article was published.
+ */
+.article-header {
+  text-align: center;
+  padding: calc(82px + 16px*2) 1rem 0 1rem;
+
+  /**
+   * @class cover-image
+   * @extends article-header
+   * @description
+   */
+  &.cover-image {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    background: center center / cover fixed;
+    hrgroup {
+      flex: 1 auto;
+    }
+  }
+}
+
+/**
+ * @class article-pubdate
+ * @description Block of text containing the date the article
+ * was published on the website.
+ */
+.article-pubdate {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 3rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  color: @light-grey;
+}
+
+/**
+ * @media all screen > 768px
+ * @description
+ */
+@media screen and (max-width: 768px) {
+  .article-header {
+    margin: 0;
+  }
+}
+
+/**
+ * @class article-title
+ * @description Title of the article.
+ */
+.article-title {
+  display: inline-block;
+  margin-top: 1rem;
+  color: @light-grey;
+}
+
+/** 
+ * @class article-content
+ * @description
+ * @usage <section class=article-content></section>
+ */
+.article-content {
+  margin: 4rem auto 0 auto;
+
+  img {
+    display: block;
+    float: none;
+    clear: none;
+    max-width: 100%;
+    margin: 2rem auto;
+  }
+
+  p, 
+  ul, 
+  ol, 
+  code, 
+  figure {
+    max-width: 575px;
+    margin: 0 auto;
+  }
+
+  p {
+    padding: 0 1rem;
+  }
+
+  p + p {
+    padding-top: 1rem !important;
+  }
+}
+
+/**
+ * @class article-footer
+ * @description 
+ * @usage <footer class=article-footer></footer>
+ */
+.article-footer {
+  display: flex;
+  max-width: 550px;
+  margin: 4rem auto;
+  padding: 1rem 1rem 0.5rem 1rem;
+  p {
+    margin: 0;
+  }
+}
+
+/**
+ * @class article-author-img
+ * @description author profile picture
+ */
+.article-author-img {
+  align-self: center;
+  height: 100px;
+  min-width: 100px;
+  margin: 0 1rem 0 0;
+  opacity: .75;
+  border-radius: 100%;
+}
+
+/**
+ * @class article-author-info
+ * @description
+ * @usage <div class=article-author></div>
+ */
+.article-author-info {
+  padding: 0.5rem 1rem;
+  p, 
+  small { 
+    line-height: 1.6 
+  }
+}
+
+/**
+ * @media all screen > 568px
+ * @description 
+ */
+@media screen and (max-width: 568px) {
+  .article-footer {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90vw;
+  }
+  .article-author-img { 
+    margin: 0 auto 1rem auto; 
+  }
+  .article-author-info {
+    max-width: 200px;
+    margin: 0 auto;
+    h6 { 
+      text-align: center; 
+    }
+  }
+}

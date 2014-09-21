@@ -10,11 +10,6 @@
     "description": "Error page stylesheet"
   },
   { 
-    "source": "projects.less",
-    "filename": "projects.css",
-    "description": "Work and project pages stylesheet"
-  },
-  { 
     "source": "downbeat.less",
     "filename": "downbeat.css",
     "description": "Downbeat student music awards stylesheet"

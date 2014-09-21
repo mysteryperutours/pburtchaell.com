@@ -1,3 +1,7 @@
+/**
+ * @class page-header
+ * @description 
+ */
 .page-header {
   position: absolute;
   height: @header-height;
@@ -35,8 +39,8 @@
   }
 
   /**
-   * .headroom--top
-   * When you scroll back to the top, the .headroom--top
+   * @class headroom--top
+   * @description When you scroll back to the top, the .headroom--top
    * class is applied to the header.
    */
   &.headroom--top {
@@ -79,9 +83,6 @@
   }
   
 }
-@media screen and (max-width: 850px) {
-
-}
 
 .branding {
   display: block;
@@ -98,17 +99,16 @@
     stroke-width: .5px;
     stroke-miterlimit: 10;
     stroke: @white;
-    .transition(transform .5s)
   }
   &:hover {
-    .transform(translateY(10px));
     #branding-design path { 
       stroke: @design; 
       transform: none;
     }
     #branding-audio path { 
       transform: none;
-      stroke: @audio; }
+      stroke: @audio; 
+    }
     #branding-video path { 
       stroke: darken(@video, 15%); 
       
@@ -116,18 +116,11 @@
   }
 }
 
-#branding-design path { 
-  transform: rotate(90deg);
-}
-#branding-audio  path { 
-  transform: rotate(-90deg);
-}
-
 
 @import 'navigation';
 
-/*
- * <noscript> element
+/**
+ * @class .noscript 
  */
 .noscript {
   height: auto;
