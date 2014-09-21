@@ -1,13 +1,49 @@
+/**
+ * @element body
+ * @description
+ */
+body { 
+  height: 100%;
+  font-family: @type-primary;
+  color: @dark-grey; 
+  background: @white;
+  overflow-x: hidden; 
+  cursor: default;
+  text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+     -moz-appearance: none;   
+}
+
+/**
+ * @class disable-hover
+ * @description Disable pointer events to enforce 60 FPS scroll.
+ * @extends body
+ */
+.disable-hover,
+.disable-hover *,
+.body--disable-hover,
+.body--disable-hover * {
+  pointer-events: none !important;
+}
 
 /**
  * @class flex-layout
+ * @description Enable flexbox layout on the page.
+ * @extends body
  */
-.flex-layout {
+.flex-layout,
+.body--flex-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/**
+ * @class theme-dark
+ * @description Enable a dark UI theme.
+ * @extends body
+ */
 .theme-dark {
   background: @dark-grey;
   color: @light-grey;
@@ -36,26 +72,5 @@
     background: none;
     border: none;
     color: @light-grey;
-  }
-}
-
-#main {
-  -ms-flex: 1;
-  flex: 1;
-
-}
-
-.default-header {
-  padding: (@base)+75px round(@column, 2) @base round(@column, 2);
-}
-
-.default-content {
-  padding: 0 0 2rem 0;
-  p, ul, ol, code, figure {
-    max-width: 600px;
-    margin: @base auto;
-  }
-  p {
-    padding: 0 round(@column*1);
   }
 }
