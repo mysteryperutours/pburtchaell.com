@@ -1,10 +1,10 @@
 ---
-hire: true
+hire: false
 ---
 {{> head ~}}
 {{> header }}
 <main role=main id=main>
-  <article itemscope itemtype=http://data-vocabulary.org/Article class="article page">
+  <article itemscope itemtype=http://data-vocabulary.org/Article class="article {{basename}}-page page">
     {{#if cover ~}}
     <header class="article-header cover-image" 
             style="background-image: url(/assets/img/blog/{{cover}});">
@@ -13,7 +13,7 @@ hire: true
     {{/if}}
       <hgroup>
         <h1 class=article-title itemprop=name>{{page.title}}</h1>
-        <time>{{prettyDate this.page.data.date}}</time>
+        <time class=article-pubdate>{{prettyDate this.page.data.date}}</time>
       </hgroup>
     </header><!-- /article-header -->
 
@@ -33,13 +33,15 @@ hire: true
           I am Patrick Burtchaell, a 
           <span itemprop=title>graphic design and computer science student</span>
           <span itemscope itemprop=address itemtype=http://data-vocabulary.org/Address>
-            from <span itemprop=locality>New Orleans</span> attending Loyola University.<br>
+            from <span itemprop=locality>New Orleans</span> at Loyola University and front end web developer at <a href=http://peachme.com rel=external target=_blank>PeachMe</a>.<br>
             <a href="https://twitter.com/intent/user?screen_name={{author.twitter}}" 
                class="line rst">@pburtchaell</a> on Twitter
           </span></small>
         </p>
       </div><!-- /article-author -->
     </footer><!-- /article-footer -->
+
+    {{#if hire}}{{> hire }}{{/if}}
 
   </article><!-- /.article.page -->
 </main><!-- /#main -->
