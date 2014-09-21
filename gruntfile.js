@@ -108,17 +108,6 @@ module.exports = function (grunt) {
         ]
       },
 
-      projects: {
-        permalinks: {
-          structure: ':year/:basename/index.html'
-        },
-        files: [
-          {
-            src: opt.projects + '/*.{hbs,md}',
-            dest: opt.dev + '/'
-          }
-        ]
-      },
 
       downbeat: {
         files: [
