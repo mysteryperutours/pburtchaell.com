@@ -1,3 +1,300 @@
+/**
+ * [data-color=" red || blue || green || dark"]
+ * 
+ * @desc Use this data-* attribute to specify the color
+ *       of the section/div.
+ */
+[data-color] {
+  a, a.line {
+    &:not(.btn) { 
+      color: @white;
+      border-color: fadeOut(@white,75%);
+      &:hover {
+        border-color: @white;
+      }
+    }
+  }
+}
+[data-color=red] {
+  background: @red;
+  color: darken(@red,30%);
+}
+[data-color=green] {
+  background: @video;
+  color: darken(@video,50%);
+}
+[data-color=blue] {
+  background: @audio;
+  color: darken(@audio,25%);
+}
+[data-color=dark] {
+  background: @black;
+  color: @light-grey;
+}
+
+#s1 {
+  h4 {
+    text-align: left;
+    line-height: 1.7;
+  }
+  span {
+    background: @grey;
+    //color: @white;
+    pading: 2px;
+  }
+  p {
+    margin-left: 25%;
+    border-left: .25rem solid;
+    padding: 1rem;
+  }
+}
+
+.work-header {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.work-header-content {
+  flex: 1 auto;
+  align-self: center;
+  width: 75vw;
+  padding: 25vw;
+  z-index: 2;
+  button {
+    font-family: @type-secondary;
+    text-transform: uppercase;
+    text-align: left;
+    padding-left: 1rem;
+    margin: 0;
+  }
+}
+
+.work-header-overlays {
+  height: 100vh;
+  width: 100vw;
+  background: @dark-grey;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  
+  .overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    //display: flex;
+    //flex-direction: row;
+  }
+  .o1 {
+    background: url(../img/site/work/cover.jpg) center center / cover no-repeat fixed;
+  }
+  .o2 {
+    width: 100vw;
+    height: 100vh;
+    background: @black;
+    z-index: 2;
+    opacity: .75;
+  }
+
+}
+
+.work-title,
+.work-subtitle {
+  margin: 0;
+  color: @white;
+  text-align: left;
+
+}
+
+.work-title {
+  font-size: 5rem;
+}
+
+.work-subtitle {
+  background: @white;
+  color: @dark-grey;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.portfolio-item--wrapper {
+  padding: 1rem;
+}
+
+.portfolio-item--title {
+  color: @white;
+  text-transform: uppercase;
+  text-align: left !important;
+}
+
+/**
+ * .wrk-sct
+ *
+ * @desc Each "section" of content on the work page.
+ */
+.wrk-sct {
+  padding: 100px 0;
+  z-index: 9;
+  &.rst {
+    padding: 0 0 1.5rem 0;
+    height: auto;
+    min-height: inherit;
+  }
+}
+
+/**
+ * .wrk-sct-divider
+ *
+ * @desc Between some .wrk-sct's there is a divider
+ *       containing an image; use this class.
+ */
+.wrk-sct-divider {
+  display: flex;
+  min-height: 55vh;
+  min-width: 100vw;
+  padding: round(@column);
+  color: @white;
+  box-shadow: 0 0 4px 1px rgba(10,10,11,0.1), 0 0 4px -2px rgba(10,10,11,0.1);
+  .box-sizing();
+
+  &:nth-of-type(1) {
+    background: @light-grey url(../img/site/work/divider-1.png) center center / cover no-repeat fixed;
+  }
+  &:nth-of-type(2) {
+    background-color: @dark-grey;
+  }
+  .wrapper {
+    align-self: center;
+  }
+}
+
+.divider-title {
+  font-size: 4rem;
+}
+
+.divider-subtitle {
+  font: 2rem @type-secondary;
+  padding: 0.15rem 0.5rem;
+  background: @white;
+  color: @dark-grey;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 1px rgba(10,10,11,0.1), -1px -1px 1px rgba(10,10,11,0.1);
+}
+
+@media screen and (max-width: 767px) {
+  .divider-title {
+    font-size: 2rem;
+    border: 0.25rem solid;
+  }
+  .divider-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/**
+ * #availability
+ *
+ * @desc A feature that shows what months I am available
+ *       on hover. Turns into a table-like design on
+ *       mobile.
+ */
+.available-months {
+  margin: 0 auto 2rem auto;
+  padding: 0;
+  width: 12rem + 0.125*24rem;
+  height: 20px;
+  position: relative;
+}
+
+.month {
+  display: block;
+  list-style: none;
+  height: 1rem;
+  width: 1rem;
+  background: @green;
+  float: left;
+  clear: right;
+  text-align: center;
+  margin: 0 0.125rem !important;
+  padding: 0;
+
+  &[data-avail=true] {
+    background: @green;
+    &:before {
+      content: 'Available';
+      background: @green;
+    }
+  }
+  &[data-avail=false] {
+    background: @red;
+    &:before {
+      content: 'Unavailable';
+      background: @red;
+    }
+  }
+  &[data-avail=null] {
+    background: @blue;
+    &:before {
+      content: 'Limited';
+      background: @blue;
+    }
+  }
+
+  &:before, &:after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    font: 0.75rem @type-secondary;
+    text-transform: uppercase;
+    opacity: 0;
+  }
+  &:before {
+    top: 1.25rem;
+    left: 0;
+    color: @black;
+    padding: 0.125rem;
+  }
+  &:after {
+    content: attr(data-month); // Pull the month name in from the attribute
+    top: 1rem;
+    left: 0;
+  }
+
+  .active,
+  &:hover {
+    cursor: pointer;
+    &:before, &:after {
+      opacity: 1;
+      .transform(translateY(-5px));
+      .transition();
+    }
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .available-months { height: auto; }
+  .month {
+    height: auto;
+    width: 100%;
+    float: none;
+    clear: none;
+    margin: 0.5rem 0.125rem !important;
+    padding: 0;
+
+    &[data-avail]:before { opacity: 1; }
+
+    &:before,
+    &:after { color: @dark-grey; opacity: 1; }
+    &:before { font-family: @type-bold; top: 0; padding: 0; }
+    &:after { top: 0; text-transform: none; }
+    &:hover { .transform(none); }
+  }
+}
+
+
 .portfolio-item--header {
   height: 100%;
   height: 100vh;
