@@ -4,7 +4,8 @@ layout: none
 ---
 {{> head ~}}
 {{> header ~}}
-<main role=main id=main>
+
+<main role=main id=article-feed>
   <section class=article-feed>
 
       {{#withSort post 'this.data.date'}}
@@ -22,5 +23,6 @@ layout: none
 
   </section><!-- /article-feed -->
 </main>
+
 {{> footer ~}}
 {{> script ~}}
