@@ -1,9 +1,11 @@
 /**
  * @element body
- * @description
+ * @description Enable flexbox layout on the page.
  */
 body { 
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: @type-primary;
   color: @dark-grey; 
   background: @white;
@@ -25,18 +27,6 @@ body {
 .body--disable-hover,
 .body--disable-hover * {
   pointer-events: none !important;
-}
-
-/**
- * @class flex-layout
- * @description Enable flexbox layout on the page.
- * @extends body
- */
-.flex-layout,
-.body--flex-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 /**
