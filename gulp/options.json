@@ -1,4 +1,8 @@
 {
   "src": "./src",
-  "dest": "./dest"
+  "dest": "./dest",
+  "rev": {
+    "css": "./tpl/helpers/rev/css",
+    "js": "./tpl/helpers/rev/js"
+  } 
 }
