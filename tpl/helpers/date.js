@@ -1,20 +1,16 @@
 /**
- * Handlebars Helper: {{prettyDate}} 
- * Converts the date object from YFM into a pretty, human readable string.
- * 
- *
- * Copyright (c) 2014 Patrick Burtchaell, contributors.
- * Licensed under the MIT License (MIT).
+ * @function {{date}} 
+ * @description Converts the date object from YFM into a pretty, human readable string.
  */
 
 module.exports.register = function(Handlebars, options) {
-    
-  Handlebars.registerHelper('prettyDate', function(param) {
+  Handlebars.registerHelper('date', function(param) {
     
     var options = {
       'debug': false,
       'verbose': false
     };
+
     var verbose = options.debug === true && options.verbose === true;
     
     // Define the date as a string
@@ -105,12 +101,9 @@ module.exports.register = function(Handlebars, options) {
     };
 
     // Define the pretty date and add it to the dest file.
-    var pretty;
-    pretty = month + ' ' + day + ', ' + year;
+    var pretty = month + ' ' + day + ', ' + year;
     if (options.debug === true)console.log('Your pretty date is ' + pretty.green);
     
     return new Handlebars.SafeString(pretty);
-  
   });
-
 };

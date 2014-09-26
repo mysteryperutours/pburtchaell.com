@@ -15,7 +15,7 @@ layout: none
             <a href="{{findURL this.dest 'dest' ''}}" rel=prefetch role=link class=line>
               <em><span class=article-feed-title>{{this.data.title}}</span></em>
             </a>
-            <small><time class=article-feed-time>{{prettyDate this.data.date}}</time></small>
+            <small><time class=article-feed-time>{{date this.data.date}}</time></small>
           </header>
         </article>
         {{/each ~}}
