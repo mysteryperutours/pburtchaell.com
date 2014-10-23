@@ -1,4 +1,9 @@
 @import 'fonts';
+@import 'typography/anchor';
+@import 'typography/lists';
+@import 'typography/blockquote';
+@import 'typography/headings';
+@import 'typography/utilities';
 
 [data-rst=true],
 .rst {
@@ -13,7 +18,6 @@ html {
 }
 
 p {
-
   font-size: 1rem;
   line-height: 1.8;
   margin: 0.25rem 0 0.75rem 0;
@@ -22,14 +26,15 @@ p {
       -ms-hyphens: auto;
           hyphens: auto;
 
-  aside { margin: 1rem; }
+  aside { 
+    margin: 1rem; 
+  }
 
   code {
     background: fadeOut(@dark-grey, 95%);
     display: inline-block;
     line-height: 1.0;
   }
-
 }
 
 .small() {
@@ -37,87 +42,28 @@ p {
   line-height: 2.205;
   -webkit-font-smoothing: subpixel-antialiased;
 }
+
 small {
   .small();
 }
 
-.title { margin-bottom: 0; }
+.title { 
+  margin-bottom: 0; 
+}
+
 .subtitle {
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 0.275rem;
+  letter-spacing: .275rem;
   margin: 0;
   opacity: 0.9;
 }
 
-/* Headings */
-h1 {
-  font: 2rem @type-secondary; /* 2rem: root*2 */
-  margin: 1rem 0;
-  text-align: center;
-  text-transform: uppercase;
-}
-h2, h3, h4, h5, h6 {
-  font-family: @type-secondary-bold;
-  text-transform: uppercase;
-  margin: 2.5rem 0 0.125rem 0;
-  line-height: 1.4;
-  &.rst { margin: 0 0 0.125rem 0; }
-}
-h2 {
-  font: 1.50rem @type-secondary;
-  text-align: center;
-  text-transform: none;
-  margin: 3.5rem 0 1rem 0;
-}
-h3 {
-  font-size: 1.25rem;
-  margin: 2.5rem auto 0.125rem auto;
-  letter-spacing: 0.125rem;
-  text-align: center;
-  max-width: @base*12;
-}
-h4 {
-  font: 1.20rem @type-secondary;
-  letter-spacing: 0.075rem;
-  text-align: center;
-}
-h5 {
-  font-size: 1.15rem;
-  text-transform: none;
-}
-h6 {
-  font: 1rem @type-secondary;
-}
-small {
-  h2, h3, h4, h5, h6 {
-    font-size: 85%;
-    margin: 0 0 1.25rem 0;
-  }
-}
-strong, b {
-  h1,h2,h3,h4,h5,h6 {
-    font-family: @type-secondary-bold;
-  }
-}
-h1,h2,h3,h4,h5,h6 {
-  strong, b {
-    font-family: @type-secondary-bold;
-  }
-}
-
 em, i {
-  font-family: @type-italic;
-  font-style: normal;
   strong, b {
-    font: normal 1rem 'opensans-italic-bold', sans-serif;
+    font-weight: 600;
+    font-style: italic;
   }
-}
-
-strong, b {
-  font-family: @type-bold;
-  font-style: normal;
-  font-weight: 400;
 }
 
 strike {
@@ -129,7 +75,7 @@ strike {
 }
 
 time {
-  font-family: @type-secondary;
+  font-family: 'DIN Pro', @font-stack;
 }
 
 /* deafult horizontal rule styles */
@@ -152,34 +98,6 @@ hr {
 
 }
 
-/* default link styles */
-a {
-  text-decoration: none;
-  color: @dark-grey;
-}
-
-/* special link styles */
-.article-content a,
-.article-content a:active,
-.default.page a,
-.default.page a:active,
-a.line,
-a.line:visited {
-
-  @color: rgb(0,169,198,.5);
-  color: @color;
-  border-bottom: 2px solid fadeOut(@color,75%);
-
-  // on :hover fadeout the line and add padding
-  &:hover,
-  &:active {
-    border-bottom: 2px solid;
-  }
-
-  &.btn { color: @dark-grey; border: none; }
-
-}
-
 /* default abbreviations styles */
 abbr,
 acronym {
@@ -189,73 +107,6 @@ acronym {
 }
 abbr {
   text-transform: none;
-}
-
-/* default blockquotes styles */
-blockquote {
-  font-family: @type-italic;
-  margin: 2rem auto;
-  padding: 0 0 0 1rem;
-  border-left: 0.25rem solid;
-  opacity: 0.65;
-  max-width: 650px;
-  strong {
-    font-family: 'opensans-italic-bold', sans-serif;
-  }
-  &.color-green {
-    color: darken(@green,40%);
-    background: fadeOut(@green,70%);
-  }
-  &.color-blue {
-    color: darken(@blue,40%);
-    background: fadeOut(@blue,70%)
-  }
-  &.color-red {
-    color: darken(@red,30%);
-    background: fadeOut(@red,70%);
-  }
-}
-
-cite {
-
-  margin: 0.25rem 0 0 0;
-  display: block;
-  text-align: right;
-  font-style: normal;
-  font-family: 'opensans-italic', sans-serif;
-
-  &.rst { text-align: left; }
-
-  &:before {
-    content: "\2014 \0020";
-  }
-
-}
-
-/* default list styles */
-ul, ol {
-  margin: 1rem;
-  line-height: 1.8;
-  ul, ol {
-    margin: 0.25rem 0 1rem 0 @important;
-    list-style: lower-alpha;
-    font-size: 0.95rem;
-  }
-  li { margin: 0.5rem 0 0.5rem 2rem }
-}
-
-ol li { list-style: decimal; }
-ul li { list-style: disc; }
-
-.table-of-contents {
-  padding: 1rem;
-  background: fadeOut(@light-grey,75%);
-  li { list-style: upper-roman;
-    li { list-style: upper-alpha;
-      li { list-style: lower-roman;
-      }
-    }
-  }
 }
 
 /* small screen properties and values */

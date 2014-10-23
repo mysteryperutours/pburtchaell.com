@@ -1,0 +1,22 @@
+a {
+  text-decoration: none;
+  color: @dark-grey;
+}
+
+.default.page a,
+.default.page a:active,
+a.line,
+a.line:visited {
+
+  @color: rgb(0,169,198,.5);
+  color: @color;
+  border-bottom: 2px solid fadeOut(@color,75%);
+
+  &:hover,
+  &:active {
+    border-bottom: 2px solid;
+  }
+
+  &.btn { color: @dark-grey; border: none; }
+
+}

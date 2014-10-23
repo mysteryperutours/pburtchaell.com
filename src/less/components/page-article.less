@@ -70,12 +70,23 @@
    * @description
    */
   &.cover-image {
-    height: 30vh;
+    height: 70vh;
     display: flex;
-    flex-direction: column;
+    flex: 1 auto;
+    padding: 0 1rem;
+    flex-direction: row;
     background: center center / cover fixed;
-    hrgroup {
-      flex: 1 auto;
+    hgroup {
+      display: block;
+      position: relative;
+      align-self: center;
+      margin: 0 auto;
+    }
+    .article-title {
+      color: @white;
+    }
+    .article-pubdate {
+      color: @white;
     }
   }
 }
@@ -111,7 +122,13 @@
 .article-title {
   display: inline-block;
   margin-top: 1rem;
-  color: @dark-grey;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.article-pubdate {
+  letter-spacing: .25rem;
+  .small();
 }
 
 /** 
@@ -121,6 +138,7 @@
  */
 .article-content {
   margin: 4rem auto 0 auto;
+  font-family: 'Merriweather', @font-stack;
 
   img {
     display: block;
@@ -135,8 +153,13 @@
   ol, 
   code, 
   figure {
+    font-size: 20px;
     max-width: 575px;
     margin: 0 auto;
+  }
+
+  a {
+    border: none !important;
   }
 
   p {
@@ -146,6 +169,21 @@
   p + p {
     padding-top: 1rem !important;
   }
+
+  /*p:last-of-type {
+    &:after {
+      content: '';
+      display: inline;
+      position: absolute;
+      margin: .65rem 0;
+      height: 15px;
+      width: 15px;
+      background: url('../img/site/icon/32.png') center center / no-repeat;
+      background-size: 15px 15px;
+      margin-left: .5rem;
+    }
+  }*/
+
 }
 
 /**
@@ -159,6 +197,7 @@
   margin: 4rem auto;
   padding: 1rem 1rem 0.5rem 1rem;
   p {
+    line-height: 1;
     margin: 0;
   }
 }
@@ -183,9 +222,13 @@
  */
 .article-author-info {
   padding: 0.5rem 1rem;
+  h6 {
+    text-align: left;
+    font-size: .95rem;
+  }
   p, 
   small { 
-    line-height: 1.6 
+    line-height: 1.4; 
   }
 }
 
