@@ -52,8 +52,8 @@ module.exports = function (grunt) {
         marked: {
           highlight: function (code, lang) {
             if (lang === undefined) lang = 'bash';
+            if (lang === 'html') lang = 'xml';
             if (lang === 'js') lang = 'javascript';
-            if (lang === 'less') lang = 'scss';
             return hljs.highlight(lang, code).value;
           }
         },
