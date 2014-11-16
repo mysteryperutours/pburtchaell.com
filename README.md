@@ -1,4 +1,4 @@
-# pburtchaell/site [![Build Status](https://travis-ci.org/pburtchaell/site.svg?branch=master)](https://travis-ci.org/pburtchaell/site)
+# pburtchaell/site [![Build Status](https://travis-ci.org/pburtchaell/pburtchaell.com.svg?branch=master)](https://travis-ci.org/pburtchaell/pburtchaell.com)
 
 Behold, the source of [my website](http://pburtchaell.com/), generated with [Assemble][].
 
