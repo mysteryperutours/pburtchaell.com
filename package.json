@@ -1,12 +1,12 @@
 {
-  "name": "site",
+  "name": "pburtchaell.com",
   "version": "1.3.0",
-  "url": "http://pburtchaell.com/",
+  "url": "http://github.com/pburtchaell/pburtchaell.com",
   "homepage": "http://pburtchaell.com",
   "author": "Patrick Burtchaell <patrick@pburtchaell.com> (http://pburtchaell.com/)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/pburtchaell/site.git"
+    "url": "git://github.com/pburtchaell/pburtchaell.com.git"
   },
   "license": {
     "type": "MIT",
