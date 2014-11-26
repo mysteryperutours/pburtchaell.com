@@ -4,18 +4,17 @@ node_js:
 branches:
   only:
   - master
-  - /^deploy-.*$/
 before_install:
-- npm install -g grunt-cli bower
+- npm install -g gulp grunt-cli bower
 install:
 - npm install
 - bower install
 before_script:
 - git config --global user.email "patrick@pburtchaell.com"
 - git config --global user.name "Patrick Burtchaell"
-script: grunt build
-after_script:
-- echo -e "All done for now\n"
+script: 
+ - gulp default
+ - grunt assemble
 notifications:
   email:
     recepients:
