@@ -1,8 +1,3 @@
-/**
- * @function {{rev}} 
- * @param {string} path 
- * @param {string} file
- */
 var fs = require('fs');
 var _ = require('underscore');
 

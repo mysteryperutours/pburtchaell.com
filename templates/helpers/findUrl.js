@@ -1,12 +1,3 @@
-/**
- * Handlebars Helper: {{findURL}} 
- * Setup my blog yo.
- * 
- *
- * Copyright (c) 2014 Patrick Burtchaell, contributors.
- * Licensed under the MIT License (MIT).
- */
-
 module.exports.register = function (Handlebars, options) {
   Handlebars.registerHelper('findURL', function (a, b, replacement) {
     
