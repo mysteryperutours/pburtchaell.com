@@ -2,7 +2,6 @@
 
 var express = require('express');
 var compression = require('compression');
-var error = require('express-err');
 var gutil = require('gulp-util');
 var chalk = require('chalk');
 var lr = require('tiny-lr')();
@@ -16,18 +15,16 @@ exports.init = function (config, callback) {
   var app = express();
   
   function startup (callback) {
-    gutil.log('Starting the connect webserver...')
+    gutil.log('Starting the server...')
     app.use(require('connect-livereload')());
     app.use(compression());
     app.use(express.static(config.root + '/'));
-    app.listen(config.port);
-    app.use(error.httpError(404));
-    
+    app.listen(config.port);    
     callback();
   };
 
   startup(function() {
-    gutil.log('Listening at ' + chalk.magenta('http://localhost:' + config.port));
+    gutil.log('Listening at ' + chalk.magenta('http://localhost:' + config.port + '.'));
   });
   
   callback();
