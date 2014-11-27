@@ -3,10 +3,9 @@ var tasks = require('./gulp/tasks');
 var tests = require('./gulp/tests');
 var utils = require('./gulp/utils');
 
-gulp.task('styles', tasks.styles);
 gulp.task('scripts', tasks.scripts);
 gulp.task('copy', tasks.copy);
-gulp.task('build',['styles','scripts','copy']);
+gulp.task('build',['scripts','copy']);
 gulp.task('jshint', tests.jshint);
 gulp.task('recess', tests.recess);
 gulp.task('test', ['recess','jshint']);

@@ -1,8 +1,4 @@
 {
-  "src": "./src",
-  "dest": "./dest",
-  "rev": {
-    "css": "./gulp/helpers/rev/css",
-    "js": "./gulp/helpers/rev/js"
-  }
+  "src": "./source",
+  "dest": "./dest"
 }

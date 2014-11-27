@@ -14,5 +14,5 @@ module.exports = function () {
     .on('error', gutil.log)
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(gulp.dest(opt.dest + '/js/'))
+    .pipe(gulp.dest(opt.dest + '/public/js/'))
 };

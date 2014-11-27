@@ -24,10 +24,8 @@ module.exports = function (callback) {
     gulp.watch(opt.dest + '/**/*.html', server.refresh);
   };
 
-  gulp.task('styles', require('../tasks/styles.js'));
   gulp.task('scripts', require('../tasks/scripts.js'));
-
-  gulp.watch(opt.src + '/less/**/*.less',['styles']);
+  
   gulp.watch(opt.src + '/js/**/*.js', ['scripts']);
   
 };
