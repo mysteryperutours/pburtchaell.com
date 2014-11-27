@@ -1,8 +1,0 @@
-website:
-  base: $525
-
-development:
-  code-review: $400
-
-design:
-  hourly: $35
