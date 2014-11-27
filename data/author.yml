@@ -1,33 +1,22 @@
-# SITE AUTHOR INFOMATION
-name:
-  first : Patrick
-  last  : Burtchaell
+##
+# Global Author Information
+##
+name: Patrick Burtchaell
+url: http://pburtchaell.com/
+email: patrick@pburtchaell.com
 
-# GENERAL BIOGRAPHY
-bio    : I am Patrick Burtchaell a graphic design and computer science student at Loyola University New Orleans.
-image  : img/site/patrick.jpg
-url    : http://pburtchaell.com/
-email  : patrick@pburtchaell.com
-
-# SOCIAL MEDIA/WEBSITE LINKS
-behance  : http://behance.net/burtchaell
-codepen  : http://codepen.io/pburtchaell
-codewall : http://codewall.com/pb
-dribbble : http://dribbble.com/_p
-exposure : http://p.exposure.so
-facebook : http://facebook.com/pburtchaell
-github   : http://github.com/pburtchaell
-instagram: http://instagram.com/pburtchaell
-linkedin : http://linkedin.com/in/burtchaell
-medium   : http://medium.com/@pb
-reddit   : http://reddit.com/user/_pb
+##
+# Social Media
+##
+behance: http://behance.net/pburtchaell
+codepen: http://codepen.io/pburtchaell
+codewall: http://codewall.com/pb
+dribbble: http://dribbble.com/_p
+exposure: http://p.exposure.so
+github: http://github.com/pburtchaell
+medium: http://medium.com/@pb
+reddit: http://reddit.com/user/_pb
 soundcloud: http://soundcloud.com/burtchaell
-twitter  : http://twitter.com/pburtchaell
-vimeo    : http://vimeo.com/burtchaell
-vsco     : http://vsco.co/pburtchaell
-
-dogecoin:
-  primary: DU9RCKNryurWQDWhFCV1AeathFuotPpQdp
-
-bitcoin:
-  primary: 1AvGddyNEb1xsAaWRSSjqr9mUYHnkGnMco
+twitter: http://twitter.com/pburtchaell
+vimeo: http://vimeo.com/burtchaell
+vsco: http://vsco.co/pburtchaell
