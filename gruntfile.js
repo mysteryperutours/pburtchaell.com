@@ -6,12 +6,12 @@ module.exports = function (grunt) {
 
   var options = {
     src: './src',
-    dest: './dist/development',
-    plugins: './src/plugins',
-    tpl: './tpl',
-    pages: './pages',
-    posts:  './posts',
-    projects: './projects',
+    dest: './dest/',
+    plugins: './templates/plugins',
+    tpl: './templates',
+    pages: './templates/pages',
+    posts:  './templates/posts',
+    projects: './templates/projects',
     vendor: './bower_components',
     expand: true
   };
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
     assemble: {
       options: {
         flatten: true,
-        data: ['./src/data/*.{json,yml}', 'package.json'],
+        data: ['./data/*.{json,yml}', 'package.json'],
         plugins: [
           'assemble-contrib-permalinks'
           //'assemble-contrib-anchors',
@@ -35,18 +35,21 @@ module.exports = function (grunt) {
           'handlebars-helper-compose',
           'handlebars-helper-moment',
           'handlebars-helper-inarray',
-          './tpl/helpers/*.js'
+          './templates/helpers/*.js'
         ],
-        assets: './dest/assets',
-        partials: ['./tpl/partials/**/*.{hbs,md}', './tpl/snippets/**/*.{hbs,md}'],
-        layoutdir: './tpl/layouts',
+        assets: './dest/public',
+        partials: [
+        './templates/partials/*.hbs', 
+        './templates/components/*.hbs'
+        ],
+        layoutdir: './templates/layouts',
         layout: 'default.hbs',
         collections: [
           {
             name: 'post',
             sortby: 'date',
             sortorder: 'descending',
-            pages: [ './posts' ]
+            pages: [ './templates/posts' ]
           }
         ],
         marked: {
@@ -74,7 +77,7 @@ module.exports = function (grunt) {
       pages: {
         files: [
           {
-            src: './pages/*.{hbs,md}',
+            src: './templates/pages/*.{hbs,md}',
             dest: './dest/'
           }
         ]
@@ -99,11 +102,11 @@ module.exports = function (grunt) {
         },
         files: [
           {
-            src: './posts/**/*.{hbs,md}',
+            src: './templates/posts/**/*.{hbs,md}',
             dest: './dest/'
           },
           {
-            src: './pages/index.hbs',
+            src: './templates/pages/index.hbs',
             dest: './dest/index.html'
           }
         ]
@@ -112,7 +115,7 @@ module.exports = function (grunt) {
 
     watch: {
       assemble: {
-        files: ['./pages/**/*', './posts/**/*', './tpl/**/*'],
+        files: ['./templates/pages/**/*', './templates/posts/**/*', './templates/**/*'],
         tasks: ['assemble'],
         options: {
           spawn: false
