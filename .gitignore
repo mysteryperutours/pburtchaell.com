@@ -9,3 +9,6 @@ dist
 dest
 tmp
 tpl/helpers/rev
+
+# AWS Access
+.aws.yml
