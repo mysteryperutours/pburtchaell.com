@@ -51,11 +51,13 @@
     "minimist": "^1.1.0",
     "moment": "^2.8.1",
     "tiny-lr": "^0.1.0",
-    "underscore": "^1.7.0",
     "vinyl-source-stream": "^0.1.1",
     "handlebars-helper-compose": "latest",
     "handlebars-helper-inarray": "^0.1.0",
     "handlebars-helper-moment": "latest",
     "handlebars-helpers": "^0.5.8"
+  },
+  "dependencies": {
+    "q": "^1.1.2"
   }
 }
