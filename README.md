@@ -1,4 +1,4 @@
-# pburtchaell.com [![Build Status](https://travis-ci.org/pburtchaell/pburtchaell.com.svg?branch=master)](https://travis-ci.org/pburtchaell/pburtchaell.com) [![Dependencies](https://david-dm.org/pburtchaell/pburtchaell.com.png)]
+# pburtchaell.com [![Build Status](https://travis-ci.org/pburtchaell/pburtchaell.com.svg?branch=master)](https://travis-ci.org/pburtchaell/pburtchaell.com) [![Dependencies](https://david-dm.org/pburtchaell/pburtchaell.com.png)
 
 ## Overview
 
