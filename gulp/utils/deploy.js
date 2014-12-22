@@ -11,14 +11,35 @@ module.exports = function () {
     'Cache-Control': 'max-age=315360000, no-transform, public'
   };
 
-  var publisher = awspublish.create({
-      key: config.key,
-      secret: config.secret,
-      bucket: config.bucket,
-      region: config.region
-    });
+  var get = {
+    config: function (property) {
 
-  return gulp.src('./dest/**/*')
+      if (property === 'bucket') {
+        if (process.env.AWS === 'staging') {
+          return config.staging.bucket;
+        } else if (process.env.AWS === 'master') {
+          return config.master.bucket;
+        } 
+      } else if (property === 'region') {
+        if (process.env.AWS === 'staging') {
+          return config.staging.region;
+        } else if (process.env.AWS === 'master') {
+          return config.master.region;
+        }      
+      }
+
+    }
+  };
+
+  var publisher = awspublish.create({
+    key: config.key,
+    secret: config.secret,
+    bucket: get.config('bucket') || config.staging.bucket,
+    region: get.config('region') || config.staging.region,
+    style: 'path'
+  });
+
+  return gulp.src('./dest/2014/**/*')
     .pipe(awspublish.gzip({ext:''}))
     .pipe(publisher.publish(headers))
     .pipe(publisher.cache())

@@ -12,3 +12,5 @@ tpl/helpers/rev
 
 # AWS Access
 .aws.yml
+
+.awspublish-staging.pburtchaell.com
