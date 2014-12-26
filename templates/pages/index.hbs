@@ -1,28 +1,18 @@
 ---
-title: Home
-layout: none
+title: Designer and web developer from New Orleans
+description: 'I am Patrick Burtchaell, a designer and front end web developer from New Orleans. I build and design products for the web and for print.'
+layout: layout-custom.hbs
 ---
-{{> head ~}}
-{{> header ~}}
-
-<main role=main id=article-feed>
-  <section class=article-feed>
-
-      {{#withSort post 'this.data.date'}}
-        {{#each this.pages}}
-        <article class=article-feed-item>
-          <header>
-            <a href="{{findURL this.dest 'dest' ''}}" rel=prefetch role=link class=line>
-              <em><span class=article-feed-title>{{this.data.title}}</span></em>
-            </a>
-            <small><time class=article-feed-time>{{date this.data.date}}</time></small>
-          </header>
-        </article>
-        {{/each ~}}
-      {{/withSort ~}}
-
-  </section><!-- /article-feed -->
-</main>
-
-{{> footer ~}}
-{{> script ~}}
+<section class="default page">
+  <section class=default-content>
+    <div class="row row-large about-page-image">
+      <h1 class="about-title">
+          <span>Patrick Burtchaell</span>
+          <span><b>Design &amp; CS student</b> at Loyola University New Orleans</span>  
+          <span><b>Front end web developer</b> at Peach</span>  
+      </h1>
+      <h2 class=about-subtitle>I build and design products for the web and for print.</h2>
+      <h2 class=about-subtitle>Open to working with all and everything, my venture is about designing great products, working with others, meeting new people and teams, and gaining new experiences.</h2>
+    </div>
+  </section>
+</section>
