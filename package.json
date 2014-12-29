@@ -48,7 +48,7 @@
     "handlebars-helper-compose": "latest",
     "handlebars-helper-inarray": "^0.1.0",
     "handlebars-helper-moment": "latest",
-    "handlebars-helpers": "git://github.com/doowb/handlebars-helpers#v0.7.0",
+    "handlebars-helpers": "^0.5.8",
     "highlight.js": "latest",
     "js-yaml": "^3.2.3",
     "markdown": "^0.5.0",

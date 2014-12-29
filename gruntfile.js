@@ -28,10 +28,9 @@ module.exports = function (grunt) {
         data: ['./data/*.{json,yml}', 'package.json'],
         plugins: [
           'assemble-contrib-permalinks'
-          //'assemble-contrib-anchors',
-          //'assemble-contrib-wordcount'
         ],
         helpers: [
+          'handlebars-helpers',
           'handlebars-helper-compose',
           'handlebars-helper-moment',
           'handlebars-helper-inarray',
@@ -42,16 +41,14 @@ module.exports = function (grunt) {
         './templates/partials/*.hbs', 
         './templates/components/*.hbs'
         ],
-        layoutdir: './templates/layouts',
+        layoutdir: './templates/layouts/',
         layout: 'default.hbs',
-        collections: [
-          {
-            name: 'post',
-            sortby: 'date',
-            sortorder: 'descending',
-            pages: [ './templates/posts' ]
-          }
-        ],
+        collections: [{
+          name: 'post',
+          sortby: 'date',
+          sortorder: 'descending',
+          pages: ['./templates/posts']
+        }],
         marked: {
           highlight: function (code, lang) {
             if (lang === undefined) lang = 'bash';
@@ -85,15 +82,10 @@ module.exports = function (grunt) {
 
       posts: {
         options: {
-          plugins: [
-            'assemble-contrib-permalinks'
-            //'assemble-middleware-rss'
-          ],
-          layout: 'layout-blog.hbs',
+          layout: 'article.hbs',
           permalinks: {
             structure: ':year/:basename/index.html'
           },
-          wordcount: { selector: '.article-content' },
           rss: {
             format: true,
             author: 'Patrick Burtchaell',
@@ -106,8 +98,8 @@ module.exports = function (grunt) {
             dest: './dest/'
           },
           {
-            src: './templates/pages/index.hbs',
-            dest: './dest/index.html'
+            src: './templates/pages/writing.hbs',
+            dest: './dest/writing.html'
           }
         ]
       }
