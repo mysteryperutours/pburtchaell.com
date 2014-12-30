@@ -28,13 +28,20 @@ hire: false
     <footer class=article-footer>
       <img class=article-author-img alt="Patrick Burtchaell" src=http://core.pburtchaell.com/images/patrick.jpg height=100px width=100px>
       <div class=article-author-info itemscope itemtype=http://data-vocabulary.org/Person itemprop=author>
-        <h6 class=rst>Written By<br>
-        <strong intemprop=name class=rst>{{#with author}}{{name.first}} {{name.last}}{{/with}}</strong></h6>
-        <p class=article-author-bio>
+
+        <h6 class="article-author-name rst">
+          <small>Written By</small><br>
+          <strong intemprop=name class=rst>
+            {{#with author}}{{name.first}} {{name.last}}{{/with}}
+          </strong>
+        </h6>
+
+        <p class=article-author-biography>
           <small>
-              I am Patrick Burtchaell, a <span itemprop=title>design and computer science student</span><span itemscope itemprop=address itemtype=http://data-vocabulary.org/Address>from <span itemprop=locality>New Orleans</span> at Loyola University and front end web developer at <a href=http://joinpeach.com rel=external target=_blank>Peach</a>.</span><span>I build and design products for the web.<br><a href="https://twitter.com/intent/user?screen_name={{author.twitter}}" class="line rst">@pburtchaell</a> on Twitter</span>
+              I am Patrick Burtchaell, a <span itemprop=title>design and computer science student</span><span itemscope itemprop=address itemtype=http://data-vocabulary.org/Address>from <span itemprop=locality>New Orleans</span> at Loyola University and front end web developer at <a href=http://joinpeach.com rel=external target=_blank>Peach</a>.</span><span> I build and design products for the web.<hr>Connect on <a href="https://twitter.com/intent/user?screen_name={{author.twitter}}" title="Patrick Burtchaell on Twitter" class="line rst">Twitter</a> and on <a href="{{author.github}}" title="Patrick Burtchaell on GitHub" class="line rst">GitHub</span>
           </small>
         </p>
+
       </div>
     </footer>
 
