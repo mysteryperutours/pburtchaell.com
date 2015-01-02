@@ -28,4 +28,4 @@ AWS=master gulp deploy
 ---
 Built with care in New Orleans | Source [licensed MIT](LICENSE)
 
-All content [copyright 2014 Patrick Burtchaell](LICENSE)
+All content [copyright 2015 Patrick Burtchaell](LICENSE)
