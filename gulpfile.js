@@ -1,7 +1,7 @@
 var gulp = require('gulp');
-var tasks = require('./gulp/tasks');
-var tests = require('./gulp/tests');
-var utils = require('./gulp/utils');
+var tasks = require('./bin/tasks');
+var tests = require('./bin/tests');
+var utils = require('./bin/utils');
 
 gulp.task('scripts', tasks.scripts);
 gulp.task('copy', tasks.copy);
