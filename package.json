@@ -1,9 +1,11 @@
 {
   "name": "pburtchaell.com",
   "version": "1.4.0",
+  "private": true,
+  "description": "A static website powered by Assemble.",
   "url": "http://github.com/pburtchaell/pburtchaell.com",
   "homepage": "http://pburtchaell.com",
-  "author": "Patrick Burtchaell <patrick@pburtchaell.com> (http://pburtchaell.com/)",
+  "author": "Patrick Burtchaell <patrick@pburtchaell.com> (pburtchaell.com)",
   "repository": {
     "type": "git",
     "url": "git://github.com/pburtchaell/pburtchaell.com.git"
@@ -13,7 +15,8 @@
     "url": "http://pb.mit-license.org/"
   },
   "scripts": {
-    "postinstall": "gulp build && grunt"
+    "postinstall": "gulp build && grunt",
+    "start": "gulp watch --serve"
   },
   "devDependencies": {
     "assemble": "^0.4.42",
