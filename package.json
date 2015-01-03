@@ -16,6 +16,7 @@
   },
   "scripts": {
     "postinstall": "gulp build && grunt",
+    "test": "gulp test",
     "start": "gulp watch --serve"
   },
   "devDependencies": {
