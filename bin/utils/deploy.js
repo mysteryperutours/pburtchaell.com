@@ -39,7 +39,7 @@ module.exports = function () {
     style: 'path'
   });
 
-  return gulp.src('./dest/2014/**/*')
+  return gulp.src('./dest/**/*')
     .pipe(awspublish.gzip({ext:''}))
     .pipe(publisher.publish(headers))
     .pipe(publisher.cache())

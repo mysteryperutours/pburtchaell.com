@@ -1,91 +1,97 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-var _ = require('lodash');
+var classes = require('react-classes');
 var firebase = require('firebase');
-var Heart = require('./heart.js');
-var Counter = require('./counter.js');
+var Data = require('../models');
 
 var Liker = React.createClass({
 
-  /**
-   * @function load
-   * @description Load likes from Firebase reference.
-   */
-  load: function () {
-    var ref = new Firebase('https://liker.firebaseio.com');
-    ref.on('value', function (snap) {
-      var items = [];
+  mixins: [classes],
 
-      snap.forEach(function (itemSnap) {
-        var item = itemSnap.val();
-        item.key = itemSnap.name();
-        items.push(item);
-      });
+  initialize: function () {
+    var path = window.location.pathname.toString();
+    var reference = (this.state.base + path);
+    this.setState({
+      path: path,
+      reference: reference
+    });
+  },
+
+  click: function (event) {
+
+    event.preventDefault();
+
+    var data = new Data(this.state);
+
+    if (this.state.liked) {
+
+      data.delete(this.state.id);
 
       this.setState({
-        items: items
-      })
+        liked: false
+      });
 
+      delete data;
+      delete this.state.id;
+
+    } else {
+      data.push();
+      data.store();
+      var id = data.getId();
+      this.setState({
+        id: id,
+        liked: true
+      });
+    }
+    
+    
+  },
+
+  listen: function () {
+    var reference = new Firebase(this.state.reference);
+    reference.on('value', function (snapshot) {
+      var value = snapshot.numChildren();
+      this.setState({
+        count: value
+      });
     }.bind(this));
   },
 
-  /**
-   * @function create
-   * @description Push data to the Firebase.
-   * @param {object} data 
-   * @param {string} page 
-   */
-  create: function (data, page) {
-    var ref = new Firebase('https://liker.firebaseio.com/likes');
-    ref.push(data);
-  },
-
-  /**
-   * @function destroy
-   * @description Remove an item from the Firebase.
-   * @param {string} id - ID of the item to be removed.
-   * @param {string} page 
-   */
-  destroy: function (id, page) {
-    var ref = new Firebase('https://liker.firebaseio.com/likes/' + page + id);
-    ref.remove(function (error) {
-      if (error) {
-        console.log('Synchronization failed');
-      } else {
-        console.log('Synchronization succeeded');
-      }
-    });
-  },
-
-  clickHandler: function (e) {
-    console.log(this.refs.email.getDOMNode().value);
-    var newEmail = this.refs.email.getDOMNode().value;
-    var newEmails = this.state.users.concat([newEmail]);
-    this.setState({
-      users: newEmails
-    });
-  },
-
   componentDidMount: function () {
-    this.load();
+    this.initialize();
+    this.listen();
   },
 
   getInitialState: function () {
     return {
-      likes: []
-    }
+      base: 'https://liker.firebaseio.com/root',  
+      path: undefined, 
+      reference: undefined,
+      count: 0,
+      liked: false
+    };
   },
 
   render: function () {
+
+    var classes = this.getClass('liker', {
+      'liker-clicked': this.state.liked === true
+    });
+
     return (
-      <div>
-        <input ref="email" type="text"/>
-        <button onClick={this.clickHandler}>go</button>
-        <Heart />
-        <Counter value="0" label="likes"/>
+      <div onClick={this.click} className={classes}>
+        <div className="liker-heart">
+          <svg x="5px" y="5px" width="30px" height="30px" viewBox="-2 -2 14 12">
+            <path d="M9,0.7c-1-0.9-2.5-0.9-3.5,0L5,1L4,0.6c-0.97-0.9-2.5-0.8-3.5,0c-1,1-1,2.63,0,3.6L5,8l4.17-3.8C10,3.30,10,1.67,9.17,.6z"></path>
+          </svg>
+        </div>
+        <div className="liker-count">
+          {this.state.count}
+        </div>
       </div>
     )
+
   }
 
 });

@@ -2,6 +2,7 @@
 hire: false
 ---
 {{> head ~}}
+<script async src="/public/js/liker.js"></script>
 {{> header }}
 <main role=main id=main>
   <article itemscope itemtype=http://data-vocabulary.org/Article class="article {{basename}}-page page">
@@ -24,6 +25,10 @@ hire: false
       {{/marked}}
       <script>Echo.init();</script>
     </section>
+
+    <aside>
+      <span id=liker></span>
+    </aside>
 
     <footer class=article-footer>
       <img class=article-author-img alt="Patrick Burtchaell" src=http://core.pburtchaell.com/images/patrick.jpg height=100px width=100px>

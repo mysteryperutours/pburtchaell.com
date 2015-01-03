@@ -10,3 +10,5 @@ var render = React.render(
     console.log('react started')
   }
 );
+
+module.exports = liker;
