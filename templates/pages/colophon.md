@@ -1,68 +1,58 @@
 ---
-title: 'Colophon - v1.1.7'
-description: Detailed and formal notes on the design and development of the third version of my personal website, blog, and portfolio.
-features:
-- hire
-- highlighting
+title: Colophon
+description: 'A website is storage of intellectual property: ideas, writing, thoughts and memories. This is my storage and this document explains how I built it.'
+essay: true
 ---
 
-## Author's Statement
-When I began work on the static version of site in October of 2013, I decided I would take a lightweight and fastidious approach to the design and development. In the past, my website has been more of a storefront for my services, but it failed to tell my story. I think a website should not just be your portfolio, but rather storage of intellectual property: your ideas, your writing, your thoughts, and your memories. The internet is young compared to other methods of recording information, like books, but it will be around in some form for the rest of our lives. This website will serve the means &mdash;in a combination of ways&mdash; for me to achieve the end of recording information.
+A website is storage of intellectual property: ideas, writing, thoughts and memories. This is my storage and this document explains how I built it.
 
-## Design Notes
-Because my site has a very clear focus on intellectual content, I wanted the design to be simple. Every property in the stylesheet and every pixel on the screen is planned out and exectuted in the most proficient manner. This design may not have the charisma of some websites, but that is the intent. My design does not have character, but rather it is transparent; the content has character. I am not trying to tell a story though pixels. I plan to do that through words.
+## Design
 
-### Typography
-As if you were reading a book, typography to feel natural. For that reason, I went with a slightly off-white background and a light grey value for all text. Links are set in a light blue that flows with the "faded" shades of my color values. Only occasionally do I style type in other colors than grey. Most other typographic elements, such as horizontal rules, are also styled in a light grey. I do not use serif typefaces on my website, because even though the design does not necessarily have a distinct character, I feel sans-serifs are more suitable.
+Every property in the stylesheet and every pixel on the screen is planned out and exectuted in the most proficient manner. The design does not have character. It is transparent; the content has character. This website is designed to focus on the aesthetics of letters and the words & sentences they form, not the aesthetics of color and shape.
 
-#### FF DIN
-[!["FF DIN"](/assets/img/site/styleguide/FFDIN.png "FF DIN")](http://wikipedia.org/wiki/FF_DIN)
+Care was taken when selecting the typefaces for my site, and even more so when designing the rules of their appearance. In 1936, Eric Gill writes about the form of the book in *An Essay on Typography*. He says, "...it is the reading, not the reading matter, which determines the size of the book and the style of the type..." 
 
-My primary typeface for headings is _FFDIN_ (sometimes known as DINPRO) in the weights of bold and light. A sans-serif, FF DIN was designed in 1994 by Albert-Jan Pool in San Francisco to revive the old German _DIN 1451_ typeface with greater weight distribution and character sets. In 2010, FF DIN Round was also released, but I do not use it on my site.
+Almost a century later, web designers and developers can still take away from this idea. While a page on a website does not have the constraints of a page in a book, both still have type and both have a responsibility to apeal to the sensitivity and sensibility of the reader. 
 
-[DIN 1451](http://wikipedia.org/wiki/DIN_1451) is often used for traffic, administrative, and technical applications in Germany. It is actively defined by Deutches Institut fur Normung (DIN), the German Institute for Standardization, on the [standards sheet](http://wikipedia.org/wiki/List_of_DIN_standards#DIN_1000_to_DIN_1999) at DIN 1451-4. From 1956 to 200, DIN 1451 was used on German car number plates and the medium and condensed weights are still used on road signs throughout out Germany and other European countries; a more rare, condensed weight can be found on some older road signs from the 1980's.
+> Two things are to be thought of: the type and the margins. Let us consider the margins first.
+> <cite>Eric Gill<cite>
 
-Ultimately, I like the functional feel of the DIN typefaces &mdash;especially when in uppercase&mdash; and thus feel it is suitable for headings.
+DIN typefaces &mdash;especially when in uppercase&mdash; have a very utilitarian style that is well suited for headings. 
 
-#### Open-Sans
-[!["Open-Sans"](/assets/img/site/styleguide/Open-Sans.png "Open-Sans")](http://wikipedia.org/wiki/Open_Sans)
+_FFDIN_ was designed in 1994 by Albert-Jan Pool in San Francisco to revive the old German _DIN 1451_ typeface, but with greater weight distribution and more character sets. [DIN 1451](http://wikipedia.org/wiki/DIN_1451) is often used for traffic, administrative, and technical applications in Germany. It is actively defined by Deutches Institut fur Normung (DIN), the German Institute for Standardization, on the [standards sheet](http://wikipedia.org/wiki/List_of_DIN_standards#DIN_1000_to_DIN_1999) at DIN 1451-4. From 1956 to 2008, DIN 1451 was used on German car number plates and the medium and condensed weights are still used on road signs throughout out Germany and other European countries; a more rare, condensed weight can be found on some older road signs from the 1980's.
 
-FF DIN is not the most readable font when smaller than 16px so I decided not to use it for the primary body font-family. Instead, I use _Open-Sans Regular and Italic_, humanist sans-serif designed by Steve Matteson and commissioned by Google. If you are familiar with the Droid Sans typeface, Open Sans is almost identical with the exception of wider characters and the inclusion of italic variants. As a typeface optimized for legibility across both print and web, Open-Sans was the best sans-serif choice. My typography falls back to Helvetica and Arial if either the font-files do not load or they are not supported.
+Open-Sans, a humanist sans-serif designed by Steve Matteson and commissioned by Google, is used for body text. If you are familiar with the Droid Sans typeface, Open Sans is almost identical with the exception of wider characters and the inclusion of italic variants. As a typeface optimized for legibility across both print and web, Open-Sans was the best sans-serif choice. My typography falls back to Helvetica and Arial if either the font-files do not load or they are not supported.
 
-#### Courier
 > A letter... can be courier, which radiates dignity, prestige, and stability.
-> <cite>Howard Kettler</cite>
+>
+> <cite>Howard Kettler, designer of the Courier typeface</cite>
 
 To style code snippets using a slightly modified version of the Github Style by Vasily Polovnyov and [_Courier_](http://wikipedia.org/wiki/Courier_(typeface), a monospaced slab-serif typeface designed by Howard Kettler. The original Courier typeface was commissioned in 1955 by IBM to resemble the output from a strike-on typewriter and was [made free](http://www.ctan.org/tex-archive/fonts/psfonts/courier) in the 1990's. Courier New, a bolder variant of Courier, was introduced in Windows 3.1 and used by the US State Department as their standard typeface until 2004 (when it was replaced by Times New Roman); however, I prefer the style of the original Courier.
 
-### Color &amp; Values
-In order to stay consistent with my personal branding, I primarily use grey values on my site.
-
-Limited to these three colors (in RGB) from my brand, I use color sparingly:
-- <span style="color:rgb(230,84,87);">Red</span> (for design): `rgb(230,84,87)`
-- <span style="color:rgb(179,255,198);">Green</span> (for video): `rgb(179,255,198)`
-- <span style="color:rgb(0,218,255);">Blue</span> (for audio): `rgb(0,218,255)`
-
-I use the following values for typography:
-- Dark Grey: `rgb(70,72,74)`
-- <span style="color:rgb(232,235,237);background:rgba(70,72,74,0.6);padding:3px;">Light Grey</span>: `rgb(232,235,237)`
-- <span style="color:rgb(0,169,198);">Links</span>: `rgb(0,169,198)`
-
-The white background of my site is `rgb(248,248,248)`.
-
 ## Development Notes
-Aesthetics without functionality is art. Combine both qualities and the result is design: both aesthetics and functionality.
 
-This idea is far more important for websites; a website with poorly written code is unacceptable. Therefore, the web adds a third quality to design: engineering &mdash;or development. Making development and design of a website are the same, these three qualities are forever tied together in a symbiotic relationship. I cannot make one decision in design without it effecting development and likewise. You could think of web design as the holy trinity. Just as the father, son and holy-spirit &mdash;they are three parts in one, aesthetics, functionality, and engineering are also three in one.
+My main website is generated using Assemble, a static site generator for node.js. It is worth noting that, at the time of writing this, the Assemble core team is still working toward publishing gulp-assemble, the gulp plugin for Assemble, thus Grunt is used instead. 
 
-### Static Site Generator
-My site is static and generated using [Assemble](http://assemble.io/) a plugin for [Grunt](http://gruntjs.com/). I write content in either Handlebars (.hbs) or Markdown (.md). I publish my code on Github as an open-source, but contrary to many static sites, my site is not hosted with Github pages. Instead, I host my site on Amazon Web Services. With smart use of the Cloudfront CDN and S3, am easily able to load about seventy-five percent of the pages on my site in way less than a second. I monitor the status of my website using [Pingdom](http://tools.pingdom.com/fpt/#!/duUCz3/pburtchaell.com).
+Gulp is used to compile all JavaScript and stylesheets. In addition, gulp both provides a local webserver for development and handles deploying generated files to a bucket on Amazon Web Services (AWS) S3.
 
-### Front-End Tools
-I use a mxiture of both gulp and Grunt for my website, as well as [Bower](http://bower.io/) for package management. To cover each plugin I use for Grunt and gulp would far beyond the scope of this document. You can find the gruntfile and a complete list of Grunt plugins in my [repository](http://github.com/pburtchaell/site-assemble/).
+As AWS S3 is a cost effective way to host a static website, I have all files my site deployed to three separate buckets. The first bucket, *pburtchaell.com*, hosts all HTML files generated by Assemble. A second bucket, *storage.pburtchaell.com*, hosts all images, videos, and other large files that my site might link to. The third bucket, *core.purtchaell.com*, hosts CSS and JS files.
 
-The main idea is to generate/compile everything with gulp except the website's HTML itself. Since the HTML is generated from Markdown and Handlebars templates using Assemble &mdash;which has only a plugin for Grunt at the time of writing this&mdash; I have to use Grunt.
+### core.pburtchaell.com
 
-## Build Status
-[Travis CI](https://travis-ci.org/pburtchaell/site) is used to test each commit on the master and dev (development) branches.
-x
+There are many reasons why I have separated my files into three buckets, but I will focus on the idea behind the *core.pburtchaell.com* bucket and GitHub repository.
+
+I use the same CSS and JS files across multiple subdomains. Some of these subdomains are hosted on AWS, but others (like this blog) run on Digital Ocean. It does not make since to have the same CSS or JS deployed in each of those environments. If I did, I would have to update multiple files to make one change. Instead, it makes since to have the *core* CSS and JS files that I use everywhere stored in one place, e.g., the core.pburtchaell.com subdomain.
+
+Since the contents of *core.pburtchaell.com* are stored in a private GitHub repository, I can keep an API key to AWS stored in the repository as well. Combine this API key with the AWS plugin for gulp, and deploying a site is as easy as runing the `gulp deploy` command. Moreover, since everything is private and the API key is stored in the repository, I can also tell [Travis-CI](http://travis-ci.com), a continuous integration and deployment service, to automatically deploy the build files when all tests pass. Travis-CI runs on every single commit that I push to the master branch.
+
+### storage.pburtchaell.com
+
+The logic behind the storage.pburtchaell.com bucket is that one does not typically track large format files like images in a git repository. It makes more sense to store those images in a S3 bucket and tell AWS to keep backups of that bucket. Thus, I store my images there and not on GitHub. Not only does it keep things simple, but it also speeds up deployment, cloning and other common tasks not having large files in the repository.
+
+### Analytics
+
+I monitor and track my website with [Segment.io](http://segment.io), which allows me to easily integrate services like Google Analytics, Pingdom and Sentry.
+
+### Browsers
+
+This last topic to cover is fairly simple: [I support the current version of every web browser and one version back](https://medium.com/@pb/browser-support-f9be0bb68f90).
