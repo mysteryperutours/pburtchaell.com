@@ -1,7 +1,0 @@
-{
-  "name": "pburtchaell.com",
-  "dependencies": {
-    "fastclick": "~1.0.1",
-    "core.pburtchaell.com": "pburtchaell/core.pburtchaell.com"
-  }
-}
