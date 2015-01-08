@@ -1,7 +1,7 @@
 ---
 title: Writing
 description: 'Short blog posts and long-form writing on technology, front end web developement and design by Patrick Burtchaell, a designer and front end web developer in New Orleans.'
-layout: layout-custom.hbs
+layout: base.hbs
 ---
 <div class="row row-medium">
 
@@ -58,7 +58,7 @@ layout: layout-custom.hbs
         {{#each this.pages}}
           <article class="article-preview article-preview-short-form">
             <header class="article-preview-header">
-              <a href="{{href this.dest 'dest' ''}}" title="{{this.data.title}}" rel=prefetch role=link>
+              <a href="{{href this.dest 'tmp' ''}}" title="{{this.data.title}}" rel=prefetch role=link>
                 {{this.data.title}}
               </a>
             </header>
