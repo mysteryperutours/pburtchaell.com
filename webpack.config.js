@@ -2,7 +2,6 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    post: './source/js/post',
     common: './source/js/common'
   },
   output: {
@@ -27,6 +26,10 @@ module.exports = {
       compress: {
           warnings: false
       }
+    }),
+    new webpack.DefinePlugin({
+      development: JSON.stringify(JSON.parse(process.env.DEVELOPMENT || 'true')),
+      staging: JSON.stringify(JSON.parse(process.env.STAGING || 'false'))
     })
   ]
 };

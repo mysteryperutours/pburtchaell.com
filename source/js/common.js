@@ -12,7 +12,7 @@ if (!!window.addEventListener && !!document.querySelectorAll) {
   document.addEventListener('DOMContentLoaded', function () {
     
     browser('supported', function (error) {
-    
+      if (error && development) console.warn(error);
     });
 
     require.ensure(['./lib/link','./lib/images'], function () { 
@@ -22,14 +22,14 @@ if (!!window.addEventListener && !!document.querySelectorAll) {
     });
 
     if (window.post === true) {
-      require.ensure(['./lib/post'], function () { 
+      /*require.ensure(['./lib/post'], function () { 
         require('./lib/post');
-      });
+      });*/
     }
 
   }, false);
 } else {
   browser('unsupported', function (error) {
-    
+    if (error && development) console.warn(error);
   });
 }
