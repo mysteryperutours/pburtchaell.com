@@ -23,9 +23,9 @@ module.exports = function (callback) {
     gulp.watch(gulp.cache.opt.dest + '/**/*.html', server.refresh);
   };
 
-  gulp.task('scripts', require('../tasks/scripts.js'));
+  gulp.task('scripts', require('../tasks/bundle.js'));
   
-  gulp.watch(gulp.cache.opt.src + '/js/**/*.js', ['scripts']);
+  gulp.watch(gulp.cache.opt.src + '/js/**/*.js', ['bundle']);
 
   callback();
   
