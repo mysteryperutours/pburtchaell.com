@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var minimist = require('minimist');
-var opt = require('../options.json');
 
 module.exports = function (callback) {
 
@@ -17,15 +16,17 @@ module.exports = function (callback) {
     var server = require('./server');
 
     server.init({
-      port: opt.port || 8000,
-      root: opt.dest
+      port: 8000,
+      root: gulp.cache.opt.dest
     }, server.listen);
 
-    gulp.watch(opt.dest + '/**/*.html', server.refresh);
+    gulp.watch(gulp.cache.opt.dest + '/**/*.html', server.refresh);
   };
 
   gulp.task('scripts', require('../tasks/scripts.js'));
   
-  gulp.watch(opt.src + '/js/**/*.js', ['scripts']);
+  gulp.watch(gulp.cache.opt.src + '/js/**/*.js', ['scripts']);
+
+  callback();
   
 };

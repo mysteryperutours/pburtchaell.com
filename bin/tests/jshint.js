@@ -1,24 +1,19 @@
-'use strict';
-
 var gulp = require('gulp');
 var path = require('path');
 var jshint = require('gulp-jshint');
 var gutil = require('gulp-util');
-var opt = require('../options.json');
 
-module.exports = function () {
-  var src = opt.src + '/**/*.js';
+module.exports = function (callback) {
 
-  gulp.src(src)
+  return gulp.src(gulp.cache.opt.src + '/**/*.js')
     .pipe(jshint( {
       undef: true,
       unused: true,
       node: true,
-      browser: true,
-      predef: [
-        "angular"
-      ]
+      browser: true
     }))
-    .pipe(jshint.reporter('default'))
-    .pipe(gulp.dest());
+    .pipe(jshint.reporter('default'));
+
+  callback();
+
 };

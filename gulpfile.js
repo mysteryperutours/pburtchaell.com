@@ -13,3 +13,8 @@ gulp.task('clean', utils.clean);
 gulp.task('deploy', utils.deploy);
 gulp.task('watch', utils.watch);
 gulp.task('default', ['build']);
+gulp.cache = {};
+gulp.cache.opt = {
+  src: './source',
+  dest: './dest'
+};

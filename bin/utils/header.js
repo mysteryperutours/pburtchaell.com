@@ -1,5 +1,3 @@
-'use strict';
-
 var moment = require('moment');
 var header = require('gulp-header');
 
@@ -15,7 +13,7 @@ var version = ' - v<%= pkg.version %> - ';
 var date = moment(new Date()).toDate();
 
 /**
- * @param {string} - 'description'
+ * @param {string} description
  */
 module.exports = function (description) {
 

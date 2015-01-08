@@ -13,7 +13,6 @@ module.exports = function () {
 
   var get = {
     config: function (property) {
-
       if (property === 'bucket') {
         if (process.env.AWS === 'staging') {
           return config.staging.bucket;
@@ -39,7 +38,7 @@ module.exports = function () {
     style: 'path'
   });
 
-  return gulp.src('./dest/**/*')
+  return gulp.src(gulp.cache.opt.dest + '/**/*')
     .pipe(awspublish.gzip({ext:''}))
     .pipe(publisher.publish(headers))
     .pipe(publisher.cache())
