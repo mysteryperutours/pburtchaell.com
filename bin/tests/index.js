@@ -1,1 +1,0 @@
-exports.jshint = require('./jshint');
