@@ -75,7 +75,7 @@ module.exports = function (grunt) {
         files: [
           {
             src: './templates/pages/*.{hbs,md}',
-            dest: './dest/'
+            dest: './tmp/'
           }
         ]
       },
@@ -95,11 +95,11 @@ module.exports = function (grunt) {
         files: [
           {
             src: './templates/posts/**/*.{hbs,md}',
-            dest: './dest/'
+            dest: './tmp/'
           },
           {
-            src: './templates/pages/writing.hbs',
-            dest: './dest/writing.html'
+            src: './templates/posts/index.hbs',
+            dest: './tmp/posts/index.html'
           }
         ]
       }
@@ -113,12 +113,33 @@ module.exports = function (grunt) {
           spawn: false
         }
       }
+    },
+
+    htmlmin: { 
+      options: {                                
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        removeOptionalTags: true,
+        minifyJS: true
+      },                  
+      dist: {                            
+        files: [{                                  
+          expand: true,
+          cwd: 'tmp/',                             
+          src: '**/*.html',                       
+          dest: 'dest/'                            
+        }]
+      },
     }
+
+
   });
 
   grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin')
 
-  grunt.registerTask('default', ['assemble', 'watch']);
+  grunt.registerTask('default', ['assemble','htmlmin','watch']);
 
 }
