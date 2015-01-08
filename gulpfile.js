@@ -1,20 +1,19 @@
-var gulp = require('gulp');
+var gulp = require('gulp-help')(require('gulp'));
 var tasks = require('./bin/tasks');
 var tests = require('./bin/tests');
 var utils = require('./bin/utils');
 
-gulp.task('scripts', tasks.scripts);
-gulp.task('copy', tasks.copy);
-gulp.task('build',['scripts','copy']);
-gulp.task('jshint', tests.jshint);
-gulp.task('recess', tests.recess);
-gulp.task('test', ['recess','jshint']);
-gulp.task('clean', utils.clean);
-gulp.task('deploy', utils.deploy);
-gulp.task('watch', utils.watch);
-gulp.task('default', ['build']);
 gulp.cache = {};
 gulp.cache.opt = {
   src: './source',
   dest: './dest'
 };
+
+gulp.task('bundle', false, tasks.bundle);
+gulp.task('build', 'Bundle scripts and compile the build.', ['bundle']);
+gulp.task('jshint', false, tests.jshint);
+gulp.task('test', 'Test scripts for errors.', ['jshint']);
+gulp.task('clean', 'Delete the build folder.', utils.clean);
+gulp.task('deploy','Deploy the build to S3.', utils.deploy);
+gulp.task('watch', false, utils.watch);
+gulp.task('default', false, ['build']);
