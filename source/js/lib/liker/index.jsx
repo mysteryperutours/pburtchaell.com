@@ -3,12 +3,12 @@
 var React = require('react');
 var Liker = require('./components/liker.js');
 
-var render = React.render(
+module.exports = React.render(
   <Liker />,
   document.querySelector('#liker'),
   function () {
-    console.log('react started')
+    if (development) {
+      console.log('Liker module initialized.');
+    }
   }
 );
-
-module.exports = liker;

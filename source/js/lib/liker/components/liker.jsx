@@ -79,6 +79,7 @@ var Liker = React.createClass({
       'liker-clicked': this.state.liked === true
     });
 
+    /* jshint trailing:false, quotmark:false, newcap:false */
     return (
       <div onClick={this.click} className={classes}>
         <div className="liker-heart">

@@ -1,4 +1,4 @@
-/* Echo v1.5.0 | (c) 2014 @toddmotto | MIT license | github.com/toddmotto/echo */
+
 window.Echo = (function (global, document, undefined) {
 
   'use strict';
@@ -10,8 +10,8 @@ window.Echo = (function (global, document, undefined) {
   var store = [];
 
   /**
-   * callback - initialized to a no-op so that no validations on it's presence need to be made
-   * @type {Function}
+   * @function callback
+   * @description Initialized to a no-op so that no validations on it's presence need to be made
    */
   var callback = function(){};
 

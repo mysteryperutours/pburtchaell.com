@@ -1,6 +1,7 @@
 /**
  * @function getElementsByClassName
- * @description 
+ * @private 
+ * @description Gets DOM nodes by classname in IE6-IE8.
  */
 var getElementsByClassName = function (search) {
   var d = document, elements, pattern, i, results = [];
@@ -27,52 +28,34 @@ var getElementsByClassName = function (search) {
 
 /**
  * @function insertBrowserSupportMessage
- * @description 
+ * @private
+ * @description Insert the browser support message into the DOM.
  */
-var insertBrowserSupportMessage = function () {
+var insertBrowserSupportMessage = function (cls) {
   var string = '<div style="text-align:center;height:auto;width:100%;min-height:32px;position:relaztive;background:#efefcb;color:#bfbfa6;z-index:10;padding:25px;">Your browser is not supported. <a href=http://outdatedbrowser.com/>Please upgrade</a>.</div>';
-  var el = this.getElementsByClassName('not-supported')[0];
+  var el = this.getElementsByClassName(cls)[0];
   el.innerHTML = string;
+  return true;
 }
   
 /**
  * @function status
  * @description 
- * @param {string} statusMessage
+ * @param {string} status
+ * @param {function} callback
  * @returns {boolean}
  */
-var status = function (statusMessage){
-
-  if (statusMessage === 'supported') {
-
-    console.log('browser supported');
-
+module.exports =  function (status, callback) {
+  if (status === 'supported') {
+    if (callback) callback(null);
     return true;
-
-  } else if (statusMessage === 'unsupported') {
-    
-    insertBrowserSupportMessage();
-
+  } else if (status === 'unsupported') {
+    insertBrowserSupportMessage('page-support-status');
+    if (callback) callback(null);
     return true;
-
-  } else if (undefined) {
-
-    try {
-
-    } catch (e) {
-    
-    }
-
   } else {
-
-    try {
-
-    } catch (e) {
-
-    }
-
+    if (callback) callback('Status unknown.');
+    return false;
   }
-
 };
 
-exports.status = status;
