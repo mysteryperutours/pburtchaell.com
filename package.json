@@ -15,7 +15,7 @@
     "url": "http://pb.mit-license.org/"
   },
   "scripts": {
-    "postinstall": "gulp build && grunt",
+    "postinstall": "gulp build && grunt build",
     "test": "eslint",
     "start": "gulp watch --serve"
   },

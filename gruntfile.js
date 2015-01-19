@@ -138,8 +138,9 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin')
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-  grunt.registerTask('default', ['assemble','htmlmin','watch']);
+  grunt.registerTask('build', ['assemble','htmlmin']);
+  grunt.registerTask('default', ['build','watch']);
 
-}
+};
