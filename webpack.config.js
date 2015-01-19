@@ -11,9 +11,23 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.jsx$/, loader: 'jsx-loader?harmony' },
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'} // inline base64 URLs for <=8k images, direct URLs for the rest
+      { 
+        test: /\.css$/, 
+        loader: 'style-loader!css-loader'
+      },
+      { 
+        test: /\.jsx$/,
+        loader: 'jsx-loader?harmony'
+      },
+      { 
+        test: /\.js$/, 
+        exclude: /node_modules/,
+        loader: '6to5-loader'
+      }
+      { 
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192' // inline base64 URLs for <=8k images, direct URLs for the rest
+      }
     ]
   },
   resolve: {
@@ -24,7 +38,7 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-          warnings: false
+        warnings: false
       }
     }),
     new webpack.DefinePlugin({
