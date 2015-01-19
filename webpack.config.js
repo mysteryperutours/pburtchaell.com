@@ -3,6 +3,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     common: './source/js/common'
+    //post: './source/js/lib/liker/index'
   },
   output: {
     publicPath: '/public/js/bundles/',
@@ -20,18 +21,13 @@ module.exports = {
         loader: 'jsx-loader?harmony'
       },
       { 
-        test: /\.js$/, 
-        exclude: /node_modules/,
-        loader: '6to5-loader'
-      }
-      { 
         test: /\.(png|jpg)$/,
         loader: 'url-loader?limit=8192' // inline base64 URLs for <=8k images, direct URLs for the rest
       }
     ]
   },
   resolve: {
-    extensions: ['.css','.js','.json'] 
+    extensions: ['.css','.js','.json','.jsx'] 
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),

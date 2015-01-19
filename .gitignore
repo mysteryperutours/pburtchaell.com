@@ -10,7 +10,7 @@ dest
 tmp
 tpl/helpers/rev
 
-# AWS Access
+# AWS
 .aws.yml
-
 .awspublish-staging.pburtchaell.com
+.awspublish-pburtchaell.com
