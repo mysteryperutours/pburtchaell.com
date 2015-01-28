@@ -2,8 +2,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    common: './source/js/common'
-    //post: './source/js/lib/liker/index'
+    common: './source/js/common',
+    work: './source/js/lib/works/app'
   },
   output: {
     publicPath: '/public/js/bundles/',
