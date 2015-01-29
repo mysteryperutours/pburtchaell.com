@@ -17,7 +17,7 @@
   "scripts": {
     "postinstall": "gulp build && grunt build",
     "test": "eslint",
-    "start": "gulp watch --serve"
+    "start": "gulp serve"
   },
   "devDependencies": {
     "assemble": "^0.4.42",
