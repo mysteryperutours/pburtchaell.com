@@ -13,7 +13,7 @@ var Store = Marty.createStore({
     return {
       token: undefined,
       uid: undefined,
-      reference: new Firebase('https://pburtchaell-1.firebaseio.com/data/users');
+      reference: new Firebase('https://pburtchaell-1.firebaseio.com/data/users')
     };
   }
 

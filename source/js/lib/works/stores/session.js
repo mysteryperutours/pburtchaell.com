@@ -14,7 +14,7 @@ var Store = Marty.createStore({
       token: undefined,
       uid: undefined,
       expires: undefined,
-      reference: new Firebase()
+      reference:  new Firebase('https://pburtchaell-1.firebaseio.com/data/sessions')
     };
   },
 

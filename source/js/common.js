@@ -18,7 +18,6 @@ if (!!window.addEventListener && !!document.querySelectorAll) {
     require.ensure(['./lib/link','./lib/images'], function () { 
       var link = require('./lib/link');
       var images = require('./lib/images');
-      link.init();
     });
 
     if (window.post === true) {

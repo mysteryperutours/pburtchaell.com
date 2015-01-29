@@ -17,5 +17,5 @@ window.Marty = Marty; // for Marty developer tools
  * @param {function} callback
  */
 router.run(function (Handler, state) {
-  React.render(<Handler {...state} />, document.body);
+  React.render(<Handler {...state} />, document.querySelector('main'));
 });

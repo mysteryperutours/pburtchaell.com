@@ -17,7 +17,7 @@ var Footer = require('../components/footer');
 
 var IndexView  = React.createClass({
 
-  mixins: [LocalStorageMixin, Router.Navigation],
+  mixins: [LocalStorage, Router.Navigation],
 
   /**
    * @function signOut
@@ -59,11 +59,9 @@ var IndexView  = React.createClass({
   render: function () {
     return (
       <div>
-        <Header />
         <main>
           <RouteHandler />
         </main>
-        <Footer />
       </div>
     );
   }
