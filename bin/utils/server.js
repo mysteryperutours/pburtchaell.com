@@ -5,12 +5,6 @@ var webpack = require('webpack');
 var server = require('webpack-dev-server');
 var config = require('../../webpack.config');
 
-/**
- * @function init
- * @description Start the server.
- * @param {object} config
- * @param {function} callback
- */
 module.exports = function (callback) {
 
   var port = process.env.port || 3000;
