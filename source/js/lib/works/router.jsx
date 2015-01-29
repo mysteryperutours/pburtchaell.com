@@ -16,6 +16,7 @@ var Link = Router.Link;
 var views = {
   index: require('./views/index'),  
   error: require('./views/error'),
+  home: require('./views/home'),
   admin: {
     index: require('./views/admin/index')
   }
@@ -27,7 +28,7 @@ var views = {
  */
 Router.routes = (
   <Route name="app" path="/" handler={views.index}>
-    <DefaultRoute name="projects" handler={views.projects}/>
+    <DefaultRoute handler={views.home}/>
     <NotFoundRoute handler={views.error}/>
   </Route>
 );
