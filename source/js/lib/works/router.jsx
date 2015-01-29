@@ -17,9 +17,7 @@ var views = {
   index: require('./views/index'),  
   error: require('./views/error'),
   admin: {
-    index: require('./views/adminindex'),
-    projects: require('./views/dashboard/projects'),
-    edit: require('./views/dashboard/edit'),
+    index: require('./views/admin/index')
   }
 };
 

@@ -7,7 +7,8 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './source/js/common'
+    './source/js/common',
+    './source/js/lib/works/app'
   ],
   output: {
     publicPath: '/public/js/bundles/',
@@ -22,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    //new webpack.NoErrorsPlugin(),
+    new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
