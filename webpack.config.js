@@ -1,35 +1,28 @@
+var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: {
-    common: './source/js/common',
-    work: './source/js/lib/works/app'
-  },
+  devtool: 'eval',
+  debug: true,
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './source/js/common'
+  ],
   output: {
     publicPath: '/public/js/bundles/',
-    path: './dest/public/js/bundles/',
-    filename:'[name].js'  
+    path: path.join(__dirname, '/dest/public/js/bundles/'),
+    filename: 'bundle.js'  
   },
-  module: {
-    loaders: [
-      { 
-        test: /\.css$/, 
-        loader: 'style-loader!css-loader'
-      },
-      { 
-        test: /\.jsx$/,
-        loader: 'jsx-loader?harmony'
-      },
-      { 
-        test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=8192' // inline base64 URLs for <=8k images, direct URLs for the rest
-      }
-    ]
+  resolveLoader: {
+    modulesDirectories: ['node_modules']
   },
   resolve: {
-    extensions: ['.css','.js','.json','.jsx'] 
+    extensions: ['','.css','.js','.jsx','.json'] 
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    //new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
@@ -41,5 +34,22 @@ module.exports = {
       development: JSON.stringify(JSON.parse(process.env.DEVELOPMENT || 'true')),
       staging: JSON.stringify(JSON.parse(process.env.STAGING || 'false'))
     })
-  ]
+  ],
+  module: {
+    loaders: [
+      { 
+        test: /\.css$/, 
+        loader: 'style!css'
+      },
+      { 
+        test: /\.jsx$/,
+        loaders: ['react-hot', 'jsx?harmony'], // ?harmony enables ES6
+        exclude: /node_modules/
+      },
+      { 
+        test: /\.(png|jpg)$/,
+        loader: 'url?limit=8192' // inline base64 URLs for <=8k images, direct URLs for the rest
+      }
+    ]
+  }
 };

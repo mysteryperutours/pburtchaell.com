@@ -12,5 +12,5 @@ gulp.task('bundle', false, tasks.bundle);
 gulp.task('build', 'Bundle scripts and compile the build.', ['bundle']);
 gulp.task('clean', 'Delete the build folder.', utils.clean);
 gulp.task('deploy','Deploy the build to S3.', utils.deploy);
-gulp.task('watch', false, utils.watch);
+gulp.task('serve', 'Run a development server.', utils.server);
 gulp.task('default', false, ['build']);
