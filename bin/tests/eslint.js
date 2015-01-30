@@ -8,15 +8,18 @@ module.exports = function () {
       'quotes': 0, // Allows use of single quotes on strings: http://eslint.org/docs/rules/quotes.html
       'strict': 0, // Doesn't require you to use strict mode: http://eslint.org/docs/rules/strict.html
       'no-console': 0,
-      'comma-spacing': 0
+      'comma-spacing': 0,
+      'new-cap': 0
     },
     globals: {
       'process': true,
       'require': true,
       'module': true,
+      'exports': true,
       'window': true,
       'document': true,
       'console': true,
+      'localStorage': true,
       'development': true
     }
   };
