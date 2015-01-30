@@ -5,8 +5,7 @@ var React = require('react');
 var Header = React.createClass({
 
   getDefaultProps: function () {
-    return {
-    }
+    return {};
   },
 
   render: function() {

@@ -3,9 +3,9 @@ var Constants = require('../constants/project');
 var Analytics = require('../utils/analytics');
 
 module.exports = Marty.createActionCreators({
-  
+
   /**
-   * @function get 
+   * @function get
    * @param {string} id The project id
    * @para {function} callback
    * @fires dispatch
@@ -31,6 +31,7 @@ module.exports = Marty.createActionCreators({
    */
   create: Constants.PROJECT_POST(function (data, callback) {
     this.dispatch(data, callback);
+    Analytics.track('Project created', data);
   }),
 
   /**
@@ -42,6 +43,7 @@ module.exports = Marty.createActionCreators({
    */
   update: Constants.PROJECT_PUT(function (id, data, callback) {
     this.dispatch(id, data, callback);
+    Analytics.track('Project updated', data);
   }),
 
   /**

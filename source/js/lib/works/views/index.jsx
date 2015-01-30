@@ -33,7 +33,7 @@ var IndexView  = React.createClass({
    * @function scroll
    */
   _scroll: function (event) {
-    
+
     event.preventDefault();
 
     this.window = {

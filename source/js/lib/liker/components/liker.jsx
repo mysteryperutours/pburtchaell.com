@@ -44,8 +44,8 @@ var Liker = React.createClass({
         liked: true
       });
     }
-    
-    
+
+
   },
 
   listen: function () {
@@ -65,8 +65,8 @@ var Liker = React.createClass({
 
   getInitialState: function () {
     return {
-      base: 'https://liker.firebaseio.com/root',  
-      path: undefined, 
+      base: 'https://liker.firebaseio.com/root',
+      path: undefined,
       reference: undefined,
       count: 0,
       liked: false

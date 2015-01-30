@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'eval-source-map',
   debug: true,
   entry: {
     common: ['webpack-dev-server/client?http://localhost:3000','webpack/hot/only-dev-server','./source/js/common'],
@@ -11,24 +11,24 @@ module.exports = {
   output: {
     publicPath: '/public/js/bundles/',
     path: path.join(__dirname, '/dest/public/js/bundles/'),
-    filename: '[name].js'  
+    filename: '[name].js'
   },
   resolveLoader: {
     modulesDirectories: ['node_modules']
   },
   resolve: {
-    extensions: ['','.css','.js','.jsx','.json'] 
+    extensions: ['','.css','.js','.jsx','.json']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    //new webpack.optimize.OccurenceOrderPlugin(),
-    //new webpack.optimize.DedupePlugin(),
-    /*new webpack.optimize.UglifyJsPlugin({
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       }
-    }),*/
+    }),
     new webpack.DefinePlugin({
       development: JSON.stringify(JSON.parse(process.env.DEVELOPMENT || 'true')),
       staging: JSON.stringify(JSON.parse(process.env.STAGING || 'false'))
@@ -36,16 +36,16 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { 
-        test: /\.css$/, 
+      {
+        test: /\.css$/,
         loader: 'style!css'
       },
-      { 
+      {
         test: /\.jsx$/,
-        loaders: ['react-hot', 'jsx?harmony'], // ?harmony enables ES6
+        loaders: ['react-hot', 'jsx-loader?harmony'], // ?harmony enables ES6
         exclude: /node_modules/
       },
-      { 
+      {
         test: /\.(png|jpg)$/,
         loader: 'url?limit=8192' // inline base64 URLs for <=8k images, direct URLs for the rest
       }

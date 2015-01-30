@@ -15,7 +15,7 @@ var HomeView = React.createClass({
     return (
      <div>
       <main className="portfolio-view">
-        <section className="portfolio-hero"> 
+        <section className="portfolio-hero">
           <hgroup className="portfolio-hero-hgroup">
             <h1 className="portfolio-hero-title">{this.state.title}</h1>
             <h2 className="portfolio-hero-subtitle">{this.state.subtitle}</h2>

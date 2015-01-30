@@ -14,11 +14,12 @@ var Link = Router.Link;
  * @description The views of the application.
  */
 var views = {
-  index: require('./views/index'),  
+  index: require('./views/index'),
   error: require('./views/error'),
   home: require('./views/home'),
   admin: {
-    index: require('./views/admin/index')
+    index: require('./views/admin/index'),
+    dashboard: require('./views/admin/dashboard')
   }
 };
 
@@ -29,6 +30,7 @@ var views = {
 Router.routes = (
   <Route name="app" path="/" handler={views.index}>
     <DefaultRoute handler={views.home}/>
+    <Route path="/admin" handler={views.admin.dashboard}/>
     <NotFoundRoute handler={views.error}/>
   </Route>
 );

@@ -47,7 +47,7 @@ var SigninView = React.createClass({
         });
       }
     }.bind(this));
-  
+
   },
 
   componentWillMount: function () {},

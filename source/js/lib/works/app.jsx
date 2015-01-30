@@ -13,7 +13,7 @@ window.Marty = Marty; // for Marty developer tools
 /**
  * @function Router#run
  * @description Initialize the router.
- * @param {function} 
+ * @param {function}
  * @param {function} callback
  */
 router.run(function (Handler, state) {
