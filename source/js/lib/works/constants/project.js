@@ -1,9 +1,9 @@
 var Marty = require('marty');
 
 module.exports = Marty.createConstants([
-  'SESSION_GET',
-  'SESSION_GET_ALL',
-  'SESSION_POST',
-  'SESSION_PUT',
-  'SESSION_DELETE'
+  'PROJECT_GET',
+  'PROJECT_GET_ALL',
+  'PROJECT_POST',
+  'PROJECT_PUT',
+  'PROJECT_DELETE'
 ]);
