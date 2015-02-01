@@ -18,28 +18,12 @@ var Menu  = React.createClass({
 
   getDefaultProps: function () {
     return {
-      links: [
-        {
-          title: 'About'
-        },
-        {
-          title: 'Contact'
-        },
-        {
-          title: 'Works'
-        }
-      ]
+      items: [],
+      active: false // if menu is open, true, else, false
     }
   },
 
   render: function() {
-
-    var cx = React.addons.classSet;
-    var classes = cx({
-      'portfolio-menu': true,
-      'active': this.props.open
-    });
-
     return (
       <div>
         <a href="#" className="portfolio-menu-trigger" onClick={this._open}>
@@ -50,7 +34,7 @@ var Menu  = React.createClass({
         </a>
         <nav className="portfolio-menu" onMouseLeave={this._close}>
           <div className="portfolio-menu-wrapper">
-            {this.props.links.map(function (link) {
+            {this.props.items.map(function (link) {
               return <a href="#" className="portfolio-menu-item">{link.title}</a>;
             })}
           </div>
