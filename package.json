@@ -77,6 +77,7 @@
     "react-classes": "^1.0.3",
     "react-input": "^1.0.2",
     "react-localstorage": "^0.1.0",
-    "react-router": "^0.11.6"
+    "react-router": "^0.11.6",
+    "windex": "^0.1.0"
   }
 }
