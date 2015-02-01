@@ -31,7 +31,11 @@ module.exports = Marty.createActionCreators({
    */
   create: Constants.PROJECT_POST(function (data, callback) {
     this.dispatch(data, callback);
-    Analytics.track('Project created', data);
+    if (development) {
+      debugger;
+      console.log(data);
+    }
+    //Analytics.track('Project created', data);
   }),
 
   /**
@@ -43,7 +47,7 @@ module.exports = Marty.createActionCreators({
    */
   update: Constants.PROJECT_PUT(function (id, data, callback) {
     this.dispatch(id, data, callback);
-    Analytics.track('Project updated', data);
+    //Analytics.track('Project updated', data);
   }),
 
   /**

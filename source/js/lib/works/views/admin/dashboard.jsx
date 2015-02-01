@@ -1,10 +1,9 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-
 var Input = require('react-input');
 
-//var ProjectActionCreator = require('../../actions/project');
+var ProjectActionCreator = require('../../actions/project');
 
 var DashboardView = React.createClass({
 

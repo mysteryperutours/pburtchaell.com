@@ -5,7 +5,7 @@ var Constants = require('../constants/project');
 var Store = Marty.createStore({
 
   name: 'entry',
-  
+
   displayName: 'entry',
 
   handlers: {
@@ -13,7 +13,7 @@ var Store = Marty.createStore({
     getAll: Constants.PROJECT_GET_ALL,
     create: Constants.PROJECT_POST,
     update: Constants.PROJECT_PUT,
-    'delete': Constants.PROJECT_DELETE 
+    'delete': Constants.PROJECT_DELETE
   },
 
   getInitialState: function () {
@@ -50,19 +50,19 @@ var Store = Marty.createStore({
       images: []
     }
 
-    var project = this.state.reference.push(data, function (error) {
+    /*var project = this.state.reference.push(data, function (error) {
       if (!error) {
         // do something
       } else {
         // handle error
       }
-    }.bind(this));
+    }.bind(this));*/
 
     debugger;
 
-    var key = newPostRef.key();
+    //var key = newPostRef.key();
 
-    return key;
+    //return key;
 
   },
 
@@ -71,7 +71,7 @@ var Store = Marty.createStore({
   },
 
   'delete': function () {
-    
+
   }
 
 });

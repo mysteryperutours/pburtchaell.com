@@ -10,6 +10,10 @@ React.initializeTouchEvents(true);
 window.React = React; // for React developer tools
 window.Marty = Marty; // for Marty developer tools
 
+if (development) {
+  console.clear();
+}
+
 /**
  * @function Router#run
  * @description Initialize the router.

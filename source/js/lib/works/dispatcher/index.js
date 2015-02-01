@@ -1,6 +1,8 @@
 var Dispatcher = require('marty/dispatcher');
 
-Dispatcher.register(function (action) {
-  console.log(dispatcher);
+var dispatchToken = Dispatcher.register(function (action) {
   debugger;
+  console.log(action);
 });
+
+module.exports = dispatchToken;
