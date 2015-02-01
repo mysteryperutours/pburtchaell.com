@@ -46,6 +46,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.js$/,
+        loaders: ['react-hot', 'jsx-loader?harmony'] // ?harmony enables ES6
+      },
+      {
         test: /\.(png|jpg)$/,
         loader: 'url?limit=8192' // inline base64 URLs for <=8k images, direct URLs for the rest
       }
