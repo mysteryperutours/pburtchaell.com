@@ -108,7 +108,7 @@ module.exports = function (grunt) {
     watch: {
       assemble: {
         files: ['./templates/pages/**/*', './templates/posts/**/*', './templates/**/*'],
-        tasks: ['assemble'],
+        tasks: ['assemble','htmlmin'],
         options: {
           spawn: false
         }
