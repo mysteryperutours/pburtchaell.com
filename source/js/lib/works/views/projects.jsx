@@ -4,7 +4,7 @@ var React = require('react');
 var Marty = require('marty');
 
 var windex = require('windex');
-var Item = require('../components/item');
+//var Item = require('../components/item');
 
 var Router = require('react-router');
 var Link = Router.Link;

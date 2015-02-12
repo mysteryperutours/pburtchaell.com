@@ -15,7 +15,6 @@ var Link = Router.Link;
  */
 var views = {
   index: require('./views/index'),
-  home: require('./views/home'),
   projects: require('./views/projects'),
   admin: {
     signin: require('./views/admin/signin'),
