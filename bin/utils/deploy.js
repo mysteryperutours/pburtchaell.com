@@ -18,13 +18,13 @@ module.exports = function () {
           return config.staging.bucket;
         } else if (process.env.AWS === 'master') {
           return config.master.bucket;
-        } 
+        }
       } else if (property === 'region') {
         if (process.env.AWS === 'staging') {
           return config.staging.region;
         } else if (process.env.AWS === 'master') {
           return config.master.region;
-        }      
+        }
       }
 
     }
