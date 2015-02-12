@@ -1,5 +1,5 @@
 var Marty = require('marty');
-var Firebase = require('firebase');
+//var Firebase = require('firebase');
 var Constants = require('../constants/session');
 
 var Store = Marty.createStore({
@@ -14,7 +14,7 @@ var Store = Marty.createStore({
       token: undefined,
       uid: undefined,
       expires: undefined,
-      reference:  new Firebase('https://pburtchaell-1.firebaseio.com/data/sessions')
+      //reference:  new Firebase('https://pburtchaell-1.firebaseio.com/data/sessions')
     };
   },
 

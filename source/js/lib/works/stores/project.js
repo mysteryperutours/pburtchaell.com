@@ -1,5 +1,5 @@
 var Marty = require('marty');
-var Firebase = require('firebase');
+//var Firebase = require('firebase');
 var Constants = require('../constants/project');
 
 var Store = Marty.createStore({
@@ -18,7 +18,7 @@ var Store = Marty.createStore({
 
   getInitialState: function () {
     return {
-      reference: new Firebase('https://pburtchaell-1.firebaseio.com/data/web/projects')
+      //reference: new Firebase('https://pburtchaell-1.firebaseio.com/data/web/projects')
     };
   },
 

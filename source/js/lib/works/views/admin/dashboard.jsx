@@ -5,7 +5,13 @@ var Input = require('react-input');
 
 var ProjectActionCreator = require('../../actions/project');
 
+var Router = require('react-router');
+var Redirect = Router.Redirect;
+var Link = Router.Link;
+
 var DashboardView = React.createClass({
+
+  mixins: [Router.Navigation],
 
   /**
    * @private
@@ -65,43 +71,75 @@ var DashboardView = React.createClass({
     this.refs.name.focus();
   },
 
+  getInitialState: function () {
+    return {
+      isLoggedIn: true
+    };
+  },
+
   render: function() {
-    return (
-      <div className="row">
-        <form className="col col-l-12">
-          <h1>New Project</h1>
-          <Input
-            ref="name"
-            placeholder="Name"
-            label="A name for the project"
-            disabled={false}
-            type="text"
-          />
-          <Input
-            ref="date"
-            placeholder="test"
-            label="enter some text"
-            disabled={false}
-            type="text"
-          />
-          <Input
-            ref="type"
-            placeholder="test"
-            label="enter some text"
-            disabled={false}
-            type="text"
-          />
-          <Input
-            ref="type"
-            placeholder="test"
-            label="enter some text"
-            disabled={true}
-            type="text"
-          />
-          <button type="submit" onClick={this._submit}/>
-        </form>
-      </div>
-    )
+
+    if (!this.state.isLoggedIn) {
+      this.transitionTo('signin');
+    } else {
+      return (
+        <main className="page view-dashboard">
+
+          <header className="page-header">
+              <nav className="page-nav" role="navigation">
+              <ul className="nav-items">
+                <li className="nav-item"><Link to="signin">New Project</Link></li>
+                <li className="nav-item"><Link to="signin">View Projects</Link></li>
+              </ul>
+            </nav>
+          </header>
+
+          <header className="default-header">
+            <hgroup>
+              <h1>New Project</h1>
+            </hgroup>
+          </header>
+
+          <section className="default-content">
+            <div className="row">
+              <form className="col col-l-12">
+                <Input
+                  ref="name"
+                  placeholder="Name"
+                  label="A name for the project"
+                  disabled={false}
+                  type="text"
+                />
+                <Input
+                  ref="date"
+                  placeholder="test"
+                  label="A description for the project"
+                  disabled={false}
+                  type="text"
+                />
+                <Input
+                  ref="type"
+                  placeholder="test"
+                  label="A project type"
+                  disabled={false}
+                  type="text"
+                />
+                <Input
+                  ref="type"
+                  placeholder="test"
+                  label="enter some text"
+                  disabled={true}
+                  type="text"
+                />
+                <button className="btn" type="submit" onClick={this._submit}>Create project</button>
+              </form>
+            </div>
+          </section>
+
+        </main>
+      );
+    }
+
   }
 
 });

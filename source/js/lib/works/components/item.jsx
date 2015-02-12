@@ -3,6 +3,8 @@
 var React = require('react');
 var classes = require('react-classes');
 
+var Carousel = require('./carousel');
+
 var Item = React.createClass({
 
   mixins: [classes],
@@ -59,13 +61,14 @@ var Item = React.createClass({
   },
 
   propTypes: {
-    title: React.PropTypes.string,
-    description: React.PropTypes.string,
-    content: React.PropTypes.string,
+    title: React.PropTypes.string.isRequired,
+    description: React.PropTypes.string.isRequired,
+    content: React.PropTypes.string.isRequired,
     date: React.PropTypes.string,
     medium: React.PropTypes.string,
     client: React.PropTypes.string,
     color: React.PropTypes.string,
+    images: React.PropTypes.array,
     active: React.PropTypes.bool
   },
 
@@ -83,7 +86,8 @@ var Item = React.createClass({
       date: '',
       medium: '',
       client: '',
-      color: '#fff', // @ Todo
+      color: 'eeeeee',
+      images: [],
       active: false
     };
   },
@@ -107,54 +111,52 @@ var Item = React.createClass({
     }
 
     return (
-      <section className={classes} style={styles} onClick={this._handle}>
+        <section
+          className={classes}
+          style={styles}
+          onClick={this._handle}>
 
-        <div className="portfolio-column column-left">
-          <header className="portfolio-item-header">
-            <h1 className="portfolio-item-title">{this.props.title}</h1>
-            <h2 className="portfolio-item-subtitle">{this.props.description}</h2>
-            <hr />
-          </header>
-          <article className="portfolio-item-content">
-            <p>{this.props.content}</p>
-          </article>
-          <footer className="portfolio-item-footer">
-            <div className="portfolio-item-detail">
-              <div className="portfolio-item-detail-wrapper">
-                <span className="item-detail-key"><b>Date:</b></span>
-                <span className="item-detail-value">{this.props.date}</span>
+          <div className="portfolio-column column-left">
+            <header className="portfolio-item-header">
+              <h1 className="portfolio-item-title">{this.props.title}</h1>
+              <h2 className="portfolio-item-subtitle">{this.props.description}</h2>
+              <hr />
+            </header>
+            <article className="portfolio-item-content">
+              <p>{this.props.content}</p>
+            </article>
+            <footer className="portfolio-item-footer">
+              <div className="portfolio-item-detail">
+                <div className="portfolio-item-detail-wrapper">
+                  <span className="item-detail-key"><b>Date:</b></span>
+                  <span className="item-detail-value">{this.props.date}</span>
+                </div>
               </div>
-            </div>
-            <div className="portfolio-item-detail">
-              <div className="portfolio-item-detail-wrapper">
-                <span className="item-detail-key"><b>Medium:</b></span>
-                <span className="item-detail-value">{this.props.medium}</span>
+              <div className="portfolio-item-detail">
+                <div className="portfolio-item-detail-wrapper">
+                  <span className="item-detail-key"><b>Medium:</b></span>
+                  <span className="item-detail-value">{this.props.medium}</span>
+                </div>
               </div>
-            </div>
-            <div className="portfolio-item-detail">
-              <div className="portfolio-item-detail-wrapper">
-                <span className="item-detail-key"><b>Client:</b></span>
-                <span className="item-detail-value">{this.props.client}</span>
+              <div className="portfolio-item-detail">
+                <div className="portfolio-item-detail-wrapper">
+                  <span className="item-detail-key"><b>Client:</b></span>
+                  <span className="item-detail-value">{this.props.client}</span>
+                </div>
               </div>
-            </div>
-          </footer>
-        </div>
+            </footer>
+          </div>
 
-        <div className="portfolio-column column-right">
-          <section className="portfolio-gallery">
-           <div className="portfolio-gallery-image" data-order="top">
-              <div className="gallery-image-header"></div>
-            </div>
-            <div className="portfolio-gallery-image" data-order="active">
-              <div className="gallery-image-header"></div>
-            </div>
-            <div className="portfolio-gallery-image" data-order="bottom">
-              <div className="gallery-image-header"></div>
-            </div>
-          </section>
-        </div>
+          <div className="portfolio-column column-right">
+            <Carousel
+              title={this.props.imageTitle}
+              description={this.props.imageDescription}
+              src={this.props.imageSrc}
+              background={this._shade('#' + this.props.color, -0.2)}
+            />
+          </div>
 
-      </section>
+        </section>
     );
   }
 

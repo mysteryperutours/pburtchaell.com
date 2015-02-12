@@ -1,14 +1,12 @@
-signin.js/** @jsx React.DOM */
+/** @jsx React.DOM */
 
 var React = require('react');
-var SessionStore = require('../stores/session');
-var SessionActionCreators = require('../actions/session');
-var UserStore = require('../stores/user');
-var UserActionCreations = require('../actions/user');
+var Input = require('react-input');
 
-var ui = require('material-ui');
-var Input = ui.Input;
-var Button = ui.RaisedButton;
+var SessionStore = require('../../stores/session');
+var SessionActionCreators = require('../../actions/session');
+//var UserStore = require('../stores/user');
+//var UserActionCreations = require('../actions/user');
 
 var Router = require('react-router');
 var Route = Router.Route;
@@ -52,7 +50,9 @@ var SigninView = React.createClass({
 
   componentWillMount: function () {},
 
-  componentDidMount: function () {},
+  componentDidMount: function () {
+    this.refs.email.focus();
+  },
 
   getInitialState: function () {
     return {
@@ -65,9 +65,25 @@ var SigninView = React.createClass({
 
   render: function () {
     return (
-      <main className="container">
-        <div className="panel login">
-          // ui code
+      <main className="page-flex page-full-height page-full-width">
+        <div className="panel panel-login">
+         <div className="row">
+            <div className="col col-l-12 col-s-12">
+              <h1>Sign In</h1>
+              <Input
+                ref="email"
+                type="text"
+                placeholder="Email"
+                />
+              <Input
+                ref="password"
+                type="password"
+                placeholder="Password"
+                />
+              <button className="btn" onClick={this._submit}>Submit</button>
+              {/*<Link to="app"><strong><small>Go back</small></strong></Link>*/}
+            </div>
+          </div>
         </div>
       </main>
     )

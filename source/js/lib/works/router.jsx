@@ -15,13 +15,15 @@ var Link = Router.Link;
  */
 var views = {
   index: require('./views/index'),
-  error: require('./views/error'),
   home: require('./views/home'),
+  projects: require('./views/projects'),
   admin: {
-    index: require('./views/admin/index'),
+    signin: require('./views/admin/signin'),
     dashboard: require('./views/admin/dashboard')
-  }
+  },
+  error: require('./views/error')
 };
+
 
 /**
  * @object routes
@@ -29,9 +31,11 @@ var views = {
  */
 Router.routes = (
   <Route name="app" path="/" handler={views.index}>
-    <DefaultRoute handler={views.home}/>
-    <Route path="/admin" handler={views.admin.dashboard}/>
-    <NotFoundRoute handler={views.error}/>
+    <DefaultRoute handler={views.admin.signin} />
+    <Route name="dashboard" path="/admin" handler={views.admin.dashboard} />
+    <Route name="signin" path="/signin" handler={views.admin.signin} />
+    <Route name="projects" path="/projects" handler={views.projects} />
+    <NotFoundRoute handler={views.error} />
   </Route>
 );
 
