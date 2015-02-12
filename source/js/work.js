@@ -17,21 +17,25 @@ var WorkView = React.createClass({
         {
           key: 1,
           title: 'assemble-middleware-rss',
+          link: 'https://github.com/assemble/assemble-middleware-rss',
           description: 'RSS feed middleware for Assemble.'
         },
         {
           key: 2,
           title: 'react-input',
+          link: 'https://github.com/pburtchaell/react-input',
           description: 'React input element.'
         },
         {
           key: 3,
           title: 'react-classes',
+          link: 'https://github.com/pburtchaell/react-classes',
           description: 'Wrapper for the React class add-on.'
         },
         {
           key: 4,
           title: 'generator-helper',
+          link: 'https://github.com/assemble/generator-helper',
           description: 'Yeoman generator for Handlebars and Lodash helpers.'
         }
       ],
@@ -116,7 +120,7 @@ var WorkView = React.createClass({
                       key={item.key}
                       className="project-list-item"
                       data-type="open-source">
-                        <a href="">
+                        <a href={item.link} target="_blank">
                           <div className="list-item-title">{item.title}</div>
                           <div className="list-item-desciption">{item.description}</div>
                         </a>
@@ -135,7 +139,7 @@ var WorkView = React.createClass({
                       key={item.key}
                       className="project-list-item"
                       data-type="side-project">
-                        <a href={item.link}>
+                        <a href={item.link} target="_blank">
                           <div className="list-item-title">{item.title}</div>
                           <div className="list-item-desciption">Categories: {item.type}</div>
                           <div className="list-item-desciption">Description: {item.description}</div>
