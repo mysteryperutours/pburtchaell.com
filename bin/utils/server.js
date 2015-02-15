@@ -7,7 +7,7 @@ var config = require('../../webpack.config');
 
 module.exports = function (callback) {
 
-  var port = process.env.port || 3000;
+  var port = process.env.port || 8000;
 
   new server(webpack(config), {
     contentBase: gulp.cache.opt.dest,
@@ -18,11 +18,11 @@ module.exports = function (callback) {
     noInfo: false,
     lazy: true,
     watchDelay: 300
-  }).listen(port, 'localhost', function (error, result) {
+  }).listen(port, '127.0.0.1', function (error, result) {
     if (error) {
       new gutil.PluginError('server', error)
     } else {
-      gutil.log('Listening to http://localhost:' + port);
+      gutil.log('Listening to http://127.0.0.1:' + port);
     }
   });
 
