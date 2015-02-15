@@ -5,8 +5,17 @@ module.exports = {
   devtool: 'eval-source-map',
   debug: true,
   entry: {
-    common: ['webpack-dev-server/client?http://localhost:3000','webpack/hot/only-dev-server','./source/js/common'],
-    works: './source/js/lib/works/app'
+    common: [
+      'webpack-dev-server/client?http://127.0.0.1:8000',
+      'webpack/hot/only-dev-server',
+      './source/js/common'
+    ],
+    works: './source/js/lib/works/app',
+    work: [
+      //'webpack-dev-server/client?http://127.0.0.1:8000',
+      //'webpack/hot/only-dev-server',
+      './source/js/work'
+    ]
   },
   output: {
     publicPath: '/public/js/bundles/',
@@ -14,7 +23,9 @@ module.exports = {
     filename: '[name].js'
   },
   resolveLoader: {
-    modulesDirectories: ['node_modules']
+    modulesDirectories: [
+      'node_modules'
+    ]
   },
   resolve: {
     extensions: ['','.css','.js','.jsx','.json']
@@ -47,7 +58,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'jsx-loader?harmony'] // ?harmony enables ES6
+        loaders: ['react-hot', '6to5'] // ?harmony enables ES6
       },
       {
         test: /\.(png|jpg)$/,
