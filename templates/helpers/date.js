@@ -20,6 +20,7 @@ module.exports.register = function(Handlebars, options) {
     } else {
       date = param;
     };
+    
     if (verbose) console.log(date);
       
     // Split the string into a date array.

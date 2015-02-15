@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
 
   'use strict';
-  
+
   var hljs = require('highlight.js');
 
   var options = {
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         ],
         assets: './dest/public',
         partials: [
-        './templates/partials/*.hbs', 
+        './templates/partials/*.hbs',
         './templates/components/*.hbs'
         ],
         layoutdir: './templates/layouts/',
@@ -108,27 +108,27 @@ module.exports = function (grunt) {
     watch: {
       assemble: {
         files: ['./templates/pages/**/*', './templates/posts/**/*', './templates/**/*'],
-        tasks: ['assemble'],
+        tasks: ['assemble','htmlmin'],
         options: {
           spawn: false
         }
       }
     },
 
-    htmlmin: { 
-      options: {                                
+    htmlmin: {
+      options: {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true,
         removeOptionalTags: true,
         minifyJS: true
-      },                  
-      dist: {                            
-        files: [{                                  
+      },
+      dist: {
+        files: [{
           expand: true,
-          cwd: 'tmp/',                             
-          src: '**/*.html',                       
-          dest: 'dest/'                            
+          cwd: 'tmp/',
+          src: '**/*.html',
+          dest: 'dest/'
         }]
       },
     }

@@ -1,4 +1,4 @@
-var moment = require('moment');
+var Firebase = require('firebase');
 
 var data = function (state) {
   this.state = state;
@@ -7,7 +7,7 @@ var data = function (state) {
 };
 
 /**
- * @function push 
+ * @function push
  * @description Add a new like to Firebase.
  */
 data.prototype.push = function (callback) {
@@ -21,7 +21,7 @@ data.prototype.push = function (callback) {
 
 /**
  * @function store
- * @description Store the ID for the like to localStorage. 
+ * @description Store the ID for the like to localStorage.
  */
 data.prototype.store = function () {
   localStorage[this.state.path] = JSON.stringify(this.id);
@@ -29,7 +29,7 @@ data.prototype.store = function () {
 
 /**
  * @function store
- * @description Remove the ID from Firebase and set the 
+ * @description Remove the ID from Firebase and set the
  * localStorage key to false.
  */
 data.prototype.delete = function (id) {
