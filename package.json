@@ -80,6 +80,7 @@
     "react-input": "^1.0.2",
     "react-localstorage": "^0.1.0",
     "react-router": "^0.11.6",
-    "windex": "^0.1.0"
+    "windex": "^0.1.0",
+    "xhr": "^2.0.1"
   }
 }
