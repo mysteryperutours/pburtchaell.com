@@ -14,9 +14,7 @@ module.exports = function (callback) {
     publicPath: config.output.publicPath,
     path: '/dest',
     hot: true,
-    quiet: false,
-    noInfo: false,
-    lazy: true,
+    noInfo: true,
     watchDelay: 300
   }).listen(port, '127.0.0.1', function (error, result) {
     if (error) {
