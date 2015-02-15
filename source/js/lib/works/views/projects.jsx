@@ -1,19 +1,15 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var Marty = require('marty');
-
-var windex = require('windex');
-//var Item = require('../components/item');
-
-var Router = require('react-router');
-var Link = Router.Link;
+import React from 'react';
+import Marty from 'marty';
+import Router from 'react-router';
+let { Link } = Router;
 
 var ProjectsView = React.createClass({
 
   mixins: [Router.Navigation],
 
-  getInitialState: function () {
+  getInitialState() {
     return {
       loading: false,
       items: [
@@ -51,16 +47,16 @@ var ProjectsView = React.createClass({
     };
   },
 
-  compontentWillMount: function () {
+  compontentWillMount() {
     this.setState({
       loading: true
     });
   },
 
-  componentDidMount: function () {
+  componentDidMount() {
   },
 
-  render: function () {
+  render() {
     if (this.state.loading) {
       return (
         <h1>Loading</h1>

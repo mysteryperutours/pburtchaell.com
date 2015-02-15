@@ -1,15 +1,14 @@
-var Marty = require('marty');
-//var Firebase = require('firebase');
-var Constants = require('../constants/session');
+import Marty from 'marty';
+import Constants from '../constants/project';
 
-var Store = Marty.createStore({
+let Store = Marty.createStore({
   name: 'session',
   displayName: 'Session',
   handlers: {
     create: Constants.SESSION_CREATE,
     terminate: Constants.SESSION_TERMINATE
   },
-  getInitialState: function () {
+  getInitialState() {
     return {
       token: undefined,
       uid: undefined,
@@ -25,7 +24,7 @@ var Store = Marty.createStore({
    * @param {string} password
    * @param {function} callback
    */
-  create: function (email, password, callback) {
+  create(email, password, callback) {
 
     /**
      * @function callback
@@ -58,7 +57,7 @@ var Store = Marty.createStore({
         return;
       }
 
-    }.bind(this)); 
+    }.bind(this));
 
     return;
 
@@ -68,10 +67,10 @@ var Store = Marty.createStore({
    * @function terminate
    * @description Terminate the current session.
    */
-  terminate: function (callback) {
+  terminate(callback) {
 
     // Remove authentication
-    this.state.reference.unauth(); 
+    this.state.reference.unauth();
 
     // Clear localStorage
     localStorage.clear();
@@ -85,4 +84,4 @@ var Store = Marty.createStore({
 
 });
 
-module.exports = Store;
+export default Store;

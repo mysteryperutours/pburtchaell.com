@@ -1,8 +1,8 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var Marty = require('marty')
-var router = require('./router');
+import React from 'react';
+import Marty from 'marty';
+import router from './router';
 
 // React configurations
 React.initializeTouchEvents(true);
@@ -10,7 +10,7 @@ React.initializeTouchEvents(true);
 window.React = React; // for React developer tools
 window.Marty = Marty; // for Marty developer tools
 
-if (development) {
+if (process.env.NODE_ENV === 'development') {
   console.clear();
 }
 

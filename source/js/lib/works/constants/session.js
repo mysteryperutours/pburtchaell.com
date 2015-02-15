@@ -1,6 +1,8 @@
 var Marty = require('marty');
 
-module.exports = Marty.createConstants([
+let Constants = Marty.createConstants([
   'SESSION_CREATE',
   'SESSION_TERMINATE'
 ]);
+
+export default Constants;

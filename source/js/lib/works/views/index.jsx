@@ -1,29 +1,28 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var Marty = require('marty');
+import React from 'react';
+import Marty from 'marty';
 
-var Router = require('react-router');
-var LocalStorage = require('react-localstorage');
-var RouteHandler = Router.RouteHandler;
+import Router from 'react-router';
+let { Link, Navigation } = Router;
 
 var Session = {
   store: require('../stores/session'),
   action: require('../actions/session')
 };
 
-var Header = require('../components/header');
-var Footer = require('../components/footer');
+import Header from '../components/header';
+import Footer from '../components/footer';
 
 var IndexView  = React.createClass({
 
-  mixins: [LocalStorage, Router.Navigation],
+  mixins: [Router.Navigation],
 
   /**
    * @function signOut
    * @description End the session
    */
-  _signOut: function () {
+  _signOut() {
     Session.action._terminate();
     this.transitionTo('projects');
     return;
@@ -32,7 +31,7 @@ var IndexView  = React.createClass({
   /**
    * @function scroll
    */
-  _scroll: function (event) {
+  _scroll(event) {
 
     event.preventDefault();
 
@@ -53,14 +52,14 @@ var IndexView  = React.createClass({
    * @description Ignore the browser support warning message and enter 
    * the site.
    */
-  _ignoreWarning: function (event) {
+  _ignoreWarning(event) {
     event.preventDefault();
     this.setState({
       supported: true
     });
   },
 
-  getInitialState: function () {
+  getInitialState() {
     return {
       title: 'Patrick Burtchaell',
       subtitle: 'Designer & developer from New Orleans',
@@ -73,7 +72,7 @@ var IndexView  = React.createClass({
    * and the querySelector API's do not exist, then the browser is unsupported
    * and React will warn vistors.
    */
-  componentWillMount: function () {
+  componentWillMount() {
     if (!!window.addEventListener && !!document.querySelectorAll) {
       this.setState({
         supported: true
@@ -85,7 +84,7 @@ var IndexView  = React.createClass({
     }
   },
 
-  render: function () {
+  render() {
 
     if (this.state.supported !== true) {
       return (

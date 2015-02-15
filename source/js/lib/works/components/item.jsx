@@ -1,11 +1,9 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var classes = require('react-classes');
+import React from 'react';
+import classes from 'react-classes';
 
-var Carousel = require('./carousel');
-
-var Item = React.createClass({
+let Item = React.createClass({
 
   mixins: [classes],
 
@@ -13,7 +11,7 @@ var Item = React.createClass({
    * @function open
    * @description Open the item
    */
-  open: function () {
+  open() {
     this.setState({
       active: true
     });
@@ -23,7 +21,7 @@ var Item = React.createClass({
    * @function close
    * @description Close the item
    */
-  close: function () {
+  close() {
     this.setState({
       active: false
     });
@@ -33,7 +31,7 @@ var Item = React.createClass({
    * @private
    * @function handle
    */
-  _handle: function (event) {
+  _handle(event) {
 
     event.preventDefault();
 
@@ -55,7 +53,7 @@ var Item = React.createClass({
    * @param {number} percent The amount to darken/lighten the color
    * @returns {string} The new shade
    */
-  _shade: function (color, percent) {
+  _shade(color, percent) {
     var f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
     return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
   },
@@ -72,13 +70,13 @@ var Item = React.createClass({
     active: React.PropTypes.bool
   },
 
-  getInitialState: function () {
+  getInitialState() {
     return {
       active: this.props.active
     };
   },
 
-  getDefaultProps: function () {
+  getDefaultProps() {
     return {
       title: '',
       description: '',
@@ -92,7 +90,7 @@ var Item = React.createClass({
     };
   },
 
-  render: function() {
+  render() {
 
     var classes = this.getClass('portfolio-item', {
       'active': this.state.active
@@ -147,14 +145,7 @@ var Item = React.createClass({
             </footer>
           </div>
 
-          <div className="portfolio-column column-right">
-            <Carousel
-              title={this.props.imageTitle}
-              description={this.props.imageDescription}
-              src={this.props.imageSrc}
-              background={this._shade('#' + this.props.color, -0.2)}
-            />
-          </div>
+          <div className="portfolio-column column-right"></div>
 
         </section>
     );
@@ -162,4 +153,4 @@ var Item = React.createClass({
 
 });
 
-module.exports = Item;
+export default Item;

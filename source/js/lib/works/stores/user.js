@@ -1,15 +1,14 @@
-var Marty = require('marty');
-//var Firebase = require('firebase');
-var Constants = require('../constants/user');
+import Marty from 'marty';
+import Constants from '../constants/project';
 
-var Store = Marty.createStore({
+let Store  = Marty.createStore({
   name: 'session',
   displayName: 'Session',
   handlers: {
     create: Constants.SESSION_CREATE,
     terminate: Constants.SESSION_TERMINATE
   },
-  getInitialState: function () {
+  getInitialState() {
     return {
       token: undefined,
       uid: undefined,
@@ -19,4 +18,4 @@ var Store = Marty.createStore({
 
 });
 
-module.exports = Store;
+export default Store;

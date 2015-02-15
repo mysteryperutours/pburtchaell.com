@@ -1,8 +1,8 @@
-var Marty = require('marty');
-var Constants = require('../constants/project');
-var Analytics = require('../utils/analytics');
+import Marty from 'marty';
+import Constants from '../constants/project';
+import Analytics from '../utils/analytics';
 
-module.exports = Marty.createActionCreators({
+let Actions = Marty.createActionCreators({
 
   /**
    * @function get
@@ -61,3 +61,5 @@ module.exports = Marty.createActionCreators({
   }),
 
 });
+
+export default Actions;

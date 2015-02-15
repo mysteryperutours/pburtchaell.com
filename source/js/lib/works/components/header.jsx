@@ -1,18 +1,16 @@
 /** @jsx React.DOM */
 
-var React = require('react');
+import React from 'react';
+import Router from 'react-router';
+let { Route, Link} = Router;
 
-var Router = require('react-router');
-var Route = Router.Route;
-var Link = Router.Link;
+let Header = React.createClass({
 
-var Header = React.createClass({
-
-  getDefaultProps: function () {
+  getDefaultProps() {
     return {};
   },
 
-  render: function() {
+  render() {
     return (
       <header className="page-header header-absolute">
         <Link to="app">
@@ -36,4 +34,4 @@ var Header = React.createClass({
 
 });
 
-module.exports = Header;
+export default Header;

@@ -1,8 +1,8 @@
-var Marty = require('marty');
-var Constants = require('../constants/session');
-var Analytics = require('../utils/analytics');
+import Marty from 'marty';
+import Constants from '../constants/session';
+import Analytics from '../utils/analytics';
 
-module.exports = Marty.createActionCreators({
+let Actions = Marty.createActionCreators({
 
   create: Constants.SESSION_CREATE(function (data, callbacl) {
     this.dispatch(data, callback);
@@ -14,3 +14,5 @@ module.exports = Marty.createActionCreators({
   })
 
 });
+
+export default Actions;

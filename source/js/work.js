@@ -1,17 +1,22 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var classes = require('react-classes');
+import React from 'react';
+import classes from 'react-classes';
+import Dribbble from './dribbble';
 
 React.initializeTouchEvents(true); // React configurations
 
 window.React = React; // for React developer tools
 
-var WorkView = React.createClass({
+let WorkView = React.createClass({
 
   mixins: [classes],
 
-  getInitialState: function () {
+  componentDidMount() {
+    this.refs.dribbble.getShots(); // Load latest dribbble shots
+  },
+
+  getInitialState() {
     return {
       openSourceProjects: [
         {
@@ -152,6 +157,10 @@ var WorkView = React.createClass({
           </div>
         </section>
 
+        <section className="work-images">
+          <Dribbble ref="dribbble" {...this.state} />
+        </section>
+
         <section className="work-availability">
           <div className="row">
             <div className="col col-l-12 col-s-12">
@@ -170,5 +179,7 @@ var WorkView = React.createClass({
 
 React.render(
   <WorkView/>,
-  document.querySelector('main')
+  document.querySelector('main'),
+  function () {
+  }
 );

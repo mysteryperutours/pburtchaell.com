@@ -1,19 +1,22 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var Router = require('react-router');
+import React from 'react';
+import Router from 'react-router';
 
-var Route = Router.Route;
-var NotFoundRoute = Router.NotFoundRoute;
-var DefaultRoute = Router.DefaultRoute;
-var RouteHandler = Router.RouteHandler;
-var Link = Router.Link;
+let {
+  Route,
+  NotFoundRoute,
+  DefaultRoute,
+  RouteHandler,
+  Link
+} = Router;
+
 
 /**
  * @object views
  * @description The views of the application.
  */
-var views = {
+let views = {
   index: require('./views/index'),
   projects: require('./views/projects'),
   admin: {
@@ -38,8 +41,8 @@ Router.routes = (
   </Route>
 );
 
-var router = Router.create({
+let router = Router.create({
   routes: Router.routes
 });
 
-module.exports = router;
+export default router;

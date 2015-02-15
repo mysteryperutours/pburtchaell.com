@@ -1,8 +1,8 @@
 /** @jsx React.DOM */
 
-var React = require('react');
+import React from 'react';
 
-var ErrorView = React.createClass({
+let ErrorView = React.createClass({
   render: function() {
     return (
       <div className="container">

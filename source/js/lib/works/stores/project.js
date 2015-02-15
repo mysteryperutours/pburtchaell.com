@@ -1,8 +1,7 @@
-var Marty = require('marty');
-//var Firebase = require('firebase');
-var Constants = require('../constants/project');
+import Marty from 'marty';
+import Constants from '../constants/project';
 
-var Store = Marty.createStore({
+let Store = Marty.createStore({
 
   name: 'entry',
 
@@ -16,32 +15,32 @@ var Store = Marty.createStore({
     'delete': Constants.PROJECT_DELETE
   },
 
-  getInitialState: function () {
+  getInitialState() {
     return {
       //reference: new Firebase('https://pburtchaell-1.firebaseio.com/data/web/projects')
     };
   },
 
-  refreshState: function () {
+  refreshState() {
     this.state.reference.on('value', function (snapshot) {
       console.log(snapshot);
       debugger;
     }.bind(this));
   },
 
-  _encode: function (url) {
+  _encode(url) {
 
   },
 
-  get: function () {
+  get() {
     this.state.reference()
   },
 
-  getAll: function () {
+  getAll() {
 
   },
 
-  create: function (data) {
+  create(data) {
 
     var data = {
       title: '',
@@ -66,14 +65,14 @@ var Store = Marty.createStore({
 
   },
 
-  update: function () {
+  update() {
 
   },
 
-  'delete': function () {
+  'delete'() {
 
   }
 
 });
 
-module.exports = Store;
+export default Store;

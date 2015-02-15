@@ -1,29 +1,29 @@
 /** @jsx React.DOM */
 
-var React = require('react');
+import React from 'react';
 
-var Menu  = React.createClass({
+let Menu = React.createClass({
 
-  _open: function (event) {
+  _open(event) {
     event.preventDefault();
     var el = document.querySelector('.portfolio-menu');
     el.classList.toggle('active');
   },
 
-  _close: function (event) {
+  _close(event) {
     event.preventDefault();
     var el = document.querySelector('.portfolio-menu');
     el.classList.toggle('active');
   },
 
-  getDefaultProps: function () {
+  getDefaultProps() {
     return {
       items: [],
       active: false // if menu is open, true, else, false
     }
   },
 
-  render: function() {
+  render() {
     return (
       <div>
         <a href="#" className="portfolio-menu-trigger" onClick={this._open}>
@@ -45,4 +45,4 @@ var Menu  = React.createClass({
 
 });
 
-module.exports = Menu;
+export default Menu;

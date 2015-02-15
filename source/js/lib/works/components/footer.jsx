@@ -1,21 +1,21 @@
 /** @jsx React.DOM */
 
-var React = require('react');
+import React from 'react';
 
-var Footer = React.createClass({
+let Footer = React.createClass({
 
-  _show: function () {
+  _show() {
     var el = document.querySelector('.page-footer');
     el.classList.toggle('active');
   },
 
-  getDefaultProps: function () {
+  getDefaultProps() {
     return {
       date: new Date().getFullYear()
     }
   },
 
-  render: function() {
+  render() {
     return (
       <footer className="page-footer" onMouseEnter={this._show} onMouseLeave={this._show}>
 
@@ -57,4 +57,4 @@ var Footer = React.createClass({
 
 });
 
-module.exports = Footer;
+export default Footer;
