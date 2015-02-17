@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Marty from 'marty';
-import router from './router';
+import router from 'router';
 
 // React configurations
 React.initializeTouchEvents(true);

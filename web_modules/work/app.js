@@ -2,7 +2,7 @@
 
 import React from 'react';
 import classes from 'react-classes';
-import Dribbble from 'dribbble';
+import Dribbble from 'work/components/dribbble';
 
 React.initializeTouchEvents(true); // React configurations
 
