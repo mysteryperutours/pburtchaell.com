@@ -1,20 +1,23 @@
 /** @jsx React.DOM */
 
 import React from 'react';
-import Marty from 'marty';
-
 import Router from 'react-router';
-let { Link, Navigation } = Router;
-
-var Session = {
-  store: require('../stores/session'),
-  action: require('../actions/session')
-};
+import Marty from 'marty';
 
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-var IndexView  = React.createClass({
+let {
+  Link,
+  Navigation
+} = Router;
+
+const Session = {
+  store: require('../stores/session'),
+  action: require('../actions/session')
+};
+
+let IndexView  = React.createClass({
 
   mixins: [Router.Navigation],
 
@@ -29,27 +32,9 @@ var IndexView  = React.createClass({
   },
 
   /**
-   * @function scroll
-   */
-  _scroll(event) {
-
-    event.preventDefault();
-
-    this.window = {
-      height: window.innerHeight,
-      width: window.innerWidth
-    };
-
-    //window.scroll(0, this.window.height);
-    var el = document.body;
-    smooth_scroll_to(el, el.scrollTop + this.window.height, 600);
-
-  },
-
-  /**
    * @private
    * @function ignoreWarning
-   * @description Ignore the browser support warning message and enter 
+   * @description Ignore the browser support warning message and enter
    * the site.
    */
   _ignoreWarning(event) {
@@ -112,4 +97,4 @@ var IndexView  = React.createClass({
 
 });
 
-module.exports = IndexView;
+export default IndexView;

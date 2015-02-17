@@ -1,4 +1,4 @@
-var Marty = require('marty');
+import Marty from 'marty';
 
 let Constants = Marty.createConstants([
   'SESSION_CREATE',

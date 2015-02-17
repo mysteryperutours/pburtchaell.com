@@ -2,7 +2,11 @@
 
 import React from 'react';
 import Router from 'react-router';
-let { Route, Link} = Router;
+
+let {
+  Route,
+  Link
+} = Router;
 
 let Header = React.createClass({
 

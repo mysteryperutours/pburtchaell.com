@@ -24,7 +24,8 @@ module.exports = {
   },
   resolveLoader: {
     modulesDirectories: [
-      'node_modules'
+      'node_modules',
+      'web_modules'
     ]
   },
   resolve: {

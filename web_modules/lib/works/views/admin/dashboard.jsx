@@ -1,22 +1,29 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var Input = require('react-input');
+import React from 'react';
+import Input from 'react-input';
+import Router from 'react-router';
+import Marty from 'marty';
 
-var ProjectActionCreator = require('../../actions/project');
+import SessionStore from '../../stores/session';
+import SessionActionCreators from '../../actions/session';
+import UserStore from '../../stores/user';
+import UserActionCreations from '../../actions/user';
 
-var Router = require('react-router');
-var Redirect = Router.Redirect;
-var Link = Router.Link;
+let {
+  Link,
+  Redirect,
+  Navigation
+} = Router;
 
-var DashboardView = React.createClass({
+let DashboardView = React.createClass({
 
   mixins: [Router.Navigation],
 
   /**
    * @private
    */
-  _reset: function (callback) {
+  _reset(callback) {
     try {
       this.refs.name.reset();
       this.refs.date.reset();
@@ -28,17 +35,17 @@ var DashboardView = React.createClass({
     }
   },
 
-    /**
+  /**
    * @private
    */
-  _notify: function () {
+  _notify() {
     this.refs.notification.open();
   },
 
   /**
    * @private
    */
-  _submit: function (event) {
+  _submit(event) {
 
     event.preventDefault();
 
@@ -67,17 +74,17 @@ var DashboardView = React.createClass({
 
   },
 
-  componentDidMount: function () {
+  componentDidMount() {
     this.refs.name.focus();
   },
 
-  getInitialState: function () {
+  getInitialState() {
     return {
       isLoggedIn: true
     };
   },
 
-  render: function() {
+  render() {
 
     if (!this.state.isLoggedIn) {
       this.transitionTo('signin');
@@ -144,4 +151,4 @@ var DashboardView = React.createClass({
 
 });
 
-module.exports = DashboardView;
+export default DashboardView;

@@ -20,7 +20,7 @@ let Menu = React.createClass({
     return {
       items: [],
       active: false // if menu is open, true, else, false
-    }
+    };
   },
 
   render() {

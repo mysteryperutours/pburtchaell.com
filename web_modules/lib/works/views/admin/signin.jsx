@@ -1,22 +1,26 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var Input = require('react-input');
+import React from 'react';
+import Input from 'react-input';
+import Router from 'react-router';
+import Marty from 'marty';
 
-var SessionStore = require('../../stores/session');
-var SessionActionCreators = require('../../actions/session');
-//var UserStore = require('../stores/user');
-//var UserActionCreations = require('../actions/user');
+import SessionStore from '../../stores/session';
+import SessionActionCreators from '../../actions/session';
+import UserStore from '../../stores/user';
+import UserActionCreations from '../../actions/user';
 
-var Router = require('react-router');
-var Route = Router.Route;
-var Link = Router.Link;
+let {
+  Link,
+  Redirect,
+  Navigation
+} = Router;
 
-var SigninView = React.createClass({
+let SigninView = React.createClass({
 
   mixins: [Router.Navigation],
 
-  _submit: function (event) {
+  _submit(event) {
 
     event.preventDefault();
 
@@ -48,22 +52,22 @@ var SigninView = React.createClass({
 
   },
 
-  componentWillMount: function () {},
+  componentWillMount() {},
 
-  componentDidMount: function () {
+  componentDidMount() {
     this.refs.email.focus();
   },
 
-  getInitialState: function () {
+  getInitialState() {
     return {
       email: undefined,
       password: undefined,
       passwordError: null,
       emailError: null
-    }
+    };
   },
 
-  render: function () {
+  render() {
     return (
       <main className="page-flex page-full-height page-full-width">
         <div className="panel panel-login">
@@ -86,8 +90,9 @@ var SigninView = React.createClass({
           </div>
         </div>
       </main>
-    )
+    );
   }
+
 });
 
-module.exports = SigninView;
+export default SigninView;

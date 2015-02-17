@@ -3,7 +3,7 @@
 import React from 'react';
 
 let ErrorView = React.createClass({
-  render: function() {
+  render() {
     return (
       <div className="container">
         <h1>Error</h1>

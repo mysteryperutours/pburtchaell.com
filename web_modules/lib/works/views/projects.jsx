@@ -3,7 +3,10 @@
 import React from 'react';
 import Marty from 'marty';
 import Router from 'react-router';
-let { Link } = Router;
+
+let { 
+  Link 
+} = Router;
 
 var ProjectsView = React.createClass({
 
@@ -65,11 +68,9 @@ var ProjectsView = React.createClass({
       return (
         <div>
           <main className="portfolio-view">
-
             <section className="portfolio-section">
               <div className="row row-full-width">
                 <div className="col col-l-12">
-
                   {this.state.items.map(function (item) {
                     return (
                       <Item
@@ -88,11 +89,9 @@ var ProjectsView = React.createClass({
                       />
                     );
                   })}
-
                 </div>
               </div>
-            </section>{/* end .portfolio-section */}
-
+            </section>
           </main>
         </div>
       );

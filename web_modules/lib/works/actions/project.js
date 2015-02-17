@@ -32,7 +32,6 @@ let Actions = Marty.createActionCreators({
   create: Constants.PROJECT_POST(function (data, callback) {
     this.dispatch(data, callback);
     if (development) {
-      debugger;
       console.log(data);
     }
     //Analytics.track('Project created', data);

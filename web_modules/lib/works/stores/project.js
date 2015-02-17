@@ -28,17 +28,13 @@ let Store = Marty.createStore({
     }.bind(this));
   },
 
-  _encode(url) {
-
-  },
+  _encode(url) {},
 
   get() {
     this.state.reference()
   },
 
-  getAll() {
-
-  },
+  getAll() {},
 
   create(data) {
 
@@ -57,21 +53,15 @@ let Store = Marty.createStore({
       }
     }.bind(this));*/
 
-    debugger;
-
     //var key = newPostRef.key();
 
     //return key;
 
   },
 
-  update() {
+  update() {},
 
-  },
-
-  'delete'() {
-
-  }
+  'delete'() {}
 
 });
 
