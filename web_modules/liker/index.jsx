@@ -1,9 +1,9 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var Liker = require('./components/liker.js');
+import React from 'react';
+import Liker from 'liker/components/liker';
 
-module.exports = React.render(
+let Liker = React.render(
   <Liker />,
   document.querySelector('#liker'),
   function () {
@@ -12,3 +12,5 @@ module.exports = React.render(
     }
   }
 );
+
+export default Liker;

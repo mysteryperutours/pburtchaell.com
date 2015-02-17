@@ -1,6 +1,6 @@
-var Firebase = require('firebase');
+import Firebase from 'firebase';
 
-var data = function (state) {
+let data = function (state) {
   this.state = state;
   this.timestamp = '2014';
   this.reference = new Firebase(this.state.base + this.state.path);
@@ -12,9 +12,7 @@ var data = function (state) {
  */
 data.prototype.push = function (callback) {
   this.child = this.reference.push(this.timestamp, function (error) {
-    if (!error) {
-    } else {
-    }
+    // handle error
   });
   this.id = this.child.toString();
 };
@@ -47,4 +45,4 @@ data.prototype.getId = function () {
   return this.id;
 };
 
-module.exports = data;
+export default data;

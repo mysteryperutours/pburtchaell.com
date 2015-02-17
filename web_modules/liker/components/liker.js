@@ -1,15 +1,15 @@
 /** @jsx React.DOM */
 
-var React = require('react');
-var classes = require('react-classes');
-var firebase = require('firebase');
-var Data = require('../models');
+import React from 'react';
+import classes = 'react-classes';
+import firebase = 'firebase';
+import Like = 'liker/models';
 
 var Liker = React.createClass({
 
   mixins: [classes],
 
-  initialize: function () {
+  initialize() {
     var path = window.location.pathname.toString();
     var reference = (this.state.base + path);
     this.setState({
@@ -18,11 +18,11 @@ var Liker = React.createClass({
     });
   },
 
-  click: function (event) {
+  click(event) {
 
     event.preventDefault();
 
-    var data = new Data(this.state);
+    var data = new Like(this.state);
 
     if (this.state.liked) {
 
@@ -48,7 +48,7 @@ var Liker = React.createClass({
 
   },
 
-  listen: function () {
+  listen() {
     var reference = new Firebase(this.state.reference);
     reference.on('value', function (snapshot) {
       var value = snapshot.numChildren();
@@ -58,12 +58,12 @@ var Liker = React.createClass({
     }.bind(this));
   },
 
-  componentDidMount: function () {
+  componentDidMount() {
     this.initialize();
     this.listen();
   },
 
-  getInitialState: function () {
+  getInitialState() {
     return {
       base: 'https://liker.firebaseio.com/root',
       path: undefined,
@@ -73,13 +73,12 @@ var Liker = React.createClass({
     };
   },
 
-  render: function () {
+  render() {
 
     var classes = this.getClass('liker', {
       'liker-clicked': this.state.liked === true
     });
 
-    /* jshint trailing:false, quotmark:false, newcap:false */
     return (
       <div onClick={this.click} className={classes}>
         <div className="liker-heart">
@@ -91,10 +90,10 @@ var Liker = React.createClass({
           {this.state.count}
         </div>
       </div>
-    )
+    );
 
   }
 
 });
 
-module.exports = Liker;
+export default Liker;
