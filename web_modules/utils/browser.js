@@ -3,7 +3,7 @@
  * @private
  * @description Gets DOM nodes by classname in IE6-IE8.
  */
-var getElementsByClassName = function (search) {
+let getElementsByClassName = function (search) {
 
   var d = document, elements, pattern, i, results = [];
 
@@ -37,7 +37,7 @@ var getElementsByClassName = function (search) {
  * @private
  * @description Insert the browser support message into the DOM.
  */
-var insertBrowserSupportMessage = function (cls) {
+let insertBrowserSupportMessage = function (cls) {
   var string = '<div style="text-align:center;height:auto;width:100%;min-height:32px;position:relaztive;background:#efefcb;color:#bfbfa6;z-index:10;padding:25px;">Your browser is not supported. <a href=http://outdatedbrowser.com/>Please upgrade</a>.</div>';
   var el = getElementsByClassName(cls)[0];
   el.innerHTML = string;
@@ -51,7 +51,7 @@ var insertBrowserSupportMessage = function (cls) {
  * @param {function} callback
  * @returns {boolean}
  */
-module.exports = function (status, callback) {
+let status = function (status, callback) {
   if (status === 'supported') {
     if (callback) {
       callback(null);
@@ -70,3 +70,5 @@ module.exports = function (status, callback) {
     return false;
   }
 };
+
+export default status;

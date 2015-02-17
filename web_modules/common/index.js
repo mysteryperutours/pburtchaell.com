@@ -1,4 +1,4 @@
-var browser = require('./lib/browser');
+import browser = 'utils/browser';
 
 /**
  * Cut the mustard and test for browser support (IE9+ required):

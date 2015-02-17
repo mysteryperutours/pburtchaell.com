@@ -2,9 +2,9 @@
  * @module link
  * @description Highligh the link of the currently active page based of URL path.
  */
-module.exports = function () {
+let link = function () {
 
-  var link;
+  let link;
 
   switch (window.location.pathname.toString()) {
     case '/work/':
@@ -27,3 +27,5 @@ module.exports = function () {
   }
 
 };
+
+export default link;
