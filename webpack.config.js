@@ -6,6 +6,7 @@ module.exports = {
   debug: true,
   entry: {
     common: './web_modules/common/index',
+    liker: './web_modules/liker/index',
     works: './web_modules/works/app',
     work: './web_modules/work/app'
   },
