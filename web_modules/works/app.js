@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 import React from 'react';
 import Marty from 'marty';
 import router from 'works/router';

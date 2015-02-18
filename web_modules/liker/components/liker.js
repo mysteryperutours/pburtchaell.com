@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 import React from 'react';
 import classes = 'react-classes';
 import firebase = 'firebase';

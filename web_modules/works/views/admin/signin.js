@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 import React from 'react';
 import Input from 'react-input';
 import Router from 'react-router';

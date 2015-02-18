@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 import React from 'react';
 import Liker from 'liker/components/liker';
 
