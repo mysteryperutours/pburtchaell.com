@@ -71,6 +71,7 @@ let Dribbble = React.createClass({
         <div className="row row-full-width">
           <div className="col col-l-12 col-s-12">
             <h4>Recent Shots</h4>
+            <small><h5><b>from Dribbble</b></h5></small>
           </div>
           {this.state.shots.map(function (shot) {
 
