@@ -1,7 +1,7 @@
 import React from 'react';
-import classes = 'react-classes';
-import firebase = 'firebase';
-import Like = 'liker/models';
+import classes from 'react-classes';
+import firebase from 'firebase';
+import Like from 'liker/models';
 
 var Liker = React.createClass({
 
@@ -30,9 +30,6 @@ var Liker = React.createClass({
         liked: false
       });
 
-      delete data;
-      delete this.state.id;
-
     } else {
       data.push();
       data.store();
@@ -42,7 +39,6 @@ var Liker = React.createClass({
         liked: true
       });
     }
-
 
   },
 

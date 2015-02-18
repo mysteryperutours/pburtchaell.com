@@ -1,8 +1,8 @@
 import React from 'react';
-import Liker from 'liker/components/liker';
+import Heart from 'liker/components/heart';
 
 let Liker = React.render(
-  <Liker />,
+  <Heart />,
   document.querySelector('#liker'),
   function () {
     if (development) {
