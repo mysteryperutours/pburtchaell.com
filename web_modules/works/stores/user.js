@@ -1,5 +1,5 @@
 import Marty from 'marty';
-import Constants from '../constants/project';
+import Constants from 'works/constants/project';
 
 let Store  = Marty.createStore({
 

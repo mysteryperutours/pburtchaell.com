@@ -1,6 +1,6 @@
 import Marty from 'marty';
-import Constants from '../constants/session';
-import Analytics from '../utils/analytics';
+import Constants from 'works/constants/session';
+import Analytics from 'works/utils/analytics';
 
 let Actions = Marty.createActionCreators({
 

@@ -4,8 +4,8 @@ import React from 'react';
 import Router from 'react-router';
 import Marty from 'marty';
 
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from 'works/components/header';
+import Footer from 'works/components/footer';
 
 let {
   Link,

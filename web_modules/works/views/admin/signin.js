@@ -5,10 +5,10 @@ import Input from 'react-input';
 import Router from 'react-router';
 import Marty from 'marty';
 
-import SessionStore from '../../stores/session';
-import SessionActionCreators from '../../actions/session';
-import UserStore from '../../stores/user';
-import UserActionCreations from '../../actions/user';
+import SessionStore from 'works/stores/session';
+import SessionActionCreators from 'works/actions/session';
+//import UserStore from 'works/stores/user';
+//import UserActionCreations from 'works/actions/user';
 
 let {
   Link,

@@ -5,17 +5,9 @@ module.exports = {
   devtool: 'eval-source-map',
   debug: true,
   entry: {
-    common: [
-      'webpack-dev-server/client?http://127.0.0.1:8000',
-      'webpack/hot/only-dev-server',
-      './source/js/common'
-    ],
-    works: './source/js/lib/works/app',
-    work: [
-      //'webpack-dev-server/client?http://127.0.0.1:8000',
-      //'webpack/hot/only-dev-server',
-      './source/js/work'
-    ]
+    common: './web_modules/common/index',
+    works: './web_modules/works/app',
+    work: './web_modules/work/app'
   },
   output: {
     publicPath: '/public/js/bundles/',
@@ -29,7 +21,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['','.css','.js','.jsx','.json']
+    extensions: ['','.css','.js','.json']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -42,7 +34,7 @@ module.exports = {
       }
     }),
     new webpack.DefinePlugin({
-      development: JSON.stringify(JSON.parse(process.env.DEVELOPMENT || 'true')),
+      ENV_DEVELOPMENT: JSON.stringify(JSON.parse(process.env.DEVELOPMENT || 'true')),
       staging: JSON.stringify(JSON.parse(process.env.STAGING || 'false'))
     })
   ],
@@ -53,13 +45,8 @@ module.exports = {
         loader: 'style!css'
       },
       {
-        test: /\.jsx$/,
-        loaders: ['react-hot', 'jsx-loader?harmony'], // ?harmony enables ES6
-        exclude: /node_modules/
-      },
-      {
         test: /\.js$/,
-        loaders: ['react-hot', '6to5'] // ?harmony enables ES6
+        loaders: ['react-hot', '6to5']
       },
       {
         test: /\.(png|jpg)$/,

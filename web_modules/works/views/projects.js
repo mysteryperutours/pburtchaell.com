@@ -4,8 +4,8 @@ import React from 'react';
 import Marty from 'marty';
 import Router from 'react-router';
 
-let { 
-  Link 
+let {
+  Link
 } = Router;
 
 var ProjectsView = React.createClass({

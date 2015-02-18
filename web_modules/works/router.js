@@ -11,7 +11,6 @@ let {
   Link
 } = Router;
 
-
 /**
  * @object views
  * @description The views of the application.
@@ -25,7 +24,6 @@ let views = {
   },
   error: require('./views/error')
 };
-
 
 /**
  * @object routes
