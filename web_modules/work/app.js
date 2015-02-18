@@ -119,39 +119,35 @@ let WorkView = React.createClass({
               <h4>Open Source Projects</h4>
               <small><h4><b>GitHub and npm</b></h4></small>
               <ul className="project-list">
-                {this.state.openSourceProjects.map(function (item) {
-                  return (
-                    <li
-                      key={item.key}
-                      className="project-list-item"
-                      data-type="open-source">
-                        <a href={item.link} target="_blank">
-                          <div className="list-item-title">{item.title}</div>
-                          <div className="list-item-desciption">{item.description}</div>
-                        </a>
-                    </li>
-                  );
-                })}
+                {this.state.openSourceProjects.map(item =>
+                  <li
+                    key={item.key}
+                    className="project-list-item"
+                    data-type="open-source">
+                      <a href={item.link} target="_blank">
+                        <div className="list-item-title">{item.title}</div>
+                        <div className="list-item-desciption">{item.description}</div>
+                      </a>
+                  </li>
+                )}
               </ul>
             </div>
             <div className="col col-l-6 col-s-12">
               <h4>Side Projects</h4>
               <small><h4><b>Web development and design</b></h4></small>
               <ul className="project-list">
-                {this.state.projects.map(function (item) {
-                  return (
-                    <li
-                      key={item.key}
-                      className="project-list-item"
-                      data-type="side-project">
-                        <a href={item.link} target="_blank">
-                          <div className="list-item-title">{item.title}</div>
-                          <div className="list-item-desciption">Categories: {item.type}</div>
-                          <div className="list-item-desciption">Description: {item.description}</div>
-                        </a>
-                    </li>
-                  );
-                })}
+                {this.state.projects.map(item =>
+                  <li
+                    key={item.key}
+                    className="project-list-item"
+                    data-type="side-project">
+                      <a href={item.link} target="_blank">
+                        <div className="list-item-title">{item.title}</div>
+                        <div className="list-item-categories">Categories: {item.type}</div>
+                        <div className="list-item-desciption">Description: {item.description}</div>
+                      </a>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
