@@ -4,6 +4,8 @@ import React from 'react';
 import classes from 'react-classes';
 import xhr from 'xhr';
 
+import Shot from 'work/components/shot';
+
 let Dribbble = React.createClass({
 
   mixins: [classes],
@@ -73,24 +75,13 @@ let Dribbble = React.createClass({
             <h4>Recent Shots</h4>
             <small><h5><b>from Dribbble</b></h5></small>
           </div>
-          {this.state.shots.map(function (shot) {
-
-            let styles = {
-              backgroundImage: `url(${shot.images.hidpi})`
-            };
-
-            return (
-              <div className="image-card-wrapper col col-l-4 col-s-12">
-                <a href={shot.html_url} target="_blank" rel="external">
-                  <div className="image-card" >
-                    <div className="image-card-title">{shot.title}</div>
-                    <div className="image-card-background"style={styles}></div>
-                  </div>
-                </a>
-              </div>
-            );
-
-          })}
+          {this.state.shots.map(shot =>
+            <Shot
+              title={shot.title}
+              description={shot.description}
+              link={shot.html_url}
+              image={shot.images.hidpi}/>
+          )}
         </div>
       );
     }
