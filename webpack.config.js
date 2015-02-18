@@ -47,7 +47,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loaders: ['react-hot', '6to5']
+        loaders: ['6to5']
       },
       {
         test: /\.(png|jpg)$/,
