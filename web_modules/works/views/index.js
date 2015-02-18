@@ -7,7 +7,8 @@ import Footer from 'works/components/footer';
 
 let {
   Link,
-  Navigation
+  Navigation,
+  RouteHandler
 } = Router;
 
 const Session = {
