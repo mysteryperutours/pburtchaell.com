@@ -3,7 +3,6 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval-source-map',
-  debug: true,
   entry: {
     common: './web_modules/common/index',
     liker: './web_modules/liker/index',
@@ -35,7 +34,7 @@ module.exports = {
       }
     }),
     new webpack.DefinePlugin({
-      ENV_DEVELOPMENT: JSON.stringify(JSON.parse(process.env.DEVELOPMENT || 'true')),
+      _DEVELOPMENT_: JSON.stringify(JSON.parse(process.env.DEVELOPMENT || 'true')),
       staging: JSON.stringify(JSON.parse(process.env.STAGING || 'false'))
     })
   ],
