@@ -3,6 +3,7 @@
 import React from 'react';
 import classes from 'react-classes';
 import Dribbble from 'work/components/dribbble';
+import Section from 'work/components/section';
 
 React.initializeTouchEvents(true); // React configurations
 
@@ -66,7 +67,7 @@ let WorkView = React.createClass({
     return  (
       <div>
 
-        <section className="work-hero">
+        <Section name="hero">
           <div className="work-hero-wrapper">
             <hgroup>
               <h1 className="work-page-title">Patrick Burtchaell</h1>
@@ -78,9 +79,9 @@ let WorkView = React.createClass({
             </hgroup>
           </div>
           <div className="work-hero-background"></div>
-        </section>
+        </Section>
 
-        <section className="work-availability">
+        <Section name="availability">
           <div className="row">
             <div className="col col-l-12 col-s-12">
               <h4>My Availability</h4>
@@ -101,9 +102,9 @@ let WorkView = React.createClass({
               </ul>
             </div>
           </div>
-        </section>
+        </Section>
 
-        <section className="work-about">
+        <Section name="about">
           <div className="row row-large">
             <div className="col col-l-12 col-s-12">
             <h4><b>I aim to build successful products for the future</b></h4>
@@ -111,9 +112,9 @@ let WorkView = React.createClass({
               <p>If you would like to say hello, please <a href="mailto:patrick@pburtchaell.com" className="line">feel free to send me an email</a> or a <a href="http://twitter.com/purtchaell" className="line">Tweet</a>.</p>
             </div>
           </div>
-        </section>
+        </Section>
 
-        <section className="work-projects">
+        <Section name="projects">
           <div className="row row-large">
             <div className="col col-l-6 col-s-12">
               <h4>Open Source Projects</h4>
@@ -151,13 +152,13 @@ let WorkView = React.createClass({
               </ul>
             </div>
           </div>
-        </section>
+        </Section>
 
-        <section className="work-images">
+        <Section name="images">
           <Dribbble ref="dribbble" {...this.state} />
-        </section>
+        </Section>
 
-        <section className="work-availability">
+        <Section name="availability">
           <div className="row">
             <div className="col col-l-12 col-s-12">
               <h4>Works</h4>
@@ -165,7 +166,7 @@ let WorkView = React.createClass({
               <small><h4><b>Access to my portfolio may be granted upon request.</b></h4></small>
             </div>
           </div>
-        </section>
+        </Section>
 
       </div>
     );
