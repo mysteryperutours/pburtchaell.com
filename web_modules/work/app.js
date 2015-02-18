@@ -4,6 +4,7 @@ import React from 'react';
 import classes from 'react-classes';
 import Dribbble from 'work/components/dribbble';
 import Section from 'work/components/section';
+import Availability from 'work/components/availability';
 
 React.initializeTouchEvents(true); // React configurations
 
@@ -86,20 +87,7 @@ let WorkView = React.createClass({
             <div className="col col-l-12 col-s-12">
               <h4>My Availability</h4>
               <small><h4><b>January&ndash;Decemeber 2015</b></h4></small>
-              <ul className="available-months">
-                <li className="month" data-avail="false" data-month="January"></li>
-                <li className="month" data-avail="false" data-month="February"></li>
-                <li className="month" data-avail="false" data-month="March"></li>
-                <li className="month" data-avail="false" data-month="April"></li>
-                <li className="month" data-avail="null" data-month="May"></li>
-                <li className="month" data-avail="true" data-month="June"></li>
-                <li className="month" data-avail="true" data-month="July"></li>
-                <li className="month" data-avail="false" data-month="August"></li>
-                <li className="month" data-avail="false" data-month="September"></li>
-                <li className="month" data-avail="false" data-month="October"></li>
-                <li className="month" data-avail="false" data-month="November"></li>
-                <li className="month" data-avail="false" data-month="December"></li>
-              </ul>
+              <Availability />
             </div>
           </div>
         </Section>
