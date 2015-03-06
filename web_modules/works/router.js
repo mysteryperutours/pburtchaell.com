@@ -16,10 +16,8 @@ let {
 let views = {
   index: require('./views/index'),
   projects: require('./views/projects'),
-  admin: {
-    signin: require('./views/admin/signin'),
-    dashboard: require('./views/admin/dashboard')
-  },
+  signin: require('./views/admin/signin'),
+  dashboard: require('./views/admin/dashboard')
   error: require('./views/error')
 };
 
@@ -30,8 +28,8 @@ let views = {
 Router.routes = (
   <Route name="app" path="/" handler={views.index}>
     <DefaultRoute handler={views.admin.signin} />
-    <Route name="dashboard" path="/admin" handler={views.admin.dashboard} />
-    <Route name="signin" path="/signin" handler={views.admin.signin} />
+    <Route name="dashboard" path="/admin" handler={views.dashboard} />
+    <Route name="signin" path="/signin" handler={views.signin} />
     <Route name="projects" path="/projects" handler={views.projects} />
     <NotFoundRoute handler={views.error} />
   </Route>
