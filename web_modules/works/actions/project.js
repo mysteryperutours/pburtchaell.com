@@ -1,11 +1,11 @@
-import { Action } from 'flummox';
+import { Actions } from 'flummox';
 
-export default class ProjectActions extends Action {
 
   constructor(flux) {
     super();
     this.reference = new Firebase('http://pburtchaell.firebaseio.com/data/web/projects/');
   }
+export default class ProjectActions extends Actions {
 
   /**
    * @function get
