@@ -1,11 +1,6 @@
 import Firebase from 'firebase';
 import { Actions } from 'flummox';
 
-
-  constructor(flux) {
-    super();
-    this.reference = new Firebase('http://pburtchaell.firebaseio.com/data/session/');
-  }
 export default class SessionActions extends Actions {
 
   /**
