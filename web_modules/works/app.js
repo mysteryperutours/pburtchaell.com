@@ -11,7 +11,7 @@ let flux = new Flux();
  * @function Router#run
  * @description Initialize the router.
  */
-Router.run(Routes, Router.HistoryLocation, (Handler, state) => {
+Router.run(Routes, (Handler, state) => {
   function render() {
     React.withContext(
       { flux }, // pass the flux instance in as context
