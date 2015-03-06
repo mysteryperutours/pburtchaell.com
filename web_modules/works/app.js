@@ -6,10 +6,6 @@ React.initializeTouchEvents(true);
 
 window.React = React; // for React developer tools
 
-//if (_DEVELOPMENT_) {
-  console.clear();
-//}
-
 /**
  * @function Router#run
  * @description Initialize the router.
