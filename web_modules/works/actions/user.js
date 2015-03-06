@@ -1,4 +1,3 @@
-import Firebase from 'firebase';
 import { Actions } from 'flummox';
 
 export default class UserActions extends Actions {
