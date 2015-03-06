@@ -57,11 +57,13 @@
     "fastclick": "^1.0.3",
     "firebase": "^2.1.1",
     "flummox": "^2.13.0",
+    "immutable": "^3.6.2",
     "moment": "^2.8.4",
     "q": "^1.1.2",
     "react": "^0.12.2",
     "react-classes": "^1.0.3",
     "react-input": "^1.0.2",
+    "react-notification": "^0.1.4",
     "react-router": "^0.11.6",
     "xhr": "^2.0.1"
   }
