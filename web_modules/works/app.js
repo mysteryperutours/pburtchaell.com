@@ -1,12 +1,10 @@
 import React from 'react';
-import Marty from 'marty';
 import router from 'works/router';
 
 // React configurations
 React.initializeTouchEvents(true);
 
 window.React = React; // for React developer tools
-window.Marty = Marty; // for Marty developer tools
 
 //if (_DEVELOPMENT_) {
   console.clear();
