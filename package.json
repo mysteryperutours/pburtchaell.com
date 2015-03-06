@@ -53,6 +53,7 @@
     "webpack-dev-server": "^1.7.0"
   },
   "dependencies": {
+    "babel": "^4.7.1",
     "fastclick": "^1.0.3",
     "firebase": "^2.1.1",
     "flummox": "^2.13.0",
