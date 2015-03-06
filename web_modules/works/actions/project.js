@@ -1,45 +1,57 @@
+import { Action } from 'flummox';
+
+export default class ProjectActions extends Action {
+
+  constructor(flux) {
+    super();
+    this.reference = new Firebase('http://pburtchaell.firebaseio.com/data/web/projects/');
+  }
 
   /**
    * @function get
    * @param {string} id The project id
-   * @para {function} callback
    * @fires dispatch
    */
-    this.dispatch(id, callback);
+  getProject(id) {
+    let project = severGetProject(id);
+    return project;
+  }
 
   /**
    * @function getAll
-   * @para {function} callback
    * @fires dispatch
    */
-    this.dispatch(callback);
+  getAllProjects() {
+    let projects = serverGetProjects();
+    return projects;
+  }
 
   /**
    * @function create
    * @param {object} data The project data
-   * @para {function} callback
    * @fires dispatch
    */
-    this.dispatch(data, callback);
-    if (development) {
-      console.log(data);
-    }
+  createProject(data) {
+    return data;
   }
 
   /**
    * @function update
-   * @param {string} id The project to get
-   * @param {object} data The project to get
-   * @para {function} callback
+   * @param {string} id The project to update
+   * @param {object} data The data to update
    * @fires dispatch
    */
-    this.dispatch(id, data, callback);
+  updateProject(id, data) {
+    return id;
+  }
 
   /**
    * @function delete
    * @param {string} id The project to delete
-   * @para {function} callback
    * @fires dispatch
    */
-    this.dispatch(callback);
+  delete(id) {
+    return id;
+  }
 
+}
