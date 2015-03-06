@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, NotFoundRoute, DefaultRoute, RouteHandler } from 'react-router';
 
 /**
