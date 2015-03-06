@@ -5,7 +5,7 @@ import SessionActions from 'works/actions/session';
 import UserActions from 'works/actions/user';
 import ProjectStores from 'works/stores/project';
 import SessionStores from 'works/stores/session';
-import UserStores from 'works/stores/user';
+import UserStores from 'works/stores/users';
 
 export default class Flux extends Flummox {
   constructor() {
