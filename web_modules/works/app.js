@@ -1,17 +1,34 @@
 import React from 'react';
-import router from 'works/router';
+import Router from 'works/router';
+import Routes from 'works/routes';
+import Flux from 'works/flux';
+import 'babel/polyfill';
 
 // React configurations
 React.initializeTouchEvents(true);
 
-window.React = React; // for React developer tools
+// React developer tools
+window.React = React;
+
+// Create the Flux architecture instance
+let flux = new Flux();
 
 /**
  * @function Router#run
  * @description Initialize the router.
- * @param {function}
- * @param {function} callback
  */
-router.run(function (Handler, state) {
-  React.render(<Handler {...state} />, document.querySelector('main'));
+Router.run(Routes, Router.HistoryLocation, (Handler, state) => {
+
+  async function run() {
+    React.withContext(
+      { flux }, // pass the flux instance in as context
+      () => React.render(<Handler/>, document.querySelector('main'))
+    );
+  }
+
+  // catch any errors
+  run().catch(error => {
+    throw error;
+  });
+
 });
