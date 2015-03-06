@@ -1,13 +1,14 @@
 import React from 'react';
+import View from 'works/components/view';
 
-let ErrorView = React.createClass({
+var Erroriews = React.createClass({
   render() {
     return (
-      <div className="container">
+      <View>
         <h1>Error</h1>
-      </div>
-    )
+      </View>
+    );
   }
 });
 
-module.exports = ErrorView;
+export default ErrorView;
