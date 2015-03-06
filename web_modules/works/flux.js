@@ -15,6 +15,6 @@ export default class Flux extends Flummox {
     this.createActions('user', UserActions);
     this.createStore('project', ProjectStore, this);
     this.createStore('session', SessionStore, this);
-    this.createStore('user', UserStore, this);
+    this.createStore('users', UsersStore, this);
   }
 }
