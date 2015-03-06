@@ -2,13 +2,13 @@ import React from 'react';
 import Month from 'work/components/month';
 
 var SetIntervalMixin = {
-  componentWillMount: function() {
+  componentWillMount() {
     this.intervals = [];
   },
-  setInterval: function() {
+  setInterval() {
     this.intervals.push(setInterval.apply(null, arguments));
   },
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     this.intervals.map(clearInterval);
   }
 };
