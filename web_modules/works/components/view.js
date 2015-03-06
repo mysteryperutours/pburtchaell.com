@@ -1,5 +1,4 @@
 import React from 'react';
-import Flux from 'works/flux';
 import Container from 'flummox/component';
 import Header from 'works/components/header';
 import Footer from 'works/components/footer';
@@ -16,11 +15,9 @@ var View = React.createClass({
   render() {
     return (
       <div className="view">
-        <Container flux={flux} connectToStores={['session']}>
-          {this.renderHeader()}
-          {this.renderMain()}
-          {this.renderFooter()}
-        </Container>
+        {this.renderHeader()}
+        {this.renderMain()}
+        {this.renderFooter()}
       </div>
     );
   },

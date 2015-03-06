@@ -1,7 +1,7 @@
 import React from 'react';
 import View from 'works/components/view';
 
-var Erroriews = React.createClass({
+var ErrorView = React.createClass({
   render() {
     return (
       <View>

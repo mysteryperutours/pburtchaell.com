@@ -5,7 +5,7 @@ import { Link, Redirect, Navigation } from 'react-router';
 
 let DashboardView = React.createClass({
 
-  mixins: [Router.Navigation],
+  mixins: [Navigation],
 
   /**
    * @private

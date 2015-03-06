@@ -5,7 +5,7 @@ import Header from 'works/components/item/header';
 import Footer from 'works/components/item/footer';
 import Content from 'works/components/item/content';
 
-let Item = React.createClass({
+class Containter extends React.Component {
 
   render() {
     return (
@@ -17,6 +17,6 @@ let Item = React.createClass({
     );
   }
 
-});
+}
 
-export default Item;
+export default Container;

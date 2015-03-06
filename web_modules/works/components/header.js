@@ -8,10 +8,6 @@ let {
 
 let Header = React.createClass({
 
-  getDefaultProps() {
-    return {};
-  },
-
   render() {
     return (
       <header className="page-header header-absolute">

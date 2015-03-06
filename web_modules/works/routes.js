@@ -1,12 +1,5 @@
 import React from 'react';
-import Router from 'react-router';
-
-var {
-  Route,
-  NotFoundRoute,
-  DefaultRoute,
-  RouteHandler
-} = Router;
+import { Route, NotFoundRoute, DefaultRoute, RouteHandler } from 'react-router';
 
 /**
  * @object Handlers

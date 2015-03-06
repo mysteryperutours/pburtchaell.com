@@ -2,8 +2,8 @@ import React from 'react';
 
 class Content extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -14,6 +14,6 @@ class Content extends React.Component {
     );
   }
 
-};
+}
 
 export default Content;
