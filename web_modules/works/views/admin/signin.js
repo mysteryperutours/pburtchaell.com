@@ -1,68 +1,27 @@
 import React from 'react';
 import Input from 'react-input';
 import Router from 'react-router';
-import Marty from 'marty';
 
-import SessionStore from 'works/stores/session';
-import SessionActionCreators from 'works/actions/session';
-//import UserStore from 'works/stores/user';
-//import UserActionCreations from 'works/actions/user';
+var SignInView = React.createClass({
 
-let {
-  Link,
-  Redirect,
-  Navigation
-} = Router;
-
-let SigninView = React.createClass({
-
-  mixins: [Router.Navigation],
-
+  /**
+   * @private
+   * @function submit
+   * @description Attempt to sign in.
+   */
   _submit(event) {
 
     event.preventDefault();
 
-    this.setState({
-      loading: true
-    });
+    let username = this.refs.email.value();
+    let password = this.refs.password.value();
 
-    var data = {
-      email: this.refs.email.getValue(),
-      password: this.refs.password.getValue(),
-    };
-
-    SessionActionCreators.create(data, function() {
-      this.transitionTo('transactions');
-      return true;
-    }.bind(this), function (error) {
-      if (error == 'INVALID_PASSWORD') {
-        this.setState({
-          passwordError: 'Invalid password',
-          loading: false
-        });
-      } else if (error == 'INVALID_EMAIL') {
-        this.setState({
-          emailError: 'Invaild email',
-          loading: false
-        });
-      }
-    }.bind(this));
+    console.log(username, password);
 
   },
-
-  componentWillMount() {},
 
   componentDidMount() {
     this.refs.email.focus();
-  },
-
-  getInitialState() {
-    return {
-      email: undefined,
-      password: undefined,
-      passwordError: null,
-      emailError: null
-    };
   },
 
   render() {
@@ -83,7 +42,6 @@ let SigninView = React.createClass({
                 placeholder="Password"
                 />
               <button className="btn" onClick={this._submit}>Submit</button>
-              {/*<Link to="app"><strong><small>Go back</small></strong></Link>*/}
             </div>
           </div>
         </div>
@@ -93,4 +51,4 @@ let SigninView = React.createClass({
 
 });
 
-export default SigninView;
+export default SignInView;
