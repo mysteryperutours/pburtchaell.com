@@ -46,7 +46,8 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loaders: ['6to5']
+        exclude: /node_modules/,
+        loaders: ['babel']
       },
       {
         test: /\.(png|jpg)$/,
