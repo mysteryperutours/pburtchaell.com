@@ -60,6 +60,7 @@
     "firebase": "^2.2.3",
     "flummox": "^2.13.0",
     "immutable": "^3.6.4",
+    "modernizr": "^3.0.0-alpha.3",
     "react": "^0.13.1",
     "react-input": "^1.1.0",
     "react-notification": "^1.1.0",
