@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from 'react-classes';
 import Dribbble from 'work/components/dribbble';
 import Section from 'work/components/section';
 import Availability from 'work/components/availability';
@@ -9,8 +8,6 @@ React.initializeTouchEvents(true); // React configurations
 window.React = React; // for React developer tools
 
 let WorkView = React.createClass({
-
-  mixins: [classes],
 
   componentDidMount() {
     this.refs.dribbble.getShots(); // Load latest dribbble shots

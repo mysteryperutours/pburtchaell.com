@@ -1,9 +1,7 @@
 import React from 'react';
-import classes from 'react-classes';
+import classNames from 'classnames';
 
 let Month = React.createClass({
-
-  mixins: [classes],
 
   getDefaultProps() {
     return {
@@ -13,7 +11,7 @@ let Month = React.createClass({
 
   render() {
 
-    var classes = this.getClass('month', {
+    var classes = classNames('month', {
       'month-active': this.props.active === true
     });
 

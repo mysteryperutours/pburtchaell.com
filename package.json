@@ -58,7 +58,6 @@
     "firebase": "^2.1.1",
     "flummox": "^2.13.0",
     "immutable": "^3.6.2",
-    "react-classes": "^1.0.3",
     "react": "^0.13.1",
     "react-input": "^1.1.0",
     "react-notification": "^1.1.0",
