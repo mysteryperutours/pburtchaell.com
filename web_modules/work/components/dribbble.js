@@ -1,12 +1,9 @@
 import React from 'react';
-import classes from 'react-classes';
 import xhr from 'xhr';
 
 import Shot from 'work/components/shot';
 
 let Dribbble = React.createClass({
-
-  mixins: [classes],
 
   getShots(event) {
 
