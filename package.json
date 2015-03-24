@@ -63,6 +63,7 @@
     "react-input": "^1.1.0",
     "react-notification": "^1.1.0",
     "react-router": "^0.13.1",
+    "whatwg-fetch": "^0.7.0",
     "xhr": "^2.0.1"
   }
 }
