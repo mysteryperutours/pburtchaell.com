@@ -11,17 +11,17 @@ let DashboardView = React.createClass({
    * @private
    */
   _reset() {
-    this.refs.name.reset();
-    this.refs.date.reset();
-    this.refs.type.reset();
-    this.refs.image.reset();
+    this.name.reset();
+    this.date.reset();
+    this.type.reset();
+    this.image.reset();
   },
 
   /**
    * @private
    */
   _notify() {
-    this.refs.notification.open();
+    this.notification.show();
   },
 
   /**
@@ -31,12 +31,10 @@ let DashboardView = React.createClass({
 
     event.preventDefault();
 
-    let name = this.refs.name.value();
-    let desc = this.refs.desc.value();
-    let date = this.refs.date.value();
-    let type = this.refs.type.value();
-
-    console.log(name, desc, date, type);
+    let name = this.name.value();
+    let desc = this.description.value();
+    let date = this.date.value();
+    let type = this.type.value();
 
     this._notify();
 
@@ -66,34 +64,25 @@ let DashboardView = React.createClass({
           <div className="row">
             <form className="col col-l-12">
               <Input
-                ref="name"
-                placeholder="Name"
-                label="A name for the project"
-                disabled={false}
-                type="text"
-              />
+                ref={(c) => this.name = c}
+                label="Project name"
+                value={this.state.current.name}
+                type="text" />
               <Input
-                ref="date"
-                placeholder="March 20, 2014"
-                label="A date for the project"
-                disabled={false}
-                type="text"
-              />
+                ref={(c) => this.date = c}
+                label="Project Date"
+                value={this.state.current.date}
+                type="text" />
               <Input
-                ref="type"
-                placeholder="Website"
-                label="A project type"
-                disabled={false}
-                type="text"
-              />
+                ref={(c) => this.type = c}
+                label="Project Type"
+                value={this.state.current.type}
+                type="text" />
               <Input
-                ref="desc"
-                placeholder="Description"
-                label="a project desc"
-                disabled={true}
-                type="text"
-              />
-              <button className="btn" type="submit" onClick={this._submit}>Create project</button>
+                ref={(c) => this.description = c}
+                value={this.state.current.description}
+                label="Project Description"
+                type="text" />
             </form>
           </div>
         </section>
