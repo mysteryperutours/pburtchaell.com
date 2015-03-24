@@ -55,6 +55,7 @@
   "dependencies": {
     "aws-sdk": "^2.1.18",
     "babel": "^4.7.1",
+    "classnames": "^1.2.0",
     "fastclick": "^1.0.3",
     "firebase": "^2.2.3",
     "flummox": "^2.13.0",
