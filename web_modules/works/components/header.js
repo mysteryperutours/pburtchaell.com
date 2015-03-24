@@ -1,12 +1,12 @@
 import React from 'react';
-import Router from 'react-router';
+import { Route, Link } from 'react-router';
 
-let {
-  Route,
-  Link
-} = Router;
+export default class Header extends React.Component {
 
-let Header = React.createClass({
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   render() {
     return (
@@ -30,6 +30,5 @@ let Header = React.createClass({
     );
   }
 
-});
+};
 
-export default Header;

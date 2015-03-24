@@ -3,14 +3,12 @@ import Container from 'flummox/component';
 import Header from 'works/components/header';
 import Footer from 'works/components/footer';
 
-var View = React.createClass({
+export default class View extends React.Component {
 
-  getDefaultProps() {
-    return {
-      header: true, // show the header
-      footer: false // hide the footer
-    };
-  },
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   render() {
     return (
@@ -20,13 +18,13 @@ var View = React.createClass({
         {this.renderFooter()}
       </div>
     );
-  },
+  }
 
   renderHeader() {
     return (
       <Header display={this.props.header}/>
     );
-  },
+  }
 
   renderMain() {
     return (
@@ -40,7 +38,7 @@ var View = React.createClass({
         </section>
       </main>
     );
-  },
+  }
 
   renderFooter() {
     return (
@@ -48,6 +46,14 @@ var View = React.createClass({
     );
   }
 
-});
+}
 
-export default View;
+View.propTypes = {
+  header: React.PropTypes.bool,
+  footer: React.PropTypes.bool
+};
+
+View.defaultProps = {
+  header: true, // show the header
+  footer: false // hide the footer
+};
