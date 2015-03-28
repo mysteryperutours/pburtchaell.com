@@ -1,40 +1,15 @@
 import React from 'react';
 
-let Footer = React.createClass({
+export default class Footer extends React.Component {
 
-  _show() {
-    var el = document.querySelector('.page-footer');
-    el.classList.toggle('active');
-  },
-
-  getDefaultProps() {
-    return {
-      date: new Date().getFullYear()
-    }
-  },
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   render() {
     return (
-      <footer className="page-footer" onMouseEnter={this._show} onMouseLeave={this._show}>
-
-        <div className="row">
-          <div className="col col-l-4">
-          <h6>Contact</h6>
-          <small>Patrick Burtchaell</small>
-          <a>patrick@pburtchaell.com</a>
-          <a>@pburtchaell</a>
-          </div>
-          <div className="col col-l-4">
-          <h6>Info</h6>
-          <a>Writing</a>
-          <a>Blog</a>
-          </div>
-          <div className="col col-l-4">
-            <h6>Foo</h6>
-            <hr />
-          </div>
-        </div>
-
+      <footer className="page-footer">
         <small>
           <span className="page-footer-span">
             Made with&nbsp;<object className="page-footer-heart">
@@ -43,16 +18,13 @@ let Footer = React.createClass({
             </svg></object>&nbsp;in New Orleans<br/>
           </span>
           <div className="page-footer-legal">
-            &copy;{this.props.date}
+            &copy;2015
             &nbsp;&mdash;Patrick Burtchaell&mdash;
             <a href="/colophon" rel="source" title="Colophon" class="line no-color">Colophon</a>
           </div>
         </small>
-
       </footer>
     );
   }
 
-});
-
-export default Footer;
+}

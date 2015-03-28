@@ -1,4 +1,5 @@
 import { Actions } from 'flummox';
+import Auth from 'works/auth';
 
 export default class SessionActions extends Actions {
 
