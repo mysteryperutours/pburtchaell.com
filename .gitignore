@@ -1,17 +1,5 @@
 node_modules
-bower_components
-npm-debug.log
-
 .DS_Store
 *.cache
-
-# Build Folder(s)
-dist
-dest
-tmp
-tpl/helpers/rev
-
-# AWS
-.aws.yml
-.awspublish-staging.pburtchaell.com
-.awspublish-pburtchaell.com
+*.log
+build
