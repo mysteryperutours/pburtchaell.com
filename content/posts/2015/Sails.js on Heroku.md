@@ -2,12 +2,12 @@
 title: Sails.js and Heroku
 description: A simple guide to deploying Sail.js, an MVC framework for Node.js, to Heroku.
 date: 2015-03-04
-post: true
 keywords:
 - node.js
 - sails.js
 - heroku
 - deployment
+template: post.hbt
 ---
 
 Node.js &mdash;and consequently Sails.js&mdash; apps scale horizontally. It is a powerful and efficient approach, but it involves a bit of planning. At scale, you'll want to be able to copy your app onto multiple Heroku dynos, throw them behind a load balancer, and share one database. This guide will cover how to configure this stack for Heroku.

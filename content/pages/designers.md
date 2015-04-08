@@ -1,6 +1,7 @@
 ---
 title: Designers
 description: My favorite designers, both contemporary and legendary.
+template: base.hbt
 ---
 
 ## Contemporary

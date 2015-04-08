@@ -2,13 +2,12 @@
 title: Documentation Published
 description: Whenever I get out of school for the holidays, I always get a large amount of work done; I have published my colophon and styleguide.
 date: 2014-03-03
-post: true
-posted: 03-03-2014
 keywords:
 - colophon
-- styleguide
+- style guide
 - port-mortem
 - Order of the Arrow
+template: post.hbt
 ---
 I am happy to say that over this past weekend and the last couple days week I have finished a ton of documentation; not everyone gets off a week of school for Mardi Gras (New Orleans for the win), so be jealous.
 

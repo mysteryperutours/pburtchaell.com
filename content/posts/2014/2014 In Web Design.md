@@ -1,9 +1,9 @@
 ---
-post: true
 title: 2014 in Web Design
 description: Five things I will focus on in 2014
 date: 2014-01-05
 cover: 2014/fireworks.gif
+template: post.hbt
 ---
 As 2014 begins, I would like to introduce a few topics I intend to write about in detial throughout the year.
 
@@ -17,7 +17,7 @@ I do not think retina images are necessary in 2014. Responsive images are very n
 ## 2. Typography control
 > The control which designers know in the print medium, and often desire in the web medium, is simply a function of the limitation of the printed page. We should embrace the fact that the web doesn’t have the same constraints, and design for this flexibility. But first, we must 'accept the ebb and flow of things.' <cite>John Allsopp: <a href=http://>A Dao of Web Design</a></cite>
 
-I don't agree with the argument of that statement. If we really look at it, typography is horrible to control on the web and we shouldn't accept that... Besides left or right alignment, size, color, spacing and a few other properties, there isn't much else to control. 
+I don't agree with the argument of that statement. If we really look at it, typography is horrible to control on the web and we shouldn't accept that... Besides left or right alignment, size, color, spacing and a few other properties, there isn't much else to control.
 
 Of course no web designer wants control equal to that of print, but I belive we should still pursue properly hyphenated words, justified text, ligatures, and better open-type features. That desired control can be justified by improved readability it will provide.
 

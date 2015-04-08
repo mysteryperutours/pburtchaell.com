@@ -1,11 +1,11 @@
 ---
-post: true
 title: 'Put Away Your Phones, Talk'
 description: My petition to the people of the world is get off your phones and give those around you in the present the attention they deserve. They are here with you; they obviously want to be with you because you matter to them. Let’s be real friends and talk to them.
 date: 2013-10-13
 keywords:
 - social media
 - technology
+template: post.hbt
 ---
 
 I love to talk and I thrive on conversation. I like to debate, to collaborate, to combine people’s ideas with mine. All of this I do through conversation with others. Sometimes these conversations happen on Twitter, sometimes they happen over the phone, sometimes with a text, but for me, the best conversations are held in person.
@@ -19,8 +19,8 @@ By the end of 2013, there will be more mobile devices than people on the planet.
 
 Over the past month, I have begun to notice this more and now try to avoid using my phone for unnecessary communication. I have uninstalled Facebook & Twitter and changed the settings on my phone to only check my email once every hour. I have done tons to disconnect myself and it helps make me way more aware of what is really happening.
 
-## Still not seeing improvements 
-> Conversation is the music of the mind, an intellectual orchestra, where all the instruments should bear a part, but where none should play together. 
+## Still not seeing improvements
+> Conversation is the music of the mind, an intellectual orchestra, where all the instruments should bear a part, but where none should play together.
 > <cite>Charles Caleb Colton</cite>
 
 An intellectual orchestra turned to a cacophony by distractions.

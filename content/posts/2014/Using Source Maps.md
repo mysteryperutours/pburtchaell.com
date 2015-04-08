@@ -1,18 +1,16 @@
 ---
 highlighting: true
 title: Using Source Maps
-description: How to get started with the magical feature in Chrome that links LESS/Sass (source) stylesheets to the developer tools.
+description: How to get started with the useful feature in Chrome that links Less and Sass stylesheets to the developer tools.
 date: 2014-03-26
-
-post: true
-posted: 03-26-2014
 keywords:
 - Source Maps
 - Google Chrome
 - Developer Tools
 - Sass
-- LESS
+- Less
 - CSS Preprocessor
+template: post.hbt
 ---
 Earlier this week, I was working in the Chrome dev tools and decided to check out the "Enable CSS Source Maps" feature. After a few hours of tinkering, I had a good understanding of what CSS source maps are and how they work intro the processes of a front-end developer who uses Sass and/or LESS.
 

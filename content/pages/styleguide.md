@@ -4,12 +4,13 @@ published: true
 title: Code Styleguide
 description: A formal styleguide containing methods and standards for developing robust, easily maintained, and high-performance HTML, LESS, Sass and CSS.
 
-features: 
+features:
 - hire
 - highlighting
 
 highlighting: true
 hire: true
+template: base.hbt
 ---
 
 [LESS]: http://lesscss.org/

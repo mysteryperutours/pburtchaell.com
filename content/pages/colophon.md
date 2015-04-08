@@ -1,7 +1,7 @@
 ---
 title: Colophon
-description: 'A website is storage of intellectual property: ideas, writing, thoughts and memories. This is my storage and this document explains how I built it.'
-essay: true
+description: A website is storage of intellectual property: ideas, writing, thoughts and memories. This document explains how I built my website.
+template: base.hbt
 ---
 
 A website is storage of intellectual property: ideas, writing, thoughts and memories. This is my storage and this document explains how I built it.
@@ -10,14 +10,14 @@ A website is storage of intellectual property: ideas, writing, thoughts and memo
 
 Every property in the stylesheet and every pixel on the screen is planned out and exectuted in the most proficient manner. The design does not have character. It is transparent; the content has character. This website is designed to focus on the aesthetics of letters and the words & sentences they form, not the aesthetics of color and shape.
 
-Care was taken when selecting the typefaces for my site, and even more so when designing the rules of their appearance. In 1936, Eric Gill writes about the form of the book in *An Essay on Typography*. He says, "...it is the reading, not the reading matter, which determines the size of the book and the style of the type..." 
+Care was taken when selecting the typefaces for my site, and even more so when designing the rules of their appearance. In 1936, Eric Gill writes about the form of the book in *An Essay on Typography*. He says, "...it is the reading, not the reading matter, which determines the size of the book and the style of the type..."
 
-Almost a century later, web designers and developers can still take away from this idea. While a page on a website does not have the constraints of a page in a book, both still have type and both have a responsibility to apeal to the sensitivity and sensibility of the reader. 
+Almost a century later, web designers and developers can still take away from this idea. While a page on a website does not have the constraints of a page in a book, both still have type and both have a responsibility to apeal to the sensitivity and sensibility of the reader.
 
 > Two things are to be thought of: the type and the margins. Let us consider the margins first.
 > <cite>Eric Gill<cite>
 
-DIN typefaces &mdash;especially when in uppercase&mdash; have a very utilitarian style that is well suited for headings. 
+DIN typefaces &mdash;especially when in uppercase&mdash; have a very utilitarian style that is well suited for headings.
 
 _FFDIN_ was designed in 1994 by Albert-Jan Pool in San Francisco to revive the old German _DIN 1451_ typeface, but with greater weight distribution and more character sets. [DIN 1451](http://wikipedia.org/wiki/DIN_1451) is often used for traffic, administrative, and technical applications in Germany. It is actively defined by Deutches Institut fur Normung (DIN), the German Institute for Standardization, on the [standards sheet](http://wikipedia.org/wiki/List_of_DIN_standards#DIN_1000_to_DIN_1999) at DIN 1451-4. From 1956 to 2008, DIN 1451 was used on German car number plates and the medium and condensed weights are still used on road signs throughout out Germany and other European countries; a more rare, condensed weight can be found on some older road signs from the 1980's.
 
@@ -31,7 +31,7 @@ To style code snippets using a slightly modified version of the Github Style by 
 
 ## Development Notes
 
-My main website is generated using Assemble, a static site generator for node.js. It is worth noting that, at the time of writing this, the Assemble core team is still working toward publishing gulp-assemble, the gulp plugin for Assemble, thus Grunt is used instead. 
+My main website is generated using Assemble, a static site generator for node.js. It is worth noting that, at the time of writing this, the Assemble core team is still working toward publishing gulp-assemble, the gulp plugin for Assemble, thus Grunt is used instead.
 
 Gulp is used to compile all JavaScript and stylesheets. In addition, gulp both provides a local webserver for development and handles deploying generated files to a bucket on Amazon Web Services (AWS) S3.
 

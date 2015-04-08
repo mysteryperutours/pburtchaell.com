@@ -1,11 +1,11 @@
 ---
-post: true
 title: Naming font-files for the web
 description: A method for the URL format of font-files.
 date: 2014-03-24
 keywords:
 - font-face declarations
 - web fonts
+template: post.hbt
 ---
 In the past, I've used a `url()` for all font formats, `.woff`, `.eot`, `.ttf`, and even SVG, just because I wanted to be safe; I figured that was probably unnecessary, so I did a bit of research to figure out which ones I really needed.
 

@@ -1,9 +1,8 @@
 ---
 title: Project 2014 - Week 1 & Concept
-description: An intoduction to Project 2014 and designs from w1/52
+description: An introduction to Project 2014 and designs from w1/52
 date: 2014-01-18
-post: true
-posted: 01-18-2014
+template: post.hbt
 ---
 
 I finally have some time to publish an introduction and w1/52 of my largest side-project for 2014: _Project 2014_!
@@ -15,15 +14,15 @@ I am taking this challenge because I want to become a better designer. I hope th
 ## w1/52 (Week One)
 I recently read _Meme Wars_, a very interesting book written by the editor and magazine that started &amp; named the Occupy Wall Street movement. Meme Wars lays out the next steps in rethinking and remaking our world with a new economic paradigm. Even though it was a complete accident that I found this book at the library, I enjoyed it and I would definitely suggest that anyone interested in economics take the time to read it. Besides having an amazing layout, the ideas this book presents are interesting and influential.
 
-<img title="The Neo Year" alt="The Neo Year" 
+<img title="The Neo Year" alt="The Neo Year"
   src=http://storage.pburtchaell.com/2014/designs/project-2014_January-01.jpg>
-<img title="A Fool's Paradise" alt="A Fool's Paradise" 
+<img title="A Fool's Paradise" alt="A Fool's Paradise"
   src=http://storage.pburtchaell.com/2014/designs/Project-2014_January-02.jpg>
-<img title="Diamonds" alt="Diamonds" 
+<img title="Diamonds" alt="Diamonds"
   src=http://storage.pburtchaell.com/2014/designs/Project-2014_January-03.jpg>
 <img title="How Can" alt="How Can"
   src=http://storage.pburtchaell.com/2014/designs/Project-2014_January-04.jpg>
-<img title="Product" alt="Product" 
+<img title="Product" alt="Product"
   src=http://storage.pburtchaell.com/2014/designs/Project-2014_January-05.jpg>
 <img title="The Evolution of Economics" alt="The Evolution of Economics"
   src=http://images.pburtchaell.com/2014/designs/Project-2014_January-06.jpg>

@@ -1,8 +1,3 @@
----
-title: Writing
-description: 'Short blog posts and long-form writing on technology, front end web developement and design by Patrick Burtchaell, a designer and front end web developer in New Orleans.'
-layout: base.hbs
----
 <div class="row row-medium">
 
   <section class="article-feed col col-l-6 col-s-12">
@@ -19,7 +14,7 @@ layout: base.hbs
         </header>
         <section class="article-preview-excerpt">
           <blockquote>
-            A formal styleguide containing methods and standards for developing robust, easily maintained, and high-performance HTML, LESS, Sass and CSS.
+            A formal style guide containing methods and standards for developing robust, easily maintained, and high-performance HTML, LESS, Sass and CSS.
           </blockquote>
         </section>
         <footer class="article-preview-footer">
@@ -54,20 +49,18 @@ layout: base.hbs
         <small><h2>Short posts less than 1000 words</h2></small>
       </hgroup>
 
-      {{#withSort post 'this.data.date'}}
-        {{#each this.pages}}
-          <article class="article-preview article-preview-short-form">
-            <header class="article-preview-header">
-              <a href="{{href this.dest 'tmp' ''}}" title="{{this.data.title}}" rel=prefetch role=link>
-                {{this.data.title}}
-              </a>
-            </header>
-            <footer class="article-preview-footer">
-              <div><time>{{date this.data.date}}</time><div>
-            </footer>
-          </article>
-        {{/each ~}}
-      {{/withSort ~}}
+      {{#each collections.posts}}
+        <article class="article-preview article-preview-short-form">
+          <header class="article-preview-header">
+            <a href="{{href this.dest 'tmp' ''}}" title="{{this.data.title}}" rel=prefetch role=link>
+              {{this.data.title}}
+            </a>
+          </header>
+          <footer class="article-preview-footer">
+            <div><time>{{date this.data.date}}</time><div>
+          </footer>
+        </article>
+      {{/each}}
 
     </div>
   </section>

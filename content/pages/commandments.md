@@ -1,6 +1,7 @@
 ---
 title: The 20 Commandments of Professionalism
 basename: commandments
+template: base.hbt
 date: 2012-10-29
 ---
 
