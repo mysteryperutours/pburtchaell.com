@@ -1,0 +1,48 @@
+---
+title: Updated Site Design
+description: Earlier this month, I launched a redesign of my site
+date: 2014-01-21
+template: post.hbt
+---
+
+After nearly three months of working on the weekends, I __finally__ have my new site online. It is always exciting and fulfilling to roll out a fresh design and new content. This is a very casual write-up of my experience, but I am working on a [colophon](/colophon) if you are interested in detialed, more formal notes. I also published a [code styleguide](/styleguide) along with the colophon.
+
+## Lesson #1: Don't Trust Cheap Web Hosts
+In November of last year, my ex-host Little Nimbus had some issues: everyone who had an account with them lost their service and found their domains redirecting to sites containing malware.
+
+Unfortunately, Little Nimbus did nothing to respond to the issue. I submitted a ticket to technical support and never received a response. Later that week the Little Nimbus site itself went down and their social media accounts were not responding. I will never know what happened to Little Nimbus and I do not think anyone will. I can only assume they took the money and ran. I had only paid for two months of service so I didn't loose any money myself, but many other customers lost money and data. It was a disappointing experience.
+
+Since I take backups seriously, I did not lose anything from the Little Nimbus issue, but I did need to find another host. I did not want to use shared hosting, but I wanted something reasonably priced and very fast. My only options were a VPS at Digital Ocean, Github Pages, or Amazon S3. I decided that the VPS would be over-kill and Github pages wouldn't be reliable enough for me. I setup an Amazon Web Services account and created a few buckets on S3. I quickly had a temporary homepage online, but also hit my first roadblock (and I knew this was coming): my previous site was built with PHP. S3 is designed to host static files, so I needed to redesign my site using a static site generator.
+
+## Lesson #2: Jekyll + Grunt = Fail
+I decided to generate my site using Jekyll. I read through several articles on how to get started with Jeykll and in one weekend had a fairly nice looking blog + site generated. Everything was going well and I had some free-time, so I decided to learn Grunt. After using Grunt on a client project, I tried integrating it along site Jekyll.
+
+_It was an absolute mess._
+
+Grunt and Jekyll both use the command line and it was impossible trying to get live reload and watch to work for both tools. I had to either choose Grunt or Jekyll. Grunt seemed to have more of a future than Jekyll to me, so I made the decision to abandon Jekyll.
+
+Soon thereafter, I discovered Assemble, a static site generator plugin for Grunt. After testing it, I was very impressed with its capabilities and decided to use it.
+
+## Lesson #3: Design like you care 100 percent
+Once I had Assemble running properly alongside my other grunt tasks, I began work on the design.
+
+Design is not fate, it requires intent and planning. In order to keep myself directed and prevent designing by fate, I wrote down a design statement for the project:
+
+> The site will have a minimalist style with a focus on content. Light backgrounds and subtle greys will be used as the primary values and color will be used with care. A problem-solving approach will be taken to the features of my site. Features will be continually refined until it is clear that content is the focus of the product. Through a focused and basic design, my site will be a tool and resource to the user.
+
+However, it is sometimes more difficult to make a simple design than a complex design.
+
+For this reason, I spent at least six Saturdays working on the typography, margins, and layout, solving each issue pixel by pixel. Even now, I am still not 100 percent satisfied with some of the layout and design of the site because I believe in putting 100 percent into a project. If you only put in 99 percent and say your product is done, then you are not caring enough.
+
+The problem is, where to you draw the line of 100 percent complete? Is it when that tiny responsive design issue on the small-screen is fixed? If you are designing a small site like mine, that probably isn't something you should care about. At least, you probably shouldn't care about it enough to prevent it you from launching. I had to learn to design like I care 100 percent while still letting the small issues go.
+
+For this new site design, I believe have put in my 100 percent. My site loads in under 0.8s on most browsers and looks like the designer cared. For the time I have put into this project, I have designed an ideal experience. If you agree, then my time has been well spent.
+
+## What's Next
+I of-course have a backlog of work to do and plan to work on these tasks over the course of the next year:
+
+- About page &mdash;integrate the Jawbone UP and Foursquare APIs and code custom design
+- Search Feature &mdash;add search to the error pages and the blog home page using Lunr.js
+
+## SPEED. The Final Frontier
+Once I have tackled my backlog, I may move my site to a VPS &ndash;most likely with Digital Ocean because of their reasonable prices and solid-state drives&ndash; and setup a content delivery network for assets. I am very interested in speed and high-performance sites and having a VPS will give me more opportunities to experiment in that area.

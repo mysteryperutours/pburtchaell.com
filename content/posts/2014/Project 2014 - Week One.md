@@ -1,0 +1,32 @@
+---
+title: Project 2014 - Week 1 & Concept
+description: An introduction to Project 2014 and designs from w1/52
+date: 2014-01-18
+template: post.hbt
+---
+
+I finally have some time to publish an introduction and w1/52 of my largest side-project for 2014: _Project 2014_!
+
+Project 2014 is a daily challenge to make a 500x500px graphic in under fifteen to twenty minutes. At the end of the year, I hope to print the 365 designs that I make into my own book. In the meantime, I will share my progress each week here on my site as well as on both [Dribbble](http://dribbble.com/_pb) and [B&eacute;hance](http://behance.net/burtchaell).
+
+I am taking this challenge because I want to become a better designer. I hope that these simple designs will serve as inspiration for larger and more important projects. Of course, I also hope to gain technical experience and become more adapt with the processes and programs I use. I can already tell after one week that this undertaking will be a very rewarding experience for me. We shall have to see where I am come the end of the year (only 347 more designs to go as of today)!
+
+## w1/52 (Week One)
+I recently read _Meme Wars_, a very interesting book written by the editor and magazine that started &amp; named the Occupy Wall Street movement. Meme Wars lays out the next steps in rethinking and remaking our world with a new economic paradigm. Even though it was a complete accident that I found this book at the library, I enjoyed it and I would definitely suggest that anyone interested in economics take the time to read it. Besides having an amazing layout, the ideas this book presents are interesting and influential.
+
+<img title="The Neo Year" alt="The Neo Year"
+  src=http://storage.pburtchaell.com/2014/designs/project-2014_January-01.jpg>
+<img title="A Fool's Paradise" alt="A Fool's Paradise"
+  src=http://storage.pburtchaell.com/2014/designs/Project-2014_January-02.jpg>
+<img title="Diamonds" alt="Diamonds"
+  src=http://storage.pburtchaell.com/2014/designs/Project-2014_January-03.jpg>
+<img title="How Can" alt="How Can"
+  src=http://storage.pburtchaell.com/2014/designs/Project-2014_January-04.jpg>
+<img title="Product" alt="Product"
+  src=http://storage.pburtchaell.com/2014/designs/Project-2014_January-05.jpg>
+<img title="The Evolution of Economics" alt="The Evolution of Economics"
+  src=http://images.pburtchaell.com/2014/designs/Project-2014_January-06.jpg>
+<img title="Insert Here" alt="Insert Here"
+  src=http://storage.pburtchaell.com/2014/designs/Project-2014_January-07.jpg>
+
+You can find w1/52 on [B&eacute;hance](http://behance.net/burtchaell) and shots from it on [Dribbble](http://dribbble.com/.p).

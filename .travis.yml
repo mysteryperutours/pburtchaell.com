@@ -5,15 +5,11 @@ branches:
   only:
   - master
 before_install:
-- npm install -g gulp grunt-cli bower
+- npm install -g webpack
 install:
 - npm install
-before_script:
-- git config --global user.email "patrick@pburtchaell.com"
-- git config --global user.name "Patrick Burtchaell"
-script: 
- - gulp default
- - grunt assemble
+script:
+- npm run build
 notifications:
   email:
     recepients:
