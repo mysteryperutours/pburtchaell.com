@@ -2,6 +2,7 @@
 title: Frequently Asked Questions
 description: Questions clients frequently ask when starting a project with me.
 template: base.hbt
+lunr: true
 ---
 <p class=centered>
   <small>*_Have a question that is not answered here?_ Email me at <patrick@pburtchaell.com> or [ask me on Twitter]({{author.twitter}}).*</small>

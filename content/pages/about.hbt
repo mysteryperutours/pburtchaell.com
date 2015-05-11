@@ -1,7 +1,7 @@
 ---
 title: Designer and web developer from New Orleans
 description: I am Patrick Burtchaell, a designer and front end web developer from New Orleans. I build and design products for the web and for print.
-template: base.hbt
+inPlace: true
 ---
 <section class="default page">
   <section class=default-content>
@@ -10,7 +10,7 @@ template: base.hbt
         <h1 class="about-title">
           <span>Patrick Burtchaell,</span>
           <span><b>design &amp; computer science student</b> at Loyola University New Orleans, and</span>
-          <span><b>junior front end web developer</b> at Peach.</span>
+          <span><b>front end web developer</b>.</span>
         </h1>
         <h2 class=about-subtitle>I build and design products for the web and for print.</h2>
         <h2 class=about-subtitle>

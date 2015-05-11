@@ -2,9 +2,7 @@
 title: 404 Error
 description: 'This, kids, is called a 404.'
 basename: error
-template:
 ---
-<body>
 <main role=main class=error-page>
   <section class=error-intro>
     <div class=wrapper>

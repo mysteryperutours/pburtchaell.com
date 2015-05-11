@@ -8,7 +8,7 @@
     </span>
     <div class=page-footer-legal>
       &copy;<script>document.write(new Date().getFullYear());</script>
-      &nbsp;&mdash;{{site.copyright}}&mdash;
+      &nbsp;&mdash;Patrick Burtchaell&mdash;
       <a href=/colophon rel=source title="Colophon" class="line no-color">Colophon</a>
     </div>
   </small>

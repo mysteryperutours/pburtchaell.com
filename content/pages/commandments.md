@@ -3,11 +3,12 @@ title: The 20 Commandments of Professionalism
 basename: commandments
 template: base.hbt
 date: 2012-10-29
+lunr: true
 ---
 
 by Larry Black and Cliff Martinez
 
-1. Lame exuses are always just that
+1. Lame excuses are always just that
 2. If you are on time, you are late
 3. Deal with money properly; invoice
 4. Don't defer your opinion to anyone without need
