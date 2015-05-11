@@ -1,20 +1,10 @@
-/** @jsx React.DOM */
-
 import React from 'react';
 
 let Menu = React.createClass({
 
-  _open(event) {
-    event.preventDefault();
-    var el = document.querySelector('.portfolio-menu');
-    el.classList.toggle('active');
-  },
+  _open(event) {},
 
-  _close(event) {
-    event.preventDefault();
-    var el = document.querySelector('.portfolio-menu');
-    el.classList.toggle('active');
-  },
+  _close(event) {},
 
   getDefaultProps() {
     return {

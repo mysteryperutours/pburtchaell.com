@@ -1,18 +1,25 @@
-import Marty from 'marty';
-import Constants from 'works/constants/session';
-import Analytics from 'works/utils/analytics';
+import { Actions } from 'flummox';
+import Auth from 'works/auth';
 
-let Actions = Marty.createActionCreators({
+export default class SessionActions extends Actions {
 
-  create: Constants.SESSION_CREATE(function (data, callbacl) {
-    this.dispatch(data, callback);
-    Analytics.identify('User logged in', {});
-  }),
+  /**
+   * @function createSession
+   * @description Create a new session for a user.
+   * @param {string} username
+   * @param {string} password
+   */
+  createSession(username, password) {
+    let response = this.reference.login(username, password);
+    return sid;
+  }
 
-  terminate: Constants.SESSION_TERMINATE(function (uid) {
-    this.dispatch(email);
-  })
+  /**
+   * @function terminateSession
+   * @description Terminate the current session.
+   */
+  terminateSession() {
+    return true;
+  }
 
-});
-
-export default Actions;
+}

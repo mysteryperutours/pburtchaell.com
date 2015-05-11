@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from 'react-classes';
 import Dribbble from 'work/components/dribbble';
 import Section from 'work/components/section';
 import Availability from 'work/components/availability';
@@ -9,8 +8,6 @@ React.initializeTouchEvents(true); // React configurations
 window.React = React; // for React developer tools
 
 let WorkView = React.createClass({
-
-  mixins: [classes],
 
   componentDidMount() {
     this.refs.dribbble.getShots(); // Load latest dribbble shots
@@ -50,13 +47,6 @@ let WorkView = React.createClass({
           title: 'Segment',
           link: 'http://segment.social',
           type: 'Full stack development & user interface design',
-          description: 'A social network and publishing platform.'
-        },
-        {
-          key: 2,
-          title: 'Order of the Arrow',
-          link: 'http://oa-bsa.org',
-          type: 'Volunteer front end web development'
         }
       ]
     };
@@ -94,7 +84,7 @@ let WorkView = React.createClass({
           <div className="row row-large">
             <div className="col col-l-12 col-s-12">
             <h4><b>I aim to build successful products for the future</b></h4>
-              <p>I am currently an honors student at Loyola University New Orleans studying design and computer science. I also work as a junior front end web developer with Peach, where we are making the experience of buying a warranty better.</p>
+              <p>I am currently an honors student at Loyola University New Orleans studying design and computer science. I work as a remote junior front end web developer with Peach, where we are making the experience of buying a warranty better.</p>
               <p>If you would like to say hello, please <a href="mailto:patrick@pburtchaell.com" className="line">feel free to send me an email</a> or a <a href="http://twitter.com/purtchaell" className="line">Tweet</a>.</p>
             </div>
           </div>

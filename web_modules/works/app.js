@@ -1,23 +1,27 @@
+import 'works/init';
 import React from 'react';
-import Marty from 'marty';
-import router from 'works/router';
+import Router from 'react-router';
+import Routes from 'works/routes';
+import Data from 'works/data';
+import Flux from 'works/flux';
 
-// React configurations
-React.initializeTouchEvents(true);
-
-window.React = React; // for React developer tools
-window.Marty = Marty; // for Marty developer tools
-
-//if (_DEVELOPMENT_) {
-  console.clear();
-//}
+var flux = new Flux();
 
 /**
  * @function Router#run
  * @description Initialize the router.
- * @param {function}
- * @param {function} callback
  */
-router.run(function (Handler, state) {
-  React.render(<Handler {...state} />, document.querySelector('main'));
+Router.run(Routes, (Handler, state) => {
+
+  function render() {
+
+    React.withContext(
+      { flux }, // pass flux, data and auth in as context*/
+      () => React.render(<Handler />, document.querySelector('main'))
+    );
+
+  }
+
+  render();
+
 });

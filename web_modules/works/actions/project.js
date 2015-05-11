@@ -1,64 +1,52 @@
-import Marty from 'marty';
-import Constants from 'works/constants/project';
-import Analytics from 'works/utils/analytics';
+import { Actions } from 'flummox';
 
-let Actions = Marty.createActionCreators({
+export default class ProjectActions extends Actions {
 
   /**
    * @function get
    * @param {string} id The project id
-   * @para {function} callback
    * @fires dispatch
    */
-  get: Constants.PROJECT_GET(function (id, callback) {
-    this.dispatch(id, callback);
-  }),
+  getProject(id) {
+    let project = severGetProject(id);
+    return project;
+  }
 
   /**
    * @function getAll
-   * @para {function} callback
    * @fires dispatch
    */
-  getAll: Constants.PROJECT_GET_ALL(function (callback) {
-    this.dispatch(callback);
-  }),
+  getAllProjects() {
+    let projects = serverGetProjects();
+    return projects;
+  }
 
   /**
    * @function create
    * @param {object} data The project data
-   * @para {function} callback
    * @fires dispatch
    */
-  create: Constants.PROJECT_POST(function (data, callback) {
-    this.dispatch(data, callback);
-    if (development) {
-      console.log(data);
-    }
-    //Analytics.track('Project created', data);
-  }),
+  createProject(data) {
+    return data;
+  }
 
   /**
    * @function update
-   * @param {string} id The project to get
-   * @param {object} data The project to get
-   * @para {function} callback
+   * @param {string} id The project to update
+   * @param {object} data The data to update
    * @fires dispatch
    */
-  update: Constants.PROJECT_PUT(function (id, data, callback) {
-    this.dispatch(id, data, callback);
-    //Analytics.track('Project updated', data);
-  }),
+  updateProject(id, data) {
+    return id;
+  }
 
   /**
    * @function delete
    * @param {string} id The project to delete
-   * @para {function} callback
    * @fires dispatch
    */
-  'delete': Constants.PROJECT_DELETE(function (id, callback) {
-    this.dispatch(callback);
-  }),
+  delete(id) {
+    return id;
+  }
 
-});
-
-export default Actions;
+}

@@ -1,96 +1,55 @@
 import React from 'react';
 import Input from 'react-input';
-import Router from 'react-router';
-import Marty from 'marty';
+import View from 'works/components/view';
 
-import SessionStore from 'works/stores/session';
-import SessionActionCreators from 'works/actions/session';
-//import UserStore from 'works/stores/user';
-//import UserActionCreations from 'works/actions/user';
+export default class SignInView extends React.Component {
 
-let {
-  Link,
-  Redirect,
-  Navigation
-} = Router;
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-let SigninView = React.createClass({
-
-  mixins: [Router.Navigation],
-
-  _submit(event) {
-
+  /**
+   * @private
+   * @function handleFormSubmission
+   * @description Attempt to sign in.
+   */
+  handleFormSubmission(event) {
     event.preventDefault();
-
-    this.setState({
-      loading: true
-    });
-
-    var data = {
-      email: this.refs.email.getValue(),
-      password: this.refs.password.getValue(),
-    };
-
-    SessionActionCreators.create(data, function() {
-      this.transitionTo('transactions');
-      return true;
-    }.bind(this), function (error) {
-      if (error == 'INVALID_PASSWORD') {
-        this.setState({
-          passwordError: 'Invalid password',
-          loading: false
-        });
-      } else if (error == 'INVALID_EMAIL') {
-        this.setState({
-          emailError: 'Invaild email',
-          loading: false
-        });
-      }
-    }.bind(this));
-
-  },
-
-  componentWillMount() {},
+    let username = this.email.value();
+    let password = this.password.value();
+  }
 
   componentDidMount() {
-    this.refs.email.focus();
-  },
-
-  getInitialState() {
-    return {
-      email: undefined,
-      password: undefined,
-      passwordError: null,
-      emailError: null
-    };
-  },
+    this.email.focus();
+  }
 
   render() {
     return (
-      <main className="page-flex page-full-height page-full-width">
-        <div className="panel panel-login">
-         <div className="row">
-            <div className="col col-l-12 col-s-12">
-              <h1>Sign In</h1>
-              <Input
-                ref="email"
-                type="text"
-                placeholder="Email"
-                />
-              <Input
-                ref="password"
-                type="password"
-                placeholder="Password"
-                />
-              <button className="btn" onClick={this._submit}>Submit</button>
-              {/*<Link to="app"><strong><small>Go back</small></strong></Link>*/}
+      <View>
+        <main className="page-flex page-full-height page-full-width">
+          <div className="panel panel-login">
+           <div className="row">
+              <div className="col col-l-12 col-s-12">
+                <h1>Sign In</h1>
+                <Input
+                  ref={(c) => this.email = c}
+                  type="text"
+                  placeholder="Email"
+                  />
+                <Input
+                  ref={(c) => this.password = c}
+                  type="password"
+                  placeholder="Password"
+                  />
+                <button className="btn" onClick={this.handleFormSubmission}>Submit</button>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </View>
     );
   }
 
-});
+};
 
-export default SigninView;

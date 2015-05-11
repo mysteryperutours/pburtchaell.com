@@ -1,68 +1,58 @@
-import Marty from 'marty';
-import Constants from 'works/constants/project';
+import { Store } from 'flummox';
+import Immutable from 'immutable';
 
-let Store = Marty.createStore({
+export default class ProjectStore extends Store {
 
-  name: 'entry',
+  constructor(flux) {
 
-  displayName: 'entry',
+    super();
 
-  handlers: {
-    get: Constants.PROJECT_GET,
-    getAll: Constants.PROJECT_GET_ALL,
-    create: Constants.PROJECT_POST,
-    update: Constants.PROJECT_PUT,
-    'delete': Constants.PROJECT_DELETE
-  },
+    let actions = flux.getActions('project');
 
-  getInitialState() {
-    return {
-      //reference: new Firebase('https://pburtchaell-1.firebaseio.com/data/web/projects')
+    this.register(actions.getProject, this.handleGetProject);
+    this.register(actions.createProject, this.handleCreateProject);
+    this.register(actions.updateProject, this.handleUpdateProject);
+    this.register(actions.deleteProject, this.handleDeleteProject);
+
+    /**
+     * @object context#defaults
+     * @description Default state.
+     */
+    this.defaults = {
+      projects: Immutable.Map(), // A collection of projects
+      index: Immutable.Map() // The current project
     };
-  },
 
-  refreshState() {
-    this.state.reference.on('value', function (snapshot) {
-      console.log(snapshot);
-      debugger;
-    }.bind(this));
-  },
+    /**
+     * @object context#state
+     * @description The initial state of the store. Flux will attempt
+     * to check localStorage for a persistent store, but if one does
+     * not exist, it will use the defaults.
+     */
+    this.state = JSON.parse(localStorage.getItem('projects')) || this.defaults;
 
-  _encode(url) {},
+    // Update localStorage
+    localStorage.setItem('projects', JSON.stringify(this.state));
 
-  get() {
-    this.state.reference()
-  },
+  }
 
-  getAll() {},
+  handleGetProject(data) {
+    this.setState({
+      index: data
+    });
+    localStorage.setItem('projects', JSON.stringify(this.state));
+  }
 
-  create(data) {
+  handleCreateProject() {
 
-    var data = {
-      title: '',
-      date: '',
-      body: '',
-      images: []
-    }
+  }
 
-    /*var project = this.state.reference.push(data, function (error) {
-      if (!error) {
-        // do something
-      } else {
-        // handle error
-      }
-    }.bind(this));*/
+  handleUpdateProject() {
 
-    //var key = newPostRef.key();
+  }
 
-    //return key;
+  handleDeleteProject() {
 
-  },
+  }
 
-  update() {},
-
-  'delete'() {}
-
-});
-
-export default Store;
+}

@@ -1,152 +1,154 @@
 import React from 'react';
 import Input from 'react-input';
-import Router from 'react-router';
-import Marty from 'marty';
+import Notification from 'react-notification';
+import { Link, Redirect, Navigation } from 'react-router';
 
-import SessionStore from 'works/stores/session';
-import SessionActionCreators from 'works/actions/session';
-//import UserStore from 'works/stores/user';
-//import UserActionCreations from 'works/actions/user';
+export default class DashboardView extends React.Component {
 
-let {
-  Link,
-  Redirect,
-  Navigation
-} = Router;
+  constructor(props) {
 
-let DashboardView = React.createClass({
+    super(props);
 
-  mixins: [Router.Navigation],
+    let projects = [
+      {
+        id: 0,
+        name: 'Foo',
+        description: 'This is foo',
+        type: 'Video',
+        date: '1-2-2014'
+      },
+      {
+        id: 1,
+        name: 'Bar',
+        description: 'This is bar',
+        type: 'Design',
+        date: '2-3-2014'
+      },
+      {
+        id: 2,
+        name: 'Baz',
+        description: 'This is baz',
+        type: 'Web',
+        date: '3-4-2014'
+      }
+    ];
 
-  /**
-   * @private
-   */
-  _reset(callback) {
-    try {
-      this.refs.name.reset();
-      this.refs.date.reset();
-      this.refs.type.reset();
-      this.refs.image.reset();
-      callback(null); //done
-    } catch (error) {
-      callback(error);
-    }
-  },
-
-  /**
-   * @private
-   */
-  _notify() {
-    this.refs.notification.open();
-  },
-
-  /**
-   * @private
-   */
-  _submit(event) {
-
-    event.preventDefault();
-
-    var name = this.refs.name;
-    var date = this.refs.date;
-    var type = this.refs.type;
-
-    ProjectActionCreator.create('', function () {
-
-      // Set the state
-      this.setState({
-        notification: ''
-      });
-
-      // Notify that the form was created
-      this._notify('', function () {
-        return;
-      });
-
-      // Reset the forms
-      this._reset();
-
-    }.bind(this));
-
-    return;
-
-  },
-
-  componentDidMount() {
-    this.refs.name.focus();
-  },
-
-  getInitialState() {
-    return {
-      isLoggedIn: true
+    // Get intial component state
+    this.state = {
+      projects: projects,
+      current: projects[0]
     };
-  },
 
-  render() {
+    // Component methods
+    this.resetForm = this.resetForm.bind(this);
+    this.showNotification = this.showNotification.bind(this);
+    this.changeProject = this.changeProject.bind(this);
+    this.getProjectStyles = this.getProjectStyles.bind(this);
 
-    if (!this.state.isLoggedIn) {
-      this.transitionTo('signin');
-    } else {
-      return (
-        <main className="page view-dashboard">
-
-          <header className="page-header">
-              <nav className="page-nav" role="navigation">
-              <ul className="nav-items">
-                <li className="nav-item"><Link to="signin">New Project</Link></li>
-                <li className="nav-item"><Link to="signin">View Projects</Link></li>
-              </ul>
-            </nav>
-          </header>
-
-          <header className="default-header">
-            <hgroup>
-              <h1>New Project</h1>
-            </hgroup>
-          </header>
-
-          <section className="default-content">
-            <div className="row">
-              <form className="col col-l-12">
-                <Input
-                  ref="name"
-                  placeholder="Name"
-                  label="A name for the project"
-                  disabled={false}
-                  type="text"
-                />
-                <Input
-                  ref="date"
-                  placeholder="test"
-                  label="A description for the project"
-                  disabled={false}
-                  type="text"
-                />
-                <Input
-                  ref="type"
-                  placeholder="test"
-                  label="A project type"
-                  disabled={false}
-                  type="text"
-                />
-                <Input
-                  ref="type"
-                  placeholder="test"
-                  label="enter some text"
-                  disabled={true}
-                  type="text"
-                />
-                <button className="btn" type="submit" onClick={this._submit}>Create project</button>
-              </form>
-            </div>
-          </section>
-
-        </main>
-      );
-    }
+    // Component event handlers
+    this.handleFormSubmission = this.handleFormSubmission.bind(this);
+    this.handleProjectEditor = this.handleProjectEditor.bind(this);
 
   }
 
-});
+  resetForm() {
+    this.name.reset();
+    this.date.reset();
+    this.type.reset();
+    this.image.reset();
+  }
 
-export default DashboardView;
+  showNotification() {
+    this.notification.show();
+  }
+
+  handleFormSubmission(event) {
+
+    event.preventDefault();
+
+    let name = this.name.value();
+    let desc = this.description.value();
+    let date = this.date.value();
+    let type = this.type.value();
+
+    this.showNotification();
+
+  }
+
+  changeProject(id) {
+    var newProject = this.state.projects[id];
+    this.setState({
+      current: newProject
+    });
+  }
+
+  handleProjectEditor(id, event) {
+    event.preventDefault();
+    this.changeProject(id);
+  }
+
+  getProjectStyles() {
+    return {
+      background: `url(https://snap-photos.s3.amazonaws.com/img-thumbs/960w/JTTWFDU1S5.jpg)`
+    };
+  }
+
+  render() {
+    return (
+      <main className="page view-dashboard">
+
+        <section className="dashboard-items-slider">
+          <h4><small>All Projects</small></h4>
+          <div className="slider-wrapper">
+            {this.state.projects.map(project =>
+              <div
+                key={project.id}
+                style={this.getProjectStyles(project.id)}
+                className="items-slider-item"
+                onClick={this.handleProjectEditor.bind(null, project.id)}>
+                <span className="items-slider-item-title">{project.name}</span>
+              </div>
+            )}
+          </div>
+        </section>
+
+        // @TODO: listen to props and rerender on change. there is some bug in react-input
+
+        <section className="default-content">
+          <div className="row">
+            <form className="col col-l-12">
+            {this.state.current.name}
+            {this.state.current.date}
+            {this.state.current.type}
+            {this.state.current.description}
+              <Input
+                ref={(c) => this.name = c}
+                label="Project name"
+                defaultValue={this.state.current.name}
+                type="text" />
+              <Input
+                ref={(c) => this.date = c}
+                label="Project Date"
+                defaultValue={this.state.current.date}
+                type="text" />
+              <Input
+                ref={(c) => this.type = c}
+                label="Project Type"
+                defaultValue={this.state.current.type}
+                type="text" />
+              <Input
+                ref={(c) => this.description = c}
+                defaultValue={this.state.current.description}
+                label="Project Description"
+                type="text" />
+              <button className="btn" type="submit" onClick={this.handleFormSubmission}>Create project</button>
+            </form>
+          </div>
+        </section>
+
+        <Notification styles={true} ref={(c) => this.notification = c} message="Project created" action="Undo" />
+      </main>
+    );
+  }
+
+}

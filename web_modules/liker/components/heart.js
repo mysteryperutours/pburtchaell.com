@@ -1,11 +1,9 @@
 import React from 'react';
-import classes from 'react-classes';
+import classNames from 'classnames';
 import firebase from 'firebase';
 import Like from 'liker/models';
 
 var Liker = React.createClass({
-
-  mixins: [classes],
 
   initialize() {
     var path = window.location.pathname.toString();
@@ -69,7 +67,7 @@ var Liker = React.createClass({
 
   render() {
 
-    var classes = this.getClass('liker', {
+    var classes = classNames('liker', {
       'liker-clicked': this.state.liked === true
     });
 

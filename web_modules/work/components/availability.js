@@ -2,13 +2,13 @@ import React from 'react';
 import Month from 'work/components/month';
 
 var SetIntervalMixin = {
-  componentWillMount: function() {
+  componentWillMount() {
     this.intervals = [];
   },
-  setInterval: function() {
+  setInterval() {
     this.intervals.push(setInterval.apply(null, arguments));
   },
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     this.intervals.map(clearInterval);
   }
 };
@@ -61,10 +61,10 @@ let Section = React.createClass({
         { key: 1, name: 'February', availability: false },
         { key: 2, name: 'March', availability: false },
         { key: 3, name: 'April', availability: false },
-        { key: 4, name: 'May', availability: false },
-        { key: 5, name: 'June', availability: false },
-        { key: 6, name: 'July', availability: false },
-        { key: 7, name: 'August', availability: false },
+        { key: 4, name: 'May', availability: true },
+        { key: 5, name: 'June', availability: true },
+        { key: 6, name: 'July', availability: true },
+        { key: 7, name: 'August', availability: true },
         { key: 8, name: 'September', availability: false },
         { key: 9, name: 'October', availability: false },
         { key: 10, name: 'November', availability: false },

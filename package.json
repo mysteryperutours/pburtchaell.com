@@ -53,17 +53,19 @@
     "webpack-dev-server": "^1.7.0"
   },
   "dependencies": {
+    "aws-sdk": "^2.1.18",
+    "babel": "^4.7.1",
+    "classnames": "^1.2.0",
     "fastclick": "^1.0.3",
-    "firebase": "^2.1.1",
-    "lodash": "^2.4.1",
-    "marty": "^0.8.4",
-    "moment": "^2.8.4",
-    "q": "^1.1.2",
-    "react": "^0.12.2",
-    "react-classes": "^1.0.3",
-    "react-input": "^1.0.2",
-    "react-localstorage": "^0.1.0",
-    "react-router": "^0.11.6",
+    "firebase": "^2.2.3",
+    "flummox": "^2.13.0",
+    "immutable": "^3.6.4",
+    "modernizr": "^3.0.0-alpha.3",
+    "react": "^0.13.1",
+    "react-input": "^1.1.0",
+    "react-notification": "^1.1.0",
+    "react-router": "^0.13.1",
+    "whatwg-fetch": "^0.7.0",
     "xhr": "^2.0.1"
   }
 }
