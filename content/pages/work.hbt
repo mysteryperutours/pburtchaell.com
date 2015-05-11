@@ -1,12 +1,9 @@
 ---
-title: 'Portfolio'
-description: 'Portfolio of designer and web developer Patrick Burtchaell'
-hire: false
-layout: none
-aboluteheader: true
+title: Work with Me
+description: I aim to build successful products for the future. Work with me to build the next one.
+lunr: true
 ---
-<html>
-{{> head }}
+{{> header }}
 <style>
 .loader-container {
   height: 100vh;
@@ -14,7 +11,6 @@ aboluteheader: true
   display: flex;
   flex-direction: row;
 }
-
 .loader {
   align-self: center;
   margin: 0 auto;
@@ -31,6 +27,7 @@ aboluteheader: true
 </svg>
 </div>
 </main>
+{{> footer }}
 </body>
-<script src="/public/js/bundles/works.js"></script>
+<script src="/public/js/bundles/work.js"></script>
 </html>
