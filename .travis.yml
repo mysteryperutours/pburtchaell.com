@@ -4,8 +4,6 @@ node_js:
 branches:
   only:
   - master
-before_install:
-- npm install -g webpack
 install:
 - npm install
 script:

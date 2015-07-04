@@ -1,0 +1,26 @@
+button {
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: 2rem;
+  margin: 2rem auto 2.25rem auto;
+  box-sizing: border-box;
+  font: normal 1rem 'DIN Pro';
+  text-align: center;
+  color: @color-white;
+  background: @color-black;
+  cursor: pointer;
+  border: 2px solid @color-black;
+  &:hover,
+  &:active {
+    outline: 0;
+    box-shadow: 5px 5px 0 0 @color-white;
+  }
+  &.no-hover {
+    &:hover {
+      cursor: default;
+      opacity: 1;
+    }
+  }
+}

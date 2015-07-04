@@ -1,0 +1,33 @@
+.section-base {
+  padding: 4rem 0;
+  display: flex;
+  min-height: 30vh;
+  box-sizing: border-box;
+  .row {
+    align-self: center;
+  }
+}
+
+.section-theme-cover {
+  height: 50vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.section-theme-white {
+  background: @color-white;
+  color: @color-black;
+  a {
+    color: @color-black;
+  }
+}
+
+.section-theme-black {
+  background: @color-black !important;
+  color: @color-white;
+  a {
+    color: @color-white;
+  }
+}

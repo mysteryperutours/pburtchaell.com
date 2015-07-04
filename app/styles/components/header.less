@@ -1,0 +1,74 @@
+/**
+ * @class page-header
+ * @description
+ */
+.page-header {
+  height: auto;
+  min-height: 4rem;
+  position: relative;
+  background-color: fadeout(@color-white, 10%);
+  width: 100vw;
+  z-index: 4;
+  border-bottom: 1px solid @color-grey-light;
+  a {
+    color: @color-black;
+    border: none;
+  }
+}
+
+.branding {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  width: 3rem;
+  height: 3rem;
+  left: 1rem;
+  z-index: 99999;
+  background: none;
+  path {
+    stroke-width: 1.5px;
+    stroke-miterlimit: 10;
+    stroke: @color-black;
+    fill: @color-black;
+  }
+  &:hover {
+    path {
+      stroke: @color-yellow;
+      fill: @color-yellow;
+    }
+    ~ .branding-name {
+      color: @color-yellow;
+    }
+  }
+  &.is-loading {
+    animation: branding 2s infinite;
+  }
+}
+
+.branding-name {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: @color-white;
+  display: block;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  margin-left: 70px;
+  line-height: 1rem;
+}
+
+@keyframes branding {
+   0% { transform: rotate(0deg); }
+  20% { transform: rotate(90deg); }
+  40% { transform: rotate(180deg); }
+  60% { transform: rotate(270deg); }
+  80% { transform: rotate(360deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 600px) {
+  .branding {
+    position: absolute;
+  }
+}
