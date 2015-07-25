@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 /**
  * Webpack configuration file for production.
  */
-module.exports = {
+export default {
   devtool: 'source-map',
   entry: {
     app: path.resolve(__dirname, './app/client'),
@@ -58,6 +58,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.less', '.woff', '.woff2', '.png', '.jpg'],
-    modulesDirectories: ['node_modules', 'app'],
+    modulesDirectories: ['node_modules', 'app']
   }
 };
