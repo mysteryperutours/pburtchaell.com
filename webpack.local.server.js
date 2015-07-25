@@ -1,6 +1,10 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.local.config');
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import gutil from 'gulp-util';
+import config from './webpack.local.config';
+
+const PORT = process.env.npm_package_config_DEV_SERVER_PORT;
+const ADDRESS = process.env.npm_package_config_DEV_SERVER_ADDRESS;
 
 /**
  * Webpack development server
@@ -8,11 +12,27 @@ var config = require('./webpack.local.config');
  */
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
+  contentBase: `http://${ADDRESS}:${PORT}`,
   hot: true,
+  quiet: false,
+  inline: true,
   noInfo: true,
-  historyApiFallback: true
-}).listen(8000, 'localhost', function(error) {
+  historyApiFallback: true,
+
+  // Remove console.log mess during watch.
+  stats: {
+    assets: false,
+    colors: true,
+    version: false,
+    hash: false,
+    timings: false,
+    chunks: false,
+    chunkModules: false
+  }
+}).listen(PORT, ADDRESS, error => {
   if (error) {
-    console.log(error);
+    throw new gutil.PluginError('webpack-dev-server', error);
+  } else {
+    gutil.log('[webpack-dev-server]', `WebPack development server running at http://${ADDRESS}:${PORT}`);
   }
 });

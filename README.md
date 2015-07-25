@@ -2,7 +2,7 @@
 
 ## Overview
 
-My website serves as a helpful example of how to build a React application with React Router, Flummox and WebPack.
+My website serves as a (hopefully) helpful example of how to build a React application with React Router, Redux and WebPack.
 
 ## Getting Started
 
@@ -18,11 +18,14 @@ My website serves as a helpful example of how to build a React application with 
 
 - [React](https://facebook.github.io/react/)
 - [React Router](https://github.com/rackt/react-router)
-- [Flummox](https://github.com/acdlite/flummox)
+- [Redux](https://github.com/gaearon/redux)
+- [Immutable.js](https://github.com/facebook/immutable-js)
 - [Less](https://github.com/less/less.js)
 - [WebPack](http://webpack.github.io/)
+- [Babel](https://babeljs.io)
 - [ESLint](http://eslint.org/)
 - [Travis CI](https://travis-ci.org/)
+- [Parse](http://parse.com)
 
 ---
 Built with care in New Orleans by [Patrick Burtchaell](http://twitter.com/pburtchaell)

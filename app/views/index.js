@@ -1,13 +1,6 @@
-import React from 'react';
-import { RouteHandler } from 'react-router';
-import usePureRender from 'components/pure';
-
-export default usePureRender(class IndexView extends React.Component {
-  static contextTypes = {
-    flux: React.PropTypes.func,
-  }
-
-  render() {
-    return <RouteHandler {...this.props} />
-  }
-});
+export { default as App } from './app';
+export { default as Admin } from './admin';
+export { default as Home } from './home';
+export { default as Portfolio } from './portfolio';
+export { default as Work } from './work';
+export { default as Writing } from './writing';
