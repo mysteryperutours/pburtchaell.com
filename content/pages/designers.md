@@ -11,6 +11,9 @@ lunr: true
 - [Sagmeister & Walsh](http://www.sagmeisterwalsh.com/)
 - [Alex Trochut](http://alextrochut.com/#/works)
 - [Olly Moss](http://ollymoss.com/)
+- [The Heads of State](http://theheadsofstate.com)
+- [](http://www.benjaminschipper.com)
+- []
 
 ## Legendary
 
