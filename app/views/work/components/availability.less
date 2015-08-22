@@ -1,16 +1,21 @@
+@import '../../../styles/utilities/variables';
+
+@color-available: @color-green;
+@color-unavailable: @color-red;
+
 .section-availability {
   text-transform: uppercase;
   user-select: none;
 
   h4 {
-    margin-top: 0;
+    text-align: center;
   }
 }
 
 .available-months {
-  margin: 0 auto 2rem auto;
+  margin: 0 auto;
   padding: 0;
-  width: 6rem + (.125 * 12rem) + (.1 * 12rem);
+  width: 12rem + (.125rem * 24);
   height: 20px;
   position: relative;
 }
@@ -23,43 +28,47 @@
   float: left;
   clear: right;
   text-align: center;
-  margin: 0 .125rem !important;
+  margin: 0 .125rem;
   padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 
-  @color-available: @color-green;
-  @color-unavailable: @color-red;
 
   &[data-avail=true] {
     background: none;
-    border: 1px solid @color-available;
+    color: @color-available;
+    border: 1px solid;
 
     &:before {
       content: 'Available';
+      display: block;
+      position: relative;
+      width: 100px;
       letter-spacing: .125ex;
       background: none;
+      margin-top: 5px;
       color: @color-available;
-      margin-top: 10px;
-      border: .1rem solid @color-available;
+      border: 1px solid;
     }
   }
 
   &[data-avail=false] {
     background: none;
-    border: 1px solid @color-unavailable;
+    color: @color-unavailable;
+    border: 1px solid;
 
     &:before {
       content: 'Unavailable';
       letter-spacing: .125ex;
-      background: none;
       color: @color-unavailable;
-      margin-top: 10px;
-      border: .1rem solid @color-unavailable;
+      border: 1px solid;
     }
   }
 
   &[data-avail=null] {
     background: none;
-    border: 1px solid @color-yellow;
+    color: @color-yellow;
+    border: 1px solid;
 
     &:before {
       content: 'Limited';
@@ -67,35 +76,39 @@
       background: none;
       color: @color-yellow;
       margin-top: 10px;
-      border: .1rem solid @color-yellow;
+      border: 1px solid;
     }
   }
 
   &:before,
   &:after {
     content: '';
-    display: inline-block;
+    display: block;
     position: relative;
     z-index: 2;
-    margin-top: 10px;
-    font: 0.75rem;
-    font-weight: 600;
+    margin-top: 5px;
+    width: auto;
+    font-size: @font-size-small;
+    line-height: @line-height-small;
     text-transform: uppercase;
     opacity: 0;
+    font-weight: 600;
   }
 
   &:before {
-    top: 1.25rem;
+    width: 100px;
     left: 0;
+    top: 1.25rem;
     color: @color-black;
-    padding: 0.125rem;
+    padding: .125rem;
   }
 
   &:after {
     content: attr(data-month); // Pull the month name in from the attribute
-    top: .75rem;
-    font-weight: 600;
     left: 0;
+    width: 200px;
+    text-align: left;
+    top: 1rem;
   }
 
   &.month-active {
@@ -133,13 +146,13 @@
     &[data-avail=true] {
       opacity: 1;
       background: none;
-      border: .1rem solid @color-green;
+      border: 1px solid @color-green;
     }
 
     &[data-avail=null] {
       opacity: 1;
       background: none;
-      border: .1rem solid @color-yellow;
+      border: 1px solid @color-yellow;
     }
 
     &:before,
@@ -173,6 +186,5 @@
         transform: none !important;
       }
     }
-
   }
 }

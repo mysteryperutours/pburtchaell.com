@@ -4,34 +4,31 @@
  */
 .page-footer {
   flex: 1 auto;
-  color: @color-grey;
-  background: @color-white;
-  min-height: 4rem;
-  border-top: 1px solid @color-grey-light;
-  &.dark-ui {
-    background: @color-black;
-    border-top: 1px solid @color-grey;
-  }
+  padding: 1rem;
+  text-align: center;
+
   a {
-    color: @color-grey;
-    border-color: @color-grey;
+    color: @color-grey-light;
+    border-color: @color-grey-light;
   }
+
   .row {
     display: none;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto;
   }
+
   &.active {
     .row {
       display: block;
     }
   }
+
   form {
     background-color: @color-grey-light;
   }
 }
 
 .page-footer-content {
-  padding: 1rem;
   text-transform: uppercase;
   letter-spacing: .25ex;
 }
@@ -43,7 +40,6 @@
 .page-footer-span {
   display: block;
   margin: 0 auto;
-  line-height: 1.5;
   user-select: none;
 }
 
@@ -55,6 +51,7 @@
   fill: @color-red;
   top: -1px;
   margin: 0 .25rem;
+
   svg {
     animation: pulse 3s infinite;
     transition: 400ms;
@@ -67,6 +64,7 @@
  */
 .page-footer-legal {
   line-height: 1.5;
+
   span {
     padding: 0 .125rem;
   }
@@ -83,6 +81,7 @@
   position: relative;
   display: flex;
   background-color: @color-grey-light;
+
   span {
     width: 100%;
     max-width: 400px;
@@ -93,6 +92,7 @@
     font-weight: bold;
     color: @color-red;
   }
+
   input {
     width: 100%;
     flex: 1 auto;

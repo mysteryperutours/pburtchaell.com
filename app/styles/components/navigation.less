@@ -57,20 +57,19 @@
   height: 100%;
   width: 100%;
   padding: 0 1rem;
-  border: none;
-  opacity: .5;
-  font-weight: 600;
-  margin-top: -2px;
-  &:hover,
-  &:active {
-    opacity: 1;
-    color: @color-black;
-  }
-  &.active, {
+  text-decoration: none;
+
+  &.active {
     margin-top: 0;
     opacity: 1;
-    color: @color-black;
-    border-bottom: 2px solid @color-black;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+
+    &:hover {
+      color: @color-white;
+      cursor: default;
+      user-select: none;
+    }
   }
 }
 
@@ -84,6 +83,7 @@
     padding: 0 1rem;
     margin: 0;
   }
+
   .navigation-item {
     align-self: flex-end;
     margin: .675rem;

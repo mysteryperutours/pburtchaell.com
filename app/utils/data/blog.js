@@ -16,9 +16,9 @@ export function createArticle(data) {
 }
 
 export function getArticle() {
-  return;
+  return Request.get('article');
 }
 
 export function getArticleCollection() {
-  return;
+  return Request.get('article');
 }

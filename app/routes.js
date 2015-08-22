@@ -4,10 +4,9 @@ let routes = {
   component: views.App,
   childRoutes: [
     views.Home,
-    views.Admin,
-    views.Work,
-    views.Portfolio,
-    views.Writing
+    views.Writing,
+    views.About,
+    views.Work
   ]
 };
 

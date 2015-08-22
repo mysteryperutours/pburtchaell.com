@@ -1,6 +1,11 @@
 import * as types from 'constants/article';
 
-const initialState = {};
+const initialState = {
+  isPending: true,
+  isFulfilled: false,
+  isRejected: false,
+  articles: []
+};
 
 export default function article(state = initialState, action) {
   switch (action.type) {
@@ -20,6 +25,21 @@ export default function article(state = initialState, action) {
       return state;
 
     case types.GET_ARTICLE_REJECTED:
+      return state;
+
+    case types.GET_ARTICLE_COLLECTION_PENDING:
+      return state;
+
+    case types.GET_ARTICLE_COLLECTION_FULFILLED:
+      return {
+        ...state,
+        articles: action.payload.results,
+        isPending: false,
+        isFulfilled: true,
+        isRejected: false
+      };
+
+    case types.GET_ARTICLE_COLLECTION_REJECTED:
       return state;
 
     default:

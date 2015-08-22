@@ -1,7 +1,7 @@
+import './availability.less';
 import React from 'react';
-import autobind from 'autobind-decorator';
 import Month from './month';
-import Section from './section';
+import Section from 'components/layout/section';
 
 /**
  * @class Availability
@@ -10,30 +10,15 @@ import Section from './section';
 export default class Availability extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       active: 0,
-      paused: false,
+      paused: false
     };
   }
 
-  @autobind
-  componentWillMount() {
-    this.intervals = [];
-  }
-
-  @autobind
-  componentDidMount() {
-    this.setInterval(this.handleChange, 1500); // Call a method on the mixin
-  }
-
-  @autobind
-  componentWillUnmount() {
-    this.intervals.map(clearInterval);
-  }
-
-  @autobind
-  setInterval() {
-    this.intervals.push(setInterval.apply(null, arguments));
+  componentDidMount = () => {
+    setInterval(this.handleChange, 1500); // Call a method on the mixin
   }
 
   /**
@@ -41,8 +26,7 @@ export default class Availability extends React.Component {
    * @description Changes the active month.
    * @fires context#setState
    */
-  @autobind
-  handleChange() {
+  handleChange = () => {
     if (this.state.paused === false) {
       var i = this.state.active;
 
@@ -55,8 +39,6 @@ export default class Availability extends React.Component {
       this.setState({
         active: i
       });
-    } else {
-      return;
     }
   }
 
@@ -65,7 +47,6 @@ export default class Availability extends React.Component {
    * @description Pauses the availablity slider.
    * @fires context#setState
    */
-  @autobind
   handleOnMouseEnter() {
     this.setState({
       paused: true
@@ -77,11 +58,11 @@ export default class Availability extends React.Component {
    * @description Continues the availablity slider.
    * @fires context#setState
    */
-  @autobind
   handleOnMouseLeave() {
     this.setState({
       paused: false
     });
+
     this.handleChange();
   }
 
@@ -91,28 +72,28 @@ export default class Availability extends React.Component {
       { key: 1, name: 'February', availability: false },
       { key: 2, name: 'March', availability: false },
       { key: 3, name: 'April', availability: false },
-      { key: 4, name: 'May', availability: true },
-      { key: 5, name: 'June', availability: true },
-      { key: 6, name: 'July', availability: true },
-      { key: 7, name: 'August', availability: true },
-      { key: 8, name: 'September', availability: false },
-      { key: 9, name: 'October', availability: false },
-      { key: 10, name: 'November', availability: false },
-      { key: 11, name: 'December', availability: false }
+      { key: 4, name: 'May', availability: false },
+      { key: 5, name: 'June', availability: false },
+      { key: 6, name: 'July', availability: false },
+      { key: 7, name: 'August', availability: false },
+      { key: 8, name: 'September', availability: 'null' },
+      { key: 9, name: 'October', availability: 'null' },
+      { key: 10, name: 'November', availability: 'null' },
+      { key: 11, name: 'December', availability: 'null' }
     ];
 
     return (
       <Section name="availability" theme="black">
         <div className="row">
           <div className="col col-l-12 col-s-12">
-            <small><h4><b>January-December 2015</b></h4></small>
+            <h4>Let's work together</h4>
+            <h6 className="text-align-center">January - December 2015</h6>
               <ul className="available-months"
-                onMouseEnter={this.handleOnMouseEnter}
-                onMouseLeave={this.handleOnMouseLeave}>
-                {months.map(function(month) {
-                  let isActive = false;
-
-                  if (month.key === this.state.active) isActive = true;
+                onMouseEnter={::this.handleOnMouseEnter}
+                onMouseLeave={::this.handleOnMouseLeave}
+              >
+                {months.map(month => {
+                  let isActive = month.key === this.state.active ? true : false;
 
                   return (
                     <Month
@@ -121,7 +102,7 @@ export default class Availability extends React.Component {
                       availability={month.availability}
                       name={month.name} />
                   );
-                }.bind(this))}
+                })}
             </ul>
           </div>
         </div>

@@ -22,6 +22,12 @@ class Request {
       body: JSON.stringify(body)
     })).then(response => response.json());
   }
+
+  async get(url) {
+    await fetch(this.buildURL(url), Object.assign(this.defaultOptions, {
+      method: 'GET'
+    })).then(response => response.json());
+  }
 }
 
 export default new Request();

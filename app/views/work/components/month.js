@@ -1,5 +1,4 @@
 import React from 'react';
-import autobind from 'autobind-decorator';
 
 /**
  * @class Month
@@ -18,8 +17,7 @@ export default class Month extends React.Component {
     active: React.PropTypes.bool.isRequired,
   }
 
-  @autobind
-  getClassName() {
+  getClassName = () => {
     if (!this.props.active) {
       return 'month';
     } else {

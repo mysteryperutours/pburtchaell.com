@@ -5,32 +5,33 @@
 @screen-medium: 576px;
 @screen-small: 436px;
 
+// BASE REM SIZE
+@size: 26px;
+
 /**
  * Typography
  */
- @type-primary: 'DIN Pro', @font-stack;
- @type-secondary: 'DIN Pro', @font-stack;
- @font-stack: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+@font-family-primary: 'web-din-pro', @font-stack;
+@font-family-secondary: 'web-din-pro', @font-stack;
+@font-stack: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+@font-size-base: .65rem;
+@font-size-small: .5rem;
+@font-size-large: 1.5rem;
+@line-height-base: 1rem;
+@line-height-small: 1rem;
+@line-height-large: 2rem;
 
 /**
  * Branding colors
  */
 @color-branding-primary: @color-black;
 @color-branding-secondary: @color-black;
-
-/**
- * Base values
- */
-@color-white: #ffffff;
-@color-black: #171719;
-@color-grey: #333233;
-@color-grey-light: #F5F0F5;
-@color-grey-dark: #333233;
-
-/**
- * Base colors
- */
-@color-yellow: #E8B420;
-@color-red: #FF625B;
-@color-green: @color-teal;
-@color-teal: #22FFCF;
+@color-white: rgb(157, 220, 249);
+@color-black: rgb(51, 100, 188);
+@color-grey: rgb(146, 197, 234);
+@color-grey-light: rgb(146, 197, 234);
+@color-grey-dark: rgb(146, 197, 234);
+@color-yellow: rgb(254, 219, 180);
+@color-teal: rgb(239, 65, 86);
+@color-red: rgb(239, 65, 86);
+@color-green: rgb(164, 218, 210);

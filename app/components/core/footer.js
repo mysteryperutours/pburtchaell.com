@@ -19,12 +19,12 @@ export default pureRender(class Footer extends Component {
                   3.30,10,1.67,9.17,.6z' />
                 </svg>
               </object>
-              <span>in New Orleans.</span>
+              <span>in New Orleans</span>
               <br/>
             </div>
             <div className='page-footer-legal'>
               <span>{copyright}</span>
-              <span>Patrick Burtchaell.</span>
+              <span>Patrick Burtchaell</span>
             </div>
           </small>
         </div>

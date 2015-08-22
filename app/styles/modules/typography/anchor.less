@@ -1,12 +1,15 @@
 a {
   text-decoration: none;
   color: @text-color;
-  text-decoration: none;
-  border-bottom: 1px solid @color-teal;
+  text-decoration: underline;
+  text-decoration-color: @color-red;
+
   &:hover,
   &:active {
-    color: @color-teal;
+    color: @color-yellow;
+    text-decoration-color: @color-yellow;
   }
+
   img {
     border: none;
   }
