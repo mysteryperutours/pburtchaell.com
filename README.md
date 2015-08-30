@@ -8,7 +8,7 @@ My website serves as a (hopefully) helpful example of how to build a React appli
 - Maintaining an immutable state
 - Functional programming techniques for JavaScript
 - Next generation JavaScript programming techniques for JavaScript
-- Sending async data requests to a REST API
+- Sending async data requests to a REST API ([Parse](https://www.parse.com))
 - Preventing users from viewing certain routes if they are not signed in
 - How to use Make + WebPack + Babel
 
@@ -58,7 +58,18 @@ My stack is very similar to what I use on an every day basis when programming Ja
 │   └── template.html   # HTML template used by WebPack for bundling
 ```
 
+### Previous Versions
+
+I have maintained this website since 2013 and I have switched between several different stacks since then. The site has--however--has always been static and used JS as the primary language (the two static site generators I used were written in Node.js).
+
+- [Version 1.1.0](https://github.com/pburtchaell/pburtchaell.com/releases/tag/1.1.0): Assemble + Grunt
+- [Version 2.0.0](https://github.com/pburtchaell/pburtchaell.com/releases/tag/2.0.0) Metalsmith + Gulp
+
+I switched away from using a static site generator because it was too much trouble to write a post, generate the entire site and then publish it to my S3 bucket along with any of the media I included in the article. I decided that it would be much easier for me to use a CMS. I tried using Ghost deployed to Heroku, but I do not like the limitations and I missed writing front end code.
+
+In the end, I found a hybrid approach would work best. Right now, my front end site is completely static and uses the [Parse REST API](https://www.parse.com) to create and fetch data, e.g., my posts and design work. I am not finished with this setup, but it is what I am working toward now.
+
 ---
 Built with care in New Orleans by [Patrick Burtchaell](http://twitter.com/pburtchaell)
 
-[Copyright 2015 Patrick Burtchaell](LICENSE)
+[Copyright 2013-present Patrick Burtchaell](LICENSE)
