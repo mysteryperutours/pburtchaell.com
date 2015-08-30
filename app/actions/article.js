@@ -1,5 +1,5 @@
 import * as types from 'constants/article';
-import * as utils from 'utils/data/blog';
+import * as utils from 'utils/data/article';
 
 export function get(id) {
   return {
@@ -8,7 +8,9 @@ export function get(id) {
       types.GET_ARTICLE_FULFILLED,
       types.GET_ARTICLE_REJECTED
     ],
-    promise: utils.getArticle(id)
+    payload: {
+      promise: utils.getArticle(id)
+    }
   };
 }
 
@@ -19,7 +21,9 @@ export function getAll() {
       types.GET_ARTICLE_COLLECTION_FULFILLED,
       types.GET_ARTICLE_COLLECTION_REJECTED
     ],
-    promise: utils.getArticleCollection()
+    payload: {
+      promise: utils.getArticleCollection()
+    }
   };
 }
 
@@ -30,6 +34,8 @@ export function create(body) {
       types.CREATE_ARTICLE_FULFILLED,
       types.CREATE_ARTICLE_REJECTED
     ],
-    payload: utils.createArticle(body)
+    payload: {
+      promise: utils.createArticle(body)
+    }
   };
 }

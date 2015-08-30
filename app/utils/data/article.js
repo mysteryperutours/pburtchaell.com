@@ -1,8 +1,8 @@
 import Request from './request';
-//import transformMarkdownToHTML from 'utils/transformMarkdownToHTML';
+const request =  new Request('article');
 
-/*export function createArticle(data) {
-  return Request.post('article', {
+export function createArticle(data) {
+  return request.post({
     publishDay: data.publishDay,
     publishYear: data.publishYear,
     publishMonth: data.publishMonth,
@@ -10,15 +10,14 @@ import Request from './request';
     keywords: data.keywords,
     title: data.title,
     permalink: data.permalink,
-    markdown: data.body,
-    html: transformMarkdownToHTML(data.body)
+    markdown: data.body
   });
-}*/
+}
 
 export function getArticle() {
-  return Request.get('article');
+  return request.get();
 }
 
 export function getArticleCollection() {
-  return Request.get('article');
+  return request.getAll();
 }

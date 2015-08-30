@@ -7,8 +7,21 @@ const reducer = combineReducers(reducers);
 
 let composeStoreWithMiddleware;
 
-composeStoreWithMiddleware = applyMiddleware(
-  promiseMiddleware
-)(createStore);
+if (DEV_TOOLS === true) {
+  const { devTools, persistState } = require('redux-devtools');
+
+  composeStoreWithMiddleware = compose(
+    applyMiddleware(
+      promiseMiddleware
+    ),
+    devTools(),
+    persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)),
+    createStore
+  );
+} else {
+  composeStoreWithMiddleware = applyMiddleware(
+    promiseMiddleware
+  )(createStore);
+}
 
 export default composeStoreWithMiddleware(reducer, initialState);

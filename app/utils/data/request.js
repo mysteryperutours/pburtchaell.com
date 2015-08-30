@@ -1,5 +1,9 @@
+/**
+ * @class Request
+ * @description Send requests to the Parse REST API.
+ */
 class Request {
-  constructor() {
+  constructor(resource) {
     this.defaultOptions = {
       mode: 'cors',
       headers: {
@@ -10,24 +14,26 @@ class Request {
       }
     };
 
+    // The resource to send the data to, e.g., article
+    this.resource = resource;
+
     this.post = this.post.bind(this);
+    this.get = this.get.bind(this);
   }
 
   // Construct the URL used in the request
-  buildURL = resource => `${PARSE_URL}/classes/${resource}`;
+  buildURL = (id) => `${PARSE_URL}/classes/${this.resource}`;
 
-  async post(url, body) {
-    await fetch(this.buildURL(url), Object.assign(this.defaultOptions, {
+  async post(body) {
+    await fetch(this.buildURL(), Object.assign(this.defaultOptions, {
       method: 'POST',
       body: JSON.stringify(body)
     })).then(response => response.json());
   }
 
-  async get(url) {
-    await fetch(this.buildURL(url), Object.assign(this.defaultOptions, {
+  async get(id) {
+    await fetch(this.buildURL(id), Object.assign(this.defaultOptions, {
       method: 'GET'
     })).then(response => response.json());
   }
 }
-
-export default new Request();

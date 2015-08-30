@@ -7,6 +7,8 @@ export function get(id) {
       types.GET_AVAILABILITY_FULFILLED,
       types.GET_AVAILABILITY_REJECTED
     ],
-    promise: () => null
+    payload: {
+      promise: () => null
+    }
   };
 }
