@@ -1,12 +1,10 @@
-import * as views from './views';
-
 let routes = {
-  component: views.App,
+  component: require('./views/app'),
   childRoutes: [
-    views.Home,
-    views.Writing,
-    views.About,
-    views.Work
+    require('./views/home'),
+    require('./views/writing'),
+    require('./views/about'),
+    require('./views/work')
   ]
 };
 

@@ -1,7 +1,7 @@
 import Request from './request';
-import transformMarkdownToHTML from 'utils/transformMarkdownToHTML';
+//import transformMarkdownToHTML from 'utils/transformMarkdownToHTML';
 
-export function createArticle(data) {
+/*export function createArticle(data) {
   return Request.post('article', {
     publishDay: data.publishDay,
     publishYear: data.publishYear,
@@ -13,7 +13,7 @@ export function createArticle(data) {
     markdown: data.body,
     html: transformMarkdownToHTML(data.body)
   });
-}
+}*/
 
 export function getArticle() {
   return Request.get('article');

@@ -1,11 +1,11 @@
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+var path = require('path');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
  * Webpack configuration file for production.
  */
-export default {
+module.exports = {
   devtool: 'source-map',
   entry: {
     app: path.resolve(__dirname, './app/client'),
@@ -14,7 +14,7 @@ export default {
     publicPath: '/',
     path: path.join(__dirname, '/dist'),
     filename: '[name].[hash].js',
-    sourceMapFilename: '[file].[hash].map'
+    sourceMapFilename: '[file].map'
   },
   module: {
     loaders: [

@@ -18,7 +18,7 @@ export default pureRender(class Header extends Component {
               </Link>
             </li>
             <li className='navigation-item' id='work'>
-              <Link to="writing" className="navigation-item-link">
+              <Link to="posts" className="navigation-item-link">
                 Writing
               </Link>
             </li>
