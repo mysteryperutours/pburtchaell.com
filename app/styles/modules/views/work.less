@@ -1,0 +1,178 @@
+.section-availability {
+  text-transform: uppercase;
+  user-select: none;
+
+  h4 {
+    margin-top: 0;
+  }
+}
+
+.available-months {
+  margin: 0 auto 2rem auto;
+  padding: 0;
+  width: 6rem + (.125 * 12rem) + (.1 * 12rem);
+  height: 20px;
+  position: relative;
+}
+
+.month {
+  display: block;
+  list-style: none;
+  height: 1rem;
+  width: 1rem;
+  float: left;
+  clear: right;
+  text-align: center;
+  margin: 0 .125rem !important;
+  padding: 0;
+
+  @color-available: @color-green;
+  @color-unavailable: @color-red;
+
+  &[data-avail=true] {
+    background: none;
+    border: 1px solid @color-available;
+
+    &:before {
+      content: 'Available';
+      letter-spacing: .125ex;
+      background: none;
+      color: @color-available;
+      margin-top: 10px;
+      border: .1rem solid @color-available;
+    }
+  }
+
+  &[data-avail=false] {
+    background: none;
+    border: 1px solid @color-unavailable;
+
+    &:before {
+      content: 'Unavailable';
+      letter-spacing: .125ex;
+      background: none;
+      color: @color-unavailable;
+      margin-top: 10px;
+      border: .1rem solid @color-unavailable;
+    }
+  }
+
+  &[data-avail=null] {
+    background: none;
+    border: 1px solid @color-yellow;
+
+    &:before {
+      content: 'Limited';
+      letter-spacing: .125ex;
+      background: none;
+      color: @color-yellow;
+      margin-top: 10px;
+      border: .1rem solid @color-yellow;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    font: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+  }
+
+  &:before {
+    top: 1.25rem;
+    left: 0;
+    color: @color-black;
+    padding: 0.125rem;
+  }
+
+  &:after {
+    content: attr(data-month); // Pull the month name in from the attribute
+    top: .75rem;
+    font-weight: 600;
+    left: 0;
+  }
+
+  &.month-active {
+    cursor: pointer;
+
+    &:before, &:after {
+      opacity: 1;
+      transform: translateY(-5px);
+      transition: all 400ms;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .available-months {
+    height: auto;
+  }
+
+  .month {
+    height: auto;
+    width: 100%;
+    float: none;
+    clear: none;
+    margin: 0.5rem 0.125rem !important;
+    padding: 0;
+    transition: none;
+
+    &[data-avail] {
+      &:before {
+        opacity: 1;
+        border: none !important;
+      }
+    }
+
+    &[data-avail=true] {
+      opacity: 1;
+      background: none;
+      border: .1rem solid @color-green;
+    }
+
+    &[data-avail=null] {
+      opacity: 1;
+      background: none;
+      border: .1rem solid @color-yellow;
+    }
+
+    &:before,
+    &:after {
+      color: @color-white;
+      font-family: 'DIN Pro';
+      font-weight: 600;
+      opacity: 1;
+      border: none;
+      position: relative;
+      &:hover {
+        transform: none;
+      }
+    }
+
+    &:before {
+      font-weight: 600;
+      top: -.25rem;
+      padding: 0 .25rem 0 0;
+    }
+
+    &:after {
+      top: -.25rem;
+      text-transform: none;
+    }
+
+    &:hover,
+    &.month-active {
+      &:before,
+      &:after {
+        transform: none !important;
+      }
+    }
+
+  }
+}

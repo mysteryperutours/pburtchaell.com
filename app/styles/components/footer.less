@@ -1,0 +1,119 @@
+/**
+ * @class page-footer
+ * @description Site-wide footer used on the bottom of every page.
+ */
+.page-footer {
+  flex: 1 auto;
+  padding: 1rem;
+  text-align: center;
+
+  a {
+    color: @color-grey-light;
+    border-color: @color-grey-light;
+  }
+
+  .row {
+    display: none;
+    margin: 0 auto;
+  }
+
+  &.active {
+    .row {
+      display: block;
+    }
+  }
+
+  form {
+    background-color: @color-grey-light;
+  }
+}
+
+.page-footer-content {
+  text-transform: uppercase;
+  letter-spacing: .25ex;
+}
+
+/**
+ * @class page-footer-span
+ * @description Wrapper for footer.
+ */
+.page-footer-span {
+  display: block;
+  margin: 0 auto;
+  user-select: none;
+}
+
+/**
+ * @class page-footer-heart
+ * @description SVG heart graphic.
+ */
+.page-footer-heart {
+  fill: @color-red;
+  top: -1px;
+  margin: 0 .25rem;
+
+  svg {
+    animation: pulse 3s infinite;
+    transition: 400ms;
+  }
+}
+
+/**
+ * @class page-footer-legal
+ * @description Footer copyright mark.
+ */
+.page-footer-legal {
+  line-height: 1.5;
+
+  span {
+    padding: 0 .125rem;
+  }
+}
+
+.newsletter-form {
+  background: @color-grey-light;
+}
+
+.newsletter-field {
+  max-width: @screen-large;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  background-color: @color-grey-light;
+
+  span {
+    width: 100%;
+    max-width: 400px;
+    flex: 1 auto;
+    height: 2rem;
+    padding: 1rem;
+    line-height: 2rem;
+    font-weight: bold;
+    color: @color-red;
+  }
+
+  input {
+    width: 100%;
+    flex: 1 auto;
+    height: 2rem;
+    padding: 1rem;
+    background-color: @color-grey-light;
+    border: none;
+  }
+}
+
+/**
+ * @keyframes pulse
+ * @description Pulsing animation for heart SVG in footer.
+ */
+@keyframes pulse {
+   0% { transform: scale(1); }
+  15% { transform: scale(1); }
+  20% { transform: scale(1.2); }
+  25% { transform: scale(1); }
+  30% { transform: scale(1); }
+  35% { transform: scale(1.2); }
+  40% { transform: scale(1); }
+ 100% { transform: scale(1); }
+}

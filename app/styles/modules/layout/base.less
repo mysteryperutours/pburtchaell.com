@@ -1,0 +1,33 @@
+/**!
+ * @module layout#base
+ * @description Common layout styles.
+ */
+html {
+  height: 100%;
+  margin: 0px;
+}
+
+/**
+ * @element body
+ * @description Enable flexbox layout on the page.
+ */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  color: @color-white;
+  background: @color-black;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/**
+ * @element main
+ * @description The main container for all page content
+ * outside the page-heaer and page-footer. Contains the
+ * default-header and default-content.
+ */
+main {
+  flex: 1 auto;
+}

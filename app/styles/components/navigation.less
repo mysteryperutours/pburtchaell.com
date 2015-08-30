@@ -1,0 +1,101 @@
+/**
+ * @class page-nav
+ * @description navigation container
+ * @usage <nav class=nav-collapse></nav>
+ */
+.page-navigation {
+  position: relative;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+}
+
+/**
+ * @class nav-items
+ * @description navigation items container
+ * @usage <ul class=nav-items></ul>
+ */
+.navigation-items {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  float: left;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/**
+ * @class nav-item
+ * @description navigation item
+ * @usage <li class=nav-item>
+ */
+.navigation-item {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  list-style: none;
+}
+
+/**
+ * @class nav-item-link
+ * @description
+ */
+.navigation-item-link {
+  display: flex;
+  color: @color-white;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 1rem;
+  text-decoration: none;
+
+  &.active {
+    margin-top: 0;
+    opacity: 1;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+
+    &:hover {
+      color: @color-white;
+      cursor: default;
+      user-select: none;
+    }
+  }
+}
+
+/* @media screen < 600px
+ * @description Desktop styles
+ */
+@media screen and (max-width: 600px) {
+  .navigation-items {
+    flex-direction: column;
+    width: 100vw;
+    padding: 0 1rem;
+    margin: 0;
+  }
+
+  .navigation-item {
+    align-self: flex-end;
+    margin: .675rem;
+    padding: 0;
+    text-align: right;
+    height: auto;
+    &:hover,
+    &:active {
+      border: none;
+    }
+  }
+  .navigation-item-title {
+    padding: 0;
+  }
+}

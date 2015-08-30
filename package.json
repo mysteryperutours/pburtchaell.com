@@ -1,9 +1,6 @@
 {
-  "name": "pburtchaell.com",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
-  "url": "http://github.com/pburtchaell/pburtchaell.com",
-  "homepage": "http://pburtchaell.com",
   "author": "Patrick Burtchaell <patrick@pburtchaell.com> (pburtchaell.com)",
   "repository": {
     "type": "git",
@@ -14,58 +11,49 @@
     "url": "http://pb.mit-license.org/"
   },
   "scripts": {
-    "build:html": "node build.js",
-    "build:js": "node webpack.production.config.js",
-    "build": "npm run build:html && npm run build:js",
-    "test": "",
-    "start": "node webpack.local.server.js"
+    "build": "make build",
+    "start": "NODE_ENV=development babel-node webpack.local.server.js"
   },
-  "jest": {
-    "scriptPreprocessor": "./bin/tests/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "./node_modules/react"
-    ],
-    "testDirectoryName": "tests/components",
-    "testPathDirs": [
-      "./bin/"
-    ],
-    "globals": {}
-  },
-  "devDependencies": {
-    "babel-core": "^5.0.12",
-    "babel-loader": "^5.0.0",
-    "handlebars": "^3.0.1",
-    "metalsmith": "^1.5.0",
-    "metalsmith-beautify": "0.0.7",
-    "metalsmith-branch": "0.0.4",
-    "metalsmith-collections": "^0.7.0",
-    "metalsmith-drafts": "0.0.1",
-    "metalsmith-gzip": "^1.0.0",
-    "metalsmith-in-place": "^1.0.1",
-    "metalsmith-layouts": "^1.0.0",
-    "metalsmith-lunr": "^0.1.0",
-    "metalsmith-markdown": "^0.2.1",
-    "metalsmith-metallic": "^0.3.1",
-    "metalsmith-permalinks": "^0.4.0",
-    "metalsmith-templates": "^0.7.0",
-    "metalsmith-webpack": "^1.0.1",
-    "webpack": "^1.8.2",
-    "webpack-dev-server": "^1.7.0"
+  "config": {
+    "DEV_SERVER_PORT": "1996",
+    "DEV_SERVER_ADDRESS": "0.0.0.0"
   },
   "dependencies": {
-    "aws-sdk": "^2.1.18",
-    "babel": "^4.7.1",
-    "classnames": "^1.2.0",
-    "fastclick": "^1.0.3",
-    "firebase": "^2.2.3",
-    "flummox": "^2.13.0",
-    "immutable": "^3.6.4",
-    "modernizr": "^3.0.0-alpha.3",
-    "react": "^0.13.1",
-    "react-input": "^1.1.0",
-    "react-notification": "^1.1.0",
-    "react-router": "^0.13.1",
-    "whatwg-fetch": "^0.7.0",
-    "xhr": "^2.0.1"
+    "babel": "^5.8.5",
+    "babel-eslint": "^4.0.0",
+    "css-loader": "^0.15.5",
+    "highlight.js": "^8.6.0",
+    "immutable": "^3.7.4",
+    "isomorphic-fetch": "^2.1.1",
+    "masonry-layout": "^3.3.1",
+    "object-assign": "^3.0.0",
+    "react": "^0.13.3",
+    "react-input": "^2.0.2",
+    "react-redux": "^0.2.2",
+    "react-router": "^1.0.0-beta3",
+    "redux": "^1.0.0-rc",
+    "redux-promise-middleware": "^0.1.0",
+    "remarkable": "^1.6.0"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^2.0.0",
+    "babel-core": "^5.0.12",
+    "babel-eslint": "^3.1.26",
+    "babel-loader": "^5.0.0",
+    "css-loader": "^0.14.4",
+    "dotenv": "^1.2.0",
+    "eslint": "^0.24.1",
+    "eslint-config-airbnb": "0.0.6",
+    "eslint-plugin-react": "^3.0.0",
+    "file-loader": "^0.8.4",
+    "gulp-util": "^3.0.6",
+    "html-webpack-plugin": "^1.6.0",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "react-hot-loader": "^1.2.8",
+    "redux-devtools": "^0.1.2",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.10.5",
+    "webpack-dev-server": "^1.7.0"
   }
 }
