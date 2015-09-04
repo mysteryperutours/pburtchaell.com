@@ -15,7 +15,7 @@ export default class HomeView extends Component {
               are working on both client projects and self-made products like <a href="http://segment.social">Segment</a>. We are currently available for short-term projects.</p>
               <hr />
               <p>
-                <small>Previously, I worked at <a href="https://joinpeach.com">Peach</a> and as a contract web developer in New Orleans. I attended New Orleans Center for the Creative arts from 2010 to 2014. I currently attend Loyola University New Orleans as a design and computer science undergraduate student. I will graduate in 2018. <Link to="about">Read more</Link>...</small>
+                <small>Previously, I worked at <a href="https://joinpeach.com">Peach</a> and as a contract web developer in New Orleans. I attended New Orleans Center for the Creative arts from 2010 to 2014. I currently attend Loyola University New Orleans as a design and computer science undergraduate student. I will graduate in 2018. My work can be found on <a href="https://github.com/pburtchaell" target="blank">Github</a> and on <a href="https://dribbble.com/-p" target="blank">Dribbble</a>.</small>
               </p>
             </div>
           </div>
