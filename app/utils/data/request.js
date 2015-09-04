@@ -2,7 +2,7 @@
  * @class Request
  * @description Send requests to the Parse REST API.
  */
-class Request {
+export default class Request {
   constructor(resource) {
     this.defaultOptions = {
       mode: 'cors',
