@@ -6,7 +6,7 @@ export default function renderRoutes(history) {
   return (
     <Router
       routes={require('./routes')}
-      history={history}
+      history={history()}
       createElement={createElement}
     />
   );
