@@ -40,7 +40,7 @@ class App extends Component {
         key: 2,
         jsx: (
           <DebugPanel top right bottom key="debugPanel">
-            <DevTools store={store} monitor={LogMonitor}/>
+            <DevTools store={store()} monitor={LogMonitor}/>
           </DebugPanel>
         )
       });

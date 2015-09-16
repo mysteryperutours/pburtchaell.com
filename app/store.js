@@ -1,27 +1,22 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import * as reducers from './reducers';
+import { createStore, applyMiddleware } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
+import reducers from './reducers';
 
-const initialState = {};
-const reducer = combineReducers(reducers);
+const createStoreWithMiddleware = applyMiddleware(
+  promiseMiddleware
+)(createStore);
 
-let composeStoreWithMiddleware;
+export default function configureStore(initialState) {
+  const store = createStoreWithMiddleware(reducers, initialState);
 
-if (DEV_TOOLS === true) {
-  const { devTools, persistState } = require('redux-devtools');
+  if (module.hot) {
 
-  composeStoreWithMiddleware = compose(
-    applyMiddleware(
-      promiseMiddleware
-    ),
-    devTools(),
-    persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)),
-    createStore
-  );
-} else {
-  composeStoreWithMiddleware = applyMiddleware(
-    promiseMiddleware
-  )(createStore);
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('./reducers', () => {
+      const nextReducers = require('./reducers');
+      store.replaceReducer(nextReducers);
+    });
+  }
+
+  return store;
 }
-
-export default composeStoreWithMiddleware(reducer, initialState);

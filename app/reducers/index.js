@@ -1,3 +1,5 @@
-export { default as admin } from './admin';
-export { default as article } from './article';
-export { default as availability } from './availability';
+import { combineReducers } from 'redux';
+
+export default combineReducers({
+  article: require('./article')
+});
