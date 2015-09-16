@@ -4,12 +4,9 @@
   "author": "Patrick Burtchaell <patrick@pburtchaell.com> (pburtchaell.com)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/pburtchaell/pburtchaell.com.git"
+    "url": "https+git://github.com/pburtchaell/pburtchaell.com.git"
   },
-  "license": {
-    "type": "MIT",
-    "url": "http://pb.mit-license.org/"
-  },
+  "license": "MIT",
   "scripts": {
     "build": "make build",
     "predeploy:staging": "make build",
