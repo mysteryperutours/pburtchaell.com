@@ -12,7 +12,10 @@
   },
   "scripts": {
     "build": "make build",
-    "test": "",
+    "predeploy:staging": "make build",
+    "predeploy:production": "make build",
+    "deploy:staging": "`npm bin`/gulp deploy:staging",
+    "deploy:production": "`npm bin`/gulp deploy:production",
     "start": "NODE_ENV=development babel-node webpack.local.server.js"
   },
   "config": {
@@ -44,6 +47,8 @@
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "^3.0.0",
     "file-loader": "^0.8.4",
+    "gulp": "^3.9.0",
+    "gulp-s3-upload": "^1.2.0",
     "gulp-util": "^3.0.6",
     "html-webpack-plugin": "^1.6.0",
     "less": "^2.5.1",
