@@ -21,6 +21,8 @@ My website serves as a (hopefully) helpful example of how to build a React appli
 
 - Build: `npm run build`
 - Run tests: `npm test`
+- Deploy to staging: `npm run deploy:staging`
+- Deploy to production: `npm run deploy:production`
 
 ### Stack
 
@@ -32,6 +34,8 @@ My stack is very similar to what I use on an every day basis when programming Ja
 - [Immutable.js](https://github.com/facebook/immutable-js): Immutable data
 - [Less](https://github.com/less/less.js)
 - [WebPack](http://webpack.github.io/): Bundles JS, CSS, images and fonts
+- [Gulp](http://gulpjs.com/): Publishes files to S3
+- [npm](https://www.npmjs.com/): Manages front-end dependencies and development dependencies
 - [Babel](https://babeljs.io): Enables ES 2015 JavaScript
 - [ESLint](http://eslint.org/)
 - [Travis CI](https://travis-ci.org/)
