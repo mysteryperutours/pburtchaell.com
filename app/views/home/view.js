@@ -39,7 +39,7 @@ export default class HomeView extends Component {
               id: 3,
               link: '/work/scouter',
               title: 'Scouter',
-              type: 'Web application for PennApps',
+              type: 'Branding and web application',
               date: '2015'
             },
             {
