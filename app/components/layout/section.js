@@ -14,15 +14,21 @@ export default class Section extends Component {
   }
 
   getStyle() {
+    const defaultStyles = {
+      padding: this.props.noPadding ? 0 : null
+    };
+
     if (this.props.style) {
-      return this.props.style;
-    } if (this.props.image) {
-      const image = this.props.image;
-      const style = {
-        backgroundImage: `url(${image})`,
-      };
-      return style;
+      return Object.assign(this.props.style, defaultStyles);
     }
+
+    if (this.props.image) {
+      return Object.assign({
+        backgroundImage: `url(${this.props.image})`,
+      }, this.props.style, defaultStyles);
+    }
+
+    return defaultStyles;
   }
 
   render() {

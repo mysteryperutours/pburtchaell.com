@@ -21,11 +21,11 @@ export default class Image extends Component {
     return (
       <div
         className={this.state.isPending ? 'image-preload-wrapper is-pending' : 'image-preload-wrapper'}
+        style={this.state.isPending ? {
+          minHeight: this.props.height
+        } : null}
       >
         <img
-          style={{
-            minHeight: this.props.height
-          }}
           src={this.props.src}
           className={this.state.isPending ? 'image-preload is-pending' : 'image-preload'}
         />
