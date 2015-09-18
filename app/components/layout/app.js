@@ -9,7 +9,7 @@ export default class App extends Component {
 
   render() {
     return(
-      <div className="body-wrapper">
+      <div className="view-wrapper">
         {this.props.children}
       </div>
     );

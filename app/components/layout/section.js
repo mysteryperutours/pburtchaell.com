@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 export default class Section extends Component {
   static defaultProps = {
-    theme: 'black',
+    theme: 'white',
     name: 'default',
+    grid: false
   }
 
   getClassName() {
@@ -27,11 +28,13 @@ export default class Section extends Component {
   render() {
     return !this.props.image ? (
       <section className={::this.getClassName()} style={::this.getStyle()}>
-        <div className="row">
-          <div className="col col-l-12 col-s-12">
-            {this.props.children}
+        {this.props.grid ? (
+          <div className="row">
+            <div className="col col-l-12 col-s-12">
+              {this.props.children}
+            </div>
           </div>
-        </div>
+        ) : this.props.children}
       </section>
     ) : (
       <section className={::this.getClassName()} style={::this.getStyle()}></section>

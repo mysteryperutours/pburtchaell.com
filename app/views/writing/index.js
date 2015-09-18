@@ -1,7 +1,6 @@
-import WritingView from './view';
-import './styles.less';
+import './styles';
 
 export default {
   path: '/posts',
-  component: WritingView
+  component: require('./view')
 };

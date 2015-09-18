@@ -6,24 +6,46 @@ import pureRender from 'utils/pureRender';
 export default pureRender(class Header extends Component {
   render() {
     return (
-      <header className={`page-header header-theme-${this.props.theme}`}>
-        <Link to="/" activeClassName="active">
-          <Branding />
-        </Link>
-        <nav className='page-navigation' role='navigation'>
-          <ul className='navigation-items'>
-            <li className='navigation-item' id='work'>
-              <Link to="about" className="navigation-item-link">
-                About
-              </Link>
-            </li>
-            <li className='navigation-item' id='work'>
-              <Link to="posts" className="navigation-item-link">
-                Writing
-              </Link>
-            </li>
-          </ul>
-        </nav>
+      <header className={`page-header ${this.props.className}`}>
+        <div className="row">
+          <div className="col col-l-2 col-s-12">
+            <Link to="/" activeClassName="active">
+              <Branding />
+            </Link>
+          </div>
+          <div className="col col-l-10 col-s-12">
+            <nav className='page-navigation' role='navigation'>
+              <ul className='navigation-items'>
+                <li className='navigation-item'>
+                  <Link
+                    to="/"
+                    className="navigation-item-link"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li className='navigation-item'>
+                  <Link
+                    to="/about"
+                    className="navigation-item-link"
+                    activeClassName="is-active"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li className='navigation-item'>
+                  <Link
+                    to="/posts"
+                    className="navigation-item-link"
+                    activeClassName="is-active"
+                  >
+                    Writing
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </header>
     );
   }

@@ -1,6 +1,15 @@
-import WorkView from './view';
-
 export default {
   path: '/work',
-  component: WorkView
+  component: require('./view'),
+  childRoutes: [
+    require('./children/lawnchair'),
+    require('./children/loyola'),
+    require('./children/peach'),
+    require('./children/scouter'),
+    require('./children/segment')
+  ],
+  config: {
+    header: false,
+    footer: false
+  }
 };

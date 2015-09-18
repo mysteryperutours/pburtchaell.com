@@ -3,14 +3,19 @@ import Header from 'components/core/header';
 import Footer from 'components/core/footer';
 
 export default class View extends Component {
+  static defaultProps = {
+    header: true,
+    footer: true
+  }
+
   render() {
     return (
-      <div>
-        <Header theme={this.props.headerTheme} />
+      <div className="view">
+        {this.props.header !== false ? <Header {...this.props.header} /> : null}
         <main role="main">
           {this.props.children}
         </main>
-        <Footer />
+        {this.props.footer !== false ? <Footer {...this.props.footer} /> : null}
       </div>
     );
   }

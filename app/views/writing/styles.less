@@ -1,17 +1,20 @@
 @import '../../styles/utilities/variables.less';
 
-article {
-  padding: 1rem 0;
+.writing-feed-item {
+  margin-bottom: 1rem;
 
   a {
     text-decoration: none;
+
     h1 {
-      text-decoration: underline;
+      font-size: @font-size-base;
+      line-height: @line-height-base;
+      margin: 0;
     }
   }
 
   time {
-    text-transform: uppercase;
+    color: @color-grey;
     letter-spacing: .125ex;
     font-size: @font-size-small;
   }
