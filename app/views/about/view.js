@@ -29,30 +29,72 @@ export default class AboutView extends Component {
             </div>
           </div>
         </Section>
-        <Section name="contact" style={{
-          paddingTop: '2rem'
-        }}>
+        <Section name="contact" noPadding>
           <div className="row">
             <div className="col col-l-2 col-s-12">
-              <b>Contact</b>
+              <h1 className="page-title">Contact</h1>
             </div>
             <div className="col col-l-10 col-s-12">
-              <div>
-                <a href="https://twitter.com/pburtchaell">@pburtchaell</a>
+              <div className="row row-no-gutter">
+                <div className="col col-l-6 col-s-6">
+                  <div className="text-tertiary">
+                    <a href="mailto:patrick@pburtchaell.com">patrick</a>
+                    <span>@pburtchaell.com</span>
+                  </div>
+                  <div className="text-tertiary">
+                    <a href="mailto:patrick@lawnchair.io">patrick</a>
+                    <span>@lawnchair.io</span>
+                  </div>
+                  <div className="text-tertiary">
+                    <a href="https://twitter.com/pburtchaell" target="blank">Twitter</a><span>, </span>
+                    <a href="https://github.com/pburtchaell" target="blank">GitHub</a><span> & </span>
+                    <a href="https://dribbble.com/-p" target="blank">Dribbble</a>
+                  </div>
+                </div>
+                <div className="col col-l-6 col-s-12">
+                  <div className="text-tertiary">
+                    <small>
+                      <div>P.O. Box 346</div>
+                      <div>Chalmette, Louisiana 70044</div>
+                      <div>United States of America</div>
+                    </small>
+                  </div>
+                </div>
               </div>
-              <div>
-                <a href="mailto:patrick@pburtchaell.com">patrick</a>
-                <span>@pburtchaell.com</span>
+            </div>
+          </div>
+        </Section>
+        <Section name="clients" noPadding>
+          <div className="row">
+            <div className="col col-l-2 col-s-12">
+              <h1 className="page-title">Clients & Companies</h1>
+            </div>
+            <div className="col col-l-10 col-s-12">
+              <div className="row row-no-gutter">
+                <div className="col col-l-6 col-s-6">
+                  <div className="text-tertiary">Lawn Chair Studios</div>
+                  <div className="text-tertiary">Boy Scouts of America</div>
+                  <div className="text-tertiary">NewAperio</div>
+                </div>
+                <div className="col col-l-6 col-s-6">
+                  <div className="text-tertiary">Peach Labs</div>
+                  <div className="text-tertiary">fileee</div>
+                </div>
               </div>
-              <div>
-                <a href="mailto:patrick@lawnchair.io">patrick</a>
-                <span>@lawnchair.io</span>
+            </div>
+          </div>
+        </Section>
+        <Section name="groups" noPadding>
+          <div className="row">
+            <div className="col col-l-2 col-s-12">
+              <h1 className="page-title">Groups & Organizations</h1>
+            </div>
+            <div className="col col-l-10 col-s-12">
+              <div className="text-tertiary">
+                Member, AIGA (American Institute of Graphic Artists) New Orleans
               </div>
-              <br />
-              <div>
-                <div>P.O. Box 346</div>
-                <div>Chalmette, Louisiana 70044</div>
-                <div>United States of America</div>
+              <div className="text-tertiary">
+                Member, DSGN Loyola University New Orleans
               </div>
             </div>
           </div>
