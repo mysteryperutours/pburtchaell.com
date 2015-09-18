@@ -13,8 +13,11 @@ export default class Grid extends Component {
               className="work-class"
               elementType="ul"
               options={{
-                gutter: 7
+                gutter: 7,
+                isResizeBound: true,
+                isInitLayout: false
               }}
+              disableImagesLoaded={false}
            >
                {this.props.images.map(image => {
                  return (
