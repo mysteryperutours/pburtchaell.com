@@ -3,7 +3,28 @@
 
 .text-secondary {
   text-transform: uppercase;
+  font-size: @font-size-small;
   letter-spacing: @letter-spacing-loose;
   color: @color-grey;
   line-height: @line-height-small;
+}
+
+.text-tertiary {
+  font-size: @font-size-small;
+  line-height: @line-height-small;
+  color: @color-grey-dark;
+}
+
+// Special anchor styles to ensure secondary and text-tertiary styles cascade
+a.text-secondary,
+a.text-tertiary {
+  text-decoration: none;
+
+  &:hover {
+    color: @color-yellow;
+  }
+}
+
+a.text-secondary {
+  color: @color-grey;
 }
