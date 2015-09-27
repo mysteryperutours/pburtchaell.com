@@ -23,7 +23,7 @@ export default class AboutView extends Component {
               </figure>
               <p>Considering myself a designer with a passion for programming, I specialize in both user-interface design and front-end web development. For my job, it is hard to split the two apart.</p>
               <p>I spend my time enrolled as a full-time design and computer science undergraudate student at Loyola University New Orleans and as a part-time web developer and designer. I operate through <a href="http://lawnchair.io">Lawn Chair Studios</a>, where I am a co-founder and CEO. I expect to graduate from Loyola in 2018.</p>
-              <p>I am currently available for small-size projects and part-time work.</p>
+              <p>I am currently unavailable for projects and part-time work. However, if you have a project or idea that you think would interest me, I would love to still talk with you about it.</p>
               <p>Over the past several years, I have had the oppurtunity to work with several startups and organizations from the New Orleans area, the United States and Europe to design and build web product. My venture is about meeting new teams, building powerful & sustainable products, having fun, and learning new things.</p>
               <p>If you are interested in hiring me, via Lawn Chair, for your next project, send me an email at <a href="mailto:patrick@lawnchair.io">patrick@lawnchair.io</a>. If you are just saying hello, you can get in touch at <a href="mailto:patrick@pburtchaell.com">patrick@pburtchaell.com</a>.</p>
             </div>

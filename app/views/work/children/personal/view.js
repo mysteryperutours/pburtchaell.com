@@ -71,10 +71,6 @@ export default class PersonalWorksView extends Component {
         src: require('images/personal/17.jpg')
       },
       {
-        id: 18,
-        src: require('images/personal/18.jpg')
-      },
-      {
         id: 19,
         src: require('images/personal/19.png')
       },
