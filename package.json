@@ -8,7 +8,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "make build",
+    "prebuild": "rm -rf ./dist",
+    "build": "NODE_ENV=production `npm bin`/webpack --config webpack.production.config.js",
     "predeploy:staging": "make build",
     "predeploy:production": "make build",
     "deploy:staging": "`npm bin`/gulp deploy:staging",
@@ -28,7 +29,6 @@
     "react": "^0.13.3",
     "react-helmet": "^1.1.3",
     "react-input": "^2.0.2",
-    "react-masonry-component": "^1.0.4",
     "react-redux": "^2.1.2",
     "react-router": "^1.0.0-rc1",
     "redux": "^3.0.0",

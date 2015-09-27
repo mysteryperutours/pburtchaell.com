@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 export default class Image extends Component {
+  static defaultProps = {
+    style: {}
+  }
+
   state = {
     isPending: true
   }
@@ -22,8 +26,10 @@ export default class Image extends Component {
       <div
         className={this.state.isPending ? 'image-preload-wrapper is-pending' : 'image-preload-wrapper'}
         style={this.state.isPending ? {
+          ...this.props.style,
+          minWidth: this.props.width,
           minHeight: this.props.height
-        } : null}
+        } : this.props.style}
       >
         <img
           src={this.props.src}

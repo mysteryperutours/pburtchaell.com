@@ -1,46 +1,36 @@
 import React, { Component, PropTypes } from 'react';
 import { Section } from 'components/layout';
-
-var Masonry = require('react-masonry-component')(React);
+import { Image } from 'components/core';
+import './grid.less';
 
 export default class Grid extends Component {
   render() {
+    const size = Math.round(((window.innerWidth - 50) / 3) - 50);
+
     return (
       <Section noPadding>
         <div className="row row-full-width row-no-gutter">
           <div className="col col-l-12 col-s-12">
-            <Masonry
-              className="work-class"
-              elementType="ul"
-              options={{
-                gutter: 7,
-                isResizeBound: true,
-                isInitLayout: false
-              }}
-              disableImagesLoaded={false}
-           >
-               {this.props.images.map(image => {
-                 return (
-                    <li
-                      key={image.id}
-                      style={{
-                        listStyle: 'none'
-                      }}
-                      className="image-element-class"
-                    >
-                      <img
-                        style={{
-                          height: 'auto',
-                          width: (window.innerWidth - 14) / 3,
-                          margin: 0,
-                          padding: 0
-                        }}
-                        src={image.src}
-                      />
-                    </li>
-                  );
+            <div className="image-grid">
+             {this.props.images.map(image => {
+               return (
+                  <li
+                    key={image.id}
+                    style={{
+                      listStyle: 'none',
+                      maxWidth: size
+                    }}
+                    className="image-grid-item"
+                  >
+                    <Image
+                      height={size}
+                      width={size}
+                      src={image.src}
+                    />
+                  </li>
+                );
               })}
-           </Masonry>
+            </div>
           </div>
         </div>
       </Section>
