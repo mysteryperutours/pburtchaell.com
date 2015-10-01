@@ -58,6 +58,24 @@ export default class ScouterWorksView extends Component {
                   <p>Scouter home page</p>
                 </figcaption>
               </figure>
+              <p>Users are able to sign in as property owners to create new property listings. Filmmakers are able to sign in to book locations and communicate with other users on the network.</p>
+              <figure className="image-bleed">
+                <img
+                  src={require('images/scouter/scouter-03.png')}
+                />
+                <figcaption>
+                  <p>Scouter sign in modal</p>
+                </figcaption>
+              </figure>
+
+              <figure className="image-small">
+                <img
+                  src={require('images/scouter/scouter-04.png')}
+                />
+                <figcaption>
+                  <p>Property attributes</p>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </Section>
