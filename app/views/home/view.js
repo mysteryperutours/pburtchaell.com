@@ -56,20 +56,6 @@ export default class HomeView extends Component {
               type: 'Advertising',
               date: '2013-2014'
             }
-            /*{
-              id: 1,
-              link: '/work/peach',
-              title: 'Peach',
-              type: 'Web application',
-              date: '2014-2015'
-            },
-            {
-              id: 5,
-              link: '/work/loyola',
-              title: 'Loyola University New Orleans',
-              type: 'Works from undergraduate studies',
-              date: '2014-2018'
-            }*/
           ]}
         />
       </View>
