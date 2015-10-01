@@ -21,7 +21,7 @@ export default class HomeView extends Component {
               are working on both client projects and products like <a href="http://segment.social">Segment</a>.</p>
               <hr />
               <p className="home-subtitle">
-                <small>Previously, I worked at <a href="https://joinpeach.com">Peach</a> and as a contract web developer in New Orleans. I currently attend Loyola University New Orleans as a design and computer science undergraduate student. I will graduate in 2018. I attended New Orleans Center for the Creative arts from 2010 to 2014.</small>
+                <small>Previously, I worked as a contract web developer and designer in New Orleans. I currently attend Loyola University New Orleans as a design and computer science undergraduate student. I will graduate in 2018. I attended New Orleans Center for the Creative arts from 2010 to 2014.</small>
               </p>
             </div>
           </div>
