@@ -1,13 +1,25 @@
 .page-title {
-  position: absolute;
+  position: relative;
   width: 125px;
-  right: 0;
+  right: 2rem;
   font-size: @font-size-base;
   line-height: @line-height-base;
   font-weight: 600;
   text-align: right;
   margin: 0;
   hyphens: none;
+
+  ~ a:nth-of-type(1) {
+    display: block;
+    text-align: right;
+  }
+}
+
+.page-title-no-float {
+  font-size: 0.65rem;
+  line-height: 1rem;
+  font-weight: 600;
+  margin: 0;
 }
 
 @media screen and (max-width: 600px) {

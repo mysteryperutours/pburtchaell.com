@@ -92,7 +92,7 @@ export default class PersonalWorksView extends Component {
           <div className="row">
             <div className="col col-l-2 col-s-12"></div>
             <div className="col col-l-10 col-s-12">
-              <h1 className="page-title">Personal</h1>
+              <h1 className="page-title-no-float">Personal</h1>
               <div className="text-tertiary">Personal design work from 2012, 2013 & 2014 that did not make the cut for my portfolio</div>
             </div>
           </div>
