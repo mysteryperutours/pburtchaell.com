@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { View, Section } from 'components/layout';
 import Image from 'components/core/image';
+import Grid from 'components/portfolio/grid';
 
 export default class SegmentPostsView extends Component {
   render() {
@@ -18,7 +19,7 @@ export default class SegmentPostsView extends Component {
             <div className="col col-l-10 col-s-12">
               <figure className="image-bleed">
                 <Image
-                  src={require('images/segment/segment-01.png')}
+                  src={require('images/segment/segment-01-large.png')}
                   height={500}
                 />
               </figure>
@@ -50,6 +51,34 @@ export default class SegmentPostsView extends Component {
             </div>
           </div>
         </Section>
+        <Grid
+          title="Existing social media user-interface pattern research"
+          images={[
+            'images/segment/ui-research-01',
+            'images/segment/ui-research-09',
+            'images/segment/ui-research-10',
+            'images/segment/ui-research-13',
+            'images/segment/ui-research-14'
+          ]}
+          large={true}
+        />
+        <Grid
+          title="Initial wireframes"
+          images={[
+            'images/segment/wireframe-01',
+            'images/segment/wireframe-02'
+          ]}
+          large={true}
+        />
+        <Grid
+          title="Initial mockups"
+          images={[
+            'images/segment/mockup-01',
+            'images/segment/mockup-02',
+            'images/segment/mockup-03'
+          ]}
+          large={true}
+        />
       </View>
     );
   }

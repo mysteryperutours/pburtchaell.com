@@ -18,7 +18,7 @@ export default class LawnchairWorksView extends Component {
             <div className="col col-l-10 col-s-12">
               <figure className="image-bleed">
                 <Image
-                  src={require('images/lawnchair/lawnchair-01.png')}
+                  src={require('images/lawnchair/lawnchair-01-large.png')}
                   height={500}
                 />
               </figure>
@@ -40,7 +40,7 @@ export default class LawnchairWorksView extends Component {
               <p>Lawn Chair is a software development & design studio I started with three friends. We are currently working together to develop  our ideas for products, games and applications. In May 2015, I designed the company website and branding. The goal of both the branding and the website was to relfect the happy and playful nature of the company without breaking the rational & classical design principles I often embrace in my work. We are a company that does great work and is certainly not afraid to have fun at the same time.</p>
               <figure className="image-full-width">
                 <Image
-                  src={require('images/lawnchair/lawnchair-02.png')}
+                  src={require('images/lawnchair/lawnchair-02-large.png')}
                   height={500}
                 />
                 <figcaption>

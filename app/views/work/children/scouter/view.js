@@ -18,7 +18,7 @@ export default class ScouterWorksView extends Component {
             <div className="col col-l-10 col-s-12">
               <figure className="image-bleed">
                 <Image
-                  src={require('images/scouter/scouter-01.png')}
+                  src={require('images/scouter/scouter-01-large.png')}
                   height="500px"
                 />
               </figure>
@@ -51,8 +51,9 @@ export default class ScouterWorksView extends Component {
             </div>
             <div className="col col-l-12 col-s-12">
               <figure className="image-full-width">
-                <img
-                  src={require('images/scouter/scouter-02.png')}
+                <Image
+                  src={require('images/scouter/scouter-02-large.png')}
+                  height="500px"
                 />
                 <figcaption>
                   <p>Scouter home page</p>
@@ -60,8 +61,9 @@ export default class ScouterWorksView extends Component {
               </figure>
               <p>Users are able to sign in as property owners to create new property listings. Filmmakers are able to sign in to book locations and communicate with other users on the network.</p>
               <figure className="image-bleed">
-                <img
-                  src={require('images/scouter/scouter-03.png')}
+                <Image
+                  src={require('images/scouter/scouter-03-large.png')}
+                  height="500px"
                 />
                 <figcaption>
                   <p>Scouter sign in modal</p>
@@ -69,8 +71,9 @@ export default class ScouterWorksView extends Component {
               </figure>
 
               <figure className="image-small">
-                <img
-                  src={require('images/scouter/scouter-04.png')}
+                <Image
+                  src={require('images/scouter/scouter-04-large.png')}
+                  height="500px"
                 />
                 <figcaption>
                   <p>Property attributes</p>

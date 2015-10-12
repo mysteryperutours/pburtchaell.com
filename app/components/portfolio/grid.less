@@ -5,11 +5,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  //align-content: flex-start;
-  //justify-content: flex-start;
   background: @color-grey-light;
   height: auto;
   padding: 25px 0;
+
+  &.image-grid-large {
+    padding: 4rem 0;
+    flex-direction: column;
+  }
 }
 
 .image-grid-item {
@@ -19,7 +22,6 @@
   margin: 25px;
   padding: 0;
   height: auto;
-  //align-self: flex-start;
 
   img {
     box-shadow: 0 0 4px 1px rgba(10,11,11,.125);
