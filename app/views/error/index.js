@@ -1,6 +1,10 @@
 export default {
   path: '*',
-  component: require('./view'),
+  getComponent(location, cb) {
+    require.ensure([], (require) => {
+      cb(null, require('./view'))
+    })
+  },
   config: {
     header: {
       branding: true,

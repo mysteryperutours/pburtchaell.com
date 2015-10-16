@@ -10,7 +10,13 @@ export default class ErrorView extends Component {
         <Section>
           <div className="row">
             <div className="col col-s-12 col-l-2">
-              <h1 className="page-title">404</h1>
+              <h1
+                className="page-title"
+                style={{
+                  top: '5px'
+                }}
+                children="404"
+              ></h1>
             </div>
             <div className="col col-s-12 col-l-10">
               <span style={{
