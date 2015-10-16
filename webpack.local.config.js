@@ -104,10 +104,14 @@ export default {
         loader: 'style!css!autoprefixer!less'
       },
       {
-        test: /\.woff$|\.woff2$|\.png$|\.jpg$/,
+        test: /\.woff$|\.woff2$|\.png$|\.jpg$|\.jpeg$/,
         include: path.join(__dirname, 'app'),
         exclude: /node_modules/,
         loader: 'file'
+      },
+      {
+        test: /\.md$/,
+        loader: 'html!highlight!markdown'
       }
     ],
     noParse: [

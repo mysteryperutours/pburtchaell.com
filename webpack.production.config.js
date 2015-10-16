@@ -28,8 +28,12 @@ module.exports = {
         loader: 'style!css!autoprefixer!less'
       },
       {
-        test: /\.woff$|\.woff2$|\.png$|\.jpg$/,
+        test: /\.woff$|\.woff2$|\.png$|\.jpg$|\.jpeg$/,
         loader: 'file'
+      },
+      {
+        test: /\.md$/,
+        loader: 'html!highlight!markdown'
       }
     ]
   },
@@ -41,7 +45,7 @@ module.exports = {
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       DEV_TOOLS: false
     }),
-    new webpack.optimize.AggressiveMergingPlugin(),
+    //new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
