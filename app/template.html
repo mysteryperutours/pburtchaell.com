@@ -3,9 +3,6 @@
 <!-- @pburtchaell was here -->
 <meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
 <meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-{% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
-<script async src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
-{% } %}
 <title>Patrick Burtchaell - Web development and design from New Orleans</title>
 <meta name=description content="I am Patrick Burtchaell, a front end web developer, graphic designer and user interface designer from New Orleans, Lousisiana studing at Loyola University New Orleans and currently considering contract work.">
 <meta name=keywords content="web, graphic, interactive, design, print, new orleans">
@@ -32,11 +29,6 @@
 <meta name=twitter:domain content="the Web">
 <body>
 <div id="mount"></div>
+{% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}<script async src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>{% } %}
 </body>
-<script>
-!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.0.1";
-analytics.load("QcOkDZZFylLTALyZoCp2cRgo9ZS0ZcUf");
-analytics.page()
-}}();
-</script>
 </html>

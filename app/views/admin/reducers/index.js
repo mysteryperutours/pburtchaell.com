@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
 export default combineReducers({
-  article: require('./article')
+  dashboard: require('./dashboard'),
+  session: require('./session')
 });

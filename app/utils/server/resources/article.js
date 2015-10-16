@@ -1,8 +1,7 @@
-import Request from './request';
-const request =  new Request('article');
+const Article = require('../server')('article');
 
 export function createArticle(data) {
-  return request.post({
+  return Article.post({
     publishDay: data.publishDay,
     publishYear: data.publishYear,
     publishMonth: data.publishMonth,
@@ -14,10 +13,10 @@ export function createArticle(data) {
   });
 }
 
-export function getArticle() {
-  return request.get();
+export function getArticle(id) {
+  return Article.get(id);
 }
 
 export function getArticleCollection() {
-  return request.getAll();
+  return Article.get();
 }

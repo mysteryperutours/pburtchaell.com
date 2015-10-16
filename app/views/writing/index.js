@@ -2,5 +2,9 @@ import './styles';
 
 export default {
   path: '/posts',
-  component: require('./view')
+  getComponent(location, cb) {
+    require.ensure([], (require) => {
+      cb(null, require('./view'))
+    })
+  }
 };

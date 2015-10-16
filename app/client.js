@@ -1,27 +1,28 @@
 import 'babel-core/polyfill';
 import 'isomorphic-fetch';
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import store from './store';
 import router from './router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import './styles/styles';
+import './utils/analytics';
 
 if (!Object.assign) {
   Object.assign = require('object-assign');
 }
 
 class App extends Component {
+  constructor(props, context) {
+    super(props, context);
+
+    window.analytics.load("QcOkDZZFylLTALyZoCp2cRgo9ZS0ZcUf");
+  }
+
   render() {
     let elements = [];
 
     elements.push({
       key: 1, // Elements need a key to prevent React from throwing an error
-      jsx: (
-        <Provider store={store()}>
-          {() => router(createBrowserHistory)}
-        </Provider>
-      )
+      jsx: router(createBrowserHistory)
     });
 
     if (DEV_TOOLS === true) {
