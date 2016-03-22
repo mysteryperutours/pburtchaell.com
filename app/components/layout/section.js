@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Section extends Component {
-  static defaultProps = {
-    theme: 'white',
-    name: 'default',
-    grid: false
-  }
-
+class Section extends Component {
   getClassName() {
     let sectionName = `section-${this.props.name}`;
     let sectionTheme = `section-theme-${this.props.theme}`;
@@ -47,3 +41,11 @@ export default class Section extends Component {
     );
   }
 }
+
+Section.defaultProps = {
+  theme: 'white',
+  name: 'default',
+  grid: false
+};
+
+export default Section;

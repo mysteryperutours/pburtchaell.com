@@ -39,13 +39,8 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      PARSE_APPLICATION_ID: JSON.stringify(process.env.PARSE_APPLICATION_ID),
-      PARSE_REST_API_KEY: JSON.stringify(process.env.PARSE_REST_API_KEY),
-      PARSE_URL: JSON.stringify(process.env.PARSE_URL),
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      DEV_TOOLS: false
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
-    //new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
@@ -57,9 +52,6 @@ module.exports = {
       template: 'app/template.html'
     })
   ],
-  eslint: {
-    configFile: '.eslintrc'
-  },
   resolve: {
     extensions: ['', '.js', '.less', '.woff', '.woff2', '.png', '.jpg'],
     modulesDirectories: ['node_modules', 'app']

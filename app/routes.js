@@ -1,13 +1,12 @@
 export default {
   path: '/',
-  component: require('./views/app'),
-  indexRoute: require('./views/home'),
+  component: require('./views/app').default,
+  indexRoute: require('./views/home').default,
   childRoutes: [
-    //require('./views/writing'),
-    require('./views/work'),
-    //require('./views/admin'),
-    require('./views/about'),
-    require('./views/styleguide'),
-    require('./views/error')
+    require('./views/work').default,
+    require('./views/posts').default,
+    require('./views/about').default,
+    require('./views/styleguide').default,
+    require('./views/error').default
   ]
 };

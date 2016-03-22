@@ -32,6 +32,7 @@ export default class HomeView extends Component {
               id: 2,
               link: '/work/segment',
               title: 'Segment',
+              color: '#000',
               type: 'Branding and web application',
               date: '2015'
             },

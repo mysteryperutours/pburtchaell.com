@@ -1,2 +1,0 @@
-export const CREATE_SESSION = 'CREATE_SESSION';
-export const END_SESSION = 'END_SESSION';

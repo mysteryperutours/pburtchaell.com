@@ -1,12 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import { App } from 'components/layout';
+const App = props => (
+  <div>{props.children}</div>
+);
 
-export default class AppView extends Component {
-  render() {
-    return (
-      <App onMount={() => null}>
-        {this.props.children}
-      </App>
-    );
-  }
-}
+export default App;

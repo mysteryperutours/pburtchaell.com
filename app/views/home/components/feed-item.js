@@ -1,10 +1,29 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-export default class FeedItem extends Component {
+class FeedItem extends Component {
+  constructor(props, context) {
+    super(props, context)
+
+    this.state = {
+      isActive: false
+    };
+  }
+
   render() {
+    const { isActive } = this.state;
+
     return (
-      <article className="works-feed-item">
+      <article
+        style={isActive ? {
+          background: this.props.color,
+          padding: '3rem'
+        } : null}
+        className="works-feed-item"
+        onHover={this.setState.bind(this, {
+          isActive: !isActive
+        })}
+      >
         <div className="works-feed-item-content">
           <Link to={this.props.data.link}>
             <h1 className="works-feed-item-title">{this.props.data.title}</h1>
@@ -18,3 +37,5 @@ export default class FeedItem extends Component {
     );
   }
 }
+
+export default FeedItem;

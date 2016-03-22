@@ -7,7 +7,6 @@ export default {
         require('./children/lawnchair'),
         require('./children/loyola'),
         require('./children/oa'),
-        require('./children/personal'),
         require('./children/scouter'),
         require('./children/segment')
       ])

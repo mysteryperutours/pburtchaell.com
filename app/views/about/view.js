@@ -17,7 +17,7 @@ export default class AboutView extends Component {
             <div className="col col-l-10 col-s-12">
               <figure className="image-bleed">
                 <Image
-                  src={require('images/me-large.png')}
+                  src={require('images/me-large.png').default}
                   height="500"
                 />
               </figure>

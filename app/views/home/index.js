@@ -1,5 +1,5 @@
 import './styles';
 
 export default {
-  component: require('./view')
+  component: require('./view').default
 };

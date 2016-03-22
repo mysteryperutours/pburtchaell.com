@@ -1,7 +1,4 @@
-import React, { Component } from 'react';
-import pureRender from 'utils/pureRender';
-
-export default pureRender(class Branding extends Component {
+export default class Branding extends Component {
   componentDidMount() {
     document.querySelector('.branding').classList.add('is-animated');
   }
@@ -29,4 +26,4 @@ export default pureRender(class Branding extends Component {
       </object>
     );
   }
-});
+};

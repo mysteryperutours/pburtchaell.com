@@ -19,7 +19,6 @@ export default class OAWorksView extends Component {
           images={[
             'images/oa/oa-1',
             'images/oa/oa-2',
-            'images/oa/oa-6',
             'images/oa/oa-3',
             'images/oa/oa-4',
             'images/oa/oa-5',

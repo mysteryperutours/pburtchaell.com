@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
-export default class Image extends Component {
-  static defaultProps = {
-    style: {}
+class Image extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isPending: true
+    };
   }
 
-  state = {
-    isPending: true
-  }
-
-  handleLoad = () => {
+  handleLoad() {
     return this.setState({
       isPending: !this.state.isPending
     });
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     let image = new window.Image();
+
     image.onload = this.handleLoad;
     image.src = this.props.src;
   }
@@ -39,3 +40,9 @@ export default class Image extends Component {
     );
   }
 }
+
+Image.defaultProps = {
+  style: {}
+}
+
+export default Image;

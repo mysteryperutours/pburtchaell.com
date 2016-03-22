@@ -2,7 +2,7 @@ export default {
   path: 'styleguide',
   getComponent(location, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./view'))
+      cb(null, require('./view').default)
     })
   },
   config: {

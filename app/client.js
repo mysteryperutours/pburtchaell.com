@@ -1,14 +1,13 @@
-import 'babel-core/polyfill';
-import 'isomorphic-fetch';
-import React, { Component } from 'react';
-import router from './router';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
-import './styles/styles';
+import React, { Component, PropTypes } from 'react';
+import { render } from 'react-dom';
+import { Router, browserHistory } from 'react-router';
 import './utils/analytics';
+import './utils/polyfills';
+import './styles';
 
-if (!Object.assign) {
-  Object.assign = require('object-assign');
-}
+global.React = React;
+global.Component = Component;
+global.PropTypes = PropTypes;
 
 class App extends Component {
   constructor(props, context) {
@@ -18,38 +17,15 @@ class App extends Component {
   }
 
   render() {
-    let elements = [];
-
-    elements.push({
-      key: 1, // Elements need a key to prevent React from throwing an error
-      jsx: router(createBrowserHistory)
-    });
-
-    if (DEV_TOOLS === true) {
-      const {
-        DevTools,
-        DebugPanel,
-        LogMonitor
-      } = require('redux-devtools/lib/react');
-
-      elements.push({
-        key: 2,
-        jsx: (
-          <DebugPanel top right bottom key="debugPanel">
-            <DevTools store={store()} monitor={LogMonitor}/>
-          </DebugPanel>
-        )
-      });
-    }
-
     return (
       <div className="app-container">
-        {elements.map(element => {
-          return <div key={element.key}>{element.jsx}</div>;
-        })}
+        <Router
+          routes={require('./routes').default}
+          history={browserHistory}
+        />
       </div>
     );
   }
 }
 
-React.render(<App />, document.querySelector('#mount'));
+render(<App />, document.querySelector('#mount'));

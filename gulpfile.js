@@ -8,11 +8,17 @@ var s3 = require('gulp-s3-upload')({
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 });
 
+var metadata = {
+  'Vary': 'Accept-Encoding',
+  'Cache-Control': 'public,max-age=604800'
+}
+
 gulp.task('deploy:staging', function () {
   gulp.src('./dist/**')
     .pipe(s3({
       Bucket: 'staging.pburtchaell.com',
-      ACL: 'public-read'
+      ACL: 'public-read',
+      metadataMap: metadata,
     }));
 });
 
@@ -20,7 +26,8 @@ gulp.task('deploy:production', function () {
   gulp.src('./dist/**')
     .pipe(s3({
       Bucket: 'pburtchaell.com',
-      ACL: 'public-read'
+      ACL: 'public-read',
+      metadataMap: metadata,
     }));
 });
 
