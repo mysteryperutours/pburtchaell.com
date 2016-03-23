@@ -6,7 +6,7 @@ export default class OAWorksView extends Component {
   render() {
     return (
       <View {...this.props.route.config}>
-        <Section noPadding>
+        <Section style={{ paddingTop: 0, paddingBottom: '1rem' }}>
           <div className="row">
             <div className="col col-l-2 col-s-12"></div>
             <div className="col col-l-10 col-s-12">
