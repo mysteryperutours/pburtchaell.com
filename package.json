@@ -15,7 +15,7 @@
     "predeploy:production": "npm run build",
     "deploy:staging": "`npm bin`/gulp deploy:staging",
     "deploy:production": "`npm bin`/gulp deploy:production",
-    "prestart": "",
+    "prestart": "rm -rf ./app/images && `npm bin`/gulp images",
     "start": "NODE_ENV=development node server.js"
   },
   "config": {
