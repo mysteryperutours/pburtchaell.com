@@ -6,14 +6,6 @@ var autoprefixer = require('autoprefixer');
 var pathToReact = '/node_modules/react/react.js';
 var pathToReactRouter = '/node_modules/react-router/lib/index.js';
 
-/**
- * This is the Webpack configuration file for local development. It contains
- * local-specific configuration such as the React Hot Loader, as well as:
- * - The entry point of the application
- * - Where the output file should be
- * - Which loaders to use on what files to properly transpile the source
- * For more information, see: http://webpack.github.io/docs/configuration.html
- */
 module.exports = {
 
   // Efficiently evaluate modules with source maps

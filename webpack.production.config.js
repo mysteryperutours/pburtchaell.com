@@ -1,10 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 
-/**
- * Webpack configuration file for production.
- */
 module.exports = {
   devtool: 'source-map',
   entry: {
@@ -20,15 +18,20 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
+        include: path.join(__dirname, 'app'),
         exclude: /node_modules/,
-        loader: 'babel?stage=0'
+        loader: 'babel'
       },
       {
         test: /\.less$/,
-        loader: 'style!css!autoprefixer!less'
+        include: path.join(__dirname, 'app'),
+        exclude: /node_modules/,
+        loader: 'style!css!postcss!less'
       },
       {
-        test: /\.woff$|\.woff2$|\.png$|\.jpg$|\.jpeg$/,
+        test: /\.woff$|\.woff2$|\.eot$|\.ttf$|\.png$|\.svg$|\.jpeg$/,
+        include: path.join(__dirname, 'app'),
+        exclude: /node_modules/,
         loader: 'file'
       },
       {
@@ -49,11 +52,17 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: 'app/template.html'
+      chunks: ['app'],
+      template: 'app/template.ejs',
+      inject: 'body',
+      version: require('./package.json').version
     })
   ],
   resolve: {
     extensions: ['', '.js', '.less', '.woff', '.woff2', '.png', '.jpg'],
     modulesDirectories: ['node_modules', 'app']
+  },
+  postcss: function () {
+    return [autoprefixer];
   }
 };
