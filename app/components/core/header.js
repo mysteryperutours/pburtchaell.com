@@ -33,15 +33,6 @@ const Header = props => {
                     About
                   </Link>
                 </li>
-                <li className='navigation-item'>
-                  <Link
-                    to="/posts"
-                    className="navigation-item-link"
-                    activeClassName="is-active"
-                  >
-                    Writing
-                  </Link>
-                </li>
               </ul>
             </nav>
           ) : null}

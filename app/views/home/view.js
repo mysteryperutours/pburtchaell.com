@@ -7,7 +7,7 @@ import Feed from './components/feed';
 export default class HomeView extends Component {
   render() {
     return (
-      <View>
+      <View {...this.props.route.config}>
         <Section style={{ paddingBottom: '1rem' }}>
           <div className="row">
             <div className="col col-l-2 col-s-12">
@@ -17,11 +17,11 @@ export default class HomeView extends Component {
               </h1>
             </div>
             <div className="col col-l-10 col-s-12">
-              <p>I co-founded <a href="http://lawnchair.io">Lawn Chair</a>, a software development and design studio, where we
-              are working on both client projects and products like <a href="http://segment.social">Segment</a>.</p>
+              <p>Presently, I work as a product design intern at Facebook in Menlo Park. Last year, I co-founded <a href="http://lawnchair.io">Lawn Chair</a>, a software development and design company, where we
+              are working with clients and on internal products like <a href="http://segment.social">Segment</a>.</p>
               <hr />
               <p className="home-subtitle">
-                <small>Previously, I worked as a contract web developer and designer in New Orleans. I currently attend Loyola University New Orleans as a design and computer science undergraduate student. I will graduate in 2018. I attended New Orleans Center for the Creative arts from 2010 to 2014.</small>
+                <small>Previously, I worked freelance in New Orleans. I currently attend Loyola University New Orleans as a design undergraduate student considering a sociology minor. I will graduate in 2018. I attended New Orleans Center for the Creative arts from 2010 to 2014.</small>
               </p>
             </div>
           </div>
@@ -59,6 +59,18 @@ export default class HomeView extends Component {
             }
           ]}
         />
+        <Section style={{ paddingBottom: '1rem', paddingTop: 0 }}>
+          <div className="row">
+            <div className="col col-l-2 col-s-12">
+              <h1 className="page-title">
+                Writing
+              </h1>
+            </div>
+            <div className="col col-l-10 col-s-12">
+              <p>I frequently write <a href="https://medium.com/@pb">on Medium</a> about design and technology.</p>
+            </div>
+          </div>
+        </Section>
       </View>
     );
   }

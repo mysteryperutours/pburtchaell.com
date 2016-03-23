@@ -72,13 +72,14 @@ export default class AboutView extends Component {
             <div className="col col-l-10 col-s-12">
               <div className="row row-no-gutter">
                 <div className="col col-l-6 col-s-6">
+                  <div className="text-tertiary">Facebook</div>
                   <div className="text-tertiary">Lawn Chair Studios</div>
                   <div className="text-tertiary">Boy Scouts of America</div>
-                  <div className="text-tertiary">NewAperio</div>
                 </div>
                 <div className="col col-l-6 col-s-6">
-                  <div className="text-tertiary">Peach Labs</div>
+                  <div className="text-tertiary">Fixt</div>
                   <div className="text-tertiary">fileee</div>
+                  <div className="text-tertiary">NewAperio</div>
                 </div>
               </div>
             </div>
