@@ -10,7 +10,7 @@
   "scripts": {
     "postinstall": "brew install ImageMagick",
     "prebuild": "rm -rf ./dist && rm -rf ./app/images && `npm bin`/gulp images",
-    "build": "NODE_ENV=production `npm bin`/webpack --config webpack.production.config.js",
+    "build": "NODE_ENV=production `npm bin`/webpack --config webpack.conf.production.js",
     "predeploy:staging": "npm run build",
     "predeploy:production": "npm run build",
     "deploy:staging": "`npm bin`/gulp deploy:staging",
@@ -43,6 +43,7 @@
     "eslint-config-airbnb": "^6.1.0",
     "eslint-plugin-react": "^4.2.3",
     "express": "^4.13.4",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
     "gulp-image-resize": "^0.7.0",
