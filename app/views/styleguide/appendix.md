@@ -1,1 +1,0 @@
-The initial inspiration for this document came from reading other code style guides published: [Code Guide](http://mdo.github.com/code-guide), by Mark Otto; [CSS Guidelines](http://github.com/csswizardry/CSS-Guidelines) by Harry Roberts; the Google HTML and CSS style guide and the Github style guide.

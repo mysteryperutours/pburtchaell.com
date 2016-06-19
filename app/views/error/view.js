@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import Section from 'components/layout/section';
-import View from 'components/layout/view';
+import View from 'app-core/view';
+import Section from 'app-core/section';
 
 export default class ErrorView extends Component {
   render() {

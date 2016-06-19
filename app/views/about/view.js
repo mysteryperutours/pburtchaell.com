@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import View from 'components/layout/view';
-import Section from 'components/layout/section';
-import Image from 'components/core/image';
+import View from 'app-core/view';
+import Section from 'app-core/section';
+import Image from 'app-core/image';
 
 export default class AboutView extends Component {
   render() {

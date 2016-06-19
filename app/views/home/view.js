@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import View from 'components/layout/view';
-import Section from 'components/layout/section';
-import Feed from './components/feed';
+import View from 'app-core/view';
+import Section from 'app-core/section';
 
-export default class HomeView extends Component {
+class HomeView extends Component {
   render() {
     return (
       <View {...this.props.route.config}>
@@ -26,39 +25,6 @@ export default class HomeView extends Component {
             </div>
           </div>
         </Section>
-        {/*<Feed
-          items={[
-            {
-              id: 2,
-              link: '/work/segment',
-              title: 'Segment',
-              color: '#000',
-              type: 'Branding and web application',
-              date: '2015'
-            },
-            {
-              id: 3,
-              link: '/work/scouter',
-              title: 'Scouter',
-              type: 'Branding and web application',
-              date: '2015'
-            },
-            {
-              id: 4,
-              link: '/work/lawnchair',
-              title: 'Lawn Chair Studios',
-              type: 'Branding and web page',
-              date: '2015'
-            },
-            {
-              id: 5,
-              link: '/work/oa',
-              title: 'Order of the Arrow',
-              type: 'Advertising',
-              date: '2013-2014'
-            }
-          ]}
-        />*/}
         <Section style={{ paddingBottom: '1rem', paddingTop: 0 }}>
           <div className="row">
             <div className="col col-l-2 col-s-12">
@@ -75,3 +41,5 @@ export default class HomeView extends Component {
     );
   }
 }
+
+export default HomeView;
