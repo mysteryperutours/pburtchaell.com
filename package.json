@@ -1,5 +1,5 @@
 {
-  "version": "3.1.0",
+  "version": "3.2.0",
   "private": true,
   "author": "Patrick Burtchaell <patrick@pburtchaell.com> (pburtchaell.com)",
   "repository": {
@@ -19,8 +19,8 @@
     "start": "NODE_ENV=development node server.js"
   },
   "config": {
-    "DEV_SERVER_PORT": "1996",
-    "DEV_SERVER_ADDRESS": "0.0.0.0"
+    "DEVELOPMENT_PORT": "8000",
+    "DEVELOPMENT_HOST": "0.0.0.0"
   },
   "dependencies": {
     "babel-polyfill": "^6.7.2",
@@ -52,7 +52,7 @@
     "gulp-util": "^3.0.6",
     "highlight-loader": "^0.6.1",
     "html-loader": "^0.4.3",
-    "html-webpack-plugin": "^2.12.0",
+    "html-webpack-plugin": "pburtchaell/html-webpack-plugin#patch-1",
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
     "markdown-loader": "^0.1.7",

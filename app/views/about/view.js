@@ -17,7 +17,7 @@ export default class AboutView extends Component {
             <div className="col col-l-10 col-s-12">
               <figure className="image-bleed">
                 <Image
-                  src={require('images/me-large.png').default}
+                  src={require('images/me-large.png')}
                   height="500"
                 />
               </figure>
@@ -48,44 +48,14 @@ export default class AboutView extends Component {
                   <div className="text-tertiary">
                     <a href="https://twitter.com/pburtchaell" target="blank">Twitter</a><span>, </span>
                     <a href="https://github.com/pburtchaell" target="blank">GitHub</a><span> & </span>
-                    <a href="https://dribbble.com/-p" target="blank">Dribbble</a>
-                  </div>
-                </div>
-                <div className="col col-l-6 col-s-12">
-                  <div className="text-tertiary">
-                    <small>
-                      <div>P.O. Box 346</div>
-                      <div>Chalmette, Louisiana 70044</div>
-                      <div>United States of America</div>
-                    </small>
+                    <a href="https://dribbble.com/purtchaell" target="blank">Dribbble</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </Section>
-        <Section name="clients">
-          <div className="row">
-            <div className="col col-l-2 col-s-12">
-              <h1 className="page-title">Clients & Companies</h1>
-            </div>
-            <div className="col col-l-10 col-s-12">
-              <div className="row row-no-gutter">
-                <div className="col col-l-6 col-s-6">
-                  <div className="text-tertiary">Facebook</div>
-                  <div className="text-tertiary">Lawn Chair Studios</div>
-                  <div className="text-tertiary">Boy Scouts of America</div>
-                </div>
-                <div className="col col-l-6 col-s-6">
-                  <div className="text-tertiary">Fixt</div>
-                  <div className="text-tertiary">fileee</div>
-                  <div className="text-tertiary">NewAperio</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Section>
-        <Section name="groups" noPadding>
+        <Section name="groups">
           <div className="row">
             <div className="col col-l-2 col-s-12">
               <h1 className="page-title">Groups & Organizations</h1>

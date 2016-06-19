@@ -1,35 +1,34 @@
-require('dotenv').load();
-
 var path = require('path');
 var express = require('express');
-var webpack = require('webpack');
-var config = require('./webpack.local.config');
 
-var port = process.env.PORT || process.env.npm_package_config_DEV_SERVER_PORT;
-var address = process.env.npm_package_config_DEV_SERVER_ADDRESS;
+var port = process.env.PORT || process.env.npm_package_config_DEVELOPMENT_PORT;
+var host = process.env.HOST || process.env.npm_package_config_DEVELOPMENT_HOST;
 
 var app = express();
-var compiler = webpack(config);
 
 app.use(require('morgan')('short'));
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
+if (process.env.NODE_ENV !== 'production') {
+  var webpack = require('webpack');
+  var config = Object.create(require('./webpack.conf.development'));
+  var compiler = webpack(config);
 
-app.use(require('webpack-hot-middleware')(compiler, {
-  log: console.log,
-  path: '/__webpack_hmr',
-  heartbeat: 10 * 1000
-}));
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  }));
+
+  app.use(require('webpack-hot-middleware')(compiler));
+}
+
+app.use('/', express.static(path.join(__dirname, 'dist')));
 
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'app/local.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(port, address, function (error) {
+app.listen(port, host, function (error) {
   if (error) throw error;
 
-  console.log('server running at http://%s:%d', address, port);
+  console.log('server running at http://%s:%d', host, port);
 })
