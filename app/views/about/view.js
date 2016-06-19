@@ -26,9 +26,9 @@ export default class AboutView extends Component {
                 />
               </figure>
               <p>I specialize in product design, but also practice visual design and front-end web development.</p>
-              <p>I spend my time enrolled as a full-time design undergraduate student at Loyola University New Orleans and as a part-time web developer and product designer. I operate through <a href="http://lawnchair.io">Lawn Chair Studios</a>, where I am a co-founder. I expect to graduate from Loyola in 2018.</p>
-              <p>Over the past several years, I have had the oppurtunity to work with several startups and organizations from the New Orleans area, the United States and Europe to design and build web products.</p>
-              <p>If you are interested in hiring me, via Lawn Chair, for your next project, send me an email at <a href="mailto:patrick@lawnchair.io">patrick@lawnchair.io</a>. If you are just saying hello, you can get in touch at <a href="mailto:patrick@pburtchaell.com">patrick@pburtchaell.com</a>.</p>
+              <p>I spend my time enrolled as a full-time design undergraduate student at Loyola University New Orleans and as a part-time web developer and product designer. I operate through <a href="http://lawnchair.io">Lawn Chair Studios</a>, where I am a co-founder. I expect to graduate in 2018.</p>
+              <p>I have had the opportunity to work with many startups and organizations from New Orleans, the United States and Europe to design and write code for their products.</p>
+              <p>If you are interested in work me, via Lawn Chair, on your next project, send me an email at <a href="mailto:patrick@lawnchair.io">patrick@lawnchair.io</a>. If you want to say hello, send me an email at <a href="mailto:patrick@pburtchaell.com">patrick@pburtchaell.com</a>.</p>
             </div>
           </div>
         </Section>
