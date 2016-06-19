@@ -1,5 +1,5 @@
 {
-  "version": "3.3.0",
+  "version": "3.4.0",
   "private": true,
   "author": "Patrick Burtchaell <patrick@pburtchaell.com> (pburtchaell.com)",
   "repository": {
@@ -13,10 +13,8 @@
     "build": "NODE_ENV=production `npm bin`/webpack --config webpack.conf.production.js",
     "predeploy:staging": "npm run build",
     "predeploy:production": "npm run build",
-    "deploy:staging": "`npm bin`/gulp deploy:staging",
-    "deploy:production": "`npm bin`/gulp deploy:production",
-    "prestart": "rm -rf ./app/images && `npm bin`/gulp images",
-    "start": "NODE_ENV=development node server.js"
+    "start": "NODE_ENV=development node server.js",
+    "test": ""
   },
   "config": {
     "DEVELOPMENT_PORT": "8000",
@@ -24,6 +22,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.7.2",
+    "classnames": "^2.2.5",
     "isomorphic-fetch": "^2.1.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
@@ -38,7 +37,6 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.23.1",
-    "dotenv": "^2.0.0",
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-plugin-react": "^4.2.3",
@@ -49,7 +47,6 @@
     "gulp-image-resize": "^0.7.0",
     "gulp-imagemin": "^2.3.0",
     "gulp-rename": "^1.2.2",
-    "gulp-s3-upload": "^1.2.0",
     "gulp-util": "^3.0.6",
     "highlight-loader": "^0.6.1",
     "html-loader": "^0.4.3",

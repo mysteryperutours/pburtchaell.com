@@ -11,8 +11,6 @@ This website uses React, React Router and WebPack.
 
 - Build: `npm run build`
 - Run tests: `npm test`
-- Deploy to staging: `npm run deploy:staging`
-- Deploy to production: `npm run deploy:production`
 
 ---
 Built with care in New Orleans by [Patrick Burtchaell](http://twitter.com/pburtchaell)

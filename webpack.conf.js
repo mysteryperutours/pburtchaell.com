@@ -2,8 +2,10 @@ try { require('dotenv').load(); } catch (e) { }
 var _ = require('lodash');
 var path = require('path');
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// Post CSS modules
+var autoprefixer = require('autoprefixer');
 
 /**
  * @function appPathTo
@@ -38,6 +40,9 @@ module.exports = function (options) {
         chunks: ['app'],
         template: 'app/template.ejs',
         inject: true,
+        minify: {
+          collapseWhitespace: true
+        },
         version: require('./package.json').version
       })
     ],
@@ -45,7 +50,10 @@ module.exports = function (options) {
       extensions: [
         '', '.js', '.less', '.woff', '.woff2', '.png', '.jpg', '.jpeg'
       ],
-      modulesDirectories: ['node_modules', 'app']
+      modulesDirectories: ['node_modules', 'app'],
+      alias: {
+        'app-core': appPathTo('components')
+      }
     },
     module: {
       loaders: [
@@ -79,9 +87,11 @@ module.exports = function (options) {
     resolveLoader: {
       root: path.join(__dirname, 'node_modules')
     },
-    /*postcss: function () {
-      return [autoprefixer];
-    }*/
+    postcss: function () {
+      return [
+        autoprefixer
+      ];
+    }
   }, options.overrides);
 
   config.module.loaders = _.union(config.module.loaders, options.loaders);

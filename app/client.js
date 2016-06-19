@@ -11,7 +11,7 @@ global.PropTypes = PropTypes;
 class App extends Component {
   constructor(props, context) {
     super(props, context);
-
+    
     window.analytics.load('QcOkDZZFylLTALyZoCp2cRgo9ZS0ZcUf');
   }
 
