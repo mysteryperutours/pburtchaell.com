@@ -28,11 +28,10 @@ class Image extends Component {
     return (
       <div
         className={this.state.isPending ? 'image-preload-wrapper is-pending' : 'image-preload-wrapper'}
-        style={this.state.isPending ? {
-          ...this.props.style,
+        style={this.state.isPending ? Object.assign(this.props.style, {
           minWidth: this.props.width,
           minHeight: this.props.height
-        } : this.props.style}
+        }) : this.props.style}
       >
         <img
           src={this.props.src}

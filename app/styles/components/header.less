@@ -41,9 +41,6 @@
       stroke: @color-yellow;
       fill: @color-yellow;
     }
-    ~ .branding-name {
-      color: @color-yellow;
-    }
   }
 
   &.is-loading {
@@ -51,7 +48,7 @@
   }
 }
 
-.branding.is-animated {
+.branding.is-idle {
   opacity: 1;
   transition: 1s;
 
@@ -70,13 +67,34 @@
   }
 }
 
-@keyframes spin {
+.branding.is-idle.is-animated {
+  svg {
+    path {
+      &:nth-of-type(1) {
+        animation: color 2s !important;
+      }
+      &:nth-of-type(2) {
+        animation: color 2s !important;
+      }
+      &:nth-of-type(3) {
+        animation: color 2s !important;
+      }
+    }
+  }
+}
+
+@keyframes color {
   0% {
-    transform: rotate(1080deg);
-    transform-origin: .5rem .5rem;
+    stroke: @color-yellow;
+    fill: @color-yellow;
+  }
+  50% {
+    stroke: @color-grey;
+    fill: @color-grey;
   }
   100% {
-    transform: none;
+    stroke: @color-yellow;
+    fill: @color-yellow;
   }
 }
 

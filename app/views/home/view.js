@@ -26,7 +26,7 @@ export default class HomeView extends Component {
             </div>
           </div>
         </Section>
-        <Feed
+        {/*<Feed
           items={[
             {
               id: 2,
@@ -58,7 +58,7 @@ export default class HomeView extends Component {
               date: '2013-2014'
             }
           ]}
-        />
+        />*/}
         <Section style={{ paddingBottom: '1rem', paddingTop: 0 }}>
           <div className="row">
             <div className="col col-l-2 col-s-12">

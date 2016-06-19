@@ -1,6 +1,6 @@
 export default class Branding extends Component {
   componentDidMount() {
-    document.querySelector('.branding').classList.add('is-animated');
+    document.querySelector('.branding').classList.add('is-idle');
   }
 
   render() {
