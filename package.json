@@ -5,7 +5,6 @@
     "type": "git",
     "url": "https+git://github.com/pburtchaell/pburtchaell.com.git"
   },
-  "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production `npm bin`/webpack --config webpack.conf.production.js",
     "start": "NODE_ENV=development node server.js"
