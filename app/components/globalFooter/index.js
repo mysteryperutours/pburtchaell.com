@@ -8,7 +8,7 @@ const Footer = props => {
         <div className="col col-l-12 col-s-12">
           <small>
             <div className='page-footer-span'>
-              <span>made with</span>
+              <span>always open and made with</span>
               <object className='page-footer-heart'>
                 <svg x='0' y='0' width='10px' height='10px' viewBox="0 0 10 8">
                   <path d='M9,0.7c-1-0.9-2.5-0.9-3.5,0L5,1L4,

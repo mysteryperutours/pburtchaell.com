@@ -5,10 +5,12 @@ import Section from 'app-core/section';
 
 class HomeView extends Component {
   render() {
+    var grey = 'rgb(200, 200, 210)';
+
     return (
       <View {...this.props.route.config}>
-        <Section style={{ paddingBottom: '1rem' }}>
-          <div className="row">
+        <Section style={{ marginTop: '0', paddingBottom: '0' }}>
+          <div className="row row-large">
             <div className="col col-l-2 col-s-12">
               <h1 className="page-title">
                 Patrick<br/>
@@ -16,20 +18,20 @@ class HomeView extends Component {
               </h1>
             </div>
             <div className="col col-l-10 col-s-12">
-              <p>Presently, I work as a product design intern at Facebook in Menlo Park. Last year, I co-founded <a href="http://lawnchair.io">Lawn Chair</a>, a software development and design company, where we
-              are working with clients and on internal products like <a href="http://segment.social">Segment</a>.</p>
+              <p>I'm a product designer, visual designer and web developer. I've worked both freelance in New Orleans since 2014 and at Facebook in Menlo Park.</p>
               <hr />
               <p className="home-subtitle">
-                <small>Previously, I worked freelance in New Orleans. I currently attend Loyola University New Orleans as a design undergraduate student considering a sociology minor. I will graduate in 2018. I attended New Orleans Center for the Creative arts from 2010 to 2014.</small>
+                <small>Outside work, I attend Loyola University New Orleans as a design student. I'll graduate in 2018.</small>
               </p>
             </div>
           </div>
         </Section>
-        <Section style={{ paddingBottom: '1rem', paddingTop: 0 }}>
-          <div className="row">
+        <Section>
+          <div className="row row-large row-no-gutter">
             <div className="col col-l-2 col-s-12">
               <h1 className="page-title">
-                Writing
+                Featured<br/>
+                Work
               </h1>
             </div>
             <div className="col col-l-10 col-s-12">

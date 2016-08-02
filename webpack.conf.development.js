@@ -2,20 +2,11 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = require('./webpack.conf')({
+  entry: [
+    'webpack-hot-middleware/client'
+  ],
   overrides: {
-    devtool: '#eval-source-map',
-    entry: {
-      app: [
-        'webpack-hot-middleware/client',
-        'babel-polyfill',
-        path.resolve(__dirname, './app/client')
-      ]
-    },
-    output: {
-      publicPath: '/',
-      path: path.join(__dirname, '/__webpack'),
-      filename: '[name].[hash].js'
-    },
+    devtool: '#eval-source-map'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),

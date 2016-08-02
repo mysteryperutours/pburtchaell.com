@@ -7,8 +7,9 @@ const Navigation = props => {
       <ul className='navigation-items'>
         <li className='navigation-item'>
           <Link
-            to="/"
             className="navigation-item-link"
+            activeClassName="is-active"
+            onlyActiveOnIndex={true}
           >
             Home
           </Link>

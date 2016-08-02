@@ -17,7 +17,7 @@ export default class AboutView extends Component {
             <div className="col col-l-10 col-s-12">
               <figure className="image-bleed">
                 <Image
-                  src={require('images/me-large.png')}
+                  src="https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/me.jpg?alt=media&token=3513c642-c387-4070-b233-3259f56756b8"
                   height="300"
                   style={{
                     maxHeight: 300,

@@ -19,13 +19,18 @@ if (process.env.NODE_ENV !== 'production') {
   }));
 
   app.use(require('webpack-hot-middleware')(compiler));
+
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'app/local.html'));
+  });
+} else {
+  app.use('/', express.static(path.join(__dirname, 'dist')));
+
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  });
+
 }
-
-app.use('/', express.static(path.join(__dirname, '__webpack')));
-
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '__webpack', 'index.html'));
-});
 
 app.listen(port, host, function (error) {
   if (error) throw error;

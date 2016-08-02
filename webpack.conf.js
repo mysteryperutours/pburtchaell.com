@@ -19,22 +19,20 @@ var appPathTo = _.partial(function () {
 module.exports = function (options) {
   var config = _.merge({}, {
     entry: {
-      // ...entry is included in development and production configs
+      app: _.union([
+        'babel-polyfill',
+        path.resolve(__dirname, './app/styles'),
+        path.resolve(__dirname, './app/client')
+      ], options.entry)
     },
     output: {
       publicPath: '/',
       path: path.join(__dirname, '/dist'),
-      filename: '[name].[hash].js'
+      filename: '[name].js'
     },
     plugins: [
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        'APP_API_HOSTNAME': JSON.stringify(process.env.APP_API_HOSTNAME),
-        'APP_API_VERSION': JSON.stringify(process.env.APP_API_VERSION),
-        'FACEBOOK_APP_ID': JSON.stringify(process.env.FACEBOOK_APP_ID),
-        'ANALYTICS_API_KEY': JSON.stringify(process.env.ANALYTICS_API_KEY),
-        'GOOGLE_MAPS_API_KEY': JSON.stringify(process.env.GOOGLE_MAPS_API_KEY),
-        'FILEPICKER_API_KEY': JSON.stringify(process.env.FILEPICKER_API_KEY)
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }),
       new HtmlWebpackPlugin({
         chunks: ['app'],
@@ -69,18 +67,10 @@ module.exports = function (options) {
           loader: 'style!css!postcss!less'
         },
         {
-          test: /\.css$/,
-          loader: 'style!css!postcss'
-        },
-        {
           test: /\.woff$|\.woff2$|\.eot$|\.ttf$|\.png$|\.svg$|\.jpg$|\.jpeg$/,
           include: path.join(__dirname, 'app'),
           exclude: /node_modules/,
           loader: 'file'
-        },
-        {
-          test: /\.md$/,
-          loader: 'html!highlight!markdown'
         }
       ]
     },

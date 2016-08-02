@@ -4,6 +4,7 @@ export default {
   indexRoute: require('./views/home').default,
   childRoutes: [
     require('./views/about').default,
+    require('./views/admin').default,
     require('./views/error').default
   ]
 };
