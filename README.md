@@ -1,4 +1,4 @@
-# pburtchaell.com [![Build Status](https://travis-ci.org/pburtchaell/pburtchaell.com.svg?branch=master)](https://travis-ci.org/pburtchaell/pburtchaell.com) ![Dependencies](https://david-dm.org/pburtchaell/pburtchaell.com.png)
+# pburtchaell.com
 
 This website uses React, React Router and WebPack.
 
@@ -13,6 +13,4 @@ This website uses React, React Router and WebPack.
 - Run tests: `npm test`
 
 ---
-Built with care in New Orleans by [Patrick Burtchaell](http://twitter.com/pburtchaell)
-
-[Copyright 2013-present Patrick Burtchaell](LICENSE)
+[Copyright (c) 2013 Patrick Burtchaell](LICENSE). All rights reserved.
