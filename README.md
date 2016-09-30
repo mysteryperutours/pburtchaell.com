@@ -13,4 +13,4 @@ This website uses React, React Router and WebPack.
 - Run tests: `npm test`
 
 ---
-[Copyright (c) 2013 Patrick Burtchaell](LICENSE). All rights reserved.
+Copyright (c) 2013 Patrick Burtchaell. All rights reserved.
