@@ -6,13 +6,11 @@
     "url": "https+git://github.com/pburtchaell/pburtchaell.com.git"
   },
   "scripts": {
+    "heroku-postbuild": "npm run build",
     "build": "`npm bin`/babel app --out-dir .tmp",
-
     "start-development": "nodemon app/server --exec `npm bin`/babel-node",
-    "prestart-production": "npm run build",
     "start-production": "node .tmp/server",
-    "start": "if test \"$NOW\"; then npm run start-production; else npm run start-development; fi",
-
+    "start": "if test \"$NODE_ENV\" = \"production\"; then npm run start-production; else npm run start-development; fi",
     "flow": "`npm bin`/flow; test $? -eq 0 -o $? -eq 2",
     "test": "npm run flow"
   },
