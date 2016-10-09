@@ -1,8 +1,7 @@
 node_modules
+build
 .DS_Store
+.env
+.tmp
 *.cache
 *.log
-dist/
-app/images
-
-.env

@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: @font-family-primary;
+  font-family: var(--font-family-primary);
   font-weight: normal;
   line-height: 1rem;
   margin: 0;
@@ -24,8 +24,8 @@ h2 {
 }
 
 h3 {
-  font-size: @font-size-base;
-  line-height: @line-height-base;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
   text-transform: uppercase;
   letter-spacing: .125ex;
   margin-top: 2rem;

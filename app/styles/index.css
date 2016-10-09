@@ -1,6 +1,6 @@
-@import 'utilities/variables';
-@import 'layout/index';
-@import 'typography/anchor';
+@import 'utilities/variables.css';
+@import 'layout/index.css';
+@import 'typography/anchor.css';
 @import 'typography/base';
 @import 'typography/blockquote';
 @import 'typography/code';
