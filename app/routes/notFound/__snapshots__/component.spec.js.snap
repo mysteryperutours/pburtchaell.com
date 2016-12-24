@@ -1,0 +1,13 @@
+exports[`NotFoundRoute should render component 1`] = `
+<RouteContainer
+  header={false}>
+  Error
+</RouteContainer>
+`;
+
+exports[`should render component 1`] = `
+<Component
+  header={false}>
+  Error
+</Component>
+`;

@@ -7,7 +7,7 @@ describe(Text.name, () => {
   it('should render h1 element', () => {
     expect(shallow(
       <Text type={types.HEADER_1}>
-        My title
+        {DEFAULT_CHILD}
       </Text>
     )).toMatchSnapshot();
   });

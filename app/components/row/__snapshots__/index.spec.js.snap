@@ -5,3 +5,11 @@ exports[`Row should render component 1`] = `
     className="row " />
 </div>
 `;
+
+exports[`should render component 1`] = `
+<div
+  className="row-container">
+  <div
+    className="row " />
+</div>
+`;

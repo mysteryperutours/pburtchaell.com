@@ -1,0 +1,23 @@
+exports[`RouteContainer should render component 1`] = `
+<div
+  className="route-container">
+  <RouteHeader />
+  <div
+    className="route-body">
+    foo
+  </div>
+  <RouteFooter />
+</div>
+`;
+
+exports[`should render component 1`] = `
+<div
+  className="route-container">
+  <Component />
+  <div
+    className="route-body">
+    foo
+  </div>
+  <Component />
+</div>
+`;

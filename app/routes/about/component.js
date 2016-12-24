@@ -5,7 +5,7 @@ import RouteContainer from '../../components/routeContainer';
 const AboutRoute = (): Element<*> => (
   <RouteContainer header={false}>
     <div>
-      My name is Patrick, lol at you
+      About
     </div>
   </RouteContainer>
 );

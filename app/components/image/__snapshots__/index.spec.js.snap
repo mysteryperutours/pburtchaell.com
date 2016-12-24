@@ -1,0 +1,10 @@
+exports[`Image should render component 1`] = `
+<div
+  className="image-preload-container is-pending"
+  style={
+    Object {
+      "height": "0px",
+      "width": "0px",
+    }
+  } />
+`;
