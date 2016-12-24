@@ -1,0 +1,9 @@
+exports[`App should render component 1`] = `
+<main
+  className="app-root" />
+`;
+
+exports[`AppRoot should render component 1`] = `
+<main
+  className="app-root" />
+`;

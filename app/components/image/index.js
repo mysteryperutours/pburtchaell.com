@@ -1,50 +1,82 @@
-import { Component } from 'react';
-import styles from './styles';
+// @flow
+import React, { Component } from 'react';
+import './styles.css';
 
+type Props = {
+  src: string,
+  alt: string,
+  height: string,
+  width: string
+};
+
+const INITIAL_STATE = {
+  isPending: true
+};
+
+/*
+ * @class Image
+ * @description The image component fetches an image and
+ * handles showing the blurred image while the fullsize is pending.
+ */
 class Image extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props: Props, context: Object) {
+    super(props, context);
 
-    this.handleLoad = this.handleLoad.bind(this);
-
-    this.state = {
-      isPending: true
-    };
+    this.state = INITIAL_STATE;
   }
 
-  handleLoad() {
-    return this.setState({
-      isPending: !this.state.isPending
-    });
+  // Local state stores the state of the image request
+  state: {
+    isPending: boolean
   }
 
   componentDidMount() {
-    let image = new window.Image();
-
-    image.onload = this.handleLoad;
+    const image = new window.Image();
+    image.onload = this.handleLoad.bind(this);
     image.src = this.props.src;
   }
 
+  handleLoad() {
+    this.setState({
+      isPending: false
+    });
+  }
+
+  props: Props;
+
   render() {
+    const { isPending } = this.state;
+    const pendingClassName: string = 'is-pending';
+
+    /**
+     * Preloaded images have a unique class name because I don't want
+     * the transition effect to apply to all images.
+     */
+    const containerClassName: string = 'image-preload-container';
+    const imageClassName: string = 'image-preload';
+
     return (
       <div
-        className={this.state.isPending ? 'image-preload-wrapper is-pending' : 'image-preload-wrapper'}
-        style={this.state.isPending ? Object.assign(this.props.style, {
-          minWidth: this.props.width,
-          minHeight: this.props.height
-        }) : this.props.style}
+        className={isPending ? `${containerClassName} ${pendingClassName}` : containerClassName}
+        style={{
+          height: `${this.props.height}px`,
+          width: `${this.props.width}px`
+        }}
       >
-        <img
-          src={this.props.src}
-          className={this.state.isPending ? 'image-preload is-pending' : 'image-preload'}
-        />
+        {isPending ? null : (
+          <img
+            src={this.props.src}
+            alt={this.props.alt}
+            className={imageClassName}
+            style={{
+              maxHeight: '100%',
+              maxWidth: '100%'
+            }}
+          />
+        )}
       </div>
     );
   }
-}
-
-Image.defaultProps = {
-  style: {}
 }
 
 export default Image;

@@ -1,0 +1,39 @@
+/**
+ * Preloaded images have a unique class name because I don't want
+ * the transition effect to apply to all images.
+ */
+.image-preload {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
+.image-preload.is-pending {
+  opacity: 0;
+}
+
+.image-preload-container {
+  margin-bottom: 1rem;
+  background: none;
+  transition: background-color 400ms;
+}
+
+.image-preload-container img {
+  margin: 0;
+}
+
+.image-preload-container.is-pending {
+  background: black;
+  animation: fade 3s ease-in infinite;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1
+  }
+  50% {
+    opacity: .5
+  }
+  100% {
+    opacity: 1
+  }
+}

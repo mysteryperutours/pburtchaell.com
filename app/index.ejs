@@ -1,0 +1,15 @@
+<!doctype html public>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1"/>
+<meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+<title>Patrick Burtchaell - Product design and web development from New Orleans</title>
+<style>
+<%= compilation.assets[htmlWebpackPlugin.files.css[0].substr(htmlWebpackPlugin.files.publicPath.length)].source() %>
+</style>
+<body>
+  <div id="app-mount"></div>
+  <% for (var i=0; i<htmlWebpackPlugin.files.js.length; i++) {%>
+    <script src=<%=htmlWebpackPlugin.files.js[i]%>></script>
+  <% } %>
+</body>
+<!-- v<%= htmlWebpackPlugin.options.version %> - Build: <%= webpack.hash %> -->

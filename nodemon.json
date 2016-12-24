@@ -1,6 +1,0 @@
-{
-  "verbose": false,
-  "colours": false,
-  "stderr": false,
-  "ignore": ["bin", "node_modules"]
-}

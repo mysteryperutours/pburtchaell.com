@@ -1,0 +1,37 @@
+@media only screen and (min-width: 48em) {
+  .column-small,
+  .column-small-3,
+  .column-small-4,
+  .column-small-6 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .column-small {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  .column-small-3 {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .column-small-4 {
+    flex-basis: 33.33333333%;
+    max-width: 33.33333333%;
+  }
+
+  .column-small-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .column-small-7 {
+    flex-basis: 58.33333333%;
+    max-width: 58.33333333%;
+  }
+}

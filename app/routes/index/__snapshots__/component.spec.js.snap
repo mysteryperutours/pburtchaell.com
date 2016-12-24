@@ -1,0 +1,12 @@
+exports[`IndexRoute should render component 1`] = `
+<Row
+  className="foo">
+  <Column
+    className="foo"
+    size="1">
+    <Text>
+      Hello world!
+    </Text>
+  </Column>
+</Row>
+`;

@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "eslint-config-airbnb", // Default rules for JavaScript style
+    "plugin:flowtype/recommended" // Default rules for Flow static types
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype", // Rules for Flow static types
+    "jest" // Rules for Jest tests
+  ],
+  "rules": {
+    "comma-dangle": 0,
+    "react/jsx-filename-extension": 0,
+    "flowtype/define-flow-type": 2
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "describe": true,
+    "it": true,
+    "expect": true,
+    "shallow": true
+  }
+}
