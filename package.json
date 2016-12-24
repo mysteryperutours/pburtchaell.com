@@ -12,7 +12,7 @@
     "flow": "`npm bin`/flow; test $? -eq 0 -o $? -eq 2",
     "lint": "`npm bin`/eslint src/**/*.js test/**/*.js",
     "pretest": "npm run lint",
-    "test": "`npm bin`/jest",
+    "test": "./bin/test.sh",
     "start": "`npm bin`/webpack-dev-server --content-base app/ --open --port 8080 --history-api-fallback --inline --client-log-level warning"
   },
   "pre-commit": [
@@ -53,6 +53,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "compression-webpack-plugin": "^0.3.2",
+    "coveralls": "^2.11.15",
     "css-loader": "^0.26.1",
     "enzyme": "^2.6.0",
     "enzyme-to-json": "^1.4.5",
