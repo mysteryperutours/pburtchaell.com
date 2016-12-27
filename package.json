@@ -18,7 +18,9 @@
   "pre-commit": [
     "precommit"
   ],
-  "bin": {},
+  "bin": {
+    "generate": "./bin/generate.sh"
+  },
   "jest": {
     "setupFiles": [
       "./test/setup.js"
