@@ -88,7 +88,8 @@ module.exports = {
       // @TODO: ...(DEVELOPMENT ? ['webpack-hot-middleware/client'] : []),
 
       // For all environments, include the Babel polyfill and normalize.css
-      'babel-polyfill',
+      'babel-polyfill', // ES2016+ polyfill
+      'whatwg-fetch', // Fetch API polyfill
       './app/fonts/fonts',
       'normalize',
       './app/index.js'
