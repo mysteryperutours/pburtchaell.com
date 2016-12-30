@@ -1,17 +1,71 @@
 exports[`AboutRoute should render component 1`] = `
-<RouteContainer
-  header={false}>
-  <div>
-    About
-  </div>
+<RouteContainer>
+  <Row
+    defaultColumn={true}
+    elementType="div">
+    <Text
+      style={
+        Object {
+          "marginBottom": "3rem",
+          "marginTop": "1rem",
+        }
+      }
+      type="h1">
+      Patrick Burtchaell is a product design intern at Facebook, studying design at Loyola University New Orleans.
+    </Text>
+  </Row>
+  <Row
+    defaultColumn={true}
+    elementType="div">
+    <Column
+      elementType="div"
+      size={9}
+      style={Object {}}>
+      <Text
+        type="p">
+        Currently, Patrick is studying a B.S. in Design with Honors and expects to graduate in 2018. In 2016, he worked at Facebook in Menlo Park, California as a product design intern. He will return  to Facebook in 2017.
+      </Text>
+      <Text
+        type="p">
+        Previously, patrick has worked with startups around the world as a  software developer and designer. He is a cofounder and partner at Lawn Chair, a design and software development studio he founded in 2015.
+      </Text>
+    </Column>
+  </Row>
+  <Row
+    defaultColumn={true}
+    elementType="div">
+    <Column
+      elementType="div"
+      size={12}
+      style={Object {}}>
+      <ul
+        className="about-links-list">
+        <li
+          className="about-links-list-item">
+          <a
+            href="https://twitter.com/pburtchaell"
+            title="Patrick Burtchaell on Twitter">
+            Twitter
+          </a>
+        </li>
+        <li
+          className="about-links-list-item">
+          <a
+            href="https://dribbble.com/pburtchaell"
+            title="Patrick Burtchaell on Dribbble">
+            Dribbble
+          </a>
+        </li>
+        <li
+          className="about-links-list-item">
+          <a
+            href="mailto:patrick@pburtchaell.com"
+            title="Patrick Burtchaell on email">
+            patrick@pburtchaell.com
+          </a>
+        </li>
+      </ul>
+    </Column>
+  </Row>
 </RouteContainer>
-`;
-
-exports[`should render component 1`] = `
-<Component
-  header={false}>
-  <div>
-    About
-  </div>
-</Component>
 `;
