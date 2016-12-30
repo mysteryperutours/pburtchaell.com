@@ -6,7 +6,7 @@
 
 This is currently under active development!
 
-I'm working on an updated version of my static website that uses **[React](https://facebook.github.io/react/)** for the user interface, **[WebPack 2](https://webpack.js.org/)** for module bundling, **[Jest](https://facebook.github.io/jest/)** for unit tests, **[Flow](https://flowtype.org/)** for static type checking, **[Babel](https://babeljs.io/)** for compiling JS, and **[ESLint](http://eslint.org/)** for JS style rules.
+I'm working on an updated version of my static website that uses **[React](https://facebook.github.io/react/)** for the user interface, **[WebPack 2](https://webpack.js.org/)** for module bundling, **[Jest](https://facebook.github.io/jest/)** for unit tests, **[Flow](https://flowtype.org/)** for static type checking, **[Babel](https://babeljs.io/)** for compiling JS, **[PostCSS](https://github.com/css-modules/css-modules)** for compiling CSS, and **[ESLint](http://eslint.org/)** for JS style rules.
 
 I also have **[Travis CI](https://travis-ci.org/)** setup to run tests. **[Yarn](https://yarnpkg.com/)**, a dependency management tool, is used to help speed up CI tasks.
 
