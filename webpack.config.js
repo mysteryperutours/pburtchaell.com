@@ -123,7 +123,23 @@ module.exports = {
         test: /\.css?$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader?sourceMap'
+          loaders: 'css-loader?modules-true&importLoaders-1&camelCase!postcss-loader?sourceMap-inline'
+
+          /**
+           * @TODO see webpack/extract-text-webpack-plugin #322
+           * [{
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: 'inline'
+            }
+          }]*/
         }),
         include: [
           getAbsolutePathtoAlias(),
