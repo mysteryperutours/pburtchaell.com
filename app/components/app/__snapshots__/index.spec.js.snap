@@ -2,8 +2,3 @@ exports[`AppRoot should render component 1`] = `
 <main
   className="app-root" />
 `;
-
-exports[`should render component 1`] = `
-<main
-  className="app-root" />
-`;
