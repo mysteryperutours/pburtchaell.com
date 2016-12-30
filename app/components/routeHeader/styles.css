@@ -1,0 +1,30 @@
+:local(.view-header) {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  background: white;
+}
+
+:local(.view-navigation) a {
+  position: relative;
+  margin-left: 1.5rem;
+  width: 72px;
+  display: inline-block;
+}
+
+:local(.view-navigation) a:not(.is-active) {
+  color: #5F595A;
+  opacity: .45;
+}
+
+:local(.view-navigation) a.is-active {
+  color: #0063B5;
+  /*text-decoration: underline;*/
+}
+
+:local(.view-navigation) a:nth-of-type(1) {
+  margin-left: 0;
+}
