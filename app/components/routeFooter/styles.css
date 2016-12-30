@@ -1,0 +1,12 @@
+:local(.route-footer) {
+  color: #5F595A;
+  margin: 2rem 0;
+  text-align: right;
+  position: relative;
+  max-width: 100%;
+}
+
+:local(.route-footer-heart) object {
+  fill: #ff2e5e;
+  margin-left: .45rem;
+}
