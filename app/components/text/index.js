@@ -3,6 +3,7 @@ import { createElement, Element } from 'react';
 import { Link, IndexLink } from 'react-router';
 import * as types from './types';
 import paths from '../../routes/paths';
+import './styles.css';
 
 type Props = {
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
