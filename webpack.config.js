@@ -97,6 +97,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'build'),
+    publicPath: '/',
     pathinfo: true,
     filename: '[name].[hash:8].js',
     chunkFilename: '[name].[hash:8].chunk.js'
