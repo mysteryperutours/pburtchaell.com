@@ -6,6 +6,8 @@
 const paths = {
   INDEX: '/',
   ABOUT: '/about',
+  WORK: '/work',
+  WORK_ITEM: '/work/:year/:month/:title',
   NOT_FOUND: '*'
 };
 

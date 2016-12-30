@@ -2,6 +2,8 @@ import App from '../components/app';
 import IndexRoute from './index';
 import AboutRoute from './about';
 import NotFoundRoute from './notFound';
+import WorkRoute from './work';
+import WorkItemRoute from './workItem';
 import paths from './paths';
 
 /**
@@ -15,6 +17,8 @@ const config = {
   indexRoute: IndexRoute,
   childRoutes: [
     AboutRoute,
+    WorkRoute,
+    WorkItemRoute,
     NotFoundRoute // This route must fall last in the config
   ]
 };
