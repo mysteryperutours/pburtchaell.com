@@ -4,10 +4,3 @@ exports[`NotFoundRoute should render component 1`] = `
   Error
 </RouteContainer>
 `;
-
-exports[`should render component 1`] = `
-<Component
-  header={false}>
-  Error
-</Component>
-`;
