@@ -1,55 +1,23 @@
 exports[`Text should render h1 element 1`] = `
-<h1
-  className="">
+<h1>
   foo
 </h1>
 `;
 
 exports[`Text should render h2 element 1`] = `
-<h2
-  className="">
+<h2>
   foo
 </h2>
 `;
 
 exports[`Text should render h3 element 1`] = `
-<h3
-  className="">
+<h3>
   foo
 </h3>
 `;
 
 exports[`Text should render paragraph element 1`] = `
-<p
-  className="text--body">
-  foo
-</p>
-`;
-
-exports[`should render h1 element 1`] = `
-<h1
-  className="">
-  foo
-</h1>
-`;
-
-exports[`should render h2 element 1`] = `
-<h2
-  className="">
-  foo
-</h2>
-`;
-
-exports[`should render h3 element 1`] = `
-<h3
-  className="">
-  foo
-</h3>
-`;
-
-exports[`should render paragraph element 1`] = `
-<p
-  className="text--body">
+<p>
   foo
 </p>
 `;

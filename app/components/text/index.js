@@ -1,30 +1,52 @@
 // @flow
 import { createElement, Element } from 'react';
+import { Link, IndexLink } from 'react-router';
 import * as types from './types';
+import paths from '../../routes/paths';
 
 type Props = {
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
+  linkTo?: string,
   type: types.HEADER_1 | types.HEADER_2 | types.HEADER_3 | types.BODY
 };
 
-const Text = ({ type = types.BODY, ...props }: Props): Element<*> => {
+const Text = (props: Props): Element<*> => {
+  const { linkTo, type, ...newProps } = props;
+
   /**
-   * Text components are rendered with certain styles, applied by CSS
-   * classes. This function evalutates the props given to the component
-   * and returns the appropriate className string.
+   * The Text component can renderer both text elements, e.g., <p> and <h1>,
+   * and links.
+   *
+   * If the `linkTo` property is included on the component, the `Link`
+   * component from React Router will be rendered.
    */
-  function getClassName(): string {
-    const classNames = [];
+  let elementType: Link | IndexLink | string;
 
-    if (type === types.BODY) classNames.push(['text--body']);
-
-    return classNames.join(' ');
+  if (linkTo) {
+    if (linkTo === paths.INDEX) {
+      elementType = IndexLink;
+    } else {
+      elementType = Link;
+    }
+  } else {
+    elementType = type;
   }
 
-  return createElement(type, {
-    children: props.children,
-    className: getClassName(props)
-  });
+  return createElement(
+    elementType,
+    Object.assign({
+      ...newProps,
+      style: newProps.style
+    }, linkTo ? {
+      to: linkTo,
+      activeClassName: 'is-active'
+    } : {}),
+    props.children
+  );
+};
+
+Text.defaultProps = {
+  type: types.BODY
 };
 
 export { Text as default, types };
