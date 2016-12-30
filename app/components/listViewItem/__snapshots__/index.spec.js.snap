@@ -1,0 +1,10 @@
+exports[`ListViewItem should render component 1`] = `
+<Column
+  className="list-view-item-container"
+  elementType="div"
+  size={6}
+  style={Object {}}>
+  <div
+    className="list-view-item" />
+</Column>
+`;

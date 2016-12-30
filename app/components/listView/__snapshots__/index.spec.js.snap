@@ -1,0 +1,13 @@
+exports[`ListView should render component 1`] = `
+<Row
+  className="list-view list-view-type-grid"
+  defaultColumn={false}
+  elementType="div">
+  <ListViewItem
+    id={1}
+    style={Object {}} />
+  <ListViewItem
+    id={2}
+    style={Object {}} />
+</Row>
+`;

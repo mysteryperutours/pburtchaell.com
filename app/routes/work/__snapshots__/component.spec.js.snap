@@ -1,0 +1,18 @@
+exports[`WorkRoute should render component 1`] = `
+<RouteContainer>
+  <Row
+    defaultColumn={true}
+    elementType="div">
+    <Text
+      style={
+        Object {
+          "marginBottom": "4rem",
+          "marginTop": "1rem",
+        }
+      }
+      type="h1">
+      All Work
+    </Text>
+  </Row>
+</RouteContainer>
+`;

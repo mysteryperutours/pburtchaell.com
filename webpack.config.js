@@ -171,7 +171,8 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
+      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+      DATABASE_URL: JSON.stringify('folkloric-house-95904.firebaseio.com')
     }),
     new HtmlWebpackPlugin({
       inject: false,
