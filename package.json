@@ -10,6 +10,7 @@
     "prebuild": "rm -rf ./build",
     "build": "NODE_ENV=production `npm bin`/webpack --progress",
     "flow": "`npm bin`/flow; test $? -eq 0 -o $? -eq 2",
+    "generate": "./bin/generate.sh",
     "lint": "`npm bin`/eslint src/**/*.js test/**/*.js",
     "pretest": "npm run lint",
     "test": "./bin/test.sh",
@@ -18,9 +19,6 @@
   "pre-commit": [
     "precommit"
   ],
-  "bin": {
-    "generate": "./bin/generate.sh"
-  },
   "jest": {
     "setupFiles": [
       "whatwg-fetch",
