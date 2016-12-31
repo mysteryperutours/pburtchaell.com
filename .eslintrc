@@ -20,7 +20,7 @@
     "describe": true,
     "it": true,
     "expect": true,
-    "shallow": true
+    "shallow": true,
     "DATABASE_URL": true
   }
 }
