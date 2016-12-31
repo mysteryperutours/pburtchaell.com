@@ -103,7 +103,7 @@ const PRODUCTION_PLUGINS = [
  * Export the WebPack configuration, which will change depending
  * on the environment.
  */
-module.exports = {
+const config = {
   cache: true,
   bail: true,
   entry: {
@@ -230,3 +230,19 @@ module.exports = {
     ...(DEVELOPMENT ? DEVELOPMENT_PLUGINS : PRODUCTION_PLUGINS)
   ]
 };
+
+if (!DEVELOPMENT) {
+  config.resolve.alias = Object.assign(config.resolve.alias, {
+    react: getAbsolutePathtoModule([
+      'react/dist/react.min.js'
+    ]),
+    'react-dom': getAbsolutePathtoModule([
+      'react-dom/dist/react-dom.min.js'
+    ]),
+    'react-router': getAbsolutePathtoModule([
+      'react-router/umd/ReactRouter.min.js'
+    ])
+  });
+}
+
+module.exports = config;
