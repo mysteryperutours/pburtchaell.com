@@ -114,11 +114,9 @@ const config = {
       // For all environments, include the Babel polyfill and normalize.css
       // 'babel-polyfill', // Not included current because it is not required
       'whatwg-fetch', // Fetch API polyfill
+      './app/fonts/fonts.ccss',
       'normalize', // @TODO Create custom version with smaller file size
       './app/index.js'
-    ],
-    critical: [
-      './app/fonts/fonts.ccss',
     ]
   },
   output: {
