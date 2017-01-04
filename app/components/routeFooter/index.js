@@ -5,7 +5,10 @@ import styles from './styles.css';
 
 // The footer for each route
 const RouteFooter = (): Element => (
-  <footer className={styles.routeFooter}>
+  <footer
+    role="contentinfo"
+    className={styles.routeFooter}
+  >
     <Row>
       <Column size={12}>
         <small>

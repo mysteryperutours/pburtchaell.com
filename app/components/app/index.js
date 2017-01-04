@@ -6,9 +6,9 @@ type Props = {
 }
 
 const AppRoot = (props: Props) => (
-  <main className="app-root">
+  <div className="app-root">
     {props.children}
-  </main>
+  </div>
 );
 
 export default AppRoot;

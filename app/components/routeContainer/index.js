@@ -25,9 +25,9 @@ const RouteContainer = ({
 }: Props): Element => (
   <div className="route-container">
     {!header ? null : (<RouteHeader {...header} />)}
-    <div className="route-body">
+    <main role="main" className="route-body">
       {children}
-    </div>
+    </main>
     {!footer ? null : (<RouteFooter />)}
   </div>
 );

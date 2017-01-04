@@ -1,4 +1,4 @@
 exports[`AppRoot should render component 1`] = `
-<main
+<div
   className="app-root" />
 `;

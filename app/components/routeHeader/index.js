@@ -26,10 +26,16 @@ const RouteHeader = (): Element => {
   }];
 
   return (
-    <header className={styles.viewHeader}>
+    <header
+      role="banner"
+      className={styles.viewHeader}
+    >
       <Row>
         <Column size={12}>
-          <nav className={styles.viewNavigation}>
+          <nav
+            role="navigation"
+            className={styles.viewNavigation}
+          >
             {navigationItems.map(item => (
               <Text
                 key={item.key}
