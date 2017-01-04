@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent, Children } from 'react';
 import Module from './components/module';
 import Text, { types } from '../../components/text';
 import Column from '../../components/column';
 import Row from '../../components/row';
 import RouteContainer from '../../components/routeContainer';
 import requestHandler from '../../support/requestHandler';
+import styles from './styles.css';
 
 const INITIAL_STATE = {
   data: [],
@@ -12,7 +13,7 @@ const INITIAL_STATE = {
   isRejected: false
 };
 
-class WorkItemRoute extends Component {
+class WorkItemRoute extends PureComponent {
   constructor(props, context) {
     super(props, context);
 
@@ -28,49 +29,45 @@ class WorkItemRoute extends Component {
 
     return (
       <RouteContainer>
-        {isPending ? null : (
-          <header
-            className="case-study-header"
-            style={{ marginBottom: '3rem' }}
-          >
-            <Row
-              style={{
-                maxWidth: '100%'
-              }}
-            >
-              <div
-                key="1"
+        <article role="article" className={styles.caseStudy}>
+          {isPending ? null : (
+            <header className={styles.caseStudyHeader}>
+              <Row
                 style={{
-                  height: '60rem',
-                  width: '100%',
-                  backgroundSize: 'cover',
-                  backgroundImage: `url(${data.meta.coverImage.url})`,
-                  marginBottom: '2rem'
+                  maxWidth: '100%'
                 }}
-              />
-            </Row>
-            <Row>
-              <Column size={11} offset={1}>
-                <Text
-                  key="2"
-                  type={types.HEADER_1}
-                >{data.meta.title}</Text>
-                <Text
-                  key="3"
-                  type={types.HEADER_2}
-                >{data.meta.company}</Text>
-              </Column>
-            </Row>
-          </header>
-        )}
-        {isPending ? null : data.data.modules.map(module => (
-          <Module
-            key={module.key}
-            type={module.type}
-          >
-            {module.children}
-          </Module>
-        ))}
+              >
+                <div
+                  style={{
+                    height: '60rem',
+                    width: '100%',
+                    backgroundSize: 'cover',
+                    backgroundImage: `url(${data.meta.coverImage.url})`,
+                    marginBottom: '2rem'
+                  }}
+                />
+              </Row>
+              <Row>
+                <Column size={11} offset={1}>
+                  <Text
+                    type={types.HEADER_1}
+                  >{data.meta.title}</Text>
+                  <Text
+                    type={types.HEADER_2}
+                  >{data.meta.company}</Text>
+                </Column>
+              </Row>
+            </header>
+          )}
+          {isPending ? null : Children.toArray(data.data.modules.map(module => (
+            <Module
+              key={module.key}
+              type={module.type}
+            >
+              {module.children}
+            </Module>
+          )))}
+        </article>
       </RouteContainer>
     );
   }

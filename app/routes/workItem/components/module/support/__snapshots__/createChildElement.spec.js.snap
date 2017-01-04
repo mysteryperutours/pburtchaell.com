@@ -1,0 +1,36 @@
+exports[`createChildElement should return a single child element of type Image 1`] = `
+<Image
+  alt="Foo"
+  height={500}
+  src="https://path/to/image.png"
+  width={700}>
+  <div
+    className="image-preload-container"
+    style={
+      Object {
+        "height": 500,
+        "width": 700,
+      }
+    }>
+    <img
+      alt="Foo"
+      className="image-preload"
+      src="https://path/to/image.png"
+      style={
+        Object {
+          "maxHeight": "100%",
+          "maxWidth": "100%",
+        }
+      } />
+  </div>
+</Image>
+`;
+
+exports[`createChildElement should return a single child element of type Text 1`] = `
+<Text
+  type="p">
+  <p>
+    Foo
+  </p>
+</Text>
+`;

@@ -21,6 +21,7 @@
     "it": true,
     "expect": true,
     "shallow": true,
+    "mount": true,
     "DATABASE_URL": true
   }
 }

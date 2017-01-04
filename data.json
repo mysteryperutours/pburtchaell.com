@@ -19,8 +19,9 @@
           "label": "branding"
         }],
         "coverImage": {
-          "url": "",
-          "description": ""
+          "url": "https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg",
+          "description": "",
+          "alt": "A picture"
         },
         "team": [{
           "name": "John Smith"
@@ -31,64 +32,55 @@
       },
       "data": {
         "modules": [{
-          "key": "1",
-          "type": "module_text",
+          "type": "module-text",
           "children": [{
-            "key": "1",
             "type": "text",
             "children": "This is text about this project that will be rendered first."
           }]
         }, {
-          "key": "2",
-          "type": "module_media",
+          "type": "module-media",
           "children": [{
-            "key": "1",
             "type": "image",
             "meta": {
               "src": "https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg",
-              "height": "500",
-              "width": "700"
+              "height": "500px",
+              "width": "700px",
+              "alt": "A picture"
             }
           }]
         }, {
-          "key": "3",
-          "type": "module_media_full_width",
+          "type": "module-media-full-width",
           "children": [{
-            "key": "1",
             "type": "image",
             "meta": {
               "src": "https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg",
-              "height": "500",
-              "width": "700"
+              "height": "500px",
+              "width": "700px",
+              "alt": "A picture"
             }
           }]
         }, {
-          "key": "4",
-          "type": "module_media_left",
+          "type": "module-media-left",
           "children": [{
-            "key": "1",
             "type": "video",
             "meta": {
               "src": "http://pburtchaell.com/url/to/file"
             }
           }, {
-            "key": "2",
             "type": "text",
             "children": "This is text about this project that will be combined with a video aligned left."
           }]
         }, {
-          "key": "5",
-          "type": "module_media_right",
+          "type": "module-media-right",
           "children": [{
-            "key": "1",
             "type": "image",
             "meta": {
               "src": "https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg",
-              "height": "500",
-              "width": "700"
+              "height": "500px",
+              "width": "700px",
+              "alt": "A picture"
             }
           }, {
-            "key": "2",
             "type": "text",
             "children": "This is text about this project that will be combined with an image aligned right."
           }]

@@ -1,1 +1,6 @@
-exports[`WorkItemRoute should render component 1`] = `<RouteContainer />`;
+exports[`WorkItemRoute should render component 1`] = `
+<RouteContainer>
+  <article
+    role="article" />
+</RouteContainer>
+`;

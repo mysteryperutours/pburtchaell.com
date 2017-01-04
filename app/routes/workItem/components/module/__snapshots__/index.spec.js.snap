@@ -1,0 +1,58 @@
+exports[`Module renders module with multiple children 1`] = `
+<Row
+  className="case-study-module module-text"
+  defaultColumn={true}
+  elementType="section">
+  <Column
+    elementType="div"
+    offset={2}
+    size={8}
+    style={Object {}}>
+    <Text
+      type="p">
+      Foo
+    </Text>
+    <Text
+      type="p">
+      Foo
+    </Text>
+  </Column>
+</Row>
+`;
+
+exports[`Module renders module with type media 1`] = `
+<Row
+  className="case-study-module module-media"
+  defaultColumn={true}
+  elementType="section">
+  <Column
+    elementType="div"
+    offset={2}
+    size={8}
+    style={Object {}}>
+    <Image
+      alt="Foo"
+      height={500}
+      src="https://path/to/image.png"
+      width={700} />
+  </Column>
+</Row>
+`;
+
+exports[`Module renders module with type text 1`] = `
+<Row
+  className="case-study-module module-text"
+  defaultColumn={true}
+  elementType="section">
+  <Column
+    elementType="div"
+    offset={2}
+    size={8}
+    style={Object {}}>
+    <Text
+      type="p">
+      Foo
+    </Text>
+  </Column>
+</Row>
+`;
