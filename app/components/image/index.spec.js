@@ -7,8 +7,8 @@ describe(Image.name, () => {
       <Image
         src="http://path/to/image"
         alt="Foo"
-        height="0"
-        width="0"
+        height="0px"
+        width="0px"
       />
     )).toMatchSnapshot();
   });

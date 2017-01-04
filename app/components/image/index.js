@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './styles.css';
 
 type Props = {
@@ -18,7 +18,7 @@ const INITIAL_STATE = {
  * @description The image component fetches an image and
  * handles showing the blurred image while the fullsize is pending.
  */
-class Image extends Component {
+class Image extends PureComponent {
   constructor(props: Props, context: Object) {
     super(props, context);
 
@@ -59,8 +59,8 @@ class Image extends Component {
       <div
         className={isPending ? `${containerClassName} ${pendingClassName}` : containerClassName}
         style={{
-          height: `${this.props.height}px`,
-          width: `${this.props.width}px`
+          height: this.props.height,
+          width: this.props.width
         }}
       >
         {isPending ? null : (
