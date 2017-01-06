@@ -76,6 +76,7 @@
     "postcss-custom-properties": "^5.0.1",
     "postcss-import": "^9.0.0",
     "postcss-loader": "^1.2.1",
+    "postcss-nested": "^1.0.0",
     "pre-commit": "^1.2.2",
     "react-addons-test-utils": "^15.4.1",
     "style-loader": "^0.13.1",
