@@ -1,0 +1,53 @@
+exports[`SocialLinks should render component 1`] = `
+<ul
+  className="social-links-list">
+  <li
+    className="social-links-list-item">
+    <a
+      href="https://facebook.com/pburtchaell"
+      title="Patrick Burtchaell on Facebook">
+      <Icon
+        type="facebook" />
+      Facebook
+    </a>
+  </li>
+  <li
+    className="about-links-list-item">
+    <a
+      href="https://twitter.com/pburtchaell"
+      title="Patrick Burtchaell on Twitter">
+      <Icon
+        type="twitter" />
+      Twitter
+    </a>
+  </li>
+  <li
+    className="about-links-list-item">
+    <a
+      href="https://github.com/pburtchaell"
+      title="Patrick Burtchaell on GitHub">
+      <Icon
+        type="github" />
+      GitHub
+    </a>
+  </li>
+  <li
+    className="about-links-list-item">
+    <a
+      href="https://dribbble.com/pburtchaell"
+      title="Patrick Burtchaell on Dribbble">
+      <Icon
+        type="dribbble" />
+      Dribbble
+    </a>
+  </li>
+  <li
+    className="about-links-list-item">
+    <a
+      href="mailto:patrick@pburtchaell.com"
+      title="Patrick Burtchaell on email">
+      patrick@pburtchaell.com
+    </a>
+  </li>
+</ul>
+`;
