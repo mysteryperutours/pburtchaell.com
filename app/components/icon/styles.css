@@ -1,7 +1,8 @@
-.icon {
-  height: 2.5rem;
-  width: 2.5rem;
-  top: .125rem;
+:local(.icon) {
+  height: 1em;
+  width: 1em;
+  top: .125em;
+  margin-right: .25em;
   display: inline-block;
   position: relative;
 }

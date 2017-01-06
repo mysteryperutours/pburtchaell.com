@@ -1,11 +1,11 @@
 import React from 'react';
-import Icon from './index';
+import Icon, { types } from './index';
 
 describe(Icon.name, () => {
   it('should render GitHub icon', () => {
     expect(shallow(
       <Icon
-        type="github"
+        type={types.GITHUB}
       />
     )).toMatchSnapshot();
   });
@@ -13,7 +13,7 @@ describe(Icon.name, () => {
   it('should render Facebook icon', () => {
     expect(shallow(
       <Icon
-        type="facebook"
+        type={types.FACEBOOK}
       />
     )).toMatchSnapshot();
   });
@@ -21,7 +21,15 @@ describe(Icon.name, () => {
   it('should render Twitter icon', () => {
     expect(shallow(
       <Icon
-        type="twitter"
+        type={types.TWITTER}
+      />
+    )).toMatchSnapshot();
+  });
+
+  it('should render Dribbble icon', () => {
+    expect(shallow(
+      <Icon
+        type={types.DRIBBBLE}
       />
     )).toMatchSnapshot();
   });

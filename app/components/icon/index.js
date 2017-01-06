@@ -1,7 +1,8 @@
 // @flow
 import React from 'react';
 import * as paths from './paths';
-import './styles.css';
+import * as types from './types';
+import styles from './styles.css';
 
 type Props = {
   type: string
@@ -9,19 +10,21 @@ type Props = {
 
 function getPath(type) {
   switch (type) {
-    case 'github':
+    case types.GITHUB:
       return paths.GITHUB;
-    case 'twitter':
+    case types.TWITTER:
       return paths.TWITTER;
-    case 'facebook':
+    case types.FACEBOOK:
       return paths.FACEBOOK;
+    case types.DRIBBBLE:
+      return paths.DRIBBBLE;
     default:
       throw new Error('Path not found');
   }
 }
 
 const Icon = ({ type, ...props }: Props) => (
-  <span className="icon">
+  <span className={styles.icon}>
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -38,4 +41,4 @@ const Icon = ({ type, ...props }: Props) => (
   </span>
 );
 
-export default Icon;
+export { Icon as default, paths, types };
