@@ -1,5 +1,14 @@
-.case-study-module.module-media-full-width {
-  max-width: 100%;
-  background: grey;
-  margin: 1rem 0;
+:local(.case-study-module) {
+  &.module-media-full-width {
+    max-width: 100%;
+    /*background: #E6E6E6; */
+    margin: 2rem 0 3rem 0;
+    padding: 2rem 0;
+
+    video {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+    }
+  }
 }

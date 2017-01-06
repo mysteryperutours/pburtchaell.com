@@ -9,8 +9,24 @@ function getChildElementType(type) {
       return Text;
     case 'image':
       return Image;
+    case 'video':
+      return 'video';
     default:
       return 'div';
+  }
+}
+
+function getChildElementProps(type, meta) {
+  switch (type) {
+    case 'video':
+      return {
+        ...meta,
+        width: '100%',
+        autoPlay: true,
+        playsInline: true,
+        loop: true
+      };
+    default: return meta;
   }
 }
 
@@ -23,9 +39,7 @@ function createChildElement(child): Element<*> {
 
   return createElement(
     getChildElementType(child.type),
-    {
-      ...(child.meta ? child.meta : {})
-    },
+    getChildElementProps(child.type, child.meta),
     Array.isArray(children) ? children.map(createChildElement) : children
   );
 }
