@@ -15,6 +15,10 @@ const renderApp = (appRoutes: object, mount) => {
     <AppRouter
       routes={appRoutes}
       history={browserHistory}
+
+      // Scroll to top on route change.
+      // Ref: https://github.com/ReactTraining/react-router/issues/2019
+      onUpdate={() => window.scrollTo(0, 0)}
     />,
     mount
   );
