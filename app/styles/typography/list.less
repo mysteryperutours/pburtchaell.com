@@ -1,0 +1,33 @@
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  font-size: 2.75rem;
+  line-height: 4rem;
+  padding: 0;
+}
+
+ul {
+  margin-bottom: 3rem;
+}
+
+p {
+  ul,
+  ol {
+    margin-bottom: 1rem;
+
+    ul,
+    ol {
+      margin: .25rem 0 1rem 0;
+      list-style: lower-alpha;
+    }
+  }
+
+  ol li {
+    list-style: decimal;
+  }
+
+  ul li {
+    list-style: disc;
+  }
+}

@@ -1,0 +1,29 @@
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: @color-black--001;
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  transition: 100ms ease;
+}
+
+p a {
+  text-decoration: underline;
+  text-decoration-color: @color-blue--001;
+  text-decoration-color: inherit;
+
+  &:hover,
+  &:active {
+    color: @color-blue--001;
+    text-decoration: underline;
+    text-decoration-color: @color-blue--001;
+    outline-width: 0;
+  }
+}
+
+img {
+  border: none;
+}
