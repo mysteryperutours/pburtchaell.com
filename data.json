@@ -1,90 +1,131 @@
 {
   "projects": {
-    "facebook": {
+    "facebook-weather": {
       "meta": {
-        "id": "1",
-        "title": "Star Trek 50th Anniversary",
-        "description": "",
+        "id": "160602",
+        "title": "Daily Weather",
+        "description": "View and share the weather on Facebook",
+        "intro": "Daily weather was a project for Facebook on iOS and Android to make weather the easier to access and share.",
         "date": {
           "month": "08",
           "year": "2016"
         },
+        "color": "rgb(66, 103, 178)",
+        "gradient": "linear-gradient(to bottom, rgb(66, 103, 178) 0%,#7db9e8 100%)",
+        "textColor": "#fff",
         "role": "Product Design Intern",
         "company": "Facebook",
         "categories": [{
           "id": "0",
           "label": "product design"
-        },{
-          "id": "1",
-          "label": "branding"
         }],
         "coverImage": {
-          "url": "https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg",
-          "description": "",
-          "alt": "A picture"
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FcoverImage%402x.png?alt=media&token=41f612a4-e560-4720-ac70-46e4805780ab",
+          "alt": ""
+        },
+        "previewImage": {
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FpreviewImage%402x.png?alt=media&token=5814b19d-f821-48b2-82a2-699553f1a4ea",
+          "alt": ""
         },
         "team": [{
           "name": "John Smith"
         }, {
           "name": "John Smith"
         }],
-        "pathname": "facebook"
+        "pathname": "facebook-weather"
       },
       "data": {
         "modules": [{
           "type": "module-text",
           "children": [{
             "type": "text",
-            "children": "This is text about this project that will be rendered first."
-          }]
-        }, {
-          "type": "module-media",
-          "children": [{
-            "type": "image",
-            "meta": {
-              "src": "https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg",
-              "height": "500px",
-              "width": "700px",
-              "alt": "A picture"
-            }
+            "children": ""
           }]
         }, {
           "type": "module-media-full-width",
           "children": [{
-            "type": "image",
-            "meta": {
-              "src": "https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg",
-              "height": "500px",
-              "width": "700px",
-              "alt": "A picture"
-            }
-          }]
-        }, {
-          "type": "module-media-left",
-          "children": [{
             "type": "video",
             "meta": {
-              "src": "http://pburtchaell.com/url/to/file"
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2F160602_prototype_1.mp4?alt=media&token=5ebb2bdc-f43e-41a7-b3ac-85a591c4f29b",
+              "alt": "A prototype"
             }
-          }, {
-            "type": "text",
-            "children": "This is text about this project that will be combined with a video aligned left."
-          }]
-        }, {
-          "type": "module-media-right",
-          "children": [{
-            "type": "image",
-            "meta": {
-              "src": "https://static.pexels.com/photos/4164/landscape-mountains-nature-mountain.jpeg",
-              "height": "500px",
-              "width": "700px",
-              "alt": "A picture"
-            }
-          }, {
-            "type": "text",
-            "children": "This is text about this project that will be combined with an image aligned right."
           }]
         }]
+      }
+    },
+    "segment": {
+      "meta": {
+        "id": "150601",
+        "title": "Segment",
+        "description": "Content publishing experiment",
+        "intro": "Segment is a concept for a content publishing platform we developed over the course of several months.",
+        "date": {
+          "month": "08",
+          "year": "2015"
+        },
+        "color": "#E26D50",
+        "gradient": "linear-gradient(to bottom, rgb(226, 109, 80) 0%, rgb(228, 137, 114) 100%)",
+        "role": "Product Designer",
+        "company": null,
+        "website": {
+          "href": "http://segment.social",
+          "title": "segment.social"
+        },
+        "categories": [{
+          "id": "0",
+          "label": "product design"
+        }],
+        "coverImage": {
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2FcoverImage%402x.png?alt=media&token=2ab16f40-685f-4e94-a119-7bb099d15f44",
+          "alt": ""
+        },
+        "previewImage": {
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2FgridPreview%402x.png?alt=media&token=15f26e43-a145-434b-92a6-a91abf5740be",
+          "alt": ""
+        },
+        "team": [],
+        "pathname": "segment"
+      },
+      "data": {
+
+      }
+    },
+    "lawnchair": {
+      "meta": {
+        "id": "150602",
+        "title": "Lawn Chair",
+        "description": "Design and software studio",
+        "intro": "Lawn Chair is a software development & design studio I started with three friends. We are currently working together to develop  our ideas for products, games and applications. In May 2015, I designed the company website and branding. The goal of both the branding and the website was to relfect the happy and playful nature of the company without breaking the rational & classical design principles I often embrace in my work. We are a company that does great work and is certainly not afraid to have fun at the same time.",
+        "date": {
+          "month": "08",
+          "year": "2015"
+        },
+        "color": "#44C7F4",
+        "gradient": "linear-gradient(rgb(68, 199, 244) 0%, rgb(97, 207, 245) 100%)",
+        "textColor": "#00526E",
+        "role": "Product Designer",
+        "company": null,
+        "website": {
+          "href": "http://lawnchair.io",
+          "title": "lawnchair.io"
+        },
+        "categories": [{
+          "id": "0",
+          "label": "product design"
+        }],
+        "coverImage": {
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/lawnchair%2FcoverImage%402x.png?alt=media&token=410284b1-5b51-497f-96f1-b1b634ce79e1",
+          "alt": ""
+        },
+        "previewImage": {
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/lawnchair%2FgridPreview%402X.png?alt=media&token=d7f24e09-f2a9-4112-9dd3-f2d2766cf521",
+          "alt": ""
+        },
+        "team": [],
+        "pathname": "lawnchair"
+      },
+      "data": {
+
       }
     }
   }
