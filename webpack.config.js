@@ -7,28 +7,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const ExtractCSS = new ExtractTextPlugin('style.css');
-const ExtractCriticalCSS = new ExtractTextPlugin('critical.css');
+
+const ENTRY = {
+  app: [
+    'whatwg-fetch', // Fetch API polyfill
+    './app/styles/index.less',
+    './app/index.js'
+  ]
+};
 
 const ExtractTextPluginConfig = {
   filename: '[name].css',
   fallbackLoader: 'style-loader',
-  loader: 'css-loader?modules-true&importLoaders-1&camelCase!postcss-loader?sourceMap-inline'
-
-  /**
-   * @TODO see webpack/extract-text-webpack-plugin #322
-   * [{
+  loader: [{
     loader: 'css-loader',
     options: {
       modules: true,
+      minimize: true,
       importLoaders: 1
     }
-  },
-  {
-    loader: 'postcss-loader',
-    options: {
-      sourceMap: 'inline'
-    }
-  }]*/
+  }, {
+    loader: 'less-loader'
+  }]
 };
 
 // The environment Node is running, which defaults to development
@@ -62,8 +62,7 @@ const getAbsolutePathtoModule = (relativePathToModule = '') => {
  * The following plugins will be used for development.
  */
 const DEVELOPMENT_PLUGINS = [
-  // @TODO: new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoErrorsPlugin(),
+  new webpack.NoEmitOnErrorsPlugin(),
   /*new AnalyzerPlugin({
     openAnalyzer: false, // Do not automatically open browser
     logLevel: 'silent' // Do not log information
@@ -76,8 +75,8 @@ const DEVELOPMENT_PLUGINS = [
  */
 const PRODUCTION_PLUGINS = [
   new webpack.optimize.UglifyJsPlugin({
-    // sourceMap: true,
     compress: {
+      screw_ie8: true,
       sequences: true,
       dead_code: true,
       unused: true
@@ -106,19 +105,7 @@ const PRODUCTION_PLUGINS = [
 const config = {
   cache: true,
   bail: true,
-  entry: {
-    app: [
-      // For development environment, include MHR client
-      // @TODO: ...(DEVELOPMENT ? ['webpack-hot-middleware/client'] : []),
-
-      // For all environments, include the Babel polyfill and normalize.css
-      // 'babel-polyfill', // Not included current because it is not required
-      'whatwg-fetch', // Fetch API polyfill
-      './app/fonts/fonts.ccss',
-      'normalize', // @TODO Create custom version with smaller file size
-      './app/index.js'
-    ]
-  },
+  entry: ENTRY,
   output: {
     path: path.join(__dirname, 'build'),
     publicPath: '/',
@@ -145,9 +132,12 @@ const config = {
         }
       },
       {
-        test: /\.css?$/,
-        exclude: /\.ccss?$/,
-        loader: ExtractCSS.extract(ExtractTextPluginConfig),
+        test: /\.css$/,
+        loader: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader'
+        }],
         include: [
           getAbsolutePathtoAlias(),
           getAbsolutePathtoModule([
@@ -156,10 +146,10 @@ const config = {
         ]
       },
       {
-        test: /\.ccss?$/,
-        loader: ExtractCriticalCSS.extract(ExtractTextPluginConfig),
+        test: /\.less?$/,
+        loader: ExtractCSS.extract(ExtractTextPluginConfig),
         include: [
-          getAbsolutePathtoAlias()
+          getAbsolutePathtoAlias(),
         ]
       },
       {
@@ -223,7 +213,6 @@ const config = {
       }
     }),
     ExtractCSS,
-    ExtractCriticalCSS,
     new webpack.optimize.OccurrenceOrderPlugin(), // Optimize chunk id length
     ...(DEVELOPMENT ? DEVELOPMENT_PLUGINS : PRODUCTION_PLUGINS)
   ]
