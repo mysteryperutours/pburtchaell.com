@@ -26,6 +26,7 @@ function getPath(type) {
 const Icon = ({ type, ...props }: Props) => (
   <span className={styles.icon}>
     <svg
+      fill={props.fill}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
