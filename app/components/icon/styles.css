@@ -2,7 +2,11 @@
   height: 1em;
   width: 1em;
   top: .125em;
-  margin-right: .25em;
+  margin-right: .35em;
   display: inline-block;
   position: relative;
+}
+
+a:hover :local(.icon) {
+  opacity: .5;
 }
