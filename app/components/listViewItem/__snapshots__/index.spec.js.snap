@@ -5,6 +5,14 @@ exports[`ListViewItem should render component 1`] = `
   size={6}
   style={Object {}}>
   <div
-    className="list-view-item" />
+    className="list-view-item">
+    <div
+      className="list-view-item-title" />
+    <div
+      className="list-view-item-preview">
+      <div
+        className="list-view-item-preview-image" />
+    </div>
+  </div>
 </Column>
 `;

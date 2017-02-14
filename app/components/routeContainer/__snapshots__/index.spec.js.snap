@@ -1,9 +1,10 @@
 exports[`RouteContainer should render component 1`] = `
 <div
   className="route-container">
-  <RouteHeader />
+  <RouteHeader
+    align="left" />
   <main
-    className="route-body"
+    className="route-body route-body-default"
     role="main">
     foo
   </main>

@@ -1,6 +1,5 @@
 exports[`Icon should render Dribbble icon 1`] = `
-<span
-  className="icon">
+<span>
   <svg
     enableBackground="new 0 0 20 20"
     version="1.1"
@@ -15,8 +14,7 @@ exports[`Icon should render Dribbble icon 1`] = `
 `;
 
 exports[`Icon should render Facebook icon 1`] = `
-<span
-  className="icon">
+<span>
   <svg
     enableBackground="new 0 0 20 20"
     version="1.1"
@@ -31,8 +29,7 @@ exports[`Icon should render Facebook icon 1`] = `
 `;
 
 exports[`Icon should render GitHub icon 1`] = `
-<span
-  className="icon">
+<span>
   <svg
     enableBackground="new 0 0 20 20"
     version="1.1"
@@ -47,8 +44,7 @@ exports[`Icon should render GitHub icon 1`] = `
 `;
 
 exports[`Icon should render Twitter icon 1`] = `
-<span
-  className="icon">
+<span>
   <svg
     enableBackground="new 0 0 20 20"
     version="1.1"

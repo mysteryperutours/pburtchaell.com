@@ -39,7 +39,6 @@ class IndexRoute extends Component {
           <Text
             type={types.HEADER_1}
             style={{
-              marginTop: '1rem',
               marginBottom: '3rem'
             }}
           >Patrick Burtchaell is a product design intern at Facebook, studying design at Loyola University New Orleans.</Text>
@@ -49,41 +48,37 @@ class IndexRoute extends Component {
             <Text
               type={types.HEADER_2}
               style={{
-                marginBottom: '3rem'
+                marginBottom: '8rem'
               }}
-            >Previously, he worked freelance and at <a href="">Fixt</a>.</Text>
+            >Previously, he worked for Fixt, Fileee, Gigster, NewAperio, and others.</Text>
           </Column>
         </Row>
         <Row>
-          <Text
-            type={types.HEADER_3}
-            style={{
-              marginBottom: '2rem'
-            }}
-          >Selected Works</Text>
+          <Text type={types.HEADER_3}>Selected Works</Text>
         </Row>
-        {isPending ? null : (
-          <ListView
-            itemStyle={{
-              height: '30rem',
+        <ListView
+          isPending={isPending}
+          items={isPending ? null : Object.keys(data).map((key) => {
+            const { meta } = data[key];
+            const { date } = meta;
+            const defaultStyles = {
+              height: '25rem',
               borderRadius: '1px',
               backgroundSize: 'cover'
-            }}
-            items={Object.keys(data).map((key) => {
-              const { meta } = data[key];
-              const { date } = meta;
+            };
 
-              return ({
-                id: meta.id,
-                title: meta.title,
-                linkTo: `/work/${date.year}/${date.month}/${meta.pathname}`,
-                style: {
-                  backgroundImage: `url(${meta.coverImage.url})`
-                }
-              });
-            })}
-          />
-        )}
+            return ({
+              id: meta.id,
+              title: meta.title,
+              linkTo: `/work/${date.year}/${date.month}/${meta.pathname}`,
+              style: {
+                ...defaultStyles,
+                backgroundImage: `url(${meta.previewImage.url})`,
+                backgroundColor: meta.color
+              }
+            });
+          })}
+        />
       </RouteContainer>
     );
   }

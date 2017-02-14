@@ -4,10 +4,8 @@ exports[`ListView should render component 1`] = `
   defaultColumn={false}
   elementType="div">
   <ListViewItem
-    id={1}
-    style={Object {}} />
+    id={1} />
   <ListViewItem
-    id={2}
-    style={Object {}} />
+    id={2} />
 </Row>
 `;

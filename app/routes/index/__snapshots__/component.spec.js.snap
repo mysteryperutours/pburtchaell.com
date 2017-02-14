@@ -7,7 +7,6 @@ exports[`IndexRoute should render component 1`] = `
       style={
         Object {
           "marginBottom": "3rem",
-          "marginTop": "1rem",
         }
       }
       type="h1">
@@ -24,16 +23,11 @@ exports[`IndexRoute should render component 1`] = `
       <Text
         style={
           Object {
-            "marginBottom": "3rem",
+            "marginBottom": "8rem",
           }
         }
         type="h2">
-        Previously, he worked freelance and at 
-        <a
-          href="">
-          Fixt
-        </a>
-        .
+        Previously, he worked for Fixt, Fileee, Gigster, NewAperio, and others.
       </Text>
     </Column>
   </Row>
@@ -41,14 +35,15 @@ exports[`IndexRoute should render component 1`] = `
     defaultColumn={true}
     elementType="div">
     <Text
-      style={
-        Object {
-          "marginBottom": "2rem",
-        }
-      }
       type="h3">
       Selected Works
     </Text>
   </Row>
+  <ListView
+    isPending={true}
+    itemStyle={Object {}}
+    items={null}
+    layoutType="GRID"
+    listViewItem={[Function]} />
 </RouteContainer>
 `;

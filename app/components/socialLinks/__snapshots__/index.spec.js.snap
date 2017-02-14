@@ -7,7 +7,8 @@ exports[`SocialLinks should render component 1`] = `
       href="https://facebook.com/pburtchaell"
       title="Patrick Burtchaell on Facebook">
       <Icon
-        type="facebook" />
+        fill="#0063B5"
+        type="FACEBOOK" />
       Facebook
     </a>
   </li>
@@ -17,7 +18,8 @@ exports[`SocialLinks should render component 1`] = `
       href="https://twitter.com/pburtchaell"
       title="Patrick Burtchaell on Twitter">
       <Icon
-        type="twitter" />
+        fill="#0063B5"
+        type="TWITTER" />
       Twitter
     </a>
   </li>
@@ -27,7 +29,8 @@ exports[`SocialLinks should render component 1`] = `
       href="https://github.com/pburtchaell"
       title="Patrick Burtchaell on GitHub">
       <Icon
-        type="github" />
+        fill="#0063B5"
+        type="GITHUB" />
       GitHub
     </a>
   </li>
@@ -37,7 +40,8 @@ exports[`SocialLinks should render component 1`] = `
       href="https://dribbble.com/pburtchaell"
       title="Patrick Burtchaell on Dribbble">
       <Icon
-        type="dribbble" />
+        fill="#0063B5"
+        type="DRIBBBLE" />
       Dribbble
     </a>
   </li>

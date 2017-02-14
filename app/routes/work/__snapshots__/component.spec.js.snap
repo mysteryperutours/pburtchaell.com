@@ -4,15 +4,15 @@ exports[`WorkRoute should render component 1`] = `
     defaultColumn={true}
     elementType="div">
     <Text
-      style={
-        Object {
-          "marginBottom": "4rem",
-          "marginTop": "1rem",
-        }
-      }
       type="h1">
       All Work
     </Text>
   </Row>
+  <ListView
+    isPending={true}
+    itemStyle={Object {}}
+    items={null}
+    layoutType="GRID"
+    listViewItem={[Function]} />
 </RouteContainer>
 `;
