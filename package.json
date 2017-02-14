@@ -13,7 +13,7 @@
     "generate": "./bin/generate.sh",
     "lint": "`npm bin`/eslint src/**/*.js test/**/*.js",
     "pretest": "npm run lint",
-    "test": "./bin/test.sh",
+    "test": "`npm bin`/jest",
     "start": "`npm bin`/webpack-dev-server --content-base app/ --open --port 8080 --history-api-fallback --inline --client-log-level warning"
   },
   "pre-commit": [
