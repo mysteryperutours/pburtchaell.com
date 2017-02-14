@@ -1,6 +1,17 @@
 exports[`NotFoundRoute should render component 1`] = `
-<RouteContainer
-  header={false}>
-  Error
+<RouteContainer>
+  <Row
+    defaultColumn={true}
+    elementType="div">
+    <Text
+      type="h1">
+      Not Found
+    </Text>
+    <hr />
+    <Text
+      type="p">
+      Sorry, this page does not exist.
+    </Text>
+  </Row>
 </RouteContainer>
 `;
