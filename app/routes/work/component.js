@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import ListView from '../../components/listView';
 import Text, { types } from '../../components/text';
 import Row from '../../components/row';
+import Column from '../../components/column';
 import RouteContainer from '../../components/routeContainer';
 import requestHandler from '../../support/requestHandler';
+import './styles.less';
 
 const INITIAL_STATE = {
   data: [],
@@ -28,35 +30,35 @@ class WorkRoute extends Component {
     return (
       <RouteContainer>
         <Row>
-          <Text
-            type={types.HEADER_1}
-            style={{
-              marginTop: '1rem',
-              marginBottom: '4rem'
-            }}
-          >All Work</Text>
+          <Text type={types.HEADER_1}>All Work</Text>
         </Row>
-        {isPending ? null : (
-          <ListView
-            itemStyle={{
-              height: '30rem',
-              borderRadius: '1px',
-              backgroundSize: 'cover'
-            }}
-            items={Object.keys(data).map((key) => {
-              const { meta } = data[key];
-              const { date } = meta;
+        <ListView
+          isPending={isPending}
+          items={isPending ? null : Object.keys(data).map((key) => {
+            const { meta } = data[key];
+            const { date } = meta;
 
-              return ({
-                id: meta.id,
-                title: meta.title,
-                linkTo: `/work/${date.year}/${date.month}/${meta.pathname}`,
-                style: {
-                  backgroundImage: `url(${meta.coverImage.url})`
-                }
-              });
-            })}
-          />
+            return ({
+              id: meta.id,
+              title: meta.title,
+              linkTo: `/work/${date.year}/${date.month}/${meta.pathname}`,
+              style: {
+                backgroundImage: `url(${meta.previewImage.url})`,
+                backgroundColor: meta.color
+              }
+            });
+          })}
+        />
+        {isPending ? null : (
+          <Row defaultColumn={false}>
+            <Column size={9}>
+              <div className="dribbble-plug">
+                <Text type={types.HEADER_2}>
+                  &mdash;looking for more? <a href="https://dribbble.com/pburtchaell" title="Patrick Burtchaell on Dribbble">Visit my Dribbble profile</a> for day-to-day shapshots of my work.
+                </Text>
+              </div>
+            </Column>
+          </Row>
         )}
       </RouteContainer>
     );
