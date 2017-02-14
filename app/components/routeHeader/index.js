@@ -1,15 +1,22 @@
 import React, { Element } from 'react';
-import Column from '../../components/column';
 import Row from '../../components/row';
 import Text from '../text';
 import paths from '../../routes/paths';
-import styles from './styles.css';
+import styles from './styles.less';
+
+function getClassName(props): string {
+  const classNames = [styles.viewHeader];
+
+  if (props.align === 'left') classNames.push([styles.viewHeaderAlignLeft]);
+
+  return classNames.join(' ');
+}
 
 /**
  * @function RouteHeader
  * @description
  */
-const RouteHeader = (): Element => {
+const RouteHeader = (props: Props): Element => {
   const navigationItems = [{
     key: 0,
     label: 'Home',
@@ -28,32 +35,35 @@ const RouteHeader = (): Element => {
   return (
     <header
       role="banner"
-      className={styles.viewHeader}
+      className={getClassName(props)}
+      style={props.color ? {
+        backgroundColor: props.color
+      } : null}
     >
       <Row>
-        <Column size={12}>
-          <nav
-            role="navigation"
-            className={styles.viewNavigation}
-          >
-            {navigationItems.map(item => (
-              <Text
-                key={item.key}
-                linkTo={item.linkTo}
-                style={{
-                  fontSize: '3rem',
-                  lineHeight: '3rem',
-                  top: '2px'
-                }}
-              >
-                {item.label}
-              </Text>
-            ))}
-          </nav>
-        </Column>
+        <nav
+          role="navigation"
+          className={styles.viewNavigation}
+        >
+          {navigationItems.map(item => (
+            <Text
+              key={item.key}
+              linkTo={item.linkTo}
+              style={{
+                color: props.textColor ? props.textColor : ''
+              }}
+            >
+              {item.label}
+            </Text>
+          ))}
+        </nav>
       </Row>
     </header>
   );
+};
+
+RouteHeader.defaultProps = {
+  align: 'left'
 };
 
 export default RouteHeader;
