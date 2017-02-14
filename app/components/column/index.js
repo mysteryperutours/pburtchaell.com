@@ -18,10 +18,18 @@ type Props = {
  * value between 1 and 12. By default, the Column will render at full width.
  */
 const Column = ({ size, children, className, elementType, ...props }: Props): Element<*> => {
+  let columnWidth: number;
+
   // The percentage width of the column on a grid 12 columns wide
   const columnSize: number = (100 / 12);
-  const columnWidth: number = columnSize * size;
   const columnClassName: string = 'column';
+  const screenWidth = screen.width;
+
+  if (screenWidth > 400) {
+    columnWidth = columnSize * size;
+  } else {
+    columnWidth = 100;
+  }
 
   return createElement(
     elementType,
