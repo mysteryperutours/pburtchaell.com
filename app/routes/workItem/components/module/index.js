@@ -3,7 +3,7 @@ import createChildElement from './support/createChildElement';
 import types from './support/types';
 import Row from '../../../../components/row';
 import Column from '../../../../components/column';
-import './styles.css';
+import './styles.less';
 
 type Props = {
   children: Array<*>,
