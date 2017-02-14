@@ -3,6 +3,11 @@ import WorkItemRoute from './component';
 
 describe(WorkItemRoute.name, () => {
   it('should render component', () => {
-    expect(shallow(<WorkItemRoute />)).toMatchSnapshot();
+    expect(shallow(
+      <WorkItemRoute
+        params={{}}
+        route={{}}
+      />
+    )).toMatchSnapshot();
   });
 });
