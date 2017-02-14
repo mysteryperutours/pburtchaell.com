@@ -1,9 +1,0 @@
-.list-view.list-view-type-grid .list-view-item {
-  margin-top: .75rem;
-  margin-bottom: .75rem;
-}
-
-.list-view-item-container:nth-of-type(1) .list-view-item,
-.list-view-item-container:nth-of-type(2) .list-view-item {
-  margin-top: 0;
-}

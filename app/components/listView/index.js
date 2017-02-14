@@ -14,20 +14,31 @@ type Props = {
   title?: string
 }
 
-const ListView = ({ listViewItem, layoutType, containerStyle, ...props }: Props) => {
-  const className = `list-view list-view-type-${layoutType.toLowerCase()}`;
-
-  const renderItem = item => createElement(listViewItem, {
+function renderListViewItem(item, type): Element<*> {
+  return createElement(type, {
     ...item,
-    key: item.id,
-    style: Object.assign(props.itemStyle, item.style)
+    key: item.id
   });
+}
+
+const ListView = ({ layoutType, ...props }: Props): Element<*> => {
+  const className = `list-view list-view-type-${layoutType.toLowerCase()}`;
+  const pendingElements = [0,1,2];
 
   return (
-    <Row className={className} defaultColumn={false} style={containerStyle}>
-      {props.isPending ? (
-        <div>Loading...</div>
-      ) : props.items.map(renderItem)}
+    <Row
+      className={className}
+      defaultColumn={false}
+      style={props.containerStyle}
+    >
+      {props.isPending ? pendingElements.map(el => {
+        return (
+          <ListViewItem
+            key={el}
+            isPending={true}
+          />
+        );
+      }) : props.items.map(item => renderListViewItem(item, props.listViewItem))}
     </Row>
   );
 };
