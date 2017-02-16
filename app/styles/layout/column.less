@@ -1,0 +1,23 @@
+.column {
+  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.generate-grid-large();
+
+@media only screen and (max-width: @screen-small) {
+  .generate-grid-small();
+  .hide-on-small { display: none; }
+  .show-on-small { display: block; }
+}
+
+@media only screen and (max-width: @screen-large) {
+  .hide-on-large { display: none; }
+  .show-on-large { display: block; }
+}

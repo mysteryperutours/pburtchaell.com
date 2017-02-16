@@ -44,7 +44,7 @@ class IndexRoute extends Component {
           >Patrick Burtchaell is a product design intern at Facebook, studying design at Loyola University New Orleans.</Text>
         </Row>
         <Row>
-          <Column size={8}>
+          <Column largeSize={8} smallSize={12}>
             <Text
               type={types.HEADER_2}
               style={{

@@ -60,7 +60,7 @@ class WorkItemRoute extends PureComponent {
                 maxWidth: '100%'
               }}
             >
-              <Column size={12}>
+              <Column largeSize={12}>
                 <Text
                   type={types.HEADER_1}
                   style={{
@@ -109,7 +109,7 @@ class WorkItemRoute extends PureComponent {
             <div className="case-study-content">
               <section>
                 <Row defaultColumn={false}>
-                  <Column size={3}>
+                  <Column largeSize={3} smallSize={4}>
                     <div className="case-study-meta">
                       <ul>
                         {data.meta.company ? (
@@ -127,7 +127,6 @@ class WorkItemRoute extends PureComponent {
                             <div className="case-study-link">
                               <a href={data.meta.website.href}>
                                 <span>{data.meta.website.title}</span>
-                                <span>&#8594;</span>
                               </a>
                             </div>
                             <div>website</div>
@@ -136,7 +135,7 @@ class WorkItemRoute extends PureComponent {
                       </ul>
                     </div>
                   </Column>
-                  <Column size={7}>
+                  <Column largeSize={7} smallSize={8}>
                     <p className="case-study-intro">{data.meta.intro}</p>
                   </Column>
                 </Row>
@@ -149,6 +148,30 @@ class WorkItemRoute extends PureComponent {
                   {m.children}
                 </Module>
               ))) : null}
+              <section>
+                <Row>
+                  <Column
+                    largeSize={7}
+                    smallSize={8}
+                    offsetLarge={3}
+                    offsetSmall={4}
+                  >
+                    <div className="case-study-meta case-study-meta--press">
+                      <h4>Press</h4>
+                      <ul>
+                        <li>
+                          <div className="case-study-link"><a href="techcrunch.com/2017/02/08/facebook-can-now-replace-your-weather-app/" title="Facebook can now replace your weather app">"Facebook can now replace your weather app"</a></div>
+                          <div>Tech Crunch</div>
+                        </li>
+                        <li>
+                          <div className="case-study-link"><a href="techcrunch.com/2017/02/08/facebook-can-now-replace-your-weather-app/" title="Facebook now has a built-in weather app">"Facebook now has a built-in weather app"</a></div>
+                          <div>Mashable</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </Column>
+                </Row>
+              </section>
             </div>
           )}
         </article>

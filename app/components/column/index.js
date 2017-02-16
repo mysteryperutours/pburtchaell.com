@@ -1,13 +1,13 @@
 // @flow
 import { createElement, Element } from 'react';
-import './styles.css';
 
 type Props = {
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
   className?: string,
   elementType: string,
   offset?: number,
-  size: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
+  largeSize: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
+  smallSize: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
   style?: Object
 }
 
@@ -17,33 +17,25 @@ type Props = {
  * grid. Using the `size` property, the width of the column can be set to any
  * value between 1 and 12. By default, the Column will render at full width.
  */
-const Column = ({ size, children, className, elementType, ...props }: Props): Element<*> => {
-  let columnWidth: number;
+const Column = ({ children, elementType, ...props }: Props): Element<*> => {
+  const classNames = ['column'];
 
-  // The percentage width of the column on a grid 12 columns wide
-  const columnSize: number = (100 / 12);
-  const columnClassName: string = 'column';
-  const screenWidth = screen.width;
+  if (props.className) classNames.push([props.className]);
+  if (props.largeSize) classNames.push([`column-large-${props.largeSize}`]);
+  if (props.smallSize) classNames.push(`column-small-${props.smallSize}`);
 
-  if (screenWidth > 400) {
-    columnWidth = columnSize * size;
-  } else {
-    columnWidth = 100;
+  if (props.offsetSmall) {
+    classNames.push([`column-push-small-${props.offsetSmall}`]);
+  }
+
+  if (props.offsetLarge) {
+    classNames.push([`column-push-large-${props.offsetLarge}`]);
   }
 
   return createElement(
     elementType,
     {
-      ...props,
-      className: `${columnClassName} ${columnClassName}-${size}${className ? ' ' + className : ''}`,
-      style: Object.assign({
-
-        // @TODO: Add support for IE
-        flexBasis: `${columnWidth}%`,
-        maxWidth: `${columnWidth}%`
-      }, props.offset ? {
-        marginLeft: `${columnSize * props.offset}%`
-      } : {}, props.style)
+      className: classNames.join(' ')
     },
     children
   );
@@ -51,7 +43,8 @@ const Column = ({ size, children, className, elementType, ...props }: Props): El
 
 Column.defaultProps = {
   elementType: 'div',
-  size: 12, // Render at full width by default
+  scale: 'large',
+  largeSize: 12, // Render at full width by default
   style: {}
 };
 

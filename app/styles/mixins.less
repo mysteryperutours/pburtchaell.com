@@ -1,0 +1,43 @@
+// Handle media queries with mixins
+// Source: http://stackoverflow.com/q/15837808/2476275
+.on-large-screen(@rules) {
+  @media screen and (min-width: @screen-large) {
+    @rules();
+  }
+}
+
+.on-medium-screen(@rules) {
+  @media screen and (max-width: @screen-medium) {
+    @rules();
+  }
+}
+
+.on-small-screen(@rules) {
+  @media screen and (max-width: @screen-small) {
+    @rules();
+  }
+}
+
+// Generate the small and large grid
+// Source: v3.x - pburtchaell.com/app/styles/layout/grid.less
+.generate-grid-large(@n: 12, @i: 1) when (@i =< @n) {
+  @size: (@i * 100% / @n);
+
+  .column-large-@{i} {
+    max-width: @size;
+    flex-basis: @size;
+  }
+
+  .generate-grid-large(@n, (@i + 1));
+}
+
+.generate-grid-small(@n: 12, @i: 1) when (@i =< @n) {
+  @size: (@i * 100% / @n);
+
+  .column-small-@{i} {
+    max-width: @size;
+    flex-basis: @size;
+  }
+
+  .generate-grid-small(@n, (@i + 1));
+}

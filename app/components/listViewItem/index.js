@@ -26,7 +26,11 @@ const ListViewItem = ({ children, linkTo, isPending, ...props }: Props) => {
   }
 
   return (
-    <Column size={6} className="list-view-item-container">
+    <Column
+      largeSize={6}
+      smallSize={12}
+      className="list-view-item-container"
+    >
       {linkTo ? (
         <Link to={linkTo} title={props.title}>{renderInner()}</Link>
       ) : renderInner()}
