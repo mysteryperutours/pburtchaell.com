@@ -23,7 +23,7 @@ function renderListViewItem(item, type): Element<*> {
 
 const ListView = ({ layoutType, ...props }: Props): Element<*> => {
   const className = `list-view list-view-type-${layoutType.toLowerCase()}`;
-  const pendingElements = [0,1,2];
+  const pendingElements = [0, 1, 2];
 
   return (
     <Row
