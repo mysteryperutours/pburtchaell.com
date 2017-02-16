@@ -62,11 +62,7 @@ const getAbsolutePathtoModule = (relativePathToModule = '') => {
  * The following plugins will be used for development.
  */
 const DEVELOPMENT_PLUGINS = [
-  new webpack.NoEmitOnErrorsPlugin(),
-  /*new AnalyzerPlugin({
-    openAnalyzer: false, // Do not automatically open browser
-    logLevel: 'silent' // Do not log information
-  })*/
+  new webpack.NoEmitOnErrorsPlugin()
 ];
 
 /**
@@ -155,11 +151,7 @@ const config = {
       {
         test: /\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
         loader: 'file-loader'
-      },
-      /* @TODO consider loading files in URL {
-        test: /\.(woff2)(\?.*)?$/,
-        loader: 'url-loader'
-      }*/
+      }
     ]
   },
   resolve: {
