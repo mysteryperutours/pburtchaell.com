@@ -1,11 +1,41 @@
 <!doctype html public>
 <html lang="en" prefix="og: http://ogp.me/ns#">
-<meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1"/>
-<meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
-<title>Patrick Burtchaell - Product design and web development from New Orleans</title>
-<link href="<%= htmlWebpackPlugin.files.css[0] %>" rel="stylesheet">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+  <meta charset="utf-8">
+  <meta http-equiv=X-UA-Compatible content="IE=Edge,chrome=1">
+  <meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+  <link rel="canonical" href="https://pburtchaell.com/">
+  <title>Patrick Burtchaell - Product design and Web Development from New Orleans</title>
+  <meta name="description" content="Patrick Burtchaell is a New Orleans product designer and web developer, studying design at Loyola University New Orleans.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Patrick Burtchaell">
+  <meta property="og:url" content="https://www.pburtchaell.com/">
+  <meta property="og:title" content="Patrick Burtchaell">
+  <meta property="og:description" content="Patrick Burtchaell is a New Orleans product designer and web developer, studying design at Loyola University New Orleans.">
+  <meta property="og:image" content="images/cards/facebook.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@pburtchaell">
+  <meta name="twitter:domain" content="pburtchaell.com">
+  <meta name="twitter:title" content="Patrick Burtchaell">
+  <meta name="twitter:description" content="Patrick Burtchaell is a New Orleans product designer and web developer, studying design at Loyola University New Orleans.">
+  <meta name="twitter:image" content="images/cards/twitter.png">
+  <meta name="theme-color" content="#FFFFFF">
+  <link href="<%= htmlWebpackPlugin.files.css[0] %>" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicons/16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="images/favicons/32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/favicons/96x96.png" sizes="96x96">
+  <!-- Btw, you can see the source on GitHub: https://github.com/pburtchaell/pburtchaell.com -->
+</head>
 <body>
   <div id="app-mount"></div>
   <script src=<%=htmlWebpackPlugin.files.js[0]%>></script>
 </body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47392700-1', 'auto');
+  ga('send', 'pageview');
+</script>
 <!-- v<%= htmlWebpackPlugin.options.version %> - Build: <%= webpack.hash %> -->
