@@ -35,6 +35,27 @@
         "pathname": "facebook-weather"
       },
       "data": {
+        "press": [{
+          "id": "0",
+          "title": "Facebook can now replace your weather app",
+          "publisher": "TechCrunch",
+          "url": "http://techcrunch.com/2017/02/08/facebook-can-now-replace-your-weather-app/"
+        }, {
+          "id": "1",
+          "title": "Facebook now has a built-in weather app",
+          "publisher": "Mashable",
+          "url": "http://mashable.com/2017/02/09/facebook-weather/"
+        }, {
+          "id": "2",
+          "title": "Facebook Has Just Launched Its Own In-Built Weather App",
+          "publisher": "Huffington Post UK",
+          "url": "http://www.huffingtonpost.co.uk/entry/facebook-has-just-launched-its-own-in-built-weather-app_uk_589c9c15e4b0a1dcbd04b963"
+        }, {
+          "id": "3",
+          "title": "Now Facebook wants to be your weather app",
+          "publisher": "Fast Company",
+          "url": "https://news.fastcompany.com/now-facebook-wants-to-be-your-weather-app-4030534"
+        }],
         "modules": [{
           "type": "module-text",
           "children": [{
@@ -46,7 +67,7 @@
           "children": [{
             "type": "video",
             "meta": {
-              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2F160602_prototype_1.mp4?alt=media&token=5ebb2bdc-f43e-41a7-b3ac-85a591c4f29b",
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FMaster.mov?alt=media&token=6675f33f-2903-480e-9007-be674b2f5127",
               "alt": "A prototype"
             }
           }]
