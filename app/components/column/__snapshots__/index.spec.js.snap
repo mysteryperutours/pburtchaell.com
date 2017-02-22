@@ -1,10 +1,4 @@
 exports[`Column should render component 1`] = `
 <div
-  className="column column-12"
-  style={
-    Object {
-      "flexBasis": "100%",
-      "maxWidth": "100%",
-    }
-  } />
+  className="column column-large-12" />
 `;

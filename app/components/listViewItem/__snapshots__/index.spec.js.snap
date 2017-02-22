@@ -2,7 +2,9 @@ exports[`ListViewItem should render component 1`] = `
 <Column
   className="list-view-item-container"
   elementType="div"
-  size={6}
+  largeSize={6}
+  scale="large"
+  smallSize={12}
   style={Object {}}>
   <div
     className="list-view-item">
