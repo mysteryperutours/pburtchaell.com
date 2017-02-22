@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "projects": {
+      ".read": "auth == null",
+      ".write": false,
+      "$project": {
+        ".validate": "newData.hasChildren(['meta', 'data'])"
+      }
+    }
+  }
+}
