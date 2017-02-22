@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https+git://github.com/<USERNAME>/<REPOSITORY>.git"
+    "url": "https+git://github.com/pburtchaell/pburtchaell.com.git"
   },
   "scripts": {
     "precommit": "echo 'Running pre-commit hook...' && npm test",
