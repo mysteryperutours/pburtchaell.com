@@ -14,7 +14,9 @@
     "lint": "`npm bin`/eslint src/**/*.js test/**/*.js",
     "pretest": "npm run lint",
     "test": "`npm bin`/jest",
-    "start": "`npm bin`/webpack-dev-server --content-base app/ --open --port 8080 --history-api-fallback --inline --client-log-level warning"
+    "start": "`npm bin`/webpack-dev-server --content-base app/ --open --port 8080 --history-api-fallback --inline --client-log-level warning",
+    "update-database-rules": "firebase deploy --only database",
+    "update-database": "firebase database:set / database.json"
   },
   "pre-commit": [
     "precommit"
