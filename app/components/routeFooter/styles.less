@@ -1,16 +1,41 @@
 :local(.routeFooter) {
   color: #5F595A;
   margin: 2rem 0;
-  text-align: right;
   position: relative;
   max-width: 100%;
   transition: background-color 3s ease;
   user-select: none;
+  line-height: 1rem;
 }
 
-:local(.routeFooterHeart) object {
-  fill: #ff2e5e;
-  margin-left: .5rem;
-  margin-top: 2px;
-  position: relative;
+:local(.routeFooterBackLink) {
+  margin-right: .5rem;
+  text-align: left;
+
+  a::before {
+    content: "\2190";
+    transition: margin 300ms ease;
+  }
+
+  a:hover {
+    color: #0063B5;
+
+    &::before {
+      margin-right: .5rem;
+      color: #0063B5;
+    }
+  }
+}
+
+:local(.routeFooterHeart) {
+  text-align: right;
+  width: 100px;
+  float: right;
+
+  object {
+    fill: #ff2e5e;
+    margin-left: .75rem;
+    margin-top: 2px;
+    position: relative;
+  }
 }
