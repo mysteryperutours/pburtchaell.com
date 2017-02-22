@@ -1,5 +1,7 @@
+// @flow
 import React, { PureComponent, Children } from 'react';
 import Module from './components/module';
+import Press from './components/press';
 import Text, { types } from '../../components/text';
 import Column from '../../components/column';
 import Row from '../../components/row';
@@ -13,9 +15,18 @@ const INITIAL_STATE = {
   isRejected: false
 };
 
+type Props = {
+  route: {
+    config?: Object
+  },
+  params: {
+    title: string
+  }
+};
+
 class WorkItemRoute extends PureComponent {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props: Props, context) {
+    super(props: Props, context);
 
     this.state = INITIAL_STATE;
   }
@@ -148,30 +159,11 @@ class WorkItemRoute extends PureComponent {
                   {m.children}
                 </Module>
               ))) : null}
-              <section>
-                <Row>
-                  <Column
-                    largeSize={7}
-                    smallSize={8}
-                    offsetLarge={3}
-                    offsetSmall={4}
-                  >
-                    <div className="case-study-meta case-study-meta--press">
-                      <h4>Press</h4>
-                      <ul>
-                        <li>
-                          <div className="case-study-link"><a href="techcrunch.com/2017/02/08/facebook-can-now-replace-your-weather-app/" title="Facebook can now replace your weather app">"Facebook can now replace your weather app"</a></div>
-                          <div>Tech Crunch</div>
-                        </li>
-                        <li>
-                          <div className="case-study-link"><a href="techcrunch.com/2017/02/08/facebook-can-now-replace-your-weather-app/" title="Facebook now has a built-in weather app">"Facebook now has a built-in weather app"</a></div>
-                          <div>Mashable</div>
-                        </li>
-                      </ul>
-                    </div>
-                  </Column>
-                </Row>
-              </section>
+              {data.data ? (
+                <Press
+                  items={data.data.press}
+                />
+              ) : null}
             </div>
           )}
         </article>

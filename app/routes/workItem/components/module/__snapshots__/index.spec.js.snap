@@ -5,7 +5,9 @@ exports[`Module renders module with multiple children 1`] = `
   elementType="section">
   <Column
     elementType="div"
+    largeSize={12}
     offset={2}
+    scale="large"
     size={8}
     style={Object {}}>
     <Text
@@ -27,7 +29,9 @@ exports[`Module renders module with type media 1`] = `
   elementType="section">
   <Column
     elementType="div"
+    largeSize={12}
     offset={2}
+    scale="large"
     size={8}
     style={Object {}}>
     <Image
@@ -46,7 +50,9 @@ exports[`Module renders module with type text 1`] = `
   elementType="section">
   <Column
     elementType="div"
+    largeSize={12}
     offset={2}
+    scale="large"
     size={8}
     style={Object {}}>
     <Text

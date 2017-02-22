@@ -23,7 +23,8 @@ exports[`WorkItemRoute should render component 1`] = `
         }>
         <Column
           elementType="div"
-          size={12}
+          largeSize={12}
+          scale="large"
           style={Object {}}>
           <Text
             style={

@@ -1,0 +1,52 @@
+exports[`Press renders component 1`] = `
+<section
+  style={
+    Object {
+      "marginTop": "7rem",
+    }
+  }>
+  <Row
+    defaultColumn={false}
+    elementType="div">
+    <Column
+      elementType="div"
+      largeSize={3}
+      scale="large"
+      smallSize={4}
+      style={Object {}}>
+      <h5
+        style={
+          Object {
+            "margin": "1rem",
+            "textAlign": "right",
+          }
+        }>
+        Press
+      </h5>
+    </Column>
+    <Column
+      elementType="div"
+      largeSize={7}
+      scale="large"
+      smallSize={8}
+      style={Object {}}>
+      <div
+        className="case-study-meta case-study-meta--press">
+        <ul>
+          <li>
+            <div
+              className="case-study-link">
+              <a
+                href="http://foo.com"
+                title="Foo">
+                \"Foo\"
+              </a>
+            </div>
+            <div />
+          </li>
+        </ul>
+      </div>
+    </Column>
+  </Row>
+</section>
+`;
