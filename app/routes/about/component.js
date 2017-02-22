@@ -1,5 +1,6 @@
 // @flow
 import React, { Element } from 'react';
+import { Link } from 'react-router';
 import Column from '../../components/column';
 import Text, { types } from '../../components/text';
 import Row from '../../components/row';
@@ -13,11 +14,46 @@ const AboutRoute = (props): Element<*> => (
       <Column largeSize={9} smallSize={12}>
         <Text>Currently, Patrick attends Loyola University New Orleans studying a Bachelor of Science in Design with Honors and expects to graduate in 2018.</Text>
         <Text>Patrick has worked with startups around the world as a  software developer and designer. He is a cofounder and partner at Lawn Chair, a design and software development studio he founded in 2015.</Text>
+        <Text style={{
+          opacity: '.3'
+        }}>
+          <small>
+            Last updated &mdash; February 2017
+          </small>
+          <hr />
+        </Text>
       </Column>
     </Row>
-    <Row>
-      <Column largeSize={6} smallSize={12}>
+    <Row defaultColumn={false}>
+      <Column largeSize={4} smallSize={12}>
+        <h5>Clients &amp; Companies</h5>
+        <ul>
+          <li>Facebook</li>
+          <li>Filee</li>
+          <li>Fixt</li>
+          <li>Gigster</li>
+          <li>Jefferson SPCA</li>
+          <li>NewAperio</li>
+        </ul>
+      </Column>
+      <Column largeSize={8} smallSize={12}>
+        <h5>Personal Projects</h5>
+        <ul>
+          <li><Link to="/work/2015/08/segment">Segment</Link></li>
+          <li><Link to="/work/2015/08/lawnchair">Lawn Chair Studios</Link></li>
+        </ul>
+      </Column>
+      <Column largeSize={4} smallSize={12}>
+        <h5>Connect</h5>
         <SocialLinks />
+      </Column>
+      <Column largeSize={8} smallSize={12}>
+        <h5>Open Source Projects</h5>
+        <ul>
+          <li><Link to="https://github.com/pburtchaell/redux-promise-middleware">Redux Promise Middleware</Link></li>
+          <li><Link to="https://github.com/pburtchaell/react-input">React Input</Link></li>
+          <li><Link to="https://github.com/pburtchaell/react-notification">React Notification</Link></li>
+        </ul>
       </Column>
     </Row>
   </RouteContainer>
