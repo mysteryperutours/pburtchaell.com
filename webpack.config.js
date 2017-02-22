@@ -31,6 +31,9 @@ const ExtractTextPluginConfig = {
   }]
 };
 
+// The Firebase databse URL
+const DATABASE_URL = 'folkloric-house-95904.firebaseio.com';
+
 // The environment Node is running, which defaults to development
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -185,12 +188,11 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-      DATABASE_URL: JSON.stringify('folkloric-house-95904.firebaseio.com')
+      DATABASE_URL: JSON.stringify(DATABASE_URL)
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: path.join(__dirname, 'app/index.ejs'),
-      // @TODO: favicon: path.join(__dirname, 'public/favicon.ico'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
