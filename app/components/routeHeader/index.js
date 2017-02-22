@@ -49,6 +49,7 @@ const RouteHeader = (props: Props): Element => {
             <Text
               key={item.key}
               linkTo={item.linkTo}
+              activeClassName="is-active"
               style={{
                 color: props.textColor ? props.textColor : ''
               }}
