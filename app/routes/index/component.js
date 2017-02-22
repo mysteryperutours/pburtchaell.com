@@ -39,19 +39,9 @@ class IndexRoute extends Component {
           <Text
             type={types.HEADER_1}
             style={{
-              marginBottom: '3rem'
+              marginBottom: '9rem'
             }}
           >Patrick Burtchaell is a product design intern at Facebook, studying design at Loyola University New Orleans.</Text>
-        </Row>
-        <Row>
-          <Column largeSize={8} smallSize={12}>
-            <Text
-              type={types.HEADER_2}
-              style={{
-                marginBottom: '8rem'
-              }}
-            >Previously, he worked for Fixt, Fileee, Gigster, NewAperio, and others.</Text>
-          </Column>
         </Row>
         <Row>
           <Text type={types.HEADER_3}>Selected Works</Text>

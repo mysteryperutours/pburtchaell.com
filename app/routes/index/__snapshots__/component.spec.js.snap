@@ -6,30 +6,12 @@ exports[`IndexRoute should render component 1`] = `
     <Text
       style={
         Object {
-          "marginBottom": "3rem",
+          "marginBottom": "9rem",
         }
       }
       type="h1">
       Patrick Burtchaell is a product design intern at Facebook, studying design at Loyola University New Orleans.
     </Text>
-  </Row>
-  <Row
-    defaultColumn={true}
-    elementType="div">
-    <Column
-      elementType="div"
-      size={8}
-      style={Object {}}>
-      <Text
-        style={
-          Object {
-            "marginBottom": "8rem",
-          }
-        }
-        type="h2">
-        Previously, he worked for Fixt, Fileee, Gigster, NewAperio, and others.
-      </Text>
-    </Column>
   </Row>
   <Row
     defaultColumn={true}
