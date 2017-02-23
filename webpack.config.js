@@ -10,7 +10,7 @@ const ExtractCSS = new ExtractTextPlugin('style.css');
 
 const ENTRY = {
   app: [
-    'whatwg-fetch', // Fetch API polyfill
+    'unfetch', // Fetch API polyfill
     './app/styles/index.less',
     './app/index.js'
   ]
