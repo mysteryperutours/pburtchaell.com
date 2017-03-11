@@ -18,9 +18,6 @@
     "update-database-rules": "firebase deploy --only database",
     "update-database": "firebase database:set / database.json"
   },
-  "pre-commit": [
-    "precommit"
-  ],
   "jest": {
     "setupFiles": [
       "whatwg-fetch",
@@ -76,7 +73,6 @@
     "jest-css-modules": "^1.1.0",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
-    "pre-commit": "^1.2.2",
     "react-addons-test-utils": "^15.4.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
