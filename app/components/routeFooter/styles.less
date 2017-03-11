@@ -1,6 +1,6 @@
 :local(.routeFooter) {
   color: #5F595A;
-  margin: 2rem 0;
+  padding: 2rem 0;
   position: relative;
   max-width: 100%;
   transition: background-color 3s ease;
@@ -8,18 +8,39 @@
   line-height: 1rem;
 }
 
-:local(.routeFooterBackLink) {
+:local(.routeFooterBackLink),
+:local(.routeFooterBackToTopLink) {
   margin-right: .5rem;
   text-align: left;
 
-  a::before {
+  a::before,
+  div::before {
     content: "\2190";
     transition: margin 300ms ease;
   }
 
-  a:hover {
+  a:hover,
+  div:hover {
     color: #0063B5;
+    cursor: pointer;
 
+    &::before {
+      margin-right: .5rem;
+      color: #0063B5;
+    }
+  }
+}
+
+:local(.routeFooterBackToTopLink) {
+  text-align: center;
+
+  div::before {
+    content: "\2191";
+    margin-right: .5rem;
+  }
+
+  a:hover,
+  div:hover {
     &::before {
       margin-right: .5rem;
       color: #0063B5;

@@ -8,7 +8,8 @@ type Props = {
   linkBackTo?: {
     link: string,
     title: string
-  }
+  },
+  linkBackToTop?: boolean
 }
 
 // The footer for each route
@@ -26,7 +27,7 @@ const RouteFooter = (props: Props): Element => {
       className={styles.routeFooter}
     >
       <Row defaultColumn={false}>
-        <Column largeSize={6}>
+        <Column largeSize={4} smallSize={props.linkBackToTop ? 6 : 12}>
           {props.linkBackTo ? (
             <div className={styles.routeFooterBackLink}>
               <small>
@@ -37,7 +38,22 @@ const RouteFooter = (props: Props): Element => {
             </div>
           ) : null}
         </Column>
-        <Column largeSize={6}>
+        <Column largeSize={4} smallSize={6}>
+          {props.linkBackToTop ? (
+            <div className={styles.routeFooterBackToTopLink}>
+              <small>
+                <div
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  Back to Top
+                </div>
+              </small>
+            </div>
+          ) : null}
+        </Column>
+        <Column largeSize={4} smallSize={12}>
           <div className={styles.routeFooterHeart}>
             <small>
               {sayings[Math.floor(Math.random() * sayings.length)]}
