@@ -13,9 +13,16 @@ p a {
   &:hover,
   &:active {
     color: @color-blue--001;
-    text-decoration: underline;
-    text-decoration-color: @color-blue--001;
     outline-width: 0;
+    background-image: linear-gradient(@color-blue--001 0%, @color-blue--001 100%);
+    background-repeat: repeat-x;
+    background-size: 1px 2px;
+    background-position: 0 95%;
+    text-shadow: 3px 0  @color-white--001, 2px 0  @color-white--001, 1px 0  @color-white--001, -1px 0  @color-white--001, -2px 0  @color-white--001, -3px 0 @color-white--001;
+
+    &.is-gray {
+      text-shadow: 3px 0 @color-gray--003, 2px 0 @color-gray--003, 1px 0 @color-gray--003, -1px 0 @color-gray--003, -2px 0 @color-gray--003, -3px 0 @color-gray--003;
+    }
   }
 }
 
