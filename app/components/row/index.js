@@ -8,7 +8,7 @@ type Props = {
   className?: string,
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
   defaultColumn?: boolean,
-  elementType: string
+  elementType?: string
 }
 
 /**
@@ -19,7 +19,6 @@ type Props = {
  * The Row can also have a custom className, set using the `className` property.
  */
 const Row = ({
-  className,
   children,
   defaultColumn,
   elementType,
@@ -50,6 +49,7 @@ const Row = ({
 };
 
 Row.defaultProps = {
+  size: 'default',
   defaultColumn: true,
   elementType: 'div'
 };
