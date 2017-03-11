@@ -25,31 +25,49 @@ class WorkRoute extends Component {
   }
 
   render(): RouteContainer {
-    const { isPending, data } = this.state;
+    const { isPending, isRejected, data } = this.state;
 
     return (
       <RouteContainer>
-        <Row>
-          <Text type={types.HEADER_1}>All Work</Text>
-        </Row>
-        <ListView
-          isPending={isPending}
-          items={isPending ? null : Object.keys(data).map((key) => {
-            const { meta } = data[key];
-            const { date } = meta;
-
-            return ({
-              id: meta.id,
-              title: meta.title,
-              linkTo: `/work/${date.year}/${date.month}/${meta.pathname}`,
-              style: {
-                backgroundImage: `url(${meta.previewImage.url})`,
-                backgroundColor: meta.color
-              }
-            });
-          })}
-        />
+        {isRejected ? (
+          <Row>
+            <Text type={types.HEADER_1}>Oh no!</Text>
           </Row>
+        ) : (
+          <Row>
+            <Text type={types.HEADER_1}>All Work</Text>
+          </Row>
+        )}
+        {isRejected ? (
+          <Row>
+            <hr />
+            A server error has occured.
+          </Row>
+        ) : (
+          <ListView
+            isPending={isPending}
+            items={isPending ? null : Object.keys(data).map((key) => {
+              const { meta } = data[key];
+              const { date } = meta;
+
+              return meta.status === 'pending' ? ({
+                id: meta.id,
+                title: meta.title,
+                isNull: true,
+                style: {
+                  backgroundColor: '#e8e6e6'
+                }
+              }) : ({
+                id: meta.id,
+                title: meta.title,
+                linkTo: `/work/${date.year}/${date.month}/${meta.pathname}`,
+                style: {
+                  backgroundImage: `url(${meta.previewImage.url})`,
+                  backgroundColor: `rgb(${meta.primaryColor.rgb})`
+                }
+              });
+            })}
+          />
         )}
       </RouteContainer>
     );
