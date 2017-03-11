@@ -1,23 +1,47 @@
 exports[`IndexRoute should render component 1`] = `
-<RouteContainer>
+<RouteContainer
+  color={
+    Object {
+      "b": 255,
+      "g": 255,
+      "r": 255,
+    }
+  }
+  defaultTheme={true}
+  footer={true}
+  header={true}>
   <Row
     defaultColumn={true}
-    elementType="div">
-    <Text
-      style={
-        Object {
-          "marginBottom": "9rem",
+    elementType="div"
+    size="default">
+    <Column
+      elementType="div"
+      largeSize={8}
+      scale="large"
+      smallSize={12}
+      style={Object {}}>
+      <Text
+        type="h1">
+        Patrick Burtchaell
+      </Text>
+      <Text
+        style={
+          Object {
+            "marginBottom": "9rem",
+            "marginTop": "-1rem",
+          }
         }
-      }
-      type="h1">
-      Patrick Burtchaell is a product design intern at Facebook, studying design at Loyola University New Orleans.
-    </Text>
+        type="h4">
+        Product Designer
+      </Text>
+    </Column>
   </Row>
   <Row
     defaultColumn={true}
-    elementType="div">
+    elementType="div"
+    size="default">
     <Text
-      type="h3">
+      type="h4">
       Selected Works
     </Text>
   </Row>
