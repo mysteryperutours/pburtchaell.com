@@ -18,6 +18,8 @@ function getPath(type) {
       return paths.FACEBOOK;
     case types.DRIBBBLE:
       return paths.DRIBBBLE;
+    case types.MESSENGER:
+      return paths.MESSENGER;
     default:
       throw new Error('Path not found');
   }

@@ -2,6 +2,14 @@ import React from 'react';
 import Icon, { types } from './index';
 
 describe(Icon.name, () => {
+  it('should render Messenger icon', () => {
+    expect(shallow(
+      <Icon
+        type={types.MESSENGER}
+      />
+    )).toMatchSnapshot();
+  });
+
   it('should render GitHub icon', () => {
     expect(shallow(
       <Icon
