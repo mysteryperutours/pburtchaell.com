@@ -14,13 +14,13 @@ const AboutRoute = (props): Element<*> => (
       <Column largeSize={9} smallSize={12}>
         <Text>Currently, Patrick is a product design intern at Facebook in Menlo Park, CA. He attends Loyola University New Orleans, studying a Bachelor of Science in Design, Honors and a minor in Art History. He  expects to graduate in 2018.</Text>
         <Text>Patrick has worked with startups around the world as a designer and software developer. He is available for freelance gigs through Lawn Chair, an independent design and software development studio he founded in 2015.</Text>
+        <hr />
         <Text style={{
           opacity: '.3'
         }}>
           <small>
             Last updated &mdash; February 2017
           </small>
-          <hr />
         </Text>
       </Column>
     </Row>
