@@ -8,10 +8,20 @@ function requestHandler(url: string, options: Object = {}): Promise<*> {
 
     throw new Error();
   }).then(
-    data => this.setState({
-      data,
-      isPending: false
-    }),
+    (data) => {
+      if (data.data) {
+        this.setState({
+          data: data.data,
+          meta: data.meta,
+          isPending: false
+        });
+      } else {
+        this.setState({
+          data,
+          isPending: false
+        });
+      }
+    },
     () => this.setState({
       isRejected: true
     })
