@@ -1,5 +1,6 @@
 // @flow
 import { createElement, Element } from 'react';
+import classNames from 'classnames';
 
 type Props = {
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
@@ -18,24 +19,15 @@ type Props = {
  * value between 1 and 12. By default, the Column will render at full width.
  */
 const Column = ({ children, elementType, ...props }: Props): Element<*> => {
-  const classNames = ['column'];
-
-  if (props.className) classNames.push([props.className]);
-  if (props.largeSize) classNames.push([`column-large-${props.largeSize}`]);
-  if (props.smallSize) classNames.push(`column-small-${props.smallSize}`);
-
-  if (props.offsetSmall) {
-    classNames.push([`column-push-small-${props.offsetSmall}`]);
-  }
-
-  if (props.offsetLarge) {
-    classNames.push([`column-push-large-${props.offsetLarge}`]);
-  }
-
   return createElement(
     elementType,
     {
-      className: classNames.join(' ')
+      className: classNames('column', {
+        [`column-push-large-${props.offsetLarge}`]: props.offsetLarge,
+        [`column-push-small-${props.offsetSmall}`]: props.offsetSmall,
+        [`column-large-${props.largeSize}`]: props.largeSize,
+        [`column-small-${props.smallSize}`]: props.smallSize
+      }, props.className)
     },
     children
   );
