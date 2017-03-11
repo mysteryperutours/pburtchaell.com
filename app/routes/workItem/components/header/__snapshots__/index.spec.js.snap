@@ -1,0 +1,73 @@
+exports[`WorkItemHeader renders component when fulfilled 1`] = `
+<header
+  className="case-study-header"
+  style={
+    Object {
+      "background": "rgb(0,0,0)",
+      "backgroundAttachment": "fixed",
+    }
+  }>
+  <Row
+    defaultColumn={true}
+    elementType="div"
+    size="full">
+    <div
+      className="case-study-titles">
+      <Text
+        style={
+          Object {
+            "color": "rgb(0,0,0)",
+          }
+        }
+        type="h1">
+        Foo
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "rgb(0,0,0)",
+          }
+        }
+        type="h2">
+        Foo is foo
+      </Text>
+    </div>
+  </Row>
+  <Row
+    defaultColumn={true}
+    elementType="div"
+    size="full">
+    <div
+      className="case-study-cover-image"
+      style={
+        Object {
+          "backgroundImage": "url()",
+          "backgroundPosition": "top center",
+          "backgroundSize": "cover",
+          "height": "42rem",
+          "width": "100%",
+        }
+      } />
+  </Row>
+</header>
+`;
+
+exports[`WorkItemHeader renders component when pending 1`] = `
+<header
+  className="case-study-header is-pending"
+  style={Object {}}>
+  <Row
+    defaultColumn={true}
+    elementType="div"
+    size="full">
+    <div
+      className="case-study-cover-image"
+      style={
+        Object {
+          "height": "42rem",
+          "width": "100%",
+        }
+      } />
+  </Row>
+</header>
+`;

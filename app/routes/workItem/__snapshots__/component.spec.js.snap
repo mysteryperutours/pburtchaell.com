@@ -1,79 +1,36 @@
 exports[`WorkItemRoute should render component 1`] = `
 <RouteContainer
-  color="#efefef"
-  defaultStyles={false}
-  isPending={true}
-  textColor={null}>
+  color={
+    Object {
+      "b": 255,
+      "g": 255,
+      "r": 255,
+    }
+  }
+  defaultTheme={true}
+  footer={true}
+  header={true}
+  isPending={true}>
   <article
+    className="case-study"
     role="article">
-    <header
-      className="case-study-header"
-      style={
-        Object {
-          "background": "#efefef",
-        }
-      }>
+    <WorkItemHeader
+      isPending={true} />
+    <div
+      className="case-study-content">
       <Row
         defaultColumn={true}
         elementType="div"
-        style={
-          Object {
-            "maxWidth": "100%",
-          }
-        }>
-        <Column
-          elementType="div"
-          largeSize={12}
-          scale="large"
-          style={Object {}}>
-          <Text
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-            type="h1">
-            <div
-              style={
-                Object {
-                  "height": "12rem",
-                }
-              } />
-          </Text>
-          <Text
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-            type="h2">
-            <div
-              style={
-                Object {
-                  "height": "11rem",
-                }
-              } />
-          </Text>
-        </Column>
-      </Row>
-      <Row
-        defaultColumn={true}
-        elementType="div"
-        style={
-          Object {
-            "maxWidth": "100%",
-          }
-        }>
+        size="small">
         <div
-          className="case-study-cover-image"
-          style={
-            Object {
-              "height": "60rem",
-              "width": "100%",
-            }
-          } />
+          className="pending-marks">
+          <div
+            className="pending-mark" />
+          <div
+            className="pending-mark" />
+        </div>
       </Row>
-    </header>
+    </div>
   </article>
 </RouteContainer>
 `;

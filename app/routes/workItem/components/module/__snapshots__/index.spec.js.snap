@@ -1,14 +1,14 @@
 exports[`Module renders module with multiple children 1`] = `
 <Row
   className="case-study-module module-text"
-  defaultColumn={true}
-  elementType="section">
+  defaultColumn={false}
+  elementType="section"
+  size="small">
   <Column
     elementType="div"
     largeSize={12}
-    offset={2}
     scale="large"
-    size={8}
+    smallSize={12}
     style={Object {}}>
     <Text
       type="p">
@@ -25,14 +25,14 @@ exports[`Module renders module with multiple children 1`] = `
 exports[`Module renders module with type media 1`] = `
 <Row
   className="case-study-module module-media"
-  defaultColumn={true}
-  elementType="section">
+  defaultColumn={false}
+  elementType="section"
+  size="medium">
   <Column
     elementType="div"
     largeSize={12}
-    offset={2}
     scale="large"
-    size={8}
+    smallSize={12}
     style={Object {}}>
     <Image
       alt="Foo"
@@ -46,14 +46,14 @@ exports[`Module renders module with type media 1`] = `
 exports[`Module renders module with type text 1`] = `
 <Row
   className="case-study-module module-text"
-  defaultColumn={true}
-  elementType="section">
+  defaultColumn={false}
+  elementType="section"
+  size="small">
   <Column
     elementType="div"
     largeSize={12}
-    offset={2}
     scale="large"
-    size={8}
+    smallSize={12}
     style={Object {}}>
     <Text
       type="p">

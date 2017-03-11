@@ -1,0 +1,74 @@
+exports[`WorkItemHire renders component 1`] = `
+<Row
+  className="case-study-module case-study-module-hire"
+  defaultColumn={true}
+  elementType="section"
+  size="full"
+  style={
+    Object {
+      "backgroundColor": "#E6E6E6",
+      "paddingBottom": "5rem",
+      "paddingTop": "7rem",
+    }
+  }>
+  <Text
+    style={
+      Object {
+        "opacity": 0.8,
+        "textAlign": "center",
+      }
+    }
+    type="p">
+    Let\'s work together!
+  </Text>
+  <ul
+    className="social-links-list">
+    <li
+      className="about-links-list-item"
+      style={
+        Object {
+          "opacity": 0.8,
+          "textAlign": "center",
+        }
+      }>
+      <span>
+        Get in touch 
+      </span>
+      <a
+        className="is-gray"
+        href="mailto:patrick@pburtchaell.com"
+        title="Patrick Burtchaell on email">
+        via email
+      </a>
+    </li>
+    <li
+      className="about-links-list-item"
+      style={
+        Object {
+          "opacity": 0.8,
+          "textAlign": "center",
+        }
+      }>
+      <span
+        style={
+          Object {
+            "marginRight": "1.25rem",
+          }
+        }>
+        or
+      </span>
+      <Icon
+        fill="#0063B5" />
+      <a
+        className="is-gray"
+        href="https://m.me/pburtchaell"
+        title="Patrick Burtchaell on Facebook Messenger">
+        Messenger
+      </a>
+      <span>
+        .
+      </span>
+    </li>
+  </ul>
+</Row>
+`;
