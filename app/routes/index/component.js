@@ -36,15 +36,23 @@ class IndexRoute extends Component {
     return (
       <RouteContainer>
         <Row>
-          <Text
-            type={types.HEADER_1}
-            style={{
-              marginBottom: '9rem'
-            }}
-          >Patrick Burtchaell is a product design intern at Facebook, studying design at Loyola University New Orleans.</Text>
+          <Column largeSize={8} smallSize={12}>
+            <Text
+              type={types.HEADER_1}
+            >Patrick Burtchaell</Text>
+            <Text
+              type={types.HEADER_4}
+              style={{
+                marginTop: '-1rem',
+                marginBottom: '9rem'
+              }}
+            >Product Designer</Text>
+          </Column>
         </Row>
         <Row>
-          <Text type={types.HEADER_3}>Selected Works</Text>
+          <Text
+            type={types.HEADER_4}
+          >Selected Works</Text>
         </Row>
         <ListView
           isPending={isPending}
