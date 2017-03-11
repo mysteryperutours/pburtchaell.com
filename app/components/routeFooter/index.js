@@ -5,6 +5,7 @@ import Column from '../../components/column';
 import styles from './styles.less';
 
 type Props = {
+  backgroundColor?: string,
   linkBackTo?: {
     link: string,
     title: string
@@ -24,6 +25,9 @@ const RouteFooter = (props: Props): Element => {
   return (
     <footer
       role="contentinfo"
+      style={props.backgroundColor ? {
+        background: props.backgroundColor
+      } : null}
       className={styles.routeFooter}
     >
       <Row defaultColumn={false}>
