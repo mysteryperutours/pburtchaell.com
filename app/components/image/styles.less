@@ -5,6 +5,12 @@
 .image-preload {
   opacity: 1;
   transition: opacity 400ms;
+
+  img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    transition: 400ms ease;
+  }
 }
 
 .image-preload.is-pending {
@@ -13,16 +19,21 @@
 
 .image-preload-container {
   margin-bottom: 1rem;
+  width: 100%;
+  margin: 0 auto;
   background: none;
   transition: background-color 400ms;
+  border-radius: 2px;
 }
 
 .image-preload-container img {
   margin: 0;
+  user-drag: none;
+  user-select: none;
 }
 
 .image-preload-container.is-pending {
-  background: black;
+  background: #E6E6E6;
   animation: fade 3s ease-in infinite;
 }
 
