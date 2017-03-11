@@ -39,7 +39,7 @@ function createChildElement(child): Element<*> {
 
   return createElement(
     getChildElementType(child.type),
-    getChildElementProps(child.type, child.meta),
+    getChildElementProps(child.type, child.props),
     Array.isArray(children) ? children.map(createChildElement) : children
   );
 }
