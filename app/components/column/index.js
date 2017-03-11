@@ -6,7 +6,8 @@ type Props = {
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
   className?: string,
   elementType: string,
-  offset?: number,
+  offsetLarge?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
+  offsetSmall?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
   largeSize: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
   smallSize: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
   style?: Object
@@ -36,7 +37,8 @@ const Column = ({ children, elementType, ...props }: Props): Element<*> => {
 Column.defaultProps = {
   elementType: 'div',
   scale: 'large',
-  largeSize: 12, // Render at full width by default
+  smallSize: 12,
+  largeSize: 12,
   style: {}
 };
 
