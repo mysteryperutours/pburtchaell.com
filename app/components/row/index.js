@@ -1,5 +1,6 @@
 // @flow
 import { createElement, Element } from 'react';
+import classNames from 'classnames';
 import Column from '../column';
 import './styles.css';
 
@@ -40,7 +41,11 @@ const Row = ({
     children: createElement('div', {
       className: 'row'
     }, renderRowChild()),
-    className: className ? `row-container ${className}` : 'row-container'
+    className: classNames('row-container', {
+      'row-container--small': props.size === 'small',
+      'row-container--medium': props.size === 'medium',
+      'row-container--full-width': props.size === 'full'
+    }, props.className)
   });
 };
 
