@@ -59,20 +59,18 @@ class IndexRoute extends Component {
           items={isPending ? null : Object.keys(data).map((key) => {
             const { meta } = data[key];
             const { date } = meta;
-            const defaultStyles = {
-              height: '25rem',
-              borderRadius: '1px',
-              backgroundSize: 'cover'
-            };
 
-            return ({
+            return meta.status === 'pending' ? ({
+              id: meta.id,
+              title: meta.title,
+              isNull: true
+            }) : ({
               id: meta.id,
               title: meta.title,
               linkTo: `/work/${date.year}/${date.month}/${meta.pathname}`,
               style: {
-                ...defaultStyles,
                 backgroundImage: `url(${meta.previewImage.url})`,
-                backgroundColor: meta.color
+                backgroundColor: `rgb(${meta.primaryColor.rgb})`
               }
             });
           })}
