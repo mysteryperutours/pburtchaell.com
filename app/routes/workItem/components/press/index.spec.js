@@ -1,5 +1,5 @@
 import React from 'react';
-import Press from './index';
+import WorkItemPress from './index';
 
 const MOCK_PRESS_ITEMS = [{
   id: '0',
@@ -7,10 +7,10 @@ const MOCK_PRESS_ITEMS = [{
   url: 'http://foo.com'
 }];
 
-describe(Press.name, () => {
+describe(WorkItemPress.name, () => {
   it('renders component', () => {
     const component = (
-      <Press
+      <WorkItemPress
         items={MOCK_PRESS_ITEMS}
       />
     );
