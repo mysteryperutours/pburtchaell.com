@@ -3,7 +3,8 @@ const types: Object = {
   MODULE_TEXT: 'module-text',
   MODULE_MEDIA_FULL_WIDTH: 'module-media-full-width',
   MODULE_MEDIA_LEFT: 'module-media-left',
-  MODULE_MEDIA_RIGHT: 'module-media-right'
+  MODULE_MEDIA_RIGHT: 'module-media-right',
+  MODULE_SLIDER: 'module-slider'
 };
 
 export default types;

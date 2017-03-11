@@ -6,7 +6,7 @@ const MOCK_MODULE_MEDIA = {
   type: types.MODULE_MEDIA,
   children: [{
     type: 'image',
-    meta: {
+    props: {
       src: 'https://path/to/image.png',
       alt: 'Foo',
       height: 500,
