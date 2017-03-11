@@ -1,6 +1,7 @@
 // @flow
 import React, { PureComponent } from 'react';
-import './styles.css';
+import classNames from 'classnames';
+import './styles.less';
 
 type Props = {
   src: string,
@@ -46,7 +47,6 @@ class Image extends PureComponent {
 
   render() {
     const { isPending } = this.state;
-    const pendingClassName: string = 'is-pending';
 
     /**
      * Preloaded images have a unique class name because I don't want
@@ -57,7 +57,9 @@ class Image extends PureComponent {
 
     return (
       <div
-        className={isPending ? `${containerClassName} ${pendingClassName}` : containerClassName}
+        className={classNames(containerClassName, {
+          'is-pending': isPending
+        })}
         style={{
           height: this.props.height,
           width: this.props.width
