@@ -49,15 +49,6 @@ class WorkRoute extends Component {
             });
           })}
         />
-        {isPending ? null : (
-          <Row defaultColumn={false}>
-            <Column size={9}>
-              <div className="dribbble-plug">
-                <Text type={types.HEADER_2}>
-                  &mdash;looking for more? <a href="https://dribbble.com/pburtchaell" title="Patrick Burtchaell on Dribbble">Visit my Dribbble profile</a> for day-to-day shapshots of my work.
-                </Text>
-              </div>
-            </Column>
           </Row>
         )}
       </RouteContainer>
