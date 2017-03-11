@@ -12,8 +12,8 @@ const AboutRoute = (props): Element<*> => (
   <RouteContainer {...props.route.config}>
     <Row>
       <Column largeSize={9} smallSize={12}>
-        <Text>Currently, Patrick attends Loyola University New Orleans studying a Bachelor of Science in Design with Honors and expects to graduate in 2018.</Text>
-        <Text>Patrick has worked with startups around the world as a  software developer and designer. He is a cofounder and partner at Lawn Chair, a design and software development studio he founded in 2015.</Text>
+        <Text>Currently, Patrick is a product design intern at Facebook in Menlo Park, CA. He attends Loyola University New Orleans, studying a Bachelor of Science in Design, Honors and a minor in Art History. He  expects to graduate in 2018.</Text>
+        <Text>Patrick has worked with startups around the world as a designer and software developer. He is available for freelance gigs through Lawn Chair, an independent design and software development studio he founded in 2015.</Text>
         <Text style={{
           opacity: '.3'
         }}>
