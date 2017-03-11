@@ -13,12 +13,6 @@
   user-select: none;
 }
 
-@media screen and (max-width: 500px) {
-  :local(.viewHeader) {
-    text-align: center;
-  }
-}
-
 :local(.viewHeaderTransparent) {
   background: none;
 }
@@ -52,14 +46,14 @@
 
 @media screen and (max-width: 500px) {
   :local(.viewHeader) {
+    height: 9rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+
     a {
       &:hover {
         color: #0063B5;
         text-decoration: none;
-      }
-
-      &:not(.is-active) {
-        opacity: .35;
       }
 
       &:active,
@@ -68,5 +62,9 @@
         text-decoration: none;
       }
     }
+  }
+
+  :local(.viewNavigation) {
+    height: 8rem;
   }
 }
