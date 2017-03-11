@@ -1,18 +1,24 @@
 {
   "projects": {
-    "facebook-weather": {
+    "weather": {
       "meta": {
         "id": "160602",
         "title": "Daily Weather",
-        "description": "View and share the weather on Facebook",
+        "description": "Bringing weather forecasts to Facebook",
         "intro": "Daily weather was a project for Facebook on iOS and Android to make weather the easier to access and share.",
         "date": {
           "month": "08",
           "year": "2016"
         },
-        "color": "rgb(66, 103, 178)",
-        "gradient": "linear-gradient(to bottom, rgb(66, 103, 178) 0%,#7db9e8 100%)",
-        "textColor": "#fff",
+        "backgroundColor": "linear-gradient(to bottom, rgb(66, 103, 178) 0%, #7db9e8 100%)",
+        "textColor": "#ffffff",
+        "primaryColor": {
+          "rgb": "66, 103, 178",
+          "r": "66",
+          "g": "103",
+          "b": "178"
+        },
+        "primaryColorDark": "",
         "role": "Product Design Intern",
         "company": "Facebook",
         "categories": [{
@@ -20,11 +26,11 @@
           "label": "product design"
         }],
         "coverImage": {
-          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FcoverImage%402x.png?alt=media&token=41f612a4-e560-4720-ac70-46e4805780ab",
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FcoverImage%402x.png?alt=media&token=e704ddde-40dd-484a-9ab7-3b0a7809758e",
           "alt": ""
         },
         "previewImage": {
-          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FpreviewImage%402x.png?alt=media&token=5814b19d-f821-48b2-82a2-699553f1a4ea",
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FpreviewImage%402x.png?alt=media&token=5f91ae20-ee88-4e39-8ae2-a21cddc96635",
           "alt": ""
         },
         "team": [{
@@ -32,9 +38,46 @@
         }, {
           "name": "John Smith"
         }],
-        "pathname": "facebook-weather"
+        "pathname": "weather"
       },
       "data": {
+        "related": [{
+            "id": "150601",
+            "title": "Segment",
+            "date": {
+              "month": "08",
+              "year": "2015"
+            },
+            "primaryColor": {
+              "rgb": "226, 109, 80",
+              "r": "226",
+              "g": "109",
+              "b": "80"
+            },
+            "previewImage": {
+              "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2FgridPreview%402x.png?alt=media&token=15f26e43-a145-434b-92a6-a91abf5740be",
+              "alt": ""
+            },
+            "pathname": "segment"
+        }, {
+          "id": "150602",
+          "title": "Lawn Chair",
+          "date": {
+            "month": "08",
+            "year": "2015"
+          },
+          "primaryColor": {
+            "rgb": "68, 199, 224",
+            "r": "68",
+            "g": "199",
+            "b": "224"
+          },
+          "previewImage": {
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/lawnchair%2FgridPreview%402X.png?alt=media&token=d7f24e09-f2a9-4112-9dd3-f2d2766cf521",
+            "alt": ""
+          },
+          "pathname": "lawnchair"
+        }],
         "press": [{
           "id": "0",
           "title": "Facebook can now replace your weather app",
@@ -46,11 +89,6 @@
           "publisher": "Mashable",
           "url": "http://mashable.com/2017/02/09/facebook-weather/"
         }, {
-          "id": "2",
-          "title": "Facebook Has Just Launched Its Own In-Built Weather App",
-          "publisher": "Huffington Post UK",
-          "url": "http://www.huffingtonpost.co.uk/entry/facebook-has-just-launched-its-own-in-built-weather-app_uk_589c9c15e4b0a1dcbd04b963"
-        }, {
           "id": "3",
           "title": "Now Facebook wants to be your weather app",
           "publisher": "Fast Company",
@@ -58,18 +96,108 @@
         }],
         "modules": [{
           "type": "module-text",
+          "props": {
+            "title": "Can we make weather forecasts more permanent and deterministic?",
+            "subtitle": "The problem"
+          },
           "children": [{
             "type": "text",
-            "children": ""
+            "children": "During my first internship at Facebook, I worked to create a home for weather on iOS and Android."
+          }, {
+            "type": "text",
+            "children": "Previously, people could weather on a promotional unit in the news feed, but this system was not permanent and did not provide enough information."
+          }, {
+            "type": "text",
+            "children": "I introduced a system for detailed weather information that people can access every day, whenever they want. My final deliverable was a “permalink,” a home for weather that people can refer back to whenever needed. This final system includes notifications, sharing the forecast, and multiple forecast locations."
+          }]
+        }, {
+          "type": "module-text",
+          "props": {
+            "title": "Find the Design Language for Weather",
+            "subtitle": "Empathize with users and audit existing solutions"
+          },
+          "children": [{
+            "type": "text",
+            "children": "The project started with identifying user tasks and researching current solutions. I believe it is difficult to design a successful product without first understanding the user and understanding existing solutions. At the end of the project, a product is a designed solution to some problem people incounter. Understanding people helps the designer create the first solutions. In most cases, other designers have created their own solutions to the problem."
+          }]
+        }, {
+          "type": "module-media",
+          "children": [{
+            "type": "image",
+            "props": {
+              "title": "Prototype 1",
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fandroid.png?alt=media&token=eb7fcc67-359c-44b4-8d87-167a9e5a48d0",
+              "alt": "A prototype for the weather permalink."
+            }
+          }]
+        }, {
+          "type": "module-text",
+          "props": {
+            "title": "Design the Best Solution",
+            "subtitle": "Explore and prototype multiple directions"
+          },
+          "children": [{
+            "type": "text",
+            "children": "I initially explored three unique directions with this product. The first direction focused on a “data” first experience. This could be closest identified with Google Weather. In this direction, numeric information—e.g., current, high, and low temperature—was highest in the hierarchy."
+          }, {
+            "type": "text",
+            "children": "The second direction emphasizes, the “social” component. This is the component that is unique to Facebook. The design establishes the weather with a personalized greeting and an activity suggestion. The numeric information is present, but lower in the hierarchy."
+          }, {
+            "type": "text",
+            "children": "The third direction emphasis a hybrid of the social and utility directions. In this direction, I show the numeric information first, but also include the social component, making the product unique to Facebook."
+          }]
+        }, {
+          "type": "module-slider",
+          "children": [{
+            "type": "slide",
+            "title": "Utility",
+            "subtitle": "Exploration 1",
+            "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fresearch-1.png?alt=media&token=3bb643d1-d84f-4dd8-9326-32a0a03bbe7e"
+          },{
+            "type": "slide",
+            "title": "Social",
+            "subtitle": "Exploration 2",
+            "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fresearch-2.png?alt=media&token=72cc3cff-cc47-459e-911b-57deaf24a3cd"
+          }, {
+            "type": "slide",
+            "title": "Hybrid",
+            "subtitle": "Exploration 3",
+            "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fresearch-3.png?alt=media&token=ef99a5fd-2151-4cf2-9d77-bbe44a77d8fb"
+          }]
+        }, {
+          "type": "module-text",
+          "props": {
+            "title": "Design the Best Solution",
+            "subtitle": "Explore and prototype multiple directions"
+          },
+          "children": [{
+            "type": "text",
+            "children": "I initially explored three unique directions with this product. The first direction focused on a “data” first experience. This could be closest identified with Google Weather. In this direction, numeric information—e.g., current, high, and low temperature—was highest in the hierarchy."
+          }, {
+            "type": "text",
+            "children": "The second direction emphasizes, the “social” component. This is the component that is unique to Facebook. The design establishes the weather with a personalized greeting and an activity suggestion. The numeric information is present, but lower in the hierarchy."
+          }, {
+            "type": "text",
+            "children": "The third direction emphasis a hybrid of the social and utility directions. In this direction, I show the numeric information first, but also include the social component, making the product unique to Facebook."
           }]
         }, {
           "type": "module-media-full-width",
           "children": [{
             "type": "video",
-            "meta": {
+            "props": {
+              "title": "Prototype 1",
               "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FMaster.mov?alt=media&token=6675f33f-2903-480e-9007-be674b2f5127",
-              "alt": "A prototype"
+              "alt": "A prototype for the weather permalink."
             }
+          }]
+        }, {
+          "type": "module-text",
+          "props": {
+            "title": "Outcome"
+          },
+          "children": [{
+            "type": "text",
+            "children": "The product shipped in Janruary 2017. With a 100% rollout, it is in-use on millions of iOS and Android devices."
           }]
         }]
       }
@@ -78,14 +206,20 @@
       "meta": {
         "id": "150601",
         "title": "Segment",
-        "description": "Content publishing experiment",
-        "intro": "Segment is a concept for a content publishing platform we developed over the course of several months.",
+        "description": "A new way to sort content",
         "date": {
           "month": "08",
           "year": "2015"
         },
-        "color": "#E26D50",
-        "gradient": "linear-gradient(to bottom, rgb(226, 109, 80) 0%, rgb(228, 137, 114) 100%)",
+        "backgroundColor": "linear-gradient(to bottom, rgb(226, 109, 80) 0%, rgb(228, 137, 114) 100%)",
+        "textColor": "#ffffff",
+        "primaryColor": {
+          "rgb": "226, 109, 80",
+          "r": "226",
+          "g": "109",
+          "b": "80"
+        },
+        "primaryColorDark": "",
         "role": "Product Designer",
         "company": null,
         "website": {
@@ -108,7 +242,54 @@
         "pathname": "segment"
       },
       "data": {
-
+        "related": [{
+            "id": "150601",
+            "title": "Segment",
+            "date": {
+              "month": "08",
+              "year": "2015"
+            },
+            "primaryColor": {
+              "rgb": "226, 109, 80",
+              "r": "226",
+              "g": "109",
+              "b": "80"
+            },
+            "previewImage": {
+              "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2FgridPreview%402x.png?alt=media&token=15f26e43-a145-434b-92a6-a91abf5740be",
+              "alt": ""
+            },
+            "pathname": "segment"
+        }, {
+          "id": "160602",
+          "title": "Daily Weather",
+          "date": {
+            "month": "08",
+            "year": "2016"
+          },
+          "primaryColor": {
+            "rgb": "66, 103, 178",
+            "r": "66",
+            "g": "103",
+            "b": "178"
+          },
+          "previewImage": {
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FpreviewImage%402x.png?alt=media&token=5f91ae20-ee88-4e39-8ae2-a21cddc96635",
+            "alt": ""
+          },
+          "pathname": "weather"
+        }],
+        "modules": [{
+          "type": "module-text",
+          "props": {
+            "title": "Can we find a better way to organize content on social networks and publishing platforms?",
+            "subtitle": "The problem"
+          },
+          "children": [{
+            "type": "text",
+            "children": "During the summer of 2015, I teamed up with three friends to design a social network that sorted content."
+          }]
+        }]
       }
     },
     "lawnchair": {
@@ -116,13 +297,17 @@
         "id": "150602",
         "title": "Lawn Chair",
         "description": "Design and software studio",
-        "intro": "Lawn Chair is a software development & design studio I started with three friends. We are currently working together to develop  our ideas for products, games and applications. In May 2015, I designed the company website and branding. The goal of both the branding and the website was to relfect the happy and playful nature of the company without breaking the rational & classical design principles I often embrace in my work. We are a company that does great work and is certainly not afraid to have fun at the same time.",
         "date": {
           "month": "08",
           "year": "2015"
         },
-        "color": "#44C7F4",
-        "gradient": "linear-gradient(rgb(68, 199, 244) 0%, rgb(97, 207, 245) 100%)",
+        "backgroundColor": "linear-gradient(rgb(68, 199, 244) 0%, rgb(97, 207, 245) 100%)",
+        "primaryColor": {
+          "rgb": "68, 199, 224",
+          "r": "68",
+          "g": "199",
+          "b": "224"
+        },
         "textColor": "#00526E",
         "role": "Product Designer",
         "company": null,
@@ -146,7 +331,57 @@
         "pathname": "lawnchair"
       },
       "data": {
-
+        "related": [{
+            "id": "150601",
+            "title": "Segment",
+            "date": {
+              "month": "08",
+              "year": "2015"
+            },
+            "primaryColor": {
+              "rgb": "226, 109, 80",
+              "r": "226",
+              "g": "109",
+              "b": "80"
+            },
+            "previewImage": {
+              "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2FgridPreview%402x.png?alt=media&token=15f26e43-a145-434b-92a6-a91abf5740be",
+              "alt": ""
+            },
+            "pathname": "segment"
+        }, {
+          "id": "160602",
+          "title": "Daily Weather",
+          "date": {
+            "month": "08",
+            "year": "2016"
+          },
+          "primaryColor": {
+            "rgb": "66, 103, 178",
+            "r": "66",
+            "g": "103",
+            "b": "178"
+          },
+          "previewImage": {
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FpreviewImage%402x.png?alt=media&token=5f91ae20-ee88-4e39-8ae2-a21cddc96635",
+            "alt": ""
+          },
+          "pathname": "weather"
+        }],
+        "modules": [{
+          "type": "module-text",
+          "children": [{
+            "type": "text",
+            "children": "Lawn Chair is a software development & design studio I started with three friends. We are currently working together to develop  our ideas for products, games and applications. In May 2015, I designed the company website and branding. The goal of both the branding and the website was to relfect the happy and playful nature of the company without breaking the rational & classical design principles I often embrace in my work. We are a company that does great work and is certainly not afraid to have fun at the same time."
+          }]
+        }]
+      }
+    },
+    "z": {
+      "meta": {
+        "id": "160601",
+        "title": "Connect with Facebook",
+        "status": "pending"
       }
     }
   }
