@@ -2,7 +2,7 @@
 import { createElement, Element } from 'react';
 import classNames from 'classnames';
 import Column from '../column';
-import './styles.css';
+import './styles.less';
 
 type Props = {
   className?: string,

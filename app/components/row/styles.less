@@ -1,0 +1,32 @@
+.row-container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  &.row-container--small {
+    max-width: 580px;
+  }
+
+  &.row-container--medium {
+    max-width: 720px;
+  }
+
+  &.row-container--full-width {
+    max-width: 100%;
+
+    .column {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
