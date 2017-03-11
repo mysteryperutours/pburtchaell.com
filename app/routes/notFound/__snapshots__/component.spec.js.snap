@@ -1,8 +1,19 @@
 exports[`NotFoundRoute should render component 1`] = `
-<RouteContainer>
+<RouteContainer
+  color={
+    Object {
+      "b": 255,
+      "g": 255,
+      "r": 255,
+    }
+  }
+  defaultTheme={true}
+  footer={true}
+  header={true}>
   <Row
     defaultColumn={true}
-    elementType="div">
+    elementType="div"
+    size="default">
     <Text
       type="h1">
       Not Found

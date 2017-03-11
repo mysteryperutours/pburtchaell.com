@@ -1,17 +1,17 @@
 import React, { Element } from 'react';
+import classNames from 'classnames';
 import RouteFooter from '../routeFooter';
 import RouteHeader from '../routeHeader';
-import GridPreview from '../gridPreview';
-import './styles.less';
+import styles from './styles.less';
 
 type Props = {
   header: null | object | boolean,
-  footer: null | boolean,
+  footer: null | object | boolean,
   children: Element<*>,
   isPending?: boolean,
   color?: String,
   textColor?: String,
-  defaultStyles: boolean
+  defaultTheme: boolean
 }
 
 /**
@@ -25,23 +25,25 @@ type Props = {
  * the header using an object.
  */
 const RouteContainer = ({
-  header = true,
-  footer = true,
-  defaultStyles = true,
+  header,
+  footer,
   children,
   ...props
 }: Props): Element => (
   <div className="route-container">
     {!header ? null : (
       <RouteHeader
-        color={props.color}
-        textColor={props.textColor}
+        initialRedChannel={props.color.r}
+        initialGreenChannel={props.color.g}
+        initialBlueChannel={props.color.b}
         {...header}
       />
     )}
     <main
       role="main"
-      className={`route-body ${defaultStyles ? 'route-body-default' : null}`}
+      className={classNames(styles.routeBody, {
+        [styles.routeBodyDefault]: props.defaultTheme
+      })}
     >
       {children}
     </main>
@@ -53,5 +55,16 @@ const RouteContainer = ({
     )}
   </div>
 );
+
+RouteContainer.defaultProps = {
+  header: true,
+  footer: true,
+  defaultTheme: true,
+  color: {
+    r: 255,
+    g: 255,
+    b: 255
+  }
+};
 
 export default RouteContainer;

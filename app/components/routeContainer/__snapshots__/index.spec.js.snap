@@ -2,12 +2,23 @@ exports[`RouteContainer should render component 1`] = `
 <div
   className="route-container">
   <RouteHeader
-    align="left" />
+    align="left"
+    initialBlueChannel={255}
+    initialGreenChannel={255}
+    initialRedChannel={255}
+    isInterpolated={false} />
   <main
-    className="route-body route-body-default"
+    className="undefined"
     role="main">
     foo
   </main>
-  <RouteFooter />
+  <RouteFooter
+    color={
+      Object {
+        "b": 255,
+        "g": 255,
+        "r": 255,
+      }
+    } />
 </div>
 `;
