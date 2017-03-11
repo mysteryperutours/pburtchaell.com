@@ -28,6 +28,22 @@ describe(Text.name, () => {
     )).toMatchSnapshot();
   });
 
+  it('should render h4 element', () => {
+    expect(shallow(
+      <Text type={types.HEADER_4}>
+        {DEFAULT_CHILD}
+      </Text>
+    )).toMatchSnapshot();
+  });
+
+  it('should render h5 element', () => {
+    expect(shallow(
+      <Text type={types.HEADER_5}>
+        {DEFAULT_CHILD}
+      </Text>
+    )).toMatchSnapshot();
+  });
+
   it('should render paragraph element', () => {
     expect(shallow(
       <Text type={types.BODY}>

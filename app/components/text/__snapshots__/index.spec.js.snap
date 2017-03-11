@@ -16,6 +16,18 @@ exports[`Text should render h3 element 1`] = `
 </h3>
 `;
 
+exports[`Text should render h4 element 1`] = `
+<h4>
+  foo
+</h4>
+`;
+
+exports[`Text should render h5 element 1`] = `
+<h5>
+  foo
+</h5>
+`;
+
 exports[`Text should render paragraph element 1`] = `
 <p>
   foo
