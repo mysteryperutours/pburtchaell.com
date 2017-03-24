@@ -30,7 +30,9 @@ const WorkItemHeader = (props: Props): Element<*> => {
     coverImage: Object.assign({
       height: '42rem',
       width: '100%',
-    }, isPending ? {} : {
+      maxWidth: '1000px',
+      margin: '0 auto'
+    }, !props.coverImage || isPending ? {} : {
       backgroundSize: 'cover',
       backgroundPosition: 'top center',
       backgroundImage: `url(${props.coverImage.url})`,
@@ -40,7 +42,8 @@ const WorkItemHeader = (props: Props): Element<*> => {
   return (
     <header
       className={classNames('case-study-header', {
-        'is-pending': isPending
+        'is-pending': isPending,
+        'has-cover': typeof props.coverImage === 'object'
       })}
       style={styles.background}
     >
@@ -62,12 +65,14 @@ const WorkItemHeader = (props: Props): Element<*> => {
           </div>
         </Row>
       )}
-      <Row size="full">
-        <div
-          className="case-study-cover-image"
-          style={styles.coverImage}
-        />
-      </Row>
+      {props.coverImage ? (
+        <Row size="full">
+          <div
+            className="case-study-cover-image"
+            style={styles.coverImage}
+          />
+        </Row>
+      ) : null}
     </header>
   );
 };

@@ -3,10 +3,12 @@
   flex-direction: column;
   flex: 1 auto;
 }
+
 .case-study-header {
   padding-top: 12rem;
 
   &.is-pending {
+    min-height: 336px;
     background: linear-gradient(45deg, #E6E6E6, #E6E6E6, #D6D3D3, #E6E6E6,#E6E6E6);
     background-size: 1000% 1000%;
     animation-name: scroll-background-gradient;
@@ -15,6 +17,10 @@
     animation-iteration-count: infinite;
     animation-direction: normal;
     animation-fill-mode: forwards;
+  }
+
+  &:not(.has-cover) {
+    padding-bottom: 7rem;
   }
 
   h1 {
@@ -32,6 +38,8 @@
 }
 
 .pending-marks {
+  margin-top: 5rem;
+  
   .pending-mark {
     height: 3rem;
     width: 40%;
@@ -62,7 +70,7 @@
     line-height: 4rem;
   }
 
-  h2 {
+  h2.indent {
     color: #000;
     margin-left: -3rem;
     margin-bottom: 0;
