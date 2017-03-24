@@ -33,11 +33,6 @@
           "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FpreviewImage%402x.png?alt=media&token=5f91ae20-ee88-4e39-8ae2-a21cddc96635",
           "alt": ""
         },
-        "team": [{
-          "name": "John Smith"
-        }, {
-          "name": "John Smith"
-        }],
         "pathname": "weather"
       },
       "data": {
@@ -108,77 +103,7 @@
             "children": "Previously, people could weather on a promotional unit in the news feed, but this system was not permanent and did not provide enough information."
           }, {
             "type": "text",
-            "children": "I introduced a system for detailed weather information that people can access every day, whenever they want. My final deliverable was a “permalink,” a home for weather that people can refer back to whenever needed. This final system includes notifications, sharing the forecast, and multiple forecast locations."
-          }]
-        }, {
-          "type": "module-text",
-          "props": {
-            "title": "Find the Design Language for Weather",
-            "subtitle": "Empathize with users and audit existing solutions"
-          },
-          "children": [{
-            "type": "text",
-            "children": "The project started with identifying user tasks and researching current solutions. I believe it is difficult to design a successful product without first understanding the user and understanding existing solutions. At the end of the project, a product is a designed solution to some problem people incounter. Understanding people helps the designer create the first solutions. In most cases, other designers have created their own solutions to the problem."
-          }]
-        }, {
-          "type": "module-media",
-          "children": [{
-            "type": "image",
-            "props": {
-              "title": "Prototype 1",
-              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fandroid.png?alt=media&token=eb7fcc67-359c-44b4-8d87-167a9e5a48d0",
-              "alt": "A prototype for the weather permalink."
-            }
-          }]
-        }, {
-          "type": "module-text",
-          "props": {
-            "title": "Design the Best Solution",
-            "subtitle": "Explore and prototype multiple directions"
-          },
-          "children": [{
-            "type": "text",
-            "children": "I initially explored three unique directions with this product. The first direction focused on a “data” first experience. This could be closest identified with Google Weather. In this direction, numeric information—e.g., current, high, and low temperature—was highest in the hierarchy."
-          }, {
-            "type": "text",
-            "children": "The second direction emphasizes, the “social” component. This is the component that is unique to Facebook. The design establishes the weather with a personalized greeting and an activity suggestion. The numeric information is present, but lower in the hierarchy."
-          }, {
-            "type": "text",
-            "children": "The third direction emphasis a hybrid of the social and utility directions. In this direction, I show the numeric information first, but also include the social component, making the product unique to Facebook."
-          }]
-        }, {
-          "type": "module-slider",
-          "children": [{
-            "type": "slide",
-            "title": "Utility",
-            "subtitle": "Exploration 1",
-            "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fresearch-1.png?alt=media&token=3bb643d1-d84f-4dd8-9326-32a0a03bbe7e"
-          },{
-            "type": "slide",
-            "title": "Social",
-            "subtitle": "Exploration 2",
-            "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fresearch-2.png?alt=media&token=72cc3cff-cc47-459e-911b-57deaf24a3cd"
-          }, {
-            "type": "slide",
-            "title": "Hybrid",
-            "subtitle": "Exploration 3",
-            "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fresearch-3.png?alt=media&token=ef99a5fd-2151-4cf2-9d77-bbe44a77d8fb"
-          }]
-        }, {
-          "type": "module-text",
-          "props": {
-            "title": "Design the Best Solution",
-            "subtitle": "Explore and prototype multiple directions"
-          },
-          "children": [{
-            "type": "text",
-            "children": "I initially explored three unique directions with this product. The first direction focused on a “data” first experience. This could be closest identified with Google Weather. In this direction, numeric information—e.g., current, high, and low temperature—was highest in the hierarchy."
-          }, {
-            "type": "text",
-            "children": "The second direction emphasizes, the “social” component. This is the component that is unique to Facebook. The design establishes the weather with a personalized greeting and an activity suggestion. The numeric information is present, but lower in the hierarchy."
-          }, {
-            "type": "text",
-            "children": "The third direction emphasis a hybrid of the social and utility directions. In this direction, I show the numeric information first, but also include the social component, making the product unique to Facebook."
+            "children": "I introduced a system for detailed weather information that people can access every day, whenever they want. My final deliverable was a permanent home for weather that people can refer back to whenever needed."
           }]
         }, {
           "type": "module-media-full-width",
@@ -193,11 +118,114 @@
         }, {
           "type": "module-text",
           "props": {
+            "title": "Find the Design Language for Weather",
+            "subtitle": "Empathize with users and audit existing solutions"
+          },
+          "children": [{
+            "type": "text",
+            "children": "The project started with identifying user tasks and researching current solutions. I believe it is difficult to design a successful product without first understanding the user and understanding existing solutions. At the end of the project, a product is a designed solution to some problem people encounter. Understanding people helps the designer create the first solutions. In most cases, other designers have created their own solutions to the problem."
+          }, {
+            "type": "text",
+            "children": "Externally, I audited most existing weather applications for both Android and iOS. Interally, on Facebook, I searched for existing patterns I could follow as I designed this weather system."
+          }]
+        }, {
+          "type": "module-media-full-width",
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Faudit.png?alt=media&token=c834be76-ec93-4833-82af-294728b004d1"
+            }
+          }]
+        }, {
+          "type": "module-text",
+          "props": {
+            "title": "Design the Best Solution",
+            "subtitle": "Explore and prototype multiple directions"
+          },
+          "children": [{
+            "type": "text",
+            "children": "I explored three unique directions for this product. The first direction focuses on a data-first experience. In this direction, numeric information, like current, high, and low temperatures, is highest in the hierarchy."
+          }, {
+            "type": "text",
+            "children": "More unique to Facebook, the second direction emphasizes a social component. The design establishes the weather with a personalized greeting and an activity suggestion. The same numeric information as the first direction is present, but lower in the hierarchy."
+          }, {
+            "type": "text",
+            "children": "The third direction is a hybrid of the social and utility directions. In this direction, I show the numeric information first, but also include the social component, making the product unique to Facebook, while also useful."
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Utility Direction"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fresearch-1.png?alt=media&token=3bb643d1-d84f-4dd8-9326-32a0a03bbe7e"
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Social Direction"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fresearch-2.png?alt=media&token=72cc3cff-cc47-459e-911b-57deaf24a3cd"
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Hybrid Direction"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fresearch-3.png?alt=media&token=ef99a5fd-2151-4cf2-9d77-bbe44a77d8fb"
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "The final direction that we selected to build out had one entry points, the news feed promotional unit."
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fentries.png?alt=media&token=5db9421a-dc71-4355-b3e2-7cfe0312fd97"
+            }
+          }]
+        }, {
+          "type": "module-media-full-width",
+          "props": {
+            "caption": "The location change flow"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Ffeature-2%401x.png?alt=media&token=a56115da-ffe0-424b-8353-19653259d316"
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Final designs for Android"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2Fandroid.png?alt=media&token=eb7fcc67-359c-44b4-8d87-167a9e5a48d0"
+            }
+          }]
+        }, {
+          "type": "module-text",
+          "props": {
             "title": "Outcome"
           },
           "children": [{
             "type": "text",
-            "children": "The product shipped in Janruary 2017. With a 100% rollout, it is in-use on millions of iOS and Android devices."
+            "children": "The product shipped in Janruary 2017. With a 100% rollout, it is in use on millions of iOS and Android devices."
           }]
         }]
       }
@@ -230,10 +258,6 @@
           "id": "0",
           "label": "product design"
         }],
-        "coverImage": {
-          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2FcoverImage%402x.png?alt=media&token=2ab16f40-685f-4e94-a119-7bb099d15f44",
-          "alt": ""
-        },
         "previewImage": {
           "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2FgridPreview%402x.png?alt=media&token=15f26e43-a145-434b-92a6-a91abf5740be",
           "alt": ""
@@ -287,7 +311,115 @@
           },
           "children": [{
             "type": "text",
-            "children": "During the summer of 2015, I teamed up with three friends to design a social network that sorted content."
+            "children": "I teamed up with three colleagues to design a social network that sorted content differently than mainstream social networks. This is a preview of the interface design."
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Register form"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2Ffinal-1.png?alt=media&token=1f3dad97-c843-44dd-868a-b2a99750de59",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Sign in form"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2Ffinal-2.png?alt=media&token=ade35a2d-4680-42eb-9744-a9ece9df18d6",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Password reset form"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2Ffinal-3.png?alt=media&token=0ad5b897-92e2-43c7-b768-61f5e44e12b4",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Users are able to quickly switch betweeen forms"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2Fsegment-auth.gif?alt=media&token=3bd35397-c14a-40d8-a6ad-42e215794a66",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Error feedback is immediate"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2Fsegment-error-shake.gif?alt=media&token=f6d4f4b2-5b61-416c-abd1-bf5bd0c2d800",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Beta landing page"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2Ffinal-4.png?alt=media&token=44825112-7b76-4649-9a8c-9eb67bc656e6",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Request beta modal"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2Ffinal-5.png?alt=media&token=66a18d28-6b95-45e2-9cf2-56c8fe918b42",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "User profile"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2Ffinal-6.png?alt=media&token=d313fe20-6e84-41dc-ab9f-018ffd49a188",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "caption": "Pending user profile"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2Fsegment-loading-ui.gif?alt=media&token=fbbf7cd7-ad89-4286-bb47-ef232b541a4a",
+              "alt": ""
+            }
           }]
         }]
       }
@@ -319,10 +451,6 @@
           "id": "0",
           "label": "product design"
         }],
-        "coverImage": {
-          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/lawnchair%2FcoverImage%402x.png?alt=media&token=410284b1-5b51-497f-96f1-b1b634ce79e1",
-          "alt": ""
-        },
         "previewImage": {
           "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/lawnchair%2FgridPreview%402X.png?alt=media&token=d7f24e09-f2a9-4112-9dd3-f2d2766cf521",
           "alt": ""
@@ -371,8 +499,136 @@
         "modules": [{
           "type": "module-text",
           "children": [{
+            "type": "module-text",
+            "children": [{
+              "type": "text",
+              "children": "Lawn Chair is a software development & design studio cofounded by Patrick Burtchaell, Jon Carl, Liam Craver and Ryan Campbell. Both the company branding and website were designed by Patrick."
+            }]
+          }, {
+            "type": "module-text",
+            "children": [{
+              "type": "text",
+              "children": "The goal for the company branding was to relfect the happy and playful nature of the company without breaking the rational, ordered design principles I embrace in my design work. We want to portray ourselves as a company that does great work, but certainly not afraid to have fun at the same time."
+            }]
+          }]
+        }]
+      }
+    },
+    "scouter": {
+      "meta": {
+        "id": "150902",
+        "title": "Scouter",
+        "description": "Find film locations",
+        "date": {
+          "month": "09",
+          "year": "2015"
+        },
+        "backgroundColor": "linear-gradient(rgb(48, 236, 206) 0%, rgb(109, 240, 219) 100%)",
+        "primaryColor": {
+          "rgb": "148, 236, 206",
+          "r": "148",
+          "g": "236",
+          "b": "206"
+        },
+        "textColor": "#ffffff",
+        "role": "Product Designer",
+        "company": null,
+        "categories": [{
+          "id": "0",
+          "label": "product design"
+        },{
+          "id": "1",
+          "label": "hackathon"
+        }],
+        "previewImage": {
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/scouter%2FgridPreview%401x.png?alt=media&token=992aef17-3301-4b19-9276-391751dfa05d",
+          "alt": ""
+        },
+        "team": [],
+        "pathname": "scouter"
+      },
+      "data": {
+        "related": [{
+            "id": "150601",
+            "title": "Segment",
+            "date": {
+              "month": "08",
+              "year": "2015"
+            },
+            "primaryColor": {
+              "rgb": "226, 109, 80",
+              "r": "226",
+              "g": "109",
+              "b": "80"
+            },
+            "previewImage": {
+              "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2FgridPreview%402x.png?alt=media&token=15f26e43-a145-434b-92a6-a91abf5740be",
+              "alt": ""
+            },
+            "pathname": "segment"
+        }, {
+          "id": "160602",
+          "title": "Daily Weather",
+          "date": {
+            "month": "08",
+            "year": "2016"
+          },
+          "primaryColor": {
+            "rgb": "66, 103, 178",
+            "r": "66",
+            "g": "103",
+            "b": "178"
+          },
+          "previewImage": {
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/160616%2FpreviewImage%402x.png?alt=media&token=5f91ae20-ee88-4e39-8ae2-a21cddc96635",
+            "alt": ""
+          },
+          "pathname": "weather"
+        }],
+        "modules": [{
+          "type": "module-text",
+          "children": [{
             "type": "text",
-            "children": "Lawn Chair is a software development & design studio I started with three friends. We are currently working together to develop  our ideas for products, games and applications. In May 2015, I designed the company website and branding. The goal of both the branding and the website was to relfect the happy and playful nature of the company without breaking the rational & classical design principles I often embrace in my work. We are a company that does great work and is certainly not afraid to have fun at the same time."
+            "children": "Scouter is a project created with Jinyue Xia and Antonio Cardenas at the PennApps XII, a hackthon held in September 2015. The app provides filmmakers and location scouts with a means for finding locations and a place for property owners to list thier own properties. Note that the app is not fully-functional as we wanted a proof of concept for the hackathon."
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "title": "Landing Page",
+            "caption": "A full screen view of the search page"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/scouter%2Fui-2.png?alt=media&token=b0d478ab-7989-44f4-8483-c7daf501e1dc",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "title": "Location Details",
+            "caption": "The details of a location"
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/scouter%2Fui-1.png?alt=media&token=9f03ded9-0935-4af4-933e-33af3444b91c",
+              "alt": ""
+            }
+          }]
+        }, {
+          "type": "module-media",
+          "props": {
+            "title": "Sign In Form",
+            "caption": "Property owners are able to create new property listings. Filmmakers are able to book locations and communicate with other users on the network."
+          },
+          "children": [{
+            "type": "image",
+            "props": {
+              "src": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/scouter%2Fscouter-03.png?alt=media&token=829303f2-7fe0-4469-b409-afee4b4b2b87",
+              "alt": ""
+            }
           }]
         }]
       }
