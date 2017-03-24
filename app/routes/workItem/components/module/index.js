@@ -13,13 +13,15 @@ type Props = {
   type: string,
   propsFromJSON?: {
     title?: string,
-    subtitle?: string
+    subtitle?: string,
+    caption?: string
   }
 };
 
 const Module = (props: Props): Element<*> => {
   let childElement;
   let headerElement;
+  let footerElement;
   let rowSize;
 
   // Props provided by the database
@@ -29,6 +31,7 @@ const Module = (props: Props): Element<*> => {
         {props.propsFromJSON.title ? (
           <Text
             type={textTypes.HEADER_2}
+            className={props.propsFromJSON.caption ? null : 'indent'}
           >
             {props.propsFromJSON.title}
           </Text>
@@ -45,6 +48,21 @@ const Module = (props: Props): Element<*> => {
   }
 
 
+    footerElement = (
+      <Row className="case-study-module--footer">
+        {props.propsFromJSON.caption ? (
+          <Text
+            type={textTypes.BODY}
+            style={{
+              color: '#5F595A'
+            }}
+          >
+            {props.propsFromJSON.caption}
+          </Text>
+        ) : null}
+      </Row>
+    );
+  }
 
   if (props.type === types.MODULE_MEDIA_FULL_WIDTH) {
     rowSize = 'full';
@@ -81,6 +99,7 @@ const Module = (props: Props): Element<*> => {
     >
       {headerElement}
       {childElement}
+      {footerElement}
     </Row>
   );
 };
