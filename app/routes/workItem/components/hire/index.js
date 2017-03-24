@@ -23,7 +23,8 @@ const WorkItemHire = (props: Props): Element<*> => {
       style={{
         backgroundColor: '#E6E6E6',
         paddingTop: '7rem',
-        paddingBottom: '5rem'
+        paddingBottom: '5rem',
+        flex: '1 auto'
       }}
     >
       <Text
