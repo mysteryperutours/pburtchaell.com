@@ -8,7 +8,8 @@ type Props = {
   className?: string,
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
   defaultColumn?: boolean,
-  elementType?: string
+  elementType?: string,
+  size: 'small' | 'medium' | 'full'
 }
 
 /**
