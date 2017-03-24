@@ -27,7 +27,7 @@ const Module = (props: Props): Element<*> => {
   // Props provided by the database
   if (props.propsFromJSON) {
     headerElement = (
-      <Row largeSize={12} className="case-study-module--header">
+      <Row className="case-study-module--header">
         {props.propsFromJSON.title ? (
           <Text
             type={textTypes.HEADER_2}
@@ -45,8 +45,6 @@ const Module = (props: Props): Element<*> => {
         ) : null}
       </Row>
     );
-  }
-
 
     footerElement = (
       <Row className="case-study-module--footer">
