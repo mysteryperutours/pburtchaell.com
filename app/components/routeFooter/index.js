@@ -1,5 +1,5 @@
 import React, { Element } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Row from '../../components/row';
 import Column from '../../components/column';
 import styles from './styles.less';

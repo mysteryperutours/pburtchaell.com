@@ -109,6 +109,7 @@ class RouteHeader extends Component {
               <Text
                 key={item.key}
                 linkTo={item.linkTo}
+                navLink={true}
                 activeClassName="is-active"
                 style={{
                   color: `rgb(

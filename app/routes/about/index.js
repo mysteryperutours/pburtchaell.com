@@ -1,18 +1,19 @@
+import React from 'react';
 import paths from '../paths';
+import Loader from '../../components/loader';
+import AboutRoute from './component';
 
 export default {
   path: paths.ABOUT,
-  config: {
-    footer: {
-      linkBackTo: {
-        link: paths.INDEX,
-        title: 'Home'
+  props: {
+    config: {
+      footer: {
+        linkBackTo: {
+          link: paths.INDEX,
+          title: 'Home'
+        }
       }
     }
   },
-  getComponent(nextState, callback) {
-    System.import('./component').then((module) => {
-      callback(null, module.default);
-    });
-  }
+  component: AboutRoute
 };

@@ -35,7 +35,7 @@ class WorkItemRoute extends PureComponent {
   }
 
   componentWillMount() {
-    const { title } = this.props.params;
+    const { title } = this.props.match.params;
     requestHandler.call(this, `${DATABASE_URL}/projects/${title}.json`);
   }
 
@@ -44,7 +44,7 @@ class WorkItemRoute extends PureComponent {
 
     return (
       <RouteContainer
-        {...this.props.route.config}
+        {...this.props.config}
         isPending={isPending}
         color={meta.color}
         textColor={meta.textColor}
@@ -112,7 +112,7 @@ class WorkItemRoute extends PureComponent {
               <WorkItemHire />
             )}
 
-            {isPending ? null : (
+            {/*isPending ? null : (
               <section
                 style={{
                   backgroundColor: '#E6E6E6',
@@ -150,7 +150,7 @@ class WorkItemRoute extends PureComponent {
                   })}
                 />
               </section>
-            )}
+            )*/}
           </div>
         </article>
       </RouteContainer>

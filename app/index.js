@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router as AppRouter, browserHistory } from 'react-router';
+import { BrowserRouter as AppRouter, Route } from 'react-router-dom';
+import App from './components/app';
 import routes from './routes/config';
 
 const MOUNT = document.getElementById('app-mount');
@@ -13,16 +14,46 @@ const MOUNT = document.getElementById('app-mount');
 const renderApp = (appRoutes: object, mount) => {
   render(
     <AppRouter
-      routes={appRoutes}
-      history={browserHistory}
-
       // Scroll to top on route change.
       // Ref: https://github.com/ReactTraining/react-router/issues/2019
-      onUpdate={() => window.scrollTo(0, 0)}
-    />,
+      //onUpdate={() => window.scrollTo(0, 0)}
+    >
+      <App>
+        {appRoutes.map((route, i) => (
+          <RouteWithChildren
+            key={i}
+            {...route}
+          />
+        ))}
+      </App>
+    </AppRouter>,
     mount
   );
 };
+
+/**
+ * @function RouteWithSubRoutes
+ * @description Renders a route that can have children routes.
+ * @returns {function} A React element
+ *
+ * Ref: https://reacttraining.com/react-router/web/example/route-config
+ */
+const RouteWithChildren = (route) => {
+  return (
+    <Route
+      path={route.path}
+      exact={route.exact}
+      render={props => (
+        <route.component
+          {...props}
+          {...route.props}
+          routes={route.routes} // pass the children routes down to keep nesting
+        />
+      )}
+    />
+  );
+}
+
 
 /**
  * Enable hot module replacement/reloading if in a development
