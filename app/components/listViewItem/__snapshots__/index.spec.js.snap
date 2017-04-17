@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`ListViewItem should render component 1`] = `
 <Column
   className="list-view-item-container"
@@ -5,15 +7,20 @@ exports[`ListViewItem should render component 1`] = `
   largeSize={6}
   scale="large"
   smallSize={12}
-  style={Object {}}>
+  style={Object {}}
+>
   <div
-    className="list-view-item">
+    className="list-view-item"
+  >
     <div
-      className="list-view-item-title" />
+      className="list-view-item-title"
+    />
     <div
-      className="list-view-item-preview">
+      className="list-view-item-preview"
+    >
       <div
-        className="list-view-item-preview-image" />
+        className="list-view-item-preview-image"
+      />
     </div>
   </div>
 </Column>

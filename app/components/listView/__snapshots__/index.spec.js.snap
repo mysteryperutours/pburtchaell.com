@@ -1,12 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`ListView should render component 1`] = `
 <Row
   className="list-view list-view-type-grid"
   defaultColumn={false}
   elementType="div"
-  size="default">
+  size="default"
+>
   <ListViewItem
-    id={1} />
+    id={1}
+  />
   <ListViewItem
-    id={2} />
+    id={2}
+  />
 </Row>
 `;

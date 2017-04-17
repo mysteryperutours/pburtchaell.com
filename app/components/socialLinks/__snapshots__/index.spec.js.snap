@@ -1,55 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`SocialLinks should render component 1`] = `
 <ul
-  className="social-links-list">
+  className="social-links-list"
+>
   <li
-    className="social-links-list-item">
+    className="social-links-list-item"
+  >
     <a
       href="https://facebook.com/pburtchaell"
-      title="Patrick Burtchaell on Facebook">
+      title="Patrick Burtchaell on Facebook"
+    >
       <Icon
         fill="#0063B5"
-        type="FACEBOOK" />
+        type="FACEBOOK"
+      />
       Facebook
     </a>
   </li>
   <li
-    className="about-links-list-item">
+    className="about-links-list-item"
+  >
     <a
       href="https://twitter.com/pburtchaell"
-      title="Patrick Burtchaell on Twitter">
+      title="Patrick Burtchaell on Twitter"
+    >
       <Icon
         fill="#0063B5"
-        type="TWITTER" />
+        type="TWITTER"
+      />
       Twitter
     </a>
   </li>
   <li
-    className="about-links-list-item">
+    className="about-links-list-item"
+  >
     <a
       href="https://github.com/pburtchaell"
-      title="Patrick Burtchaell on GitHub">
+      title="Patrick Burtchaell on GitHub"
+    >
       <Icon
         fill="#0063B5"
-        type="GITHUB" />
+        type="GITHUB"
+      />
       GitHub
     </a>
   </li>
   <li
-    className="about-links-list-item">
+    className="about-links-list-item"
+  >
     <a
       href="https://dribbble.com/pburtchaell"
-      title="Patrick Burtchaell on Dribbble">
+      title="Patrick Burtchaell on Dribbble"
+    >
       <Icon
         fill="#0063B5"
-        type="DRIBBBLE" />
+        type="DRIBBBLE"
+      />
       Dribbble
     </a>
   </li>
   <li
-    className="about-links-list-item">
+    className="about-links-list-item"
+  >
     <a
       href="mailto:patrick@pburtchaell.com"
-      title="Patrick Burtchaell on email">
+      title="Patrick Burtchaell on email"
+    >
       patrick@pburtchaell.com
     </a>
   </li>

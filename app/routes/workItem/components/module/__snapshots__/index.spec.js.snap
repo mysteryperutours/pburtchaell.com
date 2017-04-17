@@ -1,21 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Module renders module with multiple children 1`] = `
 <Row
   className="case-study-module module-text"
   defaultColumn={false}
   elementType="section"
-  size="small">
+  size="small"
+>
   <Column
     elementType="div"
     largeSize={12}
     scale="large"
     smallSize={12}
-    style={Object {}}>
+    style={Object {}}
+  >
     <Text
-      type="p">
+      type="p"
+    >
       Foo
     </Text>
     <Text
-      type="p">
+      type="p"
+    >
       Foo
     </Text>
   </Column>
@@ -27,18 +33,21 @@ exports[`Module renders module with type media 1`] = `
   className="case-study-module module-media"
   defaultColumn={false}
   elementType="section"
-  size="medium">
+  size="medium"
+>
   <Column
     elementType="div"
     largeSize={12}
     scale="large"
     smallSize={12}
-    style={Object {}}>
+    style={Object {}}
+  >
     <Image
       alt="Foo"
       height={500}
       src="https://path/to/image.png"
-      width={700} />
+      width={700}
+    />
   </Column>
 </Row>
 `;
@@ -48,15 +57,18 @@ exports[`Module renders module with type text 1`] = `
   className="case-study-module module-text"
   defaultColumn={false}
   elementType="section"
-  size="small">
+  size="small"
+>
   <Column
     elementType="div"
     largeSize={12}
     scale="large"
     smallSize={12}
-    style={Object {}}>
+    style={Object {}}
+  >
     <Text
-      type="p">
+      type="p"
+    >
       Foo
     </Text>
   </Column>

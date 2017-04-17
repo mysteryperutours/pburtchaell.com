@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Text should render h1 element 1`] = `
 <h1>
   foo

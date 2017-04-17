@@ -1,25 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`WorkItemHeader renders component when fulfilled 1`] = `
 <header
-  className="case-study-header"
+  className="case-study-header has-cover"
   style={
     Object {
       "background": "rgb(0,0,0)",
       "backgroundAttachment": "fixed",
     }
-  }>
+  }
+>
   <Row
     defaultColumn={true}
     elementType="div"
-    size="full">
+    size="full"
+  >
     <div
-      className="case-study-titles">
+      className="case-study-titles"
+    >
       <Text
         style={
           Object {
             "color": "rgb(0,0,0)",
           }
         }
-        type="h1">
+        type="h1"
+      >
         Foo
       </Text>
       <Text
@@ -28,7 +34,8 @@ exports[`WorkItemHeader renders component when fulfilled 1`] = `
             "color": "rgb(0,0,0)",
           }
         }
-        type="h2">
+        type="h2"
+      >
         Foo is foo
       </Text>
     </div>
@@ -36,7 +43,8 @@ exports[`WorkItemHeader renders component when fulfilled 1`] = `
   <Row
     defaultColumn={true}
     elementType="div"
-    size="full">
+    size="full"
+  >
     <div
       className="case-study-cover-image"
       style={
@@ -45,9 +53,12 @@ exports[`WorkItemHeader renders component when fulfilled 1`] = `
           "backgroundPosition": "top center",
           "backgroundSize": "cover",
           "height": "42rem",
+          "margin": "0 auto",
+          "maxWidth": "1000px",
           "width": "100%",
         }
-      } />
+      }
+    />
   </Row>
 </header>
 `;
@@ -55,19 +66,6 @@ exports[`WorkItemHeader renders component when fulfilled 1`] = `
 exports[`WorkItemHeader renders component when pending 1`] = `
 <header
   className="case-study-header is-pending"
-  style={Object {}}>
-  <Row
-    defaultColumn={true}
-    elementType="div"
-    size="full">
-    <div
-      className="case-study-cover-image"
-      style={
-        Object {
-          "height": "42rem",
-          "width": "100%",
-        }
-      } />
-  </Row>
-</header>
+  style={Object {}}
+/>
 `;

@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`WorkItemHire renders component 1`] = `
 <Row
   className="case-study-module case-study-module-hire"
@@ -7,10 +9,12 @@ exports[`WorkItemHire renders component 1`] = `
   style={
     Object {
       "backgroundColor": "#E6E6E6",
+      "flex": "1 auto",
       "paddingBottom": "5rem",
       "paddingTop": "7rem",
     }
-  }>
+  }
+>
   <Text
     style={
       Object {
@@ -18,11 +22,13 @@ exports[`WorkItemHire renders component 1`] = `
         "textAlign": "center",
       }
     }
-    type="p">
-    Let\'s work together!
+    type="p"
+  >
+    Let's work together!
   </Text>
   <ul
-    className="social-links-list">
+    className="social-links-list"
+  >
     <li
       className="about-links-list-item"
       style={
@@ -30,14 +36,16 @@ exports[`WorkItemHire renders component 1`] = `
           "opacity": 0.8,
           "textAlign": "center",
         }
-      }>
+      }
+    >
       <span>
         Get in touch 
       </span>
       <a
         className="is-gray"
         href="mailto:patrick@pburtchaell.com"
-        title="Patrick Burtchaell on email">
+        title="Patrick Burtchaell on email"
+      >
         via email
       </a>
     </li>
@@ -48,21 +56,25 @@ exports[`WorkItemHire renders component 1`] = `
           "opacity": 0.8,
           "textAlign": "center",
         }
-      }>
+      }
+    >
       <span
         style={
           Object {
             "marginRight": "1.25rem",
           }
-        }>
+        }
+      >
         or
       </span>
       <Icon
-        fill="#0063B5" />
+        fill="#0063B5"
+      />
       <a
         className="is-gray"
         href="https://m.me/pburtchaell"
-        title="Patrick Burtchaell on Facebook Messenger">
+        title="Patrick Burtchaell on Facebook Messenger"
+      >
         Messenger
       </a>
       <span>

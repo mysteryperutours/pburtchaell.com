@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`IndexRoute should render component 1`] = `
 <RouteContainer
   color={
@@ -9,19 +11,23 @@ exports[`IndexRoute should render component 1`] = `
   }
   defaultTheme={true}
   footer={true}
-  header={true}>
+  header={true}
+>
   <Row
     defaultColumn={true}
     elementType="div"
-    size="default">
+    size="default"
+  >
     <Column
       elementType="div"
       largeSize={8}
       scale="large"
       smallSize={12}
-      style={Object {}}>
+      style={Object {}}
+    >
       <Text
-        type="h1">
+        type="h1"
+      >
         Patrick Burtchaell
       </Text>
       <Text
@@ -31,7 +37,8 @@ exports[`IndexRoute should render component 1`] = `
             "marginTop": "-1rem",
           }
         }
-        type="h4">
+        type="h4"
+      >
         Product Designer
       </Text>
     </Column>
@@ -39,9 +46,11 @@ exports[`IndexRoute should render component 1`] = `
   <Row
     defaultColumn={true}
     elementType="div"
-    size="default">
+    size="default"
+  >
     <Text
-      type="h4">
+      type="h4"
+    >
       Selected Works
     </Text>
   </Row>
@@ -50,6 +59,7 @@ exports[`IndexRoute should render component 1`] = `
     itemStyle={Object {}}
     items={null}
     layoutType="GRID"
-    listViewItem={[Function]} />
+    listViewItem={[Function]}
+  />
 </RouteContainer>
 `;
