@@ -1,15 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`RouteContainer should render component 1`] = `
 <div
-  className="route-container">
+  className="route-container"
+>
   <RouteHeader
     align="left"
     initialBlueChannel={255}
     initialGreenChannel={255}
     initialRedChannel={255}
-    isInterpolated={false} />
+    isInterpolated={false}
+  />
   <main
     className="undefined"
-    role="main">
+    role="main"
+  >
     foo
   </main>
   <RouteFooter
@@ -19,6 +24,7 @@ exports[`RouteContainer should render component 1`] = `
         "g": 255,
         "r": 255,
       }
-    } />
+    }
+  />
 </div>
 `;

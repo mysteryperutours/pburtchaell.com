@@ -1,6 +1,6 @@
 // @flow
 import React, { Element } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Column from '../../components/column';
 import Text, { types } from '../../components/text';
 import Row from '../../components/row';
@@ -9,7 +9,7 @@ import RouteContainer from '../../components/routeContainer';
 import './styles.css';
 
 const AboutRoute = (props): Element<*> => (
-  <RouteContainer {...props.route.config}>
+  <RouteContainer {...props.config}>
     <Row>
       <Column largeSize={9} smallSize={12}>
         <Text>Currently, Patrick is a product design intern at Facebook in Menlo Park, CA. He attends Loyola University New Orleans, studying a Bachelor of Science in Design, Honors and a minor in Art History. He  expects to graduate in 2018.</Text>

@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`AboutRoute should render component 1`] = `
 <RouteContainer
   color={
@@ -9,23 +11,28 @@ exports[`AboutRoute should render component 1`] = `
   }
   defaultTheme={true}
   footer={true}
-  header={true}>
+  header={true}
+>
   <Row
     defaultColumn={true}
     elementType="div"
-    size="default">
+    size="default"
+  >
     <Column
       elementType="div"
       largeSize={9}
       scale="large"
       smallSize={12}
-      style={Object {}}>
+      style={Object {}}
+    >
       <Text
-        type="p">
+        type="p"
+      >
         Currently, Patrick is a product design intern at Facebook in Menlo Park, CA. He attends Loyola University New Orleans, studying a Bachelor of Science in Design, Honors and a minor in Art History. He  expects to graduate in 2018.
       </Text>
       <Text
-        type="p">
+        type="p"
+      >
         Patrick has worked with startups around the world as a designer and software developer. He is available for freelance gigs through Lawn Chair, an independent design and software development studio he founded in 2015.
       </Text>
       <hr />
@@ -35,7 +42,8 @@ exports[`AboutRoute should render component 1`] = `
             "opacity": ".3",
           }
         }
-        type="p">
+        type="p"
+      >
         <small>
           Last updated — February 2017
         </small>
@@ -45,13 +53,15 @@ exports[`AboutRoute should render component 1`] = `
   <Row
     defaultColumn={false}
     elementType="div"
-    size="default">
+    size="default"
+  >
     <Column
       elementType="div"
       largeSize={4}
       scale="large"
       smallSize={12}
-      style={Object {}}>
+      style={Object {}}
+    >
       <h5>
         Clients & Companies
       </h5>
@@ -81,24 +91,25 @@ exports[`AboutRoute should render component 1`] = `
       largeSize={8}
       scale="large"
       smallSize={12}
-      style={Object {}}>
+      style={Object {}}
+    >
       <h5>
         Personal Projects
       </h5>
       <ul>
         <li>
           <Link
-            onlyActiveOnIndex={false}
-            style={Object {}}
-            to="/work/2015/08/segment">
+            replace={false}
+            to="/work/2015/08/segment"
+          >
             Segment
           </Link>
         </li>
         <li>
           <Link
-            onlyActiveOnIndex={false}
-            style={Object {}}
-            to="/work/2015/08/lawnchair">
+            replace={false}
+            to="/work/2015/08/lawnchair"
+          >
             Lawn Chair Studios
           </Link>
         </li>
@@ -109,7 +120,8 @@ exports[`AboutRoute should render component 1`] = `
       largeSize={4}
       scale="large"
       smallSize={12}
-      style={Object {}}>
+      style={Object {}}
+    >
       <h5>
         Connect
       </h5>
@@ -120,32 +132,33 @@ exports[`AboutRoute should render component 1`] = `
       largeSize={8}
       scale="large"
       smallSize={12}
-      style={Object {}}>
+      style={Object {}}
+    >
       <h5>
         Open Source Projects
       </h5>
       <ul>
         <li>
           <Link
-            onlyActiveOnIndex={false}
-            style={Object {}}
-            to="https://github.com/pburtchaell/redux-promise-middleware">
+            replace={false}
+            to="https://github.com/pburtchaell/redux-promise-middleware"
+          >
             Redux Promise Middleware
           </Link>
         </li>
         <li>
           <Link
-            onlyActiveOnIndex={false}
-            style={Object {}}
-            to="https://github.com/pburtchaell/react-input">
+            replace={false}
+            to="https://github.com/pburtchaell/react-input"
+          >
             React Input
           </Link>
         </li>
         <li>
           <Link
-            onlyActiveOnIndex={false}
-            style={Object {}}
-            to="https://github.com/pburtchaell/react-notification">
+            replace={false}
+            to="https://github.com/pburtchaell/react-notification"
+          >
             React Notification
           </Link>
         </li>

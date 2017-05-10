@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Image should render component 1`] = `
 <div
   className="image-preload-container is-pending"
@@ -6,5 +8,6 @@ exports[`Image should render component 1`] = `
       "height": "0px",
       "width": "0px",
     }
-  } />
+  }
+/>
 `;
