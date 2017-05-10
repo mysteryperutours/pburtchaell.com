@@ -1,15 +1,12 @@
-// @flow
 import { createElement, Element } from 'react';
 import classNames from 'classnames';
 
 type Props = {
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
   className?: string,
-  elementType: string,
-  offsetLarge?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
-  offsetSmall?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
-  largeSize: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
-  smallSize: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12,
+  elementType?: string,
+  largeSize: 4 | 6 | 8 | 12,
+  smallSize: 4 | 6 | 8 | 12,
   style?: Object
 }
 
@@ -24,8 +21,6 @@ const Column = ({ children, elementType, ...props }: Props): Element<*> => {
     elementType,
     {
       className: classNames('column', {
-        [`column-push-large-${props.offsetLarge}`]: props.offsetLarge,
-        [`column-push-small-${props.offsetSmall}`]: props.offsetSmall,
         [`column-large-${props.largeSize}`]: props.largeSize,
         [`column-small-${props.smallSize}`]: props.smallSize
       }, props.className)

@@ -1,10 +1,10 @@
 // @flow
-import React, { Component, Element, createElement } from 'react';
+import React, { Component, Element } from 'react';
 import RouteContainer from '../../components/routeContainer';
 import Text, { types } from '../../components/text';
 import Row from '../../components/row';
 import Column from '../../components/column';
-import ListView from '../../components/listView';
+import renderListView from '../../components/listView/renderListView';
 import requestHandler from '../../support/requestHandler';
 
 type Props = {
@@ -16,11 +16,13 @@ class IndexRoute extends Component {
     super(props, context);
 
     this.state = {
+      data: null,
       isPending: true
     };
   }
 
   state: {
+    data: null;
     isPending: boolean
   };
 
@@ -35,46 +37,25 @@ class IndexRoute extends Component {
 
     return (
       <RouteContainer>
-        <Row>
+        <Row size="large">
           <Column largeSize={8} smallSize={12}>
-            <Text
-              type={types.HEADER_1}
-            >Patrick Burtchaell</Text>
-            <Text
-              type={types.HEADER_4}
-              style={{
-                marginTop: '-1rem',
-                marginBottom: '9rem'
-              }}
-            >Product Designer</Text>
+            <Text type={types.HEADER_1}>
+              Patrick Burtchaell
+            </Text>
+            <Text type={types.HEADER_2}>
+              Product Designer
+            </Text>
           </Column>
         </Row>
-        <Row>
-          <Text
-            type={types.HEADER_4}
-          >Selected Works</Text>
+        <div className="padding padding-large" />
+        <Row size="large">
+          <Text type={types.HEADER_2}>
+            Selected Works
+          </Text>
         </Row>
-        <ListView
-          isPending={isPending}
-          items={isPending ? null : Object.keys(data).map((key) => {
-            const { meta } = data[key];
-            const { date } = meta;
-
-            return meta.status === 'pending' ? ({
-              id: meta.id,
-              title: meta.title,
-              isNull: true
-            }) : ({
-              id: meta.id,
-              title: meta.title,
-              linkTo: `/work/${date.year}/${date.month}/${meta.pathname}`,
-              style: {
-                backgroundImage: `url(${meta.previewImage.url})`,
-                backgroundColor: `rgb(${meta.primaryColor.rgb})`
-              }
-            });
-          })}
-        />
+        <Row size="large" defaultColumn={false}>
+          {isPending ? null : renderListView(data)}
+        </Row>
       </RouteContainer>
     );
   }

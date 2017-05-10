@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import ListView from '../../components/listView';
-import Text, { types } from '../../components/text';
 import Row from '../../components/row';
-import Column from '../../components/column';
+import Text, { types as textTypes } from '../../components/text';
 import RouteContainer from '../../components/routeContainer';
+import renderListView from '../../components/listView/renderListView';
 import requestHandler from '../../support/requestHandler';
-import './styles.less';
+import './styles.css';
 
 const INITIAL_STATE = {
   data: [],
@@ -25,50 +24,16 @@ class WorkRoute extends Component {
   }
 
   render(): RouteContainer {
-    const { isPending, isRejected, data } = this.state;
+    const { isPending, data } = this.state;
 
     return (
       <RouteContainer>
-        {isRejected ? (
-          <Row>
-            <Text type={types.HEADER_1}>Oh no!</Text>
-          </Row>
-        ) : (
-          <Row>
-            <Text type={types.HEADER_1}>All Work</Text>
-          </Row>
-        )}
-        {isRejected ? (
-          <Row>
-            <hr />
-            A server error has occured.
-          </Row>
-        ) : (
-          <ListView
-            isPending={isPending}
-            items={isPending ? null : Object.keys(data).map((key) => {
-              const { meta } = data[key];
-              const { date } = meta;
-
-              return meta.status === 'pending' ? ({
-                id: meta.id,
-                title: meta.title,
-                isNull: true,
-                style: {
-                  backgroundColor: '#e8e6e6'
-                }
-              }) : ({
-                id: meta.id,
-                title: meta.title,
-                linkTo: `/work/${date.year}/${date.month}/${meta.pathname}`,
-                style: {
-                  backgroundImage: `url(${meta.previewImage.url})`,
-                  backgroundColor: `rgb(${meta.primaryColor.rgb})`
-                }
-              });
-            })}
-          />
-        )}
+        <Row size="large">
+          <Text type={textTypes.HEADER_1}>Work</Text>
+        </Row>
+        <Row size="large" defaultColumn={false}>
+          {isPending ? null : renderListView(data)}
+        </Row>
       </RouteContainer>
     );
   }

@@ -1,6 +1,5 @@
 import React from 'react';
 import paths from '../paths';
-import Loader from '../../components/loader';
 import AboutRoute from './component';
 
 export default {
@@ -8,8 +7,8 @@ export default {
   props: {
     config: {
       footer: {
-        linkBackTo: {
-          link: paths.INDEX,
+        linkTo: {
+          path: paths.INDEX,
           title: 'Home'
         }
       }

@@ -1,0 +1,57 @@
+/**
+ * Rather than including a full 12 column grid, I only include the classes
+ * that my page layouts will actually use.
+ */
+.column {
+  position: relative;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  flex: 0 0 auto;
+  flex-grow: 1;
+  flex-basis: 0;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 600px) {
+  .column-large-4 {
+    max-width: calc((4 * 100%) / 12);
+    flex-basis: calc((4 * 100%) / 12);
+  }
+
+  .column-large-6 {
+    max-width: calc((6 * 100%) / 12);
+    flex-basis: calc((6 * 100%) / 12);
+  }
+
+  .column-large-8 {
+    max-width: calc((8 * 100%) / 12);
+    flex-basis: calc((8 * 100%) / 12);
+  }
+
+  .column-large-12 {
+    max-width: calc((12 * 100%) / 12);
+    flex-basis: calc((12 * 100%) / 12);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .column-small-4 {
+    max-width: calc((4 * 100%) / 12);
+    flex-basis: calc((4 * 100%) / 12);
+  }
+
+  .column-small-6 {
+    max-width: calc((6 * 100%) / 12);
+    flex-basis: calc((6 * 100%) / 12);
+  }
+
+  .column-small-8 {
+    max-width: calc((8 * 100%) / 12);
+    flex-basis: calc((8 * 100%) / 12)%;
+  }
+
+  .column-small-12 {
+    max-width: calc((12 * 100%) / 12);
+    flex-basis: calc((12 * 100%) / 12);
+  }
+}

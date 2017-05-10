@@ -1,16 +1,10 @@
 import React from 'react';
-import ListView from './index';
+import ListViewItem from './index';
 
-describe(ListView.name, () => {
+describe(ListViewItem.name, () => {
   it('should render component', () => {
     expect(shallow(
-      <ListView
-        items={[{
-          id: 1
-        }, {
-          id: 2
-        }]}
-      />
+      <ListViewItem />
     )).toMatchSnapshot();
   });
 });

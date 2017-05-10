@@ -2,7 +2,7 @@ import React, { Element } from 'react';
 import classNames from 'classnames';
 import RouteFooter from '../routeFooter';
 import RouteHeader from '../routeHeader';
-import styles from './styles.less';
+import './styles.css';
 
 type Props = {
   header: null | object | boolean,
@@ -33,23 +33,23 @@ const RouteContainer = ({
   <div className="route-container">
     {!header ? null : (
       <RouteHeader
-        initialRedChannel={props.color.r}
-        initialGreenChannel={props.color.g}
-        initialBlueChannel={props.color.b}
         {...header}
       />
     )}
     <main
       role="main"
-      className={classNames(styles.routeBody, {
-        [styles.routeBodyDefault]: props.defaultTheme
+      className={classNames('route-body', {
+        'route-body-default': props.defaultTheme
       })}
     >
       {children}
     </main>
+
+    {/**
+      * The footer should not be rendered until all requests is fulfilled.
+      */}
     {props.isPending || !footer ? null : (
       <RouteFooter
-        color={props.color}
         {...footer}
       />
     )}

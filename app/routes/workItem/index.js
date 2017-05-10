@@ -11,12 +11,11 @@ export default {
         isInterpolated: true
       },
       footer: {
-        backgroundColor: '#E6E6E6',
-        linkBackTo: {
-          link: paths.WORK,
-          title: 'All Work'
+        linkTo: {
+          path: paths.WORK,
+          title: 'My Work'
         },
-        linkBackToTop: true
+        linkToTop: true
       }
     },
   },

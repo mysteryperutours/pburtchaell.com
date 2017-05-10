@@ -1,0 +1,61 @@
+.site-header {
+ padding-top: 2rem;
+ padding-bottom: 2rem;
+ margin-bottom: 0;
+ position: fixed;
+ display: block;
+ text-align: left;
+ width: 100%;
+ height: 8rem;
+ box-sizing: border-box;
+ z-index: 9;
+ background: rgba(255, 255, 255, 0.9);
+ user-select: none;
+}
+
+.site-navigation {
+ position: relative;
+ height: 6rem;
+}
+
+.site-navigation .site-navigation-item {
+ position: relative;
+ margin-left: 1.5rem;
+ bottom: 1px;
+ width: 72px;
+ display: inline-block;
+}
+
+.site-navigation .site-navigation-item:nth-of-type(1) {
+ margin-left: 0;
+}
+
+.site-navigation .site-navigation-item:hover .site-navigation-item-text {
+ background-image: linear-gradient( var(--black) 0%, var(--black) 100%);
+ background-repeat: repeat-x;
+ background-size: 1px 2px;
+ background-position: 0 95%;
+ text-shadow: 3px 0 var(--white), 2px 0  var(--white), 1px 0  var(--white), -1px 0  var(--white), -2px 0  var(--white), -3px 0 var(--white);
+}
+
+.site-navigation .site-navigation-item:active,
+.site-navigation .site-navigation-item.is-active {
+ color: var(--black);
+}
+
+.site-navigation .site-navigation-item:active .site-navigation-item-text,
+.site-navigation .site-navigation-item.is-active .site-navigation-item-text {
+ background-image: linear-gradient( var(--black) 0%, var(--black) 100%);
+ background-repeat: repeat-x;
+ background-size: 1px 2px;
+ background-position: 0 95%;
+ text-shadow: 3px 0 var(--white), 2px 0  var(--white), 1px 0  var(--white), -1px 0  var(--white), -2px 0  var(--white), -3px 0 var(--white);
+}
+
+@media screen and (max-width: 500px) {
+ .site-header {
+   height: 9rem;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+ }
+}

@@ -2,14 +2,12 @@
 import { createElement, Element } from 'react';
 import classNames from 'classnames';
 import Column from '../column';
-import './styles.less';
 
 type Props = {
   className?: string,
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
   defaultColumn?: boolean,
-  elementType?: string,
-  size: 'small' | 'medium' | 'full'
+  elementType?: string
 }
 
 /**
@@ -21,15 +19,23 @@ type Props = {
  */
 const Row = ({
   children,
-  defaultColumn,
   elementType,
+  defaultColumn,
   ...props
 }: Props): Element<*> => {
   // Support rendering a single column by default
   function renderRowChild() {
     if (!children) return null;
 
-    if (children.type === Column || defaultColumn === false) {
+    if (defaultColumn === false) {
+      return children;
+    }
+
+    if (Array.isArray(children)) {
+      if (children[0].type === Column) {
+        return children;
+      }
+    } else if (children.type === Column) {
       return children;
     }
 
@@ -42,16 +48,14 @@ const Row = ({
       className: 'row'
     }, renderRowChild()),
     className: classNames('row-container', {
-      'row-container--small': props.size === 'small',
-      'row-container--medium': props.size === 'medium',
-      'row-container--full-width': props.size === 'full'
+      'row-container--default': props.size === 'default',
+      'row-container--large': props.size === 'large'
     }, props.className)
   });
 };
 
 Row.defaultProps = {
   size: 'default',
-  defaultColumn: true,
   elementType: 'div'
 };
 

@@ -1,52 +1,41 @@
-import React, { createElement, Element } from 'react';
-import ListViewItem from '../listViewItem';
-import Row from '../row';
-import * as layoutTypes from './types';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Column from '../column';
 import './styles.css';
 
 type Props = {
-  containerStyle?: object,
-  isPending: boolean,
-  items: array<object>,
-  itemStyle: object,
-  layoutType: layoutTypes.GRID | layoutTypes.LIST,
-  listViewItem?: Element<*>,
-  title?: string
+  children?: any,
+  linkTo?: string,
+  isPending?: boolean
 }
 
-function renderListViewItem(item, type): Element<*> {
-  return createElement(type, {
-    ...item,
-    key: item.id
-  });
-}
-
-const ListView = ({ layoutType, ...props }: Props): Element<*> => {
-  const className = `list-view list-view-type-${layoutType.toLowerCase()}`;
-  const pendingElements = [0, 1, 2];
+const ListViewItem = ({ children, linkTo, isPending, ...props }: Props) => {
+  function renderInner() {
+    return (
+      <div className={`list-view-item${isPending ? ' is-pending' : ''}`}>
+        <div className="list-view-item-title">
+          {props.title}
+        </div>
+        <div className="list-view-item-preview">
+          <div className="list-view-item-preview-image" style={props.style}>
+            {children}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <Row
-      className={className}
-      defaultColumn={false}
-      style={props.containerStyle}
+    <Column
+      largeSize={6}
+      smallSize={12}
+      className="list-view-item-container"
     >
-      {props.isPending ? pendingElements.map(el => {
-        return (
-          <ListViewItem
-            key={el}
-            isPending={true}
-          />
-        );
-      }) : props.items.map(item => renderListViewItem(item, props.listViewItem))}
-    </Row>
+      {linkTo ? (
+        <Link to={linkTo} title={props.title}>{renderInner()}</Link>
+      ) : renderInner()}
+    </Column>
   );
 };
 
-ListView.defaultProps = {
-  listViewItem: ListViewItem,
-  layoutType: layoutTypes.GRID,
-  itemStyle: {}
-};
-
-export { ListView as default, layoutTypes as types };
+export default ListViewItem;

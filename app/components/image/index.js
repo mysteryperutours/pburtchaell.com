@@ -1,7 +1,7 @@
 // @flow
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
-import './styles.less';
+import './styles.css';
 
 type Props = {
   src: string,

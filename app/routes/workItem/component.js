@@ -2,14 +2,11 @@
 import React, { PureComponent, Children } from 'react';
 import Module from './components/module';
 import WorkItemHeader from './components/header';
-import WorkItemPress from './components/press';
-import WorkItemHire from './components/hire';
 import RouteContainer from '../../components/routeContainer';
-import ListView from '../../components/listView';
 import Row from '../../components/row';
-import Text, { types } from '../../components/text';
+import HireMe from '../../components/hire';
 import requestHandler from '../../support/requestHandler';
-import './styles.less';
+import './styles.css';
 
 const INITIAL_STATE = {
   data: {},
@@ -61,9 +58,6 @@ class WorkItemRoute extends PureComponent {
           <WorkItemHeader
             title={meta.title}
             description={meta.description}
-            textColor={meta.textColor}
-            backgroundColor={meta.backgroundColor}
-            coverImage={meta.coverImage}
             isPending={isPending}
           />
 
@@ -73,7 +67,7 @@ class WorkItemRoute extends PureComponent {
              * Show "marks" when the route is pending.
              */}
             {isPending ? (
-              <Row size="small">
+              <Row>
                 <div className="pending-marks">
                   <div className="pending-mark" />
                   <div className="pending-mark" />
@@ -97,60 +91,11 @@ class WorkItemRoute extends PureComponent {
               </Module>
             )))}
 
-            {/**
-              * PART 3:
-              * The work item press module is rendered if the route
-              * is fulfilled and if the array of press items exists.
-              */}
-            {isPending || !data.press ? null : (
-              <WorkItemPress
-                items={data.press}
-              />
-            )}
-
             {isPending ? null : (
-              <WorkItemHire />
+              <Row size="large">
+                <HireMe />
+              </Row>
             )}
-
-            {/*isPending ? null : (
-              <section
-                style={{
-                  backgroundColor: '#E6E6E6',
-                  paddingBottom: '7rem'
-                }}
-              >
-                <Text
-                  type={types.BODY}
-                  style={{
-                    textAlign: 'center',
-                    opacity: .8,
-                    marginTop: 0
-                  }}
-                >
-                  More work
-                </Text>
-                <ListView
-                  isPending={isPending}
-                  items={isPending ? null : data.related.map((related) => {
-                    const { date } = related;
-
-                    return meta.status === 'pending' ? ({
-                      id: meta.id,
-                      title: meta.title,
-                      isNull: true
-                    }) : ({
-                      id: related.id,
-                      title: related.title,
-                      linkTo: `/work/${date.year}/${date.month}/${related.pathname}`,
-                      style: {
-                        backgroundImage: `url(${related.previewImage.url})`,
-                        backgroundColor: `rgb(${related.primaryColor.rgb})`
-                      }
-                    });
-                  })}
-                />
-              </section>
-            )*/}
           </div>
         </article>
       </RouteContainer>

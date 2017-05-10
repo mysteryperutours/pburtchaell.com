@@ -11,7 +11,7 @@ const ExtractCSS = new ExtractTextPlugin('style.css');
 const ENTRY = {
   app: [
     'unfetch', // Fetch API polyfill
-    './app/styles/index.less',
+    './app/styles/index.css',
     './app/index.js'
   ]
 };
@@ -26,8 +26,6 @@ const ExtractTextPluginConfig = {
       minimize: true,
       importLoaders: 1
     }
-  }, {
-    loader: 'less-loader'
   }]
 };
 
@@ -131,21 +129,7 @@ const config = {
         }
       },
       {
-        test: /\.css$/,
-        loader: [{
-          loader: 'style-loader',
-        }, {
-          loader: 'css-loader'
-        }],
-        include: [
-          getAbsolutePathtoAlias(),
-          getAbsolutePathtoModule([
-            'normalize.css', 'normalize.css'
-          ])
-        ]
-      },
-      {
-        test: /\.less?$/,
+        test: /\.css?$/,
         loader: ExtractCSS.extract(ExtractTextPluginConfig),
         include: [
           getAbsolutePathtoAlias(),

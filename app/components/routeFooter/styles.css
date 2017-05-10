@@ -1,0 +1,78 @@
+.route-footer {
+  position: relative;
+  padding: 2rem 0;
+  color: var(--light-gray);
+  user-select: none;
+}
+
+/**
+ * All links in the footer must be gray to match the text color.
+ */
+.route-footer a {
+  color: var(--light-gray);
+}
+
+.route-footer a:hover {
+  color: var(--dark-gray);
+}
+
+/**
+ * These styles apply to the link in the left column of the footer.
+ */
+.route-footer-link-anchor::before {
+  content: "\2190";
+  margin-right: .5rem;
+}
+
+/**
+ * These styles apply to the link in the center column of the footer.
+ */
+.route-footer-top-link {
+  text-align: center;
+}
+
+.route-footer-top-link-anchor::before {
+  content: "\2191";
+  margin-right: .5rem;
+}
+
+/**
+ * Flexbox styles are used to align the text message—"Made with <3"— and
+ * the copyright text.
+ */
+.route-footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * These styles apply to the text and copyright messages in the right column
+ * of the footer.
+ */
+.route-footer-text-copyright,
+.route-footer-text-message {
+  width: 100px;
+  text-align: right;
+  align-self: flex-end;
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+}
+
+.route-footer-heart {
+  fill: var(--red);
+  margin-left: .75rem;
+  margin-top: 2px;
+  position: relative;
+}
+
+/**
+ * On small screens, center everything.
+ */
+@media screen and (max-width: 540px) {
+  .route-footer-text-copyright,
+  .route-footer-text-message {
+    text-align: center;
+    margin: auto;
+    align-self: center;
+  }
+}
