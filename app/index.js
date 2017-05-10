@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as AppRouter, Route } from 'react-router-dom';
+import { BrowserRouter as AppRouter, Switch, Route } from 'react-router-dom';
 import App from './components/app';
 import routes from './routes/config';
 
@@ -13,18 +13,16 @@ const MOUNT = document.getElementById('app-mount');
  */
 const renderApp = (appRoutes: object, mount) => {
   render(
-    <AppRouter
-      // Scroll to top on route change.
-      // Ref: https://github.com/ReactTraining/react-router/issues/2019
-      //onUpdate={() => window.scrollTo(0, 0)}
-    >
+    <AppRouter>
       <App>
-        {appRoutes.map((route, i) => (
-          <RouteWithChildren
-            key={i}
-            {...route}
-          />
-        ))}
+        <Switch>
+          {appRoutes.map((route, i) => (
+            <RouteWithChildren
+              key={i}
+              {...route}
+            />
+          ))}
+        </Switch>
       </App>
     </AppRouter>,
     mount
