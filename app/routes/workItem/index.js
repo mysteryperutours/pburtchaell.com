@@ -5,11 +5,6 @@ export default {
   path: paths.WORK_ITEM,
   props: {
     config: {
-      defaultTheme: false,
-      header: {
-        type: 'transparent',
-        isInterpolated: true
-      },
       footer: {
         linkTo: {
           path: paths.WORK,
