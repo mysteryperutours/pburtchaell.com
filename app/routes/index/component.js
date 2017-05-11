@@ -36,7 +36,9 @@ class IndexRoute extends Component {
     const { isPending, data } = this.state;
 
     return (
-      <RouteContainer>
+      <RouteContainer
+        isPending={isPending}
+      >
         <Row size="large">
           <Column largeSize={8} smallSize={12}>
             <Text type={types.HEADER_1}>
