@@ -10,14 +10,55 @@ type Props = {
 };
 
 const Module = (props: Props): Element<*> => {
-  const childElement = (
-    <Column>
-      {Children.toArray(props.children.map(createChildElement))}
-    </Column>
-  );
+  let childElement;
+  let rowSize = 'default';
+
+  const { propsFromJSON } = props;
+
+  if (props.type === 'module-image') {
+    childElement = (
+      <Column>
+        <figure className="figure">
+          <img
+            src={propsFromJSON.url}
+            alt={propsFromJSON.alt}
+          />
+          {propsFromJSON.caption ? (
+            <figcaption>
+              {propsFromJSON.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      </Column>
+    );
+  } else if (props.type === 'module-image-large') {
+    rowSize = 'medium';
+
+    childElement = (
+      <Column>
+        <figure className="figure">
+          <img
+            src={propsFromJSON.url}
+            alt={propsFromJSON.alt}
+          />
+          {propsFromJSON.caption ? (
+            <figcaption>
+              {propsFromJSON.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      </Column>
+    );
+  } else {
+    childElement = (
+      <Column>
+        {Children.toArray(props.children.map(createChildElement))}
+      </Column>
+    );
+  }
 
   return (
-    <Row className={classNames('case-study-module', props.type)}>
+    <Row size={rowSize} className={classNames('case-study-module', props.type)}>
       {childElement}
     </Row>
   );

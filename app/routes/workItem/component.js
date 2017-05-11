@@ -41,10 +41,8 @@ class WorkItemRoute extends PureComponent {
 
     return (
       <RouteContainer
-        {...this.props.config}
         isPending={isPending}
-        color={meta.color}
-        textColor={meta.textColor}
+        {...this.props.config}
       >
         <article
           role="article"
@@ -83,7 +81,6 @@ class WorkItemRoute extends PureComponent {
               */}
             {isPending ? null : Children.toArray(data.modules.map(module => (
               <Module
-                key={module.key}
                 type={module.type}
                 propsFromJSON={module.props}
               >

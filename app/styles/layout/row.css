@@ -9,6 +9,10 @@
   max-width: 580px;
 }
 
+.row-container--medium .row {
+  max-width: 720px;
+}
+
 .row-container--large .row {
   max-width: 100%;
 }

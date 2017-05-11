@@ -1,3 +1,26 @@
 img {
   border: none;
+  outline: none;
+  width: 100%;
+  margin: var(--default-margin);
+}
+
+.figure {
+  margin: 0;
+  margin: var(--default-margin);
+  margin-top: var(--small-margin);
+}
+
+.figure img {
+  margin: 0;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125);
+}
+
+.figure figcaption {
+  display: block;
+  font-size: var(--small-font-size);
+  font-style: italic;
+  line-height: var(--small-line-height);
+  color: var(--light-gray);
+  margin: var(--default-margin);
 }

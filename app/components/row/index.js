@@ -49,7 +49,8 @@ const Row = ({
     }, renderRowChild()),
     className: classNames('row-container', {
       'row-container--default': props.size === 'default',
-      'row-container--large': props.size === 'large'
+      'row-container--large': props.size === 'large',
+      'row-container--medium': props.size === 'medium'
     }, props.className)
   });
 };
