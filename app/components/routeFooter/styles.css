@@ -51,7 +51,6 @@
  */
 .route-footer-text-copyright,
 .route-footer-text-message {
-  width: 100px;
   text-align: right;
   align-self: flex-end;
   font-size: var(--small-font-size);
