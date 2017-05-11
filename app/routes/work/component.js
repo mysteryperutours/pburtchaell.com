@@ -3,6 +3,7 @@ import Row from '../../components/row';
 import Text, { types as textTypes } from '../../components/text';
 import RouteContainer from '../../components/routeContainer';
 import renderListView from '../../components/listView/renderListView';
+import renderPendingListView from '../../components/ListView/renderPendingListView';
 import requestHandler from '../../support/requestHandler';
 import './styles.css';
 
@@ -32,7 +33,7 @@ class WorkRoute extends Component {
           <Text type={textTypes.HEADER_1}>Work</Text>
         </Row>
         <Row size="large" defaultColumn={false}>
-          {isPending ? null : renderListView(data)}
+          {isPending ? renderPendingListView() : renderListView(data)}
         </Row>
       </RouteContainer>
     );

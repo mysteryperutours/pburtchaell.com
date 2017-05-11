@@ -5,6 +5,7 @@ import Text, { types } from '../../components/text';
 import Row from '../../components/row';
 import Column from '../../components/column';
 import renderListView from '../../components/listView/renderListView';
+import renderPendingListView from '../../components/ListView/renderPendingListView';
 import requestHandler from '../../support/requestHandler';
 
 type Props = {
@@ -56,7 +57,7 @@ class IndexRoute extends Component {
           </Text>
         </Row>
         <Row size="large" defaultColumn={false}>
-          {isPending ? null : renderListView(data)}
+          {isPending ? renderPendingListView() : renderListView(data)}
         </Row>
       </RouteContainer>
     );
