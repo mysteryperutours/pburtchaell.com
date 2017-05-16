@@ -25,17 +25,37 @@
         "modules": [{
           "type": "module-text",
           "children": [{
-            "type": "module-text",
-            "children": [{
-              "type": "text",
-              "children": "Lawn Chair is a software development & design studio cofounded by Patrick Burtchaell, Jon Carl, Liam Craver and Ryan Campbell. Both the company branding and website were designed by Patrick."
-            }]
-          }, {
-            "type": "module-text",
-            "children": [{
-              "type": "text",
-              "children": "The goal for the company branding was to relfect the happy and playful nature of the company without breaking the rational, ordered design principles I embrace in my design work. We want to portray ourselves as a company that does great work, but certainly not afraid to have fun at the same time."
-            }]
+            "type": "text",
+            "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam accumsan magna sodales purus faucibus, eget dignissim tortor dignissim. Sed ipsum eros, tincidunt quis ultrices sodales, elementum vitae libero. Nulla imperdiet dolor sed convallis cursus."
+          }]
+        }, {
+          "type": "module-image-large",
+          "props": {
+            "url": "https://cdn.dribbble.com/users/357265/screenshots/2579186/031601_dribbble-02_1x.png",
+            "alt": "A photo annoucing my internship at Messenger",
+            "caption": "A Dribbble post"
+          }
+        }, {
+          "type": "module-text",
+          "children": [{
+            "type": "text",
+            "children": " Vestibulum vitae imperdiet enim, eu lobortis neque. Fusce est dui, vestibulum a placerat et, vulputate et est. Nunc vel rhoncus ipsum."
+          }]
+        }, {
+          "type": "module-image",
+          "props": {
+            "url": "https://cdn.dribbble.com/users/357265/screenshots/2579182/031601_dribbble-01.png",
+            "alt": "A photo annoucing my internship at Messenger",
+            "caption": "A Dribbble post"
+          }
+        }, {
+          "type": "module-text",
+          "props": {
+            "title": "This is my title"
+          },
+          "children": [{
+            "type": "text",
+            "children": "Nullam viverra rhoncus est, a dictum tellus congue at. Proin id sapien libero. Aliquam ex velit, euismod sit amet dapibus vel, dignissim quis orci. Ut sed iaculis elit. Praesent malesuada vehicula ex eget venenatis. Integer blandit tellus ante, vulputate vestibulum dolor fringilla quis. Vivamus vitae lacus at risus congue efficitur."
           }]
         }]
       }
