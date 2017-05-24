@@ -9,6 +9,7 @@
     "precommit": "echo 'Running pre-commit hook...' && npm test",
     "prebuild": "rm -rf ./build",
     "build": "NODE_ENV=production `npm bin`/webpack --progress",
+    "postbuild": "cp -r app/images build/images",
     "flow": "`npm bin`/flow; test $? -eq 0 -o $? -eq 2",
     "generate": "./bin/generate.sh",
     "lint": "`npm bin`/eslint app/**/*.js test/**/*.js",
