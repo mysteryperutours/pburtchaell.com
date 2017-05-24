@@ -28,7 +28,7 @@
       "<rootDir>/node_modules/enzyme-to-json/serializer"
     ],
     "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/node_modules/jest-css-modules"
+      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
     }
   },
   "engines": {
