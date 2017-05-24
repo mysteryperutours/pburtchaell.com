@@ -6,73 +6,30 @@ import Row from '../../../../components/row';
 type Props = {
   isPending: boolean,
   title: string,
-  description: string,
-  backgroundColor: string,
-  coverImage: {
-    url: string
-  },
-  textColor: string
+  description: string
 };
 
 const WorkItemHeader = (props: Props): Element<*> => {
   const { isPending } = props;
 
-  const styles = {
-    background: Object.assign({
-      // pending styles
-    }, isPending ? {} : {
-      background: props.backgroundColor,
-      backgroundAttachment: 'fixed'
-    }),
-    text: {
-      color: props.textColor
-    },
-    coverImage: Object.assign({
-      height: '42rem',
-      width: '100%',
-      maxWidth: '1000px',
-      margin: '0 auto'
-    }, !props.coverImage || isPending ? {} : {
-      backgroundSize: 'cover',
-      backgroundPosition: 'top center',
-      backgroundImage: `url(${props.coverImage.url})`,
-    })
-  };
+  const className = classNames('case-study-header', {
+    'is-pending': isPending
+  });
 
   return (
-    <header
-      className={classNames('case-study-header', {
-        'is-pending': isPending,
-        'has-cover': typeof props.coverImage === 'object'
-      })}
-      style={styles.background}
-    >
+    <header className={className}>
       {isPending ? null : (
         <Row size="full">
           <div className="case-study-titles">
-            <Text
-              type={types.HEADER_1}
-              style={styles.text}
-            >
+            <Text type={types.HEADER_1}>
               {props.title}
             </Text>
-            <Text
-              type={types.HEADER_2}
-              style={styles.text}
-            >
+            <Text type={types.HEADER_2}>
               {props.description}
             </Text>
           </div>
         </Row>
       )}
-      {props.coverImage ? (
-        <Row size="full">
-          <div
-            className="case-study-cover-image"
-            style={styles.coverImage}
-          />
-        </Row>
-      ) : null}
     </header>
   );
 };

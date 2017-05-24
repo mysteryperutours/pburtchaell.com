@@ -1,0 +1,20 @@
+p {
+  margin: var(--default-margin);
+  hyphens: none;
+}
+
+hr {
+  display: block;
+  width: 200px;
+  margin: 0 0 1rem 0;
+  border: 1px solid var(--light-gray);
+  background: var(--light-gray);
+}
+
+small,
+.small {
+  margin: 0;
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  color: var(--light-gray);
+}

@@ -1,0 +1,35 @@
+{
+  "lastUpdated": "May 2017",
+  "intro": [
+    "I am a senior student at Loyola University New Orleans and a product design intern at Facebook.",
+    "Prior to my time at Facebook, I cofounded Lawn Chair, a software development studio, and worked as a freelance designer and web developer. Outside of the world of design, I have experience in web development and maintain several open source  libraries for React and Redux.",
+    "I am interested in working with passionate teams to build products with exceptional visual design, thoughtful user experience considerations, and a high degree of craftsmanship.",
+    "I expect to graduate in May 2018 as a Bachelor of Science in Design with University Honors, a minor in Art History, and a minor in Human-Computer Interaction."
+  ],
+  "personalProjects": [{
+    "path": "/work/2015/08/segment",
+    "title": "Segment"
+  }, {
+    "path": "/work/2015/08/lawnchair",
+    "title": "Lawn Chair"
+  }],
+  "openSourceProjects": [{
+    "path": "https://github.com/pburtchaell/redux-promise-middleware",
+    "title": "Redux Promise Middleware"
+  }, {
+    "path": "https://github.com/pburtchaell/react-input",
+    "title": "React Input"
+  }, {
+    "path": "https://github.com/pburtchaell/react-notification",
+    "title": "React Notification"
+  }],
+  "companies": [
+    "Design, Inc.",
+    "Facebook",
+    "Filee",
+    "Fixt",
+    "Gigster",
+    "Jefferson SPCA",
+    "NewAperio"
+  ]
+}

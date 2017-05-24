@@ -1,19 +1,17 @@
 // @flow
-import { createElement, Element } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { createElement, Element } from 'react';
+import { Link } from 'react-router-dom';
 import * as types from './types';
 import paths from '../../routes/paths';
-import './styles.css';
 
 type Props = {
   children?: any, // @TODO: Use Element<*> once facebook/flow #1964 is closed
   linkTo?: string,
-  navLink?: string,
-  type: types.HEADER_1 | types.HEADER_2 | types.HEADER_3 | types.BODY
+  type: types.HEADER_1 | types.HEADER_2 | types.HEADER_3 | types.BODY | types.SMALL
 };
 
 const Text = (props: Props): Element<*> => {
-  const { linkTo, navLink, type, ...newProps } = props;
+  const { linkTo, type, ...newProps } = props;
 
   /**
    * The Text component can renderer both text elements, e.g., <p> and <h1>,
@@ -22,16 +20,23 @@ const Text = (props: Props): Element<*> => {
    * If the `linkTo` property is included on the component, the `Link`
    * component from React Router will be rendered.
    */
-  let elementType: Link | NavLink | string;
+  let elementType: Link | string;
+  let children;
 
   if (linkTo) {
     elementType = Link;
-
-    if (navLink) {
-      elementType = NavLink;
-    }
   } else {
     elementType = type;
+  }
+
+  if (elementType === types.SMALL) {
+    children = (
+      <small>
+        {props.children}
+      </small>
+    );
+  } else {
+    children = props.children;
   }
 
   return createElement(
@@ -44,7 +49,7 @@ const Text = (props: Props): Element<*> => {
       exact: linkTo === paths.INDEX,
       activeClassName: 'is-active'
     } : {}),
-    props.children
+    children
   );
 };
 

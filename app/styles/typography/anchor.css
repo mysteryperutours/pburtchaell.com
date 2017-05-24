@@ -1,9 +1,21 @@
-a.social-links-list-item-anchor {
-  text-shadow: none !important;
-  background: none !important;
+a,
+a:active,
+a:hover {
+  color: var(--black);
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
 }
 
-.about-links-list-item-label:hover {
+p a,
+li a {
+  color: var(--blue);
+}
+
+p a:hover,
+p a:active,
+li a:hover,
+li a:active {
   color: var(--blue);
   outline-width: 0;
   background-image: linear-gradient(var(--blue) 0%, var(--blue) 100%);

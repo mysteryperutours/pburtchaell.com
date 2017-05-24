@@ -1,0 +1,18 @@
+.availability-container {
+  margin-top: var(--small-margin);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--small-margin);
+  width: 100%;
+}
+
+.availability {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0 1rem 0;
+  color: var(--dark-gray);
+  background: var(--lightest-gray);
+  border-radius: var(--large-border-radius);
+}

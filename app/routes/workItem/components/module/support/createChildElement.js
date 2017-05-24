@@ -1,14 +1,11 @@
 import { createElement, Element } from 'react';
 import Text from '../../../../../components/text';
-import Image from '../../../../../components/image';
 
 // Get the child element type
 function getChildElementType(type) {
   switch (type) {
     case 'text':
       return Text;
-    case 'image':
-      return Image;
     case 'video':
       return 'video';
     default:

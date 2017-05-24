@@ -1,0 +1,26 @@
+.padding {
+  position: relative;
+  width: 100%;
+}
+
+.padding-default {
+  height: var(--default-margin);
+}
+
+.padding-small {
+  height: var(--small-margin);
+}
+
+.padding-large {
+  height: var(--large-margin);
+}
+
+@media only screen and (max-width: 400px) {
+  .padding-small {
+    height: var(--small-screen-small-margin);
+  }
+
+  .padding-large {
+    height: var(--small-screen-large-margin);
+  }
+}

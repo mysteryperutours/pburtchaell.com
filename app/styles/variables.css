@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/**
+ * CSS Variables for color and layout
+ */
+:root {
+  --white: #FFFFFF;
+  --transparent-white: rgba(255, 255, 255, 0.9);
+  --black: #241F20;
+  --blue: #0063B5;
+  --red: #FF2E5E;
+  --light-gray: #9C9B9C;
+  --dark-gray: #4A4A4A;
+  --lightest-gray: #F9F5F5;
+
+  --default-font-size: 2.5rem;
+  --default-font-family-name: 'web-din-pro';
+  --default-font-family: 'web-din-pro', sans-serif;
+  --default-line-height: 4rem;
+
+  --default-border-width: 1px;
+  --default-border-radius: 3px;
+  --large-border-radius: 4px;
+
+  --small-font-size: 2rem;
+  --small-line-height: 3rem;
+
+  --default-margin: 0 0 2rem 0;
+  --smallest-margin: 3rem;
+  --small-margin: 7rem;
+  --large-margin: 12rem;
+
+  --small-screen-small-margin: 5rem;
+  --small-screen-large-margin: 7rem;
+
+  --h1-font-size: 6rem;
+  --h1-font-weight: 300;
+  --h1-line-height: 7rem;
+  --h1-margin: var(--default-margin);
+  --h1-color: var(--black);
+
+  --h2-font-size: var(--default-font-size);
+  --h2-font-weight: 400;
+  --h2-line-height: var(--default-line-height);
+  --h2-margin: var(--default-margin);
+  --h2-color: var(--dark-gray);
+
+  --h3-font-size: 1.7rem;
+  --h3-font-weight: 400;
+  --h3-line-height: 2rem;
+  --h3-margin: var(--default-margin);
+  --h3-color: var(--light-gray);
+}
