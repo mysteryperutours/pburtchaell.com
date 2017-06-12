@@ -205,7 +205,10 @@ if (!DEVELOPMENT) {
       'react-dom/dist/react-dom.min.js'
     ]),
     'react-router': getAbsolutePathtoModule([
-      'react-router/umd/ReactRouter.min.js'
+      'react-router/umd/react-router.min.js'
+    ]),
+    'react-router-dom': getAbsolutePathtoModule([
+      'react-router-dom/umd/react-router-dom.min.js'
     ])
   });
 }
