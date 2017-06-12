@@ -16,6 +16,18 @@ const ListViewItem = ({ children, linkTo, isPending, ...props }: Props) => {
         <div className={`list-view-item-title${props.isNew ? ' is-new': ''}`}>
           {props.title}
         </div>
+        <div className="list-view-item-tags">
+          <ul>
+            {isPending ? null : props.tags.map(tag => (
+              <li key={tag}>
+                <small>{tag}</small>
+              </li>
+            ))}
+          </ul>
+          {isPending ? null : (
+            <span><small> &mdash; {props.year}</small></span>
+          )}
+        </div>
         <div className="list-view-item-preview">
           <div className="list-view-item-preview-image" style={props.style}>
             {children}

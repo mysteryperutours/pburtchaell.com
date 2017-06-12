@@ -73,3 +73,33 @@
   letter-spacing: .025ex;
 }
 
+.list-view-item-tags {
+  position: absolute;
+  display: inline-block;
+  top: 30rem;
+}
+
+.list-view-item-tags ul {
+  display: inline-block;
+}
+
+.list-view-item-tags ul li {
+  display: inline-block;
+  color: var(--light-gray);
+  margin-left: .75rem;
+}
+
+.list-view-item-tags ul li:after {
+  content: '/';
+  margin-left: .75rem;
+  font-size: 1.75rem;
+}
+
+.list-view-item-tags ul li:first-child {
+  margin: 0;
+}
+
+.list-view-item-tags ul li:last-child:after {
+  content: '';
+  margin: 0;
+}

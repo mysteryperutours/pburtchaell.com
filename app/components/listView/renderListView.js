@@ -9,6 +9,7 @@ const renderListView = (items): Element<*> => {
     return (
       <ListViewItem
         title={meta.title}
+        tags={meta.tags}
         linkTo={`/work/${date.year}/${date.month}/${meta.pathname}`}
         style={{
           backgroundImage: `url(${meta.previewImage.url})`,
