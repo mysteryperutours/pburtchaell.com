@@ -12,8 +12,11 @@ type Props = {
 const Module = (props: Props): Element<*> => {
   let childElement;
   let rowSize = 'default';
+  let { propsFromJSON } = props;
 
-  const { propsFromJSON } = props;
+  if (propsFromJSON === undefined) {
+    propsFromJSON = {};
+  }
 
   if (props.type === 'module-image') {
     childElement = (
@@ -47,6 +50,17 @@ const Module = (props: Props): Element<*> => {
             </figcaption>
           ) : null}
         </figure>
+      </Column>
+    );
+  } else if (props.type === 'module-text') {
+    childElement = (
+      <Column>
+        {propsFromJSON.title ? (
+          <h2 className="case-study-module--title">
+            {propsFromJSON.title}
+          </h2>
+        ) : null}
+        {Children.toArray(props.children.map(createChildElement))}
       </Column>
     );
   } else {

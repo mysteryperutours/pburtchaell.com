@@ -1,7 +1,6 @@
 import IndexRoute from './index';
 import AboutRoute from './about';
 import NotFoundRoute from './notFound';
-import WorkRoute from './work';
 import WorkItemRoute from './workItem';
 
 /**
@@ -12,7 +11,6 @@ import WorkItemRoute from './workItem';
 const config = [
   IndexRoute,
   AboutRoute,
-  WorkRoute,
   WorkItemRoute,
   NotFoundRoute // This route must fall last in the config
 ];

@@ -28,7 +28,7 @@ class IndexRoute extends Component {
   };
 
   componentWillMount() {
-    requestHandler.call(this, `${DATABASE_URL}/projects.json`);
+    requestHandler.call(this, `${DATABASE_URL}/projects.json?orderBy="id"`);
   }
 
   props: Props;
@@ -51,11 +51,6 @@ class IndexRoute extends Component {
           </Column>
         </Row>
         <div className="padding padding-large" />
-        <Row size="large">
-          <Text type={types.HEADER_2}>
-            Selected Works
-          </Text>
-        </Row>
         <Row size="large" defaultColumn={false}>
           {isPending ? renderPendingListView() : renderListView(data)}
         </Row>
