@@ -33,7 +33,7 @@
 .site-navigation .site-navigation-item:hover .site-navigation-item-text {
  background-image: linear-gradient( var(--black) 0%, var(--black) 100%);
  background-repeat: repeat-x;
- background-size: 1px 2px;
+ background-size: 1px 1px;
  background-position: 0 95%;
 }
 
@@ -46,7 +46,7 @@
 .site-navigation .site-navigation-item.is-active .site-navigation-item-text {
  background-image: linear-gradient( var(--black) 0%, var(--black) 100%);
  background-repeat: repeat-x;
- background-size: 1px 2px;
+ background-size: 1px 1px;
  background-position: 0 95%;
 }
 

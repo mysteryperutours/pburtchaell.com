@@ -8,19 +8,27 @@ a:hover {
 }
 
 p a,
-li a {
+li a,
+figcaption a {
   color: var(--blue);
 }
 
 p a:hover,
 p a:active,
 li a:hover,
-li a:active {
+li a:active,
+figcaption a:hover,
+figcaption a:active {
   color: var(--blue);
   outline-width: 0;
   background-image: linear-gradient(var(--blue) 0%, var(--blue) 100%);
   background-repeat: repeat-x;
-  background-size: 1px 2px;
+  background-size: 1px 1px;
   background-position: 0 95%;
-  text-shadow: 3px 0 var(--white), 2px 0  var(--white), 1px 0  var(--white), -1px 0  var(--white), -2px 0  var(--white), -3px 0 var(--white);
+  text-shadow: 3px 0 var(--white), 2px 0 var(--white), 1px 0 var(--white), -1px 0 var(--white), -2px 0 var(--white), -3px 0 var(--white);
+}
+
+figcaption a:hover,
+figcaption a:active {
+  background-size: 1px 1px;
 }
