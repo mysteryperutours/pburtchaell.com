@@ -15,12 +15,26 @@ type Props = {
 const AboutRoute = (props: Props): Element<*> => (
   <RouteContainer {...props.config}>
     <Row>
+      <Text style={{
+        marginTop: '0'
+      }}>{"I'm"} a senior student at <a href="http://cmfa.loyno.edu/design" title="Loyola University New Orleans Department of Design">Loyola University New Orleans</a> and a product design intern at <a href="http://facebook.design/" title="Facebook Design">Facebook</a>.</Text>
+    </Row>
+    <Row size="large">
+      <figure className="figure">
+        <img
+          className="image image-large"
+          src={require('./hero.jpg')}
+        />
+        <figcaption>Captured by <a href="https://www.instagram.com/iso_kyle/" title="Kyle Encar on Instagram">Kyle Encar</a></figcaption>
+      </figure>
+    </Row>
+    <Row>
       {Children.toArray(content.intro.map(paragraph => (
         <Text>{paragraph}</Text>
       )))}
       <hr />
       <Text type={textTypes.SMALL}>
-        Last updated &mdash; {content.lastUpdated}
+        Last Updated &mdash; {content.lastUpdated}
       </Text>
     </Row>
     <div className="padding padding-small" />
@@ -38,9 +52,9 @@ const AboutRoute = (props: Props): Element<*> => (
         <ul>
           {Children.toArray(content.personalProjects.map(project => (
             <li>
-              <Link to={project.path}>
+              <a href={project.path} title={project.title}>
                 {project.title}
-              </Link>
+              </a>
             </li>
           )))}
         </ul>
@@ -54,9 +68,9 @@ const AboutRoute = (props: Props): Element<*> => (
         <ul>
           {Children.toArray(content.openSourceProjects.map(project => (
             <li>
-              <Link to={project.path}>
+              <a href={project.path} title={project.title}>
                 {project.title}
-              </Link>
+              </a>
             </li>
           )))}
         </ul>
