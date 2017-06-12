@@ -13,7 +13,7 @@ const ListViewItem = ({ children, linkTo, isPending, ...props }: Props) => {
   function renderInner() {
     return (
       <div className={`list-view-item${isPending ? ' is-pending' : ''}`}>
-        <div className="list-view-item-title">
+        <div className={`list-view-item-title${props.isNew ? ' is-new': ''}`}>
           {props.title}
         </div>
         <div className="list-view-item-preview">
