@@ -1,13 +1,51 @@
 {
   "projects": {
-    "lawnchair": {
+    "segment": {
+      "id": 0,
       "meta": {
-        "id": "150602",
+        "id": 0,
+        "title": "Segment",
+        "description": "",
+        "date": {
+          "month": 8,
+          "year": 2015
+        },
+        "primaryColor": {
+          "rgb": "226, 109, 80",
+          "r": "226",
+          "g": "109",
+          "b": "80"
+        },
+        "previewImage": {
+          "url": "",
+          "alt": ""
+        },
+        "pathname": "segment",
+        "tags": ["Branding", "Product Design"],
+        "isNew": false
+      },
+      "data": {
+        "modules": [{
+          "type": "module-text",
+          "props": {
+            "title": "This is foo"
+          },
+          "children": [{
+            "type": "text",
+            "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam accumsan magna sodales purus faucibus, eget dignissim tortor dignissim. Sed ipsum eros, tincidunt quis ultrices sodales, elementum vitae libero. Nulla imperdiet dolor sed convallis cursus."
+          }]
+        }]
+      }
+    },
+    "lawnchair": {
+      "id": 1,
+      "meta": {
+        "id": 1,
         "title": "Lawn Chair",
         "description": "Design and software studio",
         "date": {
           "month": "08",
-          "year": "2015"
+          "year": 2015
         },
         "primaryColor": {
           "rgb": "68, 199, 224",
@@ -16,14 +54,19 @@
           "b": "224"
         },
         "previewImage": {
-          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/lawnchair%2FgridPreview%402X.png?alt=media&token=d7f24e09-f2a9-4112-9dd3-f2d2766cf521",
+          "url": "",
           "alt": ""
         },
-        "pathname": "lawnchair"
+        "pathname": "lawnchair",
+        "tags": ["Branding", "Interactive Design"],
+        "isNew": false
       },
       "data": {
         "modules": [{
           "type": "module-text",
+          "props": {
+            "title": "This is foo"
+          },
           "children": [{
             "type": "text",
             "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam accumsan magna sodales purus faucibus, eget dignissim tortor dignissim. Sed ipsum eros, tincidunt quis ultrices sodales, elementum vitae libero. Nulla imperdiet dolor sed convallis cursus."
@@ -56,6 +99,80 @@
           "children": [{
             "type": "text",
             "children": "Nullam viverra rhoncus est, a dictum tellus congue at. Proin id sapien libero. Aliquam ex velit, euismod sit amet dapibus vel, dignissim quis orci. Ut sed iaculis elit. Praesent malesuada vehicula ex eget venenatis. Integer blandit tellus ante, vulputate vestibulum dolor fringilla quis. Vivamus vitae lacus at risus congue efficitur."
+          }]
+        }]
+      }
+    },
+    "daily-weather": {
+      "id": 2,
+      "meta": {
+        "id": 2,
+        "title": "Facebook Daily Weather",
+        "description": "Delightful weather forecasts for the news feed",
+        "date": {
+          "month": "08",
+          "year": 2016
+        },
+        "primaryColor": {
+          "rgb": "66, 103, 178",
+          "r": "66",
+          "g": "103",
+          "b": "178"
+        },
+        "previewImage": {
+          "url": "",
+          "alt": ""
+        },
+        "pathname": "facebook",
+        "tags": ["Product Design"],
+        "isNew": true
+      },
+      "data": {
+        "modules": [{
+          "type": "module-text",
+          "props": {
+            "title": "This is foo"
+          },
+          "children": [{
+            "type": "text",
+            "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam accumsan magna sodales purus faucibus, eget dignissim tortor dignissim. Sed ipsum eros, tincidunt quis ultrices sodales, elementum vitae libero. Nulla imperdiet dolor sed convallis cursus."
+          }]
+        }]
+      }
+    },
+    "messenger-groups": {
+      "id": 3,
+      "meta": {
+        "id": 3,
+        "title": "Messenger Groups",
+        "description": "Everyone belongs in a meaningful group",
+        "date": {
+          "month": "08",
+          "year": 2017
+        },
+        "primaryColor": {
+          "rgb": "0, 132, 225",
+          "r": "0",
+          "g": "132",
+          "b": "225"
+        },
+        "previewImage": {
+          "url": "",
+          "alt": ""
+        },
+        "pathname": "messenger",
+        "tags": ["Product Design"],
+        "isNew": true
+      },
+      "data": {
+        "modules": [{
+          "type": "module-text",
+          "props": {
+            "title": "This is foo"
+          },
+          "children": [{
+            "type": "text",
+            "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam accumsan magna sodales purus faucibus, eget dignissim tortor dignissim. Sed ipsum eros, tincidunt quis ultrices sodales, elementum vitae libero. Nulla imperdiet dolor sed convallis cursus."
           }]
         }]
       }
