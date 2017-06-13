@@ -9,7 +9,7 @@ export default {
       footer: {
         linkTo: {
           path: paths.INDEX,
-          title: 'Work'
+          title: 'My Work'
         }
       }
     }
