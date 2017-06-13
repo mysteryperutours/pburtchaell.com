@@ -7,7 +7,7 @@ export default {
     config: {
       footer: {
         linkTo: {
-          path: paths.WORK,
+          path: paths.INDEX,
           title: 'My Work'
         },
         linkToTop: true

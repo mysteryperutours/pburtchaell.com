@@ -8,6 +8,7 @@ const SocialLinks = () => (
       <a
         className="social-links-list-item-anchor"
         href="https://facebook.com/pburtchaell"
+        target="_blank"
         title="Patrick Burtchaell on Facebook"
       >
         <Icon
@@ -23,6 +24,7 @@ const SocialLinks = () => (
       <a
         className="social-links-list-item-anchor"
         href="https://twitter.com/pburtchaell"
+        target="_blank"
         title="Patrick Burtchaell on Twitter"
       >
         <Icon
@@ -38,6 +40,7 @@ const SocialLinks = () => (
       <a
         className="social-links-list-item-anchor"
         href="https://github.com/pburtchaell"
+        target="_blank"
         title="Patrick Burtchaell on GitHub"
       >
         <Icon
@@ -53,6 +56,7 @@ const SocialLinks = () => (
       <a
         className="social-links-list-item-anchor"
         href="https://dribbble.com/pburtchaell"
+        target="_blank"
         title="Patrick Burtchaell on Dribbble"
       >
         <Icon
@@ -68,6 +72,7 @@ const SocialLinks = () => (
       <a
         className="social-links-list-item-anchor"
         href="mailto:patrick@pburtchaell.com"
+        target="_blank"
         title="Patrick Burtchaell on Email"
       >
         <span className="about-links-list-item-label">

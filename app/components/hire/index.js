@@ -9,12 +9,13 @@ const WorkItemHire = (props: Props): Element<*> => {
       <div className="availability">
         <div className="availability-string">
           <Text type={textTypes.BODY}>
-            Available starting May 2018
+            Available starting September 2017
           </Text>
         </div>
         <div className="availability-buttons">
           <a
             href="mailto:patrick@pburtchaell.com"
+            target="_blank"
             className="button button-inline"
             title="Patrick Burtchaell on email"
           >
@@ -22,6 +23,7 @@ const WorkItemHire = (props: Props): Element<*> => {
           </a>
           <a
             href="https://m.me/pburtchaell"
+            target="_blank"
             className="button button-inline"
             title="Patrick Burtchaell on Facebook Messenger"
           >

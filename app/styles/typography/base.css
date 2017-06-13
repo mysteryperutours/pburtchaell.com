@@ -1,14 +1,15 @@
 p {
-  margin: var(--default-margin);
+  margin: 2rem 0;
   hyphens: none;
 }
 
 hr {
   display: block;
-  width: 200px;
+  width: 100%;
   margin: 0 0 1rem 0;
-  border: 1px solid var(--light-gray);
-  background: var(--light-gray);
+  border: none;
+  border-bottom: 1px solid var(--lightest-gray);
+  background: none;
 }
 
 small,
