@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Column from '../column';
+import classNames from 'classnames';
 import './styles.css';
 
 type Props = {
@@ -12,8 +13,14 @@ type Props = {
 const ListViewItem = ({ children, linkTo, isPending, ...props }: Props) => {
   function renderInner() {
     return (
-      <div className={`list-view-item${isPending ? ' is-pending' : ''}`}>
-        <div className={`list-view-item-title${props.isNew ? ' is-new': ''}`}>
+      <div className={classNames('list-view-item', {
+        'is-pending': isPending,
+        'is-coming-soon': props.isComingSoon
+      })}>
+        <div className={classNames('list-view-item-title', {
+          'is-new': props.isNew,
+          'is-coming-soon': props.isComingSoon
+        })}>
           {props.title}
         </div>
         <div className="list-view-item-tags">
@@ -43,7 +50,7 @@ const ListViewItem = ({ children, linkTo, isPending, ...props }: Props) => {
       smallSize={12}
       className="list-view-item-container"
     >
-      {linkTo ? (
+      {!props.isComingSoon && linkTo ? (
         <Link to={linkTo} title={props.title}>{renderInner()}</Link>
       ) : renderInner()}
     </Column>

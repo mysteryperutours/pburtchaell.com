@@ -18,8 +18,16 @@
   cursor: pointer;
 }
 
+.list-view-item:hover.is-coming-soon {
+  cursor: not-allowed !important;
+}
+
 .list-view-item:hover:not(.is-pending) .list-view-item-preview {
   border-color: var(--light-gray);
+}
+
+.list-view-item:hover.is-coming-soon .list-view-item-preview {
+  border-color: var(--white) !important;
 }
 
 .list-view-item.is-pending .list-view-item-preview {
@@ -52,8 +60,13 @@
   background-position: center center;
   z-index: 1;
   transition: 300ms ease;
+  border-radius: 1px;
   padding: var(--default-margin);
   box-sizing: border-box;
+}
+
+.list-view-item.is-coming-soon {
+  opacity: .5;
 }
 
 .list-view-item-title {
@@ -64,7 +77,12 @@
   margin-top: 2rem;
 }
 
-.is-new:after {
+.list-view-item-title.is-coming-soon {
+  color: var(--light-gray);
+}
+
+.list-view-item-title.is-new:after,
+.list-view-item-title.is-coming-soon:after {
   content: 'New';
   color: var(--red);
   font-size: 1.5rem;
@@ -72,6 +90,12 @@
   margin-left: .75rem;
   bottom: .75rem;
   letter-spacing: .025ex;
+}
+
+.list-view-item-title.is-coming-soon:after {
+  content: 'Coming Soon';
+  color: var(--light-gray);
+  width: 300px;
 }
 
 .list-view-item-tags {
