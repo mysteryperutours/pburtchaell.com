@@ -17,22 +17,28 @@
           "b": "80"
         },
         "previewImage": {
-          "url": "",
-          "alt": ""
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/segment%2FgridPreview%401x.png?alt=media&token=df86c44e-c3ea-4e12-8995-5d184ea52464",
+          "alt": "Segment"
         },
         "pathname": "segment",
         "tags": ["Branding", "Product Design"],
-        "isNew": false
+        "isComingSoon": true
       },
       "data": {
         "modules": [{
           "type": "module-text",
           "props": {
-            "title": "This is foo"
+            "title": "Can we make weather forecasts more permanent and deterministic?"
           },
           "children": [{
             "type": "text",
-            "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam accumsan magna sodales purus faucibus, eget dignissim tortor dignissim. Sed ipsum eros, tincidunt quis ultrices sodales, elementum vitae libero. Nulla imperdiet dolor sed convallis cursus."
+            "children": "In 2016, I worked to create a home for weather on iOS and Android."
+          }, {
+            "type": "text",
+            "children": "Previously, weather forecasts were available on a promotional unit in the news feed, but this was not permanent and did not provide enough information."
+          }, {
+            "type": "text",
+            "children": "I introduced a system for detailed weather information that people can access every day, whenever they want. My final deliverable was a “permalink,” a home for weather that people can refer back to whenever needed. This final system includes notifications, sharing the forecast, and multiple forecast locations."
           }]
         }]
       }
@@ -42,7 +48,7 @@
       "meta": {
         "id": 1,
         "title": "Lawn Chair",
-        "description": "Design and software studio",
+        "description": "Software development and design studio",
         "date": {
           "month": "08",
           "year": 2015
@@ -54,7 +60,7 @@
           "b": "224"
         },
         "previewImage": {
-          "url": "",
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/lawnchair%2FgridPreview%401x.png?alt=media&token=a2d2afd7-1abc-44a8-b719-0b36418d0606",
           "alt": ""
         },
         "pathname": "lawnchair",
@@ -64,42 +70,17 @@
       "data": {
         "modules": [{
           "type": "module-text",
-          "props": {
-            "title": "This is foo"
-          },
           "children": [{
             "type": "text",
-            "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam accumsan magna sodales purus faucibus, eget dignissim tortor dignissim. Sed ipsum eros, tincidunt quis ultrices sodales, elementum vitae libero. Nulla imperdiet dolor sed convallis cursus."
+            "children": "Lawn Chair is a software development and design studio working to develop software products and video games. In 2015, I designed the company website and brand. The goal of the brand was to reflect the cheerful and delightful nature of the company without breaking the rational and classical design principles I often embrace in my design work. It is the brand of a company that does great work, but is certainly not afraid to have fun at the same time."
           }]
         }, {
           "type": "module-image-large",
           "props": {
-            "url": "https://cdn.dribbble.com/users/357265/screenshots/2579186/031601_dribbble-02_1x.png",
-            "alt": "A photo annoucing my internship at Messenger",
-            "caption": "A Dribbble post"
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/lawnchair%2FDribbble%20.png?alt=media&token=a7fbaa36-d597-4103-a1c0-1c1a7428078e",
+            "alt": "",
+            "caption": "The Lawn Chair Studios website"
           }
-        }, {
-          "type": "module-text",
-          "children": [{
-            "type": "text",
-            "children": " Vestibulum vitae imperdiet enim, eu lobortis neque. Fusce est dui, vestibulum a placerat et, vulputate et est. Nunc vel rhoncus ipsum."
-          }]
-        }, {
-          "type": "module-image",
-          "props": {
-            "url": "https://cdn.dribbble.com/users/357265/screenshots/2579182/031601_dribbble-01.png",
-            "alt": "A photo annoucing my internship at Messenger",
-            "caption": "A Dribbble post"
-          }
-        }, {
-          "type": "module-text",
-          "props": {
-            "title": "This is my title"
-          },
-          "children": [{
-            "type": "text",
-            "children": "Nullam viverra rhoncus est, a dictum tellus congue at. Proin id sapien libero. Aliquam ex velit, euismod sit amet dapibus vel, dignissim quis orci. Ut sed iaculis elit. Praesent malesuada vehicula ex eget venenatis. Integer blandit tellus ante, vulputate vestibulum dolor fringilla quis. Vivamus vitae lacus at risus congue efficitur."
-          }]
         }]
       }
     },
@@ -120,23 +101,38 @@
           "b": "178"
         },
         "previewImage": {
-          "url": "",
-          "alt": ""
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/daily-weather%2Fpreview%401x.png?alt=media&token=379fecda-fb6d-4774-9b44-0dd4f517beaa",
+          "alt": "Facebook Daily Weather user interface"
         },
-        "pathname": "facebook",
+        "pathname": "daily-weather",
         "tags": ["Product Design"],
         "isNew": true
       },
       "data": {
         "modules": [{
-          "type": "module-text",
+          "type": "module-image-large",
           "props": {
-            "title": "This is foo"
-          },
-          "children": [{
-            "type": "text",
-            "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam accumsan magna sodales purus faucibus, eget dignissim tortor dignissim. Sed ipsum eros, tincidunt quis ultrices sodales, elementum vitae libero. Nulla imperdiet dolor sed convallis cursus."
-          }]
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/daily-weather%2Fimage-1.png?alt=media&token=21f0dc50-8cde-42f8-9c81-ea2285628123",
+            "alt": ""
+          }
+        }, {
+          "type": "module-image-large",
+          "props": {
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/daily-weather%2Fimage-2.png?alt=media&token=df7a0d2f-da9d-4d45-9a77-49b98a316db6",
+            "alt": ""
+          }
+        }, {
+          "type": "module-image-large",
+          "props": {
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/daily-weather%2Fimage-3.png?alt=media&token=58c7cada-9431-4664-81e5-e057fa5a5ebd",
+            "alt": ""
+          }
+        }, {
+          "type": "module-image-large",
+          "props": {
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/daily-weather%2Fimage-4.png?alt=media&token=320c9b69-4691-42e8-87fa-fe8e867938a7",
+            "alt": ""
+          }
         }]
       }
     },
@@ -157,23 +153,26 @@
           "b": "225"
         },
         "previewImage": {
-          "url": "",
+          "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/messenger-groups%2Fpreview%401x.png?alt=media&token=e964690c-65a8-4b50-822b-d44cd0ae170f",
           "alt": ""
         },
-        "pathname": "messenger",
+        "pathname": "messenger-groups",
         "tags": ["Product Design"],
-        "isNew": true
+        "isComingSoon": true
       },
       "data": {
         "modules": [{
           "type": "module-text",
-          "props": {
-            "title": "This is foo"
-          },
           "children": [{
             "type": "text",
-            "children": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam accumsan magna sodales purus faucibus, eget dignissim tortor dignissim. Sed ipsum eros, tincidunt quis ultrices sodales, elementum vitae libero. Nulla imperdiet dolor sed convallis cursus."
+            "children": "In 2017, I joined Facebook to improve groups on Messenger.  As I, together with my team, build new features and improve existing products, I'll post my work here."
           }]
+        }, {
+          "type": "module-image-large",
+          "props": {
+            "url": "https://firebasestorage.googleapis.com/v0/b/folkloric-house-95904.appspot.com/o/messenger-groups%2Fartboard.png?alt=media&token=ce54fd37-f3f0-45c5-864b-88e685975890",
+            "alt": ""
+          }
         }]
       }
     }
