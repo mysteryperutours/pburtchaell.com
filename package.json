@@ -36,6 +36,7 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
+    "contentful": "^4.4.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
