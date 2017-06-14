@@ -171,8 +171,7 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-      DATABASE_URL: JSON.stringify(DATABASE_URL)
+      'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
     }),
     new HtmlWebpackPlugin({
       inject: false,
