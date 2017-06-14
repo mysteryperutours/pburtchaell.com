@@ -153,12 +153,6 @@ const config = {
       'app-routes': getAbsolutePathtoAlias('routes'),
       'app-router': getAbsolutePathtoAlias('router'),
 
-      // Redux aliases for actions, constans, reducers and the store
-      'app-actions': getAbsolutePathtoAlias('actions'),
-      'app-constants': getAbsolutePathtoAlias('constants'),
-      'app-reducers': getAbsolutePathtoAlias('reducers'),
-      'app-store': getAbsolutePathtoAlias('store'),
-
       // misc. + node_module aliases
       normalize: getAbsolutePathtoModule([
         'normalize.css', 'normalize.css'
