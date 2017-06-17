@@ -35,6 +35,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .hide-on-small {
+    display: none;
+  }
+
   .column-small-4 {
     max-width: calc((4 * 100%) / 12);
     flex-basis: calc((4 * 100%) / 12);

@@ -22,7 +22,8 @@ const Column = ({ children, elementType, ...props }: Props): Element<*> => {
     {
       className: classNames('column', {
         [`column-large-${props.largeSize}`]: props.largeSize,
-        [`column-small-${props.smallSize}`]: props.smallSize
+        [`column-small-${props.smallSize}`]: props.smallSize,
+        'hide-on-small': props.hideOnSmall
       }, props.className)
     },
     children
