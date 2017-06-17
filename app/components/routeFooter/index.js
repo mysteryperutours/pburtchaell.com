@@ -35,7 +35,7 @@ const RouteFooter = (props: Props): Element => {
       className="route-footer"
     >
       <Row size="large">
-        <Column largeSize={4} smallSize={smallColumnSize}>
+        <Column largeSize={4} smallSize={6}>
           {props.linkTo ? (
             <div className="route-footer-link">
               <small>
@@ -49,7 +49,7 @@ const RouteFooter = (props: Props): Element => {
             </div>
           ) : null}
         </Column>
-        <Column largeSize={4} smallSize={smallColumnSize}>
+        <Column largeSize={4} hideOnSmall={true}>
           {props.linkToTop ? (
             <div className="route-footer-top-link">
               <small>
@@ -64,7 +64,11 @@ const RouteFooter = (props: Props): Element => {
             </div>
           ) : null}
         </Column>
-        <Column className="route-footer-column" largeSize={4} smallSize={12}>
+        <Column
+          className="route-footer-column"
+          largeSize={4}
+          smallSize={smallColumnSize}
+        >
           <div className="route-footer-text-message">
             <small>
               {message}

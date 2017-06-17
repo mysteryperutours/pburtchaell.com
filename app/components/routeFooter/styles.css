@@ -63,15 +63,3 @@
   margin-top: 2px;
   position: relative;
 }
-
-/**
- * On small screens, center everything.
- */
-@media screen and (max-width: 540px) {
-  .route-footer-text-copyright,
-  .route-footer-text-message {
-    text-align: center;
-    margin: auto;
-    align-self: center;
-  }
-}
