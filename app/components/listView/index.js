@@ -51,7 +51,12 @@ const ListViewItem = ({ children, linkTo, isPending, ...props }: Props) => {
       className="list-view-item-container"
     >
       {!props.isComingSoon && linkTo ? (
-        <Link to={linkTo} title={props.title}>{renderInner()}</Link>
+        <Link
+          to={linkTo}
+          title={props.title}
+        >
+          {renderInner()}
+        </Link>
       ) : renderInner()}
     </Column>
   );

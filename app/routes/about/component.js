@@ -19,13 +19,12 @@ const AboutRoute = (props: Props): Element<*> => (
         marginTop: '0'
       }}>{"I'm"} a senior student at <a href="http://cmfa.loyno.edu/design" title="Loyola University New Orleans Department of Design">Loyola University New Orleans</a> and a product design intern at <a href="http://facebook.design/" title="Facebook Design">Facebook</a>.</Text>
     </Row>
-    <Row size="large">
+    <Row size="medium">
       <figure className="figure">
         <img
           className="image image-large"
           src={require('./hero.jpg')}
         />
-        <figcaption>Captured by <a href="https://www.instagram.com/iso_kyle/" title="Kyle Encar on Instagram">Kyle Encar</a></figcaption>
       </figure>
     </Row>
     <Row>

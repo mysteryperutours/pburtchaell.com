@@ -1,26 +1,25 @@
-import React, { Element, Children } from 'react';
+import React, { Element } from 'react';
 import ListViewItem from './index';
 
 const renderListView = (items): Element<*> => {
-  return Children.toArray(Object.keys(items).map(item => {
-    const { meta } = items[item];
-    const { date } = meta;
-
+  return items.map(item => {
     return (
       <ListViewItem
-        title={meta.title}
-        tags={meta.tags}
-        year={meta.date.year}
-        isNew={meta.isNew || false}
-        isComingSoon={meta.isComingSoon || false}
-        linkTo={`/work/${date.year}/${date.month}/${meta.pathname}`}
+        key={item.id}
+        title={item.title}
+        tags={item.tags}
+        year={item.year}
+        isNew={item.isPromoted}
+        isComingSoon={false}
+        linkTo={`/work/${item.year}/${item.pathname}`}
+        color={item.color}
         style={{
-          backgroundImage: `url(${meta.previewImage.url})`,
-          backgroundColor: `rgb(${meta.primaryColor.rgb})`
+          backgroundImage: `url(${item.featuredImage.url})`,
+          backgroundColor: item.color
         }}
       />
     );
-  }));
+  });
 };
 
 export default renderListView;
