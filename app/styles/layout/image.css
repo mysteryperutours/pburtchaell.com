@@ -25,7 +25,6 @@ figure figcaption,
 .figure figcaption {
   display: block;
   font-size: var(--small-font-size);
-  font-style: italic;
   line-height: var(--small-line-height);
   color: var(--light-gray);
   margin: var(--default-margin);
