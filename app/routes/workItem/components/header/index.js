@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import Text, { types } from '../../../../components/text';
 import Row from '../../../../components/row';
 import Column from '../../../../components/column';
+import googleAnalyticsEvents from '../../../../support/googleAnalyticsEvents';
+import googleAnalyticsCategories from '../../../../support/googleAnalyticsCategories';
 
 type Props = {
   isPending: boolean,
@@ -37,6 +39,13 @@ const WorkItemHeader = (props: Props): Element<*> => {
                 href={props.link}
                 target="_blank"
                 className="case-study-link"
+                onClick={() => ga(
+                  'send',
+                  'event',
+                  googleAnalyticsCategories.BUTTONS,
+                  googleAnalyticsEvents.OUTBOUND_PROJECT_LINK_FROM_POST,
+                  props.title
+                )}
               >
                 {props.linkTitle}
               </a>

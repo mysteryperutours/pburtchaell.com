@@ -2,6 +2,8 @@ import React, { Element } from 'react';
 import { Link } from 'react-router-dom';
 import Row from '../../components/row';
 import Column from '../../components/column';
+import googleAnalyticsEvents from '../../support/googleAnalyticsEvents';
+import googleAnalyticsCategories from '../../support/googleAnalyticsCategories';
 import './styles.css';
 
 type Props = {
@@ -41,6 +43,12 @@ const RouteFooter = (props: Props): Element => {
                 <Link
                   className="route-footer-link-anchor"
                   to={props.linkTo.path}
+                  onClick={() => ga(
+                    'send',
+                    'event',
+                    googleAnalyticsCategories.LINKS,
+                    googleAnalyticsEvents.FOOTER_BACK_TO_PAGE_LINK
+                  )}
                 >
                   Back to {props.linkTo.title}
                 </Link>
@@ -55,7 +63,16 @@ const RouteFooter = (props: Props): Element => {
                 <a
                   href="#"
                   className="route-footer-top-link-anchor"
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={() => {
+                    window.scrollTo(0, 0)
+
+                    ga(
+                      'send',
+                      'event',
+                      googleAnalyticsCategories.LINKS,
+                      googleAnalyticsEvents.FOOTER_BACK_TO_TOP_LINK
+                    );
+                  }}
                 >
                   Back to Top
                 </a>

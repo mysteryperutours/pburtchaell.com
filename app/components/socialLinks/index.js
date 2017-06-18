@@ -1,5 +1,7 @@
 import React from 'react';
 import Icon, { types } from '../icon';
+import googleAnalyticsEvents from '../../support/googleAnalyticsEvents';
+import googleAnalyticsCategories from '../../support/googleAnalyticsCategories';
 import './styles.css';
 
 const SocialLinks = () => (
@@ -10,6 +12,13 @@ const SocialLinks = () => (
         href="https://facebook.com/pburtchaell"
         target="_blank"
         title="Patrick Burtchaell on Facebook"
+        onClick={() => ga(
+          'send',
+          'event',
+          googleAnalyticsCategories.LINKS,
+          googleAnalyticsEvents.OUTBOUND_SOCIAL_LINK,
+          'Facebook'
+        )}
       >
         <Icon
           type={types.FACEBOOK}
@@ -26,6 +35,13 @@ const SocialLinks = () => (
         href="https://twitter.com/pburtchaell"
         target="_blank"
         title="Patrick Burtchaell on Twitter"
+        onClick={() => ga(
+          'send',
+          'event',
+          googleAnalyticsCategories.LINKS,
+          googleAnalyticsEvents.OUTBOUND_SOCIAL_LINK,
+          'Twitter'
+        )}
       >
         <Icon
           type={types.TWITTER}
@@ -42,6 +58,13 @@ const SocialLinks = () => (
         href="https://github.com/pburtchaell"
         target="_blank"
         title="Patrick Burtchaell on GitHub"
+        onClick={() => ga(
+          'send',
+          'event',
+          googleAnalyticsCategories.LINKS,
+          googleAnalyticsEvents.OUTBOUND_SOCIAL_LINK,
+          'GitHub'
+        )}
       >
         <Icon
           type={types.GITHUB}
@@ -58,6 +81,13 @@ const SocialLinks = () => (
         href="https://dribbble.com/pburtchaell"
         target="_blank"
         title="Patrick Burtchaell on Dribbble"
+        onClick={() => ga(
+          'send',
+          'event',
+          googleAnalyticsCategories.LINKS,
+          googleAnalyticsEvents.OUTBOUND_SOCIAL_LINK,
+          'Dribbble'
+        )}
       >
         <Icon
           type={types.DRIBBBLE}
@@ -72,8 +102,14 @@ const SocialLinks = () => (
       <a
         className="social-links-list-item-anchor"
         href="mailto:patrick@pburtchaell.com"
-        target="_blank"
         title="Patrick Burtchaell on Email"
+        onClick={() => ga(
+          'send',
+          'event',
+          googleAnalyticsCategories.LINKS,
+          googleAnalyticsEvents.OUTBOUND_SOCIAL_LINK,
+          'Email'
+        )}
       >
         <span className="about-links-list-item-label">
           patrick@pburtchaell.com

@@ -1,0 +1,5 @@
+export default {
+  LINKS: 'LINKS',
+  BUTTONS: 'BUTTONS',
+  LIST_VIEW_ITEMS: 'LIST_VIEW_ITEMS'
+};

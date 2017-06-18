@@ -1,6 +1,8 @@
 import React, { Element } from 'react';
 import Text, { types as iconTypes } from '../text';
 import Icon, { types as textTypes } from '../icon';
+import googleAnalyticsEvents from '../../support/googleAnalyticsEvents';
+import googleAnalyticsCategories from '../../support/googleAnalyticsCategories';
 import './styles.css';
 
 const WorkItemHire = (props: Props): Element<*> => {
@@ -15,9 +17,22 @@ const WorkItemHire = (props: Props): Element<*> => {
         <div className="availability-buttons">
           <a
             href="mailto:patrick@pburtchaell.com"
-            target="_blank"
             className="button button-inline"
             title="Patrick Burtchaell on email"
+            onMouseOver={() => ga(
+              'send',
+              'event',
+              googleAnalyticsCategories.BUTTONS,
+              googleAnalyticsEvents.HIRE_MODULE_BUTTON_HOVER,
+              'Email'
+            )}
+            onClick={() => ga(
+              'send',
+              'event',
+              googleAnalyticsCategories.BUTTONS,
+              googleAnalyticsEvents.HIRE_MODULE_BUTTON,
+              'Email'
+            )}
           >
             Email
           </a>
@@ -26,6 +41,20 @@ const WorkItemHire = (props: Props): Element<*> => {
             target="_blank"
             className="button button-inline"
             title="Patrick Burtchaell on Facebook Messenger"
+            onMouseOver={() => ga(
+              'send',
+              'event',
+              googleAnalyticsCategories.BUTTONS,
+              googleAnalyticsEvents.HIRE_MODULE_BUTTON_HOVER,
+              'Messenger'
+            )}
+            onClick={() => ga(
+              'send',
+              'event',
+              googleAnalyticsCategories.BUTTONS,
+              googleAnalyticsEvents.HIRE_MODULE_BUTTON,
+              'Messenger'
+            )}
           >
             <Icon
               type={iconTypes.MESSENGER}

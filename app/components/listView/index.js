@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Column from '../column';
 import classNames from 'classnames';
+import googleAnalyticsEvents from '../../support/googleAnalyticsEvents';
+import googleAnalyticsCategories from '../../support/googleAnalyticsCategories';
 import './styles.css';
 
 type Props = {
@@ -13,10 +15,19 @@ type Props = {
 const ListViewItem = ({ children, linkTo, isPending, ...props }: Props) => {
   function renderInner() {
     return (
-      <div className={classNames('list-view-item', {
-        'is-pending': isPending,
-        'is-coming-soon': props.isComingSoon
-      })}>
+      <div
+        className={classNames('list-view-item', {
+          'is-pending': isPending,
+          'is-coming-soon': props.isComingSoon
+        })}
+        onClick={() => isPending ? null : ga(
+          'send',
+          'event',
+          googleAnalyticsCategories.LIST_VIEW_ITEMS,
+          googleAnalyticsEvents.HOME_PAGE_LIST_VIEW_ITEM,
+          props.title
+        )}
+      >
         <div className={classNames('list-view-item-title', {
           'is-new': props.isNew,
           'is-coming-soon': props.isComingSoon
