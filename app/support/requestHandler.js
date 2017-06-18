@@ -1,10 +1,10 @@
 // @flow
 import { createClient } from 'contentful';
 
-var client = createClient({
+const client = createClient({
   space: 'zj3fkmar2hjx',
   accessToken: '48e59dfaa3797f188fccd0e6238cf0bd8015d371afeb52d4c605312ed1adc3b6'
-})
+});
 
 function requestHandler(pathname: string): Promise<*> {
   function filterImage(image) {
@@ -38,22 +38,20 @@ function requestHandler(pathname: string): Promise<*> {
     };
   }
 
-  let clientOptions = pathname ? {
-    'content_type': '2wKn6yEnZewu2SCCkus4as',
+  const clientOptions = pathname ? {
+    content_type: '2wKn6yEnZewu2SCCkus4as',
     'fields.pathname[match]': pathname
   } : {
-    'content_type': '2wKn6yEnZewu2SCCkus4as',
-    'order': '-fields.year'
+    content_type: '2wKn6yEnZewu2SCCkus4as',
+    order: '-fields.year'
   };
 
-  return client.getEntries(clientOptions).then(response => {
-    return response.items.map(filterItem);
-  }).then(data => {
-    this.setState({
-      data,
-      isPending: false
-    });
-  });
+  return client.getEntries(clientOptions)
+  .then(response => response.items.map(filterItem))
+  .then(data => this.setState({
+    data,
+    isPending: false
+  }));
 }
 
 export default requestHandler;
