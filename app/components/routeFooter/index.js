@@ -16,8 +16,7 @@ type Props = {
 const RouteFooter = (props: Props): Element => {
   const messages = [
     'Ship',
-    'Made With',
-    ''
+    'Made With'
   ];
 
   // The message rendered next to the heart

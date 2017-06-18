@@ -8,66 +8,96 @@ exports[`SocialLinks should render component 1`] = `
     className="social-links-list-item"
   >
     <a
+      className="social-links-list-item-anchor"
       href="https://facebook.com/pburtchaell"
+      target="_blank"
       title="Patrick Burtchaell on Facebook"
     >
       <Icon
         fill="#0063B5"
         type="FACEBOOK"
       />
-      Facebook
+      <span
+        className="about-links-list-item-label"
+      >
+        Facebook
+      </span>
     </a>
   </li>
   <li
     className="about-links-list-item"
   >
     <a
+      className="social-links-list-item-anchor"
       href="https://twitter.com/pburtchaell"
+      target="_blank"
       title="Patrick Burtchaell on Twitter"
     >
       <Icon
         fill="#0063B5"
         type="TWITTER"
       />
-      Twitter
+      <span
+        className="about-links-list-item-label"
+      >
+        Twitter
+      </span>
     </a>
   </li>
   <li
     className="about-links-list-item"
   >
     <a
+      className="social-links-list-item-anchor"
       href="https://github.com/pburtchaell"
+      target="_blank"
       title="Patrick Burtchaell on GitHub"
     >
       <Icon
         fill="#0063B5"
         type="GITHUB"
       />
-      GitHub
+      <span
+        className="about-links-list-item-label"
+      >
+        GitHub
+      </span>
     </a>
   </li>
   <li
     className="about-links-list-item"
   >
     <a
+      className="social-links-list-item-anchor"
       href="https://dribbble.com/pburtchaell"
+      target="_blank"
       title="Patrick Burtchaell on Dribbble"
     >
       <Icon
         fill="#0063B5"
         type="DRIBBBLE"
       />
-      Dribbble
+      <span
+        className="about-links-list-item-label"
+      >
+        Dribbble
+      </span>
     </a>
   </li>
   <li
     className="about-links-list-item"
   >
     <a
+      className="social-links-list-item-anchor"
       href="mailto:patrick@pburtchaell.com"
-      title="Patrick Burtchaell on email"
+      target="_blank"
+      title="Patrick Burtchaell on Email"
     >
-      patrick@pburtchaell.com
+      <span
+        className="about-links-list-item-label"
+      >
+        patrick@pburtchaell.com
+      </span>
     </a>
   </li>
 </ul>

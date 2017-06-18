@@ -19,19 +19,25 @@ exports[`Text should render h3 element 1`] = `
 `;
 
 exports[`Text should render h4 element 1`] = `
-<h4>
+<p>
   foo
-</h4>
+</p>
 `;
 
 exports[`Text should render h5 element 1`] = `
-<h5>
+<p>
   foo
-</h5>
+</p>
 `;
 
 exports[`Text should render paragraph element 1`] = `
 <p>
   foo
 </p>
+`;
+
+exports[`Text should render small element 1`] = `
+<small>
+  foo
+</small>
 `;

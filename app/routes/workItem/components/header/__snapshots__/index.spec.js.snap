@@ -2,63 +2,58 @@
 
 exports[`WorkItemHeader renders component when fulfilled 1`] = `
 <header
-  className="case-study-header has-cover"
-  style={
-    Object {
-      "background": "rgb(0,0,0)",
-      "backgroundAttachment": "fixed",
-    }
-  }
+  className="case-study-header"
 >
   <Row
-    defaultColumn={true}
     elementType="div"
     size="full"
   >
-    <div
-      className="case-study-titles"
+    <Column
+      elementType="div"
+      largeSize="12"
+      scale="large"
+      smallSize="12"
+      style={Object {}}
+    >
+      <div
+        className="case-study-titles"
+      >
+        <Text
+          type="h1"
+        >
+          Foo
+        </Text>
+      </div>
+    </Column>
+    <Column
+      elementType="div"
+      largeSize="6"
+      scale="large"
+      smallSize="12"
+      style={Object {}}
     >
       <Text
-        style={
-          Object {
-            "color": "rgb(0,0,0)",
-          }
-        }
-        type="h1"
-      >
-        Foo
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "rgb(0,0,0)",
-          }
-        }
         type="h2"
-      >
-        Foo is foo
-      </Text>
-    </div>
-  </Row>
-  <Row
-    defaultColumn={true}
-    elementType="div"
-    size="full"
-  >
-    <div
-      className="case-study-cover-image"
-      style={
-        Object {
-          "backgroundImage": "url()",
-          "backgroundPosition": "top center",
-          "backgroundSize": "cover",
-          "height": "42rem",
-          "margin": "0 auto",
-          "maxWidth": "1000px",
-          "width": "100%",
+      />
+    </Column>
+    <Column
+      elementType="div"
+      largeSize="8"
+      scale="large"
+      smallSize="12"
+      style={Object {}}
+    >
+      <div
+        className="padding padding-small"
+      />
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": undefined,
+          }
         }
-      }
-    />
+      />
+    </Column>
   </Row>
 </header>
 `;
@@ -66,6 +61,55 @@ exports[`WorkItemHeader renders component when fulfilled 1`] = `
 exports[`WorkItemHeader renders component when pending 1`] = `
 <header
   className="case-study-header is-pending"
-  style={Object {}}
-/>
+>
+  <Row
+    elementType="div"
+    size="full"
+  >
+    <Column
+      elementType="div"
+      largeSize="12"
+      scale="large"
+      smallSize="12"
+      style={Object {}}
+    >
+      <div
+        className="case-study-titles"
+      >
+        <Text
+          type="h1"
+        />
+      </div>
+    </Column>
+    <Column
+      elementType="div"
+      largeSize="6"
+      scale="large"
+      smallSize="12"
+      style={Object {}}
+    >
+      <Text
+        type="h2"
+      />
+    </Column>
+    <Column
+      elementType="div"
+      largeSize="8"
+      scale="large"
+      smallSize="12"
+      style={Object {}}
+    >
+      <div
+        className="padding padding-small"
+      />
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": undefined,
+          }
+        }
+      />
+    </Column>
+  </Row>
+</header>
 `;
