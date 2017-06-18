@@ -6,31 +6,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
-const ExtractCSS = new ExtractTextPlugin('style.css');
-
 const ENTRY = {
   app: [
-    'unfetch', // Fetch API polyfill
     './app/styles/index.css',
     './app/index.js'
   ]
 };
-
-const ExtractTextPluginConfig = {
-  filename: '[name].css',
-  fallbackLoader: 'style-loader',
-  loader: [{
-    loader: 'css-loader',
-    options: {
-      modules: true,
-      minimize: true,
-      importLoaders: 1
-    }
-  }]
-};
-
-// The Firebase databse URL
-const DATABASE_URL = 'folkloric-house-95904.firebaseio.com';
 
 // The environment Node is running, which defaults to development
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -117,27 +98,27 @@ const config = {
     rules: [
       {
         test: /\.js?$/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         include: [
           getAbsolutePathtoAlias()
         ],
         exclude: [
           getAbsolutePathtoModule()
-        ],
-        query: {
-          babelrc: true
-        }
+        ]
       },
       {
         test: /\.css?$/,
-        loader: ExtractCSS.extract(ExtractTextPluginConfig),
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader'],
+          fallback: 'style-loader'
+        }),
         include: [
           getAbsolutePathtoAlias(),
         ]
       },
       {
         test: /\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        loader: 'file-loader'
+        use: 'file-loader'
       }
     ]
   },
@@ -183,7 +164,7 @@ const config = {
         minifyURLs: true
       }
     }),
-    ExtractCSS,
+    new ExtractTextPlugin('style.css'),
     new webpack.optimize.OccurrenceOrderPlugin(), // Optimize chunk id length
     ...(DEVELOPMENT ? DEVELOPMENT_PLUGINS : PRODUCTION_PLUGINS)
   ]
