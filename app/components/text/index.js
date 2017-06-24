@@ -21,22 +21,11 @@ const Text = (props: Props): Element<*> => {
    * component from React Router will be rendered.
    */
   let elementType: Link | string;
-  let children;
 
   if (linkTo) {
     elementType = Link;
   } else {
     elementType = type;
-  }
-
-  if (elementType === types.SMALL) {
-    children = (
-      <small>
-        {props.children}
-      </small>
-    );
-  } else {
-    children = props.children;
   }
 
   return createElement(
@@ -49,7 +38,7 @@ const Text = (props: Props): Element<*> => {
       exact: linkTo === paths.INDEX,
       activeClassName: 'is-active'
     } : {}),
-    children
+    props.children
   );
 };
 

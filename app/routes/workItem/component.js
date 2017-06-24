@@ -33,15 +33,18 @@ class WorkItemRoute extends PureComponent {
 
   componentWillMount() {
     const { title } = this.props.match.params;
-    requestHandler.call(this, `${DATABASE_URL}/projects/${title}.json`);
+    requestHandler.call(this, title);
   }
 
   render(): RouteContainer {
-    const { data, meta, isPending } = this.state;
+    const { data, isPending } = this.state;
+
+    console.log(data);
 
     return (
       <RouteContainer
         isPending={isPending}
+        title={isPending ? null : data[0].title}
         {...this.props.config}
       >
         <article
@@ -54,46 +57,36 @@ class WorkItemRoute extends PureComponent {
             * for the route. The header is also optionally rendered with a grad
             */}
           <WorkItemHeader
-            title={meta.title}
-            description={meta.description}
-            isPending={isPending}
+            title={isPending ? null : data[0].title}
+            question={isPending ? null : data[0].question}
+            link={isPending ? null : data[0].link}
+            linkTitle={isPending ? null : data[0].linkTitle}
+            body={isPending ? null : data[0].body}
           />
 
+        {isPending ? null : (
           <div className="case-study-content">
-            {/**
-             * PART 2a:
-             * Show "marks" when the route is pending.
-             */}
-            {isPending ? (
-              <Row>
-                <div className="pending-marks">
-                  <div className="pending-mark" />
-                  <div className="pending-mark" />
-                </div>
-              </Row>
-            ) : null}
-
             {/**
               * PART 2:
               * The work item modules are only rendered if the route is
               * fulfilled. The React Children API is used to create keys
               * for each module.
               */}
-            {isPending ? null : Children.toArray(data.modules.map(module => (
+            {Array.isArray(data[0].images) ? data[0].images.map(image => (
               <Module
-                type={module.type}
-                propsFromJSON={module.props}
-              >
-                {module.children}
-              </Module>
-            )))}
+                type={image.type}
+                key={image.id}
+                {...image}
+              />
+            )) : null}
 
-            {isPending ? null : (
+            {Array.isArray(data[0].images) ? (
               <Row size="large">
                 <HireMe />
               </Row>
-            )}
+            ) : (<div className="padding padding-large"/>)}
           </div>
+        )}
         </article>
       </RouteContainer>
     );

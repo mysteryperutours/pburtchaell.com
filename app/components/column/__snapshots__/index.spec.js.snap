@@ -1,7 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Column should render component 1`] = `
+exports[`Column should render 4 column component 1`] = `
+<div
+  className="column column-large-4 column-small-4"
+>
+  <div />
+</div>
+`;
+
+exports[`Column should render 6 column component 1`] = `
+<div
+  className="column column-large-6 column-small-6"
+>
+  <div />
+</div>
+`;
+
+exports[`Column should render 8 column component 1`] = `
+<div
+  className="column column-large-8 column-small-8"
+>
+  <div />
+</div>
+`;
+
+exports[`Column should render 12 column component 1`] = `
 <div
   className="column column-large-12 column-small-12"
-/>
+>
+  <div />
+</div>
+`;
+
+exports[`Column should render component that hides on small screens 1`] = `
+<div
+  className="column column-large-12 column-small-12 hide-on-small"
+>
+  <div />
+</div>
+`;
+
+exports[`Column should render component with unique element type 1`] = `
+<section
+  className="column column-large-12 column-small-12"
+>
+  <div />
+</section>
 `;

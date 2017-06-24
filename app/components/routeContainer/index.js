@@ -33,6 +33,7 @@ const RouteContainer = ({
   <div className="route-container">
     {!header ? null : (
       <RouteHeader
+        title={props.title}
         {...header}
       />
     )}

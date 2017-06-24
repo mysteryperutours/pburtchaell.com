@@ -1,6 +1,5 @@
 import React, { Element, Children } from 'react';
 import classNames from 'classnames';
-import createChildElement from './support/createChildElement';
 import Row from '../../../../components/row';
 import Column from '../../../../components/column';
 
@@ -11,68 +10,43 @@ type Props = {
 
 const Module = (props: Props): Element<*> => {
   let childElement;
-  let rowSize = 'default';
-  let { propsFromJSON } = props;
 
-  if (propsFromJSON === undefined) {
-    propsFromJSON = {};
-  }
-
-  if (props.type === 'module-image') {
+  if (props.type === 'image') {
     childElement = (
       <Column>
         <figure className="figure">
           <img
-            src={propsFromJSON.url}
-            alt={propsFromJSON.alt}
+            src={props.url}
+            alt={''} /* TODO */
           />
-          {propsFromJSON.caption ? (
+          {props.description ? (
             <figcaption>
-              {propsFromJSON.caption}
+              {props.description}
             </figcaption>
           ) : null}
         </figure>
       </Column>
     );
-  } else if (props.type === 'module-image-large') {
-    rowSize = 'medium';
-
+  } else if (props.type === 'video') {
     childElement = (
       <Column>
         <figure className="figure">
-          <img
-            src={propsFromJSON.url}
-            alt={propsFromJSON.alt}
-          />
-          {propsFromJSON.caption ? (
+          <video src={props.url} autoPlay={true} type={props.contentType}>
+            Sorry, your browser doesn't support embedded videos,
+  but, you can <a href={props.url} target="_blank">download it</a>.
+          </video>
+          {props.description ? (
             <figcaption>
-              {propsFromJSON.caption}
+              {props.description}
             </figcaption>
           ) : null}
         </figure>
-      </Column>
-    );
-  } else if (props.type === 'module-text') {
-    childElement = (
-      <Column>
-        {propsFromJSON.title ? (
-          <h2 className="case-study-module--title">
-            {propsFromJSON.title}
-          </h2>
-        ) : null}
-        {Children.toArray(props.children.map(createChildElement))}
-      </Column>
-    );
-  } else {
-    childElement = (
-      <Column>
-        {Children.toArray(props.children.map(createChildElement))}
       </Column>
     );
   }
 
   return (
-    <Row size={rowSize} className={classNames('case-study-module', props.type)}>
+    <Row size="large" className={classNames('case-study-module', props.type)}>
       {childElement}
     </Row>
   );

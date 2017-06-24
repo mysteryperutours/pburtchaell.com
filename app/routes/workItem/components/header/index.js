@@ -2,6 +2,9 @@ import React, { Element } from 'react';
 import classNames from 'classnames';
 import Text, { types } from '../../../../components/text';
 import Row from '../../../../components/row';
+import Column from '../../../../components/column';
+import googleAnalyticsEvents from '../../../../support/googleAnalyticsEvents';
+import googleAnalyticsCategories from '../../../../support/googleAnalyticsCategories';
 
 type Props = {
   isPending: boolean,
@@ -18,18 +21,46 @@ const WorkItemHeader = (props: Props): Element<*> => {
 
   return (
     <header className={className}>
-      {isPending ? null : (
-        <Row size="full">
+      <Row size="full">
+        <Column largeSize="12" smallSize="12">
           <div className="case-study-titles">
             <Text type={types.HEADER_1}>
               {props.title}
             </Text>
-            <Text type={types.HEADER_2}>
-              {props.description}
-            </Text>
           </div>
-        </Row>
-      )}
+        </Column>
+        <Column largeSize="6" smallSize="12">
+          <Text type={types.HEADER_2}>
+            {props.question}
+          </Text>
+          {props.link ? (
+            <small>
+              <a
+                href={props.link}
+                target="_blank"
+                className="case-study-link"
+                onClick={() => ga(
+                  'send',
+                  'event',
+                  googleAnalyticsCategories.BUTTONS,
+                  googleAnalyticsEvents.OUTBOUND_PROJECT_LINK_FROM_POST,
+                  props.title
+                )}
+              >
+                {props.linkTitle}
+              </a>
+            </small>
+          ) : null}
+        </Column>
+        <Column largeSize="8" smallSize="12">
+          <div className="padding padding-small"/>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: props.body
+            }}
+          />
+        </Column>
+      </Row>
     </header>
   );
 };

@@ -51,4 +51,12 @@ describe(Text.name, () => {
       </Text>
     )).toMatchSnapshot();
   });
+
+  it('should render small element', () => {
+    expect(shallow(
+      <Text type={types.SMALL}>
+        {DEFAULT_CHILD}
+      </Text>
+    )).toMatchSnapshot();
+  });
 });

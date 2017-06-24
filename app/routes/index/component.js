@@ -5,7 +5,7 @@ import Text, { types } from '../../components/text';
 import Row from '../../components/row';
 import Column from '../../components/column';
 import renderListView from '../../components/listView/renderListView';
-import renderPendingListView from '../../components/ListView/renderPendingListView';
+import renderPendingListView from '../../components/listView/renderPendingListView';
 import requestHandler from '../../support/requestHandler';
 
 type Props = {
@@ -28,7 +28,7 @@ class IndexRoute extends Component {
   };
 
   componentWillMount() {
-    requestHandler.call(this, `${DATABASE_URL}/projects.json?orderBy="id"`);
+    requestHandler.call(this, null);
   }
 
   props: Props;

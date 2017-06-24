@@ -2,6 +2,8 @@ import React, { Element } from 'react';
 import { Link } from 'react-router-dom';
 import Row from '../../components/row';
 import Column from '../../components/column';
+import googleAnalyticsEvents from '../../support/googleAnalyticsEvents';
+import googleAnalyticsCategories from '../../support/googleAnalyticsCategories';
 import './styles.css';
 
 type Props = {
@@ -16,8 +18,7 @@ type Props = {
 const RouteFooter = (props: Props): Element => {
   const messages = [
     'Ship',
-    'Made With',
-    ''
+    'Made With'
   ];
 
   // The message rendered next to the heart
@@ -35,13 +36,19 @@ const RouteFooter = (props: Props): Element => {
       className="route-footer"
     >
       <Row size="large">
-        <Column largeSize={4} smallSize={smallColumnSize}>
+        <Column largeSize={4} smallSize={6}>
           {props.linkTo ? (
             <div className="route-footer-link">
               <small>
                 <Link
                   className="route-footer-link-anchor"
                   to={props.linkTo.path}
+                  onClick={() => ga(
+                    'send',
+                    'event',
+                    googleAnalyticsCategories.LINKS,
+                    googleAnalyticsEvents.FOOTER_BACK_TO_PAGE_LINK
+                  )}
                 >
                   Back to {props.linkTo.title}
                 </Link>
@@ -49,14 +56,23 @@ const RouteFooter = (props: Props): Element => {
             </div>
           ) : null}
         </Column>
-        <Column largeSize={4} smallSize={smallColumnSize}>
+        <Column largeSize={4} hideOnSmall={true}>
           {props.linkToTop ? (
             <div className="route-footer-top-link">
               <small>
                 <a
                   href="#"
                   className="route-footer-top-link-anchor"
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={() => {
+                    window.scrollTo(0, 0)
+
+                    ga(
+                      'send',
+                      'event',
+                      googleAnalyticsCategories.LINKS,
+                      googleAnalyticsEvents.FOOTER_BACK_TO_TOP_LINK
+                    );
+                  }}
                 >
                   Back to Top
                 </a>
@@ -64,7 +80,11 @@ const RouteFooter = (props: Props): Element => {
             </div>
           ) : null}
         </Column>
-        <Column className="route-footer-column" largeSize={4} smallSize={12}>
+        <Column
+          className="route-footer-column"
+          largeSize={4}
+          smallSize={smallColumnSize}
+        >
           <div className="route-footer-text-message">
             <small>
               {message}

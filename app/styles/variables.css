@@ -5,13 +5,13 @@
  */
 :root {
   --white: #FFFFFF;
-  --transparent-white: rgba(255, 255, 255, 0.9);
+  --transparent-white: rgba(255, 255, 255, 0.95);
   --black: #241F20;
   --blue: #0063B5;
   --red: #FF2E5E;
   --light-gray: #7E7E80;
   --dark-gray: #4A4A4A;
-  --lightest-gray: #F9F5F5;
+  --lightest-gray: #F7F7F7;
 
   --default-font-size: 2.5rem;
   --default-font-family-name: 'web-din-pro';
@@ -36,7 +36,7 @@
   --small-screen-large-margin: 7rem;
 
   --h1-font-size: 6rem;
-  --h1-font-weight: 300;
+  --h1-font-weight: 600;
   --h1-line-height: 7rem;
   --h1-margin: var(--default-margin);
   --h1-color: var(--black);
@@ -45,7 +45,7 @@
   --h2-font-weight: 400;
   --h2-line-height: var(--default-line-height);
   --h2-margin: var(--default-margin);
-  --h2-color: var(--dark-gray);
+  --h2-color: var(--light-gray);
 
   --h3-font-size: 1.7rem;
   --h3-font-weight: 400;
