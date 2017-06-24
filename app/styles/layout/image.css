@@ -1,9 +1,13 @@
 img,
+video,
+.video
 .image {
   border: none;
   outline: none;
   width: 100%;
   margin: var(--default-margin);
+  box-shadow: var(--default-box-shadow), var(--default-box-shadow);
+  border: 1px solid var(--lightest-gray);
 }
 
 figure,
@@ -15,8 +19,12 @@ figure,
 
 figure img,
 .figure img,
+figure video,
+.figure video,
 figure .image,
-.figure .image {
+.figure .image,
+figure .video,
+.figure .video {
   margin: 0;
   box-shadow: var(--default-box-shadow);
 }

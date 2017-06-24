@@ -39,6 +39,8 @@ class WorkItemRoute extends PureComponent {
   render(): RouteContainer {
     const { data, isPending } = this.state;
 
+    console.log(data);
+
     return (
       <RouteContainer
         isPending={isPending}
@@ -72,8 +74,8 @@ class WorkItemRoute extends PureComponent {
               */}
             {Array.isArray(data[0].images) ? data[0].images.map(image => (
               <Module
-                type="module-image"
-                key={image.title}
+                type={image.type}
+                key={image.id}
                 {...image}
               />
             )) : null}

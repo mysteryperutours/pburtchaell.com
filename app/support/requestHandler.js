@@ -7,14 +7,26 @@ const client = createClient({
 });
 
 function requestHandler(pathname: string): Promise<*> {
-  function filterImage(image) {
+  function filterMedia(media) {
+    if (media.fields.file.contentType === 'video/mp4') {
+      return {
+        id: media.sys.id,
+        type: 'video',
+        contentType: media.fields.file.contentType,
+        description: media.fields.description,
+        title: media.fields.title,
+        url: media.fields.file.url
+      };
+    }
+
     return {
-      id: image.sys.id,
-      description: image.fields.description,
-      title: image.fields.title,
-      url: image.fields.file.url,
-      height: image.fields.file.details.image.height,
-      width: image.fields.file.details.image.width
+      id: media.sys.id,
+      type: 'image',
+      description: media.fields.description,
+      title: media.fields.title,
+      url: media.fields.file.url,
+      height: media.fields.file.details.image.height,
+      width: media.fields.file.details.image.width
     };
   }
 
@@ -28,8 +40,8 @@ function requestHandler(pathname: string): Promise<*> {
       isPromoted: item.fields.isPromoted,
       pathname: item.fields.pathname,
       question: item.fields.question,
-      featuredImage: filterImage(item.fields.featuredImage),
-      images: item.fields.images ? item.fields.images.map(filterImage) : null,
+      featuredImage: filterMedia(item.fields.featuredImage),
+      images: item.fields.images ? item.fields.images.map(filterMedia) : null,
       id: item.sys.id,
       createdAt: item.sys.createdAt,
       updatedAt: item.sys.updatedAt,

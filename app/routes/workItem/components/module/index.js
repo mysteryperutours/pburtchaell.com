@@ -11,7 +11,7 @@ type Props = {
 const Module = (props: Props): Element<*> => {
   let childElement;
 
-  if (props.type === 'module-image') {
+  if (props.type === 'image') {
     childElement = (
       <Column>
         <figure className="figure">
@@ -19,6 +19,22 @@ const Module = (props: Props): Element<*> => {
             src={props.url}
             alt={''} /* TODO */
           />
+          {props.description ? (
+            <figcaption>
+              {props.description}
+            </figcaption>
+          ) : null}
+        </figure>
+      </Column>
+    );
+  } else if (props.type === 'video') {
+    childElement = (
+      <Column>
+        <figure className="figure">
+          <video src={props.url} autoPlay={true} type={props.contentType}>
+            Sorry, your browser doesn't support embedded videos,
+  but, you can <a href={props.url} target="_blank">download it</a>.
+          </video>
           {props.description ? (
             <figcaption>
               {props.description}
