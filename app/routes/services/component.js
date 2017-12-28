@@ -30,7 +30,7 @@ class ServicesRoute extends Component {
               Product Design
             </Text>
             <Text type={types.BODY}>
-              Software products for web, iOS and Android, designed with toughtful user experience considerations and exceptional visual design.
+              Software products for web, iOS and Android, designed with thoughtful user experience considerations and exceptional visual design.
             </Text>
           </Column>
           <Column
