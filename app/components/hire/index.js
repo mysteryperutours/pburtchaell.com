@@ -11,7 +11,7 @@ const WorkItemHire = (props: Props): Element<*> => {
       <div className="availability">
         <div className="availability-string">
           <Text type={textTypes.BODY}>
-            Available starting September 2017
+            Available for your team to build impactful products
           </Text>
         </div>
         <div className="availability-buttons">
@@ -34,7 +34,7 @@ const WorkItemHire = (props: Props): Element<*> => {
               'Email'
             )}
           >
-            Email
+            Email Me
           </a>
           <a
             href="https://m.me/pburtchaell"
@@ -60,7 +60,7 @@ const WorkItemHire = (props: Props): Element<*> => {
               type={iconTypes.MESSENGER}
               fill="#0063B5"
             />
-            Messenger
+            Message Me
           </a>
         </div>
       </div>

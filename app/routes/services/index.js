@@ -1,8 +1,9 @@
+import React from 'react';
+import ServicesRoute from './component';
 import paths from '../paths';
-import WorkItemRoute from './component';
 
 export default {
-  path: paths.WORK_ITEM,
+  path: paths.SERVICES,
   props: {
     config: {
       footer: {
@@ -10,9 +11,9 @@ export default {
           path: paths.INDEX,
           title: 'Home'
         },
-        linkToTop: true
+        linkToTop: false
       }
-    },
+    }
   },
-  component: WorkItemRoute
+  component: ServicesRoute
 };

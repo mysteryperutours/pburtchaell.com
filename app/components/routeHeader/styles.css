@@ -17,6 +17,10 @@
   box-shadow: var(--default-box-shadow);
 }
 
+.site-header.is-home {
+  position: absolute;
+}
+
 .site-header-title {
   text-align: center;
   color: var(--light-gray);

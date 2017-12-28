@@ -14,10 +14,10 @@ export default class NotFoundRoute extends Component {
       <RouteContainer>
         <Row>
           <Column largeSize="8" smallSize="12">
-            <Text type={types.HEADER_1}>Oh no</Text>
-            <Text>I'm sorry, this page does not exist.</Text>
+            <Text type={types.HEADER_2}>Patrick Burtchaell</Text>
+            <Text>Oh no! Sorry, but no page page there.</Text>
             <hr />
-            <Text linkTo="/"><small>&#8592; Go to My Work</small></Text>
+            <Text linkTo="/"><small>&#8592; Try here</small></Text>
           </Column>
         </Row>
       </RouteContainer>

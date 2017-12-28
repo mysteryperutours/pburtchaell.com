@@ -13,9 +13,16 @@ hr {
 }
 
 small,
-.small {
+.small,
+.small--block {
   margin: 0;
   font-size: var(--small-font-size);
   line-height: var(--small-line-height);
   color: var(--light-gray);
+}
+
+.small--block {
+  display: block;
+  margin: 2rem 0;
+  hyphens: none;
 }

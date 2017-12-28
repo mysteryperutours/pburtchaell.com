@@ -56,41 +56,40 @@ class RouteHeader extends Component {
 
     const navigationItems = [{
       key: 0,
-      label: 'Work',
+      label: 'Home',
       linkTo: paths.INDEX
-    }, {
-      key: 1,
-      label: 'Profile',
-      linkTo: paths.ABOUT
     }];
 
     return (
       <header
         role="banner"
         className={classNames('site-header', {
-          'is-scrolled': this.state.isScrolled
+          'is-scrolled': this.state.isScrolled,
+          'is-home': this.props.title === undefined
         })}
       >
         <Row size="large">
           <Column largeSize="3" smallSize="8">
-            <nav
-              role="navigation"
-              className="site-navigation"
-            >
-              {navigationItems.map(item => (
-                <NavLink
-                  key={item.key}
-                  to={item.linkTo}
-                  exact={(item.linkTo === paths.INDEX)}
-                  className="site-navigation-item"
-                  activeClassName="is-active"
-                >
-                  <span className="site-navigation-item-text">
-                    {item.label}
-                  </span>
-                </NavLink>
-              ))}
-            </nav>
+            {this.props.title ? (
+              <nav
+                role="navigation"
+                className="site-navigation"
+              >
+                {navigationItems.map(item => (
+                  <NavLink
+                    key={item.key}
+                    to={item.linkTo}
+                    exact={(item.linkTo === paths.INDEX)}
+                    className="site-navigation-item"
+                    activeClassName="is-active"
+                  >
+                    <span className="site-navigation-item-text">
+                      {item.label}
+                    </span>
+                  </NavLink>
+                ))}
+              </nav>
+            ) : null}
           </Column>
           {this.props.title ? (
             <Column largeSize="3" hideOnSmall={true}>
@@ -99,9 +98,7 @@ class RouteHeader extends Component {
               ) : null}
             </Column>
           ) : null}
-          <Column largeSize="3" smallSize="4">
-            <RouteHeaderHire />
-          </Column>
+          <Column largeSize="3" smallSize="4"></Column>
         </Row>
       </header>
     );

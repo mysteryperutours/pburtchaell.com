@@ -7,9 +7,17 @@ a:hover {
   -webkit-text-decoration-skip: objects;
 }
 
+a.a--arrow-left::after {
+  content: "\2192";
+  margin-left: .5rem;
+}
+
 p a,
 li a,
-figcaption a {
+figcaption a,
+.small--block a,
+.small--block a:active,
+.small--block a:hover {
   color: var(--blue);
 }
 
@@ -17,6 +25,8 @@ p a:hover,
 p a:active,
 li a:hover,
 li a:active,
+.small--block a:hover,
+.small--block a:active,
 figcaption a:hover,
 figcaption a:active {
   color: var(--blue);

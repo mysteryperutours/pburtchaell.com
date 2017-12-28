@@ -41,16 +41,36 @@ class IndexRoute extends Component {
         isPending={isPending}
       >
         <Row size="large">
-          <Column largeSize={8} smallSize={12}>
-            <Text type={types.HEADER_1}>
+          <Column largeSize={6} smallSize={12}>
+            <Text type={types.HEADER_2}>
               Patrick Burtchaell
             </Text>
-            <Text type={types.HEADER_2}>
-              Product Designer
+            <Text>
+              Designer and web developer, working with teams to thoughtfully build impactful products.
+            </Text>
+          </Column>
+        </Row>
+        <Row size="large">
+          <Column largeSize={5} smallSize={12}>
+            <Text type={types.SMALL}>
+              Available for consultancy and freelance work in New Orleans, San Francisco and elsewhere. If you would like to work together, <a href="mailto:patrick@pburtchaell.com">get in touch</a>.
+            </Text>
+            <Text type={types.SMALL}>
+              <Text
+                className="a--arrow-left"
+                linkTo="/services"
+              >
+                Learn more about my services
+              </Text>
             </Text>
           </Column>
         </Row>
         <div className="padding padding-large" />
+        <Row size="large">
+          <Text type={types.HEADER_2}>
+            Work
+          </Text>
+        </Row>
         <Row size="large" defaultColumn={false}>
           {isPending ? renderPendingListView() : renderListView(data)}
         </Row>

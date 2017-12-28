@@ -1,18 +1,9 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import paths from '../paths';
-import AboutRoute from './component';
 
 export default {
   path: paths.ABOUT,
-  props: {
-    config: {
-      footer: {
-        linkTo: {
-          path: paths.INDEX,
-          title: 'My Work'
-        }
-      }
-    }
-  },
-  component: AboutRoute
+  props: {},
+  component: () => <Redirect to="/" />
 };

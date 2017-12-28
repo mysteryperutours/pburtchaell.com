@@ -1,5 +1,6 @@
 import IndexRoute from './index';
 import AboutRoute from './about';
+import ServicesRoute from './services';
 import NotFoundRoute from './notFound';
 import WorkItemRoute from './workItem';
 
@@ -11,6 +12,7 @@ import WorkItemRoute from './workItem';
 const config = [
   IndexRoute,
   AboutRoute,
+  ServicesRoute,
   WorkItemRoute,
   NotFoundRoute // This route must fall last in the config
 ];

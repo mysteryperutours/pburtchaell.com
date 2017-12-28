@@ -17,15 +17,19 @@ type Props = {
 // The footer for each route
 const RouteFooter = (props: Props): Element => {
   const messages = [
-    'Ship',
-    'Made With'
+    'Made With',
+    'Take Care',
+    'Have Fun Today',
+    'Have a Great Day',
+    'It is a Wonderful World',
+    'You are Awesome'
   ];
 
   // The message rendered next to the heart
   const message = messages[Math.floor(Math.random() * messages.length)];
 
   // The copyright notice rendered under the message and heart
-  const copyright = `${String.fromCharCode(169)} ${new Date().getFullYear()}`;
+  const copyrightDate = `${String.fromCharCode(169)} ${new Date().getFullYear()}`;
 
   // The column size changes depending on how many links are rendered
   const smallColumnSize = props.linkToTop ? 6 : 12;
@@ -99,7 +103,7 @@ const RouteFooter = (props: Props): Element => {
           </div>
           <div className="route-footer-text-copyright">
             <small>
-              {copyright}
+              {copyrightDate} Patrick Burtchaell
             </small>
           </div>
         </Column>

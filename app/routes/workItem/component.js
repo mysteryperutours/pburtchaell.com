@@ -6,7 +6,6 @@ import RouteContainer from '../../components/routeContainer';
 import Row from '../../components/row';
 import HireMe from '../../components/hire';
 import requestHandler from '../../support/requestHandler';
-import './styles.css';
 
 const INITIAL_STATE = {
   data: {},
@@ -38,8 +37,6 @@ class WorkItemRoute extends PureComponent {
 
   render(): RouteContainer {
     const { data, isPending } = this.state;
-
-    console.log(data);
 
     return (
       <RouteContainer

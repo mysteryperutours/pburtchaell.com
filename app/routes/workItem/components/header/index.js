@@ -24,21 +24,21 @@ const WorkItemHeader = (props: Props): Element<*> => {
       <Row size="full">
         <Column largeSize="12" smallSize="12">
           <div className="case-study-titles">
-            <Text type={types.HEADER_1}>
+            <Text type={types.HEADER_2}>
               {props.title}
             </Text>
           </div>
         </Column>
         <Column largeSize="6" smallSize="12">
-          <Text type={types.HEADER_2}>
+          <Text type={types.BODY}>
             {props.question}
           </Text>
           {props.link ? (
-            <small>
+            <small className="small--block">
               <a
                 href={props.link}
                 target="_blank"
-                className="case-study-link"
+                className="a--arrow-left"
                 onClick={() => ga(
                   'send',
                   'event',

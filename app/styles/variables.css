@@ -13,7 +13,7 @@
   --dark-gray: #4A4A4A;
   --lightest-gray: #F7F7F7;
 
-  --default-font-size: 2.5rem;
+  --default-font-size: 2.35rem;
   --default-font-family-name: 'web-din-pro';
   --default-font-family: 'web-din-pro', sans-serif;
   --default-line-height: 4rem;
@@ -36,7 +36,7 @@
   --small-screen-large-margin: 7rem;
 
   --h1-font-size: 6rem;
-  --h1-font-weight: 600;
+  --h1-font-weight: 400;
   --h1-line-height: 7rem;
   --h1-margin: var(--default-margin);
   --h1-color: var(--black);
