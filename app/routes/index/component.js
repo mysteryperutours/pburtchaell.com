@@ -68,7 +68,7 @@ class IndexRoute extends Component {
         <div className="padding padding-large" />
         <Row size="large">
           <Text type={types.HEADER_2}>
-            Work
+            Selected Work
           </Text>
         </Row>
         <Row size="large" defaultColumn={false}>
