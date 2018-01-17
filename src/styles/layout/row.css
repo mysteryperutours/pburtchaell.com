@@ -1,0 +1,27 @@
+.row__container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+}
+
+.row__container--is-default .row {
+  max-width: 580px;
+}
+
+.row__container--medium .row {
+  max-width: 720px;
+}
+
+.row__container--large .row {
+  max-width: 100%;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex: 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}

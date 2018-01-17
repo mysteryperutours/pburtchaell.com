@@ -1,7 +1,5 @@
-build
-coverage
-dist
-node_modules
+node_modules/
+.cache/
+public/
 .DS_Store
-*.cache
-*.log
+yarn-error.log
