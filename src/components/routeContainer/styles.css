@@ -1,0 +1,23 @@
+@import '../../styles/variables.css';
+
+.route__container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/**
+ * The route body is the child of the route countainer. The route footer and
+ * the route header are siblings.
+ */
+.route__body {
+  flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.route__body--is-default {
+  padding-top: 8rem;
+  margin-top: var(--small-margin);
+}
