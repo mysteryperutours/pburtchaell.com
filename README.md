@@ -3,7 +3,7 @@
 ## Getting Started
 
 1. Install dependencies: `npm i` or `yarn`
-2. Start: `npm start` or `yarn start`
+2. Start: `npm run develop` or `yarn develop`
 3. Build: `npm run build` or `yarn build`
 
 ## Stack
@@ -15,4 +15,4 @@
 - [Amazon Web Services (AWS)](): Domain name service
 
 ---
-Copyright (c) 2016 Patrick Burtchaell. All rights reserved.
+Copyright (c) 2013-2017 Patrick Burtchaell. All rights reserved.
