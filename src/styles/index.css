@@ -2,7 +2,6 @@
 @import './normalize.css';
 @import './animations.css';
 @import './button/base.css';
-/*@import './fonts/base.css';*/
 @import './layout/base.css';
 @import './layout/column.css';
 @import './layout/image.css';
@@ -10,5 +9,6 @@
 @import './layout/row.css';
 @import './typography/anchor.css';
 @import './typography/base.css';
+@import './typography/fonts.css';
 @import './typography/heading.css';
 @import './typography/list.css';
