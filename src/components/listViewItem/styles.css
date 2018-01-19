@@ -1,3 +1,5 @@
+@import '../../styles/variables.css';
+
 .list-view.list-view-type-grid .list-view-item {
   margin-top: 1rem;
   margin-bottom: 2rem;
