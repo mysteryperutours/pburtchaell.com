@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import Helmet from 'react-helmet'
 import RouteFooter from '../routeFooter'
 import RouteHeader from '../routeHeader'
 import './styles.css';
@@ -16,29 +16,35 @@ import './styles.css';
 const RouteContainer = (props) => {
   const {
     title,
+    meta,
     footer,
     header,
     children,
   } = props
 
-  const mainClassName = classNames('main', {
-    'main--default': props.defaultTheme
-  })
-
   return (
-    <div className="main__container">
-      {header && (
-        <RouteHeader
-          title={title}
-        />
-      )}
-      <main role="main" className={bodyClassName}>
-        {children}
-      </main>
-      {footer && (
-        <RouteFooter />
-      )}
-    </div>
+    <Fragment>
+      <Helmet
+        title={meta.title}
+        meta={[
+          {name: 'description', content: meta.description},
+          {name: 'keywords', content: meta.keywords},
+        ]}
+      />
+      <div className="main__container">
+        {header && (
+          <RouteHeader
+            title={title}
+          />
+        )}
+        <main role="main" className="main">
+          {children}
+        </main>
+        {footer && (
+          <RouteFooter />
+        )}
+      </div>
+    </Fragment>
   )
 }
 
@@ -46,6 +52,11 @@ RouteContainer.propTypes = {
   header: PropTypes.bool.isRequired,
   footer: PropTypes.bool.isRequired,
   children: PropTypes.element.isRequired,
+  meta: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    keywords: PropTypes.string,
+  })
 }
 
 

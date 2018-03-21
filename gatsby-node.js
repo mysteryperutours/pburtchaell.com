@@ -1,14 +1,36 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('path')
+const fs = require('fs')
 
-const staticImagePath = './static/assets/';
+exports.createPages = ({boundActionCreators, graphql}) => {
+ const {createPage} = boundActionCreators
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  if (node.internal.mediaType == "image/png" || node.internal.mediaType === `image/jpeg`) {
-    if (!fs.existsSync(staticImagePath)){
-      fs.mkdirSync(staticImagePath);
-    }
+ return graphql(`
+   {
+     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+       edges {
+         node {
+           frontmatter {
+             type
+             path
+           }
+         }
+       }
+     }
+   }
+ `).then(({errors, data}) => {
+   if (errors) {
+     throw result.errors
+   }
 
-    fs.createReadStream("./src/content/" + node.relativePath).pipe(fs.createWriteStream(staticImagePath + node.base));
-  }
+   data.allMarkdownRemark.edges.forEach(({node}) => {
+     const {frontmatter} = node
+     const {path: nodePath, type} = frontmatter
+
+     createPage({
+       path: nodePath,
+       component: path.resolve(`src/layouts/${type}.js`),
+       context: {},
+     })
+   })
+ })
 }

@@ -1,15 +1,15 @@
 // Get environment variables
-const getValueFromEnv = (key) => {
+const getValueFromEnv = (key, defaultValue = '') => {
   const {env} = process
 
   if (env[key]) {
-    console.log(`${key} is set to ${env[key]} in this environment.`)
+    console.log(`\n${key} is set to ${env[key]} in this environment.`)
 
     return env[key]
   } else {
-    console.warn(`${key} variable not found in this environment.`)
+    console.warn(`\n${key} variable not found in this environment.`)
 
-    return null
+    return defaultValue
   }
 }
 
@@ -53,7 +53,7 @@ const gatsbyGoogleAnalytics = {
 // Default Gatsby configuration
 module.exports = {
   siteMetadata: {
-    title: getValueFromEnv('SITE_TITLE'),
+    title: getValueFromEnv('SITE_TITLE', 'Default Site'),
     description: getValueFromEnv('SITE_DESCRIPTION'),
     keywords: getValueFromEnv('SITE_KEYWORDS'),
     url: getValueFromEnv('URL'),

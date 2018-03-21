@@ -2,7 +2,6 @@ import 'normalize.css'
 import '../styles/index.css'
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import RouteContainer from '../components/RouteContainer'
 
 /*
@@ -11,24 +10,16 @@ import RouteContainer from '../components/RouteContainer'
  */
 const DefaultLayout = ({children, data}) => {
   const {site} = data
-  const {title, description, keywords} = site.metadata
 
   return (
-    <Fragment>
-      <Helmet
-        title={title}
-        meta={[
-          {name: 'description', content: description},
-          {name: 'keywords', content: keywords},
-        ]}
-      />
-      <RouteContainer
-        header
-        footer
-      >
-        {children()}
-      </RouteContainer>
-    </Fragment>
+    <RouteContainer
+      title="Test"
+      meta={site.metadata}
+      header={false}
+      footer={false}
+    >
+      {children()}
+    </RouteContainer>
   )
 }
 

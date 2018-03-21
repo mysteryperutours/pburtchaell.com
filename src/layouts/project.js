@@ -1,16 +1,14 @@
-import 'normalize.css'
-import '../styles/index.css'
-import React, {Fragment} from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import RouteContainer from '../components/RouteContainer'
+import React from 'react'
+import Row from '../components/row'
+import Column from '../components/column'
+import Text, {types as textTypes} from '../components/text'
 
-/*
- * Function: PostsLayout
+/**
+ * Function: ProjectLayout
  * Description:
  */
-const PostsLayout = ({children, data}) => {
-  const {site} = data
+function ProjectLayout({ data }) {
+  const {project, site} = data
   const {title, description, keywords} = site.metadata
 
   return (
@@ -22,18 +20,22 @@ const PostsLayout = ({children, data}) => {
           {name: 'keywords', content: keywords},
         ]}
       />
-      <RouteContainer
-        header
-        footer
-        title={null}
-        subtitle={null}
-        content={html}
-      />
+      <Row>
+        <Column
+          largeSize={8}
+          smallSize={8}
+        >
+          <Text type={textTypes.HEADER_2}>
+            {project.frontmatter.title}
+          </Text>
+          <div dangerouslySetInnerHTML={{__html: project.html}} />
+        </Column>
+      </Row>
     </Fragment>
   );
 }
 
-PostsLayout.propTypes = {
+ProjectLayout.propTypes = {
   children: PropTypes.func.isRequired,
   data: PropTypes.shape({
     site: PropTypes.shape({
@@ -47,16 +49,23 @@ PostsLayout.propTypes = {
   }),
 }
 
-export default PostsLayout
+export default ProjectLayout
 
 export const query = graphql`
-  query PostsQuery {
+  query ProjectByPathQuery($path: String!) {
     site {
       metadata: siteMetadata {
         url
         title
         description
         keywords
+      }
+    }
+    project: markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        path
+        title
       }
     }
   }
