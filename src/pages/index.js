@@ -1,7 +1,7 @@
-import React from 'react';
-import Row from '../components/row';
-import Column from '../components/column';
-import Text, { types as textTypes } from '../components/text';
+import React from 'react'
+import Row from '../components/row'
+import Column from '../components/column'
+import Text, {types as textTypes} from '../components/text'
 
 const IndexPage = () => (
   <Row size="large">
@@ -14,6 +14,6 @@ const IndexPage = () => (
       </Text>
     </Column>
   </Row>
-);
+)
 
 export default IndexPage;

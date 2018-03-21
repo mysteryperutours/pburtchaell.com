@@ -1,6 +1,6 @@
 @import '../../styles/variables.css';
 
-.route__container {
+.main__container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -11,13 +11,13 @@
  * The route body is the child of the route countainer. The route footer and
  * the route header are siblings.
  */
-.route__body {
+.main {
   flex: 1 auto;
   display: flex;
   flex-direction: column;
 }
 
-.route__body--is-default {
+.main--default {
   padding-top: 8rem;
   margin-top: var(--small-margin);
 }

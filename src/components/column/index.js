@@ -1,7 +1,7 @@
 import { createElement, Element } from 'react';
 import classNames from 'classnames';
 
-/**
+/*
  * The Column function can be used to create a column in the grid layout. This
  * element is generally a child of a Row element. There are 12 columns in the
  * grid. Using the `size` property, the width of the column can be set to any

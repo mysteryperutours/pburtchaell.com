@@ -25,7 +25,7 @@
   opacity: .5;
 }
 
-/**
+/*
  * If the button has an icon, also change that color.
  */
 .button:hover svg,

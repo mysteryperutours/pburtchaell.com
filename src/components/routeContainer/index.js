@@ -1,7 +1,8 @@
-import React, { Element } from 'react';
-import classNames from 'classnames';
-import RouteFooter from '../routeFooter';
-import RouteHeader from '../routeHeader';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import RouteFooter from '../routeFooter'
+import RouteHeader from '../routeHeader'
 import './styles.css';
 
 /**
@@ -12,39 +13,45 @@ import './styles.css';
  * `footer="false"`` prop on the component. It is also possible to customize
  * the header using an object.
  */
-const RouteContainer = ({ header, footer, children, ...props }) => (
-  <div className="route__container">
-    {!header ? null : (
-      <RouteHeader
-        title={props.title}
-        {...header}
-      />
-    )}
-    <main
-      role="main"
-      className={classNames('route__body', {
-        'route__body--is-default': props.defaultTheme
-      })}
-    >
-      {children}
-    </main>
-    {props.isPending || !footer ? null : (
-      <RouteFooter
-        {...footer}
-      />
-    )}
-  </div>
-);
+const RouteContainer = (props) => {
+  const {
+    title,
+    footer,
+    header,
+    children,
+  } = props
+
+  const mainClassName = classNames('main', {
+    'main--default': props.defaultTheme
+  })
+
+  return (
+    <div className="main__container">
+      {header && (
+        <RouteHeader
+          title={title}
+        />
+      )}
+      <main role="main" className={bodyClassName}>
+        {children}
+      </main>
+      {footer && (
+        <RouteFooter />
+      )}
+    </div>
+  )
+}
+
+RouteContainer.propTypes = {
+  header: PropTypes.bool.isRequired,
+  footer: PropTypes.bool.isRequired,
+  children: PropTypes.element.isRequired,
+}
+
 
 RouteContainer.defaultProps = {
   header: true,
   footer: true,
-  defaultTheme: true,
-  color: {
-    r: 255,
-    g: 255,
-    b: 255
-  }
-};
+}
 
 export default RouteContainer;

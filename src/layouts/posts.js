@@ -1,52 +1,63 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import RouteContainer from '../components/RouteContainer';
-import '../styles/index.css';
+import 'normalize.css'
+import '../styles/index.css'
+import React, {Fragment} from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import RouteContainer from '../components/RouteContainer'
 
-const PostsLayout = ({ data }) => {
-  const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+/*
+ * Function: PostsLayout
+ * Description:
+ */
+const PostsLayout = ({children, data}) => {
+  const {site} = data
+  const {title, description, keywords} = site.metadata
 
   return (
-    <div>
+    <Fragment>
       <Helmet
-        title={frontmatter.title}
+        title={title}
         meta={[
-          {
-            name: 'description',
-            content: ''
-          },
-          {
-            name: 'keywords',
-            content: ''
-          }
+          {name: 'description', content: description},
+          {name: 'keywords', content: keywords},
         ]}
       />
-      <RouteContainer>
-        <div
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </RouteContainer>
-    </div>
+      <RouteContainer
+        header
+        footer
+        title={null}
+        subtitle={null}
+        content={html}
+      />
+    </Fragment>
   );
-};
+}
 
 PostsLayout.propTypes = {
-  children: PropTypes.func
-};
+  children: PropTypes.func.isRequired,
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      metadata: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        keywords: PropTypes.string.isRequired,
+      }),
+    }),
+  }),
+}
 
-export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
+export default PostsLayout
+
+export const query = graphql`
+  query PostsQuery {
+    site {
+      metadata: siteMetadata {
+        url
         title
+        description
+        keywords
       }
     }
   }
-`;
-
-export default PostsLayout;
+`

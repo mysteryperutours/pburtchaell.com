@@ -1,7 +1,7 @@
-import React from 'react';
-import Column from '../components/column';
-import Row from '../components/row';
-import Text, { types as textTypes } from '../components/text';
+import React from 'react'
+import Column from '../components/column'
+import Row from '../components/row'
+import Text, { types as textTypes } from '../components/text'
 
 const NotFoundPage = () => (
   <Row>
@@ -12,6 +12,6 @@ const NotFoundPage = () => (
       <Text linkTo="/"><small>&#8592; Try here</small></Text>
     </Column>
   </Row>
-);
+)
 
-export default NotFoundPage;
+export default NotFoundPage

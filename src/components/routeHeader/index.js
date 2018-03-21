@@ -1,9 +1,7 @@
 import React, { Element, Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import Row from '../../components/row';
 import Column from '../../components/column';
-import handleScrollEvent from '../../support/handleScrollEvent';
 import './styles.css';
 
 const INITIAL_STATE = {
@@ -19,34 +17,6 @@ const INITIAL_STATE = {
 class RouteHeader extends Component {
   constructor(props) {
     super(props);
-
-    this.state = INITIAL_STATE;
-    this.handleScrollEvent = handleScrollEvent.bind(this, () => {
-
-
-      if (this.props.title) {
-        const element = document.querySelector('.case-study-content');
-        const isScrolled = window.scrollY >= element.getBoundingClientRect().top;
-
-        return this.setState({
-          showTitle: isScrolled,
-          isScrolled: isScrolled,
-          scrollY: window.scrollY
-        });
-      }
-
-      this.setState({
-        scrollY: window.scrollY
-      });
-    });
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScrollEvent);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScrollEvent);
   }
 
   render() {
@@ -62,7 +32,7 @@ class RouteHeader extends Component {
       <header
         role="banner"
         className={classNames('route__header', {
-          'route__header--is-scrolled': this.state.isScrolled,
+          'route__header--is-scrolled': false,
           'route__header--is-home': this.props.title === undefined
         })}
       >

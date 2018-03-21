@@ -1,34 +1,62 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import RouteContainer from '../components/RouteContainer';
-import '../styles/index.css';
+import 'normalize.css'
+import '../styles/index.css'
+import React, {Fragment} from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import RouteContainer from '../components/RouteContainer'
 
-const DefaultLayout = ({ children }) => {
+/*
+ * Function: DefaultLayout
+ * Description: Render the default layout used for all pages
+ */
+const DefaultLayout = ({children, data}) => {
+  const {site} = data
+  const {title, description, keywords} = site.metadata
+
   return (
-    <div>
+    <Fragment>
       <Helmet
-        title={`Patrick Burtchaell`}
+        title={title}
         meta={[
-          {
-            name: 'description',
-            content: ''
-          },
-          {
-            name: 'keywords',
-            content: ''
-          }
+          {name: 'description', content: description},
+          {name: 'keywords', content: keywords},
         ]}
       />
-      <RouteContainer>
+      <RouteContainer
+        header
+        footer
+      >
         {children()}
       </RouteContainer>
-    </div>
-  );
-};
+    </Fragment>
+  )
+}
 
 DefaultLayout.propTypes = {
-  children: PropTypes.func
-};
+  children: PropTypes.func.isRequired,
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      metadata: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        keywords: PropTypes.string.isRequired,
+      }),
+    }),
+  }),
+}
 
-export default DefaultLayout;
+export default DefaultLayout
+
+export const query = graphql`
+  query DefaultQuery {
+    site {
+      metadata: siteMetadata {
+        url
+        title
+        description
+        keywords
+      }
+    }
+  }
+`;
