@@ -33,7 +33,7 @@
 
 ### Gatsby
 
-[Gatsby][gatsby] is an open source static site generator. Under the hood, it uses libaries like [React][react], [React Router][react-router] and [Redux][redux].
+[Gatsby][gatsby] is an open source static site generator. Under the hood, it uses libraries like [React][react], [React Router][react-router] and [Redux][redux].
 
 ### Netlify
 
