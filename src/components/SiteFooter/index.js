@@ -1,11 +1,11 @@
-import React, { Element } from 'react';
-import { Link } from 'react-router-dom';
-import Row from '../../components/row';
-import Column from '../../components/column';
-import './styles.css';
+import React, { Element } from 'react'
+import Link from 'gatsby-link'
+import Row from '../../components/row'
+import Column from '../../components/column'
+import './styles.css'
 
 // The footer for each route
-const RouteFooter = (props) => {
+const SiteFooter = (props) => {
   const messages = [
     'Made With',
     'Take Care',
@@ -13,7 +13,7 @@ const RouteFooter = (props) => {
     'Have a Great Day',
     'It is a Wonderful World',
     'You are Awesome'
-  ];
+  ]
 
   // The message rendered next to the heart
   const message = messages[Math.floor(Math.random() * messages.length)];
@@ -85,12 +85,12 @@ const RouteFooter = (props) => {
         </Column>
       </Row>
     </footer>
-  );
-};
+  )
+}
 
-RouteFooter.defaultProps = {
+SiteFooter.defaultProps = {
   linkTo: null,
   linkToTop: false
-};
+}
 
-export default RouteFooter;
+export default SiteFooter

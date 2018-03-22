@@ -1,14 +1,13 @@
 ---
 published: false
+templateKey: project
 title: Groups
 description:
 question:
 keywords:
-type: project
+  - product design
 path: groups
-date: 2018-01-02
+date: 2017-08-20
 externalLink:
 externalLinkDescription:
-coverImageSource:
-coverImageDescription:
 ---

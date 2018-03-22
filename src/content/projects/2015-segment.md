@@ -1,19 +1,17 @@
 ---
-published: false
+published: true
+templateKey: project
 title: Segment
-description:
+description: A social media platform created to explore new ways of organizing content.
 question: What new ways of sharing content can we create?
 keywords:
   - open source
   - software
   - redux
-type: project
 path: segment
-date: 2018-01-02
-externalLink:
+date: 2015-08-01
+externalLink: https://segment.social
 externalLinkDescription:
-coverImageSource:
-coverImageDescription:
 ---
 Segment is a social network concept created to explore new ways we can share content with others. Most social networks are based on people: following or friending people and engaging with content from people we follow. In Segment, we explore how a social network would work if people followed feeds of content instead of following people.
 

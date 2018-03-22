@@ -1,25 +1,24 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Row from '../components/row'
 import Column from '../components/column'
 import Text, {types as textTypes} from '../components/text'
+import RouteContainer from '../components/RouteContainer'
 
-/**
+/*
  * Function: ProjectLayout
  * Description:
  */
-function ProjectLayout({ data }) {
+function ProjectLayout({data}) {
   const {project, site} = data
-  const {title, description, keywords} = site.metadata
 
   return (
-    <Fragment>
-      <Helmet
-        title={title}
-        meta={[
-          {name: 'description', content: description},
-          {name: 'keywords', content: keywords},
-        ]}
-      />
+    <RouteContainer
+      title={project.frontmatter.title}
+      meta={site.metadata}
+      header={false}
+      footer={false}
+    >
       <Row>
         <Column
           largeSize={8}
@@ -31,12 +30,11 @@ function ProjectLayout({ data }) {
           <div dangerouslySetInnerHTML={{__html: project.html}} />
         </Column>
       </Row>
-    </Fragment>
+    </RouteContainer>
   );
 }
 
 ProjectLayout.propTypes = {
-  children: PropTypes.func.isRequired,
   data: PropTypes.shape({
     site: PropTypes.shape({
       metadata: PropTypes.shape({
@@ -46,13 +44,21 @@ ProjectLayout.propTypes = {
         keywords: PropTypes.string.isRequired,
       }),
     }),
+    project: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      html: PropTypes.string.isRequired,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+      }),
+    }),
   }),
 }
 
 export default ProjectLayout
 
-export const query = graphql`
-  query ProjectByPathQuery($path: String!) {
+export const pageQuery = graphql`
+  query ProjectById($id: String!) {
     site {
       metadata: siteMetadata {
         url
@@ -61,11 +67,12 @@ export const query = graphql`
         keywords
       }
     }
-    project: markdownRemark(frontmatter: { path: { eq: $path } }) {
+    project: markdownRemark(id: { eq: $id }) {
+      id
       html
       frontmatter {
-        path
         title
+        description
       }
     }
   }

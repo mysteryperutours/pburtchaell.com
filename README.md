@@ -65,6 +65,16 @@
 [10]: https://www.npmjs.com/package/gatsby-transformer-remark
 [11]: https://www.npmjs.com/package/gatsby-transformer-sharp
 
+### Reference
+
+These resources were helpful reference in starting with Gatsby:
+
+- [Gatsby Netlify starter project][12]
+- [Netlify CMS example project][13]
+
+[12]: https://github.com/AustinGreen/gatsby-starter-netlify-cms
+[13]: https://github.com/netlify/netlify-cms/example
+
 ### Thanks
 
 Thanks to [Hunter Caron](https://github.com/huntercaron) for open sourcing [Boiled](https://github.com/huntercaron/boiled), the Gatsby boilerplate my website is based off.

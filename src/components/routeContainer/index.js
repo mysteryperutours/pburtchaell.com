@@ -1,11 +1,11 @@
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import RouteFooter from '../routeFooter'
-import RouteHeader from '../routeHeader'
-import './styles.css';
+import SiteFooter from '../SiteFooter'
+import SiteHeader from '../SiteHeader'
+import './styles.css'
 
-/**
+/*
  * A route is a page in the application. By default, the header and footer are
  * included. One or more children elements are required for the body.
  *
@@ -17,6 +17,7 @@ const RouteContainer = (props) => {
   const {
     title,
     meta,
+    head,
     footer,
     header,
     children,
@@ -24,24 +25,32 @@ const RouteContainer = (props) => {
 
   return (
     <Fragment>
-      <Helmet
-        title={meta.title}
-        meta={[
-          {name: 'description', content: meta.description},
-          {name: 'keywords', content: meta.keywords},
-        ]}
-      />
+      {head ? head : (
+        <Helmet
+          title={meta.title}
+          meta={[
+            {name: 'description', content: meta.description},
+            {name: 'keywords', content: meta.keywords},
+          ]}
+        />
+      )}
       <div className="main__container">
         {header && (
-          <RouteHeader
+          <SiteHeader
             title={title}
+            navigationItems={[{
+              label: 'Home',
+              linkTo: '/'
+            }]}
           />
         )}
         <main role="main" className="main">
           {children}
         </main>
         {footer && (
-          <RouteFooter />
+          <SiteFooter
+
+          />
         )}
       </div>
     </Fragment>
@@ -51,6 +60,7 @@ const RouteContainer = (props) => {
 RouteContainer.propTypes = {
   header: PropTypes.bool.isRequired,
   footer: PropTypes.bool.isRequired,
+  head: PropTypes.element,
   children: PropTypes.element.isRequired,
   meta: PropTypes.shape({
     title: PropTypes.string,

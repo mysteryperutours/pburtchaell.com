@@ -15,8 +15,6 @@ const DefaultLayout = ({children, data}) => {
     <RouteContainer
       title="Test"
       meta={site.metadata}
-      header={false}
-      footer={false}
     >
       {children()}
     </RouteContainer>
@@ -39,7 +37,7 @@ DefaultLayout.propTypes = {
 
 export default DefaultLayout
 
-export const query = graphql`
+export const pageQuery = graphql`
   query DefaultQuery {
     site {
       metadata: siteMetadata {

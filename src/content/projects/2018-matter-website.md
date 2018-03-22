@@ -1,14 +1,14 @@
 ---
 published: false
+templateKey: project
 title: Matter
 description:
 question:
 keywords:
-type: project
+  - branding
+  - web design
 path: matter
-date:
-externalLink:
+date: 2018-04-05
+externalLink: https://mttr.design
 externalLinkDescription:
-coverImageSource:
-coverImageDescription:
 ---

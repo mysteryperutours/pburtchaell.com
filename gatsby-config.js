@@ -3,23 +3,26 @@ const getValueFromEnv = (key, defaultValue = '') => {
   const {env} = process
 
   if (env[key]) {
-    console.log(`\n${key} is set to ${env[key]} in this environment.`)
-
     return env[key]
   } else {
-    console.warn(`\n${key} variable not found in this environment.`)
-
     return defaultValue
   }
 }
 
 // Configuration for the Gatsby Source Filesystem plugin
-const gatsbySourceFilesystem = {
+const gatsbySourcePages = {
   resolve: `gatsby-source-filesystem`,
   options: {
     name: `pages`,
     path: `${__dirname}/src/content/`,
-    name: 'markdown-pages',
+  },
+}
+
+const gatsbySourceImages = {
+  resolve: `gatsby-source-filesystem`,
+  options: {
+    name: `assets`,
+    path: `${__dirname}/src/assets/`,
   },
 }
 
@@ -53,20 +56,21 @@ const gatsbyGoogleAnalytics = {
 // Default Gatsby configuration
 module.exports = {
   siteMetadata: {
-    title: getValueFromEnv('SITE_TITLE', 'Default Site'),
-    description: getValueFromEnv('SITE_DESCRIPTION'),
+    title: getValueFromEnv('SITE_TITLE', 'Patrick Burtchaell'),
+    description: getValueFromEnv('SITE_DESCRIPTION', 'Designer and web developer, working with teams to thoughtfully build impactful products.'),
     keywords: getValueFromEnv('SITE_KEYWORDS'),
-    url: getValueFromEnv('URL'),
+    url: getValueFromEnv('URL', 'http://localhost:8000'),
   },
   plugins: [
     `gatsby-plugin-react-next`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-netlify-cms`,
-    gatsbySourceFilesystem,
+    gatsbySourcePages,
+    gatsbySourceImages,
     gatsbyTransformerMarkdown,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify-cms`,
     gatsbyGoogleAnalytics,
   ]
 }

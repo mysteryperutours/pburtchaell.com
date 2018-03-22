@@ -9,18 +9,12 @@ import './styles.css'
  * Class: RouteHeader
  * Description:
  */
-class RouteHeader extends Component {
+class SiteHeader extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const navigationItems = [{
-      key: 0,
-      label: 'Home',
-      linkTo: '/'
-    }]
-
     return (
       <header role="banner">
 
@@ -29,4 +23,4 @@ class RouteHeader extends Component {
   }
 }
 
-export default RouteHeader
+export default SiteHeader

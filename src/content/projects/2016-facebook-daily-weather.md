@@ -1,15 +1,15 @@
 ---
 published: true
+templateKey: project
 title: Daily Weather
 description:
 question:
-type: project
+keywords:
+  - product design
 path: daily-weather
-date: 2016-01-01
+date: 2016-08-20
 externalLink:
 externalLinkDescription:
-coverImageSource:
-coverImageDescription:
 ---
 Daily Weather is a permanent home for weather on Facebook for both iOS and Android. Previously, weather forecasts were available on Facebook in a promotional unit in the news feed, but this forecast was not permanent and did not provide enough information.
 

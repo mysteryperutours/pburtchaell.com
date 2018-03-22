@@ -1,5 +1,6 @@
 ---
 published: true
+templateKey: project
 title: React Notification
 description:
 question:
@@ -9,9 +10,9 @@ keywords:
   - react
 type: project
 path: react-notification
-date: 2015-06-31
+# Release date:
+# https://github.com/pburtchaell/react-notification/releases/tag/1.0.0
+date: 2015-03-21
 externalLink: https://github.com/pburtchaell/react-notification
 externalLinkDescription: See the project on GitHub
-coverImageSource:
-coverImageDescription:
 ---
