@@ -8,7 +8,7 @@ keywords:
   - software
   - redux
 type: project
-path: "segment"
+path: segment
 date: 2018-01-02
 externalLink:
 externalLinkDescription:

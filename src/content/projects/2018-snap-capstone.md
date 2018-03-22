@@ -1,6 +1,6 @@
 ---
 published: false
-title: Food Stamps User Experience
+title: SNAP User Experience
 description: The user experience, accessibility and usability of applying for food stamps (SNAP) in Louisiana.
 question: How can design improve the user experience of applying for food stamps (SNAP) in Louisiana?
 keywords:
@@ -8,10 +8,9 @@ keywords:
   - SNAP
   - usability
   - accessibility
-  -
 type: project
-path:
-date:
+path: capstone
+date: 2018-05-03
 externalLink:
 externalLinkDescription:
 coverImageSource:

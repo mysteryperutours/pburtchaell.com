@@ -1,12 +1,11 @@
 ---
 published: false
 title: Matter
-description: 
+description:
 question:
 keywords:
-  -
 type: project
-path:
+path: matter
 date:
 externalLink:
 externalLinkDescription:
