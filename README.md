@@ -70,4 +70,6 @@
 Thanks to [Hunter Caron](https://github.com/huntercaron) for open sourcing [Boiled](https://github.com/huntercaron/boiled), the Gatsby boilerplate my website is based off.
 
 ---
-Copyright (c) 2013-2018 Patrick Burtchaell. [Code licensed with the MIT License (MIT)](/CODE-LICENSE). [Content is not licensed for reproduction or sharing](/CONTENT-LICENSE).
+Copyright (c) 2013-2018 Patrick Burtchaell.
+[Code licensed with the MIT License (MIT)](/CODE-LICENSE).
+[Content is not licensed](/CONTENT-LICENSE).
