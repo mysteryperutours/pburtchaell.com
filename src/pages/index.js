@@ -4,6 +4,12 @@ import Column from '../components/Column'
 import ListViewItem from '../components/ListViewItem'
 import Text, {types as textTypes} from '../components/text'
 
+const CONTACTS = [
+  {label: 'Twitter', linkTo: 'https://twitter.com/pburtchaell'},
+  {label: 'Facebook', linkTo: 'https://facebook.com/pburtchaell'},
+  {label: 'GitHub', linkTo: 'https://github.com/pburtchaell'},
+]
+
 /*
  * Function: IndexPage
  * Description:
