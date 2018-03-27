@@ -9,20 +9,20 @@ import './styles.css';
  * Function: ListViewItem
  * Description: Renders the title, tags and year of a list view item
  */
-const ListViewItemDetails = ({title, tags, date}) => (
+const ListViewItemDetails = ({title, category, date}) => (
   <div className="list-view-item">
     <div className="list-view-item-title">
       {title}
     </div>
-    <div className="list-view-item-tags">
-      <small>{date}</small>
+    <div className="list-view-item-details">
+      <small>{category} &mdash; {date}</small>
     </div>
   </div>
 )
 
 ListViewItemDetails.propTypes = {
   title: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  category: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 }
 
@@ -33,7 +33,7 @@ ListViewItemDetails.propTypes = {
 const ListViewItem = (props) => {
   const {
     title,
-    tags,
+    category,
     date,
     linkTo,
   } = props
@@ -45,7 +45,7 @@ const ListViewItem = (props) => {
     >
       <ListViewItemDetails
         title={title}
-        tags={tags}
+        category={category}
         date={date}
       />
     </Link>
@@ -54,7 +54,7 @@ const ListViewItem = (props) => {
 
 ListViewItem.propTypes = {
   title: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  category: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   linkTo: PropTypes.string.isRequired,
 }

@@ -43,7 +43,7 @@ const IndexPage = ({data}) => {
               title={project.frontmatter.title}
               date={project.frontmatter.date}
               path={project.frontmatter.path}
-              tags={project.frontmatter.keywords}
+              category={project.frontmatter.category}
               linkTo={project.fields.slug}
             />
           </Column>
@@ -85,7 +85,7 @@ export const pageQuery = graphql`
             path
             title
             date(formatString: "YYYY")
-            keywords
+            category
           }
         }
       }
