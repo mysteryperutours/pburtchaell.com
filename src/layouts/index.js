@@ -18,10 +18,6 @@ const DefaultLayout = ({children, data}) => {
       siteUrl={site.metadata.url}
       description={site.metadata.description}
       keywords={site.metadata.keywords}
-      navigationItems={[
-        {label: 'About', linkTo: '/about'},
-        {label: 'Projects', linkTo: '/projects'}
-      ]}
       footer={{
         linkTo: false,
         linkToTop: false,
