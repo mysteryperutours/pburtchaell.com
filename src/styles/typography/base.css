@@ -27,6 +27,10 @@ small,
   color: var(--light-gray);
 }
 
-.small-inline {
+small.small-inline {
   display: inline-block;
+}
+
+small.small-reset-margin {
+  margin: var(--default-margin) !important;
 }

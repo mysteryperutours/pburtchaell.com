@@ -25,6 +25,14 @@ const IndexPage = ({data}) => {
           <Text>
             {metadata.description}
           </Text>
+          <small className="small-reset-margin">
+            <span>
+              {`Hello! I'm partially available for consultancy or freelance work until June 2018. In August 2018, I'm joining Facebook in Menlo Park, California. If you would like to work together, `}
+            </span>
+            <a href="mailto:patrick@pburtchaell.com">
+              get in touch.
+            </a>
+          </small>
         </Column>
       </Row>
       <Row paddingSize="large" rowSize="large">
