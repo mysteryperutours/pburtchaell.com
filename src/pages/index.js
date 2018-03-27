@@ -14,14 +14,14 @@ const IndexPage = ({data}) => {
 
   return (
     <Fragment>
-      <Row paddingSize="large">
-        <Column largeSize={6} smallSize={12}>
+      <Row paddingSize="large" rowSize="large">
+        <Column largeSize={4} smallSize={12}>
           <Text>
             {metadata.description}
           </Text>
         </Column>
       </Row>
-      <Row paddingSize="large">
+      <Row paddingSize="large" rowSize="large">
         <Column largeSize={12} smallSize={12}>
           <Text type={textTypes.HEADER_3}>
             Selected Work
@@ -30,7 +30,7 @@ const IndexPage = ({data}) => {
         {projects.map(({ node: project }) => (
           <Column
             key={project.id}
-            largeSize={6}
+            largeSize={4}
             smallSize={12}
           >
             <ListViewItem
