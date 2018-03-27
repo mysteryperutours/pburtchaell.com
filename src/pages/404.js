@@ -1,15 +1,21 @@
 import React from 'react'
+import Link from 'gatsby-link'
 import Column from '../components/Column'
 import Row from '../components/Row'
-import Text, { types as textTypes } from '../components/text'
+import Text, {types as textTypes} from '../components/text'
 
 const NotFoundPage = () => (
-  <Row>
-    <Column largeSize="8" smallSize="12">
-      <Text type={textTypes.HEADER_2}>Patrick Burtchaell</Text>
-      <Text>Oh no! Sorry, but no page page there.</Text>
-      <hr />
-      <Text linkTo="/"><small>&#8592; Try here</small></Text>
+  <Row rowSize="large" paddingSize="large">
+    <Column largeSize="4" smallSize="12">
+      <Text>
+        Page Not Found
+      </Text>
+      <Text type={textTypes.SMALL} className="small-reset-margin">
+        {`Oh no! Sorry, but there's no page here.`}
+      </Text>
+      <Text>
+        <Link to="/">&#8592; Go Home</Link>
+      </Text>
     </Column>
   </Row>
 )
