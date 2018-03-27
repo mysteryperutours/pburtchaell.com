@@ -3,7 +3,9 @@
 .route__footer {
   position: relative;
   padding: 2rem 0;
+  margin-top: var(--large-margin);
   color: var(--light-gray);
+  border-top: 1px solid var(--lightest-gray);
   user-select: none;
 }
 

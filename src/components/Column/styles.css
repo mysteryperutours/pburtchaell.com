@@ -1,7 +1,3 @@
-/**
- * Rather than including a full 12 column grid, I only include the classes
- * that my page layouts will actually use.
- */
 .column {
   position: relative;
   padding-right: 2rem;
@@ -14,6 +10,18 @@
 }
 
 @media only screen and (min-width: 600px) {
+  .column--flex-order-0 {
+    order: 0;
+  }
+
+  .column--flex-order-1 {
+    order: 1;
+  }
+
+  .column--flex-order-2 {
+    order: 2;
+  }
+
   .column--large-4 {
     max-width: calc((4 * 100%) / 12);
     flex-basis: calc((4 * 100%) / 12);

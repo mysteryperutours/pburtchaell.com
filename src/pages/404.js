@@ -1,6 +1,6 @@
 import React from 'react'
-import Column from '../components/column'
-import Row from '../components/row'
+import Column from '../components/Column'
+import Row from '../components/Row'
 import Text, { types as textTypes } from '../components/text'
 
 const NotFoundPage = () => (

@@ -2,18 +2,17 @@
   position: relative;
   margin: 0 auto;
   width: 100%;
+}
+
+.row__container--default {
   max-width: 960px;
 }
 
-.row__container--is-default .row {
-  max-width: 580px;
+.row__container--large {
+  max-width: 1400px;
 }
 
-.row__container--medium .row {
-  max-width: 720px;
-}
-
-.row__container--large .row {
+.row__container--full-width {
   max-width: 100%;
 }
 

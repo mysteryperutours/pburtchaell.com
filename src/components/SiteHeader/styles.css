@@ -1,6 +1,6 @@
 @import '../../styles/variables.css';
 
-.route__header {
+.site__header-container {
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 0;
@@ -11,66 +11,34 @@
   height: 8rem;
   box-sizing: border-box;
   z-index: 9;
-  background: var(--transparent-white);
+  background: var(--white);
   user-select: none;
+  border-bottom: 1px solid var(--black);
 }
 
-.route__header--is-scrolled {
-  box-shadow: var(--default-box-shadow);
+.site__header {
+  display: flex;
 }
 
-.route__header--is-home {
-  position: absolute;
+.site__title,
+.site__navigation {
+  display: inline-block;
+  position: relative;
+  height: 4rem;
+  bottom: 1px;
 }
 
-.route__header__title {
-  text-align: center;
-  color: var(--light-gray);
-  animation: fade-in;
-  animation-duration: 1s;
+.site__title {
+  width: 144px;
+  color: var(--black);
 }
 
-.route__navigation {
- position: relative;
- height: 6rem;
-}
-
-.site-navigation .site-navigation-item {
- position: relative;
- margin-left: 1.5rem;
- bottom: 1px;
- width: 72px;
- display: inline-block;
-}
-
-.site-navigation .site-navigation-item:nth-of-type(1) {
- margin-left: 0;
-}
-
-.site-navigation .site-navigation-item:hover .site-navigation-item-text {
- background-image: linear-gradient( var(--black) 0%, var(--black) 100%);
- background-repeat: repeat-x;
- background-size: 1px 1px;
- background-position: 0 95%;
-}
-
-.site-navigation .site-navigation-item:active,
-.site-navigation .site-navigation-item.is-active {
- color: var(--black);
-}
-
-.site-navigation .site-navigation-item:active .site-navigation-item-text,
-.site-navigation .site-navigation-item.is-active .site-navigation-item-text {
- background-image: linear-gradient( var(--black) 0%, var(--black) 100%);
- background-repeat: repeat-x;
- background-size: 1px 1px;
- background-position: 0 95%;
+.site__navigation .site__navigation--item {
+  margin-left: 3rem;
+  width: 72px;
+  color: var(--blue);
 }
 
 @media screen and (max-width: 500px) {
- .site-header {
-   height: 9rem;
-   padding-top: 2rem;
-   padding-bottom: 2rem;
- }
+
 }

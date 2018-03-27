@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
-import Row from '../components/row'
-import Column from '../components/column'
-import ListViewItem from '../components/listViewItem'
+import Row from '../components/Row'
+import Column from '../components/Column'
+import ListViewItem from '../components/ListViewItem'
 import Text, {types as textTypes} from '../components/text'
 
 /*
@@ -14,32 +14,31 @@ const IndexPage = ({data}) => {
 
   return (
     <Fragment>
-      <Row size="large">
+      <Row paddingSize="large">
         <Column largeSize={6} smallSize={12}>
-          <Text type={textTypes.HEADER_2}>
-            {metadata.title}
-          </Text>
           <Text>
             {metadata.description}
           </Text>
         </Column>
       </Row>
-      <div className="padding padding-large" />
-      <Row size="large">
+      <Row paddingSize="large">
         <Column largeSize={12} smallSize={12}>
           <Text type={textTypes.HEADER_3}>
             Selected Work
           </Text>
         </Column>
         {projects.map(({ node: project }) => (
-          <Column largeSize={6} smallSize={12}>
+          <Column
+            key={project.id}
+            largeSize={6}
+            smallSize={12}
+          >
             <ListViewItem
-              key={project.id}
               title={project.frontmatter.title}
               date={project.frontmatter.date}
               path={project.frontmatter.path}
               tags={project.frontmatter.keywords}
-              linkTo={project.frontmatter.path}
+              linkTo={project.fields.slug}
             />
           </Column>
         ))}
@@ -62,6 +61,7 @@ export const pageQuery = graphql`
       limit: 10
       filter: {
         frontmatter: { type: { eq: "project" } }
+        frontmatter: { published: { eq: true } }
       }
       sort: {
         fields: [ frontmatter___date ],
@@ -72,6 +72,9 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             path
             title

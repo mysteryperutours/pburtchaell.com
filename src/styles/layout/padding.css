@@ -3,15 +3,15 @@
   width: 100%;
 }
 
-.padding-default {
+.padding--default {
   height: var(--default-margin);
 }
 
-.padding-small {
+.padding--small {
   height: var(--small-margin);
 }
 
-.padding-large {
+.padding--large {
   height: var(--large-margin);
 }
 

@@ -1,26 +1,36 @@
-import React from 'react';
-import * as paths from './paths';
-import * as types from './types';
-import styles from './styles.css';
+import React from 'react'
+import * as paths from './paths'
+import * as types from './types'
+import styles from './styles.css'
 
 function getPath(type) {
+  let path
+
   switch (type) {
     case types.GITHUB:
-      return paths.GITHUB;
+      path = paths.GITHUB
     case types.TWITTER:
-      return paths.TWITTER;
+      path = paths.TWITTER
     case types.FACEBOOK:
-      return paths.FACEBOOK;
+      path = paths.FACEBOOK
     case types.DRIBBBLE:
-      return paths.DRIBBBLE;
+      path = paths.DRIBBBLE
     case types.MESSENGER:
-      return paths.MESSENGER;
-    default:
-      throw new Error('Path not found');
+      path = paths.MESSENGER
   }
+
+  if (!path) {
+    throw new Error('Icon Error: SVG path not found.')
+  }
+
+  return path
 }
 
-const Icon = ({ type, ...props }) => (
+/*
+ * Function: Icon
+ * Description: Renders an SVG icon
+ */
+const Icon = ({type, ...props}) => (
   <span className={styles.icon}>
     <svg
       fill={props.fill}
@@ -37,6 +47,6 @@ const Icon = ({ type, ...props }) => (
       />
     </svg>
   </span>
-);
+)
 
-export { Icon as default, paths, types };
+export {Icon as default, paths, types}

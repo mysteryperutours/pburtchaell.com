@@ -2,7 +2,7 @@ import 'normalize.css'
 import '../styles/index.css'
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
-import RouteContainer from '../components/RouteContainer'
+import PageContainer from '../components/PageContainer'
 
 /*
  * Function: DefaultLayout
@@ -12,12 +12,23 @@ const DefaultLayout = ({children, data}) => {
   const {site} = data
 
   return (
-    <RouteContainer
-      title="Test"
-      meta={site.metadata}
+    <PageContainer
+      pageTitle="Home"
+      siteTitle={site.metadata.title}
+      siteUrl={site.metadata.url}
+      description={site.metadata.description}
+      keywords={site.metadata.keywords}
+      navigationItems={[
+        {label: 'About', linkTo: '/about'},
+        {label: 'Projects', linkTo: '/projects'}
+      ]}
+      footer={{
+        linkTo: false,
+        linkToTop: false,
+      }}
     >
       {children()}
-    </RouteContainer>
+    </PageContainer>
   )
 }
 

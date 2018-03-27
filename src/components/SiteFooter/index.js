@@ -1,73 +1,124 @@
-import React, { Element } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import Row from '../../components/row'
-import Column from '../../components/column'
+import Row from '../../components/Row'
+import Column from '../../components/Column'
 import './styles.css'
 
-// The footer for each route
+const FOOTER_MESSAGES = [
+  'Made With',
+  'Stay Safe',
+  'Have Fun Today',
+  'Have a Great Day',
+  'It\'s a Wonderful World',
+  'You\'re Awesome',
+  'Make Great Things',
+  'Be Good',
+]
+
+/*
+ * Function: SiteFooterLinkTo
+ * Description: Renders a link that brings you to a different page
+ */
+const SiteFooterLinkTo = ({hidden, linkTo, linkToLabel}) => {
+  if (hidden) {
+    return null
+  } else {
+    return (
+      <div className="route-footer-link">
+        <small>
+          <Link
+            className="route-footer-link-anchor"
+            to={linkTo}
+          >
+            Back to {linkToLabel}
+          </Link>
+        </small>
+      </div>
+    )
+  }
+}
+
+SiteFooterLinkTo.propTypes = {
+  hidden: PropTypes.bool.isRequired,
+  linkTo: PropTypes.string.isRequired,
+  linkToLabel: PropTypes.string.isRequired,
+}
+
+/*
+ * Function: SiteFooterLinkToTop
+ * Description: Renders a link that brings you to the top of the page
+ */
+const SiteFooterLinkToTop = ({hidden}) => {
+  if (hidden) {
+    return null
+  } else {
+    return (
+      <div className="route-footer-top-link">
+        <small>
+          <a
+            href="#"
+            className="route-footer-top-link-anchor"
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            Back to Top
+          </a>
+        </small>
+      </div>
+    )
+  }
+}
+
+SiteFooterLinkToTop.propTypes = {
+  hidden: PropTypes.bool.isRequired,
+}
+
+/*
+ * Function: SiteFooter
+ * Description: Renders the global footer for the website
+ */
 const SiteFooter = (props) => {
-  const messages = [
-    'Made With',
-    'Take Care',
-    'Have Fun Today',
-    'Have a Great Day',
-    'It is a Wonderful World',
-    'You are Awesome'
-  ]
+  // Get a random message to render next to the heart
+  const messageIndex = Math.floor(Math.random() * FOOTER_MESSAGES.length)
+  const message = FOOTER_MESSAGES[messageIndex]
 
-  // The message rendered next to the heart
-  const message = messages[Math.floor(Math.random() * messages.length)];
+  // Get the (c) copyright symbol and the current year
+  const copyrightSymbol = String.fromCharCode(169)
+  const copyrightDate = new Date().getFullYear()
 
-  // The copyright notice rendered under the message and heart
-  const copyrightDate = `${String.fromCharCode(169)} ${new Date().getFullYear()}`;
+  const copyrightSymbolStyle = {
+    fontSize: 12,
+    lineHeight: '16px',
+    paddingRight: '2px',
+    paddingTop: '4px',
+  }
 
-  // The column size changes depending on how many links are rendered
-  const smallColumnSize = props.linkToTop ? 6 : 12;
+  const {
+    rowSize,
+    linkTo,
+    linkToLabel,
+    linkToTop,
+  } = props
 
   return (
-    <footer
-      role="contentinfo"
-      className="route__footer"
-    >
-      <Row size="large">
-        <Column largeSize={4} smallSize={6}>
-          {props.linkTo ? (
-            <div className="route-footer-link">
-              <small>
-                <Link
-                  className="route-footer-link-anchor"
-                  to={props.linkTo.path}
-                >
-                  Back to {props.linkTo.title}
-                </Link>
-              </small>
-            </div>
-          ) : null}
+    <footer role="contentinfo" className="route__footer">
+      <Row rowSize={rowSize}>
+        <Column largeSize={4} smallSize={12}>
+          <SiteFooterLinkTo
+            hidden={typeof linkTo !== 'string'}
+            linkTo={linkTo}
+            linkToLabel={linkToLabel}
+          />
         </Column>
-        <Column largeSize={4} hideOnSmall={true}>
-          {props.linkToTop ? (
-            <div className="route-footer-top-link">
-              <small>
-                <a
-                  href="#"
-                  className="route-footer-top-link-anchor"
-                  onClick={() => {
-                    window.scrollTo(0, 0)
-                  }}
-                >
-                  Back to Top
-                </a>
-              </small>
-            </div>
-          ) : null}
+        <Column largeSize={4} smallSize={12}>
+          <SiteFooterLinkToTop
+            hidden={!linkToTop}
+          />
         </Column>
-        <Column
-          largeSize={4}
-          smallSize={smallColumnSize}
-        >
+        <Column largeSize={4} smallSize={12}>
           <div className="route__footer__text">
-            <small>
-              {message}
+            <small className="small-inline">
+              <i>{message}</i>
             </small>
             <object className="route__footer__heart">
               <svg x="0" y="0" width="10px" height="10px" viewBox="0 0 10 8">
@@ -78,8 +129,9 @@ const SiteFooter = (props) => {
             </object>
           </div>
           <div className="route__footer__text">
-            <small>
-              {copyrightDate} Patrick Burtchaell
+            <small className="small-inline">
+              <span style={copyrightSymbolStyle}>{copyrightSymbol}</span>
+              <span>{copyrightDate} Patrick Burtchaell</span>
             </small>
           </div>
         </Column>
@@ -88,9 +140,17 @@ const SiteFooter = (props) => {
   )
 }
 
+SiteFooter.propTypes = {
+  rowSize: PropTypes.string.isRequired,
+  linkTo: PropTypes.string.isRequired,
+  linkToLabel: PropTypes.string.isRequired,
+  linkToTop: PropTypes.bool.isRequired,
+}
+
 SiteFooter.defaultProps = {
   linkTo: null,
-  linkToTop: false
+  linkToTop: false,
+  rowSize: 'large',
 }
 
 export default SiteFooter

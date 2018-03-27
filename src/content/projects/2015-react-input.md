@@ -8,6 +8,8 @@ keywords:
   - open source
   - software
   - react
+category: Open Source
+client: React
 type: project
 path: react-input
 # Release date:

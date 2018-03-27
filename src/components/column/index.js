@@ -1,32 +1,71 @@
-import { createElement, Element } from 'react';
-import classNames from 'classnames';
+import React, {createElement, Element} from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
+import './styles.css'
 
 /*
- * The Column function can be used to create a column in the grid layout. This
- * element is generally a child of a Row element. There are 12 columns in the
- * grid. Using the `size` property, the width of the column can be set to any
- * value between 1 and 12. By default, the Column will render at full width.
+ * Function: Column
+ * Description: Renders a column in a 12 column grid
  */
-const Column = ({ children, elementType, ...props }) => {
+const Column = (props) => {
+  const {
+    largeSize,
+    smallSize,
+    hideOnSmall,
+    hideOnLarge,
+    className,
+    children,
+    styles,
+    flexOrder,
+    elementType,
+  } = props
+
+  // Get all of the class names on the column
+  const elementClassName = classnames('column', {
+    [`column--flex-order-${flexOrder}`]: typeof flexOrder === 'number',
+    [`column--large-${largeSize}`]: largeSize,
+    [`column--small-${smallSize}`]: smallSize,
+    'column--hide-on-small': hideOnSmall,
+    'column--hide-on-large': hideOnLarge,
+  }, className)
+
+  const elementProps = {
+    className: elementClassName,
+    styles,
+  }
+
   return createElement(
     elementType,
-    {
-      className: classNames('column', {
-        [`column--large-${props.largeSize}`]: props.largeSize,
-        [`column--small-${props.smallSize}`]: props.smallSize,
-        'column--hide-on-small': props.hideOnSmall,
-      }, props.className)
-    },
+    elementProps,
     children
-  );
-};
+  )
+}
+
+Column.propTypes = {
+  /*
+   * Rather than including a full 12 column grid, I only include the widths
+   * that my page layouts will actually use.
+   */
+  largeSize: PropTypes.oneOf([4,5,6,8,12]).isRequired,
+  smallSize: PropTypes.oneOf([4,5,6,8,12]).isRequired,
+  hideOnLarge: PropTypes.bool,
+  hideOnSmall: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  styles: PropTypes.object,
+  elementType: PropTypes.string.isRequired,
+}
 
 Column.defaultProps = {
   elementType: 'div',
-  scale: 'large',
   smallSize: 12,
   largeSize: 12,
-  style: {}
-};
+}
 
 export default Column;

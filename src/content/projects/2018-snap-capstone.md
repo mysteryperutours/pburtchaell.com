@@ -9,6 +9,8 @@ keywords:
   - SNAP
   - usability
   - accessibility
+category: Interactive Design
+client: Personal Project
 path: capstone
 date: 2018-04-05
 externalLink:

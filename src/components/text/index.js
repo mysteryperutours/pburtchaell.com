@@ -1,45 +1,50 @@
-import React, { createElement, Element } from 'react';
-import classNames from 'classnames';
-import { Link } from 'gatsby-link';
-import * as types from './types';
+import React, {createElement, Element} from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
+import Link from 'gatsby-link'
+import * as textTypes from './types'
 
 const Text = (props) => {
-  const { linkTo, type, ...newProps } = props;
+  const {
+    type,
+    style,
+    children,
+    className,
+  } = props
 
-  /**
-   * The Text component can renderer both text elements, e.g., <p> and <h1>,
-   * and links.
-   *
-   * If the `linkTo` property is included on the component, the `Link`
-   * component from React Router will be rendered.
-   */
-  let elementType: Link | string;
-
-  if (linkTo) {
-    elementType = Link;
-  } else {
-    elementType = type;
+  const elementProps = {
+    style,
+    className,
   }
 
   return createElement(
-    elementType,
-    Object.assign({
-      ...newProps,
-      style: newProps.style,
-      className: classNames(props.className, {
-        'small--block': elementType === types.SMALL
-      })
-    }, linkTo ? {
-      to: linkTo,
-      exact: linkTo === '/',
-      activeClassName: 'is-active'
-    } : {}),
-    props.children
-  );
-};
+    type,
+    elementProps,
+    children,
+  )
+}
+
+Text.propTypes = {
+  type: PropTypes.oneOf([
+    textTypes.HEADER_1,
+    textTypes.HEADER_2,
+    textTypes.HEADER_3,
+    textTypes.BODY,
+    textTypes.SMALL,
+  ]).isRequired,
+  style: PropTypes.object,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+}
 
 Text.defaultProps = {
-  type: types.BODY
-};
+  type: textTypes.BODY,
+}
 
-export { Text as default, types };
+export {Text as default, textTypes as types}

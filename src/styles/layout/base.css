@@ -17,7 +17,7 @@ body {
  font-feature-settings: 'liga' on, 'smcp' on, 'kern' on;
  line-height: var(--default-line-height);
  color: var(--black);
- background: var(--white);
+ background: var(--black);
  margin: 0;
  padding: 0;
  text-rendering: optimizeLegibility;

@@ -1,33 +1,65 @@
-import { createElement, Element } from 'react';
-import classNames from 'classnames';
-import Column from '../column';
+import React from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
+import './styles.css'
 
 /**
- * The Row function can be used to create a new row for the grid layout. By
- * default the Row will render as a `div` element, but using the `elementType`
- * property the Row can be customized to render as any HTML element.
- *
- * The Row can also have a custom className, set using the `className` property.
+ * Function: Row
+ * Description: Renders a row in a 12 column grid
  */
-const Row = ({ children, elementType, ...props }) => {
-  return createElement(elementType, {
-    ...props,
-    
-    children: createElement('div', {
-      className: 'row'
-    }, children),
+const Row = (props) => {
+  const {
+    children,
+    elementType,
+    rowSize,
+    paddingSize,
+    flexBox,
+    className,
+  } = props
 
-    className: classNames('row__container', {
-      'row__container--default': props.size === 'default',
-      'row__container--large': props.size === 'large',
-      'row__container--medium': props.size === 'medium'
-    }, props.className)
-  });
-};
+  const classNames = classnames('row__container', {
+    'row__container--flexbox': flexBox,
+    'row__container--default': rowSize === 'default',
+    'row__container--large': rowSize === 'large',
+    'row__container--full-width': rowSize === 'full-width',
+  }, className)
+
+  return (
+    <section className={classNames}>
+      {paddingSize && (
+        <div className={`padding padding--${paddingSize}`} />
+      )}
+      <div className="row">
+        {children}
+      </div>
+    </section>
+  )
+}
+
+Row.propTypes = {
+  rowSize: PropTypes.oneOf([
+    'default',
+    'large',
+    'full-width',
+  ]).isRequired,
+  paddingSize: PropTypes.oneOf([
+    'default',
+    'large',
+    'small',
+  ]).isRequired,
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+}
+
 
 Row.defaultProps = {
-  size: 'default',
-  elementType: 'div'
-};
+  rowSize: 'default',
+}
 
-export default Row;
+export default Row

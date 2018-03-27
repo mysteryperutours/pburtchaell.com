@@ -1,7 +1,7 @@
 a,
 a:active,
 a:hover {
-  color: var(--black);
+  color: var(--blue);
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -12,33 +12,7 @@ a.a--arrow-left::after {
   margin-left: .5rem;
 }
 
-p a,
-li a,
-figcaption a,
-.small--block a,
-.small--block a:active,
-.small--block a:hover {
-  color: var(--blue);
-}
-
-p a:hover,
-p a:active,
-li a:hover,
-li a:active,
-.small--block a:hover,
-.small--block a:active,
-figcaption a:hover,
-figcaption a:active {
-  color: var(--blue);
-  outline-width: 0;
-  background-image: linear-gradient(var(--blue) 0%, var(--blue) 100%);
-  background-repeat: repeat-x;
-  background-size: 1px 1px;
-  background-position: 0 95%;
-  text-shadow: 3px 0 var(--white), 2px 0 var(--white), 1px 0 var(--white), -1px 0 var(--white), -2px 0 var(--white), -3px 0 var(--white);
-}
-
-figcaption a:hover,
-figcaption a:active {
-  background-size: 1px 1px;
+a.a--arrow-upright::after {
+  content: "\2197";
+  margin-left: .5rem;
 }

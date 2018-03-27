@@ -1,32 +1,37 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import Column from '../column'
+import Column from '../Column'
 import classNames from 'classnames'
 import './styles.css';
 
-const ListViewItemDetials = ({title, tags, date}) => (
-  <div lassName="list-view-item">
+/*
+ * Function: ListViewItem
+ * Description: Renders the title, tags and year of a list view item
+ */
+const ListViewItemDetails = ({title, tags, date}) => (
+  <div className="list-view-item">
     <div className="list-view-item-title">
       {title}
     </div>
     <div className="list-view-item-tags">
-      <ul>
-        {tags && tags.map((tag) => (
-          <li key={tag}>
-            <small>{tag}</small>
-          </li>
-        ))}
-      </ul>
-      <span>
-        <small> &mdash; {date}</small>
-      </span>
+      <small>{date}</small>
     </div>
   </div>
 )
 
+ListViewItemDetails.propTypes = {
+  title: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  date: PropTypes.string.isRequired,
+}
+
+/*
+ * Function: ListViewItem
+ * Description: Renders a single linked item in a list of items
+ */
 const ListViewItem = (props) => {
   const {
-    container,
     title,
     tags,
     date,
@@ -38,7 +43,7 @@ const ListViewItem = (props) => {
       to={linkTo}
       title={title}
     >
-      <ListViewItemDetials
+      <ListViewItemDetails
         title={title}
         tags={tags}
         date={date}
@@ -48,7 +53,10 @@ const ListViewItem = (props) => {
 }
 
 ListViewItem.propTypes = {
-
+  title: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  date: PropTypes.string.isRequired,
+  linkTo: PropTypes.string.isRequired,
 }
 
 export default ListViewItem

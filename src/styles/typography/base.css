@@ -3,6 +3,10 @@ p {
   hyphens: none;
 }
 
+p:first-child {
+  margin: 0;
+}
+
 hr {
   display: block;
   width: 100%;
@@ -13,16 +17,16 @@ hr {
 }
 
 small,
-.small,
-.small--block {
+.small-block {
   margin: 0;
+  margin-bottom: -2rem;
+  display: block;
+  hyphens: none;
   font-size: var(--small-font-size);
   line-height: var(--small-line-height);
   color: var(--light-gray);
 }
 
-.small--block {
-  display: block;
-  margin: 2rem 0;
-  hyphens: none;
+.small-inline {
+  display: inline-block;
 }

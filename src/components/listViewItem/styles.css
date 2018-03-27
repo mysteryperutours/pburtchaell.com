@@ -1,49 +1,14 @@
 @import '../../styles/variables.css';
 
-.list-view.list-view-type-grid .list-view-item {
+.list-view-item {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
+/*
+ * There should be no padding on the first row of list view items.
+ */
 .list-view-item-container:nth-of-type(1) .list-view-item,
 .list-view-item-container:nth-of-type(1) .list-view-item {
   margin-top: 0;
-}
-
-.list-view-item {
-
-}
-
-.list-view-item-title {
-  transition: 100ms ease;
-  margin-top: 2rem;
-}
-
-.list-view-item-tags {
-  display: inline-block;
-}
-
-.list-view-item-tags ul {
-  display: inline-block;
-}
-
-.list-view-item-tags ul li {
-  display: inline-block;
-  color: var(--light-gray);
-  margin-left: .75rem;
-}
-
-.list-view-item-tags ul li:after {
-  content: '/';
-  margin-left: .75rem;
-  font-size: 1.75rem;
-}
-
-.list-view-item-tags ul li:first-child {
-  margin: 0;
-}
-
-.list-view-item-tags ul li:last-child:after {
-  content: '';
-  margin: 0;
 }

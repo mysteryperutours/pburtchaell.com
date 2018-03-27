@@ -1,39 +1,21 @@
 img,
-video,
-.video
-.image {
+video {
   border: none;
   outline: none;
   width: 100%;
-  margin: var(--default-margin);
-  box-shadow: var(--default-box-shadow), var(--default-box-shadow);
-  border: 1px solid var(--lightest-gray);
-}
-
-figure,
-.figure {
-  margin: 0;
-  margin: var(--default-margin);
-  margin-top: var(--small-margin);
-}
-
-figure img,
-.figure img,
-figure video,
-.figure video,
-figure .image,
-.figure .image,
-figure .video,
-.figure .video {
-  margin: 0;
-  box-shadow: var(--default-box-shadow);
-}
-
-figure figcaption,
-.figure figcaption {
+  margin-top: 2rem;
   display: block;
-  font-size: var(--small-font-size);
-  line-height: var(--small-line-height);
-  color: var(--light-gray);
-  margin: var(--default-margin);
+  border: 1px solid var(--black);
+}
+
+img:first-child,
+video:first-child,
+.gatsby-resp-image-wrapper:first-child {
+  margin-top: 0;
+}
+
+.gatsby-resp-image-wrapper {
+  padding: 0;
+  max-width: 100%;
+  margin-top: 2rem;
 }

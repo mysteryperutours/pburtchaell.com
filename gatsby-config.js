@@ -34,10 +34,10 @@ const gatsbyTransformerMarkdown = {
       {
         resolve: `gatsby-remark-images`,
         options: {
-          maxWidth: 500,
           linkImagesToOriginal: false,
         },
       },
+      `gatsby-remark-prismjs`,
       `gatsby-remark-smartypants`,
     ],
   }
@@ -57,7 +57,7 @@ const gatsbyGoogleAnalytics = {
 module.exports = {
   siteMetadata: {
     title: getValueFromEnv('SITE_TITLE', 'Patrick Burtchaell'),
-    description: getValueFromEnv('SITE_DESCRIPTION', 'Designer and web developer, working with teams to thoughtfully build impactful products.'),
+    description: getValueFromEnv('SITE_DESCRIPTION', 'Designer and software developer working with teams to thoughtfully build impactful products.'),
     keywords: getValueFromEnv('SITE_KEYWORDS'),
     url: getValueFromEnv('URL', 'http://localhost:8000'),
   },
@@ -71,6 +71,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-catch-links`,
     gatsbyGoogleAnalytics,
   ]
 }
