@@ -22,9 +22,7 @@ const IndexPage = ({data}) => {
     <Fragment>
       <Row paddingSize="large" rowSize="large">
         <Column largeSize={4} smallSize={12}>
-          <Text>
-            {metadata.description}
-          </Text>
+          <Text>{metadata.description}</Text>
           <small className="small-reset-margin">
             <span>
               {`Hello! I'm partially available for consultancy or freelance work until June 2018. In August 2018, I'm joining Facebook in Menlo Park, California. If you would like to work together, `}
