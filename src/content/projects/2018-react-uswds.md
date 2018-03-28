@@ -3,11 +3,13 @@ published: false
 templateKey: project
 title: React USWDS
 description:
-question:
 keywords:
   - open source
   - software
   - react
+  - uswds
+  - united states of america
+  - web design system
 category: Open Source
 client: React
 type: project

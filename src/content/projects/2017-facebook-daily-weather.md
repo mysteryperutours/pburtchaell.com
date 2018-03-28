@@ -3,7 +3,6 @@ published: true
 templateKey: project
 title: Daily Weather
 description: Daily Weather is a promotional unit in the News Feed that helps millions of people find their weather forecast in a fast and delightful experience that's unique to Facebook.
-question: How can we build a permanent and deterministic weather system for Facebook?
 keywords:
   - product design
   - facebook

@@ -3,7 +3,6 @@ published: true
 templateKey: project
 title: React Notification
 description:
-question:
 keywords:
   - open source
   - software

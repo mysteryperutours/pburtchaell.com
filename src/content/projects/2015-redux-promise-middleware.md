@@ -3,7 +3,6 @@ published: true
 templateKey: project
 title: Redux Promise Middleware
 description: Enables handling of Promises in apps built with Redux.
-question:
 keywords:
   - open source
   - software

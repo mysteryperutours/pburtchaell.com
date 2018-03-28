@@ -3,7 +3,6 @@ published: true
 templateKey: project
 title: React Input
 description: Enables effortless forms in React apps.
-question:
 keywords:
   - open source
   - software

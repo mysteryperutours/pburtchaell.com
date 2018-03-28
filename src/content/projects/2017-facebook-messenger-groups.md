@@ -3,7 +3,6 @@ published: false
 templateKey: project
 title: Groups
 description:
-question:
 keywords:
   - product design
   - Facebook
