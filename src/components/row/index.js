@@ -46,7 +46,7 @@ Row.propTypes = {
     'default',
     'large',
     'small',
-  ]).isRequired,
+  ]),
   className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.string,
