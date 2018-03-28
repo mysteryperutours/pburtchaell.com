@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import Row from '../components/Row'
 import Column from '../components/Column'
-import ListViewItem from '../components/ListViewItem'
+import ListViewitem from '../components/ListView'
 import Text, {types as textTypes} from '../components/text'
 
 const CONTACTS = [
