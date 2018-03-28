@@ -18,10 +18,6 @@ const DefaultLayout = ({children, data}) => {
       siteUrl={site.metadata.url}
       description={site.metadata.description}
       keywords={site.metadata.keywords}
-      footer={{
-        linkTo: false,
-        linkToTop: false,
-      }}
     >
       {children()}
     </PageContainer>

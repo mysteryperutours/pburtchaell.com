@@ -9,7 +9,6 @@ const FOOTER_MESSAGES = [
   'Made With',
   'Stay Safe',
   'Have Fun Today',
-  'Have a Great Day',
   'It\'s a Wonderful World',
   'You\'re Awesome',
   'Make Great Things',
@@ -41,8 +40,8 @@ const SiteFooterLinkTo = ({hidden, linkTo, linkToLabel}) => {
 
 SiteFooterLinkTo.propTypes = {
   hidden: PropTypes.bool.isRequired,
-  linkTo: PropTypes.string.isRequired,
-  linkToLabel: PropTypes.string.isRequired,
+  linkTo: PropTypes.string,
+  linkToLabel: PropTypes.string,
 }
 
 /*
@@ -118,7 +117,7 @@ const SiteFooter = (props) => {
         <Column largeSize={4} smallSize={12}>
           <div className="route__footer__text">
             <small className="small-inline">
-              <i>{message}</i>
+              {message}
             </small>
             <object className="route__footer__heart">
               <svg x="0" y="0" width="10px" height="10px" viewBox="0 0 10 8">
@@ -142,13 +141,12 @@ const SiteFooter = (props) => {
 
 SiteFooter.propTypes = {
   rowSize: PropTypes.string.isRequired,
-  linkTo: PropTypes.string.isRequired,
-  linkToLabel: PropTypes.string.isRequired,
+  linkTo: PropTypes.string,
+  linkToLabel: PropTypes.string,
   linkToTop: PropTypes.bool.isRequired,
 }
 
 SiteFooter.defaultProps = {
-  linkTo: null,
   linkToTop: false,
   rowSize: 'large',
 }
