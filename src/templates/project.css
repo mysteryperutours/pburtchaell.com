@@ -1,0 +1,7 @@
+@import '../styles/variables.css';
+
+@media only screen and (max-width: 600px) {
+  .project--column-0 {
+    margin-bottom: var(--small-margin);
+  }
+}

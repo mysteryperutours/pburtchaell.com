@@ -3,24 +3,48 @@ import PropTypes from 'prop-types'
 import Row from '../components/Row'
 import Column from '../components/Column'
 import Text, {types as textTypes} from '../components/text'
+import './project.css'
 
 /*
  * Class: FixedPosition
- * Description:
+ * Description: Gets the x,y position of of a child element and fixes it in
+ * position on the screen.
  */
 class FixedPosition extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
+    this.INITIAL_STATE = {
       fixed: false,
       top: 0,
       left: 0,
       width: 0,
     }
+
+    this.state = this.INITIAL_STATE
+
+    this.setFixedPosition = this.setFixedPosition.bind(this)
+    this.handleViewportChange = this.handleViewportChange.bind(this)
   }
 
   componentDidMount() {
+    this.setFixedPosition()
+
+    window.addEventListener('resize', this.handleViewportChange)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleViewportChange)
+  }
+
+  setFixedPosition() {
+    const {disableOnSmall} = this.props
+
+    // If we are on a small screen, don't fix the position
+    if (disableOnSmall && screen.width <= 600) {
+      return this.setState(this.INITIAL_STATE)
+    }
+
     const position = this.element.getBoundingClientRect()
     const width = this.element.offsetWidth
 
@@ -30,6 +54,10 @@ class FixedPosition extends Component {
       left: position.left,
       width,
     })
+  }
+
+  handleViewportChange() {
+    this.setFixedPosition()
   }
 
   render() {
@@ -61,6 +89,20 @@ class FixedPosition extends Component {
   }
 }
 
+FixedPosition.propTypes = {
+  disableOnSmall: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.arrayOf(PropTypes.node),
+  ]).isRequired,
+}
+
+FixedPosition.defaultProps = {
+  disableOnSmall: false,
+}
+
 function ProjectDetail({label, value}) {
   if (value) {
     return (
@@ -74,6 +116,33 @@ function ProjectDetail({label, value}) {
   return null
 }
 
+ProjectDetail.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+}
+
+/*
+ * Function: ProjectExternalLink
+ * Description: Renders the external link for a project if it exists
+ */
+const ProjectExternalLink = ({linkTo, description}) => linkTo && (
+  <a
+    className="a--arrow-upright"
+    target="_blank"
+    href={linkTo}
+  >
+    {description}
+  </a>
+)
+
+ProjectExternalLink.propTypes = {
+  linkTo: PropTypes.string,
+  description: PropTypes.string,
+}
+
 /*
  * Function: ProjectLayout
  * Description:
@@ -85,30 +154,27 @@ function ProjectLayout({data}) {
     <Fragment>
       <Row paddingSize="large" rowSize="large" flexBox={true}>
         <Column largeSize={3} smallSize={12} flexOrder={0}>
-          <FixedPosition className="project--left-column">
+          <FixedPosition className="project--column-0" disableOnSmall>
             <Text type={textTypes.HEADER_1}>
               {project.frontmatter.title}
             </Text>
             <Text>
               {project.frontmatter.description}
             </Text>
-            <a
-              className="a--arrow-upright"
-              target="_blank"
-              href={project.frontmatter.externalLink}
-            >
-              {project.frontmatter.externalLinkDescription}
-            </a>
+            <ProjectExternalLink
+              linkTo={project.frontmatter.externalLink}
+              description={project.frontmatter.externalLinkDescription}
+            />
           </FixedPosition>
         </Column>
         <Column largeSize={6} smallSize={12} flexOrder={1}>
           <div
-            className="project--main-column"
+            className="project--column-1"
             dangerouslySetInnerHTML={{__html: project.html}}
           />
         </Column>
-        <Column largeSize={3} smallSize={12} flexOrder={2}>
-          <FixedPosition className="project--right-column">
+        <Column largeSize={3} smallSize={12} flexOrder={2} hideOnSmall>
+          <FixedPosition className="project--column-2" disableOnSmall>
             <ProjectDetail
               label="Made For"
               value={project.frontmatter.client}
@@ -144,6 +210,11 @@ ProjectLayout.propTypes = {
       frontmatter: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
+        client: PropTypes.string.isRequired,
+        externalLink: PropTypes.string,
+        externalLinkDescription: PropTypes.string,
+        date: PropTypes.string.isRequired,
       }),
     }),
   }),
@@ -152,7 +223,7 @@ ProjectLayout.propTypes = {
 export default ProjectLayout
 
 export const projectQuery = graphql`
-  query ProjectById($id: String!) {
+  query ProjectTemplate($id: String!) {
     site {
       metadata: siteMetadata {
         url
