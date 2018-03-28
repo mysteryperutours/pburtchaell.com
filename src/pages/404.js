@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Column from '../components/Column'
 import Row from '../components/Row'
-import Text, {types as textTypes} from '../components/text'
+import Text, {types as textTypes} from '../components/Text'
 
 const NotFoundPage = () => (
   <Row rowSize="large" paddingSize="large">
