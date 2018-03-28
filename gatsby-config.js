@@ -71,7 +71,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-catch-links`,
     gatsbyGoogleAnalytics,
   ]
 }
