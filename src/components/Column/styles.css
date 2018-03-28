@@ -22,6 +22,11 @@
     order: 2;
   }
 
+  .column--large-3 {
+    max-width: calc((3 * 100%) / 12);
+    flex-basis: calc((3 * 100%) / 12);
+  }
+
   .column--large-4 {
     max-width: calc((4 * 100%) / 12);
     flex-basis: calc((4 * 100%) / 12);

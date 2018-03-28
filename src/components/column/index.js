@@ -46,7 +46,7 @@ Column.propTypes = {
    * Rather than including a full 12 column grid, I only include the widths
    * that my page layouts will actually use.
    */
-  largeSize: PropTypes.oneOf([4,5,6,8,12]).isRequired,
+  largeSize: PropTypes.oneOf([3,4,5,6,8,12]).isRequired,
   smallSize: PropTypes.oneOf([4,5,6,8,12]).isRequired,
   hideOnLarge: PropTypes.bool,
   hideOnSmall: PropTypes.bool,
