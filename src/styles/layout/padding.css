@@ -16,11 +16,11 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .padding-small {
+  .padding--small {
     height: var(--small-screen-small-margin);
   }
 
-  .padding-large {
+  .padding--large {
     height: var(--small-screen-large-margin);
   }
 }
