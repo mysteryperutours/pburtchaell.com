@@ -28,7 +28,9 @@
   bottom: 1px;
 }
 
-.site__title {
+a.site__title,
+a.site__title:hover,
+a.site__title:active {
   width: 144px;
   color: var(--black);
 }
