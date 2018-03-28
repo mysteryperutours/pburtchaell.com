@@ -11,9 +11,9 @@ import './styles.css'
  * Description: renders a page on the website
  */
 const PageContainer = (props) => {
-  let linkTo
-  let linkToLabel
-  let linkToTop
+  const publicImages = '/images'
+  const publicCards = `${publicImages}/cards`
+  const publicFavicons = `${publicImages}/favicons`
 
   const {
     pageTitle,
@@ -27,13 +27,10 @@ const PageContainer = (props) => {
     rowSize,
     navigationItems,
     children,
+    linkTo,
+    linkToLabel,
+    linkToTop,
   } = props
-
-  if (footer) {
-    linkTo = footer.linkTo
-    linkToLabel = footer.linkToLabel
-    linkToTop = footer.linkToTop
-  }
 
   return (
     <Fragment>
@@ -49,10 +46,10 @@ const PageContainer = (props) => {
             {name: 'og:site_name', content: siteTitle},
             {name: 'og:url', content: siteUrl},
             {name: 'og:title', content: pageTitle ? pageTitle : siteTitle},
-            {name: 'og:description', content: ''},
-            {name: 'og:image', content: '/images/cards/facebook.png'},
+            {name: 'og:description', content: description},
+            {name: 'og:image', content: `${publicCards}/facebook.png`},
             {name: 'twitter:card', content: 'summary_large_image'},
-            {name: 'twitter:image', content: '/images/cards/twitter.png'},
+            {name: 'twitter:image', content: `${publicCards}/twitter.png`},
             {name: 'twitter:site', content: '@pburtchaell'},
             {name: 'twitter:domain', content: siteUrl},
             {name: 'twitter:title', content: pageTitle ? pageTitle : siteTitle},
@@ -61,9 +58,24 @@ const PageContainer = (props) => {
           ]}
         >
           <link rel="canonical" href={siteUrl} />
-          <link rel="icon" type="image/png" href="/public/" sizes="16x16" />
-          <link rel="icon" type="image/png" href="/public/" sizes="32x32" />
-          <link rel="icon" type="image/png" href="/public/" sizes="96x96" />
+          <link
+            rel="icon"
+            type="image/png"
+            href={`${publicFavicons}/16x16.png`}
+            sizes="16x16"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            href={`${publicFavicons}/32x32.png`}
+            sizes="32x32"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            href={`${publicFavicons}/96x96.png`}
+            sizes="96x96"
+          />
         </Helmet>
       )}
       <div className="main__container">
@@ -96,14 +108,7 @@ PageContainer.propTypes = {
   // Property to hide/show header
   header: PropTypes.bool.isRequired,
   // Property to hide/show footer
-  footer: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.shape({
-      linkTo: PropTypes.string,
-      linkToLabel: PropTypes.string,
-      linkToTop: PropTypes.bool,
-    }),
-  ]),
+  footer: PropTypes.bool.isRequired,
   // Property to render a custom head
   head: PropTypes.element,
   children: PropTypes.element.isRequired,
@@ -116,6 +121,9 @@ PageContainer.propTypes = {
     label: PropTypes.string.isRequired,
     linkTo: PropTypes.string.isRequired,
   })),
+  linkTo: PropTypes.string,
+  linkToLabel: PropTypes.string,
+  linkToTop: PropTypes.bool,
 }
 
 PageContainer.defaultProps = {
