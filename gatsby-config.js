@@ -58,7 +58,7 @@ module.exports = {
   siteMetadata: {
     title: getValueFromEnv('SITE_TITLE', 'Patrick Burtchaell'),
     description: getValueFromEnv('SITE_DESCRIPTION', 'Designer and software developer working with teams to thoughtfully build impactful products.'),
-    keywords: getValueFromEnv('SITE_KEYWORDS'),
+    keywords: getValueFromEnv('SITE_KEYWORDS', `patrick, burtchaell, designer, developer, software, product, new orleans, san francisco, menlo park, bay area, web design, product design, react, redux, nodejs, gatsby, netlify`),
     url: getValueFromEnv('URL', 'http://localhost:8000'),
   },
   plugins: [
