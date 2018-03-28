@@ -6,7 +6,7 @@
 [netlify-cms]: https://www.netlifycms.org/
 [npm]: http://npmjs.org/
 [yarn]: https://yarnpkg.com/en/
-[din]: https://
+[din]: https://typekit.com/fonts/din-2014
 
 # pburtchaell.com
 
@@ -22,9 +22,9 @@
 
 ### Typography
 
-- [DIN][din]
+- [DIN 2014 from Adobe Typekit][din]
 
-### Tools & Libraries Used
+### Tools & Libraries
 
 - [React][react]: JavaScript library for building user interfaces
 - [Gatsby][gatsby]: static site generator for React
