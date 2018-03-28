@@ -2,7 +2,7 @@ import React, {Fragment, Component} from 'react'
 import PropTypes from 'prop-types'
 import Row from '../components/Row'
 import Column from '../components/Column'
-import Text, {types as textTypes} from '../components/text'
+import Text, {types as textTypes} from '../components/Text'
 import './project.css'
 
 /*

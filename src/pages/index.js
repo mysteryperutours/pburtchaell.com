@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react'
 import Row from '../components/Row'
 import Column from '../components/Column'
-import ListViewItem from '../components/ListViewItem'
-import Text, {types as textTypes} from '../components/text'
+import ListViewItem from '../components/ListView'
+import Text, {types as textTypes} from '../components/Text'
 
 const CONTACTS = [
   {label: 'Twitter', linkTo: 'https://twitter.com/pburtchaell'},

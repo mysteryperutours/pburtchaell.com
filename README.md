@@ -52,8 +52,7 @@
 - [gatsby-source-filesystem][9]: enables Gatsby to load files off the disk
 - [gatsby-transformer-remark][10]: transforms Markdown files to HTML
 - [gatsby-transformer-sharp][11]: processes images with Sharp
-- [gatsby-plugin-catch-links][12]: uses `pushState` API to prevent pages from reloading
-- [gatsby-remark-prismjs][13]: enables Markdown code highlighting
+- [gatsby-remark-prismjs][12]: enables Markdown code highlighting
 
 [1]: https://www.npmjs.com/package/gatsby-link
 [2]: https://www.npmjs.com/package/gatsby-plugin-netlify
@@ -66,8 +65,7 @@
 [9]: https://www.npmjs.com/package/gatsby-source-filesystem
 [10]: https://www.npmjs.com/package/gatsby-transformer-remark
 [11]: https://www.npmjs.com/package/gatsby-transformer-sharp
-[12]: https://www.npmjs.com/package/gatsby-plugin-catch-links
-[13]: https://www.npmjs.com/package/gatsby-remark-prismjs
+[12]: https://www.npmjs.com/package/gatsby-remark-prismjs
 
 ### Reference
 
