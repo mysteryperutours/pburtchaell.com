@@ -15,6 +15,7 @@ collections:
     # Folder collections represent one or more files with the same format,
     # fields, and configuration options
     folder: src/content/projects
+    slug: "{{year}}-{{slug}}"
     create: true
 
     # Fields to include for a project
