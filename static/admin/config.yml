@@ -29,12 +29,15 @@ collections:
       - { name: title, label: Title, widget: string, required: true }
       - { name: description, label: Description, widget: string, required: true }
       - { name: client, label: Client, widget: string, required: true }
+      - { name: path, label: Path, widget: string, required: true }
 
       # Category field (required multi-select)
       - name: category
         label: Category
         widget: select
         required: true
+        default:
+          - ""
         options:
           - Product Design
           - Web Design
@@ -53,5 +56,5 @@ collections:
       - { name: body, label: Body, widget: markdown, required: true }
 
       # External link fields (optional)
-      - { name: externalLink, label: External Link, widget: string }
-      - { name: externalLinkDescription, label: External Link Description, widget: string }
+      - { name: externalLink, label: External Link, widget: string, default: "", required: false }
+      - { name: externalLinkDescription, label: External Link Description, widget: string, default: "", required: false }

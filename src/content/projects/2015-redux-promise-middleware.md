@@ -1,19 +1,18 @@
 ---
 published: true
 templateKey: project
+# Release Date:
+# https://github.com/pburtchaell/redux-promise-middleware/releases/tag/0.0.0
+date: '2015-06-12'
 title: Redux Promise Middleware
 description: Enables handling of Promises in apps built with Redux.
+client: Redux
+category: Open Source
 keywords:
   - open source
   - software
   - redux
-category: Open Source
-client: Redux
-type: project
 path: redux-promise-middleware
-# Release Date:
-# https://github.com/pburtchaell/redux-promise-middleware/releases/tag/0.0.0
-date: 2015-06-12
 externalLink: https://github.com/pburtchaell/redux-promise-middleware
 externalLinkDescription: See the project on GitHub
 ---

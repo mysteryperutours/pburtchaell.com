@@ -1,6 +1,7 @@
 ---
 published: true
 templateKey: project
+date: '2017-02-01'
 title: Daily Weather
 description: Daily Weather is a promotional unit in the News Feed that helps millions of people find their weather forecast in a fast and delightful experience that's unique to Facebook.
 keywords:
@@ -10,7 +11,6 @@ keywords:
 category: Product Design
 client: Facebook, Inc.
 path: daily-weather
-date: 2017-02-01
 externalLink: https://techcrunch.com/2017/02/08/facebook-can-now-replace-your-weather-app/
 externalLinkDescription: Read more on TechCrunch
 ---
