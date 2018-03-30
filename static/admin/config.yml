@@ -4,7 +4,7 @@ backend:
   name: github
   repo: pburtchaell/pburtchaell.com
 
-media_folder: src/content/assets
+media_folder: src/assets
 public_folder: static
 
 # Content Types
@@ -14,12 +14,43 @@ collections:
     label_singular: Project
     folder: src/content/projects
     create: true
-    meta:
-      - { name: published, label: Published, widget: boolean, default: false }
-      - { name: description, label: Description, widget: string, required: true }
-      - { name: date, label: Date, widget: date, required: true }
     fields:
+      # Admin fields (default to unpublished project)
+      - { name: published, label: Published, widget: boolean, default: false }
+      - { name: templateKey, label: Template Key, widget: hidden, default: project }
+
+      # Meta fields (all required)
+      - { name: date, label: Date, widget: date, required: true }
       - { name: title, label: Title, widget: string, required: true }
+      - { name: description, label: Description, widget: string, required: true }
+      - { name: client, label: Client, widget: string, required: true }
+
+      # Category field (required multi-select)
+      - name: category
+        label: Category
+        widget: select
+        required: true
+        options:
+          - Product Design
+          - Web Design
+          - Interactive Design
+          - Open Source
+          - Web Development
+          - Mobile Development
+
+      # Keywords field for SEO (optional)
+      - name: keywords
+        label: Keywords
+        widget: list
+        required: false
+        fields:
+          - label: Name
+            name: name
+            widget: string
+
+      # Markdown body field (required)
+      - { name: body, label: Body, widget: markdown, required: true }
+
+      # External link fields (optional)
       - { name: externalLink, label: External Link, widget: string }
       - { name: externalLinkDescription, label: External Link Description, widget: string }
-      - { name: body, label: Body, widget: markdown, required: true }
