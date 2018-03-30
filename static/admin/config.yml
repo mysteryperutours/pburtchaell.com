@@ -12,8 +12,13 @@ collections:
   - name: projects
     label: Projects
     label_singular: Project
+    # Folder collections represent one or more files with the same format,
+    # fields, and configuration options
     folder: src/content/projects
     create: true
+
+    # Fields to include for a project
+    # See more: https://www.netlifycms.org/docs/widgets/
     fields:
       # Admin fields (default to unpublished project)
       - { name: published, label: Published, widget: boolean, default: false }
@@ -43,10 +48,6 @@ collections:
         label: Keywords
         widget: list
         required: false
-        fields:
-          - label: Name
-            name: name
-            widget: string
 
       # Markdown body field (required)
       - { name: body, label: Body, widget: markdown, required: true }
