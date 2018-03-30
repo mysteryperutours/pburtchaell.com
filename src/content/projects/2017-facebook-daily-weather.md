@@ -14,7 +14,7 @@ date: 2017-02-01
 externalLink: https://techcrunch.com/2017/02/08/facebook-can-now-replace-your-weather-app/
 externalLinkDescription: Read more on TechCrunch
 ---
-![image 1](../../assets/facebook-daily-weather/image-1.png)
-![image 2](../../assets/facebook-daily-weather/image-2.png)
-![image 3](../../assets/facebook-daily-weather/image-3.png)
-![image 4](../../assets/facebook-daily-weather/image-4.png)
+![image 1](../../assets/facebook-daily-weather-image-1.png)
+![image 2](../../assets/facebook-daily-weather-image-2.png)
+![image 3](../../assets/facebook-daily-weather-image-3.png)
+![image 4](../../assets/facebook-daily-weather-image-4.png)
