@@ -86,10 +86,12 @@ const SiteFooter = (props) => {
   const copyrightDate = new Date().getFullYear()
 
   const copyrightSymbolStyle = {
-    fontSize: 12,
-    lineHeight: '16px',
+    fontSize: 10,
+    lineHeight: '18px',
     paddingRight: '2px',
-    paddingTop: '4px',
+    display: 'inline-block',
+    position: 'relative',
+    top: -2,
   }
 
   const {
@@ -129,8 +131,10 @@ const SiteFooter = (props) => {
           </div>
           <div className="route__footer__text">
             <small className="small-inline">
-              <span style={copyrightSymbolStyle}>{copyrightSymbol}</span>
-              <span>{copyrightDate} Patrick Burtchaell</span>
+              <span>
+                <span style={copyrightSymbolStyle}>{copyrightSymbol}</span>
+                {copyrightDate} Patrick Burtchaell
+              </span>
             </small>
           </div>
         </Column>

@@ -12,8 +12,8 @@ pre[class*="language-"] {
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-  font-size: 2rem;
-	line-height: 1.5;
+  font-size: var(--default-font-size);
+	line-height: var(--default-line-height);
 	tab-size: 4;
 	hyphens: none;
 }
@@ -22,10 +22,11 @@ pre[class*="language-"] {
  * Code blocks
  */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: 0.5em 0;
+	padding: 2rem;
+	padding-bottom: 19px;
+	margin: 3rem 0;
 	overflow: auto;
-	border-radius: 0.3em;
+	border-radius: var(--default-border-radius);
 }
 
 :not(pre) > code[class*="language-"],

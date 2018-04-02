@@ -24,7 +24,7 @@
  * These styles apply to the link in the left column of the footer.
  */
 .route__footer__link--left::before {
-  content: "\2190";
+  content: '\2190';
   margin-right: .5rem;
 }
 
@@ -36,8 +36,8 @@
 }
 
 .route__footer__link--center::before {
-  content: "\2191";
-  margin-right: .5rem;
+  content: '\2191';
+  margin-right: var(--default-vertical-margin);
 }
 
 /**

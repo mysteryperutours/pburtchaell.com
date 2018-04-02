@@ -4,6 +4,8 @@
  * CSS Variables for color and layout
  */
 :root {
+  --base: 9px;
+
   --white: #FFFFFF;
   --transparent-white: rgba(255, 255, 255, 0.95);
   --black: #241F20;
@@ -13,24 +15,24 @@
   --dark-gray: #4A4A4A;
   --lightest-gray: #F7F7F7;
 
-  --default-font-size: 2.35rem;
+  --default-font-size: 2rem;
   --default-font-family-name: 'din-2014';
   --default-font-family: 'din-2014', sans-serif;
-  --default-line-height: 4rem;
+  --default-line-height: 3rem;
 
   --default-border-width: 1px;
-  --default-border-radius: 3px;
-  --large-border-radius: 4px;
+  --default-border-radius: 0.3rem;
 
   --default-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.025);
 
-  --small-font-size: 2rem;
+  --small-font-size: 1.5rem;
   --small-line-height: 3rem;
 
-  --default-margin: 2rem 0;
+  --default-margin: -1px 0 18px 0;
   --smallest-margin: 3rem;
   --small-margin: 7rem;
   --large-margin: 12rem;
+  --default-vertical-margin: 0.5rem;
 
   --small-screen-small-margin: 5rem;
   --small-screen-large-margin: 7rem;
@@ -47,9 +49,13 @@
   --h2-margin: var(--default-margin);
   --h2-color: var(--light-gray);
 
-  --h3-font-size: 1.7rem;
+  --h3-font-size: 1.5rem;
   --h3-font-weight: 400;
-  --h3-line-height: 2rem;
-  --h3-margin: var(--default-margin);
+  --h3-line-height: 3rem;
+  --h3-margin: -1px 0 1rem 0;
   --h3-color: var(--light-gray);
+
+  --z-index-0: 0;
+  --z-index-1: 1;
+  --z-index-2: 2;
 }

@@ -1,24 +1,14 @@
 p {
-  margin: 2rem 0;
+  font-size: var(--default-font-size);
+  line-height: var(--default-line-height);
+  margin: var(--default-margin);
   hyphens: none;
-}
-
-p:first-child {
-  margin: 0;
-}
-
-hr {
-  display: block;
-  width: 100%;
-  margin: 0 0 1rem 0;
-  border: none;
-  border-bottom: 1px solid var(--lightest-gray);
-  background: none;
 }
 
 small,
 .small-block {
   margin: 0;
+  margin-top: 1px;
   margin-bottom: -2rem;
   display: block;
   hyphens: none;
@@ -29,8 +19,4 @@ small,
 
 small.small-inline {
   display: inline-block;
-}
-
-small.small-reset-margin {
-  margin: var(--default-margin) !important;
 }
