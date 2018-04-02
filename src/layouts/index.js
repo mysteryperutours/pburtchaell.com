@@ -3,24 +3,20 @@ import '../styles/index.css'
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import PageContainer from '../components/PageContainer'
+import Baseline from '../components/Baseline'
 
 /*
  * Function: DefaultLayout
  * Description: Render the default layout used for all pages
  */
-const DefaultLayout = ({children, data}) => {
-  const {site} = data
-
+const DefaultLayout = ({children}) => {
   return (
-    <PageContainer
-      pageTitle="Home"
-      siteTitle={site.metadata.title}
-      siteUrl={site.metadata.url}
-      description={site.metadata.description}
-      keywords={site.metadata.keywords}
+    <Baseline
+      lineHeight={9}
+      disabled={process.env.NODE_ENV !== 'development'}
     >
       {children()}
-    </PageContainer>
+    </Baseline>
   )
 }
 
@@ -32,7 +28,7 @@ DefaultLayout.propTypes = {
         url: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        keywords: PropTypes.string.isRequired,
+        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
       }),
     }),
   }),

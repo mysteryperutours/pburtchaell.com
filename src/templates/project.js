@@ -1,5 +1,6 @@
 import React, {Fragment, Component} from 'react'
 import PropTypes from 'prop-types'
+import PageContainer from '../components/PageContainer'
 import Row from '../components/Row'
 import Column from '../components/Column'
 import Text, {types as textTypes} from '../components/Text'
@@ -16,6 +17,7 @@ class FixedPosition extends Component {
 
     this.INITIAL_STATE = {
       fixed: false,
+      set: false,
       top: 0,
       left: 0,
       width: 0,
@@ -28,7 +30,11 @@ class FixedPosition extends Component {
   }
 
   componentDidMount() {
-    this.setFixedPosition()
+    try {
+      this.setFixedPosition()
+    } catch (error) {
+      console.warn(error)
+    }
 
     window.addEventListener('resize', this.handleViewportChange)
   }
@@ -38,18 +44,27 @@ class FixedPosition extends Component {
   }
 
   setFixedPosition() {
+    const {set} = this.state
     const {disableOnSmall} = this.props
+
+    if (set) {
+      throw new Error('FixedPositionError: element position has already been set.')
+    }
 
     // If we are on a small screen, don't fix the position
     if (disableOnSmall && screen.width <= 600) {
-      return this.setState(this.INITIAL_STATE)
+      return this.setState({
+        ...this.INITIAL_STATE,
+        set: true,
+      })
     }
 
     const position = this.element.getBoundingClientRect()
     const width = this.element.offsetWidth
 
-    this.setState({
+    return this.setState({
       fixed: true,
+      set: true,
       top: position.top,
       left: position.left,
       width,
@@ -107,7 +122,9 @@ function ProjectDetail({label, value}) {
   if (value) {
     return (
       <Fragment>
-        <Text type={textTypes.SMALL}>{label}</Text>
+        <Text>
+          <Text type={textTypes.SMALL}>{label}</Text>
+        </Text>
         <Text>{value}</Text>
       </Fragment>
     )
@@ -151,7 +168,14 @@ function ProjectLayout({data}) {
   const {project, site} = data
 
   return (
-    <Fragment>
+    <PageContainer
+      pageTitle={project.frontmatter.title}
+      siteTitle={site.metadata.title}
+      siteUrl={site.metadata.url}
+      pageUrl={project.fields.slug}
+      description={project.frontmatter.description}
+      keywords={project.frontmatter.keywords}
+    >
       <Row paddingSize="large" rowSize="large" flexBox={true}>
         <Column largeSize={3} smallSize={12} flexOrder={0}>
           <FixedPosition className="project--column-0" disableOnSmall>
@@ -190,7 +214,7 @@ function ProjectLayout({data}) {
           </FixedPosition>
         </Column>
       </Row>
-    </Fragment>
+    </PageContainer>
   )
 }
 
@@ -212,6 +236,7 @@ ProjectLayout.propTypes = {
         description: PropTypes.string.isRequired,
         category: PropTypes.string.isRequired,
         client: PropTypes.string.isRequired,
+        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
         externalLink: PropTypes.string,
         externalLinkDescription: PropTypes.string,
         date: PropTypes.string.isRequired,
@@ -235,10 +260,14 @@ export const projectQuery = graphql`
     project: markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         description
         category
+        keywords
         client
         externalLink
         externalLinkDescription

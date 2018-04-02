@@ -1,10 +1,11 @@
 import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Typekit from 'react-typekit'
 import SiteFooter from '../SiteFooter'
 import SiteHeader from '../SiteHeader'
 import './styles.css'
+
+const getValue = (site, page) => page ? page : site
 
 /*
  * Function: PageContainer
@@ -19,6 +20,7 @@ const PageContainer = (props) => {
     pageTitle,
     siteTitle,
     siteUrl,
+    pageUrl,
     description,
     keywords,
     head,
@@ -32,32 +34,37 @@ const PageContainer = (props) => {
     linkToTop,
   } = props
 
+  // Declare a permanent canonical URl for the page for SEO and Open Graph
+  const canonicalUrl = pageUrl ? `${siteUrl}/${pageUrl}/` : siteUrl
+
   return (
     <Fragment>
-      <Typekit kitId="utb8ujs" />
       {head ? head : (
         <Helmet
           defaultTitle={siteTitle}
           title={`${pageTitle} - ${siteTitle}`}
           meta={[
+            {name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no'},
             {name: 'description', content: description},
             {name: 'keywords', content: keywords},
             {name: 'og:type', content: 'website'},
             {name: 'og:site_name', content: siteTitle},
-            {name: 'og:url', content: siteUrl},
-            {name: 'og:title', content: pageTitle ? pageTitle : siteTitle},
+            {name: 'og:url', content: canonicalUrl},
+            {name: 'og:title', content: pageTitle},
             {name: 'og:description', content: description},
             {name: 'og:image', content: `${publicCards}/facebook.png`},
-            {name: 'twitter:card', content: 'summary_large_image'},
+            {name: 'twitter:card', content: 'summary'},
             {name: 'twitter:image', content: `${publicCards}/twitter.png`},
             {name: 'twitter:site', content: '@pburtchaell'},
             {name: 'twitter:domain', content: siteUrl},
-            {name: 'twitter:title', content: pageTitle ? pageTitle : siteTitle},
+            {name: 'twitter:title', content: pageTitle},
             {name: 'twitter:description', content: description},
             {name: 'theme-color', content: '#FFFFFF'}
           ]}
         >
-          <link rel="canonical" href={siteUrl} />
+          <meta charSet="utf-8" />
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <link rel="canonical" href={canonicalUrl} />
           <link
             rel="icon"
             type="image/png"
@@ -112,11 +119,14 @@ PageContainer.propTypes = {
   // Property to render a custom head
   head: PropTypes.element,
   children: PropTypes.element.isRequired,
-  pageTitle: PropTypes.string,
+  // Property to set the page title, .e.g., "About"
+  pageTitle: PropTypes.string.isRequired,
+  // Property to set the site title, e.g., "Patrick Burtchaell"
   siteTitle: PropTypes.string.isRequired,
   siteUrl: PropTypes.string.isRequired,
+  pageUrl: PropTypes.string,
   description: PropTypes.string.isRequired,
-  keywords: PropTypes.string.isRequired,
+  keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
   navigationItems: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     linkTo: PropTypes.string.isRequired,
