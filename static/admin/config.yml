@@ -9,6 +9,34 @@ public_folder: static
 
 # Content Types
 collections:
+  - name: settings
+    label: Settings
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: metadata
+        label: Site Metadata
+        file: src/content/metadata.json
+        description: General Site Metadata
+        fields:
+          - label: Site Title
+            name: siteTitle
+            widget: string
+            required: true
+          - label: Site URL
+            name: siteUrl
+            widget: string
+            required: true
+          - label: Site Description
+            name: siteDescription
+            widget: string
+            required: true
+          - label: Site Keywords
+            name: siteKeywords
+            widget: list
+            required: true
+
   - name: projects
     label: Projects
     label_singular: Project
