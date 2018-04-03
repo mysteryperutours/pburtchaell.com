@@ -10,7 +10,7 @@ const NotFoundPage = ({data}) => {
 
   return (
     <PageContainer
-      pageTitle="Home"
+      pageTitle="Not Found"
       siteTitle={site.metadata.title}
       siteUrl={site.metadata.url}
       description={site.metadata.description}
