@@ -1,34 +1,19 @@
 ---
-published: true
+published: false
 templateKey: project
-# Release date:
-# https://github.com/pburtchaell/react-input/releases/tag/2.0.2
 date: '2015-06-09'
 title: React Input
-description: Enables effortless forms in React apps.
+description: Simple forms in React.
 client: React
+path: react-input
 category: Open Source
 keywords:
   - open source
   - software
   - react
-path: react-input
-externalLink: https://github.com/pburtchaell/react-input
+externalLink: 'https://github.com/pburtchaell/react-input'
 externalLinkDescription: See the project on GitHub
 ---
-
----
-published: false
-templateKey: project
-date: '2018-03-30'
-title: Test
-description: Test Description
-client: Test Client
-category: Web Design
-externalLink: Test
-externalLinkDescription: Test
----
-
 ```js
 <Form
   fields={[
