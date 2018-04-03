@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import PageContainer from '../components/PageContainer'
 import Column from '../components/Column'
 import Row from '../components/Row'
 import Text, {types as textTypes} from '../components/Text'
