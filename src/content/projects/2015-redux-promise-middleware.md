@@ -1,22 +1,22 @@
 ---
 published: true
 templateKey: project
-# Release Date:
-# https://github.com/pburtchaell/redux-promise-middleware/releases/tag/0.0.0
 date: '2015-06-12'
 title: Redux Promise Middleware
-description: Enables handling of Promises in apps built with Redux.
+description: >-
+  Redux middleware for promises, async functions and conditional optimistic
+  updates.
 client: Redux
+path: redux-promise-middleware
 category: Open Source
 keywords:
   - open source
   - software
   - redux
-path: redux-promise-middleware
-externalLink: https://github.com/pburtchaell/redux-promise-middleware
+externalLink: 'https://github.com/pburtchaell/redux-promise-middleware'
 externalLinkDescription: See the project on GitHub
 ---
-This project was developed in 2015 to solve a common problem with applications built with Redux. When the app makes a network request or some other async action, it's necessary to update the state when the request starts and when the request settles.
+This library was developed in 2015 to solve a common problem with applications built with Redux. When the app makes a network request or some other async action, it's necessary to update the state when the request starts and when the request settles.
 
 To do this, developers use Promises. Promises are a special object type in JavaScript that have a pending state and a settled state.
 
