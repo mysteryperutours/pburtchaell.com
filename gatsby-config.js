@@ -1,19 +1,20 @@
-const DEFAULT_URL = 'http://localhost:8000'
-const DEFAULT_TITLE = 'Patrick Burtchaell'
-const DEFAULT_DESCRIPTION = `Designer and software developer working \
-with teams to thoughtfully build impactful products.`
-const DEFAULT_KEYWORDS = [
-  'patrick', 'burtchaell', 'designer', 'developer', 'software', 'product',
-  'new orleans', 'san francisco', 'menlo park', 'bay area', 'web design',
-  'product design', 'react', 'redux', 'nodejs', 'gatsby', 'netlify',
-]
+const siteMetadata = require('./src/content/metadata.json')
 
-// Get environment variables
+// Get environment variables (managed by Netlify CMS admin settings)
 const getValueFromEnv = (key, defaultValue = '') => {
   const {env} = process
 
   if (env[key]) {
     return env[key]
+  } else {
+    return defaultValue
+  }
+}
+
+// Get site metadata from JSON file (managed by Netlify CMS)
+const getValueFromJson = (key, defaultValue = '') => {
+  if (siteMetadata[key]) {
+    return siteMetadata[key]
   } else {
     return defaultValue
   }
@@ -66,10 +67,10 @@ const gatsbyGoogleAnalytics = {
 // Default Gatsby configuration
 module.exports = {
   siteMetadata: {
-    title: getValueFromEnv('SITE_TITLE', DEFAULT_TITLE),
-    description: getValueFromEnv('SITE_DESCRIPTION', DEFAULT_DESCRIPTION),
-    keywords: getValueFromEnv('SITE_KEYWORDS', DEFAULT_KEYWORDS),
-    url: getValueFromEnv('URL', DEFAULT_URL),
+    title: getValueFromJson('siteTitle'),
+    description: getValueFromJson('siteDescription'),
+    keywords: getValueFromJson('siteKeywords'),
+    url: getValueFromJson('siteUrl'),
   },
   plugins: [
     `gatsby-plugin-react-next`,

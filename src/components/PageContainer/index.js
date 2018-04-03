@@ -44,6 +44,8 @@ const PageContainer = (props) => {
           defaultTitle={siteTitle}
           title={`${pageTitle} - ${siteTitle}`}
           meta={[
+            {charSet: 'utf-8'},
+            {httpEquiv: 'x-ua-compatible', content: 'ie=edge'},
             {name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no'},
             {name: 'description', content: description},
             {name: 'keywords', content: keywords},
@@ -62,8 +64,6 @@ const PageContainer = (props) => {
             {name: 'theme-color', content: '#FFFFFF'}
           ]}
         >
-          <meta charSet="utf-8" />
-          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <link rel="canonical" href={canonicalUrl} />
           <link
             rel="icon"
