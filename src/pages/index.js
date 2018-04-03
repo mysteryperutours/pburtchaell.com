@@ -113,6 +113,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { templateKey: { eq: "project" } }
         frontmatter: { published: { eq: true } }
+        frontmatter: { featured: { eq: true } }
       }
       sort: {
         fields: [ frontmatter___date ],

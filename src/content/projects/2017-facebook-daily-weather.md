@@ -1,5 +1,6 @@
 ---
 published: true
+featured: true
 templateKey: project
 date: '2017-02-01'
 title: Daily Weather

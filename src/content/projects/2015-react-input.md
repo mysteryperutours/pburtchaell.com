@@ -1,5 +1,6 @@
 ---
 published: false
+featured: false
 templateKey: project
 date: '2015-06-09'
 title: React Input

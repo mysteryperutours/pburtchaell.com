@@ -1,5 +1,6 @@
 ---
 published: true
+featured: true
 templateKey: project
 date: '2015-06-12'
 title: Redux Promise Middleware

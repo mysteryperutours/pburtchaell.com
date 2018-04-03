@@ -1,5 +1,6 @@
 ---
 published: true
+featured: true
 templateKey: project
 date: '2015-03-21'
 title: React Notification

@@ -51,6 +51,7 @@ collections:
     fields:
       # Admin fields (default to unpublished project)
       - { name: published, label: Published, widget: boolean, default: false }
+      - { name: featured, label: Featured, widget: boolean, default: false }
       - { name: templateKey, label: Template Key, widget: hidden, default: project }
 
       # Meta fields (all required)
