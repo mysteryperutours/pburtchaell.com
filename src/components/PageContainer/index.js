@@ -35,7 +35,7 @@ const PageContainer = (props) => {
   } = props
 
   // Declare a permanent canonical URl for the page for SEO and Open Graph
-  const canonicalUrl = pageUrl ? `${siteUrl}/${pageUrl}/` : siteUrl
+  const canonicalUrl = pageUrl ? `${siteUrl}/${pageUrl}/` : `${siteUrl}/`
 
   return (
     <Fragment>
