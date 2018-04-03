@@ -1,3 +1,25 @@
 {
-  
+  "siteTitle": "Patrick Burtchaell",
+  "siteUrl": "https://pburtchaell.netlify.com",
+  "siteDescription": "Designer and software developer working with teams to thoughtfully build impactful products.",
+  "siteKeywords": [
+    "'patrick'",
+    "'burtchaell'",
+    "'designer'",
+    "'developer'",
+    "'software'",
+    "'product'",
+    "'new orleans'",
+    "'san francisco'",
+    "'menlo park'",
+    "'bay area'",
+    "'web design'",
+    "'product design'",
+    "'react'",
+    "'redux'",
+    "'nodejs'",
+    "'gatsby'",
+    "'netlify'",
+    ""
+  ]
 }
