@@ -11,6 +11,11 @@ a.a--arrow-left::after {
   margin-left: var(--default-vertical-margin);
 }
 
+a.a--arrow-right::before {
+  content: "\2190";
+  margin-right: var(--default-vertical-margin);
+}
+
 a.a--arrow-upright::after {
   content: "\2197";
   margin-left: var(--default-vertical-margin);
