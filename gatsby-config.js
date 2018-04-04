@@ -45,6 +45,7 @@ const gatsbyTransformerMarkdown = {
       {
         resolve: `gatsby-remark-images`,
         options: {
+          maxWidth: 1000,
           linkImagesToOriginal: false,
         },
       },
