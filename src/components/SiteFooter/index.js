@@ -47,6 +47,7 @@ SiteFooterLinkTo.propTypes = {
 /*
  * Function: SiteFooterLinkToTop
  * Description: Renders a link that brings you to the top of the page
+ * UX tips: https://www.nngroup.com/articles/back-to-top/
  */
 const SiteFooterLinkToTop = ({hidden}) => {
   if (hidden) {
