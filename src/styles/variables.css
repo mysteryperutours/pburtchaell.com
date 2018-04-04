@@ -8,7 +8,7 @@
 
   --white: #FFFFFF;
   --black: #241F20;
-  --blue: #0063B5;
+  --blue: blue; /* Original: #0063B5 */
   --red: #FF2E5E;
   --light-gray: #7E7E80;
   --dark-gray: #4A4A4A;
