@@ -1,5 +1,6 @@
 import React, {Fragment, Component} from 'react'
 import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
 import PageContainer from '../components/PageContainer'
 import Row from '../components/Row'
 import Column from '../components/Column'
@@ -30,11 +31,7 @@ class FixedPosition extends Component {
   }
 
   componentDidMount() {
-    try {
-      this.setFixedPosition()
-    } catch (error) {
-      console.warn(error)
-    }
+    this.setFixedPosition()
 
     window.addEventListener('resize', this.handleViewportChange)
   }
@@ -46,10 +43,6 @@ class FixedPosition extends Component {
   setFixedPosition() {
     const {set} = this.state
     const {disableOnSmall} = this.props
-
-    if (set) {
-      throw new Error('FixedPositionError: element position has already been set.')
-    }
 
     // If we are on a small screen, don't fix the position
     if (disableOnSmall && screen.width <= 600) {
@@ -147,7 +140,7 @@ ProjectDetail.propTypes = {
  */
 const ProjectExternalLink = ({linkTo, description}) => linkTo && (
   <a
-    className="a--arrow-upright"
+    className="project--external-link a--arrow-upright"
     target="_blank"
     href={linkTo}
   >
@@ -159,6 +152,19 @@ ProjectExternalLink.propTypes = {
   linkTo: PropTypes.string,
   description: PropTypes.string,
 }
+
+/*
+ * Function: ProjectHomeLink
+ * Description: Renders the back to home link
+ */
+const ProjectHomeLink = () => (
+  <Link
+    className="project--home-link a--arrow-right"
+    to="/"
+  >
+    Back to Home
+  </Link>
+)
 
 /*
  * Function: ProjectLayout
@@ -179,6 +185,7 @@ function ProjectLayout({data}) {
       <Row paddingSize="large" rowSize="large" flexBox={true}>
         <Column largeSize={3} smallSize={12} flexOrder={0}>
           <FixedPosition className="project--column-0" disableOnSmall>
+            <ProjectHomeLink />
             <Text type={textTypes.HEADER_1}>
               {project.frontmatter.title}
             </Text>
