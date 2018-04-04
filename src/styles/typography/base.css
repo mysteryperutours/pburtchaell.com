@@ -5,6 +5,10 @@ p {
   hyphens: none;
 }
 
+.gatsby-resp-image-wrapper > p {
+  margin: 17px 0 2rem 0 !important;
+}
+
 small,
 .small-block {
   margin: 0;
