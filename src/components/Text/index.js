@@ -1,6 +1,5 @@
 import React, {createElement, Element} from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
 import Link from 'gatsby-link'
 import * as textTypes from './types'
 
@@ -10,11 +9,13 @@ const Text = (props) => {
     style,
     children,
     className,
+    onClick,
   } = props
 
   const elementProps = {
     style,
     className,
+    onClick,
   }
 
   return createElement(
@@ -41,6 +42,7 @@ Text.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.arrayOf(PropTypes.node),
   ]),
+  onClick: PropTypes.func,
 }
 
 Text.defaultProps = {
