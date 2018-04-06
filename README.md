@@ -83,7 +83,5 @@ Thanks to [Hunter Caron](https://github.com/huntercaron) for open sourcing [Boil
 
 ---
 Copyright (c) 2013-2018 Patrick Burtchaell.
-
 [Code licensed with the MIT License (MIT)](/CODE-LICENSE).
-
 [Content not licensed](/CONTENT-LICENSE).
