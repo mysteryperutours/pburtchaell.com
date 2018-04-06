@@ -1,6 +1,6 @@
 ---
 published: true
-featured: true
+featured: false
 templateKey: project
 date: '2015-03-21'
 title: React Notification
@@ -19,7 +19,7 @@ keywords:
 externalLink: 'https://github.com/pburtchaell/react-notification'
 externalLinkDescription: See the project on GitHub
 ---
-This library enables developers to implement snackbar notifications in  React web applications. Snackbar notifications, a common pattern in Material Design, are used to display text notifications. According to [the official specification from Google](https://material.io/guidelines/components/snackbars-toasts.html), snackbars contain "a single line of text directly related to the operation performed."
+React Notification is used to implement snackbar notifications in React web applications. Snackbar notifications, a common pattern in Material Design, are used to display text notifications. According to [the official specification from Google](https://material.io/guidelines/components/snackbars-toasts.html), snackbars contain "a single line of text directly related to the operation performed."
 
 With this library, developers can either display a single notification or a stack of multiple notifications. For both, enter and exit animations are handled by the component.
 
@@ -28,11 +28,11 @@ With this library, developers can either display a single notification or a stac
 As a pure component, the single notification doesn't have state. This requires the developer to manage the state of the component.
 
 ```js
- <Notification
+<Notification
   isActive={this.state.isActive}
   message="Here's a notification for you"
   action="Dismiss"
-  onDismiss={() => this.setState({isActive: false})
+  onDismiss={() => this.setState({isActive: false})}
   onClick={() =>  this.setState({isActive: false})}
 />
 ```

@@ -16,51 +16,72 @@ keywords:
 externalLink: 'https://github.com/pburtchaell/redux-promise-middleware'
 externalLinkDescription: See the project on GitHub
 ---
-This library was developed in 2015 to solve a common problem with applications built with Redux. When the app makes a network request or some other async action, it's necessary to update the state when the request starts and when the request settles.
-
-To do this, developers use Promises. Promises are a special object type in JavaScript that have a pending state and a settled state.
+When software executes an asynchronous operation (like requesting data from a server), developers update the state when the operation starts, and, again, when the operation eventually finishes. In JavaScript, developers use [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), an object that represents the eventual completion of an operation, to handle this.
 
 ```js
-new Promise((resolve, reject) => {
-  // Do something that requires some time
-  if (done) {
-    resolve()
-  } else if (error) {
-    reject()
+new Promise((resolve) => {
+  // Do some operation that requires time and returns a result...
+  const result = doSomething()
+
+  if (result) {
+    resolve(result)
   }
-}).then(() => {
-  // Do something when the promise is settled
+}).then((result) => {
+  // OK, the operation is done and we have the result!
 })
 ```
 
-Above, a promise fires the "resolve" method when it is done or fires the "reject" method if there is an error. When either of those metods is fired, the "then" callback is fired with the promise state.
+Promises always have one of two states: **pending**, which means when the operation is executing; and **settled**, which means the operation is done and the result is available. A promise switches to the settled state either when the operation  succeeds or when it fails. For promises, this is known as **fulfilled** or **rejected**.
 
-## The Problem
+## Problem
 
-When a developer uses promises with a Redux app, they need a way to update the  state when the promise is pending and update the state again when the promise is settled.
+When developers use promises in software built with [Redux](http://redux.js.org/), they need a way to update the state container (and usually the user interface too) when a promise is pending, and, again, when a promise is settled.
 
-That's where Redux Promise middleware comes in.
+## Example
 
-## The Solution
+When the promise is pending, for example, the developer might display a loading spinner in the user interface (UI).
 
-With the middleware included in a Redux app, developers can dispatch an action with a promise as the payload and the middlware will "split" that action into two subsequent actions.
+In this example, when the promise is settled, the developer might hide the loading spinner and update the UI with the result. If the promise is fullfilled, they might display the data. On the other hand, if the promise is rejected, they might display an error message.
+
+State management and UI updates like this can be tricky without the help of a middleware.
+
+## Solution
+
+In Redux, **Actions** describe changes to the state container. Actions are returned from functions called **Action Creators**. For more on actions and action creators, see the documentation on [redux.js.org](https://redux.js.org/).
+
+With Redux Promise Middleware, developers can include promises in their actions.
 
 ```js
-const secondAction = (data) => ({
-  type: 'SECOND_ACTION',
-  payload: data,
+const myAction = () => ({
+  type: 'MY_ACTION',
+  payload: Promise.resolve(1)
 })
+```
 
-const firstAction = () => {
-  return (dispatch) => {
-    const response = dispatch({
-      type: 'FIRST_ACTION',
-      payload: Promise.resolve(),
-    })
+When a promise is included in an action, the middleware immediately dispatches a **Pending Action**. This action describes the pending state of the promise and enables the developer to appropriately update the state container.
 
-    response.then((data) => {
-      dispatch(secondAction(data))
-    })
-  }
+```js
+{
+  type: 'MY_ACTION_PENDING'
+}
+```
+
+The **Settled Action** is eventually dispatched, either after the promise resolves or after it rejects. If the promise is fulfilled, the payload is the result of the promise.
+
+```js
+{
+  type: 'MY_ACTION_FULFILLED',
+  payload: 1
+}
+```
+
+On the other hand, if the promise is rejected, the payload is the error result of the promise--and the error property is defined as true.
+
+
+```js
+{
+  type: 'MY_ACTION_REJECTED',
+  payload: Error(),
+  error: true
 }
 ```
