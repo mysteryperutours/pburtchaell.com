@@ -1,5 +1,7 @@
+require('dotenv').config()
 const path = require('path')
 const fs = require('fs')
+const fetch = require('node-fetch')
 const {createFilePath} = require('gatsby-source-filesystem')
 
 const staticImagePath = './static/assets/'
@@ -62,5 +64,24 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
       value: `work/${year}/${node.frontmatter.path}`,
       node,
     })
+
+    // Add stats for open source projects
+    if (node.frontmatter.category === `Open Source`) {
+      const accessToken = process.env.GITHUB_ACCESS_TOKEN
+      const apiUrl = `https://api.github.com/repos`
+      const repoPath = `pburtchaell/${node.frontmatter.path}`
+
+      // Fetch repo stats from GitHub API
+      fetch(`${apiUrl}/${repoPath}?access_token=${accessToken}`)
+        .then((result) => result.json())
+        .then(({stargazers_count, open_issues_count}) => {
+          createNodeField({name: `githubStargazers`, value: stargazers_count, node})
+          createNodeField({name: `githubOpenIssues`, value: open_issues_count, node})
+        })
+        .catch((error) => console.warn(error))
+    } else {
+      createNodeField({name: `githubStargazers`, value: null, node})
+      createNodeField({name: `githubOpenIssues`, value: null, node})
+    }
   }
 }

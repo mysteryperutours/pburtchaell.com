@@ -111,7 +111,7 @@ FixedPosition.defaultProps = {
   disableOnSmall: false,
 }
 
-function ProjectDetail({label, data}) {
+function ProjectDetail({label, data, formatData}) {
   if (data) {
     const renderData = (v) => Array.isArray(v) ? Array.from(v).map((i) => <Fragment>{i}<br/></Fragment>) : v
 
@@ -123,7 +123,7 @@ function ProjectDetail({label, data}) {
           </Text>
         </Text>
         <Text>
-          {renderData(data)}
+          {renderData(formatData ? formatData(data) : data)}
         </Text>
       </Fragment>
     )
@@ -139,6 +139,7 @@ ProjectDetail.propTypes = {
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.string),
   ]),
+  formatData: PropTypes.func,
 }
 
 /*
@@ -179,6 +180,8 @@ const ProjectHomeLink = () => (
  */
 function ProjectTemplate({data}) {
   const {project, site} = data
+
+  console.warn(project)
 
   return (
     <PageContainer
@@ -229,6 +232,28 @@ function ProjectTemplate({data}) {
               label="Type of Work"
               data={project.frontmatter.category}
             />
+            <ProjectDetail
+              label="Stars on Github"
+              data={project.fields.githubStargazers}
+              formatData={(data) => {
+                let hundredth
+                const thousandth = Math.round((data / 1000), 1)
+
+                if (thousandth) {
+                  hundredth = Math.round(((data % 1000) / 100), 1)
+
+                  return `${thousandth}.${hundredth}k`
+                } else {
+                  hundredth = Math.round((data / 100), 1)
+
+                  return hundredth
+                }
+              }}
+            />
+            <ProjectDetail
+              label="Open Issues on Github"
+              data={project.fields.githubOpenIssues}
+            />
           </FixedPosition>
         </Column>
       </Row>
@@ -253,8 +278,8 @@ ProjectTemplate.propTypes = {
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         category: PropTypes.string.isRequired,
-        client: PropTypes.string.isRequired,
-        collaborators: PropTypes.arrayOf(PropTypes.string).isRequired,
+        client: PropTypes.string,
+        collaborators: PropTypes.arrayOf(PropTypes.string),
         keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
         externalLink: PropTypes.string,
         externalLinkDescription: PropTypes.string,
@@ -281,6 +306,8 @@ export const projectQuery = graphql`
       html
       fields {
         slug
+        githubStargazers
+        githubOpenIssues
       }
       frontmatter {
         title
