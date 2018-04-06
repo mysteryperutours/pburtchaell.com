@@ -225,6 +225,14 @@ FilterProjects.propTypes = {
 const IndexPage = ({data}) => {
   const {projects, site} = data
 
+  // Define the profiles to render on the index page
+  const socialProfiles = [
+    {id: 0, label: 'Facebook', linkTo: 'https://facebook.com/pburtchaell'},
+    {id: 1, label: 'Github', linkTo: 'https://github.com/pburtchaell'},
+    {id: 2, label: 'Twitter', linkTo: 'https://twitter.com/pburtchaell'},
+    {id: 3, label: 'Dribbble', linkTo: 'https://dribbble.com/pburtchaell'},
+  ]
+
   return (
     <PageContainer
       pageTitle="Home"
@@ -235,16 +243,31 @@ const IndexPage = ({data}) => {
     >
       <Fragment>
         <Row paddingSize="large" rowSize="large">
-          <Column largeSize={4} smallSize={12}>
+          <Column largeSize={4} smallSize={12} className="index__about">
             <Text>{site.metadata.description}</Text>
-            <small className="small-reset-margin">
-              <span>
-                {`Hello! I'm partially available for consultancy or freelance work until June 2018. In August 2018, I'm joining Facebook in Menlo Park, California. If you would like to work together, `}
-              </span>
-              <a href="mailto:patrick@pburtchaell.com">
-                get in touch.
-              </a>
-            </small>
+            <Text type={textTypes.SMALL}>
+              {site.metadata.introduction}
+            </Text>
+          </Column>
+          <Column largeSize={4} smallSize={12} />
+          <Column largeSize={4} smallSize={12} className="index__profiles">
+            <Text type={textTypes.HEADER_2}>
+              Profiles
+            </Text>
+            <ul>
+              {socialProfiles.map(({id, label, linkTo}) => (
+                <li key={id}>
+                  <a
+                    href={linkTo}
+                    target="_blank"
+                    title={`Patrick Burtchaell on ${label}`}
+                    aria-label={`Patrick Burtchaell on ${label}`}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </Column>
         </Row>
         <FilterProjects
@@ -277,6 +300,7 @@ IndexPage.propTypes = {
         url: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
+        introduction: PropTypes.string.isRequired,
         keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
       }),
     }),
@@ -292,6 +316,7 @@ export const pageQuery = graphql`
         url
         title
         description
+        introduction
         keywords
       }
     }

@@ -1,4 +1,6 @@
-p {
+p,
+ul,
+li {
   font-size: var(--default-font-size);
   line-height: var(--default-line-height);
   margin: var(--default-margin);

@@ -70,6 +70,7 @@ module.exports = {
   siteMetadata: {
     title: getValueFromJson('siteTitle'),
     description: getValueFromJson('siteDescription'),
+    introduction: getValueFromJson('siteIntroduction'),
     keywords: getValueFromJson('siteKeywords'),
     url: getValueFromJson('siteUrl'),
   },

@@ -56,7 +56,7 @@ SiteHeader.propTypes = {
   navigationItems: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     linkTo: PropTypes.string.isRequired,
-  }))
+  })),
 }
 
 SiteHeader.defaultProps = {

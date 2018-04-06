@@ -12,8 +12,8 @@ pre[class*="language-"] {
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-  font-size: var(--default-font-size);
-	line-height: var(--default-line-height);
+  font-size: var(--small-font-size);
+	line-height: var(--small-line-height);
 	tab-size: 4;
 	hyphens: none;
 }

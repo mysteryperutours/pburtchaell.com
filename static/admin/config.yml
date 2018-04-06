@@ -32,6 +32,10 @@ collections:
             name: siteDescription
             widget: string
             required: true
+          - label: Site Introduction
+            name: siteIntroduction
+            widget: string
+            required: true
           - label: Site Keywords
             name: siteKeywords
             widget: list
