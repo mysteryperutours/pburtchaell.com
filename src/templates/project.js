@@ -111,14 +111,20 @@ FixedPosition.defaultProps = {
   disableOnSmall: false,
 }
 
-function ProjectDetail({label, value}) {
-  if (value) {
+function ProjectDetail({label, data}) {
+  if (data) {
+    const renderData = (v) => Array.isArray(v) ? Array.from(v).map((i) => <Fragment>{i}<br/></Fragment>) : v
+
     return (
       <Fragment>
         <Text>
-          <Text type={textTypes.SMALL}>{label}</Text>
+          <Text type={textTypes.SMALL}>
+            {label}
+          </Text>
         </Text>
-        <Text>{value}</Text>
+        <Text>
+          {renderData(data)}
+        </Text>
       </Fragment>
     )
   }
@@ -128,9 +134,10 @@ function ProjectDetail({label, value}) {
 
 ProjectDetail.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([
+  data: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
+    PropTypes.arrayOf(PropTypes.string),
   ]),
 }
 
@@ -167,10 +174,10 @@ const ProjectHomeLink = () => (
 )
 
 /*
- * Function: ProjectLayout
+ * Function: ProjectTemplate
  * Description:
  */
-function ProjectLayout({data}) {
+function ProjectTemplate({data}) {
   const {project, site} = data
 
   return (
@@ -208,15 +215,19 @@ function ProjectLayout({data}) {
           <FixedPosition className="project--column-2" disableOnSmall>
             <ProjectDetail
               label="Made For"
-              value={project.frontmatter.client}
+              data={project.frontmatter.client}
+            />
+            <ProjectDetail
+              label="Collaborated With"
+              data={project.frontmatter.collaborators}
             />
             <ProjectDetail
               label="Shipped In"
-              value={project.frontmatter.date}
+              data={project.frontmatter.date}
             />
             <ProjectDetail
               label="Type of Work"
-              value={project.frontmatter.category}
+              data={project.frontmatter.category}
             />
           </FixedPosition>
         </Column>
@@ -225,14 +236,14 @@ function ProjectLayout({data}) {
   )
 }
 
-ProjectLayout.propTypes = {
+ProjectTemplate.propTypes = {
   data: PropTypes.shape({
     site: PropTypes.shape({
       metadata: PropTypes.shape({
         url: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        keywords: PropTypes.string.isRequired,
+        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
       }),
     }),
     project: PropTypes.shape({
@@ -243,6 +254,7 @@ ProjectLayout.propTypes = {
         description: PropTypes.string.isRequired,
         category: PropTypes.string.isRequired,
         client: PropTypes.string.isRequired,
+        collaborators: PropTypes.arrayOf(PropTypes.string).isRequired,
         keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
         externalLink: PropTypes.string,
         externalLinkDescription: PropTypes.string,
@@ -252,7 +264,7 @@ ProjectLayout.propTypes = {
   }),
 }
 
-export default ProjectLayout
+export default ProjectTemplate
 
 export const projectQuery = graphql`
   query ProjectTemplate($id: String!) {
@@ -276,6 +288,7 @@ export const projectQuery = graphql`
         category
         keywords
         client
+        collaborators
         externalLink
         externalLinkDescription
         date(formatString: "YYYY")

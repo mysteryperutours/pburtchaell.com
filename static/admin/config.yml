@@ -58,7 +58,8 @@ collections:
       - { name: date, label: Date, widget: date, required: true }
       - { name: title, label: Title, widget: string, required: true }
       - { name: description, label: Description, widget: string, required: true }
-      - { name: client, label: Client, widget: string, required: true }
+      - { name: client, label: Client, widget: string, required: false }
+      - { name: collaborators, label: Collaborators, widget: list, required: false }
       - { name: path, label: Path, widget: string, required: true }
 
       # Category field (required multi-select)
@@ -77,10 +78,7 @@ collections:
           - Mobile Development
 
       # Keywords field for SEO (optional)
-      - name: keywords
-        label: Keywords
-        widget: list
-        required: false
+      - { name: keywords, label: Keywords, widget: list, required: false }
 
       # Markdown body field (required)
       - { name: body, label: Body, widget: markdown, required: true }

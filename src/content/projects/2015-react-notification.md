@@ -6,6 +6,7 @@ date: '2015-03-21'
 title: React Notification
 description: 'Snackbar notifications for React, styled with Material Design.'
 client: React
+collaborators:
 path: react-notification
 category: Open Source
 keywords:
