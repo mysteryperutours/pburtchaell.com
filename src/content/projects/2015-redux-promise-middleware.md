@@ -11,8 +11,15 @@ path: redux-promise-middleware
 category: Open Source
 keywords:
   - open source
+  - javascript
   - software
   - redux
+  - web apps
+  - mobile apps
+  - javascript promises
+  - optimistic updates
+  - asynchronous code
+  - javascript async functions
 externalLink: 'https://github.com/pburtchaell/redux-promise-middleware'
 externalLinkDescription: See the project on GitHub
 ---
