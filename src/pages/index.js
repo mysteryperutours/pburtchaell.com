@@ -182,7 +182,7 @@ class FilterProjects extends Component {
         </Column>
         {filteredProjects.map((project) => (
           <Column
-            key={project.id}
+            key={project.fields.slug}
             largeSize={4}
             smallSize={12}
           >
@@ -335,7 +335,6 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          id
           fields {
             slug
           }
