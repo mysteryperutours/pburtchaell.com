@@ -6,13 +6,13 @@
 :root {
   --base: 9px;
 
-  --white: #FFFFFF;
-  --black: #241F20;
-  --blue: blue; /* Original: #0063B5 */
-  --red: #FF2E5E;
-  --light-gray: #7E7E80;
-  --dark-gray: #4A4A4A;
-  --lightest-gray: #F7F7F7;
+  --white: rgba(255, 255, 255, 1.0);
+  --black: rgba(36, 31, 32, 1.0);
+  --dark-gray: rgba(36, 31, 32, 0.8);
+  --light-gray: rgba(36, 31, 32, 0.6);
+  --lightest-gray: rgba(36, 31, 32, 0.1);
+  --blue: blue;
+  --red: red;
 
   --default-font-size: 2rem;
   --default-font-family-name: 'din-2014';
