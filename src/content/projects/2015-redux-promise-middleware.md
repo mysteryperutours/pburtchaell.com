@@ -54,7 +54,7 @@ State management and UI updates like this can be tricky without the help of a mi
 
 ## Solution
 
-In Redux, **Actions** describe changes to the state container. Actions are returned from functions called **Action Creators**. For more on actions and action creators, see the documentation on [redux.js.org](https://redux.js.org/).
+In Redux, **actions** describe changes to the state container. Actions are returned from functions called **action creators**. For more on actions and action creators, see the documentation on [redux.js.org](https://redux.js.org/).
 
 With Redux Promise Middleware, developers can include promises in their actions.
 
@@ -65,7 +65,7 @@ const myAction = () => ({
 })
 ```
 
-When a promise is included in an action, the middleware immediately dispatches a **Pending Action**. This action describes the pending state of the promise and enables the developer to appropriately update the state container.
+When a promise is included in an action, the middleware immediately dispatches a **pending action**. This action describes the pending state of the promise and enables the developer to appropriately update the state container.
 
 ```js
 {
@@ -73,7 +73,7 @@ When a promise is included in an action, the middleware immediately dispatches a
 }
 ```
 
-The **Settled Action** is eventually dispatched, either after the promise resolves or after it rejects. If the promise is fulfilled, the payload is the result of the promise.
+The **settled action** is eventually dispatched, either after the promise resolves or after it rejects. If the promise is fulfilled, the payload is the result of the promise.
 
 ```js
 {
