@@ -196,10 +196,10 @@ function ProjectTemplate({data}) {
         <Column largeSize={3} smallSize={12} flexOrder={0}>
           <FixedPosition className="project--column-0" disableOnSmall>
             <ProjectHomeLink />
-            <Text type={textTypes.HEADER_1}>
+            <Text type={textTypes.HEADER_1} className="project--title">
               {project.frontmatter.title}
             </Text>
-            <Text>
+            <Text className="project--description">
               {project.frontmatter.description}
             </Text>
             <ProjectExternalLink
@@ -315,7 +315,6 @@ export const projectQuery = graphql`
         category
         keywords
         client
-        collaborators
         externalLink
         externalLinkDescription
         date(formatString: "YYYY")
