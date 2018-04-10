@@ -73,6 +73,8 @@ module.exports = {
     introduction: getValueFromJson('siteIntroduction'),
     keywords: getValueFromJson('siteKeywords'),
     url: getValueFromJson('siteUrl'),
+    enablePortfolio: getValueFromJson('enablePortfolio'),
+    portfolioCompanies: getValueFromJson('portfolioCompanies'),
   },
   plugins: [
     `gatsby-plugin-react-next`,

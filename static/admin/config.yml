@@ -40,6 +40,14 @@ collections:
             name: siteKeywords
             widget: list
             required: true
+          - label: Enable Portfolio?
+            name: enablePortfolio
+            widget: boolean
+            required: true
+          - label: Portfolio Companies
+            name: portfolioCompanies
+            widget: list
+            required: true
 
   - name: projects
     label: Projects

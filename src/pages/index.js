@@ -158,7 +158,7 @@ class FilterProjects extends Component {
       width: '350px',
     }
 
-    return (
+    return this.props.visible && (
       <Row paddingSize="large" rowSize="large">
         <Column largeSize={12} smallSize={12}>
           <Text type={textTypes.HEADER_2}>
@@ -201,6 +201,7 @@ class FilterProjects extends Component {
 }
 
 FilterProjects.propTypes = {
+  visible: PropTypes.bool.isRequired,
   projects: PropTypes.shape({
     edges: PropTypes.arrayOf(PropTypes.shape({
       node: PropTypes.shape({
@@ -224,6 +225,7 @@ FilterProjects.propTypes = {
  */
 const IndexPage = ({data}) => {
   const {projects, site} = data
+  const {enablePortfolio, portfolioCompanies} = site.metadata
 
   // Define the profiles to render on the index page
   const socialProfiles = [
@@ -249,7 +251,23 @@ const IndexPage = ({data}) => {
               {site.metadata.introduction}
             </Text>
           </Column>
-          <Column largeSize={4} smallSize={12} />
+          <Column largeSize={2} smallSize={12} />
+          <Column largeSize={2} smallSize={12}>
+            {!enablePortfolio && (
+              <Fragment>
+                <Text type={textTypes.HEADER_2}>
+                  Company
+                </Text>
+                <ul>
+                  {portfolioCompanies.map((company) => (
+                    <li key={company}>
+                      {company}
+                    </li>
+                  ))}
+                </ul>
+              </Fragment>
+            )}
+          </Column>
           <Column largeSize={4} smallSize={12} className="index__profiles">
             <Text type={textTypes.HEADER_2}>
               Profiles
@@ -272,6 +290,7 @@ const IndexPage = ({data}) => {
         </Row>
         <FilterProjects
           projects={projects}
+          visible={site.metadata.enablePortfolio}
         />
       </Fragment>
     </PageContainer>
@@ -302,6 +321,8 @@ IndexPage.propTypes = {
         description: PropTypes.string.isRequired,
         introduction: PropTypes.string.isRequired,
         keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+        enablePortfolio: PropTypes.bool.isRequired,
+        portfolioCompanies: PropTypes.arrayOf(PropTypes.string).isRequired,
       }),
     }),
   }),
@@ -318,6 +339,8 @@ export const pageQuery = graphql`
         description
         introduction
         keywords
+        enablePortfolio
+        portfolioCompanies
       }
     }
     projects: allMarkdownRemark(
