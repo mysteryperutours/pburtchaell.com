@@ -23,6 +23,13 @@ small,
   color: var(--light-gray);
 }
 
+@media only screen and (max-width: 600px) {
+  small,
+  .small-block {
+    margin-bottom: 2rem;
+  }
+}
+
 small.small-inline {
   display: inline-block;
 }
