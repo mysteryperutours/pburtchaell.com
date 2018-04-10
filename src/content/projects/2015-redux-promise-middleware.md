@@ -11,8 +11,15 @@ path: redux-promise-middleware
 category: Open Source
 keywords:
   - open source
+  - javascript
   - software
   - redux
+  - web apps
+  - mobile apps
+  - javascript promises
+  - optimistic updates
+  - asynchronous code
+  - javascript async functions
 externalLink: 'https://github.com/pburtchaell/redux-promise-middleware'
 externalLinkDescription: See the project on GitHub
 ---
@@ -47,7 +54,7 @@ State management and UI updates like this can be tricky without the help of a mi
 
 ## Solution
 
-In Redux, **Actions** describe changes to the state container. Actions are returned from functions called **Action Creators**. For more on actions and action creators, see the documentation on [redux.js.org](https://redux.js.org/).
+In Redux, **actions** describe changes to the state container. Actions are returned from functions called **action creators**. For more on actions and action creators, see the documentation on [redux.js.org](https://redux.js.org/).
 
 With Redux Promise Middleware, developers can include promises in their actions.
 
@@ -58,7 +65,7 @@ const myAction = () => ({
 })
 ```
 
-When a promise is included in an action, the middleware immediately dispatches a **Pending Action**. This action describes the pending state of the promise and enables the developer to appropriately update the state container.
+When a promise is included in an action, the middleware immediately dispatches a **pending action**. This action describes the pending state of the promise and enables the developer to appropriately update the state container.
 
 ```js
 {
@@ -66,7 +73,7 @@ When a promise is included in an action, the middleware immediately dispatches a
 }
 ```
 
-The **Settled Action** is eventually dispatched, either after the promise resolves or after it rejects. If the promise is fulfilled, the payload is the result of the promise.
+The **settled action** is eventually dispatched, either after the promise resolves or after it rejects. If the promise is fulfilled, the payload is the result of the promise.
 
 ```js
 {
@@ -85,3 +92,59 @@ On the other hand, if the promise is rejected, the payload is the error result o
   error: true
 }
 ```
+
+## Additional Features
+
+### Optimistic Updates
+
+An optimistic update is when a developer starts some asynchronous operation doesn't wait for the operation to finish before updating the app state. In other words, they immediately switch to the settled state under the assumption that the operation will succeed.
+
+If an asynchronous action is dispatched with data, it is also included in the pending action.
+
+```js
+const myAction = () => ({
+  type: 'MY_ACTION',
+  payload: {
+    promise: Promise.resolve(1),
+    data: {
+      foo: 'foo',
+      bar: 'bar',
+    },
+  },
+})
+```
+
+This data can be used to optimistically update the Redux state tree.
+
+```js
+{
+  type: 'MY_ACTION_PENDING',
+  payload: {
+    foo: 'foo',
+    bar: 'bar',
+  },
+}
+```
+
+### Chaining Actions
+
+When combined with [Redux Thunk](https://github.com/gaearon/redux-thunk), the middleware also suports chaining actions. In more complex apps, developers might chain a sequence of actions together.
+
+```js
+const myChainOfActions = () => {
+  return (dispatch) => {
+
+    return dispatch({
+      type: 'FIRST_ACTION',
+      payload: Promise.all([
+        dispatch({ type: 'SECOND_ACTION' }),
+        dispatch({ type: 'THIRD_ACTION' }),
+      ]),
+    })
+  }
+}
+```
+
+## Conclusions
+
+That's the basics of the middleware! There's a few features I didn't include here; however, those features are included in [the project documentation on GitHub](https://github.com/pburtchaell/redux-promise-middleware/tree/master/docs). If you'd like to the middleware it in one of your Redux apps, [it's available for install via npm](https://www.npmjs.com/package/redux-promise-middleware).
