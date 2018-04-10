@@ -55,3 +55,7 @@ This is an example of how the component works with a library like Immutable.
   }}
 />
 ```
+
+## Conclusion
+
+That's the basics of the library! If you'd like to the components it in one of your React apps, [it's available for install via npm](https://www.npmjs.com/package/react-notification).

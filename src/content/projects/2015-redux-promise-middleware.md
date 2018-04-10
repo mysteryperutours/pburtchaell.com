@@ -145,6 +145,6 @@ const myChainOfActions = () => {
 }
 ```
 
-## Conclusions
+## Conclusion
 
 That's the basics of the middleware! There's a few features I didn't include here; however, those features are included in [the project documentation on GitHub](https://github.com/pburtchaell/redux-promise-middleware/tree/master/docs). If you'd like to the middleware it in one of your Redux apps, [it's available for install via npm](https://www.npmjs.com/package/redux-promise-middleware).
