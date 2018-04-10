@@ -2,6 +2,7 @@ html {
   height: 100%;
   margin: 0;
   font-size: var(--base);
+  opacity: 0;
 }
 
 body {
@@ -17,11 +18,22 @@ body {
   font-feature-settings: 'liga' on, 'smcp' on, 'kern' on;
   line-height: var(--default-line-height);
   color: var(--black);
-  background: var(--black);
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html.wf-active {
+  opacity: 1;
+}
+
+html.wf-active body {
+  background: var(--black);
+}
+
+html.wf-loading {
+  opacity: 0;
 }
 
 ::-webkit-scrollbar {
