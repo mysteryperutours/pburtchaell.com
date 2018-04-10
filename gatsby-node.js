@@ -71,6 +71,10 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
       const apiUrl = `https://api.github.com/repos`
       const repoPath = `pburtchaell/${node.frontmatter.path}`
 
+      if (!accessToken) {
+        throw new Error('Failed to fetch stats for open source projects. Github API access token is required.')
+      }
+
       // Fetch repo stats from GitHub API
       fetch(`${apiUrl}/${repoPath}?access_token=${accessToken}`)
         .then((result) => result.json())
@@ -80,8 +84,9 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
         })
         .catch((error) => console.warn(error))
     } else {
-      createNodeField({name: `githubStargazers`, value: null, node})
-      createNodeField({name: `githubOpenIssues`, value: null, node})
+      // Create empty fields for all projects to prevent GraphQL errors
+      createNodeField({name: `githubStargazers`, value: '', node})
+      createNodeField({name: `githubOpenIssues`, value: '', node})
     }
   }
 }

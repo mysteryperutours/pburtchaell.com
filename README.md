@@ -15,8 +15,9 @@
 ## Getting Started
 
 1. Install: `npm ci` or `yarn`
-2. Develop: `npm run develop` or `yarn develop`
-3. Build: `npm run build` or `yarn build`
+2. Create an `.env` file with a `GITHUB_ACCESS_TOKEN`
+3. Develop: `npm run develop` or `yarn develop`
+4. Build: `npm run build` or `yarn build`
 
 ## Colophon
 

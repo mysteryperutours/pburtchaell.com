@@ -289,7 +289,8 @@ const IndexPage = ({data}) => {
         </Row>
         <FilterProjects
           projects={projects}
-          visible={site.metadata.enablePortfolio}
+          visible={enablePortfolio}
+          visible={process.env.NODE_ENV === 'development'}
         />
       </Fragment>
     </PageContainer>
