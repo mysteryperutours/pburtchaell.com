@@ -46,9 +46,9 @@ class HTML extends React.Component {
     return (
       <html {...htmlAttributes}>
         <head>
+          <Typekit kitId="utb8ujs" />
           {headComponents}
           {styleElement}
-          <Typekit kitId="utb8ujs" />
         </head>
         <body {...bodyAttributes}>
           {preBodyComponents}
