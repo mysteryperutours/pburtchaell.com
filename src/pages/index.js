@@ -201,11 +201,10 @@ class FilterProjects extends Component {
 }
 
 FilterProjects.propTypes = {
-  visible: PropTypes.bool.isRequired,
+  visible: PropTypes.string.isRequired,
   projects: PropTypes.shape({
     edges: PropTypes.arrayOf(PropTypes.shape({
       node: PropTypes.shape({
-        id: PropTypes.string.isRequired,
         fields: PropTypes.shape({
           slug: PropTypes.string.isRequired,
         }).isRequired,
@@ -302,7 +301,6 @@ IndexPage.propTypes = {
     projects: PropTypes.shape({
       edges: PropTypes.arrayOf(PropTypes.shape({
         node: PropTypes.shape({
-          id: PropTypes.string.isRequired,
           fields: PropTypes.shape({
             slug: PropTypes.string.isRequired,
           }).isRequired,
@@ -321,7 +319,7 @@ IndexPage.propTypes = {
         description: PropTypes.string.isRequired,
         introduction: PropTypes.string.isRequired,
         keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-        enablePortfolio: PropTypes.bool.isRequired,
+        enablePortfolio: PropTypes.string.isRequired,
         portfolioCompanies: PropTypes.arrayOf(PropTypes.string).isRequired,
       }),
     }),
