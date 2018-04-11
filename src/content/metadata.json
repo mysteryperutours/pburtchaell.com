@@ -1,6 +1,6 @@
 {
   "siteTitle": "Patrick Burtchaell",
-  "siteUrl": "https://pburtchaell.netlify.com",
+  "siteUrl": "https://pburtchaell.com",
   "siteDescription": "Designer and software developer working with teams to thoughtfully build impactful products.",
   "siteIntroduction": "Hello! I'm partially available for consultancy or freelance work until June 2018. In August 2018, I'm joining Facebook in Menlo Park, California.",
   "siteKeywords": [
@@ -22,12 +22,12 @@
     "gatsby",
     "netlify"
   ],
+  "enablePortfolio": false,
   "portfolioCompanies": [
     "Facebook",
     "Gigster",
     "Revelry Labs",
     "Fixt",
     "filee"
-  ],
-  "enablePortfolio": false
+  ]
 }
