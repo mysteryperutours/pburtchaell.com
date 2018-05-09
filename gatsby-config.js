@@ -2,7 +2,7 @@ const siteMetadata = require('./src/content/metadata.json')
 
 // Get environment variables (managed by Netlify CMS admin settings)
 const getValueFromEnv = (key, defaultValue = '') => {
-  const {env} = process
+  const { env } = process
 
   if (env[key]) {
     return env[key]
@@ -65,6 +65,70 @@ const gatsbyGoogleAnalytics = {
   },
 }
 
+// Configuration for the RSS feed
+const gatsbyRssFeed = {
+  resolve: `gatsby-plugin-feed`,
+  options: {
+    query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              url
+            }
+          }
+        }
+      `,
+    feeds: [
+      {
+        serialize: ({ query: { site, allMarkdownRemark } }) => {
+          const { siteMetadata } = site
+
+          return allMarkdownRemark.edges.map(({ node }) => {
+            return Object.assign({}, node.frontmatter, {
+              description: node.excerpt,
+              url: siteMetadata.url + node.fields.slug,
+              guid: siteMetadata.url + node.fields.slug,
+            });
+          });
+        },
+        query: `
+            {
+              allMarkdownRemark(
+                limit: 1000,
+                filter: {
+                  frontmatter: {
+                    templateKey: { eq: "post" }
+                    templateKey: { eq: "project" }
+                    published: { eq: true }
+                  }
+                }
+                sort: {
+                  fields: [ frontmatter___date ],
+                  order: DESC
+                }
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields { slug }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            }
+          `,
+        output: 'rss.xml',
+      },
+    ],
+  },
+}
+
 // Default Gatsby configuration
 module.exports = {
   siteMetadata: {
@@ -87,5 +151,6 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-netlify-cms`,
     gatsbyGoogleAnalytics,
+    gatsbyRssFeed,
   ]
 }
