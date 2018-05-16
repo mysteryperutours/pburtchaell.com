@@ -43,6 +43,20 @@ Other:
 
 [Gatsby][gatsby] is an open source static site generator. Under the hood, it uses libraries like [React][react], [React Router][react-router] and [Redux][redux].
 
+Here's a break down of how files are organized:
+
+```
+src
+├── assets      # Static files like images/videos
+├── components  # React components used by pages/layouts/templates
+├── content     # Static files like Markdown, YAML or JSONy
+├── html.js     # HTML template used by Gatsby
+├── layouts     # React components used by Gatsby to wrap pages in a specific layout
+├── pages       # React components rendered by Gatsby as individual pages (e.g., a custom "About" page)
+├── styles      # CSS styles
+└── templates   # React components used by Gatsby to render Markdown pages
+```
+
 ### Netlify
 
 [Netlify CMS][netlify-cms] is a quick, easy and lightweight content management system that works well with Markdown files.
@@ -89,7 +103,10 @@ These resources were helpful reference in starting with Gatsby:
 
 Thanks to [Hunter Caron](https://github.com/huntercaron) for open sourcing [Boiled](https://github.com/huntercaron/boiled), the Gatsby boilerplate my website is based off.
 
----
+## License
+
 Copyright (c) 2013-2018 Patrick Burtchaell.
+
 [Code licensed with the MIT License (MIT)](/CODE-LICENSE).
+
 [Content not licensed](/CONTENT-LICENSE).
