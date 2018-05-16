@@ -1,17 +1,17 @@
-import React, {Component, Fragment} from 'react'
-import PropTypes from 'prop-types'
-import PageContainer from '../components/PageContainer'
-import Row from '../components/Row'
-import Column from '../components/Column'
-import ListViewItem from '../components/ListView'
-import Text, {types as textTypes} from '../components/Text'
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Page from '../components/Page';
+import Row from '../components/Row';
+import Column from '../components/Column';
+import ListViewItem from '../components/ListView';
+import Text, { types as textTypes } from '../components/Text';
 
 // Define the default filters used by the index page
 const DEFAULT_FILTER_TYPES = {
   FEATURED: 'FEATURED',
   DESIGN: 'Product Design',
   SOFTWARE_DEVELOPMENT: 'Open Source',
-}
+};
 
 /*
  * Function: FilterTab
@@ -25,12 +25,12 @@ const FilterTab = (props) => {
     activeFilterType,
     filterIndex,
     onClick,
-  } = props
+  } = props;
 
   // Define available styles for a tab
-  const defaultStyle = {display: 'inline-block', cursor: 'pointer'}
-  const activeStyle = {color: 'blue', borderBottom: '1px solid blue'}
-  const paddedStyle = {marginLeft: '2rem'}
+  const defaultStyle = { display: 'inline-block', cursor: 'pointer' };
+  const activeStyle = { color: 'blue', borderBottom: '1px solid blue' };
+  const paddedStyle = { marginLeft: '2rem' };
 
   // Construct styles for the tab
   const style = {
@@ -40,7 +40,7 @@ const FilterTab = (props) => {
     ...(filterType === activeFilterType) ? activeStyle : {},
     // Include padding if the filter is not first
     ...(filterIndex === 0) ? {} : paddedStyle,
-  }
+  };
 
   return (
     <Text
@@ -52,8 +52,8 @@ const FilterTab = (props) => {
     >
       {filterLabel}
     </Text>
-  )
-}
+  );
+};
 
 FilterTab.propTypes = {
   filterType: PropTypes.oneOf([
@@ -65,7 +65,7 @@ FilterTab.propTypes = {
   activeFilterType: PropTypes.string.isRequired,
   filterIndex: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
-}
+};
 
 /*
  * Class: FilterProjects
@@ -74,31 +74,31 @@ FilterTab.propTypes = {
  */
 class FilterProjects extends Component {
   constructor(props, context) {
-    super(props, context)
+    super(props, context);
 
     // Define the filters (used to filter the array of projects)
-    this.filterTypes = DEFAULT_FILTER_TYPES
+    this.filterTypes = DEFAULT_FILTER_TYPES;
 
     // Define the filter tabs (used to render tabs in the UI)
     this.filterTabs = [
-      {id: 0, label: 'Featured', type: this.filterTypes.FEATURED},
-      {id: 1, label: 'Design', type: this.filterTypes.DESIGN},
-      {id: 0, label: 'Software Development', type: this.filterTypes.SOFTWARE_DEVELOPMENT},
-    ]
+      { id: 0, label: 'Featured', type: this.filterTypes.FEATURED },
+      { id: 1, label: 'Design', type: this.filterTypes.DESIGN },
+      { id: 0, label: 'Software Development', type: this.filterTypes.SOFTWARE_DEVELOPMENT },
+    ];
 
     // Get the initial set of filtered projects
-    const initialFilter = this.filterTypes.FEATURED
-    const initialProjects = this.filterByCategory(props.projects, initialFilter)
+    const initialFilter = this.filterTypes.FEATURED;
+    const initialProjects = this.filterByCategory(props.projects, initialFilter);
 
     this.state = {
       // The initial filter
       activeFilterType: initialFilter,
       // The initial set of filtered projects
       filteredProjects: initialProjects,
-    }
+    };
 
-    this.filterByCategory = this.filterByCategory.bind(this)
-    this.handleFilter = this.handleFilter.bind(this)
+    this.filterByCategory = this.filterByCategory.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
   /*
@@ -108,15 +108,14 @@ class FilterProjects extends Component {
   filterByCategory(projects, nextFilter) {
     return projects.edges
       // Reduce the projects.edges[] array
-      .map(({node}) => node)
+      .map(({ node }) => node)
       // Filter based off category or featured flag
-      .filter(({frontmatter}) => {
+      .filter(({ frontmatter }) => {
         if (nextFilter === this.filterTypes.FEATURED) {
-          return frontmatter.featured === true
-        } else {
-          return frontmatter.category === nextFilter
+          return frontmatter.featured === true;
         }
-      })
+        return frontmatter.category === nextFilter;
+      });
   }
 
   /*
@@ -125,24 +124,24 @@ class FilterProjects extends Component {
    * compoent state with the next array of filtered projects.
    */
   handleFilter(event, nextFilterType) {
-    const {activeFilterType} = this.state
-    const {projects} = this.props
+    const { activeFilterType } = this.state;
+    const { projects } = this.props;
 
-    event.preventDefault()
+    event.preventDefault();
 
     if (nextFilterType === activeFilterType) {
-      return
+      return;
     }
 
     this.setState({
       activeFilterType: nextFilterType,
       filteredProjects: this.filterByCategory(projects, nextFilterType),
-    })
+    });
   }
 
   render() {
-    const {filterTabs} = this
-    const {activeFilterType, filteredProjects} = this.state
+    const { filterTabs } = this;
+    const { activeFilterType, filteredProjects } = this.state;
 
     // Enable the tab bar to scroll on small screens
     // Todo: there's probably a better implementation for this, but this works
@@ -151,12 +150,12 @@ class FilterProjects extends Component {
       position: 'relative',
       height: '4rem',
       overflowX: 'scroll',
-    }
+    };
 
     const tabBarStyle = {
       position: 'absolute',
       width: '350px',
-    }
+    };
 
     return this.props.visible && (
       <Row paddingSize="large" rowSize="large">
@@ -166,7 +165,7 @@ class FilterProjects extends Component {
           </Text>
           <div className="project-tabs__container" style={tabContainerSyle}>
             <div className="project-tabs__bar" style={tabBarStyle}>
-              {filterTabs.map(({id, type, label}, filterTabIndex) => (
+              {filterTabs.map(({ id, type, label }, filterTabIndex) => (
                 <FilterTab
                   key={id}
                   filterType={type}
@@ -174,13 +173,13 @@ class FilterProjects extends Component {
                   // Get the active filter (from the component state)
                   activeFilterType={activeFilterType}
                   filterIndex={filterTabIndex}
-                  onClick={(event) => this.handleFilter(event, type)}
+                  onClick={event => this.handleFilter(event, type)}
                 />
               ))}
             </div>
           </div>
         </Column>
-        {filteredProjects.map((project) => (
+        {filteredProjects.map(project => (
           <Column
             key={project.fields.slug}
             largeSize={4}
@@ -196,7 +195,7 @@ class FilterProjects extends Component {
           </Column>
         ))}
       </Row>
-    )
+    );
   }
 }
 
@@ -215,27 +214,28 @@ FilterProjects.propTypes = {
         }),
       }),
     })),
-  }),
-}
+  }).isRequired,
+};
 
 /*
  * Function: IndexPage
  * Description: Renders the home page for the site.
  */
-const IndexPage = ({data}) => {
-  const {projects, site} = data
-  const {enablePortfolio, portfolioCompanies} = site.metadata
+const IndexPage = ({ data }) => {
+  console.log(data)
+  const { projects, site } = data;
+  const { enablePortfolio, portfolioCompanies } = site.metadata;
 
   // Define the profiles to render on the index page
   const socialProfiles = [
-    {id: 0, label: 'Facebook', linkTo: 'https://facebook.com/pburtchaell'},
-    {id: 1, label: 'Github', linkTo: 'https://github.com/pburtchaell'},
-    {id: 2, label: 'Twitter', linkTo: 'https://twitter.com/pburtchaell'},
-    {id: 3, label: 'Dribbble', linkTo: 'https://dribbble.com/pburtchaell'},
-  ]
+    { id: 0, label: 'Facebook', linkTo: 'https://facebook.com/pburtchaell' },
+    { id: 1, label: 'Github', linkTo: 'https://github.com/pburtchaell' },
+    { id: 2, label: 'Twitter', linkTo: 'https://twitter.com/pburtchaell' },
+    { id: 3, label: 'Dribbble', linkTo: 'https://dribbble.com/pburtchaell' },
+  ];
 
   return (
-    <PageContainer
+    <Page.Container
       pageTitle="Home"
       siteTitle={site.metadata.title}
       siteUrl={site.metadata.url}
@@ -258,7 +258,7 @@ const IndexPage = ({data}) => {
                   Company
                 </Text>
                 <ul>
-                  {portfolioCompanies.map((company) => (
+                  {portfolioCompanies.map(company => (
                     <li key={company}>
                       {company}
                     </li>
@@ -272,7 +272,7 @@ const IndexPage = ({data}) => {
               Profiles
             </Text>
             <ul>
-              {socialProfiles.map(({id, label, linkTo}) => (
+              {socialProfiles.map(({ id, label, linkTo }) => (
                 <li key={id}>
                   <a
                     href={linkTo}
@@ -289,13 +289,12 @@ const IndexPage = ({data}) => {
         </Row>
         <FilterProjects
           projects={projects}
-          visible={enablePortfolio}
-          visible={process.env.NODE_ENV === 'development'}
+          visible={process.env.NODE_ENV === 'development' ? true : enablePortfolio}
         />
       </Fragment>
-    </PageContainer>
-  )
-}
+    </Page.Container>
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -324,10 +323,10 @@ IndexPage.propTypes = {
         portfolioCompanies: PropTypes.arrayOf(PropTypes.string).isRequired,
       }),
     }),
-  }),
-}
+  }).isRequired,
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -370,4 +369,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

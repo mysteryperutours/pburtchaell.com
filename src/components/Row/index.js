@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import './styles.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import './styles.css';
 
 /**
  * Function: Row
@@ -10,19 +10,18 @@ import './styles.css'
 const Row = (props) => {
   const {
     children,
-    elementType,
     rowSize,
     paddingSize,
     flexBox,
     className,
-  } = props
+  } = props;
 
   const classNames = classnames('row__container', {
     'row__container--flexbox': flexBox,
     'row__container--default': rowSize === 'default',
     'row__container--large': rowSize === 'large',
     'row__container--full-width': rowSize === 'full-width',
-  }, className)
+  }, className);
 
   return (
     <section className={classNames}>
@@ -33,15 +32,16 @@ const Row = (props) => {
         {children}
       </div>
     </section>
-  )
-}
+  );
+};
 
 Row.propTypes = {
+  flexBox: PropTypes.bool,
   rowSize: PropTypes.oneOf([
     'default',
     'large',
     'full-width',
-  ]).isRequired,
+  ]),
   paddingSize: PropTypes.oneOf([
     'default',
     'large',
@@ -55,11 +55,15 @@ Row.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.arrayOf(PropTypes.node),
   ]),
-}
+};
 
 
 Row.defaultProps = {
+  flexBox: false,
   rowSize: 'default',
-}
+  paddingSize: 'default',
+  className: null,
+  children: null,
+};
 
-export default Row
+export default Row;

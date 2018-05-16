@@ -1,152 +1,16 @@
-import React, {Fragment, Component} from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import PageContainer from '../components/PageContainer'
-import Row from '../components/Row'
-import Column from '../components/Column'
-import Text, {types as textTypes} from '../components/Text'
-import './project.css'
-
-/*
- * Class: FixedPosition
- * Description: Gets the x,y position of of a child element and fixes it in
- * position on the screen.
- */
-class FixedPosition extends Component {
-  constructor(props) {
-    super(props)
-
-    this.INITIAL_STATE = {
-      fixed: false,
-      set: false,
-      top: 0,
-      left: 0,
-      width: 0,
-    }
-
-    this.state = this.INITIAL_STATE
-
-    this.setFixedPosition = this.setFixedPosition.bind(this)
-    this.handleViewportChange = this.handleViewportChange.bind(this)
-  }
-
-  componentDidMount() {
-    this.setFixedPosition()
-
-    window.addEventListener('resize', this.handleViewportChange)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleViewportChange)
-  }
-
-  setFixedPosition() {
-    const {set} = this.state
-    const {disableOnSmall} = this.props
-
-    // If we are on a small screen, don't fix the position
-    if (disableOnSmall && screen.width <= 600) {
-      return this.setState({
-        ...this.INITIAL_STATE,
-        set: true,
-      })
-    }
-
-    const position = this.element.getBoundingClientRect()
-    const width = this.element.offsetWidth
-
-    return this.setState({
-      fixed: true,
-      set: true,
-      top: position.top,
-      left: position.left,
-      width,
-    })
-  }
-
-  handleViewportChange() {
-    this.setFixedPosition()
-  }
-
-  render() {
-    const {children, className} = this.props
-    const {fixed, top, left, width} = this.state
-
-    let styles
-
-    if (fixed) {
-      styles = {
-        top,
-        left,
-        width,
-        position: 'fixed',
-      }
-    }
-
-    return (
-      <div
-        style={styles}
-        className={className}
-        ref={(element) => {
-          this.element = element
-        }}
-      >
-        {children}
-      </div>
-    )
-  }
-}
-
-FixedPosition.propTypes = {
-  disableOnSmall: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.arrayOf(PropTypes.node),
-  ]).isRequired,
-}
-
-FixedPosition.defaultProps = {
-  disableOnSmall: false,
-}
-
-function ProjectDetail({label, data, formatData}) {
-  if (data) {
-    const renderData = (v) => Array.isArray(v) ? Array.from(v).map((i) => <Fragment>{i}<br/></Fragment>) : v
-
-    return (
-      <Fragment>
-        <Text>
-          <Text type={textTypes.SMALL}>
-            {label}
-          </Text>
-        </Text>
-        <Text>
-          {renderData(formatData ? formatData(data) : data)}
-        </Text>
-      </Fragment>
-    )
-  }
-
-  return null
-}
-
-ProjectDetail.propTypes = {
-  label: PropTypes.string.isRequired,
-  data: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.arrayOf(PropTypes.string),
-  ]),
-  formatData: PropTypes.func,
-}
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Page from '../components/Page';
+import Sidebar from '../components/Sidebar';
+import Text, { types as textTypes } from '../components/Text';
+import './project.css';
 
 /*
  * Function: ProjectExternalLink
  * Description: Renders the external link for a project if it exists
  */
-const ProjectExternalLink = ({linkTo, description}) => linkTo && (
+const ProjectExternalLink = ({ linkTo, description }) => linkTo && (
   <a
     className="project--external-link a--arrow-upright"
     target="_blank"
@@ -154,12 +18,12 @@ const ProjectExternalLink = ({linkTo, description}) => linkTo && (
   >
     {description}
   </a>
-)
+);
 
 ProjectExternalLink.propTypes = {
   linkTo: PropTypes.string,
   description: PropTypes.string,
-}
+};
 
 /*
  * Function: ProjectHomeLink
@@ -172,93 +36,149 @@ const ProjectHomeLink = () => (
   >
     Back to Home
   </Link>
-)
+);
+
+/*
+ * Function: ProjectDetails
+ * Description: Renders the summary of the project for the left sidebar
+ */
+export const ProjectSummary = (props) => {
+  const {
+    title,
+    description,
+    externalLink,
+    externalLinkDescription,
+  } = props;
+
+  return (
+    <Fragment>
+      <ProjectHomeLink />
+      <Text type={textTypes.HEADER_1} className="project--title">
+        {title}
+      </Text>
+      <Text className="project--description">
+        {description}
+      </Text>
+      <ProjectExternalLink
+        linkTo={externalLink}
+        description={externalLinkDescription}
+      />
+    </Fragment>
+  )
+}
+
+ProjectSummary.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  externalLink: PropTypes.string.isRequired,
+  externalLinkDescription: PropTypes.string.isRequired,
+}
+
+/*
+ * Function: ProjectDetails
+ * Description: Renders the details of the project for the right sidebar
+ */
+export const ProjectDetails = (props) => {
+  const {
+    client,
+    collaborators,
+    date,
+    category,
+    githubStargazers,
+    githubOpenIssues,
+  } = props;
+
+  return (
+    <Fragment>
+      <Sidebar.Detail
+        label="Made For"
+        data={client}
+      />
+      <Sidebar.Detail
+        label="Collaborated With"
+        data={collaborators}
+      />
+      <Sidebar.Detail
+        label="Shipped In"
+        data={date}
+      />
+      <Sidebar.Detail
+        label="Type of Work"
+        data={category}
+      />
+      <Sidebar.Detail
+        label="Stars on Github"
+        data={githubStargazers}
+        formatData={(data) => {
+          let hundredth;
+          const thousandth = Math.round((data / 1000), 1);
+
+          if (thousandth) {
+            hundredth = Math.round(((data % 1000) / 100), 1);
+
+            return `${thousandth}.${hundredth}k`;
+          }
+            hundredth = Math.round((data / 100), 1);
+
+            return hundredth;
+        }}
+      />
+      <Sidebar.Detail
+        label="Open Issues on Github"
+        data={githubOpenIssues}
+      />
+    </Fragment>
+  )
+}
+
+ProjectDetails.propTypes = {
+  client: PropTypes.string.isRequired,
+  collaborators: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  githubStargazers: PropTypes.number.isRequired,
+  githubOpenIssues: PropTypes.number.isRequired,
+}
 
 /*
  * Function: ProjectTemplate
- * Description:
+ * Description: Renders the template for a project (e.g., case study)
  */
-function ProjectTemplate({data}) {
-  const {project, site} = data
-
-  console.warn(project)
+function ProjectTemplate({ data }) {
+  const { page, site } = data;
 
   return (
-    <PageContainer
-      pageTitle={project.frontmatter.title}
+    <Page.Container
+      pageTitle={page.frontmatter.title}
       siteTitle={site.metadata.title}
       siteUrl={site.metadata.url}
-      pageUrl={project.fields.slug}
-      description={project.frontmatter.description}
-      keywords={project.frontmatter.keywords}
+      pageUrl={page.fields.slug}
+      description={page.frontmatter.description}
+      keywords={page.frontmatter.keywords}
     >
-      <Row paddingSize="large" rowSize="large" flexBox={true}>
-        <Column largeSize={3} smallSize={12} flexOrder={0}>
-          <FixedPosition className="project--column-0" disableOnSmall>
-            <ProjectHomeLink />
-            <Text type={textTypes.HEADER_1} className="project--title">
-              {project.frontmatter.title}
-            </Text>
-            <Text className="project--description">
-              {project.frontmatter.description}
-            </Text>
-            <ProjectExternalLink
-              linkTo={project.frontmatter.externalLink}
-              description={project.frontmatter.externalLinkDescription}
-            />
-          </FixedPosition>
-        </Column>
-        <Column largeSize={6} smallSize={12} flexOrder={1}>
-          <div
-            className="project--column-1"
-            dangerouslySetInnerHTML={{__html: project.html}}
-          />
-        </Column>
-        <Column largeSize={3} smallSize={12} flexOrder={2} hideOnSmall>
-          <FixedPosition className="project--column-2" disableOnSmall>
-            <ProjectDetail
-              label="Made For"
-              data={project.frontmatter.client}
-            />
-            <ProjectDetail
-              label="Collaborated With"
-              data={project.frontmatter.collaborators}
-            />
-            <ProjectDetail
-              label="Shipped In"
-              data={project.frontmatter.date}
-            />
-            <ProjectDetail
-              label="Type of Work"
-              data={project.frontmatter.category}
-            />
-            <ProjectDetail
-              label="Stars on Github"
-              data={project.fields.githubStargazers}
-              formatData={(data) => {
-                let hundredth
-                const thousandth = Math.round((data / 1000), 1)
-
-                if (thousandth) {
-                  hundredth = Math.round(((data % 1000) / 100), 1)
-
-                  return `${thousandth}.${hundredth}k`
-                } else {
-                  hundredth = Math.round((data / 100), 1)
-
-                  return hundredth
-                }
-              }}
-            />
-            <ProjectDetail
-              label="Open Issues on Github"
-              data={project.fields.githubOpenIssues}
-            />
-          </FixedPosition>
-        </Column>
-      </Row>
-    </PageContainer>
-  )
+      <Sidebar.Container flexOrder={0} className="project--column-0">
+        <ProjectSummary
+          title={page.frontmatter.title}
+          description={page.frontmatter.description}
+          externalLink={page.frontmatter.externalLink}
+          externalLinkDescription={page.frontmatter.externalLinkDescription}
+        />
+      </Sidebar.Container>
+      <Page.Content flexOrder={1} className="project--column-1">
+        {page.html}
+      </Page.Content>
+      <Sidebar.Container flexOrder={2} className="project--column-2">
+        <ProjectDetails
+          client={page.frontmatter.client}
+          collaborators={page.frontmatter.collaborators}
+          date={page.frontmatter.date}
+          category={page.frontmatter.category}
+          githubStargazers={page.frontmatter.githubStargazers}
+          githubOpenIssues={page.frontmatter.githubOpenIssues}
+        />
+      </Sidebar.Container>
+    </Page.Container>
+  );
 }
 
 ProjectTemplate.propTypes = {
@@ -271,7 +191,7 @@ ProjectTemplate.propTypes = {
         keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
       }),
     }),
-    project: PropTypes.shape({
+    page: PropTypes.shape({
       id: PropTypes.string.isRequired,
       html: PropTypes.string.isRequired,
       frontmatter: PropTypes.shape({
@@ -286,12 +206,12 @@ ProjectTemplate.propTypes = {
         date: PropTypes.string.isRequired,
       }),
     }),
-  }),
-}
+  }).isRequired,
+};
 
-export default ProjectTemplate
+export default ProjectTemplate;
 
-export const projectQuery = graphql`
+export const pageQuery = graphql`
   query ProjectTemplate($id: String!) {
     site {
       metadata: siteMetadata {
@@ -301,7 +221,7 @@ export const projectQuery = graphql`
         keywords
       }
     }
-    project: markdownRemark(id: { eq: $id }) {
+    page: markdownRemark(id: { eq: $id }) {
       id
       html
       fields {
@@ -321,4 +241,4 @@ export const projectQuery = graphql`
       }
     }
   }
-`
+`;
