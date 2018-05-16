@@ -6,6 +6,7 @@
 [netlify-cms]: https://www.netlifycms.org/
 [npm]: http://npmjs.org/
 [yarn]: https://yarnpkg.com/en/
+[eslint]: https://eslint.org/
 [din]: https://typekit.com/fonts/din-2014
 
 # pburtchaell.com
@@ -14,10 +15,15 @@
 
 ## Getting Started
 
-1. Install: `npm ci` or `yarn`
+1. Install: `npm ci`
 2. Create an `.env` file with a `GITHUB_ACCESS_TOKEN`
-3. Develop: `npm run develop` or `yarn develop`
-4. Build: `npm run build` or `yarn build`
+3. Develop: `npm run develop`
+4. Build: `npm run build`
+
+Other:
+
+- Lint JS code style: `npm run lint`
+- Fix JS code style: `npm run prettify`
 
 ## Colophon
 
@@ -29,7 +35,8 @@
 
 - [React][react]: JavaScript library for building user interfaces
 - [Gatsby][gatsby]: static site generator for React
-- [Yarn][yarn]: JavaScript package manager (works with [npm][npm]
+- [Yarn][yarn]: JavaScript package manager (works with [npm][npm])
+- [ESLint][eslint]: JavaScript and JSX code style, following the [Airbnb Style Guide](https://github.com/airbnb/javascript)
 - [Netlify CMS][netlify-cms]: static site host, CMS, and DNS
 
 ### Gatsby
