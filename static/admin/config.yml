@@ -7,8 +7,10 @@ backend:
 media_folder: src/assets
 public_folder: static
 
-# Content Types
+# Content collections for settings, case studies, guides and blog posts
 collections:
+
+  # Website settings (via a content collection)
   - name: settings
     label: Settings
     delete: false
@@ -49,6 +51,7 @@ collections:
             widget: list
             required: true
 
+  # Project case studies collection
   - name: projects
     label: Projects
     label_singular: Project
@@ -98,3 +101,37 @@ collections:
       # External link fields (optional)
       - { name: externalLink, label: External Link, widget: string, default: "", required: false }
       - { name: externalLinkDescription, label: External Link Description, widget: string, default: "", required: false }
+
+  # Pewrsonal guides/notes collection
+  - name: notes
+    label: Notes
+    label_singular: Note
+    folder: src/content/notes
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - { name: published, label: Published, widget: boolean, default: false }
+      - { name: templateKey, label: Template Key, widget: hidden, default: project }
+      - { name: date, label: Date, widget: date, required: true }
+      - { name: title, label: Title, widget: string, required: true }
+      - { name: description, label: Description, widget: string, required: true }
+      - { name: keywords, label: Keywords, widget: list, required: false }
+      - { name: body, label: Body, widget: markdown, required: true }
+      - { name: path, label: Path, widget: string, required: true }
+
+  # Blog posts collection
+  - name: posts
+    label: Posts
+    label_singular: Post
+    folder: src/content/posts
+    slug: "{{year}}-{{slug}}"
+    create: true
+    fields:
+      - { name: published, label: Published, widget: boolean, default: false }
+      - { name: templateKey, label: Template Key, widget: hidden, default: post }
+      - { name: date, label: Date, widget: date, required: true }
+      - { name: title, label: Title, widget: string, required: true }
+      - { name: description, label: Description, widget: string, required: true }
+      - { name: keywords, label: Keywords, widget: list, required: false }
+      - { name: body, label: Body, widget: markdown, required: true }
+      - { name: path, label: Path, widget: string, required: true }
