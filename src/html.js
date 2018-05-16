@@ -1,17 +1,17 @@
-import React from 'react'
-import Typekit from 'react-typekit'
+import React from 'react';
+import Typekit from 'react-typekit';
 
 // Is the app building in a production environment?
-const PRODUCTION = process.env.NODE_ENV === `production`
+const PRODUCTION = process.env.NODE_ENV === 'production';
 
 // Define a string to hold the raw styles
-let rawStylesStr = null
+let rawStylesStr = null;
 
 if (PRODUCTION) {
   try {
-    rawStylesStr = require(`!raw-loader!../public/styles.css`)
+    rawStylesStr = require('!raw-loader!../public/styles.css');
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
@@ -23,15 +23,15 @@ if (PRODUCTION) {
 class HTML extends React.Component {
   render() {
     // Define an element to hold the inline styles
-    let styleElement = null
+    let styleElement = null;
 
     if (PRODUCTION) {
       styleElement = (
         <style
           id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{__html: rawStylesStr}}
+          dangerouslySetInnerHTML={{ __html: rawStylesStr }}
         />
-      )
+      );
     }
 
     const {
@@ -41,7 +41,7 @@ class HTML extends React.Component {
       bodyAttributes,
       preBodyComponents,
       postBodyComponents,
-    } = this.props
+    } = this.props;
 
     return (
       <html {...htmlAttributes}>
@@ -55,13 +55,13 @@ class HTML extends React.Component {
           <div
             key="body"
             id="___gatsby"
-            dangerouslySetInnerHTML={{__html: body}}
+            dangerouslySetInnerHTML={{ __html: body }}
           />
           {postBodyComponents}
         </body>
       </html>
-    )
+    );
   }
 }
 
-module.exports = HTML
+module.exports = HTML;

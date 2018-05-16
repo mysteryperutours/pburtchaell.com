@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Row from '../../components/Row'
-import Column from '../../components/Column'
-import './styles.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Row from '../../components/Row';
+import Column from '../../components/Column';
+import './styles.css';
 
 const FOOTER_MESSAGES = [
   'Made With',
@@ -13,65 +13,63 @@ const FOOTER_MESSAGES = [
   'You\'re Awesome',
   'Make Great Things',
   'Be Good',
-]
+];
 
 /*
  * Function: SiteFooterLinkTo
  * Description: Renders a link that brings you to a different page
  */
-const SiteFooterLinkTo = ({hidden, linkTo, linkToLabel}) => {
+const SiteFooterLinkTo = ({ hidden, linkTo, linkToLabel }) => {
   if (hidden) {
-    return null
-  } else {
-    return (
-      <div className="route-footer-link">
-        <small>
-          <Link
-            className="route-footer-link-anchor"
-            to={linkTo}
-          >
-            Back to {linkToLabel}
-          </Link>
-        </small>
-      </div>
-    )
+    return null;
   }
-}
+  return (
+    <div className="route-footer-link">
+      <small>
+        <Link
+          className="route-footer-link-anchor"
+          to={linkTo}
+        >
+            Back to {linkToLabel}
+        </Link>
+      </small>
+    </div>
+  );
+};
 
 SiteFooterLinkTo.propTypes = {
   hidden: PropTypes.bool.isRequired,
   linkTo: PropTypes.string,
   linkToLabel: PropTypes.string,
-}
+};
 
 /*
  * Function: SiteFooterLinkToTop
  * Description: Renders a link that brings you to the top of the page
  * UX tips: https://www.nngroup.com/articles/back-to-top/
  */
-const SiteFooterLinkToTop = ({hidden}) => {
+const SiteFooterLinkToTop = ({ hidden }) => {
   if (hidden) {
-    return null
-  } else {
-    return (
-      <div className="route-footer-top-link">
-        <small>
-          <a
-            href="#"
-            className="route-footer-top-link-anchor"
-            onClick={() => window.scrollTo(0, 0)}
-          >
-            Back to Top
-          </a>
-        </small>
-      </div>
-    )
+    return null;
   }
-}
+  return (
+    <div className="route-footer-top-link">
+      <small>
+        <a
+          href="#"
+          className="route-footer-top-link-anchor"
+          onClick={() => window.scrollTo(0, 0)}
+        >
+            Back to Top
+        </a>
+      </small>
+    </div>
+  );
+};
 
 SiteFooterLinkToTop.propTypes = {
   hidden: PropTypes.bool.isRequired,
-}
+};
 
 /*
  * Function: SiteFooter
@@ -79,12 +77,12 @@ SiteFooterLinkToTop.propTypes = {
  */
 const SiteFooter = (props) => {
   // Get a random message to render next to the heart
-  const messageIndex = Math.floor(Math.random() * FOOTER_MESSAGES.length)
-  const message = FOOTER_MESSAGES[messageIndex]
+  const messageIndex = Math.floor(Math.random() * FOOTER_MESSAGES.length);
+  const message = FOOTER_MESSAGES[messageIndex];
 
   // Get the (c) copyright symbol and the current year
-  const copyrightSymbol = String.fromCharCode(169)
-  const copyrightDate = new Date().getFullYear()
+  const copyrightSymbol = String.fromCharCode(169);
+  const copyrightDate = new Date().getFullYear();
 
   const copyrightSymbolStyle = {
     fontSize: 10,
@@ -93,14 +91,14 @@ const SiteFooter = (props) => {
     display: 'inline-block',
     position: 'relative',
     top: -2,
-  }
+  };
 
   const {
     rowSize,
     linkTo,
     linkToLabel,
     linkToTop,
-  } = props
+  } = props;
 
   return (
     <footer role="contentinfo" className="route__footer">
@@ -132,28 +130,29 @@ const SiteFooter = (props) => {
           </div>
           <div className="route__footer__text">
             <small className="small-inline">
-              <span>
-                <span style={copyrightSymbolStyle}>{copyrightSymbol}</span>
-                {copyrightDate} Patrick Burtchaell
-              </span>
+              <span style={copyrightSymbolStyle}>{copyrightSymbol}</span>
+              2013-{copyrightDate}
+              &middot; <a href="/rss.xml">RSS</a>
             </small>
           </div>
         </Column>
       </Row>
     </footer>
-  )
-}
+  );
+};
 
 SiteFooter.propTypes = {
   rowSize: PropTypes.string.isRequired,
   linkTo: PropTypes.string,
   linkToLabel: PropTypes.string,
   linkToTop: PropTypes.bool.isRequired,
-}
+};
 
 SiteFooter.defaultProps = {
   linkToTop: false,
+  linkTo: null,
+  linkToLabel: null,
   rowSize: 'large',
-}
+};
 
-export default SiteFooter
+export default SiteFooter;

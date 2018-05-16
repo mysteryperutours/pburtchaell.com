@@ -1,5 +1,5 @@
-import React, {Component, Children} from 'react'
-import PropTypes from 'prop-types'
+import React, { Children } from 'react';
+import PropTypes from 'prop-types';
 
 function calculateBackground(type, lineHeight, color) {
   if (type === 'line') {
@@ -8,13 +8,13 @@ function calculateBackground(type, lineHeight, color) {
     return {
       backgroundSize: `100% ${lineHeight}px`,
       backgroundImage: `linear-gradient(to bottom, transparent 0%, transparent ${percentage}%, ${color} ${percentage}%, ${color} 100%)`,
-    }
+    };
   }
 
   return {
     backgroundSize: `100% ${lineHeight * 2}px`,
     backgroundImage: `linear-gradient(to bottom, ${color} 50%, transparent 50%, transparent 100%)`,
-  }
+  };
 }
 
 function Baseline(props) {
@@ -25,8 +25,8 @@ function Baseline(props) {
     color,
     children,
     style,
-    ...restProps,
-  } = props
+    ...restProps
+  } = props;
 
   const baselineStyle = {
     position: 'fixed',
@@ -37,31 +37,31 @@ function Baseline(props) {
     zIndex: 2,
     pointerEvents: 'none',
     ...calculateBackground(type, lineHeight, color),
-  }
+  };
 
   const rootProps = {
     ...restProps,
-    style: {...style, position: 'relative'},
-  }
+    style: { ...style, position: 'relative' },
+  };
 
   return (
     <div {...rootProps}>
       {!disabled && (
-        <div style={baselineStyle}></div>
+        <div style={baselineStyle} />
       )}
       {Children.only(children)}
     </div>
-  )
+  );
 }
 
 Baseline.propTypes = {
-  disabled: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
   type: PropTypes.string,
   lineHeight: PropTypes.number,
   color: PropTypes.string,
   children: PropTypes.node.isRequired,
-  style: PropTypes.object,
-}
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+};
 
 Baseline.defaultProps = {
   disabled: false,
@@ -69,6 +69,6 @@ Baseline.defaultProps = {
   lineHeight: 9,
   color: 'rgba(0, 0, 0, 0.15)',
   style: {},
-}
+};
 
-export default Baseline
+export default Baseline;
