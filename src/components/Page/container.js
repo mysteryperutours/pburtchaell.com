@@ -26,7 +26,6 @@ const PageContainer = (props) => {
     footer,
     header,
     rowSize,
-    navigationItems,
     children,
     linkTo,
     linkToLabel,
@@ -88,7 +87,6 @@ const PageContainer = (props) => {
         {header && (
           <SiteHeader
             title={pageTitle}
-            navigationItems={navigationItems}
             rowSize={rowSize}
           />
         )}
@@ -112,7 +110,7 @@ const PageContainer = (props) => {
 
 PageContainer.propTypes = {
   // Property to set row size for header and footer rows
-  rowSize: PropTypes.string.isRequired,
+  rowSize: PropTypes.string,
   // Property to hide/show header
   header: PropTypes.bool,
   // Property to hide/show footer
@@ -128,16 +126,13 @@ PageContainer.propTypes = {
   pageUrl: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-  navigationItems: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    linkTo: PropTypes.string.isRequired,
-  })).isRequired,
   linkTo: PropTypes.string,
   linkToLabel: PropTypes.string,
   linkToTop: PropTypes.bool,
 };
 
 PageContainer.defaultProps = {
+  rowSize: 'large',
   header: true,
   footer: true,
   head: null,
