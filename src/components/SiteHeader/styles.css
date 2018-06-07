@@ -41,3 +41,7 @@ a.site__title:active {
   width: 72px;
   color: var(--blue);
 }
+
+.site__navigation .site__navigation--item:first-of-type {
+  margin-left: 0;
+}

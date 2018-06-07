@@ -5,10 +5,11 @@ import Row from '../components/Row';
 import Column from '../components/Column';
 import ListViewItem from '../components/ListView';
 import Text, { types as textTypes } from '../components/Text';
+import './index.css';
 
 // Define the default filters used by the index page
 const DEFAULT_FILTER_TYPES = {
-  FEATURED: 'FEATURED',
+  FEATURED: 'Featured',
   DESIGN: 'Product Design',
   SOFTWARE_DEVELOPMENT: 'Open Source',
 };
@@ -28,9 +29,8 @@ const FilterTab = (props) => {
   } = props;
 
   // Define available styles for a tab
-  const defaultStyle = { display: 'inline-block', cursor: 'pointer' };
-  const activeStyle = { color: 'blue', borderBottom: '1px solid blue' };
-  const paddedStyle = { marginLeft: '2rem' };
+  const defaultStyle = { display: 'inline-block' };
+  const activeStyle = { color: 'blue', borderColor: 'blue' };
 
   // Construct styles for the tab
   const style = {
@@ -38,15 +38,12 @@ const FilterTab = (props) => {
     ...defaultStyle,
     // Include active styles if the filter is active
     ...(filterType === activeFilterType) ? activeStyle : {},
-    // Include padding if the filter is not first
-    ...(filterIndex === 0) ? {} : paddedStyle,
   };
 
   return (
     <Text
       key={filterType}
-      type={textTypes.HEADER_3}
-      className="project-tabs__tab"
+      className="button button-small"
       onClick={onClick}
       style={style}
     >
@@ -148,13 +145,15 @@ class FilterProjects extends Component {
     // for the time being--until I have more time.
     const tabContainerSyle = {
       position: 'relative',
-      height: '4rem',
+      height: '5rem',
       overflowX: 'scroll',
+      overflowY: 'hidden',
+      marginBottom: '1rem',
     };
 
     const tabBarStyle = {
       position: 'absolute',
-      width: '350px',
+      width: '450px',
     };
 
     return this.props.visible && (
@@ -182,7 +181,7 @@ class FilterProjects extends Component {
         {filteredProjects.map(project => (
           <Column
             key={project.fields.slug}
-            largeSize={4}
+            largeSize={3}
             smallSize={12}
           >
             <ListViewItem
@@ -200,7 +199,7 @@ class FilterProjects extends Component {
 }
 
 FilterProjects.propTypes = {
-  visible: PropTypes.string.isRequired,
+  visible: PropTypes.bool.isRequired,
   projects: PropTypes.shape({
     edges: PropTypes.arrayOf(PropTypes.shape({
       node: PropTypes.shape({
@@ -222,22 +221,14 @@ FilterProjects.propTypes = {
  * Description: Renders the home page for the site.
  */
 const IndexPage = ({ data }) => {
-  console.log(data)
   const { projects, site } = data;
-  const { enablePortfolio, portfolioCompanies } = site.metadata;
-
-  // Define the profiles to render on the index page
-  const socialProfiles = [
-    { id: 0, label: 'Facebook', linkTo: 'https://facebook.com/pburtchaell' },
-    { id: 1, label: 'Github', linkTo: 'https://github.com/pburtchaell' },
-    { id: 2, label: 'Twitter', linkTo: 'https://twitter.com/pburtchaell' },
-    { id: 3, label: 'Dribbble', linkTo: 'https://dribbble.com/pburtchaell' },
-  ];
+  const { enablePortfolio } = site.metadata;
 
   return (
     <Page.Container
       pageTitle="Home"
       siteTitle={site.metadata.title}
+      pageUrl="/"
       siteUrl={site.metadata.url}
       description={site.metadata.description}
       keywords={site.metadata.keywords}
@@ -249,42 +240,14 @@ const IndexPage = ({ data }) => {
             <Text type={textTypes.SMALL}>
               {site.metadata.introduction}
             </Text>
-          </Column>
-          <Column largeSize={2} smallSize={12} />
-          <Column largeSize={2} smallSize={12}>
-            {!enablePortfolio && (
-              <Fragment>
-                <Text type={textTypes.HEADER_2}>
-                  Company
-                </Text>
-                <ul>
-                  {portfolioCompanies.map(company => (
-                    <li key={company}>
-                      {company}
-                    </li>
-                  ))}
-                </ul>
-              </Fragment>
-            )}
-          </Column>
-          <Column largeSize={4} smallSize={12} className="index__profiles">
-            <Text type={textTypes.HEADER_2}>
-              Profiles
-            </Text>
-            <ul>
-              {socialProfiles.map(({ id, label, linkTo }) => (
-                <li key={id}>
-                  <a
-                    href={linkTo}
-                    target="_blank"
-                    title={`Patrick Burtchaell on ${label}`}
-                    aria-label={`Patrick Burtchaell on ${label}`}
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <a
+              hidden
+              href="https://twitter.com/pburtchaell?ref_src=twsrc%5Etfw"
+              className="twitter-follow-button"
+              data-show-count="true"
+            >
+              Follow @pburtchaell
+            </a>
           </Column>
         </Row>
         <FilterProjects

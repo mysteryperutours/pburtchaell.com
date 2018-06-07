@@ -7,12 +7,11 @@ import './styles.css';
 
 const FOOTER_MESSAGES = [
   'Made With',
-  'Stay Safe',
   'Have Fun Today',
   'It\'s a Wonderful World',
   'You\'re Awesome',
   'Make Great Things',
-  'Be Good',
+  'Do Good',
 ];
 
 /*
@@ -30,7 +29,7 @@ const SiteFooterLinkTo = ({ hidden, linkTo, linkToLabel }) => {
           className="route-footer-link-anchor"
           to={linkTo}
         >
-            Back to {linkToLabel}
+          Back to {linkToLabel}
         </Link>
       </small>
     </div>
@@ -60,7 +59,7 @@ const SiteFooterLinkToTop = ({ hidden }) => {
           className="route-footer-top-link-anchor"
           onClick={() => window.scrollTo(0, 0)}
         >
-            Back to Top
+          Back to Top
         </a>
       </small>
     </div>
@@ -131,8 +130,7 @@ const SiteFooter = (props) => {
           <div className="route__footer__text">
             <small className="small-inline">
               <span style={copyrightSymbolStyle}>{copyrightSymbol}</span>
-              2013-{copyrightDate}
-              &middot; <a href="/rss.xml">RSS</a>
+              2013-{copyrightDate} &middot; <a href="/rss.xml">RSS</a>
             </small>
           </div>
         </Column>

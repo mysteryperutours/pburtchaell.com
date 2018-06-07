@@ -22,17 +22,18 @@ SiteHeaderNavItem.propTypes = {
 
 /*
  * Function: SiteHeader
- * Description:
+ * Description: Renders the global header for the website
  */
 const SiteHeader = ({ navigationItems, rowSize }) => (
   <header role="banner" className="site__header-container">
     <Row rowSize={rowSize}>
-      <Column largeSize={12} smallSize={12}>
-        <div className="site__header">
-          <Link to="/" className="site__title">
-              Patrick Burtchaell
-          </Link>
-          {navigationItems && (
+      <Column largeSize={3} smallSize={6}>
+        <Link to="/" className="site__title">
+          Patrick Burtchaell
+        </Link>
+      </Column>
+      <Column largeSize={9} smallSize={6}>
+        {navigationItems && (
           <nav className="site__navigation">
             {navigationItems.map(navigationItem => (
               <SiteHeaderNavItem
@@ -40,10 +41,9 @@ const SiteHeader = ({ navigationItems, rowSize }) => (
                 label={navigationItem.label}
                 linkTo={navigationItem.linkTo}
               />
-                ))}
+            ))}
           </nav>
-            )}
-        </div>
+        )}
       </Column>
     </Row>
   </header>
@@ -59,6 +59,10 @@ SiteHeader.propTypes = {
 
 SiteHeader.defaultProps = {
   rowSize: 'large',
+  navigationItems: [
+    { label: 'Work', linkTo: '/work' },
+    { label: 'Writing', linkTo: '/writing' },
+  ]
 };
 
 export default SiteHeader;

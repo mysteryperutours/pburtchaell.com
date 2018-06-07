@@ -5,7 +5,7 @@
   padding: 2rem 0;
   margin-top: var(--large-margin);
   color: var(--light-gray);
-  border-top: 1px solid var(--lightest-gray);
+  border-top: 1px solid var(--black);
   user-select: none;
 }
 
