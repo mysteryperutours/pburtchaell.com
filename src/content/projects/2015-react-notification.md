@@ -4,7 +4,7 @@ featured: false
 templateKey: project
 date: '2015-03-21'
 title: React Notification
-description: 'Snackbar notifications for React, styled with Material Design.'
+description: 'Developing snackbar notifications for React.js, a user interface library's
 client: React
 collaborators:
 path: react-notification

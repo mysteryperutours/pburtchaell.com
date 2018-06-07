@@ -4,7 +4,7 @@ featured: true
 templateKey: project
 date: '2018-04-05'
 title: SNAP User Experience
-description: For my design capstone project and honors thesis at Loyola University New Orleans, I researched the current user experience of applying for food stamps (SNAP) in Louisiana and demonstrated how we can make it better.
+description: 'Researching pain points and usability improvements for food stamps in Louisiana'
 client:
 collaborators:
   - Loyola University New Orleans

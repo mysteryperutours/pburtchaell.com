@@ -4,7 +4,7 @@ featured: true
 templateKey: project
 date: '2015-06-12'
 title: Redux Promise Middleware
-description: Redux middleware for promises, async functions and conditional optimistic updates.
+description: 'Developing a middleware for Redux.js to handle async operations'
 client: Redux
 collaborators:
 path: redux-promise-middleware
