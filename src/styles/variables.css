@@ -19,6 +19,7 @@
   --default-font-family: 'din-2014', sans-serif;
   --default-line-height: 3rem;
 
+  --default-border: var(--default-border-width) solid var(--black);
   --default-border-width: 1px;
   --default-border-radius: 0.3rem;
 
