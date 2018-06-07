@@ -1,0 +1,10 @@
+@import '../styles/variables.css';
+
+.writing__page-column {
+ padding: 2rem;
+ margin-top: -2rem; 
+}
+
+.writing__page-column-notes {
+  border: 1px solid var(--black);
+}

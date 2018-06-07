@@ -1,0 +1,119 @@
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Page from '../components/Page';
+import Column from '../components/Column';
+import ListViewItem from '../components/ListView';
+import Text, { types as textTypes } from '../components/Text';
+import './writing.css';
+
+const pageTitle = 'Writing';
+
+/*
+ * Function: PostsPage
+ * Description: Renders an index page for posts
+ */
+// Todo: render the posts as a list view
+const PostsPage = ({ data }) => {
+  console.log(data.posts.edges)
+
+  return (
+    <Page.Container
+      pageTitle={pageTitle}
+      siteTitle={data.site.metadata.title}
+    >
+      <Fragment>
+        <Column largeSize={12} smallSize={12}>
+          <Text type={textTypes.HEADER_1}>
+            {pageTitle}
+          </Text>
+        </Column>
+        <Column largeSize={9} smallSize={12} className="writing__page-column writing__page-column-posts">
+          <Text type={textTypes.HEADER_2}>
+            Posts
+          </Text>
+          {data.posts.edges.map(({ node }) => (
+            <ListViewItem
+              title={node.frontmatter.title}
+              excerpt={node.excerpt}
+              date={node.frontmatter.date}
+              path={node.frontmatter.path}
+              category={node.frontmatter.category}
+              linkTo={node.fields.slug}
+            />
+          ))}
+        </Column>
+        <Column largeSize={3} smallSize={12} className="writing__page-column writing__page-column-notes">
+          <Text type={textTypes.HEADER_2}>
+            Notes
+          </Text>
+          {data.notes.edges.map(({ node }) => (
+            <ListViewItem
+              title={node.frontmatter.title}
+              date={node.frontmatter.date}
+              path={node.frontmatter.path}
+              category={node.frontmatter.category}
+              linkTo={node.fields.slug}
+            />
+          ))}
+        </Column>
+      </Fragment>
+    </Page.Container>
+  );
+};
+
+PostsPage.propTypes = {
+  data: PropTypes.shape({
+
+  }).isRequired,
+};
+
+export default PostsPage;
+
+// Todo: fetch the posts
+export const pageQuery = graphql`
+  query PostsQuery {
+    site {
+      metadata: siteMetadata {
+        url
+        title
+        description
+        introduction
+        keywords
+        enablePortfolio
+        portfolioCompanies
+      }
+    }
+    notes: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "note"}, published: {eq: true}}}, sort: {fields: [frontmatter___date], order: DESC}) {
+      totalCount
+      edges {
+        node {
+          excerpt(pruneLength: 60)
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "YYYY")
+            category
+          }
+        }
+      }
+    }
+    posts: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "post"}, published: {eq: true}}}, sort: {fields: [frontmatter___date], order: DESC}) {
+      totalCount
+      edges {
+        node {
+          excerpt(pruneLength: 60)
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "YYYY")
+            category
+          }
+        }
+      }
+    }
+  }
+`;
