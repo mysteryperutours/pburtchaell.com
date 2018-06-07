@@ -1,6 +1,10 @@
 .list-view-item {
   margin-top: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+.list-view-item-excerpt {
+  color: black;
 }
 
 /*
