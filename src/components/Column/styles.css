@@ -47,6 +47,11 @@
     flex-basis: calc((8 * 100%) / 12);
   }
 
+  .column--large-9 {
+    max-width: calc((9 * 100%) / 12);
+    flex-basis: calc((9 * 100%) / 12);
+  }
+
   .column--large-12 {
     max-width: calc((12 * 100%) / 12);
     flex-basis: calc((12 * 100%) / 12);
@@ -75,7 +80,12 @@
 
   .column--small-8 {
     max-width: calc((8 * 100%) / 12);
-    flex-basis: calc((8 * 100%) / 12)%;
+    flex-basis: calc((8 * 100%) / 12);
+  }
+
+  .column--small-9 {
+    max-width: calc((9 * 100%) / 12);
+    flex-basis: calc((9 * 100%) / 12);
   }
 
   .column--small-12 {
