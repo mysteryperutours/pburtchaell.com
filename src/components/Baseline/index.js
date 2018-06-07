@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React, { Children, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 function calculateBackground(type, lineHeight, color) {
@@ -17,41 +17,82 @@ function calculateBackground(type, lineHeight, color) {
   };
 }
 
-function Baseline(props) {
-  const {
-    disabled,
-    type,
-    lineHeight,
-    color,
-    children,
-    style,
-    ...restProps
-  } = props;
+class Baseline extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const baselineStyle = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    zIndex: 2,
-    pointerEvents: 'none',
-    ...calculateBackground(type, lineHeight, color),
-  };
+    const localState = JSON.parse(localStorage.getItem('baselineGrid'));
 
-  const rootProps = {
-    ...restProps,
-    style: { ...style, position: 'relative' },
-  };
+    const initialState = {
+      show: false,
+      color: 'rgba(36, 31, 32, 0.1)',
+    };
 
-  return (
-    <div {...rootProps}>
-      {!disabled && (
-        <div style={baselineStyle} />
-      )}
-      {Children.only(children)}
-    </div>
-  );
+    this.state = !localState ? initialState : localState;
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('baselineGrid', JSON.stringify(this.state));
+  }
+
+  render() {
+    const {
+      type,
+      lineHeight,
+      color,
+      children,
+      style,
+      disabled,
+      ...restProps
+    } = this.props;
+
+    const controlStyle = {
+      position: 'fixed',
+      top: 0,
+      right: 0,
+      zIndex: 3,
+      padding: '0.5rem',
+      backgroundColor: this.state.color,
+    };
+
+    const baselineStyle = {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      right: 0,
+      zIndex: 2,
+      pointerEvents: 'none',
+      ...calculateBackground(type, lineHeight, color),
+    };
+
+    const rootProps = {
+      ...restProps,
+      style: { ...style, position: 'relative' },
+    };
+
+    return !disabled ? (
+      <Fragment>
+        <div style={controlStyle}>
+          <input
+            name="baselineGrid"
+            type="checkbox"
+            checked={this.state.show}
+            onChange={() => this.setState({ show: !this.state.show })}
+          />
+          <label htmlFor="baselineGrid" style={{ paddingLeft: '0.5rem' }}>
+            Baseline Grid
+          </label>
+        </div>
+        <div {...rootProps}>
+          {this.state.show && (
+            <div style={baselineStyle} />
+          )}
+          {Children.only(children)}
+        </div>
+      </Fragment>
+    ) : Children.only(children);
+  }
 }
 
 Baseline.propTypes = {
