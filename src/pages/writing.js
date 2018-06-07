@@ -7,6 +7,7 @@ import Text, { types as textTypes } from '../components/Text';
 import './writing.css';
 
 const pageTitle = 'Writing';
+const pageUrl = '/writing';
 
 /*
  * Function: PostsPage
@@ -14,12 +15,14 @@ const pageTitle = 'Writing';
  */
 // Todo: render the posts as a list view
 const PostsPage = ({ data }) => {
-  console.log(data.posts.edges)
-
   return (
     <Page.Container
       pageTitle={pageTitle}
       siteTitle={data.site.metadata.title}
+      pageUrl={pageUrl}
+      siteUrl={data.site.metadata.url}
+      description={data.site.metadata.description}
+      keywords={data.site.metadata.keywords}
     >
       <Fragment>
         <Column largeSize={12} smallSize={12}>
@@ -34,7 +37,7 @@ const PostsPage = ({ data }) => {
           {data.posts.edges.map(({ node }) => (
             <ListViewItem
               title={node.frontmatter.title}
-              excerpt={node.excerpt}
+              excerpt={node.frontmatter.description}
               date={node.frontmatter.date}
               path={node.frontmatter.path}
               category={node.frontmatter.category}
@@ -45,6 +48,9 @@ const PostsPage = ({ data }) => {
         <Column largeSize={3} smallSize={12} className="writing__page-column writing__page-column-notes">
           <Text type={textTypes.HEADER_2}>
             Notes
+          </Text>
+          <Text type={textTypes.SMALL}>
+            These notes are basic, informal writing and resources on my personal and professional interests.
           </Text>
           {data.notes.edges.map(({ node }) => (
             <ListViewItem
@@ -87,12 +93,12 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt(pruneLength: 60)
           fields {
             slug
           }
           frontmatter {
             title
+            description
             date(formatString: "YYYY")
             category
           }
@@ -103,12 +109,12 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt(pruneLength: 60)
           fields {
             slug
           }
           frontmatter {
             title
+            description
             date(formatString: "YYYY")
             category
           }

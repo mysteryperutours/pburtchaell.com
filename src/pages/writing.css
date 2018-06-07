@@ -8,3 +8,9 @@
 .writing__page-column-notes {
   border: 1px solid var(--black);
 }
+
+@media only screen and (max-width: 600px) {
+  .writing__page-column-notes {
+    border: none;
+  }
+}
