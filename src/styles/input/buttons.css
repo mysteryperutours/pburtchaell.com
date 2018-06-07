@@ -1,0 +1,40 @@
+button,
+.button,
+input[type="submit"] {
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  font-size: var(--default-font-size);
+  line-height: var(--default-line-height);
+  color: var(--black);
+  border: var(--default-border);
+  background: var(--white);
+  margin-left: 1rem;
+  padding: 0 1rem;
+  user-select: none;
+}
+
+.button-small {
+  height: 3rem;
+}
+
+button:first-child,
+.button:first-child,
+input[type="submit"]:first-child {
+  margin-left: 0;
+}
+
+button:hover,
+.button:hover,
+.button.button-hover,
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+button:active,
+.button:active,
+.button.button-active,
+input[type="submit"]:active {
+  color: var(--blue);
+  border-color: var(--blue);
+}

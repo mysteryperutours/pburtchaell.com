@@ -1,0 +1,31 @@
+form {
+  text-align: center;
+  margin-top: var(--large-margin);
+  padding: 2rem;
+  padding-bottom: 3rem;
+  border: 1px solid var(--black);
+}
+
+input {
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--black);
+  display: inline-block;
+  height: 4rem;
+  line-height: var(--default-line-height);
+  font-size: var(--default-font-size);
+}
+
+input[type="text"],
+input[type="email"] {
+  height: 38px;
+  width: 250px;
+  padding-left: 1rem;
+  background: var(--white);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: var(--blue);
+}

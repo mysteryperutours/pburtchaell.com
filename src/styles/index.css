@@ -7,3 +7,5 @@
 @import './typography/code.css';
 @import './typography/heading.css';
 @import './typography/list.css';
+@import './input/buttons.css';
+@import './input/forms.css';
