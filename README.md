@@ -101,7 +101,16 @@ These resources were helpful reference in starting with Gatsby:
 
 ### Thanks
 
-Thanks to [Hunter Caron](https://github.com/huntercaron) for open sourcing [Boiled](https://github.com/huntercaron/boiled), the Gatsby boilerplate my website is based off.
+I'm inspired by the design--and especially the information architecture--of the following sites:
+
+- [Frank Chimero](https://frankchimero.com/)
+- [CSS Wizardry](https://csswizardry.com/)
+- [Brad Frost](http://bradfrost.com/)
+- [Rasmus Andersson](https://rsms.me/)
+- [Daniel Eden](https://daneden.me/)
+- [Christine Cha](https://christinecha.com/)
+
+Thanks also goes to [Hunter Caron](https://github.com/huntercaron) for open sourcing [Boiled](https://github.com/huntercaron/boiled), the Gatsby boilerplate my initial Gatsby config was based on.
 
 ## License
 
