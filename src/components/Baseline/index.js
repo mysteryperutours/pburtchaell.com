@@ -21,14 +21,18 @@ class Baseline extends React.Component {
   constructor(props) {
     super(props);
 
-    const localState = JSON.parse(localStorage.getItem('baselineGrid'));
-
     const initialState = {
       show: false,
       color: 'rgba(36, 31, 32, 0.1)',
     };
 
-    this.state = !localState ? initialState : localState;
+    if (window && window.localStorage) {
+      const localState = JSON.parse(window.localStorage.getItem('baselineGrid'));
+
+      this.state = !localState ? initialState : localState;
+    } else {
+      this.state = initialState;
+    }
   }
 
   componentDidUpdate() {
