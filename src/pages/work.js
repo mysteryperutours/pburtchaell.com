@@ -1,9 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Page from '../components/Page';
-import Row from '../components/Row';
-import Column from '../components/Column';
-import ListViewItem from '../components/ListView';
+import List from '../components/List';
 import Text, { types as textTypes } from '../components/Text';
 
 const pageTitle = 'Work';
@@ -13,52 +11,60 @@ const pageUrl = '/work';
  * Function: WorkPage
  * Description: Renders an index page for work
  */
-const WorkPage = ({ data }) => {
+const WorkPage = ({ data: { site, projects } }) => {
   return (
     <Page.Container
       pageTitle={pageTitle}
-      siteTitle={data.site.metadata.title}
+      siteTitle={site.metadata.title}
       pageUrl={pageUrl}
-      siteUrl={data.site.metadata.url}
-      description={data.site.metadata.description}
-      keywords={data.site.metadata.keywords}
+      siteUrl={site.metadata.url}
+      description={site.metadata.description}
+      keywords={site.metadata.keywords}
     >
-      <Fragment>
-        <Column largeSize={12} smallSize={12}>
-          <Text type={textTypes.HEADER_1}>
-            {pageTitle}
-          </Text>
-        </Column>
-        {data.projects.edges.map(({ node: project }) => (
-          <Column
-            key={project.fields.slug}
-            largeSize={12}
-            smallSize={12}
-          >
-            <ListViewItem
-              title={project.frontmatter.title}
-              excerpt={project.frontmatter.description}
-              date={project.frontmatter.date}
-              path={project.frontmatter.path}
-              category={project.frontmatter.category}
-              linkTo={project.fields.slug}
-            />
-          </Column>
-        ))}
-      </Fragment>
+      <Page.Sidebar>
+        <Text type={textTypes.HEADER_1}>
+          {pageTitle}
+        </Text>
+      </Page.Sidebar>
+      <Page.Content>
+        <List items={projects} />
+      </Page.Content>
     </Page.Container>
   );
 };
 
 WorkPage.propTypes = {
   data: PropTypes.shape({
-
+    site: PropTypes.shape({
+      metadata: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        introduction: PropTypes.string.isRequired,
+        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+      }),
+    }),
+    projects: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({
+        node: PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          fields: PropTypes.shape({
+            slug: PropTypes.string.isRequired,
+          }).isRequired,
+          frontmatter: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            category: PropTypes.string.isRequired,
+            date: PropTypes.string.isRequired,
+          }),
+        }),
+      })),
+    }),
   }).isRequired,
 };
 
 export default WorkPage;
 
-// Todo: fetch the work
 export const pageQuery = graphql`
   query WorkQuery {
     site {
@@ -74,13 +80,13 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          id
           fields {
             slug
           }
           frontmatter {
             title
             description
-            featured
             date(formatString: "YYYY")
             category
           }
@@ -88,4 +94,4 @@ export const pageQuery = graphql`
       }
     }
   }
-  `;
+`;

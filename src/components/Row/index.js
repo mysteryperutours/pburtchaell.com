@@ -10,39 +10,25 @@ import './styles.css';
 const Row = (props) => {
   const {
     children,
-    rowSize,
-    paddingSize,
-    flexBox,
+    padding,
     className,
   } = props;
 
-  const classNames = classnames('row__container', {
-    'row__container--flexbox': flexBox,
-    'row__container--default': rowSize === 'default',
-    'row__container--large': rowSize === 'large',
-    'row__container--full-width': rowSize === 'full-width',
-  }, className);
+  const classNames = classnames('row', className, {
+    padding,
+    [`padding-size-${padding}`]: padding,
+  });
 
   return (
     <section className={classNames}>
-      {paddingSize && (
-        <div className={`padding padding--${paddingSize}`} />
-      )}
-      <div className="row">
-        {children}
-      </div>
+      {children}
     </section>
   );
 };
 
 Row.propTypes = {
-  flexBox: PropTypes.bool,
-  rowSize: PropTypes.oneOf([
-    'default',
-    'large',
-    'full-width',
-  ]),
-  paddingSize: PropTypes.oneOf([
+  padding: PropTypes.oneOf([
+    'none',
     'default',
     'large',
     'small',
@@ -59,9 +45,7 @@ Row.propTypes = {
 
 
 Row.defaultProps = {
-  flexBox: false,
-  rowSize: 'default',
-  paddingSize: 'default',
+  padding: 'default',
   className: null,
   children: null,
 };

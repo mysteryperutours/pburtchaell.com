@@ -1,10 +1,48 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Page from '../components/Page';
-import Sidebar from '../components/Sidebar';
+import Row from '../components/Row';
+import Column from '../components/Column';
 import Text, { types as textTypes } from '../components/Text';
-import './project.css';
+import '../styles/pages/project.css';
+
+/*
+ * Function: SidebarDetail
+ * Description: Renders a detail for the project template sidebar
+ */
+function SidebarDetail({ label, data, formatData }) {
+  if (data) {
+    const renderData = v =>
+      (Array.isArray(v) ? Array.from(v).map(i => <Fragment>{i}<br /></Fragment>) : v);
+
+    return (
+      <Column largeSize={12} smallSize={6}>
+        <Text type={textTypes.SMALL}>
+          {label}
+        </Text>
+        <Text>
+          {renderData(formatData ? formatData(data) : data)}
+        </Text>
+      </Column>
+    );
+  }
+
+  return null;
+}
+
+SidebarDetail.defaultProps = {
+  formatData: data => data,
+};
+
+SidebarDetail.propTypes = {
+  label: PropTypes.string.isRequired,
+  data: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
+  formatData: PropTypes.func,
+};
 
 /*
  * Function: ProjectExternalLink
@@ -12,7 +50,7 @@ import './project.css';
  */
 const ProjectExternalLink = ({ linkTo, description }) => linkTo && (
   <a
-    className="project--external-link a--arrow-upright"
+    className="anchor-arrow-upright column-hide-on-small"
     target="_blank"
     href={linkTo}
   >
@@ -24,19 +62,6 @@ ProjectExternalLink.propTypes = {
   linkTo: PropTypes.string,
   description: PropTypes.string,
 };
-
-/*
- * Function: ProjectHomeLink
- * Description: Renders the back to home link
- */
-const ProjectHomeLink = () => (
-  <Link
-    className="project--home-link a--arrow-right"
-    to="/"
-  >
-    Back to Home
-  </Link>
-);
 
 /*
  * Function: ProjectDetails
@@ -52,11 +77,10 @@ export const ProjectSummary = (props) => {
 
   return (
     <Fragment>
-      <ProjectHomeLink />
-      <Text type={textTypes.HEADER_1} className="project--title">
+      <Text type={textTypes.HEADER_1} className="project-page__title">
         {title}
       </Text>
-      <Text className="project--description">
+      <Text className="project-page__description">
         {description}
       </Text>
       <ProjectExternalLink
@@ -64,15 +88,15 @@ export const ProjectSummary = (props) => {
         description={externalLinkDescription}
       />
     </Fragment>
-  )
-}
+  );
+};
 
 ProjectSummary.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   externalLink: PropTypes.string.isRequired,
   externalLinkDescription: PropTypes.string.isRequired,
-}
+};
 
 /*
  * Function: ProjectDetails
@@ -89,24 +113,24 @@ export const ProjectDetails = (props) => {
   } = props;
 
   return (
-    <Fragment>
-      <Sidebar.Detail
+    <Row padding="none">
+      <SidebarDetail
         label="Made For"
         data={client}
       />
-      <Sidebar.Detail
+      <SidebarDetail
         label="Collaborated With"
         data={collaborators}
       />
-      <Sidebar.Detail
+      <SidebarDetail
         label="Shipped In"
         data={date}
       />
-      <Sidebar.Detail
+      <SidebarDetail
         label="Type of Work"
         data={category}
       />
-      <Sidebar.Detail
+      <SidebarDetail
         label="Stars on Github"
         data={githubStargazers}
         formatData={(data) => {
@@ -118,18 +142,18 @@ export const ProjectDetails = (props) => {
 
             return `${thousandth}.${hundredth}k`;
           }
-            hundredth = Math.round((data / 100), 1);
+          hundredth = Math.round((data / 100), 1);
 
-            return hundredth;
+          return hundredth;
         }}
       />
-      <Sidebar.Detail
+      <SidebarDetail
         label="Open Issues on Github"
         data={githubOpenIssues}
       />
-    </Fragment>
-  )
-}
+    </Row>
+  );
+};
 
 ProjectDetails.propTypes = {
   client: PropTypes.string.isRequired,
@@ -138,36 +162,37 @@ ProjectDetails.propTypes = {
   category: PropTypes.string.isRequired,
   githubStargazers: PropTypes.number.isRequired,
   githubOpenIssues: PropTypes.number.isRequired,
-}
+};
 
 /*
  * Function: ProjectTemplate
- * Description: Renders the template for a project (e.g., case study)
+ * Description: Renders the template for a project
  */
-function ProjectTemplate({ data }) {
+function ProjectTemplate({ data, ...restProps }) {
   const { page, site } = data;
 
   return (
     <Page.Container
       pageTitle={page.frontmatter.title}
       siteTitle={site.metadata.title}
-      siteUrl={site.metadata.url}
       pageUrl={page.fields.slug}
+      siteUrl={site.metadata.url}
+      backLinkTo={restProps.history.goBack}
       description={page.frontmatter.description}
       keywords={page.frontmatter.keywords}
     >
-      <Sidebar.Container flexOrder={0} className="project--column-0">
+      <Page.Sidebar className="project-page__sidebar-left" flexOrderSmall={0} flexOrderLarge={0}>
         <ProjectSummary
           title={page.frontmatter.title}
           description={page.frontmatter.description}
           externalLink={page.frontmatter.externalLink}
           externalLinkDescription={page.frontmatter.externalLinkDescription}
         />
-      </Sidebar.Container>
-      <Page.Content flexOrder={1} className="project--column-1">
+      </Page.Sidebar>
+      <Page.Content newsletter className="project-page__content" flexOrderSmall={2} flexOrderLarge={1}>
         {page.html}
       </Page.Content>
-      <Sidebar.Container flexOrder={2} className="project--column-2">
+      <Page.Sidebar className="project-page__sidebar-right" flexOrderSmall={1} flexOrderLarge={2}>
         <ProjectDetails
           client={page.frontmatter.client}
           collaborators={page.frontmatter.collaborators}
@@ -176,7 +201,7 @@ function ProjectTemplate({ data }) {
           githubStargazers={page.frontmatter.githubStargazers}
           githubOpenIssues={page.frontmatter.githubOpenIssues}
         />
-      </Sidebar.Container>
+      </Page.Sidebar>
     </Page.Container>
   );
 }

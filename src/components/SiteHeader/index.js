@@ -7,10 +7,10 @@ import './styles.css';
 
 /*
  * Function: SiteHeaderNavItem
- * Description:
+ * Description: Renters a link in the website navigation
  */
 const SiteHeaderNavItem = ({ linkTo, label }) => (
-  <Link to={linkTo} className="site__navigation--item">
+  <Link to={linkTo} className="site-header__navigation-item">
     {label}
   </Link>
 );
@@ -22,19 +22,19 @@ SiteHeaderNavItem.propTypes = {
 
 /*
  * Function: SiteHeader
- * Description: Renders the global header for the website
+ * Description: Renders the global website header
  */
 const SiteHeader = ({ navigationItems, rowSize }) => (
-  <header role="banner" className="site__header-container">
+  <header role="banner" className="site-header">
     <Row rowSize={rowSize}>
       <Column largeSize={3} smallSize={6}>
-        <Link to="/" className="site__title">
+        <Link to="/" className="site-header__title">
           Patrick Burtchaell
         </Link>
       </Column>
       <Column largeSize={9} smallSize={6}>
         {navigationItems && (
-          <nav className="site__navigation">
+          <nav className="site-header__navigation">
             {navigationItems.map(navigationItem => (
               <SiteHeaderNavItem
                 key={navigationItem.label}
@@ -62,7 +62,7 @@ SiteHeader.defaultProps = {
   navigationItems: [
     { label: 'Work', linkTo: '/work' },
     { label: 'Writing', linkTo: '/writing' },
-  ]
+  ],
 };
 
 export default SiteHeader;

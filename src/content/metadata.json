@@ -22,7 +22,7 @@
     "gatsby",
     "netlify"
   ],
-  "enablePortfolio": false,
+  "enablePortfolio": true,
   "portfolioCompanies": [
     "Facebook",
     "Gigster",

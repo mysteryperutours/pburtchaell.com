@@ -1,9 +1,11 @@
-p,
-ul,
-li {
+p, 
+small,
+ol, ul, li {
+  padding: 0;
+  margin: var(--default-margin);
   font-size: var(--default-font-size);
   line-height: var(--default-line-height);
-  margin: var(--default-margin);
+  color: var(--black);
   hyphens: none;
 }
 
@@ -11,30 +13,30 @@ li {
   margin: 17px 0 2rem 0 !important;
 }
 
-h2 ~ small {
+small {
+  display: block;
+  margin: 0;
+  color: var(--light-gray);
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  hyphens: none;
+}
+
+/*
+ * When small text is used after a header, remove the margin from the 
+ * header so the small text is "nested" closer to the header. Also
+ * add an additional margin to the small text so there's still space
+ * between the small text and whatever is under it.
+ */
+h1 ~ small,
+h2 ~ small,
+h3 ~ small {
   margin-top: -2rem;
   margin-bottom: 2rem;
 }
 
-small,
-.small-block {
-  margin: 0;
-  margin-top: 1px;
-  display: block;
-  hyphens: none;
-  font-size: var(--small-font-size);
-  line-height: var(--small-line-height);
-  color: var(--light-gray);
-}
-
 @media only screen and (max-width: 600px) {
-  small,
-  .small-block {
-    margin-bottom: 2rem;
+  small {
+    margin-bottom: 0;
   }
-}
-
-.small-inline {
-  display: inline-block;
-  margin-bottom: -3rem;
 }

@@ -1,26 +1,21 @@
-.padding {
-  position: relative;
-  width: 100%;
+.padding.padding-size-default {
+  padding-top: var(--default-margin);
 }
 
-.padding--default {
-  height: var(--default-margin);
+.padding.padding-size-small {
+  padding-top: var(--small-margin);
 }
 
-.padding--small {
-  height: var(--small-margin);
-}
-
-.padding--large {
-  height: var(--large-margin);
+.padding.padding-size-large {
+  padding-top: var(--large-margin);
 }
 
 @media only screen and (max-width: 400px) {
-  .padding--small {
-    height: var(--small-screen-small-margin);
+  .padding.padding-size-small {
+    padding-top: var(--small-screen-small-margin);
   }
 
-  .padding--large {
-    height: var(--small-screen-large-margin);
+  .padding.padding-size-large {
+    padding-top: var(--small-screen-large-margin);
   }
 }

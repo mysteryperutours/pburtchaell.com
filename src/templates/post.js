@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Page from '../components/Page';
-import Sidebar from '../components/Sidebar';
 import Text, { types as textTypes } from '../components/Text';
 
 /*
@@ -15,20 +14,20 @@ function PostTemplate({ data }) {
     <Page.Container
       pageTitle={page.frontmatter.title}
       siteTitle={site.metadata.title}
-      siteUrl={site.metadata.url}
       pageUrl={page.fields.slug}
+      siteUrl={site.metadata.url}
       description={page.frontmatter.description}
       keywords={page.frontmatter.keywords}
     >
-      <Sidebar.Container flexOrder={0}>
+      <Page.Sidebar>
         <Text type={textTypes.HEADER_1}>
           {page.frontmatter.title}
         </Text>
         <Text>
           {page.frontmatter.description}
         </Text>
-      </Sidebar.Container>
-      <Page.Content flexOrder={1}>
+      </Page.Sidebar>
+      <Page.Content newsletter>
         {page.html}
       </Page.Content>
     </Page.Container>
@@ -37,33 +36,8 @@ function PostTemplate({ data }) {
 
 PostTemplate.propTypes = {
   data: PropTypes.shape({
-
+    // Todo: add prop types
   }).isRequired,
 };
 
 export default PostTemplate;
-
-export const pageQuery = graphql`
-  query PostTemplate($id: String!) {
-    site {
-      metadata: siteMetadata {
-        url
-        title
-        description
-        keywords
-      }
-    }
-    page: markdownRemark(id: { eq: $id }) {
-      id
-      html
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        description
-        keywords
-      }
-    }
-  }
-`;

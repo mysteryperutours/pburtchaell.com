@@ -1,0 +1,21 @@
+@import '../variables.css';
+
+/* 
+ * BEM Block: writing-page
+ * Description: Styles for the "Writing" page
+ * See more: https://en.bem.info/methodology/quick-start/
+ */
+.writing-page__column {
+  padding: 2rem;
+  margin-top: -2rem; 
+}
+
+.writing-page__column-right {
+  border: var(--default-border);
+}
+
+@media only screen and (max-width: 600px) {
+  .writing-page__column-right {
+    border: none;
+  }
+}

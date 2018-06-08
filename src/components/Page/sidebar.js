@@ -3,47 +3,55 @@ import PropTypes from 'prop-types';
 import Column from '../Column';
 import FixedPosition from '../FixedPosition';
 
-function SidebarContainer(props) {
+function PageSidebar(props) {
   const {
-    children, largeSize, smallSize, flexOrder, hideOnSmall, hideOnLarge,
+    children,
+    largeSize,
+    smallSize,
+    flexOrderLarge,
+    flexOrderSmall,
+    hideOnLarge,
+    hideOnSmall,
     className,
   } = props;
 
   return (
     <Column
       elementType="aside"
+      className={className}
       largeSize={largeSize}
       smallSize={smallSize}
-      flexOrder={flexOrder}
+      flexOrderLarge={flexOrderLarge}
+      flexOrderSmall={flexOrderSmall}
       hideOnSmall={hideOnSmall}
       hideOnLarge={hideOnLarge}
     >
-      <FixedPosition
-        className={className}
-        disableOnSmall={hideOnSmall}
-      >
+      <FixedPosition disableOnSmall>
         {children}
       </FixedPosition>
     </Column>
   );
 }
 
-SidebarContainer.defaultProps = {
+PageSidebar.defaultProps = {
   largeSize: 3,
   smallSize: 12,
-  hideOnSmall: true,
   hideOnLarge: false,
+  hideOnSmall: false,
   className: null,
+  flexOrderLarge: null,
+  flexOrderSmall: null,
 };
 
-SidebarContainer.propTypes = {
+PageSidebar.propTypes = {
+  className: PropTypes.string,
   largeSize: PropTypes.number,
   smallSize: PropTypes.number,
   hideOnSmall: PropTypes.bool,
   hideOnLarge: PropTypes.bool,
-  className: PropTypes.string,
-  flexOrder: PropTypes.number.isRequired,
+  flexOrderLarge: PropTypes.number,
+  flexOrderSmall: PropTypes.number,
   children: PropTypes.arrayOf(PropTypes.component).isRequired,
 };
 
-export default SidebarContainer;
+export default PageSidebar;

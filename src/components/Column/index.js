@@ -16,17 +16,19 @@ const Column = (props) => {
     className,
     children,
     styles,
-    flexOrder,
+    flexOrderLarge,
+    flexOrderSmall,
     elementType,
   } = props;
 
   // Get all of the class names on the column
   const elementClassName = classnames('column', {
-    [`column--flex-order-${flexOrder}`]: typeof flexOrder === 'number',
-    [`column--large-${largeSize}`]: largeSize,
-    [`column--small-${smallSize}`]: smallSize,
-    'column--hide-on-small': hideOnSmall,
-    'column--hide-on-large': hideOnLarge,
+    [`column-flex-order-large-${flexOrderLarge}`]: typeof flexOrderLarge === 'number',
+    [`column-flex-order-small-${flexOrderSmall}`]: typeof flexOrderSmall === 'number',
+    [`column-size-large-${largeSize}`]: largeSize,
+    [`column-size-small-${smallSize}`]: smallSize,
+    'column-hide-on-small': hideOnSmall,
+    'column-hide-on-large': hideOnLarge,
   }, className);
 
   const elementProps = {
@@ -51,7 +53,8 @@ Column.propTypes = {
   hideOnLarge: PropTypes.bool,
   hideOnSmall: PropTypes.bool,
   className: PropTypes.string,
-  flexOrder: PropTypes.number,
+  flexOrderSmall: PropTypes.number,
+  flexOrderLarge: PropTypes.number,
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,

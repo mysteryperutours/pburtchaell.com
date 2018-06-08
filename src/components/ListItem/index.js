@@ -4,33 +4,36 @@ import Link from 'gatsby-link';
 import './styles.css';
 
 /*
- * Function: ListViewItem
+ * Function: ListItem
  * Description: Renders the title, tags and year of a list view item
  */
-const ListViewItemDetails = ({ title, excerpt, category, date }) => (
-  <article className="list-view-item">
-    <div className="list-view-item-title">
+const ListItemDetails = ({ title, excerpt, category, date }) => (
+  <article className="list-item">
+    <p className="list-item__title">
       {title}
-    </div>
-    <div className="list-view-item-details">
+    </p>
+    <div className="list-item__details">
+      <small>
+        <span className="list-item__details-category">{category}</span>
+        <time className="list-item__details-year">{date}</time>
+      </small>
       {excerpt && (
-        <div className="list-view-item-excerpt">
+        <p className="list-item__details-excerpt">
           {excerpt}
-        </div>
+        </p>
       )}
-      <small>{category} &mdash; {date}</small>
     </div>
   </article>
 );
 
-ListViewItemDetails.propTypes = {
+ListItemDetails.propTypes = {
   title: PropTypes.string.isRequired,
   excerpt: PropTypes.string,
   category: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };
 
-ListViewItemDetails.defaultProps = {
+ListItemDetails.defaultProps = {
   excerpt: null,
 };
 
@@ -38,7 +41,7 @@ ListViewItemDetails.defaultProps = {
  * Function: ListViewItem
  * Description: Renders a single linked item in a list of items
  */
-const ListViewItem = (props) => {
+const ListItem = (props) => {
   const {
     title,
     excerpt,
@@ -51,8 +54,9 @@ const ListViewItem = (props) => {
     <Link
       to={linkTo}
       title={title}
+      className="list-item__link"
     >
-      <ListViewItemDetails
+      <ListItemDetails
         title={title}
         excerpt={excerpt}
         category={category}
@@ -62,7 +66,7 @@ const ListViewItem = (props) => {
   );
 };
 
-ListViewItem.propTypes = {
+ListItem.propTypes = {
   title: PropTypes.string.isRequired,
   excerpt: PropTypes.string,
   category: PropTypes.string.isRequired,
@@ -70,8 +74,8 @@ ListViewItem.propTypes = {
   linkTo: PropTypes.string.isRequired,
 };
 
-ListViewItem.defaultProps = {
+ListItem.defaultProps = {
   excerpt: null,
 };
 
-export default ListViewItem;
+export default ListItem;

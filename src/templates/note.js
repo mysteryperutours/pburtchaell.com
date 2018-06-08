@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Page from '../components/Page';
-import Sidebar from '../components/Sidebar';
 import Text, { types as textTypes } from '../components/Text';
 
 /*
@@ -15,20 +14,20 @@ function NoteTemplate({ data }) {
     <Page.Container
       pageTitle={page.frontmatter.title}
       siteTitle={site.metadata.title}
-      siteUrl={site.metadata.url}
       pageUrl={page.fields.slug}
+      siteUrl={site.metadata.url}
       description={page.frontmatter.description}
       keywords={page.frontmatter.keywords}
     >
-      <Sidebar.Container flexOrder={0}>
+      <Page.Sidebar>
         <Text type={textTypes.HEADER_1}>
           {page.frontmatter.title}
         </Text>
         <Text>
           {page.frontmatter.description}
         </Text>
-      </Sidebar.Container>
-      <Page.Content flexOrder={1}>
+      </Page.Sidebar>
+      <Page.Content newsletter>
         {page.html}
       </Page.Content>
     </Page.Container>
@@ -37,7 +36,7 @@ function NoteTemplate({ data }) {
 
 NoteTemplate.propTypes = {
   data: PropTypes.shape({
-
+    // Todo: add prop types
   }).isRequired,
 };
 

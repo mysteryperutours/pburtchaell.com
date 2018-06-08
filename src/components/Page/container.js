@@ -83,15 +83,15 @@ const PageContainer = (props) => {
           />
         </Helmet>
       )}
-      <div className="main__container">
+      <div className="site-container">
         {header && (
           <SiteHeader
             title={pageTitle}
             rowSize={rowSize}
           />
         )}
-        <main role="main" className="main">
-          <Row paddingSize="large" rowSize="large" flexBox>
+        <main role="main" className="site-main-content">
+          <Row padding="large">
             {children}
           </Row>
         </main>

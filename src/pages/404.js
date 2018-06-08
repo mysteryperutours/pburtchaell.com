@@ -1,36 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Page from '../components/Page';
-import Column from '../components/Column';
 import Text, { types as textTypes } from '../components/Text';
 
 /*
  * Function: NotFoundPage
  * Description: Renders 404 error page
  */
-const NotFoundPage = ({ data }) => {
-  const { site } = data;
-
-  return (
-    <Page.Container
-      pageTitle="Not Found"
-      siteTitle={site.metadata.title}
-      siteUrl={site.metadata.url}
-      description={site.metadata.description}
-      keywords={site.metadata.keywords}
-    >
-      <Column largeSize="4" smallSize="12">
-        <Text>
-          Page Not Found
-        </Text>
-        <Text type={textTypes.SMALL}>
-          {'Oh no! Sorry, but there\'s no page here.'}
-        </Text>
-      </Column>
-    </Page.Container>
-  );
-};
+const NotFoundPage = ({ data: { site } }) => (
+  <Page.Container
+    pageTitle="Not Found"
+    siteTitle={site.metadata.title}
+    pageUrl={null}
+    siteUrl={site.metadata.url}
+    description={site.metadata.description}
+    keywords={site.metadata.keywords}
+  >
+    <Page.Sidebar>
+      <Text type={textTypes.HEADER_1}>Not Found</Text>
+    </Page.Sidebar>
+    <Page.Content>
+      <Text>Sorry, but there is no page here.</Text>
+    </Page.Content>
+  </Page.Container>
+);
 
 NotFoundPage.propTypes = {
   data: PropTypes.shape({

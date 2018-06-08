@@ -6,17 +6,20 @@ a:hover {
   background-color: transparent;
 }
 
-a.a--arrow-left::after {
+.anchor-arrow-left,
+a.anchor-arrow-left::after {
   content: "\2192";
   margin-left: var(--default-vertical-margin);
 }
 
-a.a--arrow-right::before {
+.anchor-arrow-right,
+a.anchor-arrow-right::before {
   content: "\2190";
   margin-right: var(--default-vertical-margin);
 }
 
-a.a--arrow-upright::after {
+.anchor-arrow-upright,
+a.anchor-arrow-upright::after {
   content: "\2197";
   margin-left: var(--default-vertical-margin);
 }
