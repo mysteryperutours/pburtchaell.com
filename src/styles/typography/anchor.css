@@ -6,6 +6,18 @@ a:hover {
   background-color: transparent;
 }
 
+p a,
+li a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+p a:hover,
+li a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
 .anchor-arrow-left,
 a.anchor-arrow-left::after {
   content: "\2192";

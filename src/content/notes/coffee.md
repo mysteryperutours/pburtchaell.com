@@ -37,7 +37,7 @@ Also, if you're looking for places to work, take a look at [my post on Quora](ht
 
 ## Coffee in Austin, TX
 
-When visiting Austin, I've tried a few of the coffe shops there. Here's some of my favorites:
+Visiting Austin, I've tried a few of the coffe shops there. Here's some of my favorites:
 
 - [Cuvee](https://www.yelp.com/biz/cuv%C3%A9e-coffee-bar-austin-3)
 - [Greater Good Coffee](https://www.yelp.com/biz/greater-goods-coffee-roasters-austin)
@@ -55,9 +55,3 @@ When visiting Austin, I've tried a few of the coffe shops there. Here's some of 
 
 - ["The Best Gear for Making Pour-Over Coffee"](https://thewirecutter.com/reviews/gear-for-making-great-coffee/) (Wirecutter)
 - ["The Perfect Cup of Coffee"](http://dieworkwear.com/post/172604616109/the-perfect-cup-of-coffee) (Die, Workwear!)
-
-### Gear
-
-- [Fellow Stag kettle]()
-- []()
-- []()

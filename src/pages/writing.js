@@ -27,10 +27,10 @@ const WritingPage = ({ data: { site, posts, notes } }) => {
           {pageTitle}
         </Text>
       </Page.Sidebar>
-      <Page.Content>
+      <Page.Content className="writing-page__content">
         <List items={posts} />
       </Page.Content>
-      <Page.Sidebar>
+      <Page.Sidebar className="writing-page__sidebar-right">
         <Text type={textTypes.HEADER_2}>
           Notes
         </Text>

@@ -34,9 +34,12 @@ Many people describe the application process as throwing information into a blac
 
 ## The Problem
 
-> "[The process of applying for food stamps] very redundant. It just felt like I was filling out the same information over and over and over again." [(Chronister et al. 2016:6)][chronister]
+These issues manifest in one number: 26.9 million children were eligible for SNAP (and Medicaid) in 2013, but did not receive assistance. (Wheaton et al. 2017) The parents of these children were not declined assistance. Instead, I believe they chose to forego enrollment in welfare programs because the journey to get assistance from those programs is too difficult and too time-consuming. 
 
-These issues manifest in one number: 26.9 million children were eligible for SNAP (and Medicaid) in 2013, but did not receive assistance. (Wheaton et al. 2017) The parents of these children were not declined assistance. Instead, I believe they chose to forego enrollment in welfare programs because the journey to get assistance from those programs is too difficult and too time-consuming. When people are busy applying for jobs, finding alternative sources of income and keeping their family together, I believe they simply can not afford the complex journey of applying for SNAP.
+> "[The process of applying for food stamps] very redundant. It just felt like I was filling out the same information over and over and over again." 
+> [(Chronister et al. 2016:6)][chronister]
+
+When people are busy applying for jobs, finding alternative sources of income and keeping their family together, I believe they simply can not afford the complex journey of applying for SNAP.
 
 ## Research Question
 
