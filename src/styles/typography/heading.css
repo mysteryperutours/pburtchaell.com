@@ -1,34 +1,30 @@
-h1,
-h2,
-h3,
-h1:first-child,
-h2:first-child,
-h3:first-child {
+h1, h2, h3,
+h1:first-child, h2:first-child, h3:first-child {
   margin-top: 0;
 }
 
 h1 {
+  margin: var(--h1-margin);
+  color: var(--h1-color);
   font-size: var(--h1-font-size);
   font-weight: var(--h1-font-weight);
   line-height: var(--h1-line-height);
-  margin: var(--h1-margin);
-  color: var(--h1-color);
 }
 
 h2 {
+  margin: var(--h2-margin);
+  color: var(--h2-color);
   font-size: var(--h2-font-size);
   font-weight: var(--h2-font-weight);
   line-height: var(--h2-line-height);
-  margin: var(--h2-margin);
-  color: var(--h2-color);
 }
 
 h3 {
+  margin: var(--h3-margin);
+  color: var(--h3-color);
   font-size: var(--h3-font-size);
   font-weight: var(--h3-font-weight);
   line-height: var(--h3-line-height);
   text-transform: uppercase;
   letter-spacing: 0.1ex;
-  margin: var(--h3-margin);
-  color: var(--h3-color);
 }

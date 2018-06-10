@@ -1,39 +1,44 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import PageContainer from '../components/PageContainer'
-import Column from '../components/Column'
-import Row from '../components/Row'
-import Text, {types as textTypes} from '../components/Text'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Page from '../components/Page';
+import Text, { types as textTypes } from '../components/Text';
 
-const NotFoundPage = ({data}) => {
-  const {site} = data
+/*
+ * Function: NotFoundPage
+ * Description: Renders 404 error page
+ */
+const NotFoundPage = ({ data: { site } }) => (
+  <Page.Container
+    pageTitle="Not Found"
+    siteTitle={site.metadata.title}
+    pageUrl={null}
+    siteUrl={site.metadata.url}
+    description={site.metadata.description}
+    keywords={site.metadata.keywords}
+  >
+    <Page.Sidebar>
+      <Text type={textTypes.HEADER_1}>Not Found</Text>
+    </Page.Sidebar>
+    <Page.Content>
+      <Text>Sorry, but there is no page here.</Text>
+    </Page.Content>
+  </Page.Container>
+);
 
-  return (
-    <PageContainer
-      pageTitle="Not Found"
-      siteTitle={site.metadata.title}
-      siteUrl={site.metadata.url}
-      description={site.metadata.description}
-      keywords={site.metadata.keywords}
-    >
-      <Row rowSize="large" paddingSize="large">
-        <Column largeSize="4" smallSize="12">
-          <Text>
-            Page Not Found
-          </Text>
-          <Text type={textTypes.SMALL} className="small-reset-margin">
-            {`Oh no! Sorry, but there's no page here.`}
-          </Text>
-          <Text>
-            <Link to="/">&#8592; Go Home</Link>
-          </Text>
-        </Column>
-      </Row>
-    </PageContainer>
-  )
-}
+NotFoundPage.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      metadata: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+      }),
+    }),
+  }).isRequired,
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
 export const pageQuery = graphql`
   query NotFoundQuery {
@@ -46,4 +51,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -4,7 +4,7 @@ featured: true
 templateKey: project
 date: '2018-04-05'
 title: SNAP User Experience
-description: For my design capstone project and honors thesis at Loyola University New Orleans, I researched the current user experience of applying for food stamps (SNAP) in Louisiana and demonstrated how we can make it better.
+description: 'Researching pain points and usability improvements for food stamps in Louisiana'
 client:
 collaborators:
   - Loyola University New Orleans
@@ -34,9 +34,12 @@ Many people describe the application process as throwing information into a blac
 
 ## The Problem
 
-> "[The process of applying for food stamps] very redundant. It just felt like I was filling out the same information over and over and over again." [(Chronister et al. 2016:6)][chronister]
+These issues manifest in one number: 26.9 million children were eligible for SNAP (and Medicaid) in 2013, but did not receive assistance. (Wheaton et al. 2017) The parents of these children were not declined assistance. Instead, I believe they chose to forego enrollment in welfare programs because the journey to get assistance from those programs is too difficult and too time-consuming. 
 
-These issues manifest in one number: 26.9 million children were eligible for SNAP (and Medicaid) in 2013, but did not receive assistance. (Wheaton et al. 2017) The parents of these children were not declined assistance. Instead, I believe they chose to forego enrollment in welfare programs because the journey to get assistance from those programs is too difficult and too time-consuming. When people are busy applying for jobs, finding alternative sources of income and keeping their family together, I believe they simply can not afford the complex journey of applying for SNAP.
+> "[The process of applying for food stamps] very redundant. It just felt like I was filling out the same information over and over and over again." 
+> [(Chronister et al. 2016:6)][chronister]
+
+When people are busy applying for jobs, finding alternative sources of income and keeping their family together, I believe they simply can not afford the complex journey of applying for SNAP.
 
 ## Research Question
 

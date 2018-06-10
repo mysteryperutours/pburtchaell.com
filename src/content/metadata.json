@@ -1,8 +1,8 @@
 {
   "siteTitle": "Patrick Burtchaell",
   "siteUrl": "https://pburtchaell.com",
-  "siteDescription": "Designer and software developer working with teams to thoughtfully build impactful products.",
-  "siteIntroduction": "Hello! I'm partially available for consultancy or freelance work until June 2018. In August 2018, I'm joining Facebook in Menlo Park, California.",
+  "siteDescription": "Designer and software developer working with thoughtful product and technology teams.",
+  "siteIntroduction": "Technology should work for and with people, creating a connected world that's better for everyone. Originally from New Orleans, I currently work as a Product Designer at Facebook in California.",
   "siteKeywords": [
     "patrick",
     "burtchaell",
@@ -22,7 +22,7 @@
     "gatsby",
     "netlify"
   ],
-  "enablePortfolio": false,
+  "enablePortfolio": true,
   "portfolioCompanies": [
     "Facebook",
     "Gigster",

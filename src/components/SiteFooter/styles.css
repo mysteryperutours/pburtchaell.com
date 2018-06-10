@@ -1,68 +1,44 @@
 @import '../../styles/variables.css';
 
-.route__footer {
+/* 
+ * BEM Block: site-footer
+ * Description: Styles for the global website footer
+ * See more: https://en.bem.info/methodology/quick-start/
+ */
+.site-footer {
   position: relative;
-  padding: 2rem 0;
+  margin: 0;
   margin-top: var(--large-margin);
+  padding: 2rem 0;
   color: var(--light-gray);
-  border-top: 1px solid var(--lightest-gray);
+  border-top: var(--default-border);
   user-select: none;
 }
 
-/**
- * All links in the footer must be gray to match the text color.
- */
-.route__footer__link {
-  color: var(--light-gray);
-}
-
-.route__footer__link:hover {
-  color: var(--dark-gray);
-}
-
-/**
- * These styles apply to the link in the left column of the footer.
- */
-.route__footer__link--left::before {
-  content: '\2190';
-  margin-right: .5rem;
-}
-
-/**
- * These styles apply to the link in the center column of the footer.
- */
-.route__footer__link--center {
-  text-align: center;
-}
-
-.route__footer__link--center::before {
-  content: '\2191';
-  margin-right: var(--default-vertical-margin);
-}
-
-/**
- * Flexbox styles are used to align the text message—"Made with <3"— and
- * the copyright text.
- */
-.route__footer__column {
-  display: flex;
-  flex-direction: column;
-}
-
-/**
- * These styles apply to the text and copyright messages in the right column
- * of the footer.
- */
-.route__footer__text {
+.site-footer__message,
+.site-footer__copyright {
   text-align: right;
   align-self: flex-end;
   font-size: var(--small-font-size);
   line-height: var(--small-line-height);
 }
 
-.route__footer__heart {
-  fill: var(--red);
-  margin-left: .75rem;
-  margin-top: 2px;
+.site-footer__message small {
+  display: inline-block;
+}
+
+.site-footer__heart {
+  display: inline;
   position: relative;
+  margin-left: .75rem;
+  fill: var(--red);
+}
+
+.site-footer__copyright-symbol {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  padding-right: 2px;
+  font-size: 11px;
+  line-height: 18px;
 }

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*
- * CSS Variables for color and layout
+ * CSS Variables for color, typography and layout 
  */
 :root {
   --base: 9px;
@@ -19,6 +19,7 @@
   --default-font-family: 'din-2014', sans-serif;
   --default-line-height: 3rem;
 
+  --default-border: var(--default-border-width) solid var(--black);
   --default-border-width: 1px;
   --default-border-radius: 0.3rem;
 
@@ -43,15 +44,15 @@
   --h1-color: var(--black);
 
   --h2-font-size: var(--default-font-size);
-  --h2-font-weight: 400;
+  --h2-font-weight: 600;
   --h2-line-height: var(--default-line-height);
   --h2-margin: 45px 0 18px 0;
-  --h2-color: var(--light-gray);
+  --h2-color: var(--black);
 
   --h3-font-size: 1.5rem;
   --h3-font-weight: 400;
   --h3-line-height: 3rem;
-  --h3-margin: -1px 0 1rem 0;
+  --h3-margin: 2rem 0 1rem 0;
   --h3-color: var(--light-gray);
 
   --z-index-0: 0;
