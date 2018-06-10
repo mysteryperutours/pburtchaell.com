@@ -51,7 +51,7 @@ const getSlugForNode = ({ frontmatter }) => {
   return new Promise((resolve, reject) => {
     switch (frontmatter.templateKey) {
       case TEMPLATE_KEYS.NOTE:
-        resolve(`notes/${frontmatter.category}/${frontmatter.path}`);
+        resolve(`notes/${frontmatter.category.toLowerCase()}/${frontmatter.path}`);
 
       case TEMPLATE_KEYS.PROJECT:
         resolve(`work/${year}/${frontmatter.path}`);
@@ -81,7 +81,7 @@ module.exports = ({ node, boundActionCreators }) => {
         (error) => {
           console.error(error);
         },
-      );
+    );
 
     // Add stats for open source projects
     getStatsForNode(node).then(({ starGazersCount, openIssuesCount }) => {
