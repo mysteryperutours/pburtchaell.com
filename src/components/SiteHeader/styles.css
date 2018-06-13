@@ -22,7 +22,7 @@
 }
 
 .site-header__title,
-.site-header__navigation {
+.site-navigation {
   display: inline-block;
   position: relative;
   bottom: 1px;
@@ -35,14 +35,4 @@
 .site-header__title:active {
   width: 200px;
   color: var(--black);
-}
-
-.site-header__navigation .site-header__navigation-item {
-  margin-left: 3rem;
-  width: 72px;
-  color: var(--blue);
-}
-
-.site-header__navigation .site-header__navigation-item:first-of-type {
-  margin-left: 0;
 }

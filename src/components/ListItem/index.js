@@ -12,17 +12,21 @@ const ListItemDetails = ({ title, excerpt, category, date }) => (
     <p className="list-item__title">
       {title}
     </p>
-    <div className="list-item__details">
+    <span className="list-item__details">
       <small>
-        <span className="list-item__details-category">{category}</span>
-        <time className="list-item__details-year">{date}</time>
+        <span className="list-item__details-category">
+          {category}
+        </span>
+        <time className="list-item__details-year">
+          {date}
+        </time>
       </small>
       {excerpt && (
         <p className="list-item__details-excerpt">
           {excerpt}
         </p>
       )}
-    </div>
+    </span>
   </article>
 );
 

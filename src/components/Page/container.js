@@ -30,6 +30,7 @@ const PageContainer = (props) => {
     linkTo,
     linkToLabel,
     linkToTop,
+    navigationItems,
   } = props;
 
   // Declare a permanent canonical URl for the page for SEO and Open Graph
@@ -88,6 +89,7 @@ const PageContainer = (props) => {
           <SiteHeader
             title={pageTitle}
             rowSize={rowSize}
+            navigationItems={navigationItems}
           />
         )}
         <main role="main" className="site-main-content">
@@ -101,6 +103,7 @@ const PageContainer = (props) => {
             linkToLabel={linkToLabel}
             linkToTop={linkToTop}
             rowSize={rowSize}
+            navigationItems={navigationItems}
           />
         )}
       </div>
@@ -129,6 +132,10 @@ PageContainer.propTypes = {
   linkTo: PropTypes.string,
   linkToLabel: PropTypes.string,
   linkToTop: PropTypes.bool,
+  navigationItems: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    linkTo: PropTypes.string.isRequired,
+  })),
 };
 
 PageContainer.defaultProps = {
@@ -139,6 +146,11 @@ PageContainer.defaultProps = {
   linkTo: null,
   linkToLabel: null,
   linkToTop: false,
+  navigationItems: [
+    { label: 'Work', linkTo: '/work' },
+    { label: 'Writing', linkTo: '/writing' },
+    { label: 'About', linkTo: '/about' },
+  ],
 };
 
 export default PageContainer;

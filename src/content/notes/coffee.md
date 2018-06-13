@@ -4,7 +4,7 @@ templateKey: 'note'
 date: '2018-05-01'
 title: 'Coffee'
 description: ''
-category: 'general'
+category: 'General'
 keywords:
  - pour over
  - french press

@@ -12,6 +12,8 @@ input {
   outline: 0;
   height: 4rem;
   border: 1px solid var(--black);
+  /* Reset the default border radius on iOS devices. */
+  border-radius: 0; 
   font-size: var(--default-font-size);
   line-height: var(--default-line-height);
 }

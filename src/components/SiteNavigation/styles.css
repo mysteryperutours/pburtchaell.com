@@ -1,0 +1,32 @@
+@import '../../styles/variables.css';
+
+/* 
+ * BEM Block: site-navigation
+ * Description: Styles for the global website header
+ * See more: https://en.bem.info/methodology/quick-start/
+ */
+.site-navigation__item {
+  margin-left: 3rem;
+  width: 72px;
+  color: var(--light-gray);
+}
+
+.site-navigation__item:hover,
+.site-navigation__item:focus,
+.site-navigation__item:active {
+  color: var(--blue);
+}
+
+.site-navigation__item-position-bottom.site-navigation__item-state-active {
+  padding-top: calc(2rem + 1px);
+  border-top: 2px solid var(--blue);
+}
+
+.site-navigation__item-position-top.site-navigation__item-state-active {
+  padding-bottom: calc(2.5rem + 1px);
+  border-bottom: 2px solid var(--blue);
+}
+
+.site-navigation__item:first-of-type {
+  margin-left: 0;
+}

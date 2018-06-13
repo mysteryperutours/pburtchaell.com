@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 
 const TEMPLATE_KEYS = {
   PROJECT: 'project',
+  PAGE: 'page',
   POST: 'post',
   NOTE: 'note',
 };
@@ -51,13 +52,20 @@ const getSlugForNode = ({ frontmatter }) => {
   return new Promise((resolve, reject) => {
     switch (frontmatter.templateKey) {
       case TEMPLATE_KEYS.NOTE:
-        resolve(`notes/${frontmatter.category}/${frontmatter.path}`);
+        resolve(`notes/${frontmatter.category.toLowerCase()}/${frontmatter.path}`);
+        break;
+
+      case TEMPLATE_KEYS.PAGE:
+        resolve(frontmatter.path);
+        break;
 
       case TEMPLATE_KEYS.PROJECT:
         resolve(`work/${year}/${frontmatter.path}`);
+        break;
 
       case TEMPLATE_KEYS.POST:
         resolve(`posts/${year}/${frontmatter.path}`);
+        break;
 
       default: reject(new Error('Could not get slug for node'));
     }

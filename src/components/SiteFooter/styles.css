@@ -27,18 +27,35 @@
   display: inline-block;
 }
 
-.site-footer__heart {
+.site-footer__glyph-heart, 
+.site-footer__glyph-copyright {
+  margin-right: .5rem;
+}
+
+.site-footer__glyph-heart,
+.site-footer__glyph-copyright,
+.site-footer__glyph-rss {
   display: inline;
   position: relative;
-  margin-left: .75rem;
+}
+
+.site-footer__glyph-heart {
   fill: var(--red);
 }
 
-.site-footer__copyright-symbol {
-  display: inline-block;
-  position: relative;
+.site-footer__glyph-copyright {
   top: -2px;
-  padding-right: 2px;
   font-size: 11px;
   line-height: 18px;
+}
+
+.site-footer__glyph-rss {
+  margin-left: .5rem;
+  max-height: 10px;
+  max-width: 10px;
+  fill: var(--light-gray);
+}
+
+a:hover > .site-footer__glyph-rss {
+  fill: var(--blue);
 }

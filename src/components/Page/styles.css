@@ -27,3 +27,8 @@
 .site-main-content__newsletter-form {
   align-self: flex-end;
 }
+
+.site-main-content__newsletter-form-submitted {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}

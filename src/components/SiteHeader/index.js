@@ -1,24 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import NavigationLink from '../../components/SiteNavigation';
 import Row from '../../components/Row';
 import Column from '../../components/Column';
 import './styles.css';
-
-/*
- * Function: SiteHeaderNavItem
- * Description: Renters a link in the website navigation
- */
-const SiteHeaderNavItem = ({ linkTo, label }) => (
-  <Link to={linkTo} className="site-header__navigation-item">
-    {label}
-  </Link>
-);
-
-SiteHeaderNavItem.propTypes = {
-  label: PropTypes.string.isRequired,
-  linkTo: PropTypes.string.isRequired,
-};
 
 /*
  * Function: SiteHeader
@@ -34,10 +20,11 @@ const SiteHeader = ({ navigationItems, rowSize }) => (
       </Column>
       <Column largeSize={9} smallSize={6}>
         {navigationItems && (
-          <nav className="site-header__navigation">
+          <nav className="site-navigation">
             {navigationItems.map(navigationItem => (
-              <SiteHeaderNavItem
+              <NavigationLink
                 key={navigationItem.label}
+                position="top"
                 label={navigationItem.label}
                 linkTo={navigationItem.linkTo}
               />
@@ -54,15 +41,11 @@ SiteHeader.propTypes = {
   navigationItems: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     linkTo: PropTypes.string.isRequired,
-  })),
+  })).isRequired,
 };
 
 SiteHeader.defaultProps = {
   rowSize: 'large',
-  navigationItems: [
-    { label: 'Work', linkTo: '/work' },
-    { label: 'Writing', linkTo: '/writing' },
-  ],
 };
 
 export default SiteHeader;

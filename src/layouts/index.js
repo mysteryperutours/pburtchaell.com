@@ -9,8 +9,8 @@ import Baseline from '../components/Baseline';
  * Function: DefaultLayout
  * Description: Render the default layout used for all pages
  */
-const DefaultLayout = ({ children, location, ...restProps }) => children({ ...restProps, location });
-
+const DefaultLayout = ({ children, location, ...restProps }) =>
+  children({ ...restProps, location });
 
 DefaultLayout.propTypes = {
   children: PropTypes.func.isRequired,

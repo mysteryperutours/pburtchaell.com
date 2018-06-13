@@ -6,7 +6,19 @@ const path = require('path');
  * Description:
  */
 module.exports = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage, createRedirect } = boundActionCreators;
+
+  createRedirect({
+    fromPath: `https://psb.design/*`,
+    isPermanent: true,
+    toPath: ` https://www.pburtchaell.com/:splat`,
+  });
+
+  createRedirect({
+    fromPath: `https://psb.codes/*`,
+    isPermanent: true,
+    toPath: ` https://www.pburtchaell.com/:splat`,
+  });
 
   return graphql(`
     {
