@@ -7,12 +7,14 @@ a:hover {
 }
 
 p a,
+small a,
 li a {
   color: inherit;
   text-decoration: underline;
 }
 
 p a:hover,
+small a:hover,
 li a:hover {
   color: var(--blue);
   text-decoration: underline;
