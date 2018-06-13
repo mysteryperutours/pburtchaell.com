@@ -2,7 +2,7 @@
 
 .list-item {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 /* Remove padding on the first list item, */
@@ -15,11 +15,16 @@
   margin: 0;
 }
 
-.list-item__details-excerpt,
-.list-item__details-excerpt:hover,
-.list-item__details-excerpt:active {
+.list-item__details-excerpt {
   color: var(--dark-gray);
   font-style: italic;
+}
+
+.list-item:hover .list-item__title,
+.list-item:hover .list-item__details-category,
+.list-item:hover .list-item__details-year,
+.list-item:hover .list-item__details-excerpt {
+  color: var(--blue);
 }
 
 /* Display an m dash after the category and before the year */
