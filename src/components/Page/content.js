@@ -29,17 +29,17 @@ class PageNewsletter extends Component {
           this.setState({ submitted: true });
         }}
       >
-        <Text>Subscribe to infrequent updates on projects, interests and fun stuff</Text>
+        <Text>Receive infrequent updates on projects, interests and fun stuff</Text>
         <input required type="email" name="email" id="tlemail" placeholder="email@domain.com" />
         <input type="hidden" value="1" name="embed" />
         <input type="submit" value="Subscribe" />
         <small>Powered by TinyLetter</small>
       </form>
     ) : (
-        <form className="site-main-content__newsletter-form site-main-content__newsletter-form-submitted">
-          <Text>Wow, I am honored. Thank you for subscribing.</Text>
-        </form>
-      );
+      <form className="site-main-content__newsletter-form site-main-content__newsletter-form-submitted">
+        <Text>Wow, I am honored. Thank you for subscribing.</Text>
+      </form>
+    );
   }
 }
 
