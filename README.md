@@ -125,8 +125,12 @@ I'm inspired by the design--and especially the information architecture--of the 
 - [Rasmus Andersson](https://rsms.me/)
 - [Daniel Eden](https://daneden.me/)
 - [Christine Cha](https://christinecha.com/)
+- [Paul Stamatiou](https://paulstamatiou.com/)
 
-Thanks also goes to [Hunter Caron](https://github.com/huntercaron) for open sourcing [Boiled](https://github.com/huntercaron/boiled), the Gatsby boilerplate my initial Gatsby config was based on.
+Thanks also goes to:
+
+- [Hunter Caron](https://github.com/huntercaron) for open sourcing [Boiled](https://github.com/huntercaron/boiled), the Gatsby boilerplate my initial Gatsby config was based on.
+- [Daniel Bruce](http://www.danielbruce.se/) for open sourcing [the Entypo icons](https://github.com/danielbruce/entypo).
 
 ## License
 
