@@ -9,13 +9,13 @@ module.exports = ({ boundActionCreators, graphql }) => {
   const { createPage, createRedirect } = boundActionCreators;
 
   createRedirect({
-    fromPath: `https://psb.design/*`,
+    fromPath: `http://psb.design/*`,
     isPermanent: true,
     toPath: ` https://www.pburtchaell.com/:splat`,
   });
 
   createRedirect({
-    fromPath: `https://psb.codes/*`,
+    fromPath: `http://psb.codes/*`,
     isPermanent: true,
     toPath: ` https://www.pburtchaell.com/:splat`,
   });
