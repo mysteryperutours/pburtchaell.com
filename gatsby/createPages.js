@@ -8,17 +8,10 @@ const path = require('path');
 module.exports = ({ boundActionCreators, graphql }) => {
   const { createPage, createRedirect } = boundActionCreators;
 
-  createRedirect({
-    fromPath: `http://psb.design/*`,
-    isPermanent: true,
-    toPath: ` https://www.pburtchaell.com/:splat`,
-  });
-
-  createRedirect({
-    fromPath: `http://psb.codes/*`,
-    isPermanent: true,
-    toPath: ` https://www.pburtchaell.com/:splat`,
-  });
+  createRedirect({ fromPath: 'http://psb.design/*', isPermanent: true, toPath: 'https://www.pburtchaell.com/:splat' });
+  createRedirect({ fromPath: 'https://psb.design/*', isPermanent: true, toPath: 'https://www.pburtchaell.com/:splat' });
+  createRedirect({ fromPath: 'http://psb.codes/*', isPermanent: true, toPath: 'https://www.pburtchaell.com/:splat' });
+  createRedirect({ fromPath: 'https://psb.codes/*', isPermanent: true, toPath: 'https://www.pburtchaell.com/:splat' });
 
   return graphql(`
     {
