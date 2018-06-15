@@ -2,7 +2,7 @@
 published: true
 templateKey: 'page'
 title: 'About'
-description: 'My background is in design and computer science. Interested in entire the product design process, I start with the most basic problem or idea and develop it from wireframes to prototypes. With experience in software engineering as well as design, I sometimes become directly involved in writing and reviewing code.'
+description: 'My background is in design and computer science. Interested in the entire product design process, I start with the most basic problem or idea and develop it from wireframes to prototypes. With experience in software engineering as well as design, I sometimes become directly involved in writing and reviewing code.'
 keywords:
   - 'about'
   - 'patrick burtchaell'
@@ -20,7 +20,7 @@ Originally from the grand city of New Orleans, I currently work as a Product Des
 
 > Technology should work for and with people, creating a connected world that is better for everyone. 
 
-My background is in design and computer science. Interested in entire the product design process, I start with the most basic problem or idea and develop it from wireframes to prototypes. With experience in software engineering as well as design, I sometimes become directly involved in writing and reviewing code.
+My background is in design and computer science. Interested in the entire product design process, I start with the most basic problem or idea and develop it from wireframes to prototypes. With experience in software engineering as well as design, I sometimes become directly involved in writing and reviewing code.
 
 ## Open Source
 
