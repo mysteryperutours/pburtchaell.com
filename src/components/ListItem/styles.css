@@ -26,7 +26,7 @@
 }
 
 .list-item .gatsby-image-outer-wrapper {
-  margin: var(--default-margin);
+  margin-bottom: 2rem;
 }
 
 .list-item .gatsby-image-wrapper {
@@ -52,4 +52,10 @@
 /* Display an m dash after the category and before the year */
 .list-item__details-category:after {
   content: '\0020\2014\0020';
+}
+
+@media only screen and (max-width: 600px) {
+  .list-item .gatsby-image-outer-wrapper {
+    margin-right: 2rem;
+  }
 }
