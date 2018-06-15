@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NavigationLink from '../../components/SiteNavigation';
+import SiteNavigation from '../../components/SiteNavigation';
 import Row from '../../components/Row';
 import Column from '../../components/Column';
 import './styles.css';
@@ -18,7 +18,7 @@ const FOOTER_MESSAGES = [
  * Function: SiteFooter
  * Description: Renders the global footer for the website
  */
-const SiteFooter = ({ navigationItems, rowSize }) => {
+const SiteFooter = ({ links, rowSize }) => {
   // Get a random message to render next to the heart
   const messageIndex = Math.floor(Math.random() * FOOTER_MESSAGES.length);
   const message = FOOTER_MESSAGES[messageIndex];
@@ -30,19 +30,11 @@ const SiteFooter = ({ navigationItems, rowSize }) => {
   return (
     <footer role="contentinfo" className="site-footer">
       <Row rowSize={rowSize}>
-        <Column largeSize={9} smallSize={6}>
-          {navigationItems && (
-            <nav className="site__navigation">
-              {navigationItems.map(navigationItem => (
-                <NavigationLink
-                  key={navigationItem.label}
-                  position="bottom"
-                  label={navigationItem.label}
-                  linkTo={navigationItem.linkTo}
-                />
-              ))}
-            </nav>
-          )}
+        <Column largeSize={9} smallSize={12}>
+          <SiteNavigation
+            links={links}
+            position="bottom"
+          />
         </Column>
         <Column largeSize={3} smallSize={12}>
           <div className="site-footer__message">
@@ -100,7 +92,7 @@ const SiteFooter = ({ navigationItems, rowSize }) => {
 
 SiteFooter.propTypes = {
   rowSize: PropTypes.string,
-  navigationItems: PropTypes.arrayOf(PropTypes.shape({
+  links: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     linkTo: PropTypes.string.isRequired,
   })).isRequired,

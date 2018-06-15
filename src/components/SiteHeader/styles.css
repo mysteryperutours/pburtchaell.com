@@ -10,8 +10,7 @@
   display: flex;
   box-sizing: border-box;
   margin-bottom: 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
   height: 8rem;
   width: 100%;
   z-index: var(--z-index-1);
@@ -21,8 +20,7 @@
   user-select: none;
 }
 
-.site-header__title,
-.site-navigation {
+.site-header__title {
   display: inline-block;
   position: relative;
   bottom: 1px;
@@ -35,4 +33,21 @@
 .site-header__title:active {
   width: 200px;
   color: var(--black);
+}
+
+/* 
+ * On small screens, the header is not fixed and is
+ * smaller in height. The navigation also shifts to
+ * to under the title, requiring an extra margin.
+ */
+@media only screen and (max-width: 600px) {
+  .site-header {  
+    position: absolute;
+    padding: 1rem 0;
+    height: auto;
+  }
+
+  .site-header__title {
+    margin-bottom: 1rem;
+  }
 }
