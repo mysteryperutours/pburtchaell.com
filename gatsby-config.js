@@ -85,8 +85,8 @@ const gatsbyRssFeed = {
 
           return allMarkdownRemark.edges.map(({ node }) => Object.assign({}, node.frontmatter, {
             description: node.excerpt,
-            url: siteMetadata.url + node.fields.slug,
-            guid: siteMetadata.url + node.fields.slug,
+            url: `${siteMetadata.url}/${node.fields.slug}`,
+            guid: `${siteMetadata.url}/${node.fields.slug}`,
           }));
         },
         query: `
