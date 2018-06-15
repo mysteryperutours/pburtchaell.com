@@ -19,3 +19,8 @@ video:first-child,
   padding: 0;
   max-width: 100%;
 }
+
+.gatsby-image-outer-wrapper img {
+  margin-top: 0;
+  border: none;
+}

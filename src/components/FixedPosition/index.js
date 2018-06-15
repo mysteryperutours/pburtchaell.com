@@ -25,6 +25,7 @@ class FixedPosition extends Component {
   }
 
   componentDidMount() {
+    window.scroll(0, 0);
     this.setFixedPosition();
 
     window.addEventListener('resize', this.handleViewportChange);

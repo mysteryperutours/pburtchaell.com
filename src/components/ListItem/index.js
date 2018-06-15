@@ -1,43 +1,73 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
+import Img from 'gatsby-image';
 import './styles.css';
 
 /*
  * Function: ListItem
  * Description: Renders the title, tags and year of a list view item
  */
-const ListItemDetails = ({ title, excerpt, category, date }) => (
-  <article className="list-item">
-    <p className="list-item__title">
-      {title}
-    </p>
-    <span className="list-item__details">
-      <small>
-        <span className="list-item__details-category">
-          {category}
-        </span>
-        <time className="list-item__details-year">
-          {date}
-        </time>
-      </small>
-      {excerpt && (
-        <p className="list-item__details-excerpt">
-          {excerpt}
+const ListItemDetails = (props) => {
+  const {
+    title,
+    image,
+    excerpt,
+    category,
+    date,
+  } = props;
+
+  return (
+    <article className="list-item">
+      <div className="list-item--background">
+        {image && (
+          <Img
+            sizes={image.childImageSharp.sizes}
+          />
+        )}
+        <p className="list-item__title">
+          {title}
         </p>
-      )}
-    </span>
-  </article>
-);
+        <span className="list-item__details">
+          <small>
+            <span className="list-item__details-category">
+              {category}
+            </span>
+            <time className="list-item__details-year">
+              {date}
+            </time>
+          </small>
+          {excerpt && (
+            <p className="list-item__details-excerpt">
+              {excerpt}
+            </p>
+          )}
+        </span>
+      </div>
+    </article>
+  );
+};
 
 ListItemDetails.propTypes = {
   title: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      sizes: PropTypes.shape({
+        aspectRatio: PropTypes.number.isRequired,
+        base64: PropTypes.string.isRequired,
+        sizes: PropTypes.string.isRequired,
+        src: PropTypes.string.isRequired,
+        srcSet: PropTypes.string.isRequired,
+      }),
+    }),
+  }),
   excerpt: PropTypes.string,
   category: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };
 
 ListItemDetails.defaultProps = {
+  image: null,
   excerpt: null,
 };
 
@@ -48,6 +78,7 @@ ListItemDetails.defaultProps = {
 const ListItem = (props) => {
   const {
     title,
+    image,
     excerpt,
     category,
     date,
@@ -62,6 +93,7 @@ const ListItem = (props) => {
     >
       <ListItemDetails
         title={title}
+        image={image}
         excerpt={excerpt}
         category={category}
         date={date}
@@ -72,6 +104,17 @@ const ListItem = (props) => {
 
 ListItem.propTypes = {
   title: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    childImageSharp: PropTypes.shape({
+      sizes: PropTypes.shape({
+        aspectRatio: PropTypes.number.isRequired,
+        base64: PropTypes.string.isRequired,
+        sizes: PropTypes.string.isRequired,
+        src: PropTypes.string.isRequired,
+        srcSet: PropTypes.string.isRequired,
+      }),
+    }),
+  }),
   excerpt: PropTypes.string,
   category: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
@@ -79,6 +122,7 @@ ListItem.propTypes = {
 };
 
 ListItem.defaultProps = {
+  image: null,
   excerpt: null,
 };
 

@@ -81,6 +81,17 @@ IndexPage.propTypes = {
             title: PropTypes.string.isRequired,
             description: PropTypes.string.isRequired,
             category: PropTypes.string.isRequired,
+            featuredImage: PropTypes.shape({
+              childImageSharp: PropTypes.shape({
+                sizes: PropTypes.shape({
+                  aspectRatio: PropTypes.number.isRequired,
+                  base64: PropTypes.string.isRequired,
+                  sizes: PropTypes.string.isRequired,
+                  src: PropTypes.string.isRequired,
+                  srcSet: PropTypes.string.isRequired,
+                }),
+              }),
+            }),
             date: PropTypes.string.isRequired,
           }),
         }),
@@ -93,32 +104,39 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexQuery {
-        site {
+    site {
       metadata: siteMetadata {
         url
         title
-      description
-      introduction
-      keywords
-      enablePortfolio
+        description
+        introduction
+        keywords
+        enablePortfolio
+      }
     }
-  }
     projects: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "project"}, published: {eq: true}, featured: {eq: true}}}, sort: {fields: [frontmatter___date], order: DESC}) {
-        totalCount
+      totalCount
       edges {
         node {
-      id
+          id
           fields {
-        slug
-      }
-      frontmatter {
-        title
+            slug
+          }
+          frontmatter {
+            title
             description
-      date(formatString: "YYYY")
-      category
+            date(formatString: "YYYY")
+            category
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 800) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
-}
-}
-}
 `;

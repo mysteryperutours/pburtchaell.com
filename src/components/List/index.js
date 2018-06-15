@@ -19,6 +19,7 @@ const List = (props) => {
       {items.edges.map(({ node: { frontmatter, fields, ...restNode } }) => (
         <ListItem
           key={keyExtractor(restNode)}
+          image={frontmatter.featuredImage}
           title={frontmatter.title}
           excerpt={frontmatter.description}
           date={frontmatter.date}
@@ -41,6 +42,17 @@ List.propTypes = {
         }).isRequired,
         frontmatter: PropTypes.shape({
           title: PropTypes.string.isRequired,
+          image: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+              sizes: PropTypes.shape({
+                aspectRatio: PropTypes.number.isRequired,
+                base64: PropTypes.string.isRequired,
+                sizes: PropTypes.string.isRequired,
+                src: PropTypes.string.isRequired,
+                srcSet: PropTypes.string.isRequired,
+              }),
+            }),
+          }),
           description: PropTypes.string.isRequired,
           category: PropTypes.string.isRequired,
           date: PropTypes.string.isRequired,

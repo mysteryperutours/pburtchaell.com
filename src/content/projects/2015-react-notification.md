@@ -14,8 +14,9 @@ keywords:
   - software
   - react
   - material
-  - design
+  - designz
   - standards
+featuredImage: 
 externalLink: 'https://github.com/pburtchaell/react-notification'
 externalLinkDescription: See the project on GitHub
 ---
