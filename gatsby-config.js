@@ -142,11 +142,11 @@ module.exports = {
     gatsbySourcePages,
     gatsbySourceImages,
     gatsbyTransformerMarkdown,
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-netlify',
     'gatsby-plugin-netlify-cms',
     gatsbyGoogleAnalytics,
     gatsbyRssFeed,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
   ],
 };

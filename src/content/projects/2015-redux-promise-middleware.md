@@ -20,6 +20,7 @@ keywords:
   - optimistic updates
   - asynchronous code
   - javascript async functions
+featuredImage: 
 externalLink: 'https://github.com/pburtchaell/redux-promise-middleware'
 externalLinkDescription: See the project on GitHub
 ---

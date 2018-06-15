@@ -13,6 +13,7 @@ keywords:
   - facebook
   - weather
 path: daily-weather
+featuredImage: '../../assets/facebook-daily-weather-featured.png'
 externalLink: 'https://techcrunch.com/2017/02/08/facebook-can-now-replace-your-weather-app/'
 externalLinkDescription: 'Read more on TechCrunch'
 ---

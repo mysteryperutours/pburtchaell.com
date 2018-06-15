@@ -21,6 +21,7 @@ keywords:
   - web design
   - user experience research
 path: snap
+featuredImage: '../../assets/snap-ux-featured.png'
 externalLink:
 externalLinkDescription:
 ---
@@ -37,7 +38,7 @@ Many people describe the application process as throwing information into a blac
 These issues manifest in one number: 26.9 million children were eligible for SNAP (and Medicaid) in 2013, but did not receive assistance. (Wheaton et al. 2017) The parents of these children were not declined assistance. Instead, I believe they chose to forego enrollment in welfare programs because the journey to get assistance from those programs is too difficult and too time-consuming. 
 
 > "[The process of applying for food stamps] very redundant. It just felt like I was filling out the same information over and over and over again." 
-> [(Chronister et al. 2016:6)][chronister]
+> <cite>[Chronister et al. 2016:6][chronister]</cite>
 
 When people are busy applying for jobs, finding alternative sources of income and keeping their family together, I believe they simply can not afford the complex journey of applying for SNAP.
 
