@@ -2,12 +2,21 @@
 published: true
 templateKey: 'page'
 title: 'About'
-description: ''
+description: 'My background is in design and computer science. Interested in entire the product design process, I start with the most basic problem or idea and develop it from wireframes to prototypes. With experience in software engineering as well as design, I sometimes become directly involved in writing and reviewing code.'
 keywords:
-  - 'Test'
+  - 'about'
+  - 'patrick burtchaell'
+  - 'new orleans'
+  - 'designer'
+  - 'product designer'
+  - 'software developer'
+  - 'technology'
+  - 'open source'
+  - 'react'
+  - 'redux'
 path: 'about'
 ---
-Originally from the grand city of New Orleans, I currently work as a Product Designer at [Facebook](https://facebook.com) in California. Previously, I worked at companies like [Revely Labs](https://revelry.co/) and [Gigster](https://gigster.com/). 
+Originally from the grand city of New Orleans, I currently work as a Product Designer at [Facebook](https://facebook.com) in California. Previously, I worked at companies like [Revely Labs](https://revelry.co/) and [Gigster](https://gigster.com/).
 
 > Technology should work for and with people, creating a connected world that is better for everyone. 
 
