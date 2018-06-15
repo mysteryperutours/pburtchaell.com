@@ -22,11 +22,26 @@ small {
   hyphens: none;
 }
 
-blockquote,
+blockquote {
+  margin: 6rem 0;
+  padding: 1rem 4rem;
+  border-left: 1px solid var(--light-gray);
+}
+
 blockquote p {
-  margin: 6rem 2rem;
+  margin: 0;
   color: var(--light-gray);
   font-style: italic;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+}
+
+blockquote cite:before {
+  content: '\2014\0020';
 }
 
 /*

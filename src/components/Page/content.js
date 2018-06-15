@@ -5,7 +5,7 @@ import Text from '../../components/Text';
 
 /*
  * Function: PageNewsletter
- * Description:
+ * Description: Renders a newsletter subscription component
  */
 class PageNewsletter extends Component {
   constructor(props) {
@@ -44,15 +44,30 @@ class PageNewsletter extends Component {
 }
 
 /*
+ * Function: getElementFromChildrenProps
+ * Description: Returns an element based off the
+ * children provided in the props.
+ */
+const getElementFromChildrenProps = (childrenFromProps) => {
+  const element = typeof childrenFromProps === 'string' ? (
+    <div dangerouslySetInnerHTML={{ __html: childrenFromProps }} />
+  ) : childrenFromProps;
+
+  return element;
+};
+
+/*
  * Function: PageContent
  * Description:
  */
-const PageContent = ({ children, className, newsletter, flexOrderSmall, flexOrderLarge }) => {
-  const child = () => {
-    return typeof children === 'string' ? (
-      <div dangerouslySetInnerHTML={{ __html: children }} />
-    ) : children;
-  };
+const PageContent = (props) => {
+  const {
+    children,
+    className,
+    newsletter,
+    flexOrderSmall,
+    flexOrderLarge,
+  } = props;
 
   return (
     <Column
@@ -62,7 +77,7 @@ const PageContent = ({ children, className, newsletter, flexOrderSmall, flexOrde
       flexOrderSmall={flexOrderSmall}
       flexOrderLarge={flexOrderLarge}
     >
-      {child()}
+      {getElementFromChildrenProps(children)}
       {newsletter && (<PageNewsletter />)}
     </Column>
   );
@@ -73,7 +88,11 @@ PageContent.propTypes = {
   flexOrderSmall: PropTypes.number,
   flexOrderLarge: PropTypes.number,
   newsletter: PropTypes.bool,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
 };
 
 PageContent.defaultProps = {

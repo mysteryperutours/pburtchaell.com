@@ -67,7 +67,7 @@ IndexPage.propTypes = {
         description: PropTypes.string.isRequired,
         introduction: PropTypes.string.isRequired,
         keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
-        enablePortfolio: PropTypes.string.isRequired,
+        enablePortfolio: PropTypes.bool.isRequired,
       }),
     }),
     projects: PropTypes.shape({

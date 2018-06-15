@@ -7,9 +7,7 @@ import Text, { types as textTypes } from '../components/Text';
  * Function: PostTemplate
  * Description: Renders a simple page
  */
-function PageTemplate({ data }) {
-  const { page, site } = data;
-
+function PageTemplate({ data: { page, site } }) {
   return (
     <Page.Container
       pageTitle={page.frontmatter.title}
@@ -58,6 +56,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        keywords
       }
     }
   }

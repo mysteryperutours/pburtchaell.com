@@ -59,3 +59,14 @@
 a:hover > .site-footer__glyph-rss {
   fill: var(--blue);
 }
+
+@media only screen and (max-width: 600px) {
+  .site-footer__message {
+    margin-top: 2rem;
+  }
+
+  .site-footer__message,
+  .site-footer__copyright {
+    text-align: left;
+  }
+}

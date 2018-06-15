@@ -5,7 +5,7 @@ import './styles.css';
 
 /*
  * Function: NavigationItemLink
- * Description: Renters a link in the website navigation
+ * Description: Renders a link in the website navigation
  */
 const NavigationLink = ({ linkTo, label, position }) => (
   <Link
@@ -19,8 +19,37 @@ const NavigationLink = ({ linkTo, label, position }) => (
 
 NavigationLink.propTypes = {
   label: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired,
   linkTo: PropTypes.string.isRequired,
+  position: PropTypes.oneOf(['top', 'bottom']).isRequired,
 };
 
-export default NavigationLink;
+/*
+ * Function: NavigationItemLink
+ * Description: Renders an array of navigation links
+ */
+const SiteNavigation = ({ links, position }) => {
+  const element = links ? (
+    <nav className="site-navigation">
+      {links.map(({ label, linkTo }) => (
+        <NavigationLink
+          key={label}
+          label={label}
+          linkTo={linkTo}
+          position={position}
+        />
+      ))}
+    </nav>
+  ) : null;
+
+  return element;
+};
+
+SiteNavigation.propTypes = {
+  links: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    linkTo: PropTypes.string.isRequired,
+  })).isRequired,
+  position: PropTypes.oneOf(['top', 'bottom']).isRequired,
+};
+
+export default SiteNavigation;

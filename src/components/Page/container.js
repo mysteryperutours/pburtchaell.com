@@ -30,7 +30,7 @@ const PageContainer = (props) => {
     linkTo,
     linkToLabel,
     linkToTop,
-    navigationItems,
+    links,
   } = props;
 
   // Declare a permanent canonical URl for the page for SEO and Open Graph
@@ -89,7 +89,7 @@ const PageContainer = (props) => {
           <SiteHeader
             title={pageTitle}
             rowSize={rowSize}
-            navigationItems={navigationItems}
+            links={links}
           />
         )}
         <main role="main" className="site-main-content">
@@ -103,7 +103,7 @@ const PageContainer = (props) => {
             linkToLabel={linkToLabel}
             linkToTop={linkToTop}
             rowSize={rowSize}
-            navigationItems={navigationItems}
+            links={links}
           />
         )}
       </div>
@@ -120,7 +120,10 @@ PageContainer.propTypes = {
   footer: PropTypes.bool,
   // Property to render a custom head
   head: PropTypes.element,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
   // Property to set the page title, .e.g., "About"
   pageTitle: PropTypes.string.isRequired,
   // Property to set the site title, e.g., "Patrick Burtchaell"
@@ -132,7 +135,7 @@ PageContainer.propTypes = {
   linkTo: PropTypes.string,
   linkToLabel: PropTypes.string,
   linkToTop: PropTypes.bool,
-  navigationItems: PropTypes.arrayOf(PropTypes.shape({
+  links: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     linkTo: PropTypes.string.isRequired,
   })),
@@ -146,7 +149,7 @@ PageContainer.defaultProps = {
   linkTo: null,
   linkToLabel: null,
   linkToTop: false,
-  navigationItems: [
+  links: [
     { label: 'Work', linkTo: '/work' },
     { label: 'Writing', linkTo: '/writing' },
     { label: 'About', linkTo: '/about' },
