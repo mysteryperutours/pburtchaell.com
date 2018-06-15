@@ -16,7 +16,7 @@ keywords:
   - 'redux'
 path: 'about'
 ---
-Originally from the grand city of New Orleans, I currently work as a Product Designer at [Facebook](https://facebook.com) in California. Previously, I worked at companies like [Revely Labs](https://revelry.co/) and [Gigster](https://gigster.com/).
+Originally from the grand city of New Orleans, I currently work as a Product Designer at [Facebook](https://facebook.com) in California. Previously, I worked at companies like [Revelry Labs](https://revelry.co/) and [Gigster](https://gigster.com/).
 
 > Technology should work for and with people, creating a connected world that is better for everyone. 
 
