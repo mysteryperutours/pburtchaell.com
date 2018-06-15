@@ -51,7 +51,10 @@ PageSidebar.propTypes = {
   hideOnLarge: PropTypes.bool,
   flexOrderLarge: PropTypes.number,
   flexOrderSmall: PropTypes.number,
-  children: PropTypes.arrayOf(PropTypes.component).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
 };
 
 export default PageSidebar;

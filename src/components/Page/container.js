@@ -120,7 +120,10 @@ PageContainer.propTypes = {
   footer: PropTypes.bool,
   // Property to render a custom head
   head: PropTypes.element,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
   // Property to set the page title, .e.g., "About"
   pageTitle: PropTypes.string.isRequired,
   // Property to set the site title, e.g., "Patrick Burtchaell"

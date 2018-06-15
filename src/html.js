@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import Typekit from 'react-typekit';
 
@@ -11,7 +12,7 @@ if (PRODUCTION) {
   try {
     rawStylesStr = require('!raw-loader!../public/styles.css');
   } catch (error) {
-    console.log(error);
+    throw new Error('Failed to import raw CSS to HTML template.');
   }
 }
 
@@ -44,7 +45,7 @@ class HTML extends React.Component {
     } = this.props;
 
     return (
-      <html {...htmlAttributes}>
+      <html lang="en" {...htmlAttributes}>
         <head>
           <Typekit kitId="utb8ujs" />
           {headComponents}
@@ -59,7 +60,7 @@ class HTML extends React.Component {
           />
           {postBodyComponents}
         </body>
-        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
       </html>
     );
   }

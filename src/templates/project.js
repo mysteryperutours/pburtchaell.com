@@ -40,8 +40,12 @@ SidebarDetail.propTypes = {
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.string),
-  ]).isRequired,
+  ]),
   formatData: PropTypes.func,
+};
+
+SidebarDetail.defaultProps = {
+  data: null,
 };
 
 /*
@@ -94,8 +98,13 @@ export const ProjectSummary = (props) => {
 ProjectSummary.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  externalLink: PropTypes.string.isRequired,
-  externalLinkDescription: PropTypes.string.isRequired,
+  externalLink: PropTypes.string,
+  externalLinkDescription: PropTypes.string,
+};
+
+ProjectSummary.defaultProps = {
+  externalLink: null,
+  externalLinkDescription: null,
 };
 
 /*
@@ -156,12 +165,19 @@ export const ProjectDetails = (props) => {
 };
 
 ProjectDetails.propTypes = {
-  client: PropTypes.string.isRequired,
-  collaborators: PropTypes.string.isRequired,
+  client: PropTypes.string,
+  collaborators: PropTypes.string,
   date: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  githubStargazers: PropTypes.number.isRequired,
-  githubOpenIssues: PropTypes.number.isRequired,
+  githubStargazers: PropTypes.number,
+  githubOpenIssues: PropTypes.number,
+};
+
+ProjectDetails.defaultProps = {
+  client: null,
+  collaborators: null,
+  githubStargazers: null,
+  githubOpenIssues: null,
 };
 
 /*
