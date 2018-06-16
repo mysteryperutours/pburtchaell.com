@@ -43,7 +43,9 @@ const gatsbyTransformerMarkdown = {
       {
         resolve: 'gatsby-remark-images',
         options: {
+          // See more: https://www.npmjs.com/package/gatsby-remark-images#options
           maxWidth: 1000,
+          showCaptions: true,
           linkImagesToOriginal: false,
         },
       },
