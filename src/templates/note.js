@@ -23,8 +23,8 @@ function NoteTemplate({ data }) {
         <Text type={textTypes.HEADER_1}>
           {page.frontmatter.title}
         </Text>
-        <Text>
-          {page.frontmatter.description}
+        <Text type={textTypes.SMALL}>
+          Last updated in {page.frontmatter.date}
         </Text>
       </Page.Sidebar>
       <Page.Content newsletter>
@@ -61,6 +61,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        date(formatString: "YYYY")
         keywords
       }
     }
