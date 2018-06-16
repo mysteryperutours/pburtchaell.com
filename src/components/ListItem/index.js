@@ -6,7 +6,8 @@ import './styles.css';
 
 /*
  * Function: ListItem
- * Description: Renders the title, tags and year of a list view item
+ * Description: Renders the an item in a list
+ * with title, image, excerpt, etc.
  */
 const ListItemDetails = (props) => {
   const {
@@ -22,6 +23,9 @@ const ListItemDetails = (props) => {
       <div className="list-item--background">
         {image && (
           <Img
+            className="list-item__featured-image"
+            title={title}
+            alt={excerpt}
             sizes={image.childImageSharp.sizes}
           />
         )}
