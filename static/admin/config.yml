@@ -7,10 +7,10 @@ backend:
 media_folder: src/assets
 public_folder: static
 
-# Content collections for settings, case studies, guides and blog posts
+# Content collections for settings, projects, pages, notes and posts
 collections:
 
-  # Website settings (via a content collection)
+  # The settings collection includes files to modify/configure the website
   - name: settings
     label: Settings
     delete: false
@@ -51,7 +51,7 @@ collections:
             widget: list
             required: true
 
-  # Project case studies collection
+  # The projects collection contains case studies on my work
   - name: projects
     label: Projects
     label_singular: Project
@@ -69,7 +69,7 @@ collections:
       - { name: featured, label: Featured, widget: boolean, default: false }
       - { name: templateKey, label: Template Key, widget: hidden, default: project }
 
-      # Meta fields (all required)
+      # Meta fields (required)
       - { name: date, label: Date, widget: date, required: true }
       - { name: title, label: Title, widget: string, required: true }
       - { name: description, label: Description, widget: string, required: true }
@@ -77,7 +77,7 @@ collections:
       - { name: collaborators, label: Collaborators, widget: list, required: false }
       - { name: path, label: Path, widget: string, required: true }
 
-      # Category field (required multi-select)
+      # Category field (required)
       - name: category
         label: Category
         widget: select
@@ -87,7 +87,7 @@ collections:
         options:
           - Product Design
           - Web Design
-          - Interactive Design
+          - UX Design
           - Open Source
           - Web Development
           - Mobile Development
@@ -98,17 +98,21 @@ collections:
       # Markdown body field (required)
       - { name: body, label: Body, widget: markdown, required: true }
 
+      # Featured image used in lists (optional)
+      - { name: featuredImage, label: Featured Image, widget: file, required: false }
+
       # External link fields (optional)
       - { name: externalLink, label: External Link, widget: string, default: "", required: false }
       - { name: externalLinkDescription, label: External Link Description, widget: string, default: "", required: false }
 
-  # Pewrsonal guides/notes collection
+  # The notes collection includes informal writing on my personal/professional hobbies/interests
   - name: notes
     label: Notes
     label_singular: Note
     folder: src/content/notes
     slug: "{{slug}}"
     create: true
+    delete: true
     fields:
       - { name: published, label: Published, widget: boolean, default: false }
       - { name: templateKey, label: Template Key, widget: hidden, default: project }
@@ -118,14 +122,32 @@ collections:
       - { name: keywords, label: Keywords, widget: list, required: false }
       - { name: body, label: Body, widget: markdown, required: true }
       - { name: path, label: Path, widget: string, required: true }
+    
+  # The pages collection includes stand alone pages, e.g., "About" page
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/content/pages
+    slug: "{{slug}}"
+    create: true
+    delete: true
+    fields:
+      - { name: published, label: Published, widget: boolean, default: false }
+      - { name: templateKey, label: Template Key, widget: hidden, default: post }
+      - { name: title, label: Title, widget: string, required: true }
+      - { name: description, label: Description, widget: string, required: true }
+      - { name: keywords, label: Keywords, widget: list, required: false }
+      - { name: body, label: Body, widget: markdown, required: true }
+      - { name: path, label: Path, widget: string, required: true }
 
-  # Blog posts collection
+  # The posts collection includes formal writing, e.g., blog posts/articles
   - name: posts
     label: Posts
     label_singular: Post
     folder: src/content/posts
     slug: "{{year}}-{{slug}}"
     create: true
+    delete: true
     fields:
       - { name: published, label: Published, widget: boolean, default: false }
       - { name: templateKey, label: Template Key, widget: hidden, default: post }
