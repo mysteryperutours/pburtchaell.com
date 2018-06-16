@@ -36,7 +36,14 @@ function NoteTemplate({ data }) {
 
 NoteTemplate.propTypes = {
   data: PropTypes.shape({
-    // Todo: add prop types
+    site: PropTypes.shape({
+      metadata: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+      }),
+    }),
   }).isRequired,
 };
 
