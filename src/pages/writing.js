@@ -53,7 +53,7 @@ const postsAndNotesPropTypes = PropTypes.shape({
       frontmatter: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired,
+        category: PropTypes.string,
         date: PropTypes.string.isRequired,
       }),
     }),
