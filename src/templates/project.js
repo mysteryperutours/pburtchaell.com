@@ -193,7 +193,7 @@ function ProjectTemplate({ data, ...restProps }) {
       siteTitle={site.metadata.title}
       pageUrl={page.fields.slug}
       siteUrl={site.metadata.url}
-      imageUrl={page.frontmatter.featuredImage.childImageSharp.sizes.src}
+      imageUrl={page.frontmatter.featuredImage ? page.frontmatter.featuredImage.childImageSharp.sizes.src : null}
       backLinkTo={restProps.history.goBack}
       description={page.frontmatter.description}
       keywords={page.frontmatter.keywords}
