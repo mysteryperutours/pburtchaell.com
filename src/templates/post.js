@@ -18,7 +18,7 @@ function PostTemplate({ data }) {
       siteTitle={site.metadata.title}
       pageUrl={page.fields.slug}
       siteUrl={site.metadata.url}
-      imageUrl={page.frontmatter.featuredImage ? page.frontmatter.featuredImage.childImageSharp.sizes.src : null}
+      imageUrl={page.frontmatter.featuredImageCropped ? page.frontmatter.featuredImageCropped.childImageSharp.resolutions.src : null}
       description={page.frontmatter.description}
       keywords={page.frontmatter.keywords}
     >
@@ -81,10 +81,10 @@ export const pageQuery = graphql`
         description
         date(formatString: "MMMM Do, YYYY")
         keywords
-        featuredImage {
+        featuredImageCropped: featuredImage {
           childImageSharp {
-            sizes(maxHeight: 400) {
-              ...GatsbyImageSharpSizes
+            resolutions(height: 1200, width: 1200) {
+              ...GatsbyImageSharpResolutions
             }
           }
         }
