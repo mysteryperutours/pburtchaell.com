@@ -31,11 +31,11 @@ const PageContainer = (props) => {
   } = props;
 
   const publicImages = '/images';
-  const publicCards = `${siteUrl}/${publicImages}/cards`;
+  const publicCards = `${siteUrl}${publicImages}/cards`;
   const publicFavicons = `${publicImages}/favicons`;
 
   // Declare a permanent canonical URl for the page for SEO and Open Graph
-  const canonicalUrl = pageUrl ? `${siteUrl}/${pageUrl}/` : `${siteUrl}/`;
+  const canonicalUrl = pageUrl ? `${siteUrl}${pageUrl}/` : `${siteUrl}`;
 
   return (
     <Fragment>
@@ -54,9 +54,9 @@ const PageContainer = (props) => {
             { name: 'og:url', content: canonicalUrl },
             { name: 'og:title', content: pageTitle },
             { name: 'og:description', content: description },
-            { name: 'og:image', content: !imageUrl ? `${publicCards}/facebook.png` : `${siteUrl}/${imageUrl}` },
+            { name: 'og:image', content: !imageUrl ? `${publicCards}/facebook.png` : `${siteUrl}${imageUrl}` },
             { name: 'twitter:card', content: 'summary' },
-            { name: 'twitter:image', content: !imageUrl ? `${publicCards}/twitter.png` : `${siteUrl}/${imageUrl}` },
+            { name: 'twitter:image', content: !imageUrl ? `${publicCards}/twitter.png` : `${siteUrl}${imageUrl}` },
             { name: 'twitter:site', content: '@pburtchaell' },
             { name: 'twitter:domain', content: siteUrl },
             { name: 'twitter:title', content: pageTitle },
