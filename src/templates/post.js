@@ -18,6 +18,7 @@ function PostTemplate({ data }) {
       siteTitle={site.metadata.title}
       pageUrl={page.fields.slug}
       siteUrl={site.metadata.url}
+      imageUrl={page.frontmatter.featuredImage.childImageSharp.sizes.src}
       description={page.frontmatter.description}
       keywords={page.frontmatter.keywords}
     >
