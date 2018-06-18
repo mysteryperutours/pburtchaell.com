@@ -44,6 +44,13 @@ blockquote cite:before {
   content: '\2014\0020';
 }
 
+hr {
+  margin: var(--smallest-margin) auto;
+  width: 50%;
+  border: none;
+  border-top: 1px solid var(--light-gray);
+}
+
 /*
  * When small text is used after a header, remove the margin from the 
  * header so the small text is "nested" closer to the header. Also

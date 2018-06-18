@@ -34,9 +34,11 @@ const ListItemDetails = (props) => {
         </p>
         <span className="list-item__details">
           <small>
-            <span className="list-item__details-category">
-              {category}
-            </span>
+            {category && (
+              <span className="list-item__details-category">
+                {category}
+              </span>
+            )}
             <time className="list-item__details-year">
               {date}
             </time>
@@ -66,13 +68,14 @@ ListItemDetails.propTypes = {
     }),
   }),
   excerpt: PropTypes.string,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.string,
   date: PropTypes.string.isRequired,
 };
 
 ListItemDetails.defaultProps = {
   image: null,
   excerpt: null,
+  category: null,
 };
 
 /*
@@ -120,7 +123,7 @@ ListItem.propTypes = {
     }),
   }),
   excerpt: PropTypes.string,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.string,
   date: PropTypes.string.isRequired,
   linkTo: PropTypes.string.isRequired,
 };
@@ -128,6 +131,7 @@ ListItem.propTypes = {
 ListItem.defaultProps = {
   image: null,
   excerpt: null,
+  category: null,
 };
 
 export default ListItem;

@@ -53,7 +53,7 @@ const postsAndNotesPropTypes = PropTypes.shape({
       frontmatter: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired,
+        category: PropTypes.string,
         date: PropTypes.string.isRequired,
       }),
     }),
@@ -117,8 +117,14 @@ export const pageQuery = graphql`
           frontmatter {
             title
             description
-            date(formatString: "YYYY")
-            category
+            date(formatString: "MMMM Do, YYYY")
+            featuredImage {
+              childImageSharp {
+                sizes(maxHeight: 400) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

@@ -1,26 +1,64 @@
+/*
+ * Images are inline with text and have a simple default margin.
+ */
 img,
 video {
   display: block;
-  margin-top: 2rem;
-  outline: none;
-  border: 1px solid var(--black);
-  width: 100%;
-}
-
-img:first-child,
-video:first-child,
-.gatsby-resp-image-wrapper:first-child {
-  margin-top: 0;
-}
-
-.gatsby-resp-image-wrapper {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin: var(--default-margin);
   padding: 0;
-  max-width: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
 }
 
-.gatsby-image-outer-wrapper img {
-  margin-top: 0;
-  border: none;
+/*
+ * Figures include an image and a caption. Figures are well
+ * used in long bodies of text.
+ */
+figure {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-top: var(--small-margin);
+  margin-bottom: var(--small-margin);
+  padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  figure {
+    margin-top: var(--small-screen-small-margin);
+    margin-bottom: var(--small-screen-small-margin);
+  }
+}
+
+/*
+ * On small screens, the image is styled as full 
+ * width, taking up an extra 2rem for the gutter.
+ */
+figure .gatsby-resp-image-wrapper {
+  position: relative;
+  margin: 0;
+  left: -2rem;
+  width: calc(100% + 4rem);
+}
+
+/*
+ * On large screens, the image is styled larger than
+ * the container and with a small margin.
+ */
+@media only screen and (min-width: 600px) {
+  figure .gatsby-resp-image-wrapper {
+    left: -4rem;
+    width: calc(100% + 8rem);
+  }
+}
+
+/* 
+ * The caption is always styled as small text. 
+ */
+figure figcaption {
+  text-align: center;
+  font-size: var(--small-font-size);
+  line-height: var(--small-line-height);
+  color: var(--light-gray);
 }

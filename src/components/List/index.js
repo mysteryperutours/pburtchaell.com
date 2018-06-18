@@ -54,7 +54,7 @@ List.propTypes = {
             }),
           }),
           description: PropTypes.string.isRequired,
-          category: PropTypes.string.isRequired,
+          category: PropTypes.string,
           date: PropTypes.string.isRequired,
         }),
       }).isRequired,

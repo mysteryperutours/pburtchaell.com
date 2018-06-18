@@ -25,6 +25,10 @@ body {
   cursor: default;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 html.wf-active {
   opacity: 1;
 }

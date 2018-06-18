@@ -193,6 +193,7 @@ function ProjectTemplate({ data, ...restProps }) {
       siteTitle={site.metadata.title}
       pageUrl={page.fields.slug}
       siteUrl={site.metadata.url}
+      imageUrl={page.frontmatter.featuredImageCropped ? page.frontmatter.featuredImageCropped.childImageSharp.resolutions.src : null}
       backLinkTo={restProps.history.goBack}
       description={page.frontmatter.description}
       keywords={page.frontmatter.keywords}
@@ -245,6 +246,24 @@ ProjectTemplate.propTypes = {
         externalLink: PropTypes.string,
         externalLinkDescription: PropTypes.string,
         date: PropTypes.string.isRequired,
+        featuredImage: PropTypes.shape({
+          childImageSharp: PropTypes.shape({
+            sizes: PropTypes.shape({
+              aspectRatio: PropTypes.number.isRequired,
+              base64: PropTypes.string.isRequired,
+              sizes: PropTypes.string.isRequired,
+              src: PropTypes.string.isRequired,
+              srcSet: PropTypes.string.isRequired,
+            }),
+          }),
+        }),
+        featuredImageCropped: PropTypes.shape({
+          childImageSharp: PropTypes.shape({
+            resolutions: PropTypes.shape({
+              src: PropTypes.string.isRequired,
+            }),
+          }),
+        }),
       }),
     }),
   }).isRequired,
@@ -279,6 +298,20 @@ export const pageQuery = graphql`
         externalLink
         externalLinkDescription
         date(formatString: "YYYY")
+        featuredImageCropped: featuredImage {
+          childImageSharp {
+            resolutions(height: 1200, width: 1200) {
+              ...GatsbyImageSharpResolutions
+            }
+          }
+        }
+        featuredImage {
+          childImageSharp {
+            sizes(maxHeight: 400) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }
