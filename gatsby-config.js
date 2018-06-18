@@ -98,7 +98,6 @@ const gatsbyRssFeed = {
                 filter: {
                   frontmatter: {
                     templateKey: { eq: "post" }
-                    templateKey: { eq: "project" }
                     published: { eq: true }
                   }
                 }
