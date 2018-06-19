@@ -38,11 +38,11 @@ Moved from New Orleans to San Francisco. Started at [Facebook](https://facebook.
 
 ### 2017
 
-Interned at Facebook, working on [Messenger](https://messenger.com).
+Interned at Facebook again, working on [Messenger](https://messenger.com).
 
 ### 2016
 
-Interned at Facebook, [launching daily weather](/work/2016/daily-weather).
+Interned at Facebook, [launching daily weather](/work/2017/daily-weather).
 
 ### 2015
 
