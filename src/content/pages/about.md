@@ -16,7 +16,7 @@ keywords:
   - 'redux'
 path: 'about'
 ---
-Originally from the grand city of New Orleans, I currently work as a Product Designer at [Facebook](https://facebook.com) in California. Previously, I worked at companies like [Revelry Labs](https://revelry.co/) and [Gigster](https://gigster.com/).
+Originally from the grand city of New Orleans, I currently work as a product designer at [Facebook](https://facebook.com) in California. Previously, I worked at companies like [Revelry Labs](https://revelry.co/) and [Gigster](https://gigster.com/).
 
 > Technology should work for and with people, creating a connected world that is better for everyone. 
 
@@ -24,11 +24,7 @@ My background is in design and computer science. Interested in the entire produc
 
 ## Open Source
 
-I have a special spot in my heart for [React](https://github.com/facebook/react) and [Redux](https://github.com/reduxjs/redux), open source JavaScript libraries I have utilized since 2014 and 2015, respectively. I actively maintain and contribute to open source projects on GitHub.
-
-## Contact
-
-[Send me a Tweet](https://twitter.com/pburtchaell).
+I have a special spot in my heart for [React](https://github.com/facebook/react) and [Redux](https://github.com/reduxjs/redux), open source JavaScript libraries I have utilized since 2014 and 2015, respectively. I actively maintain and contribute to open source projects on [GitHub](https://github.com/pburtchaell).
 
 ## Timeline
 
@@ -46,11 +42,11 @@ Interned at Facebook, [launching daily weather](/work/2017/daily-weather).
 
 ### 2015
 
-Founded [Lawn Chair](https://lawnchair.studio), a design software development studio. 
+Founded [Lawn Chair](https://lawnchair.studio), a design and software development studio.
 
 ### 2014
 
-Worked at [Fixt](https://fixt.co/) as a junior software developer. Received a Certificate in Media Arts from the New Orleans Center for Creative Arts.
+Started at [Fixt](https://fixt.co/) as a junior software developer. Received a Certificate in Media Arts from the New Orleans Center for Creative Arts.
 
 ### 2013
 
