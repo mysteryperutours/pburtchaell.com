@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 require('dotenv').config();
 const fetch = require('node-fetch');
+const remarkImagesToRelative = require('./remarkImagesToRelative.js');
 
 const TEMPLATE_KEYS = {
   PROJECT: 'project',
@@ -78,6 +79,8 @@ const getSlugForNode = ({ frontmatter }) => {
  */
 module.exports = ({ node, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
+
+  remarkImagesToRelative(node);
 
   if (node.internal.type === 'MarkdownRemark') {
     // Todo: handle index pages for guides

@@ -9,7 +9,7 @@ keywords:
  - 'product design intern'
  - 'menlo park'
  - 'internship'
-featuredImage: '../../assets/be-open-1.png'
+featuredImage: '/be-open-1.png'
 path: be-open-and-bold
 ---
 In May 2016, I started orientation and training at the Facebook headquarters in Menlo Park, California. It was the beginning of a fantastic 12 weeks as a Product Design Intern. The training—called "Design Camp"—was a program for all designers at Facebook. Designers have many backgrounds, using different software and methods. Design Camp was an opportunity to introduce us to product design at Facebook. We rapidly learned and practiced new principles, guidelines, philosophies and tools.
@@ -21,7 +21,7 @@ My second project, [brought a new weather system to Facebook](https://techcrunch
 
 In my final week, I worked with the team who launched the [Star Trek 50th Anniversary reactions and profile frames](https://www.theverge.com/2016/9/8/12846752/star-trek-50-anniversary-facebook-reactions). This was a fun little project my manager fit in as a bonus.
 
-![](../../assets/be-open-2.png "Weather on Facebook. Photo by Sarah Perez, TechCrunch.")
+![](/be-open-2.png "Weather on Facebook. Photo by Sarah Perez, TechCrunch.")
 
 ## The People
 Supported throughout my internship with peers and managers, I was set on a good path from the beginning.
@@ -59,7 +59,7 @@ First, I wrote down meeting objectives and open issues on sticky notes. I put th
 ### Redlines
 Second, I included redlines next to each mockup to point out interactions and demonstrate flows.
 
-![](../../assets/be-open-3.png "Redlines in Sketch.")
+![](be-open-3.png "Redlines in Sketch.")
 
 ### Context
 Finally, I considered what information stakeholders would need to understand the context of the design. I also tried my best to anticipate answers to questions people might ask.

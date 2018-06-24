@@ -1,8 +1,11 @@
 /*
  * Images are inline with text and have a simple default margin.
+ * Some images are inserted by Gatsby as a responsive image, e.g.,
+ * using CSS background styles.
  */
 img,
-video {
+video,
+.gatsby-resp-image-wrapper {
   display: block;
   margin: var(--default-margin);
   padding: 0;

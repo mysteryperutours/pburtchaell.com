@@ -21,12 +21,10 @@ keywords:
   - web design
   - user experience research
 path: snap
-featuredImage: '../../assets/snap-ux-featured.png'
+featuredImage: '/snap-ux-featured.png'
 externalLink:
 externalLinkDescription:
 ---
-![](../../assets/snap-ux-image-1.png)
-
 The Supplemental Nutrition Assistance Program (SNAP)--known to most people as food stamps--is a welfare assistance program available in Louisiana and administered by the United States Department of Agriculture. By providing monthly food assistance to eligible low-income individual, SNAP is integral to the livelihood and wellness of people in Louisiana and all of America. In the fiscal year 2011, SNAP provided assistance to nearly 45 million people—about one in seven Americans. [(USDA 2012)][usda]
 
 However, it is difficult and time consuming for people to access and apply for welfare assistance in Louisiana—SNAP is no exception. Unwelcoming, dated websites frustrate people with accessibility and usability problems. Information on SNAP is unstructured and difficult to find, overwhelming people and creating anxiety when searching for assistance and learning about which programs to apply for. With phrases like "165% Maximum Income Limits", the eligibility criteria for SNAP are unclear for most people. SNAP application forms are redundant, difficult to access and poorly translated to languages other than English.
@@ -115,7 +113,7 @@ Websites should follow the guidelines of and use components from the U.S. Web De
 
 ### Simplify content structure
 
-![](../../assets/snap-ux-image-3.png)
+![](snap-ux-image-3.png)
 
 Without structure and hierarchy, content becomes overwhelming for people to understand. Avoid walls of written text with no images, illustrations or icons. Separate written content into chunks with headers and visuals.
 
@@ -124,7 +122,7 @@ Writing content in clear, plain language helps people easily understand informat
 
 ### Provide realtime feedback
 
-![](../../assets/snap-ux-image-2.png)
+![](snap-ux-image-2.png)
 
 Providing realtime eligibility feedback to people mitigates any cost-benefit analysis they might make before starting or during the application process. If, before starting, people know how much time is required of them and how likely they are to receive assistance, they are more likely to start the application. Additionally, if, after starting, people know how much time remains on the application and they can see their overall progress on the application, they are more likely to finish the application and less likely to discard their progress.
 

@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "deep-map": "^1.5.0",
     "dotenv": "^5.0.1",
     "gatsby": "^1.9.153",
     "gatsby-image": "^1.0.53",
@@ -28,6 +29,7 @@
     "gatsby-plugin-sharp": "^1.6.41",
     "gatsby-remark-images": "^1.5.56",
     "gatsby-remark-prismjs": "^1.2.21",
+    "gatsby-remark-relative-images": "^0.1.2",
     "gatsby-remark-smartypants": "^1.4.12",
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-remark": "^1.7.37",

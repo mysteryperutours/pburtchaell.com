@@ -13,13 +13,13 @@ keywords:
   - facebook
   - weather
 path: daily-weather
-featuredImage: '../../assets/facebook-daily-weather-featured.png'
+featuredImage: '/facebook-daily-weather-featured.png'
 externalLink: 'https://techcrunch.com/2017/02/08/facebook-can-now-replace-your-weather-app/'
 externalLinkDescription: 'Read more on TechCrunch'
 ---
 Daily Weather is a promotional unit in the News Feed that helps people find the weather forecast in a quick, delightful experience unique to Facebook.
 
-![](../../assets/facebook-daily-weather-image-1.png)
-![](../../assets/facebook-daily-weather-image-2.png)
-![](../../assets/facebook-daily-weather-image-3.png)
-![](../../assets/facebook-daily-weather-image-4.png)
+![](/facebook-daily-weather-image-1.png)
+![](/facebook-daily-weather-image-2.png)
+![](/facebook-daily-weather-image-3.png)
+![](/facebook-daily-weather-image-4.png)

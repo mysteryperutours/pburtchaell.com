@@ -41,6 +41,9 @@ const gatsbyTransformerMarkdown = {
   options: {
     plugins: [
       {
+        resolve: 'gatsby-remark-relative-images',
+      },
+      {
         resolve: 'gatsby-remark-images',
         options: {
           // See more: https://www.npmjs.com/package/gatsby-remark-images#options
