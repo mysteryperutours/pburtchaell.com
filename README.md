@@ -13,7 +13,7 @@
 
 [pburtchaell.com][home] is my personal website and portfolio. It is a fun, endless project I continue to work on, switching from stack to stack, adding features, cutting features and constantly iterating.
 
-I keep this project open source because you might be curious to read through the code. Perhaps it will be useful for you if you are working on a similar project. If you have questions, feel free to reach out to me on [Messenger](https://m.me/pburtchaell) (fastest), [Twitter](https://twitter.com/pburtchaell) (fast) or [email](mailto:patrick@pburtchaell) (slow).
+I keep this project open source because you might be curious to read through the code. Perhaps it will be useful for you if you are working on a similar project. If you have questions, feel free to reach out to me on [Messenger](https://m.me/pburtchaell), [Twitter](https://twitter.com/pburtchaell) or [email](mailto:patrick@pburtchaell.com).
 
 ## Getting Started
 
