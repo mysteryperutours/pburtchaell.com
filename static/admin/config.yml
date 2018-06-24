@@ -5,7 +5,6 @@ backend:
   repo: pburtchaell/pburtchaell.com
 
 media_folder: src/assets
-public_folder: static
 
 # Content collections for settings, projects, pages, notes and posts
 collections:
