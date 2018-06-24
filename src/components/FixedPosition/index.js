@@ -12,7 +12,6 @@ class FixedPosition extends Component {
 
     this.INITIAL_STATE = {
       fixed: false,
-      set: false,
       top: 0,
       left: 0,
       width: 0,
@@ -21,6 +20,7 @@ class FixedPosition extends Component {
     this.state = this.INITIAL_STATE;
 
     this.setFixedPosition = this.setFixedPosition.bind(this);
+    this.clearFixedPosition = this.clearFixedPosition.bind(this);
     this.handleViewportChange = this.handleViewportChange.bind(this);
   }
 
@@ -40,32 +40,42 @@ class FixedPosition extends Component {
 
     // If we are on a small screen, don't fix the position
     if (disableOnSmall && window.screen.width <= 600) {
-      return this.setState({
-        ...this.INITIAL_STATE,
-        set: true,
-      });
+      this.setState(this.INITIAL_STATE);
+      return;
     }
 
     const position = this.element.getBoundingClientRect();
     const width = this.element.offsetWidth;
 
-    return this.setState({
+    this.setState({
       fixed: true,
-      set: true,
       top: position.top,
       left: position.left,
       width,
     });
   }
 
+  clearFixedPosition() {
+    this.setState(this.INITIAL_STATE);
+  }
+
   handleViewportChange() {
+    window.scroll(0, 0);
+    this.clearFixedPosition();
     this.setFixedPosition();
   }
 
   render() {
-    const { children, className } = this.props;
     const {
-      fixed, top, left, width,
+      children,
+      className,
+    } = this.props;
+
+    const {
+      fixed,
+      top,
+      left,
+      width,
     } = this.state;
 
     let styles;
