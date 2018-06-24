@@ -6,6 +6,8 @@ backend:
 
 media_folder: src/assets
 
+display_url: https://pburtchaell.com
+
 # Content collections for settings, projects, pages, notes and posts
 collections:
 
