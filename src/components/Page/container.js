@@ -46,7 +46,7 @@ const PageContainer = (props) => {
           meta={[
             { charSet: 'utf-8' },
             { httpEquiv: 'x-ua-compatible', content: 'ie=edge' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover' },
             { name: 'description', content: description },
             { name: 'keywords', content: keywords },
             { name: 'og:type', content: 'website' },

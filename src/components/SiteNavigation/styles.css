@@ -39,7 +39,8 @@
   margin-left: 0;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px),
+only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
   .site-navigation {
     height: 2rem;
     line-height: 2rem;
@@ -52,10 +53,10 @@
   }
 
   .site-navigation__item-position-top.site-navigation__item-state-active {
-    padding-bottom: calc(1.25rem + 1px);
+    padding-bottom: 1.25rem;
   }
 
   .site-navigation__item-position-bottom.site-navigation__item-state-active {
-    padding-top: calc(2rem);
+    padding-top: 2rem;
   }
 }

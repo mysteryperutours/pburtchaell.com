@@ -19,6 +19,7 @@
   padding-right: 2rem;
 }
 
+
 @media only screen and (min-width: 600px) {
   .column-flex-order-large-0 {
     order: 0;
@@ -59,7 +60,11 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+/*
+ * Small screen and iPhone X landscape styles
+ */ 
+@media only screen and (max-width: 600px),
+only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
   .column-flex-order-small-0 {
     order: 0;
   }

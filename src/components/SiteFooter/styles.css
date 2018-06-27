@@ -60,7 +60,8 @@ a:hover > .site-footer__glyph-rss {
   fill: var(--blue);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px),
+only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
   .site-footer__message {
     margin-top: 2rem;
   }
